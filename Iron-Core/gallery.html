@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — IronCore Fitness</title>
+  <meta name="description" content="Photo gallery of IronCore Fitness — equipment, classes, events, and our world-class facility." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">IC</div>
+        <div class="logo-text">Iron<span>Core</span></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="trainers.html">Trainers</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="pricing.html" class="nav-cta"><i class="fas fa-bolt"></i> Join Now</a>
+      <div class="hamburger" aria-label="Open menu" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Side Drawer -->
+  <div class="drawer-overlay"></div>
+  <div class="side-drawer">
+    <div class="drawer-close"><i class="fas fa-times"></i></div>
+    <div class="drawer-logo">Iron<span>Core</span></div>
+    <nav class="drawer-nav">
+      <a href="index.html">Home</a>
+      <a href="programs.html">Programs</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="trainers.html">Trainers</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="pricing.html" class="drawer-cta"><i class="fas fa-bolt"></i> Join Now</a>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="page-header-accent">Gallery</div>
+    <div class="page-header-content">
+      <h1>Photo <span>Gallery</span></h1>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep"><i class="fas fa-chevron-right"></i></span>
+        <span>Gallery</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- GALLERY SECTION -->
+  <section class="section section-black">
+    <div class="section-header reveal">
+      <div class="section-tag">Our Space</div>
+      <h2 class="section-title">Inside <span>IronCore</span></h2>
+      <p class="section-subtitle">A glimpse into our world-class facility, intense classes, cutting-edge equipment, and the community that makes IronCore elite.</p>
+    </div>
+
+    <!-- Gallery Filter -->
+    <div class="gallery-filter-bar reveal">
+      <button class="gallery-tab-btn active" data-filter="all">All Photos</button>
+      <button class="gallery-tab-btn" data-filter="facility">Facility</button>
+      <button class="gallery-tab-btn" data-filter="classes">Classes</button>
+      <button class="gallery-tab-btn" data-filter="equipment">Equipment</button>
+      <button class="gallery-tab-btn" data-filter="events">Events</button>
+    </div>
+
+    <!-- Masonry Grid -->
+    <div class="gallery-grid reveal">
+
+      <div class="gallery-item" data-cat="facility">
+        <img src="https://images.pexels.com/photos/32610333/pexels-photo-32610333.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=500" alt="IronCore Main Gym Floor" />
+        <div class="gallery-overlay">
+          <div class="zoom-wrap"><div class="zoom-icon">⊕</div></div>
+          <div class="gallery-caption">Main Gym Floor<span class="g-cat">Facility</span></div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-cat="classes">
+        <img src="https://images.pexels.com/photos/3253501/pexels-photo-3253501.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=450&w=500" alt="CrossFit Rope Class" />
+        <div class="gallery-overlay">
+          <div class="zoom-wrap"><div class="zoom-icon">⊕</div></div>
+          <div class="gallery-caption">CrossFit Ropes<span class="g-cat">Classes</span></div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-cat="classes">
+        <img src="https://images.pexels.com/photos/2294400/pexels-photo-2294400.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=700&w=500" alt="Cardio Training Session" />
+        <div class="gallery-overlay">
+          <div class="zoom-wrap"><div class="zoom-icon">⊕</div></div>
+          <div class="gallery-caption">Cardio Session<span class="g-cat">Classes</span></div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-cat="equipment">
+        <img src="https://images.pexels.com/photos/6628962/pexels-photo-6628962.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=500&w=500" alt="Barbell Equipment" />
+        <div class="gallery-overlay">
+          <div class="zoom-wrap"><div class="zoom-icon">⊕</div></div>
+          <div class="gallery-caption">Barbell Station<span class="g-cat">Equipment</span></div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-cat="events">
+        <img src="https://images.pexels.com/photos/2261483/pexels-photo-2261483.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=450&w=500" alt="Iron Challenge Event" />
+        <div class="gallery-overlay">
+          <div class="zoom-wrap"><div class="zoom-icon">⊕</div></div>
+          <div class="gallery-caption">Iron Challenge<span class="g-cat">Events</span></div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-cat="classes">
+        <img src="https://images.pexels.com/photos/20594792/pexels-photo-20594792.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=550&w=500" alt="Weight Training Session" />
+        <div class="gallery-overlay">
+          <div class="zoom-wrap"><div class="zoom-icon">⊕</div></div>
+          <div class="gallery-caption">Weight Training<span class="g-cat">Classes</span></div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-cat="facility">
+        <img src="https://images.pexels.com/photos/3838705/pexels-photo-3838705.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=500&w=500" alt="Recovery Zone" />
+        <div class="gallery-overlay">
+          <div class="zoom-wrap"><div class="zoom-icon">⊕</div></div>
+          <div class="gallery-caption">Recovery Zone<span class="g-cat">Facility</span></div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-cat="classes">
+        <img src="https://images.pexels.com/photos/13865666/pexels-photo-13865666.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=480&w=500" alt="Cable Machine Training" />
+        <div class="gallery-overlay">
+          <div class="zoom-wrap"><div class="zoom-icon">⊕</div></div>
+          <div class="gallery-caption">Cable Training<span class="g-cat">Classes</span></div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-cat="events">
+        <img src="https://images.pexels.com/photos/6392833/pexels-photo-6392833.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=520&w=500" alt="Community Workout Event" />
+        <div class="gallery-overlay">
+          <div class="zoom-wrap"><div class="zoom-icon">⊕</div></div>
+          <div class="gallery-caption">Community WOD<span class="g-cat">Events</span></div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-cat="equipment">
+        <img src="https://images.pexels.com/photos/12314077/pexels-photo-12314077.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=440&w=500" alt="Dumbbell Rack" />
+        <div class="gallery-overlay">
+          <div class="zoom-wrap"><div class="zoom-icon">⊕</div></div>
+          <div class="gallery-caption">Dumbbell Station<span class="g-cat">Equipment</span></div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-cat="classes">
+        <img src="https://images.pexels.com/photos/4587348/pexels-photo-4587348.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=500" alt="Personal Training Session" />
+        <div class="gallery-overlay">
+          <div class="zoom-wrap"><div class="zoom-icon">⊕</div></div>
+          <div class="gallery-caption">Personal Training<span class="g-cat">Classes</span></div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-cat="facility">
+        <img src="https://images.pexels.com/photos/4854256/pexels-photo-4854256.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=480&w=500" alt="Functional Training Area" />
+        <div class="gallery-overlay">
+          <div class="zoom-wrap"><div class="zoom-icon">⊕</div></div>
+          <div class="gallery-caption">Functional Area<span class="g-cat">Facility</span></div>
+        </div>
+      </div>
+
+    </div><!-- end gallery-grid -->
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox-overlay">
+    <div class="lightbox-arrow prev"><i class="fas fa-chevron-left"></i></div>
+    <div class="lightbox-img-wrap">
+      <div class="lightbox-close"><i class="fas fa-times"></i></div>
+      <img src="" alt="Gallery image" />
+    </div>
+    <div class="lightbox-arrow next"><i class="fas fa-chevron-right"></i></div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-banner reveal">
+    <h2>See It in <span class="text-orange">Person</span></h2>
+    <p>Schedule a free facility tour and experience IronCore before you commit to anything.</p>
+    <div class="btn-group">
+      <a href="contact.html" class="btn btn-primary"><i class="fas fa-map-marker-alt"></i> Book a Tour</a>
+      <a href="pricing.html" class="btn btn-outline">View Membership Plans</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">Iron<span>Core</span> Fitness</div>
+        <p>We build champions. Since 2009, IronCore has been the premier destination for elite fitness, expert coaching, and real results.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="pricing.html">Membership</a></li>
+          <li><a href="trainers.html">Trainers</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="programs.html">Strength Training</a></li>
+          <li><a href="programs.html">CrossFit</a></li>
+          <li><a href="programs.html">Cardio Blast</a></li>
+          <li><a href="programs.html">Boxing</a></li>
+          <li><a href="programs.html">Yoga & Mobility</a></li>
+          <li><a href="programs.html">Personal Training</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact & Hours</h4>
+        <div class="footer-contact-item">
+          <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="info"><strong>Address</strong>847 Iron District, Downtown Core, NY 10001</div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="icon"><i class="fas fa-phone"></i></div>
+          <div class="info"><strong>Phone</strong>+1 (212) 555-IRON</div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="icon"><i class="fas fa-clock"></i></div>
+          <div class="info"><strong>Hours</strong>Mon–Fri: 5am–11pm · Sat–Sun: 6am–9pm</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 <span>IronCore Fitness</span>. All rights reserved.</p>
+      <p>Designed with <span>♥</span> for champions.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Menu — Aunty Q Recipes Kitchens</title>
+  <meta name="description" content="Explore the full menu at Aunty Q Recipes Kitchens — Siuyuk specials, noodles, rice dishes, fusion, desserts and drinks." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-chopsticks"></div>
+        <div class="nav-logo-text">
+          <span class="logo-name">Aunty Q</span>
+          <span class="logo-sub">Recipes Kitchens</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="menu.html" class="nav-link active">Menu</a></li>
+        <li><a href="branches.html" class="nav-link">Branches</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" aria-label="Close menu">&#10005;</button>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html" class="active">Menu</a></li>
+      <li><a href="branches.html">Branches</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p class="mobile-nav-tagline">妈妈的味道</p>
+  </div>
+
+  <!-- ===== PAGE HERO ===== -->
+  <div class="page-hero page-hero--dark">
+    <div class="page-hero-content" style="padding-top:120px; padding-bottom:60px;">
+      <span class="section-label" style="margin-bottom:16px;">Aunty Q Recipes Kitchens</span>
+      <h1>Our Menu</h1>
+      <p>Heritage flavours, creative twists, and legendary Siuyuk — all under one roof.</p>
+    </div>
+  </div>
+
+  <!-- ===== MENU SECTION ===== -->
+  <section class="section section--bg">
+    <div class="container">
+
+      <!-- Tab Filter -->
+      <div class="menu-tabs">
+        <button class="menu-tab active" data-filter="all">All</button>
+        <button class="menu-tab" data-filter="siuyuk">🍖 Siuyuk Specials</button>
+        <button class="menu-tab" data-filter="noodles">🍜 Noodles</button>
+        <button class="menu-tab" data-filter="rice">🍚 Rice</button>
+        <button class="menu-tab" data-filter="fusion">🥘 Fusion</button>
+        <button class="menu-tab" data-filter="desserts">🍰 Desserts</button>
+        <button class="menu-tab" data-filter="drinks">🧃 Drinks</button>
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="grid-3" id="menuGrid">
+
+        <!-- ===== SIUYUK ===== -->
+        <div class="card menu-card reveal" data-category="siuyuk">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80"
+              alt="Siuyuk Wantan Mee"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Must Try</span>
+            <h3>Siuyuk Wantan Mee</h3>
+            <p>Crispy roast pork + silky noodles + crispy dumplings. No char siew needed — this is the real deal.</p>
+            <p class="card-price">RM 12 – 16</p>
+          </div>
+        </div>
+
+        <div class="card menu-card reveal" data-category="siuyuk">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1574653853027-5382a3d23a15?auto=format&fit=crop&w=800&q=80"
+              alt="Siuyuk Nasi Lemak"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Customer Fave</span>
+            <h3>Siuyuk Nasi Lemak</h3>
+            <p>Fragrant coconut rice + sambal + signature Siuyuk. The national dish, elevated to new heights.</p>
+            <p class="card-price">RM 14 – 18</p>
+          </div>
+        </div>
+
+        <div class="card menu-card reveal" data-category="siuyuk">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80"
+              alt="Siuyuk Cake"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Only at Aunty Q</span>
+            <h3>Siuyuk Cake 🎂</h3>
+            <p>Aunty Q's iconic savoury roast pork cake. The dish that broke the internet. Ask staff for today's creation.</p>
+            <p class="card-price">Ask Staff</p>
+          </div>
+        </div>
+
+        <div class="card menu-card reveal" data-category="siuyuk">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=800&q=80"
+              alt="Siuyuk Sushi"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Fusion Hit</span>
+            <h3>Siuyuk Sushi</h3>
+            <p>BBQ-style sushi rolls reimagined with our signature crispy roast pork. East meets East.</p>
+            <p class="card-price">RM 14 – 18</p>
+          </div>
+        </div>
+
+        <div class="card menu-card reveal" data-category="siuyuk">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&w=800&q=80"
+              alt="Siuyuk Burger"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Crowd Pleaser</span>
+            <h3>Siuyuk Burger</h3>
+            <p>Crispy roast pork patty in a toasted bun. Bold, satisfying, and unlike any burger you've had before.</p>
+            <p class="card-price">RM 14 – 18</p>
+          </div>
+        </div>
+
+        <div class="card menu-card reveal" data-category="siuyuk">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80"
+              alt="Siuyuk BBQ Steamed Buns"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Heritage Fave</span>
+            <h3>Siuyuk BBQ Steamed Buns</h3>
+            <p>Fluffy bao filled with BBQ roast pork. Soft on the outside, flavour-packed on the inside.</p>
+            <p class="card-price">RM 12 – 16</p>
+          </div>
+        </div>
+
+        <div class="card menu-card reveal" data-category="siuyuk">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80"
+              alt="Siuyuk Porridge"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Comfort Food</span>
+            <h3>Siuyuk Porridge</h3>
+            <p>Comforting congee topped with crispy pork — the perfect warm bowl for any time of day.</p>
+            <p class="card-price">RM 10 – 14</p>
+          </div>
+        </div>
+
+        <!-- ===== NOODLES ===== -->
+        <div class="card menu-card reveal" data-category="noodles">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1557872943-16a5ac26437e?auto=format&fit=crop&w=800&q=80"
+              alt="Korean BBQ Ramen"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Korean Fusion</span>
+            <h3>Korean BBQ Ramen</h3>
+            <p>Rich Korean-inspired ramen with BBQ pork. Deep, bold broth with perfectly chewy noodles.</p>
+            <p class="card-price">RM 16 – 20</p>
+          </div>
+        </div>
+
+        <div class="card menu-card reveal" data-category="noodles">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=80"
+              alt="Mala Stir Noodles"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Spicy</span>
+            <h3>Mala Stir Noodles</h3>
+            <p>Numbing, spicy mala-tossed noodles. Bold Sichuan-inspired flavours with a Penang twist.</p>
+            <p class="card-price">RM 14 – 18</p>
+          </div>
+        </div>
+
+        <div class="card menu-card reveal" data-category="noodles">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=80"
+              alt="QQ Wantan Mee"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Classic</span>
+            <h3>QQ Wantan Mee</h3>
+            <p>Classic springy wonton noodles — a clean, satisfying bowl that never disappoints.</p>
+            <p class="card-price">RM 10 – 14</p>
+          </div>
+        </div>
+
+        <div class="card menu-card reveal" data-category="noodles">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1557872943-16a5ac26437e?auto=format&fit=crop&w=800&q=80"
+              alt="Papa Thai Tomyam Soup Noodles"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Thai Fusion</span>
+            <h3>Papa Thai Tomyam Soup Noodles</h3>
+            <p>Tangy Thai tomyam noodle soup. Aromatic, spicy, and deeply satisfying.</p>
+            <p class="card-price">RM 14 – 18</p>
+          </div>
+        </div>
+
+        <div class="card menu-card reveal" data-category="noodles">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=80"
+              alt="DIY Your Own Noodle"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Customisable</span>
+            <h3>DIY Your Own Noodle</h3>
+            <p>Pick your noodle, broth, and toppings. Your bowl, your way — endless combinations await.</p>
+            <p class="card-price">From RM 12</p>
+          </div>
+        </div>
+
+        <!-- ===== RICE ===== -->
+        <div class="card menu-card reveal" data-category="rice">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1617196034183-421b4040ed20?auto=format&fit=crop&w=800&q=80"
+              alt="Korean Hot Fried Rice with Siuyuk"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Bestseller</span>
+            <h3>Korean Hot Fried Rice with Siuyuk</h3>
+            <p>Korean-style fried rice crowned with our signature roast pork. East meets East at its finest.</p>
+            <p class="card-price">RM 18.80</p>
+          </div>
+        </div>
+
+        <div class="card menu-card reveal" data-category="rice">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80"
+              alt="Sesame Oil Chicken Rice"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Heritage</span>
+            <h3>Sesame Oil Chicken Rice</h3>
+            <p>Fragrant sesame chicken on steamed rice. A timeless recipe straight from the family kitchen.</p>
+            <p class="card-price">RM 14 – 18</p>
+          </div>
+        </div>
+
+        <div class="card menu-card reveal" data-category="rice">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1574653853027-5382a3d23a15?auto=format&fit=crop&w=800&q=80"
+              alt="Japanese Curry Crumbed Fish Rice"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Japanese Fusion</span>
+            <h3>Japanese Curry Crumbed Fish Rice</h3>
+            <p>Crispy fish, rich Japanese curry, rice &amp; pickled veggies. A crowd-pleasing fusion favourite.</p>
+            <p class="card-price">RM 16 – 20</p>
+          </div>
+        </div>
+
+        <div class="card menu-card reveal" data-category="rice">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1617196034183-421b4040ed20?auto=format&fit=crop&w=800&q=80"
+              alt="QQ Sambal Udang with Rice"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Penang Heritage</span>
+            <h3>QQ Sambal Udang with Rice</h3>
+            <p>Sambal prawn rice — bold, spicy, and utterly satisfying. A true Penang classic reimagined.</p>
+            <p class="card-price">RM 16.80</p>
+          </div>
+        </div>
+
+        <div class="card menu-card reveal" data-category="rice">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1617196034183-421b4040ed20?auto=format&fit=crop&w=800&q=80"
+              alt="Siuyuk Pasta"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Unique</span>
+            <h3>Siuyuk Pasta</h3>
+            <p>Roast pork pasta with red sauce. When Italian meets Penang — a bold, satisfying fusion creation.</p>
+            <p class="card-price">RM 16 – 20</p>
+          </div>
+        </div>
+
+        <!-- ===== FUSION ===== -->
+        <div class="card menu-card reveal" data-category="fusion">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1617196034183-421b4040ed20?auto=format&fit=crop&w=800&q=80"
+              alt="Mala Pot"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Spicy &amp; Bold</span>
+            <h3>Mala Pot</h3>
+            <p>Spicy numbing mala stir-fry with your choice of protein. Fiery, aromatic, and completely addictive.</p>
+            <p class="card-price">RM 18 – 26</p>
+          </div>
+        </div>
+
+        <div class="card menu-card reveal" data-category="fusion">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&w=800&q=80"
+              alt="Curry Chicken Mantou"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Street Food Vibes</span>
+            <h3>Curry Chicken Mantou</h3>
+            <p>Fluffy fried bao with rich curry chicken. Comfort food at its most indulgent.</p>
+            <p class="card-price">RM 14 – 18</p>
+          </div>
+        </div>
+
+        <div class="card menu-card reveal" data-category="fusion">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1617196034183-421b4040ed20?auto=format&fit=crop&w=800&q=80"
+              alt="Assam Belai"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Nyonya Style</span>
+            <h3>Assam Belai</h3>
+            <p>Nyonya-style sour fish — a beautifully tangy, aromatic dish with deep Penang heritage roots.</p>
+            <p class="card-price">RM 16 – 22</p>
+          </div>
+        </div>
+
+        <div class="card menu-card reveal" data-category="fusion">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80"
+              alt="Pork Trotter Vinegar"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Hakka Heritage</span>
+            <h3>Pork Trotter Vinegar</h3>
+            <p>Traditional Hakka pork trotter in black vinegar. Rich, warming, and deeply traditional.</p>
+            <p class="card-price">RM 22 – 28</p>
+          </div>
+        </div>
+
+        <div class="card menu-card reveal" data-category="fusion">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1557872943-16a5ac26437e?auto=format&fit=crop&w=800&q=80"
+              alt="Clam Soup"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Light &amp; Soothing</span>
+            <h3>Clam Soup</h3>
+            <p>Fresh clams in soothing herbal broth. Clean, delicate, and nourishing — perfect as a starter.</p>
+            <p class="card-price">RM 16 – 22</p>
+          </div>
+        </div>
+
+        <div class="card menu-card reveal" data-category="fusion">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1617196034183-421b4040ed20?auto=format&fit=crop&w=800&q=80"
+              alt="Rojak"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Malaysian Classic</span>
+            <h3>Rojak</h3>
+            <p>Fresh fruit &amp; veg in sweet-savoury shrimp paste sauce. A burst of Penang flavour in every bite.</p>
+            <p class="card-price">RM 10 – 14</p>
+          </div>
+        </div>
+
+        <!-- ===== DESSERTS ===== -->
+        <div class="card menu-card reveal" data-category="desserts">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=80"
+              alt="Complimentary Ice Cream"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge" style="background:var(--gold); color:var(--bg);">Complimentary</span>
+            <h3>Complimentary Ice Cream 😊</h3>
+            <p>A sweet little surprise, on the house. Because every great meal deserves a sweet ending.</p>
+            <p class="card-price">On the House!</p>
+          </div>
+        </div>
+
+        <div class="card menu-card reveal" data-category="desserts">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=80"
+              alt="Chendol"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Penang Classic</span>
+            <h3>Chendol</h3>
+            <p>Classic Penang chendol — pandan jelly noodles, coconut milk, and rich gula melaka. Perfectly refreshing.</p>
+            <p class="card-price">RM 6 – 8</p>
+          </div>
+        </div>
+
+        <div class="card menu-card reveal" data-category="desserts">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80"
+              alt="Siuyuk Cake Dessert Edition"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Seasonal Special</span>
+            <h3>Siuyuk Cake Dessert Edition</h3>
+            <p>Ask staff for today's special creation. The Aunty Q Siuyuk Cake is always something new and surprising.</p>
+            <p class="card-price">Seasonal</p>
+          </div>
+        </div>
+
+        <!-- ===== DRINKS ===== -->
+        <div class="card menu-card reveal" data-category="drinks">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=80"
+              alt="Iced Milk Tea"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Popular</span>
+            <h3>Iced Milk Tea</h3>
+            <p>Creamy, perfectly brewed milk tea served over ice. The ideal companion to any Aunty Q meal.</p>
+            <p class="card-price">RM 5 – 7</p>
+          </div>
+        </div>
+
+        <div class="card menu-card reveal" data-category="drinks">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=80"
+              alt="Fresh Lime Juice"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Refreshing</span>
+            <h3>Fresh Lime Juice</h3>
+            <p>Freshly squeezed lime juice — bright, zingy, and perfectly refreshing on a Penang afternoon.</p>
+            <p class="card-price">RM 4 – 5</p>
+          </div>
+        </div>
+
+        <div class="card menu-card reveal" data-category="drinks">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=80"
+              alt="Hot or Iced Coffee"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Classic</span>
+            <h3>Hot / Iced Coffee</h3>
+            <p>Rich, aromatic coffee — served hot or iced. The perfect way to start or end your Aunty Q experience.</p>
+            <p class="card-price">RM 4 – 6</p>
+          </div>
+        </div>
+
+        <div class="card menu-card reveal" data-category="drinks">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=80"
+              alt="Korean Soft Drinks"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Korean Vibes</span>
+            <h3>Korean Soft Drinks</h3>
+            <p>A selection of popular Korean soft drinks — the perfect pairing for our Korean-inspired dishes.</p>
+            <p class="card-price">RM 5 – 7</p>
+          </div>
+        </div>
+
+        <div class="card menu-card reveal" data-category="drinks">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=80"
+              alt="Mineral Water"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="card-body">
+            <span class="card-badge">Essential</span>
+            <h3>Mineral Water</h3>
+            <p>Still mineral water — the simplest choice, always available.</p>
+            <p class="card-price">RM 2 – 3</p>
+          </div>
+        </div>
+
+      </div><!-- end menu grid -->
+
+      <!-- Menu Note -->
+      <div style="margin-top:56px; padding:28px 32px; background:var(--surface); border:1px solid var(--border); border-radius:14px; text-align:center;">
+        <p style="font-size:15px; color:var(--muted); line-height:1.8;">
+          🍽️ <strong style="color:var(--cream);">Menu Note:</strong> Menu may vary by branch and season. Prices are approximate. Please inform our staff of any dietary requirements. <strong style="color:var(--red);">Pork is served at all Aunty Q outlets.</strong>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== DELIVERY CTA ===== -->
+  <section class="delivery-cta">
+    <div class="container">
+      <h2>Order Online — We Deliver to You!</h2>
+      <p>Aunty Q is now on food delivery platforms. Fresh, hot Siuyuk delivered to your door.</p>
+      <div class="delivery-buttons">
+        <a href="#" class="btn btn-dark-outline">Order on Foodpanda</a>
+        <a href="#" class="btn btn-dark-outline">Order on GrabFood</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <span class="logo-name">Aunty Q</span>
+            <span class="logo-sub">Recipes Kitchens</span>
+          </div>
+          <p class="footer-chinese">小时候的回忆，妈妈的味道</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/auntyqrecipeskitchen" target="_blank" rel="noopener" class="social-btn">📷 Instagram</a>
+            <a href="https://www.facebook.com/auntyQrecipes" target="_blank" rel="noopener" class="social-btn">👍 Facebook</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="branches.html">Branches</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Juru Branch</h4>
+          <div class="footer-contact">
+            <div class="footer-contact-row">
+              <span>📍</span>
+              <span>Juru Sentral Jaya, Bukit Mertajam, 14100 Penang, Malaysia</span>
+            </div>
+            <div class="footer-contact-row">
+              <span>📞</span>
+              <a href="tel:+60164313555">+60 16-431 3555</a>
+            </div>
+            <div class="footer-contact-row">
+              <span>💬</span>
+              <a href="https://wa.me/60164313555" target="_blank" rel="noopener">WhatsApp Us</a>
+            </div>
+            <div class="footer-contact-row">
+              <span>🕐</span>
+              <span>Mon–Fri: 11AM–10PM<br/>Sat–Sun: 10AM–10PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 Aunty Q Recipes Kitchens Sdn. Bhd. (1305179-A) | All Rights Reserved | Penang, Malaysia</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

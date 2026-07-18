@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en-MY">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Zaleena Nasi Kukus — Authentic traditional Malay steamed rice restaurant in Cybersouth, Dengkil, Selangor. Rated 4.8★ for warm, family-friendly kampung dining." />
+  <meta name="theme-color" content="#3f5e3a" />
+  <title>Zaleena Nasi Kukus | Authentic Kampung Flavours — Cybersouth, Dengkil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============================================================
+     DESKTOP NAVIGATION — Scalloped Wavy Bottom Edge
+     ============================================================ -->
+<nav id="main-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <!-- Logo -->
+    <a href="#home" class="nav-logo" data-page="home" aria-label="Zaleena Nasi Kukus — Home">
+      <div class="nav-logo-icon" aria-hidden="true">🍚</div>
+      <div class="nav-logo-text">
+        <span>Zaleena</span>
+        <span>Nasi Kukus</span>
+      </div>
+    </a>
+
+    <!-- Nav Links -->
+    <ul class="nav-links" role="list">
+      <li><a href="#home"    data-page="home"    class="active">Home</a></li>
+      <li><a href="#about"   data-page="about">About</a></li>
+      <li><a href="#menu"    data-page="menu">Menu</a></li>
+      <li><a href="#gallery" data-page="gallery">Gallery</a></li>
+      <li><a href="#contact" data-page="contact">Contact</a></li>
+      <li>
+        <a href="https://wa.me/601327777280?text=Hi%20Zaleena%2C%20I%20would%20like%20to%20order!"
+           target="_blank" rel="noopener noreferrer"
+           class="nav-cta">
+          📱 Order WhatsApp
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============================================================
+     MOBILE FLOATING RADIAL FAB MENU
+     ============================================================ -->
+<div id="fab-container" aria-label="Navigation menu" role="navigation">
+  <!-- FAB Items (fan arc upward) — 4 items -->
+  <div class="fab-items" aria-hidden="true">
+    <a href="#home"    data-page="home"    class="fab-item" title="Home">
+      <span>🏠</span>
+      <span class="fab-label">Home</span>
+    </a>
+    <a href="#menu"    data-page="menu"    class="fab-item" title="Menu">
+      <span>🍛</span>
+      <span class="fab-label">Menu</span>
+    </a>
+    <a href="#about"   data-page="about"   class="fab-item" title="About">
+      <span>🌿</span>
+      <span class="fab-label">About</span>
+    </a>
+    <a href="#contact" data-page="contact" class="fab-item" title="Contact">
+      <span>📍</span>
+      <span class="fab-label">Contact</span>
+    </a>
+  </div>
+  <!-- Toggle Button -->
+  <button id="fab-toggle" aria-expanded="false" aria-controls="fab-items" aria-label="Toggle navigation menu">
+    🍚
+  </button>
+</div>
+
+<!-- Sticky WhatsApp — Mobile -->
+<a id="sticky-wa"
+   href="https://wa.me/601327777280?text=Hi%20Zaleena%2C%20I%20would%20like%20to%20order!"
+   target="_blank" rel="noopener noreferrer"
+   aria-label="Order via WhatsApp">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+  Order via WhatsApp
+</a>
+
+
+<!-- ============================================================
+     PAGE: HOME
+     ============================================================ -->
+<main id="page-home" class="page active" role="main">
+
+  <!-- ── HERO ── -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <!-- Steam Wisps Animation -->
+    <div class="steam-container" aria-hidden="true">
+      <div class="steam-wisp"></div>
+      <div class="steam-wisp"></div>
+      <div class="steam-wisp"></div>
+      <div class="steam-wisp"></div>
+      <div class="steam-wisp"></div>
+      <div class="steam-wisp"></div>
+      <div class="steam-wisp"></div>
+      <div class="steam-wisp"></div>
+      <div class="steam-wisp"></div>
+      <div class="steam-wisp"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <div class="hero-tag" aria-label="Located in Cybersouth, Dengkil">
+        📍 Cybersouth, Dengkil · Selangor
+      </div>
+      <h1 class="hero-title" id="hero-title">
+        Rasa Masakan<br/>
+        <em>Ibu di Rumah</em>
+      </h1>
+      <p class="hero-subtitle">
+        Fragrant steamed rice, soul-warming kampung flavours — 
+        served with love since the very first grain.
+      </p>
+      <div class="hero-btns">
+        <a href="#menu" data-page="menu" class="btn-primary">
+          🍛 View Menu
+        </a>
+        <a href="https://wa.me/601327777280?text=Hi%20Zaleena%2C%20I%20would%20like%20to%20order!"
+           target="_blank" rel="noopener noreferrer"
+           class="btn-outline">
+          📱 Order via WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>Scroll Down</span>
+      <span class="scroll-arrow">↓</span>
+    </div>
+  </section>
+
+  <!-- ── Organic Blob Divider ── -->
+  <div class="organic-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,80 C180,20 360,60 540,30 C720,0 900,55 1080,25 C1260,-5 1360,45 1440,30 L1440,80 Z" fill="#f7ecd9"/>
+    </svg>
+  </div>
+
+  <!-- ── Rating & About Blob ── -->
+  <section class="rating-blob-section" aria-labelledby="rating-title">
+    <div class="rating-blob-inner">
+      <!-- Blob Image -->
+      <div class="rating-blob-visual">
+        <div class="blob-img-wrap">
+          <img src="https://images.pexels.com/photos/37051562/pexels-photo-37051562.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=600"
+               alt="Traditional Malaysian rice spread with fried chicken and sides on banana leaf"
+               loading="lazy" width="600" height="600" />
+        </div>
+        <div class="rating-badge" role="img" aria-label="4.8 star rating">
+          <span class="stars">★★★★★</span>
+          <span class="num">4.8</span>
+          <span class="lbl">Rating</span>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="rating-text">
+        <span class="section-tag">Beloved by the Community</span>
+        <h2 class="section-title" id="rating-title">
+          Where Every Plate Feels Like<br/>
+          <span>Coming Home</span>
+        </h2>
+        <p class="section-intro" style="max-width:460px; margin:0.9rem 0 0; text-align:left;">
+          Nestled in the heart of Cybersouth, Zaleena Nasi Kukus has earned its 
+          <strong>4.8-star reputation</strong> through generations of authentic kampung recipes, 
+          the finest steamed rice, and a warmth that keeps families returning — meal after meal.
+        </p>
+        <div class="feature-chips" role="list">
+          <span class="chip" role="listitem">🌿 Authentic Kampung Recipes</span>
+          <span class="chip" role="listitem">👨‍👩‍👧 Family-Friendly</span>
+          <span class="chip" role="listitem">🍚 Signature Nasi Kukus</span>
+          <span class="chip" role="listitem">⭐ 4.8-Star Rated</span>
+          <span class="chip" role="listitem">🏡 Homely Atmosphere</span>
+        </div>
+        <div style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;">
+          <a href="#about" data-page="about" class="btn-primary">Our Story →</a>
+          <a href="#menu"  data-page="menu"  class="btn-outline">View Menu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Organic Divider ── -->
+  <div class="organic-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,20 C240,80 480,0 720,40 C960,80 1200,10 1440,50 L1440,80 L0,80 Z" fill="#3f5e3a"/>
+    </svg>
+  </div>
+
+  <!-- ── Featured Menu Teaser ── -->
+  <section class="featured-teaser" aria-labelledby="teaser-title">
+    <span class="section-tag" style="background:rgba(199,107,63,0.2); border-color:rgba(199,107,63,0.4); color:#e8956a;">Today's Favourites</span>
+    <h2 class="section-title" id="teaser-title">
+      Taste What Everyone's<br/><span>Talking About</span>
+    </h2>
+    <p class="section-intro">
+      From fall-off-the-bone ayam to rich, aromatic curries — 
+      every dish is crafted with heart and served straight from our kampung kitchen.
+    </p>
+
+    <div class="teaser-grid">
+      <!-- Card 1 -->
+      <article class="teaser-card">
+        <div class="teaser-card-img">
+          <img src="https://images.pexels.com/photos/36889795/pexels-photo-36889795.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=400"
+               alt="Nasi Kukus Ayam Goreng — signature steamed rice with fried chicken"
+               loading="lazy" width="400" height="300" />
+        </div>
+        <div class="teaser-card-body">
+          <h3>Nasi Kukus Ayam Goreng</h3>
+          <p>Fragrant steamed rice paired with our legendary crispy golden-fried chicken.</p>
+          <div class="teaser-price">From RM 9.00</div>
+        </div>
+      </article>
+      <!-- Card 2 -->
+      <article class="teaser-card">
+        <div class="teaser-card-img">
+          <img src="https://images.pexels.com/photos/3423498/pexels-photo-3423498.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=400"
+               alt="Rendang Daging — slow-cooked rich beef rendang"
+               loading="lazy" width="400" height="300" />
+        </div>
+        <div class="teaser-card-body">
+          <h3>Nasi Kukus Rendang</h3>
+          <p>Slow-cooked, deeply spiced beef rendang on fluffy steamed rice. Pure kampung comfort.</p>
+          <div class="teaser-price">From RM 12.00</div>
+        </div>
+      </article>
+      <!-- Card 3 -->
+      <article class="teaser-card">
+        <div class="teaser-card-img">
+          <img src="https://images.pexels.com/photos/36075834/pexels-photo-36075834.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=400"
+               alt="Kari Ayam — Malaysian chicken curry"
+               loading="lazy" width="400" height="300" />
+        </div>
+        <div class="teaser-card-body">
+          <h3>Nasi Kukus Kari Ayam</h3>
+          <p>Rich golden coconut chicken curry poured over warm steamed rice. Simply irresistible.</p>
+          <div class="teaser-price">From RM 10.00</div>
+        </div>
+      </article>
+    </div>
+
+    <a href="#menu" data-page="menu" class="btn-primary" style="font-size:1rem; padding:0.9rem 2.2rem;">
+      Explore Full Menu →
+    </a>
+  </section>
+
+  <!-- ── Organic Divider ── -->
+  <div class="organic-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,60 C360,0 720,80 1080,20 C1260,0 1380,50 1440,30 L1440,80 L0,80 Z" fill="#f7ecd9"/>
+    </svg>
+  </div>
+
+  <!-- ── CTA strip ── -->
+  <section style="background:var(--cream-light); padding:4rem 1.5rem; text-align:center;" aria-labelledby="cta-title">
+    <h2 class="section-title" id="cta-title" style="margin-bottom:1rem;">
+      Ready to <span>Come Dine</span> With Us?
+    </h2>
+    <p style="color:var(--brown-light); margin-bottom:2rem; font-size:1.05rem;">
+      Walk in or order ahead — we can't wait to serve you a plate of kampung love.
+    </p>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <a href="https://wa.me/601327777280?text=Hi%20Zaleena%2C%20I%20would%20like%20to%20order!"
+         target="_blank" rel="noopener noreferrer"
+         class="btn-whatsapp" style="font-size:1rem;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        Order via WhatsApp
+      </a>
+      <a href="#contact" data-page="contact" class="btn-outline">📍 Find Us</a>
+    </div>
+  </section>
+
+</main><!-- /page-home -->
+
+
+<!-- ============================================================
+     PAGE: ABOUT
+     ============================================================ -->
+<main id="page-about" class="page" role="main" style="display:none;">
+
+  <!-- Hero Banner -->
+  <section class="about-hero" aria-labelledby="about-title">
+    <span class="section-tag">Our Story</span>
+    <h1 class="section-title" id="about-title">A Kitchen Born from<br/><span>Kampung Roots</span></h1>
+    <p class="section-intro">
+      From Mak's wooden stove to our beloved restaurant in Cybersouth — 
+      every grain of rice carries the soul of home cooking.
+    </p>
+  </section>
+
+  <!-- Organic Divider -->
+  <div class="organic-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 C300,80 600,0 900,50 C1100,80 1300,20 1440,45 L1440,80 L0,80 Z" fill="#f7ecd9"/>
+    </svg>
+  </div>
+
+  <!-- Story Section -->
+  <section class="about-story">
+    <div class="about-story-inner">
+      <!-- Text -->
+      <div>
+        <span class="section-tag">The Beginning</span>
+        <h2 class="section-title" style="font-size:clamp(1.6rem,4vw,2.4rem); margin-bottom:1.5rem;">
+          More Than a Restaurant — <span>A Family Legacy</span>
+        </h2>
+        <p>
+          Zaleena Nasi Kukus was born from a mother's desire to share the food she grew 
+          up making in her kampung — recipes passed down through generations, never written, 
+          only felt. <strong>Every dish is a memory</strong>, every spice a story.
+        </p>
+        <p>
+          Located at <strong>Park Place 1@Cybersouth</strong>, our restaurant has become a 
+          cornerstone of the Dengkil community. Families drive from Putrajaya, Kajang, 
+          and Kuala Lumpur for a plate of our signature Nasi Kukus — fragrant steamed rice 
+          that fills not just the stomach, but the soul.
+        </p>
+        <p>
+          We believe in cooking slowly, with care. Our ayam is marinated overnight. 
+          Our rendang simmers for hours. Our sambal is ground fresh each morning. 
+          <strong>There are no shortcuts to authentic taste.</strong>
+        </p>
+        <p>
+          With a <strong>4.8-star rating</strong> earned purely through the love of our 
+          customers, we remain humble — grateful for every diner who sits at our table 
+          and every order that travels back to your home.
+        </p>
+        <div style="margin-top:2rem;">
+          <a href="#menu" data-page="menu" class="btn-primary">View Our Menu →</a>
+        </div>
+      </div>
+
+      <!-- Blob Image Grid -->
+      <div class="about-story-imgs" aria-label="Restaurant and kitchen photos">
+        <div class="about-blob-img">
+          <img src="https://images.pexels.com/photos/33137968/pexels-photo-33137968.png?auto=compress&cs=tinysrgb&fit=crop&h=360&w=300"
+               alt="Warm, cosy dining room with traditional Asian décor"
+               loading="lazy" width="300" height="180" />
+        </div>
+        <div class="about-blob-img">
+          <img src="https://images.pexels.com/photos/36072689/pexels-photo-36072689.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=360&w=300"
+               alt="Family gathering around a festive traditional meal"
+               loading="lazy" width="300" height="180" />
+        </div>
+        <div class="about-blob-img">
+          <img src="https://images.pexels.com/photos/20214475/pexels-photo-20214475.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=360&w=300"
+               alt="Traditional banana leaf food preparation by hand"
+               loading="lazy" width="300" height="180" />
+        </div>
+        <div class="about-blob-img">
+          <img src="https://images.pexels.com/photos/37051566/pexels-photo-37051566.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=360&w=300"
+               alt="Indonesian-style traditional meal spread on wooden table"
+               loading="lazy" width="300" height="180" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Organic Divider -->
+  <div class="organic-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,50 C200,0 500,80 800,30 C1100,-20 1300,60 1440,20 L1440,80 L0,80 Z" fill="#c76b3f"/>
+    </svg>
+  </div>
+
+  <!-- Values -->
+  <section class="values-section" aria-labelledby="values-title">
+    <span class="section-tag" style="background:rgba(247,236,217,0.15); border-color:rgba(247,236,217,0.3); color:var(--cream);">Our Promise</span>
+    <h2 class="section-title" id="values-title">What Makes Us <span style="color:var(--cream-dark);">Zaleena</span></h2>
+    <p class="section-intro">The values we cook by, every single day.</p>
+
+    <div class="values-grid">
+      <article class="value-card">
+        <div class="icon" aria-hidden="true">🌾</div>
+        <h3>Freshness First</h3>
+        <p>We source our rice and produce daily. Nothing sits overnight. Every plate is freshly prepared.</p>
+      </article>
+      <article class="value-card">
+        <div class="icon" aria-hidden="true">👨‍👩‍👧‍👦</div>
+        <h3>Family at Heart</h3>
+        <p>Our restaurant is family-run, family-friendly, and built for families to create memories over a shared plate.</p>
+      </article>
+      <article class="value-card">
+        <div class="icon" aria-hidden="true">🪔</div>
+        <h3>Traditional Recipes</h3>
+        <p>No shortcuts, no shortcuts — only ancestral techniques and spice blends that have never changed.</p>
+      </article>
+      <article class="value-card">
+        <div class="icon" aria-hidden="true">🤲</div>
+        <h3>Cooked with Love</h3>
+        <p>We believe food made with good intention tastes better. Every dish leaves our kitchen with a prayer.</p>
+      </article>
+      <article class="value-card">
+        <div class="icon" aria-hidden="true">💬</div>
+        <h3>Community First</h3>
+        <p>Zaleena grew because of our community. We give back through affordable, generous portions every day.</p>
+      </article>
+      <article class="value-card">
+        <div class="icon" aria-hidden="true">🌿</div>
+        <h3>Kampung Spirit</h3>
+        <p>That warm, unhurried feeling of a village kitchen — we carry it in every corner of our restaurant.</p>
+      </article>
+    </div>
+  </section>
+
+</main><!-- /page-about -->
+
+
+<!-- ============================================================
+     PAGE: MENU — FLIP CARDS
+     ============================================================ -->
+<main id="page-menu" class="page" role="main" style="display:none;">
+
+  <!-- Hero Banner -->
+  <section class="menu-hero" aria-labelledby="menu-title">
+    <span class="section-tag" style="background:rgba(199,107,63,0.25); border-color:rgba(199,107,63,0.45); color:#e8956a;">Our Menu</span>
+    <h1 class="section-title" id="menu-title">
+      <span style="color:var(--cream);">A Feast of</span> <span style="color:var(--terra-light); font-style:italic;">Kampung Flavours</span>
+    </h1>
+    <p class="section-intro">
+      Tap a card to reveal the dish, description, and price. 
+      Every item is made fresh, seasoned with love.
+    </p>
+    <p class="flip-hint" style="color:rgba(247,236,217,0.5); justify-content:center; margin-top:0.75rem;">
+      <span>🔄</span> Tap or hover cards to flip
+    </p>
+  </section>
+
+  <!-- ── Organic Divider ── -->
+  <div class="organic-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C300,0 700,80 1000,20 C1200,-10 1350,60 1440,40 L1440,80 L0,80 Z" fill="#f7ecd9"/>
+    </svg>
+  </div>
+
+  <!-- ── NASI KUKUS MAINS ── -->
+  <section class="menu-section" aria-labelledby="cat-nasi">
+    <h2 class="menu-category-title" id="cat-nasi">🍚 Nasi Kukus Signatures</h2>
+    <div class="menu-grid" role="list">
+
+      <!-- Card 1 -->
+      <article class="flip-card" role="listitem" aria-label="Nasi Kukus Ayam Goreng">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://images.pexels.com/photos/36889795/pexels-photo-36889795.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400"
+                 alt="Steamed rice with golden fried chicken" loading="lazy" width="400" height="400" />
+            <div class="card-name-overlay">Nasi Kukus Ayam Goreng</div>
+          </div>
+          <div class="flip-card-back">
+            <div class="dish-icon" aria-hidden="true">🍗</div>
+            <h3>Nasi Kukus Ayam Goreng</h3>
+            <p>Fragrant steamed rice with our signature crispy golden fried chicken, served with sambal and fresh vegetables.</p>
+            <div class="price">RM 9.00 <span>/ plate</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="flip-card" role="listitem" aria-label="Nasi Kukus Rendang Daging">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://images.pexels.com/photos/3423498/pexels-photo-3423498.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400"
+                 alt="Beef rendang on steamed rice" loading="lazy" width="400" height="400" />
+            <div class="card-name-overlay">Nasi Kukus Rendang Daging</div>
+          </div>
+          <div class="flip-card-back">
+            <div class="dish-icon" aria-hidden="true">🥩</div>
+            <h3>Nasi Kukus Rendang Daging</h3>
+            <p>Slow-cooked beef rendang in rich, aromatic coconut and spice gravy over fluffy steamed rice.</p>
+            <div class="price">RM 12.00 <span>/ plate</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="flip-card" role="listitem" aria-label="Nasi Kukus Kari Ayam">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://images.pexels.com/photos/27023349/pexels-photo-27023349.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400"
+                 alt="Malaysian chicken curry with rice" loading="lazy" width="400" height="400" />
+            <div class="card-name-overlay">Nasi Kukus Kari Ayam</div>
+          </div>
+          <div class="flip-card-back">
+            <div class="dish-icon" aria-hidden="true">🍲</div>
+            <h3>Nasi Kukus Kari Ayam</h3>
+            <p>Creamy, golden coconut-based chicken curry poured generously over warm steamed rice.</p>
+            <div class="price">RM 10.00 <span>/ plate</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="flip-card" role="listitem" aria-label="Nasi Kukus Ayam Percik">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://images.pexels.com/photos/37106528/pexels-photo-37106528.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400"
+                 alt="Grilled chicken with spice sauce and rice" loading="lazy" width="400" height="400" />
+            <div class="card-name-overlay">Nasi Kukus Ayam Percik</div>
+          </div>
+          <div class="flip-card-back">
+            <div class="dish-icon" aria-hidden="true">🔥</div>
+            <h3>Nasi Kukus Ayam Percik</h3>
+            <p>Grilled chicken basted with our secret spiced coconut marinade, smoky, charred, and incredibly tender.</p>
+            <div class="price">RM 11.00 <span>/ plate</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="flip-card" role="listitem" aria-label="Nasi Kukus Gulai Ikan">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://images.pexels.com/photos/37051565/pexels-photo-37051565.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400"
+                 alt="Traditional Malaysian fish curry with rice" loading="lazy" width="400" height="400" />
+            <div class="card-name-overlay">Nasi Kukus Gulai Ikan</div>
+          </div>
+          <div class="flip-card-back">
+            <div class="dish-icon" aria-hidden="true">🐟</div>
+            <h3>Nasi Kukus Gulai Ikan</h3>
+            <p>Fresh fish simmered in a light, aromatic turmeric gulai broth with lemongrass and galangal.</p>
+            <div class="price">RM 10.00 <span>/ plate</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="flip-card" role="listitem" aria-label="Nasi Kukus Special">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://images.pexels.com/photos/37051562/pexels-photo-37051562.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400"
+                 alt="Special full rice spread with multiple dishes" loading="lazy" width="400" height="400" />
+            <div class="card-name-overlay">Nasi Kukus Special Zaleena</div>
+          </div>
+          <div class="flip-card-back">
+            <div class="dish-icon" aria-hidden="true">⭐</div>
+            <h3>Nasi Kukus Special Zaleena</h3>
+            <p>Our chef's pride — steamed rice served with ayam goreng, rendang, ulam, sambal, and a half egg. The ultimate feast.</p>
+            <div class="price">RM 15.00 <span>/ plate</span></div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ── Organic Divider ── -->
+  <div class="organic-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 C400,60 800,0 1200,35 C1320,45 1400,20 1440,30 L1440,60 L0,60 Z" fill="#eddfc8"/>
+    </svg>
+  </div>
+
+  <!-- ── SIDES & ADD-ONS ── -->
+  <section class="menu-section" style="background:var(--cream-dark);" aria-labelledby="cat-sides">
+    <h2 class="menu-category-title" id="cat-sides">🥬 Lauk & Tambahan (Sides & Add-ons)</h2>
+    <div class="menu-grid" role="list">
+
+      <article class="flip-card" role="listitem" aria-label="Sambal Belacan">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://images.pexels.com/photos/37068399/pexels-photo-37068399.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400"
+                 alt="Assortment of Malaysian side dishes" loading="lazy" width="400" height="400" />
+            <div class="card-name-overlay">Sambal Belacan</div>
+          </div>
+          <div class="flip-card-back">
+            <div class="dish-icon" aria-hidden="true">🌶️</div>
+            <h3>Sambal Belacan</h3>
+            <p>House-made fresh ground chilli paste with shrimp paste. Bold, fiery, and unmistakably Malay.</p>
+            <div class="price">RM 1.50 <span>/ serving</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="flip-card" role="listitem" aria-label="Telur Goreng">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://images.pexels.com/photos/37081081/pexels-photo-37081081.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400"
+                 alt="Fried egg on rice plate" loading="lazy" width="400" height="400" />
+            <div class="card-name-overlay">Telur Goreng</div>
+          </div>
+          <div class="flip-card-back">
+            <div class="dish-icon" aria-hidden="true">🍳</div>
+            <h3>Telur Goreng</h3>
+            <p>Perfectly fried kampung egg, crispy edges, runny yolk. The simplest pleasure on every plate.</p>
+            <div class="price">RM 2.00 <span>/ piece</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="flip-card" role="listitem" aria-label="Sayur Tumis">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://images.pexels.com/photos/37211465/pexels-photo-37211465.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400"
+                 alt="Stir-fried vegetables as side dish" loading="lazy" width="400" height="400" />
+            <div class="card-name-overlay">Sayur Tumis</div>
+          </div>
+          <div class="flip-card-back">
+            <div class="dish-icon" aria-hidden="true">🥦</div>
+            <h3>Sayur Tumis</h3>
+            <p>Seasonal stir-fried greens with garlic, oyster sauce, and a hint of dried shrimp. Garden-fresh daily.</p>
+            <div class="price">RM 3.00 <span>/ portion</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="flip-card" role="listitem" aria-label="Papadom">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://images.pexels.com/photos/36901189/pexels-photo-36901189.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400"
+                 alt="Crispy papadom side dish" loading="lazy" width="400" height="400" />
+            <div class="card-name-overlay">Papadom Rangup</div>
+          </div>
+          <div class="flip-card-back">
+            <div class="dish-icon" aria-hidden="true">🫓</div>
+            <h3>Papadom Rangup</h3>
+            <p>Extra-crispy fried papadom — the perfect crunch to complement every bite of steamed rice.</p>
+            <div class="price">RM 0.80 <span>/ piece</span></div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ── Organic Divider ── -->
+  <div class="organic-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,20 C200,60 500,0 750,40 C1000,80 1250,10 1440,35 L1440,60 L0,60 Z" fill="#f7ecd9"/>
+    </svg>
+  </div>
+
+  <!-- ── DRINKS ── -->
+  <section class="menu-section" aria-labelledby="cat-drinks">
+    <h2 class="menu-category-title" id="cat-drinks">🥤 Minuman (Drinks)</h2>
+    <div class="menu-grid" role="list">
+
+      <article class="flip-card" role="listitem" aria-label="Teh Tarik">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://images.pexels.com/photos/18048549/pexels-photo-18048549.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400"
+                 alt="Teh Tarik frothy pulled tea" loading="lazy" width="400" height="400" />
+            <div class="card-name-overlay">Teh Tarik</div>
+          </div>
+          <div class="flip-card-back">
+            <div class="dish-icon" aria-hidden="true">☕</div>
+            <h3>Teh Tarik</h3>
+            <p>Malaysia's beloved frothy pulled milk tea — rich, sweet, and foamy. The ultimate kampung companion.</p>
+            <div class="price">RM 3.00 <span>/ glass</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="flip-card" role="listitem" aria-label="Air Sejuk">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://images.pexels.com/photos/32612248/pexels-photo-32612248.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400"
+                 alt="Iced cold drinks refreshments" loading="lazy" width="400" height="400" />
+            <div class="card-name-overlay">Air Sejuk Pelbagai</div>
+          </div>
+          <div class="flip-card-back">
+            <div class="dish-icon" aria-hidden="true">🧊</div>
+            <h3>Air Sejuk Pelbagai</h3>
+            <p>Refreshing iced drinks — Bandung, Milo, Sirap Limau, and more. Cold, sweet, and satisfying.</p>
+            <div class="price">RM 2.50 <span>/ glass</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="flip-card" role="listitem" aria-label="Air Kosong">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://images.pexels.com/photos/32612250/pexels-photo-32612250.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400"
+                 alt="Herbal tea drinks" loading="lazy" width="400" height="400" />
+            <div class="card-name-overlay">Air Herba / Air Kosong</div>
+          </div>
+          <div class="flip-card-back">
+            <div class="dish-icon" aria-hidden="true">🌿</div>
+            <h3>Air Herba / Air Kosong</h3>
+            <p>Complimentary plain water, or try our light herbal infusions — naturally cooling and refreshing.</p>
+            <div class="price">RM 1.00 <span>/ glass</span></div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div style="text-align:center; margin-top:3rem;">
+      <a href="https://wa.me/601327777280?text=Hi%20Zaleena%2C%20I%20would%20like%20to%20order!"
+         target="_blank" rel="noopener noreferrer"
+         class="btn-whatsapp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        Order Your Favourites via WhatsApp
+      </a>
+    </div>
+  </section>
+
+</main><!-- /page-menu -->
+
+
+<!-- ============================================================
+     PAGE: GALLERY — Masonry + Lightbox
+     ============================================================ -->
+<main id="page-gallery" class="page" role="main" style="display:none;">
+
+  <!-- Hero Banner -->
+  <section class="gallery-hero" aria-labelledby="gallery-title">
+    <span class="section-tag" style="background:rgba(247,236,217,0.15); border-color:rgba(247,236,217,0.3); color:var(--cream);">Gallery</span>
+    <h1 class="section-title" id="gallery-title" style="color:var(--cream);">
+      A Feast for the <span style="color:var(--cream-dark); font-style:italic;">Eyes</span>
+    </h1>
+    <p class="section-intro">
+      Tap any photo to explore. Swipe left or right on mobile. Indulge your eyes before your appetite.
+    </p>
+  </section>
+
+  <!-- Organic Divider -->
+  <div class="organic-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,50 C360,0 720,80 1080,30 C1260,10 1380,60 1440,40 L1440,80 L0,80 Z" fill="#f7ecd9"/>
+    </svg>
+  </div>
+
+  <!-- Masonry Gallery -->
+  <section class="gallery-section">
+    <div class="masonry-grid" role="list" aria-label="Photo gallery of food and restaurant">
+
+      <div class="masonry-item" role="listitem" tabindex="0" aria-label="View full photo: Traditional Malaysian meal with fried chicken">
+        <img src="https://images.pexels.com/photos/36889795/pexels-photo-36889795.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=500&w=400"
+             alt="Delicious Malaysian meal with fried chicken and iced coffee" loading="lazy" width="400" height="500" />
+        <div class="masonry-item-overlay"><span>🔍 View</span></div>
+      </div>
+
+      <div class="masonry-item" role="listitem" tabindex="0" aria-label="View full photo: Indonesian feast spread">
+        <img src="https://images.pexels.com/photos/37068399/pexels-photo-37068399.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=380&w=400"
+             alt="Indonesian traditional feast with diverse rice dishes on table" loading="lazy" width="400" height="380" />
+        <div class="masonry-item-overlay"><span>🔍 View</span></div>
+      </div>
+
+      <div class="masonry-item" role="listitem" tabindex="0" aria-label="View full photo: Family gathering over traditional meal">
+        <img src="https://images.pexels.com/photos/36072689/pexels-photo-36072689.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=450&w=400"
+             alt="Family gathering around a festive traditional meal indoors" loading="lazy" width="400" height="450" />
+        <div class="masonry-item-overlay"><span>🔍 View</span></div>
+      </div>
+
+      <div class="masonry-item" role="listitem" tabindex="0" aria-label="View full photo: Nasi Padang with fried chicken and sides">
+        <img src="https://images.pexels.com/photos/37051562/pexels-photo-37051562.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=340&w=400"
+             alt="Traditional meal with rice, fried chicken and sides on banana leaf" loading="lazy" width="400" height="340" />
+        <div class="masonry-item-overlay"><span>🔍 View</span></div>
+      </div>
+
+      <div class="masonry-item" role="listitem" tabindex="0" aria-label="View full photo: Beef rendang with white rice">
+        <img src="https://images.pexels.com/photos/3423498/pexels-photo-3423498.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=520&w=400"
+             alt="Indonesian beef rendang served with rice on white plate" loading="lazy" width="400" height="520" />
+        <div class="masonry-item-overlay"><span>🔍 View</span></div>
+      </div>
+
+      <div class="masonry-item" role="listitem" tabindex="0" aria-label="View full photo: Restaurant interior warm ambiance">
+        <img src="https://images.pexels.com/photos/33137968/pexels-photo-33137968.png?auto=compress&cs=tinysrgb&fit=crop&h=420&w=400"
+             alt="Cosy traditional Asian restaurant interior with warm lighting" loading="lazy" width="400" height="420" />
+        <div class="masonry-item-overlay"><span>🔍 View</span></div>
+      </div>
+
+      <div class="masonry-item" role="listitem" tabindex="0" aria-label="View full photo: Malaysian curry dish">
+        <img src="https://images.pexels.com/photos/27023349/pexels-photo-27023349.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=460&w=400"
+             alt="Flavorful Malaysian curry dish served with rice in Kuala Lumpur" loading="lazy" width="400" height="460" />
+        <div class="masonry-item-overlay"><span>🔍 View</span></div>
+      </div>
+
+      <div class="masonry-item" role="listitem" tabindex="0" aria-label="View full photo: Banana leaf food wrapping tradition">
+        <img src="https://images.pexels.com/photos/20214475/pexels-photo-20214475.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=360&w=400"
+             alt="Traditional rice wrapping in banana leaves, cultural food preparation" loading="lazy" width="400" height="360" />
+        <div class="masonry-item-overlay"><span>🔍 View</span></div>
+      </div>
+
+      <div class="masonry-item" role="listitem" tabindex="0" aria-label="View full photo: Padang food buffet display">
+        <img src="https://images.pexels.com/photos/37109662/pexels-photo-37109662.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400"
+             alt="Vibrant traditional Padang dishes served buffet style" loading="lazy" width="400" height="400" />
+        <div class="masonry-item-overlay"><span>🔍 View</span></div>
+      </div>
+
+      <div class="masonry-item" role="listitem" tabindex="0" aria-label="View full photo: Malaysian breakfast spread">
+        <img src="https://images.pexels.com/photos/18048549/pexels-photo-18048549.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=480&w=400"
+             alt="Traditional Malaysian breakfast spread with local delicacies and drinks" loading="lazy" width="400" height="480" />
+        <div class="masonry-item-overlay"><span>🔍 View</span></div>
+      </div>
+
+      <div class="masonry-item" role="listitem" tabindex="0" aria-label="View full photo: Nasi goreng with satay">
+        <img src="https://images.pexels.com/photos/30604609/pexels-photo-30604609.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=360&w=400"
+             alt="Vibrant fried rice with satay and fresh vegetables" loading="lazy" width="400" height="360" />
+        <div class="masonry-item-overlay"><span>🔍 View</span></div>
+      </div>
+
+      <div class="masonry-item" role="listitem" tabindex="0" aria-label="View full photo: Sate and nasi campur Indonesian meal">
+        <img src="https://images.pexels.com/photos/37051566/pexels-photo-37051566.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=430&w=400"
+             alt="Authentic Indonesian meal featuring sate, nasi campur on wooden table" loading="lazy" width="400" height="430" />
+        <div class="masonry-item-overlay"><span>🔍 View</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+    <div class="lightbox-inner">
+      <button class="lb-btn" id="lb-prev" aria-label="Previous image">&#8592;</button>
+      <div style="position:relative;">
+        <button id="lb-close" aria-label="Close lightbox">✕</button>
+        <img id="lightbox-img" src="" alt="" />
+        <div class="lb-counter" id="lb-counter" aria-live="polite"></div>
+      </div>
+      <button class="lb-btn" id="lb-next" aria-label="Next image">&#8594;</button>
+    </div>
+  </div>
+
+</main><!-- /page-gallery -->
+
+
+<!-- ============================================================
+     PAGE: CONTACT — "Come Dine With Us"
+     ============================================================ -->
+<main id="page-contact" class="page" role="main" style="display:none;">
+
+  <section class="contact-section" aria-labelledby="contact-title">
+
+    <!-- Heading -->
+    <div class="contact-heading">
+      <span class="section-tag" style="background:rgba(199,107,63,0.25); border-color:rgba(199,107,63,0.45); color:var(--terra-light);">Come Dine With Us</span>
+      <h1 class="section-title" id="contact-title" style="color:var(--cream);">
+        Your Table is <span style="color:var(--terra-light); font-style:italic;">Always Ready</span>
+      </h1>
+      <p class="section-intro" style="color:rgba(247,236,217,0.72);">
+        Find us at Park Place 1@Cybersouth, reach us on WhatsApp, 
+        or follow our daily updates on Instagram and Facebook.
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="contact-grid">
+
+      <!-- Info Card -->
+      <div class="contact-info-card">
+        <h2 style="font-family:var(--font-head); font-size:1.35rem; color:var(--cream); margin-bottom:1.8rem; display:flex; align-items:center; gap:0.5rem;">
+          📋 Our Details
+        </h2>
+
+        <!-- Address -->
+        <div class="contact-item">
+          <div class="contact-item-icon" aria-hidden="true">📍</div>
+          <div class="contact-item-text">
+            <strong>Address</strong>
+            <span>59-G, Jalan PP1, Park Place 1@Cybersouth</span>
+            <span>Dengkil, Selangor 43800</span>
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="contact-item">
+          <div class="contact-item-icon" aria-hidden="true">📞</div>
+          <div class="contact-item-text">
+            <strong>Phone / WhatsApp</strong>
+            <a href="tel:+601327777280">+60 13-277 7280</a>
+          </div>
+        </div>
+
+        <!-- Hours -->
+        <div class="contact-item">
+          <div class="contact-item-icon" aria-hidden="true">🕐</div>
+          <div class="contact-item-text">
+            <strong>Opening Hours</strong>
+            <div class="hours-grid" style="margin-top:0.6rem;">
+              <div class="hour-row"><span class="day">Mon – Fri</span><span class="time">7:00 AM – 5:00 PM</span></div>
+              <div class="hour-row"><span class="day">Saturday</span><span class="time">7:00 AM – 5:00 PM</span></div>
+              <div class="hour-row"><span class="day">Sunday</span><span class="time">7:00 AM – 3:00 PM</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social -->
+        <div class="contact-item">
+          <div class="contact-item-icon" aria-hidden="true">🌐</div>
+          <div class="contact-item-text">
+            <strong>Follow Us</strong>
+            <div class="social-row">
+              <a href="https://www.instagram.com/zaleenanasikukus/"
+                 target="_blank" rel="noopener noreferrer"
+                 class="social-btn instagram"
+                 aria-label="Follow on Instagram">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                @zaleenanasikukus
+              </a>
+              <a href="https://www.facebook.com/ZaleenaNK/"
+                 target="_blank" rel="noopener noreferrer"
+                 class="social-btn facebook"
+                 aria-label="Follow on Facebook">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+                ZaleenaNK
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- WhatsApp CTA -->
+        <div class="wa-cta-box">
+          <p>Ready to place your order? We respond fast!</p>
+          <a href="https://wa.me/601327777280?text=Hi%20Zaleena%2C%20I%20would%20like%20to%20place%20an%20order%20please!"
+             target="_blank" rel="noopener noreferrer"
+             class="btn-whatsapp"
+             aria-label="Order via WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            Order via WhatsApp Now
+          </a>
+        </div>
+      </div>
+
+      <!-- Map Card -->
+      <div class="map-card">
+        <h2 style="font-family:var(--font-head); font-size:1.25rem; color:var(--cream); padding:1.5rem 1.8rem 1rem; display:flex; align-items:center; gap:0.5rem;">
+          🗺️ Find Us Here
+        </h2>
+        <div class="map-frame-wrap">
+          <iframe
+            id="map-iframe"
+            src="https://www.google.com/maps?q=Zaleena+Nasi+Kukus+Cybersouth+Dengkil+Selangor&output=embed"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Zaleena Nasi Kukus location on Google Maps"
+            aria-label="Google Map showing Zaleena Nasi Kukus location in Cybersouth, Dengkil">
+          </iframe>
+          <div id="map-fallback" class="map-fallback" style="display:none;">
+            <div style="font-size:2rem;" aria-hidden="true">🗺️</div>
+            <p><strong>59-G, Jalan PP1, Park Place 1@Cybersouth</strong><br/>Dengkil, Selangor 43800</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Zaleena+Nasi+Kukus+Cybersouth+Dengkil+Selangor"
+               target="_blank" rel="noopener noreferrer"
+               class="map-open-link"
+               aria-label="Open in Google Maps">
+              🗺️ Open in Google Maps
+            </a>
+          </div>
+        </div>
+        <!-- Always show the open-in-maps link below -->
+        <div style="padding:1.2rem 1.8rem 1.5rem; text-align:center; border-top:1.5px solid rgba(247,236,217,0.08);">
+          <a href="https://www.google.com/maps/search/?api=1&query=Zaleena+Nasi+Kukus+Cybersouth+Dengkil+Selangor"
+             target="_blank" rel="noopener noreferrer"
+             class="map-open-link"
+             style="display:inline-flex;"
+             aria-label="Get directions on Google Maps">
+            🧭 Get Directions
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /contact-grid -->
+
+    <!-- Bottom strip -->
+    <div style="max-width:1100px; margin:4rem auto 0; text-align:center; border-top:1.5px solid rgba(247,236,217,0.1); padding-top:2.5rem;">
+      <p style="font-family:var(--font-head); font-size:1.3rem; color:var(--cream); margin-bottom:0.5rem;">
+        "Masakan yang dibuat dengan cinta, terasa berbeza."
+      </p>
+      <p style="color:rgba(247,236,217,0.5); font-size:0.85rem; font-style:italic;">
+        — Food made with love, tastes different —
+      </p>
+      <p style="color:rgba(247,236,217,0.35); font-size:0.75rem; margin-top:2rem;">
+        © 2025 Zaleena Nasi Kukus · 59-G, Jalan PP1, Park Place 1@Cybersouth, Dengkil, Selangor 43800
+      </p>
+    </div>
+
+  </section>
+
+</main><!-- /page-contact -->
+
+<script src="script.js"></script>
+</body>
+</html>

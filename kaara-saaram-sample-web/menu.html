@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu — Kaara Saaram Claypot</title>
+  <meta name="description" content="Explore our full menu — Claypot rice, Banana leaf feasts, Roti & Parotta, Shell Out seafood, Varuval, and more. All Halal certified." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-top"><span class="nav-logo-emoji">🍲</span> KAARA SAARAM</span>
+        <span class="nav-logo-sub">CLAYPOT</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="branches.html">Branches</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav">
+    <button class="mobile-nav-close" aria-label="Close menu">&#x2715;</button>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="menu.html" class="active">Menu</a>
+    <a href="branches.html">Branches</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- MENU HERO -->
+  <div class="menu-hero">
+    <div class="container">
+      <p class="section-label">Freshly Cooked to Order</p>
+      <h1 style="color: var(--cream); margin-bottom: 16px;">Our Menu</h1>
+      <p style="color: var(--muted); font-size: 18px; max-width: 540px; margin: 0 auto;">Bold spices. Honest food. Cooked fresh to order.</p>
+      <div style="margin-top: 20px;">
+        <span class="halal-badge" style="font-size: 15px; padding: 6px 18px;">✓ 100% Halal Certified</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MENU SECTION -->
+  <section style="background: var(--bg);">
+    <div class="container">
+
+      <!-- TAB FILTER -->
+      <div class="tab-row">
+        <button class="tab-btn active" data-filter="all">All</button>
+        <button class="tab-btn" data-filter="claypot">Claypot</button>
+        <button class="tab-btn" data-filter="banana-leaf">Banana Leaf</button>
+        <button class="tab-btn" data-filter="roti">Roti &amp; Parotta</button>
+        <button class="tab-btn" data-filter="fried">Deep Fried</button>
+        <button class="tab-btn" data-filter="shellout">Shell Out</button>
+        <button class="tab-btn" data-filter="varuval">Varuval</button>
+        <button class="tab-btn" data-filter="drinks">Drinks</button>
+      </div>
+
+      <!-- MENU CARDS GRID -->
+      <div class="cards-grid" id="menuGrid">
+
+        <!-- CLAYPOT -->
+        <div class="menu-card reveal" data-category="claypot">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80"
+              alt="Claypot chicken rice in traditional clay vessel"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <h3>Claypot Chicken Rice</h3>
+            <p>Tender chicken in fragrant spiced gravy, slow-cooked in a traditional clay pot for deep, smoky flavour.</p>
+            <span class="menu-card-price">RM 14 – 18</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="claypot">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80"
+              alt="Claypot mutton rice with rich curry gravy"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <h3>Claypot Mutton Rice</h3>
+            <p>Slow-braised mutton with house spice blend, served over fragrant rice in a sealed claypot.</p>
+            <span class="menu-card-price">RM 16 – 22</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="claypot">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80"
+              alt="Claypot prawn cooked in aromatic spices"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <h3>Claypot Prawn</h3>
+            <p>Juicy king prawns simmered with curry leaves and tangy tamarind in a rich, spiced base.</p>
+            <span class="menu-card-price">RM 20 – 28</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="claypot">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80"
+              alt="Claypot mixed meat and seafood dish"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <h3>Claypot Mixed</h3>
+            <p>A combination of chicken, mutton, and prawn in one claypot — the ultimate indulgence for big appetites.</p>
+            <span class="menu-card-price">RM 22 – 30</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="claypot">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80"
+              alt="Claypot egg curry in soft spiced gravy"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <h3>Claypot Egg</h3>
+            <p>Soft-boiled eggs nestled in a gently spiced tomato and onion gravy. Simple, comforting, and satisfying.</p>
+            <span class="menu-card-price">RM 10 – 12</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="claypot">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80"
+              alt="Claypot sardine curry with spices"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <h3>Claypot Sardine</h3>
+            <p>South Indian style sardine curry, rich with coconut milk, mustard seeds, and fresh curry leaves.</p>
+            <span class="menu-card-price">RM 12 – 14</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="claypot">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80"
+              alt="Vegetable claypot curry with mixed vegetables"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <h3>Vege Claypot</h3>
+            <p>Seasonal vegetables slow-cooked in a fragrant South Indian spiced gravy. Perfect for vegetarians.</p>
+            <span class="menu-card-price">RM 10 – 14</span>
+          </div>
+        </div>
+
+        <!-- BANANA LEAF -->
+        <div class="menu-card reveal" data-category="banana-leaf">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80"
+              alt="Banana leaf rice with chicken curry and papadum"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <h3>Tiruvizha Sapadu — Chicken</h3>
+            <p>Full banana leaf feast: steamed rice, three curries, rasam, papadum, pickle, and tender chicken.</p>
+            <span class="menu-card-price">RM 18 – 22</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="banana-leaf">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80"
+              alt="Banana leaf rice with mutton curry sides"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <h3>Tiruvizha Sapadu — Mutton</h3>
+            <p>The grand feast elevated with slow-braised mutton. Arguably the finest way to honour the banana leaf tradition.</p>
+            <span class="menu-card-price">RM 22 – 26</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="banana-leaf">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80"
+              alt="Kizhi ghee rice with sides on banana leaf"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <h3>Kizhi Ghee Rice</h3>
+            <p>Fragrant ghee-infused rice wrapped in banana leaf and steamed with spices. Unwrap to release the aroma.</p>
+            <span class="menu-card-price">RM 16 – 20</span>
+          </div>
+        </div>
+
+        <!-- ROTI & PAROTTA -->
+        <div class="menu-card reveal" data-category="roti">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80"
+              alt="Freshly made roti canai flatbread with dhal"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <h3>Roti Canai</h3>
+            <p>Flaky, layered flatbread served with dhal and sambal. A Malaysian morning classic, served all day here.</p>
+            <span class="menu-card-price">RM 2 – 3</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="roti">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80"
+              alt="Roti with mutton curry dipping sauce"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <h3>Roti with Mutton Curry</h3>
+            <p>Crispy roti paired with a rich, deep mutton curry. Tear, dip, and savour every bite.</p>
+            <span class="menu-card-price">RM 8 – 12</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="roti">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80"
+              alt="Kothu parotta shredded and stir fried with egg"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <h3>Kothu Parotta</h3>
+            <p>Shredded parotta stir-fried with egg, onions, and spiced masala. A South Indian street food icon.</p>
+            <span class="menu-card-price">RM 12 – 16</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="roti">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80"
+              alt="Plain parotta layered flatbread"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <h3>Plain Parotta</h3>
+            <p>Buttery, layered Kerala-style parotta. Light yet filling — the perfect companion to any curry.</p>
+            <span class="menu-card-price">RM 2 – 3</span>
+          </div>
+        </div>
+
+        <!-- DEEP FRIED -->
+        <div class="menu-card reveal" data-category="fried">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=800&q=80"
+              alt="Chicken 65 crispy deep fried with spices"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <h3>Chicken 65</h3>
+            <p>The legendary South Indian fried chicken — marinated in chilli, yogurt, and spices. Fiercely crispy outside, juicy within.</p>
+            <span class="menu-card-price">RM 14 – 18</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="fried">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=800&q=80"
+              alt="Deep fried sotong calamari rings"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <h3>Deep Fried Sotong</h3>
+            <p>Crispy calamari rings coated in our signature spiced batter. Served with a tangy chilli dip.</p>
+            <span class="menu-card-price">RM 18 – 24</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="fried">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=800&q=80"
+              alt="Deep fried kadai mixed seafood platter"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <h3>Deep Fried Kadai</h3>
+            <p>Mixed seafood or chicken tossed in a wok with kadai masala, peppers and onions. Bold and robust.</p>
+            <span class="menu-card-price">RM 14 – 18</span>
+          </div>
+        </div>
+
+        <!-- SHELL OUT -->
+        <div class="menu-card reveal" data-category="shellout">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=80"
+              alt="Shell out fresh seafood spread with spiced sauce"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <h3>Shell Out Seafood Platter</h3>
+            <p>Fresh mixed seafood — prawns, clams, mussels, squid — tossed in our signature spiced sauce. Ordered by weight, shared by all.</p>
+            <span class="menu-card-price">Market Price</span>
+          </div>
+        </div>
+
+        <!-- VARUVAL -->
+        <div class="menu-card reveal" data-category="varuval">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&w=800&q=80"
+              alt="Mutton varuval dry spiced South Indian dish"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <h3>Mutton Varuval</h3>
+            <p>Slow-fried mutton with bold South Indian dry spice blend — intense, dark, and deeply satisfying.</p>
+            <span class="menu-card-price">RM 16 – 22</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="varuval">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&w=800&q=80"
+              alt="Prawn varuval dry fried spicy prawns"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <h3>Prawn Varuval</h3>
+            <p>Tiger prawns fried with whole spices, chilli and curry leaves until dry and intensely flavoured.</p>
+            <span class="menu-card-price">RM 18 – 26</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="varuval">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&w=800&q=80"
+              alt="Chicken varuval dry South Indian fried chicken"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <h3>Chicken Varuval</h3>
+            <p>Bone-in chicken pieces fried in a rich, dry masala coating. Crisp, spiced and absolutely irresistible.</p>
+            <span class="menu-card-price">RM 14 – 18</span>
+          </div>
+        </div>
+
+        <!-- DRINKS -->
+        <div class="menu-card reveal" data-category="drinks">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=800&q=80"
+              alt="Teh tarik pulled tea in glass"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <h3>Teh Tarik</h3>
+            <p>Malaysia's iconic pulled tea — frothy, sweet, and creamy. The perfect companion to any meal.</p>
+            <span class="menu-card-price">RM 3 – 4</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="drinks">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=800&q=80"
+              alt="Masala tea chai with spices in glass"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <h3>Masala Tea</h3>
+            <p>Aromatic spiced chai brewed with cardamom, cinnamon, ginger and cloves. Warming and complex.</p>
+            <span class="menu-card-price">RM 4 – 5</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="drinks">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=800&q=80"
+              alt="Mango lassi thick sweet yogurt drink"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <h3>Mango Lassi</h3>
+            <p>Thick, sweet mango blended with creamy yogurt. The perfect cool-down for a spice-rich meal.</p>
+            <span class="menu-card-price">RM 6 – 8</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="drinks">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=800&q=80"
+              alt="Fresh lime juice with ice and mint"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <h3>Fresh Lime Juice</h3>
+            <p>Freshly squeezed lime over ice with a hint of salt and sugar. Refreshing, simple, and very Malaysian.</p>
+            <span class="menu-card-price">RM 4 – 5</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="drinks">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=800&q=80"
+              alt="Mineral water bottled drink"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <h3>Mineral Water</h3>
+            <p>Chilled still mineral water. Clean and refreshing.</p>
+            <span class="menu-card-price">RM 2</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- MENU NOTE -->
+      <div class="menu-note reveal">
+        <span class="halal-badge" style="margin-bottom: 16px; display: inline-block;">✓ All Items Halal Certified</span>
+        <p>Prices may vary by branch and market availability. All dishes are freshly cooked to order. Please inform our team of any allergies. Delivery available via Foodpanda and GrabFood.</p>
+        <div style="margin-top: 20px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <a href="https://www.foodpanda.my" target="_blank" class="btn-outline btn-sm">🐼 Order on Foodpanda</a>
+          <a href="https://food.grab.com" target="_blank" class="btn-outline btn-sm">🚗 Order on GrabFood</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-logo-area">
+          <div class="nav-logo">
+            <span class="nav-logo-top"><span class="nav-logo-emoji">🍲</span> KAARA SAARAM</span>
+            <span class="nav-logo-sub" style="margin-left:0; margin-top:4px;">CLAYPOT</span>
+          </div>
+          <p class="footer-tagline">"The Taste of Spice &amp; Soul"</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/KaaraSaaram.net" target="_blank" class="social-icon" aria-label="Facebook">f</a>
+            <a href="https://www.instagram.com/kaarasaaramclaypot" target="_blank" class="social-icon" aria-label="Instagram">in</a>
+            <a href="https://wa.me/60129362526" target="_blank" class="social-icon" aria-label="WhatsApp">wa</a>
+          </div>
+          <span class="halal-badge">✓ Halal Certified</span>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="menu.html">Our Menu</a></li>
+            <li><a href="branches.html">Branches</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact &amp; Hours</h4>
+          <div class="contact-info-row">
+            <span class="contact-info-icon">📍</span>
+            <p class="contact-info-text">290, Jalan Tun Sambanthan, Brickfields, 50470 Kuala Lumpur</p>
+          </div>
+          <div class="contact-info-row">
+            <span class="contact-info-icon">📞</span>
+            <p class="contact-info-text"><a href="tel:+60129362526">+60 12-936 2526</a></p>
+          </div>
+          <div class="contact-info-row">
+            <span class="contact-info-icon">✉️</span>
+            <p class="contact-info-text"><a href="mailto:kaara.saaram@outlook.com">kaara.saaram@outlook.com</a></p>
+          </div>
+          <div class="contact-info-row">
+            <span class="contact-info-icon">🕙</span>
+            <p class="contact-info-text">Daily: 11:00 AM – 12:00 AM (Midnight)</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Kaara Saaram Claypot. All Rights Reserved. &nbsp;|&nbsp; Halal Certified &nbsp;|&nbsp; 15+ Branches Across Malaysia</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

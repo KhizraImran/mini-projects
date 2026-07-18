@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu — Nasi Kandar MAMU Heritage</title>
+  <meta name="description" content="Full menu of MAMU Heritage — Nasi Kandar, Madurai Briyani, Roti Canai, Murtabak, Kothu Parotta, and more. Available 24 hours in Brickfields, KL." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========================
+       NAVBAR
+  ========================= -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-icon">🍃</span>
+        <div class="nav-logo-text">
+          <span class="nav-logo-est">✦ EST. IN KL BRICKFIELDS ✦</span>
+          <span class="nav-logo-main">MAMU Heritage</span>
+          <span class="nav-logo-sub">Nasi Kandar</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">Heritage</a></li>
+        <li><a href="menu.html" class="nav-link active">Menu</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" id="mobileClose" aria-label="Close menu">✕</button>
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <div class="mobile-nav-sep"><span>🍃</span></div>
+      <a href="about.html" class="mobile-nav-link">Heritage</a>
+      <div class="mobile-nav-sep"><span>🍃</span></div>
+      <a href="menu.html" class="mobile-nav-link active">Menu</a>
+      <div class="mobile-nav-sep"><span>🍃</span></div>
+      <a href="gallery.html" class="mobile-nav-link">Gallery</a>
+      <div class="mobile-nav-sep"><span>🍃</span></div>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+    </nav>
+    <p class="mobile-menu-tagline">Open 24 Hours — 95-2 Jalan Rakyat, Brickfields</p>
+  </div>
+
+  <!-- ========================
+       MENU HERO (gradient)
+  ========================= -->
+  <div class="menu-hero">
+    <div class="container">
+      <span class="label-tag">24-HOUR MENU · BRICKFIELDS · KL</span>
+      <h1 style="margin-bottom:16px;">Our Menu</h1>
+      <p style="color:var(--muted); font-size:18px; max-width:560px; margin:0 auto;">Authentic mamak favourites, available any hour of the day or night.</p>
+    </div>
+  </div>
+
+  <!-- ========================
+       TAB FILTER ROW
+  ========================= -->
+  <div class="menu-tabs">
+    <div class="container">
+      <div class="tab-row">
+        <button class="tab-btn active" data-filter="all">All</button>
+        <button class="tab-btn" data-filter="nasi">🍚 Nasi Kandar</button>
+        <button class="tab-btn" data-filter="roti">🫓 Roti &amp; Parotta</button>
+        <button class="tab-btn" data-filter="briyani">🍖 Briyani</button>
+        <button class="tab-btn" data-filter="murtabak">🥘 Murtabak</button>
+        <button class="tab-btn" data-filter="noodles">🍜 Noodles</button>
+        <button class="tab-btn" data-filter="drinks">🧃 Drinks</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================
+       MENU GRID
+  ========================= -->
+  <section class="menu-section">
+    <div class="container">
+      <div class="menu-grid" id="menuGrid">
+
+        <!-- NASI KANDAR -->
+        <div class="menu-card reveal" data-category="nasi">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?auto=format&fit=crop&w=800&q=80"
+              alt="Nasi Kandar with Kuah Banjir — rice flooded with mixed curries"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">Heritage Classic</span>
+            <h3>Nasi Kandar (Kuah Banjir)</h3>
+            <p>Steamed white rice flooded with mixed curries + your choice of lauk</p>
+            <span class="menu-card-price">From RM 8.90</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="nasi">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80"
+              alt="Nasi Lemak Claypot — fragrant coconut rice in clay pot"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">Signature</span>
+            <h3>Nasi Lemak Claypot</h3>
+            <p>Fragrant coconut rice in claypot, served with sambal, anchovies, peanuts, egg</p>
+            <span class="menu-card-price">RM 10–14</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="nasi">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80"
+              alt="Nasi Briyani Chicken — fragrant long-grain briyani rice"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">Popular</span>
+            <h3>Nasi Briyani (Chicken)</h3>
+            <p>Fragrant long-grain briyani rice with masala chicken</p>
+            <span class="menu-card-price">RM 12–16</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="nasi">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&w=800&q=80"
+              alt="Nasi Briyani Mutton — slow-cooked mutton briyani"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">Madurai Style</span>
+            <h3>Nasi Briyani (Mutton)</h3>
+            <p>Slow-cooked mutton briyani, Madurai style</p>
+            <span class="menu-card-price">RM 14–18</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="nasi">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80"
+              alt="Mixed Rice with lauk variety — pick your sides"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">Customise</span>
+            <h3>Mixed Rice (Lauk Variety)</h3>
+            <p>Pick your lauk from the counter, served with steaming rice</p>
+            <span class="menu-card-price">From RM 8</span>
+          </div>
+        </div>
+
+        <!-- ROTI & PAROTTA -->
+        <div class="menu-card reveal" data-category="roti">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80"
+              alt="Roti Canai — classic crispy-soft flatbread with dhal"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">All-Day Favourite</span>
+            <h3>Roti Canai</h3>
+            <p>Classic crispy-soft flatbread, served with dhal and curry</p>
+            <span class="menu-card-price">RM 1.80–2.50</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="roti">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80"
+              alt="Roti Telur — roti canai with egg folded inside"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">Popular</span>
+            <h3>Roti Telur</h3>
+            <p>Roti canai with egg folded inside — golden and hearty</p>
+            <span class="menu-card-price">RM 3–4</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="roti">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80"
+              alt="Roti Pisang — banana-stuffed roti canai"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">Sweet</span>
+            <h3>Roti Pisang</h3>
+            <p>Banana-stuffed roti — a sweet treat any time of day</p>
+            <span class="menu-card-price">RM 4–5</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="roti">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80"
+              alt="Roti Sardin — roti filled with sardine and onions"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">Savoury</span>
+            <h3>Roti Sardin</h3>
+            <p>Roti filled with sardine and onions — bold and satisfying</p>
+            <span class="menu-card-price">RM 6–8</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="roti">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80"
+              alt="Chapati — whole wheat flatbread with curry"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">Traditional</span>
+            <h3>Chapati</h3>
+            <p>Whole wheat flatbread, served with curry dhal</p>
+            <span class="menu-card-price">RM 2–4</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="roti">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80"
+              alt="Thosai Biasa — classic South Indian fermented crepe"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">South Indian</span>
+            <h3>Thosai Biasa</h3>
+            <p>Classic South Indian fermented crepe, light and flavourful</p>
+            <span class="menu-card-price">RM 2.50–3.80</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="roti">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80"
+              alt="Thosai Masala — thosai stuffed with spiced potato filling"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">South Indian</span>
+            <h3>Thosai Masala</h3>
+            <p>Thosai stuffed with spiced potato filling — hearty and aromatic</p>
+            <span class="menu-card-price">RM 6–7</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="roti">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80"
+              alt="Idli — steamed South Indian rice cakes"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">Classic</span>
+            <h3>Idli</h3>
+            <p>Steamed South Indian rice cakes, served with sambar &amp; chutney</p>
+            <span class="menu-card-price">RM 2–3</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="roti">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80"
+              alt="Putu Mayam — string hoppers with coconut and palm sugar"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">Heritage</span>
+            <h3>Putu Mayam</h3>
+            <p>String hoppers with fresh coconut and palm sugar</p>
+            <span class="menu-card-price">RM 2–3</span>
+          </div>
+        </div>
+
+        <!-- BRIYANI -->
+        <div class="menu-card reveal" data-category="briyani">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80"
+              alt="Madurai Famous Briyani Chicken — slow-cooked with whole spices"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">Madurai Special</span>
+            <h3>Madurai Famous Briyani (Chicken)</h3>
+            <p>Slow-cooked in whole spices, Madurai street style</p>
+            <span class="menu-card-price">RM 14–18</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="briyani">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80"
+              alt="Madurai Famous Briyani Mutton — rich aromatic mutton briyani"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">Madurai Special</span>
+            <h3>Madurai Famous Briyani (Mutton)</h3>
+            <p>Rich, aromatic mutton briyani with raita — a Madurai legend</p>
+            <span class="menu-card-price">RM 16–22</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="briyani">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=800&q=80"
+              alt="Madurai Kothu Parotta — shredded parotta stir-fried with masala"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">Street Icon</span>
+            <h3>Madurai Kothu Parotta</h3>
+            <p>Shredded parotta stir-fried with egg, masala, meat — bold, chewy, unforgettable</p>
+            <span class="menu-card-price">RM 12–16</span>
+          </div>
+        </div>
+
+        <!-- MURTABAK -->
+        <div class="menu-card reveal" data-category="murtabak">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=800&q=80"
+              alt="Murtabak Ayam — roti stuffed with spiced minced chicken"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">Crowd Favourite</span>
+            <h3>Murtabak Ayam (Chicken)</h3>
+            <p>Roti canai stuffed with spiced minced chicken, egg, and onion</p>
+            <span class="menu-card-price">RM 9–12</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="murtabak">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=800&q=80"
+              alt="Murtabak Kambing — classic mutton-stuffed murtabak"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">Classic</span>
+            <h3>Murtabak Kambing (Mutton)</h3>
+            <p>Classic mutton-stuffed murtabak — crispy, rich, and deeply satisfying</p>
+            <span class="menu-card-price">RM 10–14</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="murtabak">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80"
+              alt="Apam Manis — sweet fermented rice pancake"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">Sweet</span>
+            <h3>Apam Manis</h3>
+            <p>Sweet fermented rice pancake — soft, light, and satisfying</p>
+            <span class="menu-card-price">RM 3.80–5.60</span>
+          </div>
+        </div>
+
+        <!-- NOODLES -->
+        <div class="menu-card reveal" data-category="noodles">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80"
+              alt="Mee Goreng Mamak — iconic yellow noodles stir-fried"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">Mamak Classic</span>
+            <h3>Mee Goreng Mamak</h3>
+            <p>Iconic yellow noodles stir-fried with egg, tofu, tomato, and chilli</p>
+            <span class="menu-card-price">RM 8–10</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="noodles">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80"
+              alt="Maggi Goreng — stir-fried instant noodles Malaysian style"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">Late Night</span>
+            <h3>Maggi Goreng</h3>
+            <p>Stir-fried instant noodles, Malaysian-style — always hits right</p>
+            <span class="menu-card-price">RM 7–9</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="noodles">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80"
+              alt="Mee Sup — noodle soup with clear or curry broth"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">Comfort</span>
+            <h3>Mee Sup</h3>
+            <p>Noodle soup with clear or curry broth — warm and soothing</p>
+            <span class="menu-card-price">RM 7–9</span>
+          </div>
+        </div>
+
+        <!-- DRINKS -->
+        <div class="menu-card reveal" data-category="drinks">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=800&q=80"
+              alt="Teh Tarik — classic Malaysian pulled milk tea"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">Malaysian Icon</span>
+            <h3>Teh Tarik</h3>
+            <p>Classic Malaysian pulled milk tea — frothy, sweet, perfect</p>
+            <span class="menu-card-price">RM 2–3</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="drinks">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=800&q=80"
+              alt="Neslo Ais — Nescafe and Milo iced blend"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">Popular</span>
+            <h3>Neslo Ais</h3>
+            <p>Nescafé + Milo iced blend — the mamak signature combo</p>
+            <span class="menu-card-price">RM 4–6</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="drinks">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=800&q=80"
+              alt="Milo Ais — iced Milo chocolate malt drink"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">Classic</span>
+            <h3>Milo Ais</h3>
+            <p>Iced Milo — cold, chocolatey, refreshing</p>
+            <span class="menu-card-price">RM 3–4</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="drinks">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=800&q=80"
+              alt="Teh O Ais — iced black tea with sugar"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">Simple</span>
+            <h3>Teh O Ais</h3>
+            <p>Iced black tea with sugar — light and refreshing</p>
+            <span class="menu-card-price">RM 2</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-category="drinks">
+          <div class="menu-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=800&q=80"
+              alt="Bandung — rose syrup milk drink"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80'"
+            />
+          </div>
+          <div class="menu-card-body">
+            <span class="card-badge">Sweet</span>
+            <h3>Bandung</h3>
+            <p>Rose syrup milk drink — sweet, pink, and nostalgic</p>
+            <span class="menu-card-price">RM 3–4</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       LAUK SECTION
+  ========================= -->
+  <section class="lauk-section">
+    <div class="container">
+      <span class="label-tag reveal">SIDES &amp; TOPPINGS</span>
+      <h2 class="reveal">Choose Your Lauk</h2>
+      <p class="reveal">Add these side dishes to any rice plate. All prepared fresh, all day.</p>
+      <div class="lauk-pills reveal">
+        <span class="lauk-pill">🍗 Ayam Goreng (Fried Chicken)</span>
+        <span class="lauk-pill">🐟 Ikan Goreng (Fried Fish)</span>
+        <span class="lauk-pill">🦑 Sotong Goreng (Fried Squid)</span>
+        <span class="lauk-pill">🍳 Telur Goreng (Fried Egg)</span>
+        <span class="lauk-pill">🥦 Sayur Kacang (Green Beans)</span>
+        <span class="lauk-pill">🌿 Bendi (Okra)</span>
+        <span class="lauk-pill">🍛 Dhal Curry</span>
+        <span class="lauk-pill">🍖 Mutton Curry</span>
+        <span class="lauk-pill">🍗 Ayam Kari (Chicken Curry)</span>
+        <span class="lauk-pill">🐟 Ikan Bilis (Anchovies)</span>
+        <span class="lauk-pill">🫓 Papadum</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       MENU NOTE
+  ========================= -->
+  <div class="menu-note">
+    <div class="container">
+      <p class="reveal">⚠️ Prices are approximate. Menu available 24 hours. All food is prepared fresh daily.<br/>For specific dietary requirements, please ask our staff.</p>
+    </div>
+  </div>
+
+  <!-- ========================
+       FOOTER
+  ========================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <span class="footer-logo-name">MAMU Heritage</span>
+          <span class="footer-logo-label">Nasi Kandar</span>
+          <p class="footer-tagline">Where Heritage Meets Every Plate.<br/>Authentic Malaysian mamak cuisine, served fresh around the clock in the heart of Brickfields.</p>
+          <a href="https://www.facebook.com/p/Nasi-Kandar-MAMU-Heritage-100068597081492/" target="_blank" rel="noopener" class="footer-social-btn">
+            <span>f</span> Facebook
+          </a>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Heritage</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Visit Us</h4>
+          <div class="footer-info-item">
+            <span class="footer-info-icon">📍</span>
+            <div class="footer-info-text">No. 95-2, Jalan Rakyat, Brickfields,<br/>50470 Kuala Lumpur, Malaysia</div>
+          </div>
+          <div class="footer-info-item">
+            <span class="footer-info-icon">📞</span>
+            <div class="footer-info-text"><a href="tel:+601123208097">+60 11-2320 8097</a></div>
+          </div>
+          <div class="footer-info-item">
+            <span class="footer-info-icon">🕙</span>
+            <div class="footer-info-text">
+              Open 24 Hours — Every Day
+              <br/><span class="footer-hours-badge">● Always Open</span>
+            </div>
+          </div>
+          <div class="footer-info-item">
+            <span class="footer-info-icon">🛵</span>
+            <div class="footer-info-text">Delivery available on <strong style="color:var(--cream);">GrabFood</strong></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2025 Nasi Kandar MAMU Heritage. All Rights Reserved. | Jalan Rakyat, Brickfields, Kuala Lumpur
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

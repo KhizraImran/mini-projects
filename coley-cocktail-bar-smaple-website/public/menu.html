@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu — COLEY Cocktail Bar | Bangsar, Kuala Lumpur</title>
+  <meta name="description" content="Explore COLEY's seasonal cocktail menu — Classics, Koktel Malaysian signatures, Highballs, and Bar Food. Crafted with precision and Malaysian soul." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-logo">COLEY</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">✕</button>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="menu.html" class="active">Menu</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- ========== PAGE HERO ========== -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="gold-label">RM 25–58 per cocktail</span>
+      <h1>Our Menu</h1>
+      <p>Cocktails crafted with precision, passion, and a touch of Malaysian soul. Food worth staying for.</p>
+    </div>
+  </section>
+
+  <!-- ========== MENU SECTION ========== -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Tab Filter -->
+      <div class="menu-tabs reveal">
+        <button class="menu-tab" data-filter="all">All</button>
+        <button class="menu-tab" data-filter="classics">Classics</button>
+        <button class="menu-tab" data-filter="koktel">Koktel</button>
+        <button class="menu-tab" data-filter="highballs">Highballs</button>
+        <button class="menu-tab" data-filter="food">Bar Food</button>
+      </div>
+
+      <!-- Category Label: Classics -->
+      <div class="reveal mb-24" data-category-header="classics">
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+          <div style="font-family:'Playfair Display',serif;font-size:22px;color:var(--gold);font-weight:600;" class="menu-section-label" data-category-label="classics">Classics with a Twist</div>
+          <div style="flex:1;height:1px;background:var(--border);"></div>
+        </div>
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="grid-3" id="menu-grid">
+
+        <!-- ===== CLASSICS ===== -->
+        <div class="menu-item reveal" data-category="classics">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Hanky Panky</div>
+            <div class="menu-item-price">RM 46</div>
+          </div>
+          <div class="menu-item-desc">Gin, Sweet Vermouth, Fernet Branca, aged in claypot. Our namesake — a tribute to Ada Coleman's iconic recipe.</div>
+          <span class="menu-category-label">Classics</span>
+        </div>
+
+        <div class="menu-item reveal" data-category="classics">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Saffron Sour</div>
+            <div class="menu-item-price">RM 38</div>
+          </div>
+          <div class="menu-item-desc">Saffron-infused bourbon, fresh citrus. The iconic Whiskey Sour reimagined with golden warmth and citrus zest.</div>
+          <span class="menu-category-label">Classics</span>
+        </div>
+
+        <div class="menu-item reveal" data-category="classics">
+          <div class="menu-item-header">
+            <div class="menu-item-name">3 Canes Old Fashioned</div>
+            <div class="menu-item-price">RM 44</div>
+          </div>
+          <div class="menu-item-desc">White rum, spiced rum, cachaça — three sugarcane spirits united in a stirred, spirit-forward classic.</div>
+          <span class="menu-category-label">Classics</span>
+        </div>
+
+        <div class="menu-item reveal" data-category="classics">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Double Barrel</div>
+            <div class="menu-item-price">RM 44</div>
+          </div>
+          <div class="menu-item-desc">Ask your bartender for today's build — a rotating selection curated from our barrel-aged programme.</div>
+          <span class="menu-category-label">Classics</span>
+        </div>
+
+        <!-- ===== KOKTEL ===== -->
+        <div class="menu-item reveal" data-category="koktel">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Gin & Coconut</div>
+            <div class="menu-item-price">RM 28</div>
+          </div>
+          <div class="menu-item-desc">London dry gin, fresh coconut water, lime. Tropically light, refreshingly Malaysian — born from the kopitiam spirit.</div>
+          <span class="menu-category-label">Koktel</span>
+        </div>
+
+        <div class="menu-item reveal" data-category="koktel">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Vodka & Pear</div>
+            <div class="menu-item-price">RM 30</div>
+          </div>
+          <div class="menu-item-desc">Vodka, pear, green tea, lime. Delicate and floral — a fusion of East and West that surprises with every sip.</div>
+          <span class="menu-category-label">Koktel</span>
+        </div>
+
+        <div class="menu-item reveal" data-category="koktel">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Whisky & Bubble Tea</div>
+            <div class="menu-item-price">RM 32</div>
+          </div>
+          <div class="menu-item-desc">Blended whisky, house bubble tea. A beloved Malaysian street staple elevated — bold, creamy, utterly unforgettable.</div>
+          <span class="menu-category-label">Koktel</span>
+        </div>
+
+        <div class="menu-item reveal" data-category="koktel">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Barley Lemon Whisky</div>
+            <div class="menu-item-price">RM 30</div>
+          </div>
+          <div class="menu-item-desc">Blended whisky, home-brewed barley lemon water. Nostalgic, comforting, and entirely uniquely Coley.</div>
+          <span class="menu-category-label">Koktel</span>
+        </div>
+
+        <!-- ===== HIGHBALLS ===== -->
+        <div class="menu-item reveal" data-category="highballs">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Peanut Butter & Jelly</div>
+            <div class="menu-item-price">RM 38</div>
+          </div>
+          <div class="menu-item-desc">Tequila, roasted peanuts, berry. Playfully nostalgic — a grown-up twist on a childhood favourite.</div>
+          <span class="menu-category-label">Highballs</span>
+        </div>
+
+        <div class="menu-item reveal" data-category="highballs">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Kopi Old Fashioned</div>
+            <div class="menu-item-price">RM 44</div>
+          </div>
+          <div class="menu-item-desc">Plantation Dark Rum, Ethiopia Chelelectu single-origin coffee, Pedro Ximenez sherry. The meeting of a Malaysian morning and a Caribbean evening.</div>
+          <span class="menu-category-label">Highballs</span>
+        </div>
+
+        <div class="menu-item reveal" data-category="highballs">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Mary Jane</div>
+            <div class="menu-item-price">RM 44</div>
+          </div>
+          <div class="menu-item-desc">Diplomatico Planas rum, cacao, Strega, pineapple, aloe vera. Tropical, herbaceous, and completely captivating.</div>
+          <span class="menu-category-label">Highballs</span>
+        </div>
+
+        <!-- ===== BAR FOOD ===== -->
+        <div class="menu-item reveal" data-category="food">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Fish & Chips <span style="font-size:14px;color:var(--muted);">炸鱼柳薯条</span></div>
+            <div class="menu-item-price">RM 22</div>
+          </div>
+          <div class="menu-item-desc">Classic British pub staple done right — crispy golden battered fish with hand-cut fries and dipping sauce.</div>
+          <span class="menu-category-label">Bar Food</span>
+        </div>
+
+        <div class="menu-item reveal" data-category="food">
+          <div class="menu-item-header">
+            <div class="menu-item-name">All Day Breakfast <span style="font-size:14px;color:var(--muted);">全日早餐</span></div>
+            <div class="menu-item-price">RM 14</div>
+          </div>
+          <div class="menu-item-desc">A satisfying spread to line your stomach before an evening of great cocktails. Available all day.</div>
+          <span class="menu-category-label">Bar Food</span>
+        </div>
+
+        <div class="menu-item reveal" data-category="food">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Mix & Yes Platter <span style="font-size:14px;color:var(--muted);">拼盘</span></div>
+            <div class="menu-item-price">RM 36</div>
+          </div>
+          <div class="menu-item-desc">A curated sharing platter — perfect for the table. Ask your bartender what's on tonight's selection.</div>
+          <span class="menu-category-label">Bar Food</span>
+        </div>
+
+        <div class="menu-item reveal" data-category="food">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Chicken Rendang</div>
+            <div class="menu-item-price">RM 18</div>
+          </div>
+          <div class="menu-item-desc">Slow-cooked chicken thigh in rich rendang spices, served with glutinous rice foam — a beautiful nod to Malaysian culinary heritage.</div>
+          <span class="menu-category-label">Bar Food</span>
+        </div>
+
+      </div><!-- end menu-grid -->
+
+      <!-- Menu Note -->
+      <div class="menu-note reveal">
+        <span style="color:var(--gold);font-size:18px;">🍃</span>
+        <p style="margin-top:8px;">Menu changes seasonally. Our bartenders are always happy to craft something personalised for you. Please inform us of any dietary requirements.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== PRICE INFO ========== -->
+  <section class="section-sm" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="grid-3 reveal-stagger">
+        <div class="card" style="text-align:center;">
+          <div style="font-size:28px;margin-bottom:12px;">💰</div>
+          <h3 class="mb-8">Price Range</h3>
+          <p style="color:var(--muted);font-size:15px;">RM 25 – RM 58 per cocktail. Approximately RM 40 per person average.</p>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div style="font-size:28px;margin-bottom:12px;">🌿</div>
+          <h3 class="mb-8">Eco-Friendly</h3>
+          <p style="color:var(--muted);font-size:15px;">No plastic straws. We use metal and paper straws only — because great bars care about more than just cocktails.</p>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div style="font-size:28px;margin-bottom:12px;">🤝</div>
+          <h3 class="mb-8">Bespoke Service</h3>
+          <p style="color:var(--muted);font-size:15px;">Tell our bartenders your preferences — spirit, flavour profile, mood — and they'll craft something just for you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta-section reveal">
+    <div class="container">
+      <h2>Come Taste for Yourself</h2>
+      <p>Open Tuesday to Saturday from 5pm. Sunday 12pm–6pm. Walk-ins welcome.</p>
+      <div class="btn-group" style="justify-content:center;">
+        <a href="contact.html" class="btn-primary">Find Us</a>
+        <a href="https://wa.me/60192709179" target="_blank" class="btn-outline">WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <span class="footer-logo">COLEY</span>
+          <p class="footer-tagline">Where Classic Meets Malaysian Soul</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/LongLiveColey" target="_blank" class="social-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+              Facebook
+            </a>
+            <a href="https://www.instagram.com/coleylumpur" target="_blank" class="social-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Visit Us</div>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div class="contact-text">6-G, Jalan Abdullah, Bangsar,<br>59000 Kuala Lumpur, Malaysia</div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <div class="contact-text"><a href="tel:+60192709179">+60 19-270 9179</a></div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <div class="contact-text"><a href="mailto:info@liquidmentality.com">info@liquidmentality.com</a></div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">🕐</span>
+            <div class="contact-text">
+              Tue–Sat: 5:00 PM – 1:00 AM<br>
+              Sun: 12:00 PM – 6:00 PM<br>
+              <span class="hours-mini">Monday: Closed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        © <span class="footer-year">2025</span> COLEY. All Rights Reserved. | Bangsar, Kuala Lumpur
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

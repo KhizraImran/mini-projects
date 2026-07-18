@@ -1,0 +1,2143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chinta by Chinoz — Home-Style Malay Dining, Bukit Bangsar</title>
+  <meta name="description" content="Chinta by Chinoz — a premium home-style Malay restaurant in Bukit Bangsar, Kuala Lumpur, carrying forward 24+ years of culinary legacy from Chinoz on the Park." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --teak: #3b2314;
+      --teak-mid: #5c3820;
+      --teak-light: #7a4f32;
+      --brass: #b8922a;
+      --brass-light: #d4af5a;
+      --brass-pale: #e8d4a0;
+      --sage: #6b7c5e;
+      --sage-light: #8a9e7a;
+      --olive: #4a5a38;
+      --cream: #f5efe4;
+      --cream-dark: #ede3d2;
+      --terracotta: #b85c38;
+      --terracotta-light: #d4795a;
+      --charcoal: #1e1612;
+      --text-body: #3a2e24;
+      --text-muted: #7a6a56;
+    }
+
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Jost', sans-serif;
+      background-color: var(--cream);
+      color: var(--text-body);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      line-height: 1.15;
+    }
+
+    img { display: block; max-width: 100%; height: auto; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== PAGES ===== */
+    .page { display: none; min-height: 100vh; }
+    .page.active { display: block; }
+
+    /* ===== NAVBAR ===== */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(59,35,20,0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(184,146,42,0.3);
+      transition: all 0.3s ease;
+    }
+    .nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 70px;
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--brass-light);
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    .nav-logo span {
+      font-weight: 300;
+      font-style: italic;
+      color: var(--brass-pale);
+      font-size: 0.85em;
+    }
+    .nav-logo:hover { color: var(--brass-pale); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cream-dark);
+      cursor: pointer;
+      position: relative;
+      padding-bottom: 3px;
+      transition: color 0.3s;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 1px;
+      background: var(--brass-light);
+      transition: width 0.3s ease;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--brass-light); }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px; height: 2px;
+      background: var(--brass-light);
+      transition: all 0.35s ease;
+      border-radius: 2px;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile Nav Drawer */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 70px; left: 0; right: 0;
+      background: rgba(42,22,10,0.98);
+      backdrop-filter: blur(12px);
+      z-index: 999;
+      padding: 2rem;
+      border-bottom: 1px solid rgba(184,146,42,0.25);
+      transform: translateY(-120%);
+      transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+    }
+    .mobile-nav.open {
+      transform: translateY(0);
+    }
+    .mobile-nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .mobile-nav a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--cream);
+      cursor: pointer;
+      letter-spacing: 0.05em;
+      transition: color 0.3s;
+    }
+    .mobile-nav a:hover { color: var(--brass-light); }
+
+    /* ===== BUTTONS ===== */
+    .btn-primary {
+      display: inline-block;
+      padding: 0.9rem 2.4rem;
+      background: var(--brass);
+      color: var(--cream);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--teak);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.35s ease;
+      z-index: 0;
+    }
+    .btn-primary:hover::before { transform: scaleX(1); transform-origin: left; }
+    .btn-primary span { position: relative; z-index: 1; }
+
+    .btn-outline {
+      display: inline-block;
+      padding: 0.9rem 2.4rem;
+      background: transparent;
+      color: var(--cream);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border: 1px solid rgba(245,239,228,0.5);
+      cursor: pointer;
+      transition: all 0.35s ease;
+    }
+    .btn-outline:hover {
+      background: rgba(245,239,228,0.1);
+      border-color: var(--cream);
+    }
+
+    /* ===== SECTION LABELS ===== */
+    .section-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--brass);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .section-label::before, .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--brass-pale));
+      max-width: 60px;
+    }
+    .section-label::before { background: linear-gradient(to left, transparent, var(--brass-pale)); }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 500;
+      color: var(--teak);
+      line-height: 1.1;
+    }
+    .section-title em {
+      font-style: italic;
+      color: var(--brass);
+    }
+
+    /* ===== DIVIDER ===== */
+    .ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem auto;
+      color: var(--brass);
+      font-size: 1.2rem;
+    }
+    .ornament::before, .ornament::after {
+      content: '';
+      width: 60px; height: 1px;
+      background: var(--brass-pale);
+    }
+
+    /* ===== FADE-IN ANIMATION ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-in-delay-1 { transition-delay: 0.1s; }
+    .fade-in-delay-2 { transition-delay: 0.2s; }
+    .fade-in-delay-3 { transition-delay: 0.3s; }
+    .fade-in-delay-4 { transition-delay: 0.4s; }
+    .fade-in-delay-5 { transition-delay: 0.5s; }
+
+    /* ===========================
+       PAGE 1: HOME
+    =========================== */
+    /* Hero */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.pexels.com/photos/37051566/pexels-photo-37051566.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1080&w=1920');
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.08);
+      transition: transform 8s ease;
+    }
+    .hero-bg.loaded { transform: scale(1); }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(30,16,10,0.55) 0%,
+        rgba(30,16,10,0.35) 40%,
+        rgba(30,16,10,0.7) 100%
+      );
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem;
+      max-width: 900px;
+    }
+    .hero-pretitle {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--brass-light);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 1s 0.3s forwards;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.2rem, 9vw, 7.5rem);
+      font-weight: 500;
+      color: var(--cream);
+      line-height: 1;
+      letter-spacing: 0.02em;
+      opacity: 0;
+      animation: fadeUp 1s 0.6s forwards;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--brass-light);
+    }
+    .hero-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(245,239,228,0.85);
+      margin-top: 1.2rem;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeUp 1s 0.9s forwards;
+    }
+    .hero-cta {
+      margin-top: 2.5rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 1s 1.2s forwards;
+    }
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(245,239,228,0.6);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      animation: bounce 2.5s infinite;
+    }
+    .hero-scroll::after {
+      content: '';
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(245,239,228,0.5), transparent);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* Legacy Strip */
+    .legacy-strip {
+      background: var(--teak);
+      padding: 1.5rem 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(184,146,42,0.3);
+      border-bottom: 1px solid rgba(184,146,42,0.3);
+    }
+    .legacy-strip p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      font-style: italic;
+      color: var(--brass-pale);
+      letter-spacing: 0.04em;
+    }
+    .legacy-strip p strong {
+      color: var(--brass-light);
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    /* Intro Section */
+    .intro-section {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .intro-img-wrap {
+      position: relative;
+    }
+    .intro-img-wrap img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+    .intro-img-wrap::before {
+      content: '';
+      position: absolute;
+      top: -16px; left: -16px;
+      right: 16px; bottom: 16px;
+      border: 1px solid var(--brass-pale);
+      z-index: -1;
+    }
+    .intro-badge {
+      position: absolute;
+      bottom: -20px; right: -20px;
+      width: 100px; height: 100px;
+      background: var(--brass);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--cream);
+      font-family: 'Cormorant Garamond', serif;
+      text-align: center;
+      line-height: 1.2;
+    }
+    .intro-badge .num {
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+    .intro-badge .txt {
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .intro-text .section-label { justify-content: flex-start; }
+    .intro-text .section-label::after { display: none; }
+    .intro-text p {
+      color: var(--text-muted);
+      line-height: 1.9;
+      font-size: 1rem;
+      margin-top: 1.5rem;
+    }
+    .intro-text p + p { margin-top: 1rem; }
+
+    /* Featured Dishes */
+    .dishes-section {
+      background: var(--teak);
+      padding: 5rem 2rem;
+    }
+    .dishes-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .dishes-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .dishes-header .section-label {
+      justify-content: center;
+      color: var(--brass-light);
+    }
+    .dishes-header .section-label::before,
+    .dishes-header .section-label::after {
+      background: rgba(184,146,42,0.4);
+    }
+    .dishes-header .section-title { color: var(--cream); }
+    .dishes-header .section-title em { color: var(--brass-light); }
+    .dishes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .dish-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+        }
+    .dish-card-img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .dish-card:hover .dish-card-img { transform: scale(1.06); }
+    .dish-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(30,16,10,0.9) 0%, transparent 55%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.8rem;
+    }
+    .dish-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--brass-light);
+      margin-bottom: 0.4rem;
+    }
+    .dish-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      font-weight: 500;
+      color: var(--cream);
+      line-height: 1.2;
+    }
+    .dish-desc {
+      font-size: 0.85rem;
+      color: rgba(245,239,228,0.7);
+      margin-top: 0.5rem;
+      line-height: 1.6;
+    }
+
+    /* Home CTA Banner */
+    .cta-banner {
+      padding: 5rem 2rem;
+      text-align: center;
+      background: var(--cream-dark);
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b8922a' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.5;
+    }
+    .cta-banner-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+    .cta-banner .section-title { color: var(--teak); margin-bottom: 1.5rem; }
+    .cta-banner p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+    .cta-banner .btn-primary { background: var(--teak); }
+
+    /* ===========================
+       PAGE 2: ABOUT
+    =========================== */
+    .page-hero {
+      height: 52vh;
+      min-height: 380px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+    }
+    .page-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(30,16,10,0.62);
+    }
+    .page-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: var(--cream);
+      padding: 2rem;
+    }
+    .page-hero-content .pretitle {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--brass-light);
+      margin-bottom: 1rem;
+    }
+    .page-hero-content h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 7vw, 5.5rem);
+      font-weight: 500;
+      line-height: 1.05;
+    }
+    .page-hero-content h1 em { font-style: italic; color: var(--brass-light); }
+
+    /* Story section */
+    .about-story {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .about-story-text .section-label { justify-content: flex-start; }
+    .about-story-text .section-label::after { display: none; }
+    .about-story-text p {
+      color: var(--text-muted);
+      line-height: 1.95;
+      font-size: 0.97rem;
+      margin-top: 1.4rem;
+    }
+    .about-story-text blockquote {
+      margin-top: 2rem;
+      padding: 1.5rem 2rem;
+      border-left: 3px solid var(--brass);
+      background: var(--cream-dark);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--teak);
+      line-height: 1.6;
+    }
+    .about-story-imgs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .about-story-imgs img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .about-story-imgs img:first-child {
+      grid-column: 1/-1;
+      height: 280px;
+    }
+
+    /* Founders strip */
+    .founders-strip {
+      background: var(--teak);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .founders-strip .section-label { justify-content: center; color: var(--brass-light); }
+    .founders-strip .section-label::before,
+    .founders-strip .section-label::after { background: rgba(184,146,42,0.35); }
+    .founders-strip h2 {
+      color: var(--cream);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 1rem;
+    }
+    .founders-strip h2 em { color: var(--brass-light); font-style: italic; }
+    .founders-strip p {
+      color: rgba(245,239,228,0.7);
+      font-size: 1rem;
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+    .founders-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 3rem auto 0;
+    }
+    .founder-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(184,146,42,0.2);
+      padding: 2rem;
+      text-align: center;
+    }
+    .founder-card .icon {
+      width: 56px; height: 56px;
+      background: rgba(184,146,42,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 1.5rem;
+    }
+    .founder-card h4 {
+      color: var(--brass-light);
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    .founder-card p {
+      color: rgba(245,239,228,0.65);
+      font-size: 0.88rem;
+      line-height: 1.7;
+      max-width: 100%;
+    }
+
+    /* Ambiance section */
+    .ambiance-section {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .ambiance-header { text-align: center; margin-bottom: 3rem; }
+    .ambiance-header .section-label { justify-content: center; }
+    .ambiance-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .amb-feature {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: var(--cream-dark);
+      border: 1px solid rgba(184,146,42,0.15);
+      transition: border-color 0.3s;
+    }
+    .amb-feature:hover { border-color: var(--brass-pale); }
+    .amb-feature .icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .amb-feature h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      color: var(--teak);
+      margin-bottom: 0.5rem;
+    }
+    .amb-feature p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* About gallery */
+    .about-gallery {
+      padding: 0 2rem 5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .about-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 1rem;
+    }
+    .about-gallery-grid img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      transition: opacity 0.3s;
+    }
+    .about-gallery-grid img:hover { opacity: 0.88; }
+    .about-gallery-grid img:first-child {
+      grid-column: 1/3;
+      height: 340px;
+    }
+
+    /* ===========================
+       PAGE 3: MENU
+    =========================== */
+    .menu-page-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 2rem 5rem;
+    }
+    .menu-intro {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .menu-intro .section-label { justify-content: center; }
+    .menu-intro p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 600px;
+      margin: 1.5rem auto 0;
+    }
+
+    /* Tab Nav */
+    .menu-tabs {
+      display: flex;
+      gap: 0;
+      flex-wrap: wrap;
+      justify-content: center;
+      border-bottom: 1px solid var(--brass-pale);
+      margin-bottom: 3rem;
+    }
+    .menu-tab-btn {
+      padding: 0.8rem 1.6rem;
+      background: none;
+      border: none;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      cursor: pointer;
+      position: relative;
+      transition: color 0.3s;
+    }
+    .menu-tab-btn::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0; right: 0;
+      height: 2px;
+      background: var(--brass);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+    .menu-tab-btn.active, .menu-tab-btn:hover { color: var(--brass); }
+    .menu-tab-btn.active::after { transform: scaleX(1); }
+
+    /* Menu Panels */
+    .menu-panel { display: none; }
+    .menu-panel.active { display: block; }
+
+    .menu-category-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--teak);
+      margin-bottom: 0.5rem;
+    }
+    .menu-category-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+    .menu-items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+    .menu-item-card {
+      background: white;
+      border: 1px solid rgba(184,146,42,0.12);
+      overflow: hidden;
+      transition: box-shadow 0.3s, border-color 0.3s;
+    }
+    .menu-item-card:hover {
+      box-shadow: 0 8px 30px rgba(59,35,20,0.12);
+      border-color: var(--brass-pale);
+    }
+    .menu-item-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .menu-item-body {
+      padding: 1.3rem 1.5rem;
+    }
+    .menu-item-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--teak);
+      margin-bottom: 0.4rem;
+    }
+    .menu-item-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .menu-item-tag {
+      display: inline-block;
+      margin-top: 0.7rem;
+      padding: 0.2rem 0.7rem;
+      background: var(--cream-dark);
+      color: var(--brass);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* ===========================
+       PAGE 4: GALLERY
+    =========================== */
+    .gallery-page-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem 5rem;
+    }
+    .gallery-intro {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .gallery-intro .section-label { justify-content: center; }
+    .gallery-filter {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+    }
+    .gallery-filter-btn {
+      padding: 0.5rem 1.3rem;
+      background: none;
+      border: 1px solid var(--brass-pale);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .gallery-filter-btn.active, .gallery-filter-btn:hover {
+      background: var(--teak);
+      color: var(--cream);
+      border-color: var(--teak);
+    }
+
+    .gallery-masonry {
+      columns: 3;
+      column-gap: 1rem;
+    }
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.04); }
+    .gallery-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(30,16,10,0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.4s;
+    }
+    .gallery-item:hover .gallery-item-overlay {
+      background: rgba(30,16,10,0.45);
+    }
+    .gallery-item-overlay span {
+      color: var(--cream);
+      font-size: 1.5rem;
+      opacity: 0;
+      transform: scale(0.7);
+      transition: all 0.3s;
+    }
+    .gallery-item:hover .gallery-item-overlay span {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(20,10,5,0.95);
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      box-shadow: 0 20px 80px rgba(0,0,0,0.5);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem; right: 2rem;
+      color: var(--cream);
+      font-size: 2rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      line-height: 1;
+      transition: color 0.3s;
+    }
+    .lightbox-close:hover { color: var(--brass-light); }
+
+    /* ===========================
+       PAGE 5: CONTACT
+    =========================== */
+    .contact-page-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .contact-info .section-label { justify-content: flex-start; }
+    .contact-info .section-label::after { display: none; }
+    .contact-info .section-title { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.5rem; }
+    .contact-detail {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.8rem;
+      align-items: flex-start;
+    }
+    .contact-detail-icon {
+      width: 44px; height: 44px;
+      background: var(--cream-dark);
+      border: 1px solid var(--brass-pale);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      color: var(--brass);
+    }
+    .contact-detail-text h5 {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 0.25rem;
+    }
+    .contact-detail-text p, .contact-detail-text a {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
+    .contact-detail-text a:hover { color: var(--brass); }
+
+    .hours-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.3rem 1rem;
+      margin-top: 0.3rem;
+    }
+    .hours-grid span { font-size: 0.88rem; color: var(--text-muted); }
+    .hours-grid strong { font-size: 0.88rem; color: var(--text-body); font-weight: 500; }
+
+    .social-row {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .social-link {
+      width: 44px; height: 44px;
+      background: var(--teak);
+      color: var(--brass-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      transition: all 0.3s;
+    }
+    .social-link:hover {
+      background: var(--brass);
+      color: var(--cream);
+    }
+
+    .reserve-cta-box {
+      margin-top: 2.5rem;
+      padding: 2rem;
+      background: var(--teak);
+      text-align: center;
+      border: 1px solid rgba(184,146,42,0.25);
+    }
+    .reserve-cta-box p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--brass-pale);
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .contact-map-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .map-embed {
+      width: 100%;
+      height: 420px;
+      border: none;
+      border: 1px solid var(--brass-pale);
+      filter: sepia(0.2) contrast(0.95);
+    }
+
+    /* ===========================
+       FOOTER
+    =========================== */
+    footer {
+      background: var(--charcoal);
+      color: rgba(245,239,228,0.55);
+      padding: 3rem 2rem 2rem;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(184,146,42,0.15);
+    }
+    .footer-brand .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--brass-light);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+    .footer-brand p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+    .footer-links h5 {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--brass-light);
+      margin-bottom: 1rem;
+    }
+    .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer-links a {
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover { color: var(--brass-light); }
+    .footer-social h5 {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--brass-light);
+      margin-bottom: 1rem;
+    }
+    .footer-social .social-row { margin-top: 0; }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 1.5rem auto 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.78rem;
+    }
+
+    /* ===========================
+       RESPONSIVE
+    =========================== */
+    @media (max-width: 1024px) {
+      .dishes-grid { grid-template-columns: 1fr 1fr; }
+      .dishes-grid .dish-card:last-child {
+        grid-column: 1/-1;
+      }
+      .gallery-masonry { columns: 2; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .mobile-nav { display: block; }
+
+      .intro-section { grid-template-columns: 1fr; gap: 3rem; }
+      .intro-img-wrap { order: -1; }
+      .intro-img-wrap img { height: 320px; }
+      .intro-badge { width: 80px; height: 80px; }
+      .intro-badge .num { font-size: 1.4rem; }
+
+      .dishes-grid { grid-template-columns: 1fr; }
+      .dishes-grid .dish-card:last-child { grid-column: auto; }
+
+      .about-story { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-gallery-grid { grid-template-columns: 1fr 1fr; }
+      .about-gallery-grid img:first-child { grid-column: 1/-1; height: 220px; }
+
+      .menu-tabs { gap: 0; }
+      .menu-tab-btn { padding: 0.7rem 0.9rem; font-size: 0.65rem; }
+
+      .gallery-masonry { columns: 2; }
+
+      .contact-page-content { grid-template-columns: 1fr; }
+
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-cta { flex-direction: column; align-items: center; }
+      .gallery-masonry { columns: 1; }
+      .about-gallery-grid { grid-template-columns: 1fr; }
+      .about-gallery-grid img:first-child { grid-column: auto; }
+      .menu-items-grid { grid-template-columns: 1fr; }
+      .menu-tabs { overflow-x: auto; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 0; }
+      .menu-tab-btn { white-space: nowrap; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo" onclick="showPage('home')">Chinta <span>by Chinoz</span></div>
+    <ul class="nav-links">
+      <li><a onclick="showPage('home')" data-page="home">Home</a></li>
+      <li><a onclick="showPage('about')" data-page="about">About</a></li>
+      <li><a onclick="showPage('menu')" data-page="menu">Menu</a></li>
+      <li><a onclick="showPage('gallery')" data-page="gallery">Gallery</a></li>
+      <li><a onclick="showPage('contact')" data-page="contact">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <ul>
+    <li><a onclick="showPage('home');closeMobileNav()">Home</a></li>
+    <li><a onclick="showPage('about');closeMobileNav()">About</a></li>
+    <li><a onclick="showPage('menu');closeMobileNav()">Menu</a></li>
+    <li><a onclick="showPage('gallery');closeMobileNav()">Gallery</a></li>
+    <li><a onclick="showPage('contact');closeMobileNav()">Contact</a></li>
+  </ul>
+</div>
+
+<!-- ======================================================
+     PAGE: HOME
+====================================================== -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-pretitle">Bukit Bangsar, Kuala Lumpur · Est. 2024</p>
+      <h1 class="hero-title">Chinta<br><em>by Chinoz</em></h1>
+      <p class="hero-sub">
+        Home-style Malay cooking, rooted in heritage &amp; love —<br>
+        a culinary legacy carried forward across generations.
+      </p>
+      <div class="hero-cta">
+        <a onclick="showPage('contact')" class="btn-primary"><span>Reserve a Table</span></a>
+        <a onclick="showPage('menu')" class="btn-outline">View Menu</a>
+      </div>
+    </div>
+    <div class="hero-scroll">Scroll</div>
+  </section>
+
+  <!-- LEGACY STRIP -->
+  <div class="legacy-strip fade-in">
+    <p><strong>24+ Years of Culinary Legacy</strong> &nbsp;·&nbsp; From the founders of the beloved <strong>Chinoz on the Park</strong> — reborn as a tribute to authentic Malay home cooking.</p>
+  </div>
+
+  <!-- INTRO SECTION -->
+  <section style="background: var(--cream);">
+    <div class="intro-section">
+      <div class="intro-img-wrap fade-in">
+        <img src="https://images.pexels.com/photos/38443076/pexels-photo-38443076.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=700&w=600" alt="Antique colonial dining interior with warm lighting" loading="lazy" />
+        <div class="intro-badge">
+          <span class="num">24+</span>
+          <span class="txt">Years of Legacy</span>
+        </div>
+      </div>
+      <div class="intro-text fade-in fade-in-delay-2">
+        <p class="section-label">Our Story</p>
+        <h2 class="section-title">A Hidden Gem<br><em>Behind the Plants</em></h2>
+        <p>
+          Tucked along the leafy lanes of Jalan Kemuja in Bukit Bangsar, Chinta by Chinoz is more than a restaurant — it is a living memory. Born from the hearts of those who built Chinoz on the Park, one of Kuala Lumpur's most treasured dining institutions, this intimate space carries forward a quarter century of culinary devotion.
+        </p>
+        <p>
+          Here, grandmother's recipes meet thoughtful plating, and every dish is an act of remembrance — of spice-warmed kitchens, laughter around the table, and the deep, unhurried flavours of authentic Malay home cooking.
+        </p>
+        <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a onclick="showPage('about')" class="btn-primary"><span>Our Full Story</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED DISHES -->
+  <section class="dishes-section">
+    <div class="dishes-inner">
+      <div class="dishes-header fade-in">
+        <p class="section-label">From Our Kitchen</p>
+        <h2 class="section-title">Signature <em>Dishes</em></h2>
+      </div>
+      <div class="dishes-grid">
+        <div class="dish-card fade-in fade-in-delay-1">
+          <img class="dish-card-img" src="https://images.pexels.com/photos/37179945/pexels-photo-37179945.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=500" alt="Nasi Campur" loading="lazy" />
+          <div class="dish-card-overlay">
+            <span class="dish-label">Our Centrepiece</span>
+            <span class="dish-name">Nasi Campur</span>
+            <span class="dish-desc">Steamed jasmine rice accompanied by a rotating daily selection of traditional Malay lauk — chosen with love, served with warmth.</span>
+          </div>
+        </div>
+        <div class="dish-card fade-in fade-in-delay-2">
+          <img class="dish-card-img" src="https://images.pexels.com/photos/37048265/pexels-photo-37048265.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=500" alt="Ayam Rendang Hijau" loading="lazy" />
+          <div class="dish-card-overlay">
+            <span class="dish-label">House Favourite</span>
+            <span class="dish-name">Ayam Rendang Hijau</span>
+            <span class="dish-desc">Tender chicken slow-braised in a fragrant green rendang paste — aromatic, herbaceous, and deeply satisfying.</span>
+          </div>
+        </div>
+        <div class="dish-card fade-in fade-in-delay-3">
+          <img class="dish-card-img" src="https://images.pexels.com/photos/37081073/pexels-photo-37081073.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=500" alt="Mee Rebus Johor" loading="lazy" />
+          <div class="dish-card-overlay">
+            <span class="dish-label">Southern Heritage</span>
+            <span class="dish-name">Mee Rebus Johor</span>
+            <span class="dish-desc">Thick yellow noodles drenched in a rich, slightly sweet gravy rooted in Johorean tradition — a comforting bowl of pure nostalgia.</span>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top: 2.5rem;">
+        <a onclick="showPage('menu')" class="btn-outline" style="border-color: rgba(184,146,42,0.6); color: var(--brass-pale);">Explore Full Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="cta-banner-inner fade-in">
+      <p class="section-label" style="justify-content:center;">Join Us</p>
+      <h2 class="section-title">Come, Pull Up a Chair.<br><em>Feel At Home.</em></h2>
+      <p>Daily from 10am to 9:30pm, our doors are open — whether for a quiet lunch or a long, leisurely dinner surrounded by antiques and soft candlelight. Reservations warmly welcomed.</p>
+      <a onclick="showPage('contact')" class="btn-primary"><span>Reserve a Table</span></a>
+    </div>
+  </section>
+
+</div><!-- /page-home -->
+
+
+<!-- ======================================================
+     PAGE: ABOUT
+====================================================== -->
+<div id="page-about" class="page">
+
+  <div style="padding-top: 70px;"></div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image: url('https://images.pexels.com/photos/38443076/pexels-photo-38443076.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1600');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <p class="pretitle">Our Heritage</p>
+      <h1>The Story of<br><em>Chinta</em></h1>
+    </div>
+  </section>
+
+  <!-- Story Section -->
+  <section style="background: var(--cream);">
+    <div class="about-story">
+      <div class="about-story-text fade-in">
+        <p class="section-label">Founded With Heart</p>
+        <h2 class="section-title">A Legacy<br><em>Reimagined</em></h2>
+        <p>
+          For 24 remarkable years, <strong>Chinoz on the Park</strong> stood as one of Kuala Lumpur's most beloved dining institutions — a place of warmth, flavour, and genuine hospitality. When that chapter closed, it was not the end, but a transformation.
+        </p>
+        <p>
+          Founded by <strong>Teng Wee Jeh</strong> and <strong>Sandra Samad</strong>, Chinta by Chinoz was born from the deep desire to honour what they had built — not through nostalgia alone, but through something deeply personal: the flavours of Malay home cooking that Sandra grew up with.
+        </p>
+        <p>
+          Settled into a characterful shophouse on <strong>Jalan Kemuja, Bukit Bangsar</strong>, Chinta is an intimate sanctuary. The name itself — <em>chinta</em>, the Malay word for love — says everything about what drives every dish that comes out of this kitchen.
+        </p>
+        <blockquote>
+          "We cook the way our mothers cooked — with patience, with memory, and with an abundance of love."
+        </blockquote>
+      </div>
+      <div class="about-story-imgs fade-in fade-in-delay-2">
+        <img src="https://images.pexels.com/photos/7800281/pexels-photo-7800281.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=500&w=700" alt="Outdoor dining with greenery" loading="lazy" />
+        <img src="https://images.pexels.com/photos/37181066/pexels-photo-37181066.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Traditional Malay dish" loading="lazy" onerror="this.src='https://images.pexels.com/photos/37051562/pexels-photo-37051562.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400'" />
+        <img src="https://images.pexels.com/photos/36075834/pexels-photo-36075834.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Malay cuisine" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Founders Strip -->
+  <section class="founders-strip">
+    <p class="section-label">The People Behind Chinta</p>
+    <h2>The <em>Founders</em></h2>
+    <p>Two names, one shared dream — to bring the taste of a Malay home to the table of every guest who walks through the door.</p>
+    <div class="founders-cards">
+      <div class="founder-card fade-in">
+        <div class="icon">🌿</div>
+        <h4>Teng Wee Jeh</h4>
+        <p>Co-founder and the visionary restaurateur behind 24 years of Chinoz on the Park's success. His eye for space, ambiance, and experience transforms a meal into a memory.</p>
+      </div>
+      <div class="founder-card fade-in fade-in-delay-2">
+        <div class="icon">🫕</div>
+        <h4>Sandra Samad</h4>
+        <p>The heart and soul of the kitchen. Sandra brings the authentic flavours of Malay home cooking — the recipes, the instincts, and the love that make every dish unmistakably "Chinta."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ambiance Section -->
+  <section class="ambiance-section">
+    <div class="ambiance-header fade-in">
+      <p class="section-label">The Ambiance</p>
+      <h2 class="section-title">Colonial Charm,<br><em>Warmly Curated</em></h2>
+      <p style="max-width:600px; margin: 1.5rem auto 0; color: var(--text-muted); font-size: 0.97rem; line-height: 1.8;">
+        Step inside and be transported. Every corner of Chinta by Chinoz has been arranged with the care of a collector — rich teak furniture, gleaming brass trays, vintage prints, and the soft rustle of tropical plants framing the entrance.
+      </p>
+    </div>
+    <div class="ambiance-features">
+      <div class="amb-feature fade-in">
+        <div class="icon">🪑</div>
+        <h4>Teak Furniture</h4>
+        <p>Sturdy, dark-grained teak chairs and tables sourced from antique dealers across the peninsula — each piece with its own history.</p>
+      </div>
+      <div class="amb-feature fade-in fade-in-delay-1">
+        <div class="icon">✨</div>
+        <h4>Brass &amp; Bronze</h4>
+        <p>Polished brass trays, bronze candlestick holders, and warm metallic accents catch the light in a way that only aged metal can.</p>
+      </div>
+      <div class="amb-feature fade-in fade-in-delay-2">
+        <div class="icon">🖼️</div>
+        <h4>Vintage Prints</h4>
+        <p>Framed illustrations, old maps of Malaya, and black-and-white portraits line the walls — a curated archive of Malay visual heritage.</p>
+      </div>
+      <div class="amb-feature fade-in fade-in-delay-3">
+        <div class="icon">🌿</div>
+        <h4>Garden Entry</h4>
+        <p>The restaurant is half-hidden behind a lush curtain of tropical plants — the "hidden gem behind the plants" that regulars love to discover.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Gallery -->
+  <section class="about-gallery">
+    <div class="ornament">✦</div>
+    <div class="about-gallery-grid">
+      <img src="https://images.pexels.com/photos/38298587/pexels-photo-38298587.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=900" alt="Tropical outdoor dining" loading="lazy" />
+      <img src="https://images.pexels.com/photos/2313037/pexels-photo-2313037.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Cozy restaurant interior" loading="lazy" />
+      <img src="https://images.pexels.com/photos/36760891/pexels-photo-36760891.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Tropical plants" loading="lazy" />
+      <img src="https://images.pexels.com/photos/37179942/pexels-photo-37179942.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=700" alt="Malaysian food spread" loading="lazy" />
+      <img src="https://images.pexels.com/photos/34393248/pexels-photo-34393248.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Wooden carved detail" loading="lazy" />
+    </div>
+  </section>
+
+</div><!-- /page-about -->
+
+
+<!-- ======================================================
+     PAGE: MENU
+====================================================== -->
+<div id="page-menu" class="page">
+
+  <div style="padding-top: 70px;"></div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image: url('https://images.pexels.com/photos/37051562/pexels-photo-37051562.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1600');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <p class="pretitle">Made With Love, Daily</p>
+      <h1>Our <em>Menu</em></h1>
+    </div>
+  </section>
+
+  <div class="menu-page-content">
+    <div class="menu-intro fade-in">
+      <p class="section-label">The Kitchen</p>
+      <h2 class="section-title">Flavours of a<br><em>Malay Home</em></h2>
+      <p>Every dish is cooked fresh each day — guided by the rhythms of the season, the traditions of Sandra's kitchen, and the belief that the best food is always made with unhurried care.</p>
+    </div>
+
+    <!-- Tab Buttons -->
+    <div class="menu-tabs" role="tablist">
+      <button class="menu-tab-btn active" onclick="switchMenuTab(this,'nasi')" role="tab">Nasi Campur</button>
+      <button class="menu-tab-btn" onclick="switchMenuTab(this,'mains')" role="tab">Mains</button>
+      <button class="menu-tab-btn" onclick="switchMenuTab(this,'sides')" role="tab">Sides &amp; Salads</button>
+      <button class="menu-tab-btn" onclick="switchMenuTab(this,'kuih')" role="tab">Kuih &amp; Desserts</button>
+      <button class="menu-tab-btn" onclick="switchMenuTab(this,'drinks')" role="tab">Drinks</button>
+    </div>
+
+    <!-- NASI CAMPUR -->
+    <div class="menu-panel active" id="menu-nasi">
+      <h3 class="menu-category-title">Nasi Campur</h3>
+      <p class="menu-category-desc">The heart of Chinta — steamed fragrant rice paired with your choice of daily rotating lauk. A complete meal, a complete feeling.</p>
+      <div class="menu-items-grid">
+        <div class="menu-item-card">
+          <img class="menu-item-img" src="https://images.pexels.com/photos/37179945/pexels-photo-37179945.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=500" alt="Nasi Campur" loading="lazy" />
+          <div class="menu-item-body">
+            <h4 class="menu-item-name">Nasi Campur</h4>
+            <p class="menu-item-desc">Aromatic steamed rice with a curated selection of the day's best lauk — rendang, sambal, sayur, ikan, kerabu, and more. No two days are exactly alike.</p>
+            <span class="menu-item-tag">Daily Special</span>
+          </div>
+        </div>
+        <div class="menu-item-card">
+          <img class="menu-item-img" src="https://images.pexels.com/photos/37081081/pexels-photo-37081081.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=500" alt="Nasi Padang Plate" loading="lazy" />
+          <div class="menu-item-body">
+            <h4 class="menu-item-name">Nasi Campur — Premium</h4>
+            <p class="menu-item-desc">Choose three or more lauk from the daily selection, including premium cuts and chef's signature sides. A feast worth lingering over.</p>
+            <span class="menu-item-tag">Recommended</span>
+          </div>
+        </div>
+        <div class="menu-item-card">
+          <img class="menu-item-img" src="https://images.pexels.com/photos/36075834/pexels-photo-36075834.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=500" alt="Ketupat and Curry" loading="lazy" />
+          <div class="menu-item-body">
+            <h4 class="menu-item-name">Nasi Campur Hari Raya Style</h4>
+            <p class="menu-item-desc">On festive occasions, we bring out the full grandeur — ketupat, lemang, rendang, and all the ceremonial lauk of a Malay celebration table.</p>
+            <span class="menu-item-tag">Seasonal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAINS -->
+    <div class="menu-panel" id="menu-mains">
+      <h3 class="menu-category-title">Main Dishes</h3>
+      <p class="menu-category-desc">Slow-cooked, deeply spiced, and full of character — our mains are the soul of Malay cooking as it should be.</p>
+      <div class="menu-items-grid">
+        <div class="menu-item-card">
+          <img class="menu-item-img" src="https://images.pexels.com/photos/37051562/pexels-photo-37051562.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=500" alt="Ayam Rose" loading="lazy" />
+          <div class="menu-item-body">
+            <h4 class="menu-item-name">Ayam Rose</h4>
+            <p class="menu-item-desc">A signature Chinta creation — tender chicken cooked in a delicate, mildly spiced rose sauce, fragrant with lemongrass and a touch of coconut cream.</p>
+            <span class="menu-item-tag">Chinta Original</span>
+          </div>
+        </div>
+        <div class="menu-item-card">
+          <img class="menu-item-img" src="https://images.pexels.com/photos/37048265/pexels-photo-37048265.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=500" alt="Ayam Rendang Hijau" loading="lazy" />
+          <div class="menu-item-body">
+            <h4 class="menu-item-name">Ayam Rendang Hijau</h4>
+            <p class="menu-item-desc">Green rendang chicken — an aromatic slow-cook of free-range chicken in a blended paste of green chillies, galangal, kaffir lime, and turmeric leaf. Herbaceous and hauntingly good.</p>
+            <span class="menu-item-tag">House Favourite</span>
+          </div>
+        </div>
+        <div class="menu-item-card">
+          <img class="menu-item-img" src="https://images.pexels.com/photos/37081073/pexels-photo-37081073.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=500" alt="Daging Salai Gulai Lemak" loading="lazy" />
+          <div class="menu-item-body">
+            <h4 class="menu-item-name">Daging Salai Gulai Lemak</h4>
+            <p class="menu-item-desc">Smoked beef in a rich, golden gulai lemak — a Negeri Sembilan–style curry that balances the smoky depth of salai beef with the gentle sweetness of coconut milk.</p>
+            <span class="menu-item-tag">Slow-Cooked</span>
+          </div>
+        </div>
+        <div class="menu-item-card">
+          <img class="menu-item-img" src="https://images.pexels.com/photos/37179942/pexels-photo-37179942.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=500" alt="Sambal Tumis Udang Petai" loading="lazy" />
+          <div class="menu-item-body">
+            <h4 class="menu-item-name">Sambal Tumis Udang Petai</h4>
+            <p class="menu-item-desc">Prawns and petai (stink beans) stir-fried in a punchy sambal tumis that is fiery, fragrant, and unmistakably Malay. A beloved classic that demands a second helping of rice.</p>
+            <span class="menu-item-tag">Must-Try</span>
+          </div>
+        </div>
+        <div class="menu-item-card">
+          <img class="menu-item-img" src="https://images.pexels.com/photos/37051566/pexels-photo-37051566.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=500" alt="Mee Rebus Johor" loading="lazy" />
+          <div class="menu-item-body">
+            <h4 class="menu-item-name">Mee Rebus Johor</h4>
+            <p class="menu-item-desc">Thick yellow noodles in a hearty, slightly sweetened gravy enriched with sweet potato and aromatics — a Johorean street-food classic elevated into a full dining experience.</p>
+            <span class="menu-item-tag">Southern Heritage</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIDES & SALADS -->
+    <div class="menu-panel" id="menu-sides">
+      <h3 class="menu-category-title">Sides &amp; Salads</h3>
+      <p class="menu-category-desc">Light, bright, and deeply traditional — the salads and sides that complete any Malay table.</p>
+      <div class="menu-items-grid">
+        <div class="menu-item-card">
+          <img class="menu-item-img" src="https://images.pexels.com/photos/37179945/pexels-photo-37179945.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=500" alt="Kerabu Pucuk Paku" loading="lazy" />
+          <div class="menu-item-body">
+            <h4 class="menu-item-name">Kerabu Pucuk Paku</h4>
+            <p class="menu-item-desc">Young fern shoots tossed in a vivid kerabu dressing of toasted coconut, shrimp paste, calamansi juice, and bird's eye chilli. Refreshing, textured, and deeply aromatic.</p>
+            <span class="menu-item-tag">Salad</span>
+          </div>
+        </div>
+        <div class="menu-item-card">
+          <img class="menu-item-img" src="https://images.pexels.com/photos/37081081/pexels-photo-37081081.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=500" alt="Side dishes" loading="lazy" />
+          <div class="menu-item-body">
+            <h4 class="menu-item-name">Papadums &amp; Condiments</h4>
+            <p class="menu-item-desc">Crisp homemade papadums served alongside rotating condiments — sambal belacan, acar rampai, budu dip — each prepared in-house with Sandra's own touch.</p>
+            <span class="menu-item-tag">Complements</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KUIH & DESSERTS -->
+    <div class="menu-panel" id="menu-kuih">
+      <h3 class="menu-category-title">Kuih &amp; Desserts</h3>
+      <p class="menu-category-desc">A sweet finale — traditional Malay kuih and desserts made daily, by hand, from recipes that have been in the family for generations.</p>
+      <div class="menu-items-grid">
+        <div class="menu-item-card">
+          <img class="menu-item-img" src="https://images.pexels.com/photos/33090946/pexels-photo-33090946.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=500" alt="Traditional kuih" loading="lazy" />
+          <div class="menu-item-body">
+            <h4 class="menu-item-name">Kuih Gula Hangus</h4>
+            <p class="menu-item-desc">A dark, caramel-tinged steamed kuih made with burnt sugar, coconut milk, and glutinous rice flour — intensely fragrant and slightly bitter-sweet in the best possible way.</p>
+            <span class="menu-item-tag">Traditional</span>
+          </div>
+        </div>
+        <div class="menu-item-card">
+          <img class="menu-item-img" src="https://images.pexels.com/photos/32044742/pexels-photo-32044742.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=500" alt="Seri Muka Telang" loading="lazy" />
+          <div class="menu-item-body">
+            <h4 class="menu-item-name">Seri Muka Telang</h4>
+            <p class="menu-item-desc">A two-layered glutinous rice kuih — the base sticky and rich, the custard top infused with butterfly pea flower (bunga telang) to a stunning natural indigo. As beautiful as it is delicious.</p>
+            <span class="menu-item-tag">Showstopper</span>
+          </div>
+        </div>
+        <div class="menu-item-card">
+          <img class="menu-item-img" src="https://images.pexels.com/photos/37081073/pexels-photo-37081073.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=500" alt="Chinoz Layer Cake" loading="lazy" />
+          <div class="menu-item-body">
+            <h4 class="menu-item-name">Chinoz Layer Cake</h4>
+            <p class="menu-item-desc">The legendary Chinoz layered cake — a rich, buttery Sarawak-style kek lapis that has been a quiet icon since the Chinoz on the Park days. Sold whole or by the slice.</p>
+            <span class="menu-item-tag">Legacy Dish</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DRINKS -->
+    <div class="menu-panel" id="menu-drinks">
+      <h3 class="menu-category-title">Drinks</h3>
+      <p class="menu-category-desc">Cooling, nostalgic, and perfectly paired with the bold flavours of Malay cooking.</p>
+      <div class="menu-items-grid">
+        <div class="menu-item-card">
+          <img class="menu-item-img" src="https://images.pexels.com/photos/36760891/pexels-photo-36760891.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=500" alt="Sarbat Pulau Pinang" loading="lazy" />
+          <div class="menu-item-body">
+            <h4 class="menu-item-name">Sarbat Pulau Pinang</h4>
+            <p class="menu-item-desc">A classic Penang-style rose syrup drink — iced, sweet, and floral, with a hint of spice. The taste of a hot afternoon in old Georgetown, bottled in a glass.</p>
+            <span class="menu-item-tag">Signature Drink</span>
+          </div>
+        </div>
+        <div class="menu-item-card">
+          <img class="menu-item-img" src="https://images.pexels.com/photos/38298587/pexels-photo-38298587.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=500" alt="Long's Ais Krim Soda" loading="lazy" />
+          <div class="menu-item-body">
+            <h4 class="menu-item-name">Long's Ais Krim Soda</h4>
+            <p class="menu-item-desc">A frothy, fizzy ice cream soda inspired by the old kopitiam tradition — a creamy scoop of vanilla floating in sweet soda water, a childlike delight for all ages.</p>
+            <span class="menu-item-tag">Nostalgic Classic</span>
+          </div>
+        </div>
+        <div class="menu-item-card">
+          <img class="menu-item-img" src="https://images.pexels.com/photos/37081081/pexels-photo-37081081.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=500" alt="Teh Tarik" loading="lazy" />
+          <div class="menu-item-body">
+            <h4 class="menu-item-name">Teh Tarik Chinta</h4>
+            <p class="menu-item-desc">Our house-made teh tarik — strong brewed black tea pulled to a silky, frothy perfection with full-cream condensed milk. The essential accompaniment to every Malay meal.</p>
+            <span class="menu-item-tag">Daily Essential</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu Footer Note -->
+    <div style="margin-top: 2rem; padding: 1.5rem 2rem; background: var(--cream-dark); border-left: 3px solid var(--brass); font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1rem; color: var(--text-muted); line-height: 1.7;">
+      Menu changes daily based on market availability and seasonal produce. We recommend calling ahead (+60 3-2201 3756) to confirm availability of specific dishes.
+    </div>
+  </div>
+
+</div><!-- /page-menu -->
+
+
+<!-- ======================================================
+     PAGE: GALLERY
+====================================================== -->
+<div id="page-gallery" class="page">
+
+  <div style="padding-top: 70px;"></div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image: url('https://images.pexels.com/photos/38298587/pexels-photo-38298587.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1600');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <p class="pretitle">Sights &amp; Flavours</p>
+      <h1>Our <em>Gallery</em></h1>
+    </div>
+  </section>
+
+  <div class="gallery-page-content">
+    <div class="gallery-intro fade-in">
+      <p class="section-label">Photography</p>
+      <h2 class="section-title">A Feast for<br><em>the Eyes</em></h2>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="gallery-filter">
+      <button class="gallery-filter-btn active" onclick="filterGallery(this,'all')">All</button>
+      <button class="gallery-filter-btn" onclick="filterGallery(this,'food')">Food &amp; Dishes</button>
+      <button class="gallery-filter-btn" onclick="filterGallery(this,'interior')">Interior &amp; Ambiance</button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-masonry" id="galleryGrid">
+
+      <div class="gallery-item" data-cat="food" onclick="openLightbox(this)">
+        <img src="https://images.pexels.com/photos/37051566/pexels-photo-37051566.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=500" alt="Nasi Campur spread" loading="lazy" />
+        <div class="gallery-item-overlay"><span>+</span></div>
+      </div>
+
+      <div class="gallery-item" data-cat="interior" onclick="openLightbox(this)">
+        <img src="https://images.pexels.com/photos/38443076/pexels-photo-38443076.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=500" alt="Vintage dining room" loading="lazy" />
+        <div class="gallery-item-overlay"><span>+</span></div>
+      </div>
+
+      <div class="gallery-item" data-cat="food" onclick="openLightbox(this)">
+        <img src="https://images.pexels.com/photos/37179945/pexels-photo-37179945.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=500&w=500" alt="Nasi Campur plate" loading="lazy" />
+        <div class="gallery-item-overlay"><span>+</span></div>
+      </div>
+
+      <div class="gallery-item" data-cat="interior" onclick="openLightbox(this)">
+        <img src="https://images.pexels.com/photos/38298587/pexels-photo-38298587.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=500" alt="Tropical outdoor dining" loading="lazy" />
+        <div class="gallery-item-overlay"><span>+</span></div>
+      </div>
+
+      <div class="gallery-item" data-cat="food" onclick="openLightbox(this)">
+        <img src="https://images.pexels.com/photos/37048265/pexels-photo-37048265.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=450&w=500" alt="Traditional Malaysian feast" loading="lazy" />
+        <div class="gallery-item-overlay"><span>+</span></div>
+      </div>
+
+      <div class="gallery-item" data-cat="interior" onclick="openLightbox(this)">
+        <img src="https://images.pexels.com/photos/7800281/pexels-photo-7800281.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=500" alt="Outdoor seating with plants" loading="lazy" />
+        <div class="gallery-item-overlay"><span>+</span></div>
+      </div>
+
+      <div class="gallery-item" data-cat="food" onclick="openLightbox(this)">
+        <img src="https://images.pexels.com/photos/37081073/pexels-photo-37081073.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=520&w=500" alt="Indonesian cuisine spread" loading="lazy" />
+        <div class="gallery-item-overlay"><span>+</span></div>
+      </div>
+
+      <div class="gallery-item" data-cat="interior" onclick="openLightbox(this)">
+        <img src="https://images.pexels.com/photos/2313037/pexels-photo-2313037.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=500&w=500" alt="Rustic stone dining room" loading="lazy" />
+        <div class="gallery-item-overlay"><span>+</span></div>
+      </div>
+
+      <div class="gallery-item" data-cat="food" onclick="openLightbox(this)">
+        <img src="https://images.pexels.com/photos/37081081/pexels-photo-37081081.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=450&w=500" alt="Nasi Padang dish" loading="lazy" />
+        <div class="gallery-item-overlay"><span>+</span></div>
+      </div>
+
+      <div class="gallery-item" data-cat="interior" onclick="openLightbox(this)">
+        <img src="https://images.pexels.com/photos/36760891/pexels-photo-36760891.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=500" alt="Tropical foliage" loading="lazy" />
+        <div class="gallery-item-overlay"><span>+</span></div>
+      </div>
+
+      <div class="gallery-item" data-cat="food" onclick="openLightbox(this)">
+        <img src="https://images.pexels.com/photos/36075834/pexels-photo-36075834.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=500" alt="Ketupat and curry" loading="lazy" />
+        <div class="gallery-item-overlay"><span>+</span></div>
+      </div>
+
+      <div class="gallery-item" data-cat="interior" onclick="openLightbox(this)">
+        <img src="https://images.pexels.com/photos/34393248/pexels-photo-34393248.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=500&w=500" alt="Carved wooden detail" loading="lazy" />
+        <div class="gallery-item-overlay"><span>+</span></div>
+      </div>
+
+      <div class="gallery-item" data-cat="food" onclick="openLightbox(this)">
+        <img src="https://images.pexels.com/photos/33090946/pexels-photo-33090946.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=480&w=500" alt="Traditional kuih" loading="lazy" />
+        <div class="gallery-item-overlay"><span>+</span></div>
+      </div>
+
+      <div class="gallery-item" data-cat="interior" onclick="openLightbox(this)">
+        <img src="https://images.pexels.com/photos/33456527/pexels-photo-33456527.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=420&w=500" alt="Greenhouse plants" loading="lazy" />
+        <div class="gallery-item-overlay"><span>+</span></div>
+      </div>
+
+      <div class="gallery-item" data-cat="food" onclick="openLightbox(this)">
+        <img src="https://images.pexels.com/photos/37179942/pexels-photo-37179942.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=460&w=500" alt="Chicken satay spread" loading="lazy" />
+        <div class="gallery-item-overlay"><span>+</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img id="lightboxImg" src="" alt="" />
+  </div>
+
+</div><!-- /page-gallery -->
+
+
+<!-- ======================================================
+     PAGE: CONTACT
+====================================================== -->
+<div id="page-contact" class="page">
+
+  <div style="padding-top: 70px;"></div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image: url('https://images.pexels.com/photos/7800281/pexels-photo-7800281.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1600');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <p class="pretitle">Bukit Bangsar, Kuala Lumpur</p>
+      <h1>Find <em>Us</em></h1>
+    </div>
+  </section>
+
+  <div class="contact-page-content">
+
+    <!-- Contact Info -->
+    <div class="contact-info fade-in">
+      <p class="section-label">Visit Chinta</p>
+      <h2 class="section-title">Come Find<br><em>Our Table</em></h2>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📍</div>
+        <div class="contact-detail-text">
+          <h5>Address</h5>
+          <p>24, Jalan Kemuja,<br>Bukit Bangsar,<br>59000 Kuala Lumpur,<br>Malaysia</p>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📞</div>
+        <div class="contact-detail-text">
+          <h5>Telephone</h5>
+          <a href="tel:+60322013756">+60 3-2201 3756</a>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">🕐</div>
+        <div class="contact-detail-text">
+          <h5>Opening Hours</h5>
+          <div class="hours-grid">
+            <span>Monday – Sunday</span>
+            <strong>10:00am – 9:30pm</strong>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.4rem; font-style: italic;">Open daily. Walk-ins welcome. Reservations recommended for weekends.</p>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">🍽️</div>
+        <div class="contact-detail-text">
+          <h5>Cuisine</h5>
+          <p>Classic Home-Style Malay · Heritage Recipes · Daily-Fresh Menu</p>
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div>
+        <h5 style="font-family:'Jost',sans-serif; font-size:0.68rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--brass); margin-bottom:0.75rem;">Follow Us</h5>
+        <div class="social-row">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Reserve CTA Box -->
+      <div class="reserve-cta-box">
+        <p>"Reserve your table and let us welcome you home."</p>
+        <a href="tel:+60322013756" class="btn-primary" style="background: var(--brass);"><span>📞 Call to Reserve</span></a>
+      </div>
+    </div>
+
+    <!-- Map Section -->
+    <div class="contact-map-wrap fade-in fade-in-delay-2">
+      <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--text-muted); font-style: italic; padding: 0 0 0.5rem;">
+        We're tucked behind the greenery — look for the brass lantern.
+      </div>
+          <iframe
+        class="map-embed"
+        src="https://www.google.com/maps?q=Chinta+by+Chinoz+24+Jalan+Kemuja+Bukit+Bangsar+Kuala+Lumpur&output=embed"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Chinta by Chinoz Location Map">
+      </iframe>
+      <!-- Fallback map link -->
+      <a href="https://www.google.com/maps/search/?api=1&query=Chinta+by+Chinoz+Jalan+Kemuja+Bangsar+Kuala+Lumpur" target="_blank" rel="noopener"
+         style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: var(--brass); font-weight: 600; letter-spacing: 0.1em; margin-top: 0.5rem; transition: color 0.3s;"
+         onmouseover="this.style.color='var(--teak)'" onmouseout="this.style.color='var(--brass)'">
+        <span>📍</span> Open in Google Maps →
+      </a>
+
+      <!-- Getting Here -->
+      <div style="background: var(--cream-dark); padding: 1.8rem; border: 1px solid rgba(184,146,42,0.15); margin-top: 0.5rem;">
+        <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--teak); margin-bottom: 1rem;">Getting Here</h4>
+        <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+          <div style="display: flex; gap: 0.8rem; align-items: flex-start;">
+            <span style="color: var(--brass); font-size: 1rem; margin-top: 2px;">🚗</span>
+            <div>
+              <strong style="font-size: 0.82rem; color: var(--text-body); display: block;">By Car</strong>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">Limited street parking on Jalan Kemuja and nearby roads. Look for the Bangsar Village area.</span>
+            </div>
+          </div>
+          <div style="display: flex; gap: 0.8rem; align-items: flex-start;">
+            <span style="color: var(--brass); font-size: 1rem; margin-top: 2px;">🚌</span>
+            <div>
+              <strong style="font-size: 0.82rem; color: var(--text-body); display: block;">By Public Transport</strong>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">Nearest LRT: Abdullah Hukum (Sri Petaling Line). Take a Grab or walk 10–15 minutes through Bangsar.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div><!-- /page-contact -->
+
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">Chinta</div>
+      <p>Home-style Malay cooking,<br>rooted in heritage &amp; love.<br><em>Bukit Bangsar · Since 2024</em></p>
+    </div>
+    <div class="footer-links">
+      <h5>Navigate</h5>
+      <ul>
+        <li><a onclick="showPage('home')">Home</a></li>
+        <li><a onclick="showPage('about')">About Us</a></li>
+        <li><a onclick="showPage('menu')">Our Menu</a></li>
+        <li><a onclick="showPage('gallery')">Gallery</a></li>
+        <li><a onclick="showPage('contact')">Contact &amp; Reserve</a></li>
+      </ul>
+    </div>
+    <div class="footer-social">
+      <h5>Connect</h5>
+      <p style="font-size: 0.83rem; margin-bottom: 0.8rem; line-height: 1.6;">
+        24, Jalan Kemuja, Bukit Bangsar<br>
+        59000 Kuala Lumpur<br>
+        +60 3-2201 3756
+      </p>
+      <div class="social-row">
+        <a href="https://www.facebook.com" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2024 Chinta by Chinoz. All rights reserved.</span>
+    <span style="font-family: 'Cormorant Garamond', serif; font-style: italic; color: rgba(184,146,42,0.6);">
+      Cooked with love. Served with chinta.
+    </span>
+  </div>
+</footer>
+
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+  // ===== PAGE NAVIGATION =====
+  function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + pageId).classList.add('active');
+
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.classList.toggle('active', a.dataset.page === pageId);
+    });
+
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
+    // Trigger animations after page switch
+    setTimeout(() => initFadeIn(), 50);
+  }
+
+  // ===== MOBILE NAV =====
+  function toggleMobileNav() {
+    const nav = document.getElementById('mobileNav');
+    const ham = document.getElementById('hamburger');
+    nav.classList.toggle('open');
+    ham.classList.toggle('open');
+  }
+  function closeMobileNav() {
+    document.getElementById('mobileNav').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+
+  // Close mobile nav on click outside
+  document.addEventListener('click', function(e) {
+    const nav = document.getElementById('mobileNav');
+    const ham = document.getElementById('hamburger');
+    if (!nav.contains(e.target) && !ham.contains(e.target) && nav.classList.contains('open')) {
+      closeMobileNav();
+    }
+  });
+
+  // ===== HERO BG ANIMATION =====
+  window.addEventListener('load', () => {
+    const heroBg = document.getElementById('heroBg');
+    if (heroBg) heroBg.classList.add('loaded');
+  });
+
+  // ===== FADE-IN ON SCROLL =====
+  function initFadeIn() {
+    const elements = document.querySelectorAll('.page.active .fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    elements.forEach(el => {
+      if (!el.classList.contains('visible')) {
+        observer.observe(el);
+      }
+    });
+  }
+
+  // Initial call
+  initFadeIn();
+
+  // ===== MENU TABS =====
+  function switchMenuTab(btn, panelId) {
+    document.querySelectorAll('.menu-tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('menu-' + panelId).classList.add('active');
+  }
+
+  // ===== GALLERY FILTER =====
+  function filterGallery(btn, cat) {
+    document.querySelectorAll('.gallery-filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const items = document.querySelectorAll('.gallery-item');
+    items.forEach(item => {
+      if (cat === 'all' || item.dataset.cat === cat) {
+        item.style.display = '';
+        item.style.opacity = '0';
+        item.style.transition = 'none';
+        setTimeout(() => {
+          item.style.transition = 'opacity 0.4s ease';
+          item.style.opacity = '1';
+        }, 10);
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  // ===== LIGHTBOX =====
+  function openLightbox(el) {
+    const img = el.querySelector('img');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightbox = document.getElementById('lightbox');
+    lightboxImg.src = img.src.replace(/&w=\d+/, '&w=1200').replace(/&h=\d+/, '&h=900');
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(e) {
+    if (!e || e.target !== document.getElementById('lightboxImg')) {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+
+  // ===== NAVBAR SCROLL EFFECT =====
+  window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      navbar.style.borderBottomColor = 'rgba(184,146,42,0.4)';
+    } else {
+      navbar.style.borderBottomColor = 'rgba(184,146,42,0.3)';
+    }
+  });
+
+  // ===== INTERSECTION OBSERVER for persistent fade-in =====
+  const globalObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        globalObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+  function observeAllFadeIns() {
+    document.querySelectorAll('.fade-in:not(.visible)').forEach(el => {
+      globalObserver.observe(el);
+    });
+  }
+
+  // Re-observe on page changes
+  const pageObserver = new MutationObserver(() => {
+    observeAllFadeIns();
+  });
+  pageObserver.observe(document.body, { attributes: true, subtree: true, attributeFilter: ['class'] });
+
+  observeAllFadeIns();
+</script>
+
+</body>
+</html>

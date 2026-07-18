@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Kaara Saaram Claypot</title>
+  <meta name="description" content="Get in touch with Kaara Saaram Claypot. Visit us in Brickfields, KL. Call, WhatsApp or email us. Open daily 11AM–Midnight." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .contact-two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-top"><span class="nav-logo-emoji">🍲</span> KAARA SAARAM</span>
+        <span class="nav-logo-sub">CLAYPOT</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="branches.html">Branches</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav">
+    <button class="mobile-nav-close" aria-label="Close menu">&#x2715;</button>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="menu.html">Menu</a>
+    <a href="branches.html">Branches</a>
+    <a href="contact.html" class="active">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero hero-xs hero-center contact-hero">
+    <img
+      src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&q=80"
+      alt="Warm Indian restaurant interior with ambient lighting"
+      class="hero-bg-img"
+      loading="lazy"
+      onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=1600&q=80'"
+    />
+    <div class="hero-overlay" style="background: rgba(15,7,3,0.72);"></div>
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-label">We're Here for You</span>
+        <h1>Get In Touch</h1>
+        <p style="margin: 16px auto 0; max-width: 520px; font-size: 17px;">Visit us, call us, or drop us a message. We'd love to hear from you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT MAIN -->
+  <section style="background: var(--bg);">
+    <div class="container">
+      <div class="contact-two-col">
+
+        <!-- LEFT: CONTACT CARD -->
+        <div class="contact-card reveal">
+          <h3>Brickfields — Main Branch</h3>
+
+          <div class="contact-info-row" style="margin-bottom: 20px;">
+            <span class="contact-info-icon">📍</span>
+            <div class="contact-info-text">
+              290, Jalan Tun Sambanthan,<br />
+              Brickfields (Little India),<br />
+              50470 Kuala Lumpur, Malaysia
+            </div>
+          </div>
+
+          <div class="contact-info-row" style="margin-bottom: 20px;">
+            <span class="contact-info-icon">📞</span>
+            <div class="contact-info-text">
+              <a href="tel:+60129362526">+60 12-936 2526</a>
+            </div>
+          </div>
+
+          <div class="contact-info-row" style="margin-bottom: 20px;">
+            <span class="contact-info-icon">✉️</span>
+            <div class="contact-info-text">
+              <a href="mailto:kaara.saaram@outlook.com">kaara.saaram@outlook.com</a>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 28px;">
+            <a href="https://wa.me/60129362526" target="_blank" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
+              💬 Chat on WhatsApp
+            </a>
+          </div>
+
+          <!-- HOURS -->
+          <div style="border-top: 1px solid var(--border); padding-top: 24px;">
+            <h4 style="font-family: 'Cinzel', serif; font-size: 16px; color: var(--saffron); margin-bottom: 14px; letter-spacing: 0.08em;">Opening Hours</h4>
+            <table class="hours-table">
+              <tbody>
+                <tr>
+                  <td>Monday – Friday</td>
+                  <td>11:00 AM – 12:00 AM</td>
+                </tr>
+                <tr>
+                  <td>Saturday</td>
+                  <td>11:00 AM – 12:00 AM</td>
+                </tr>
+                <tr>
+                  <td>Sunday</td>
+                  <td>11:00 AM – 12:00 AM</td>
+                </tr>
+                <tr>
+                  <td>Public Holidays</td>
+                  <td>11:00 AM – 12:00 AM</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="hours-note">* Hours may vary by branch. Call ahead to confirm.</p>
+          </div>
+        </div>
+
+        <!-- RIGHT: MAP -->
+        <div class="reveal" style="height: 100%; min-height: 440px;">
+          <div class="map-wrap">
+            <iframe
+              src="https://www.google.com/maps?q=290+Jalan+Tun+Sambanthan+Brickfields+50470+Kuala+Lumpur+Malaysia&output=embed"
+              width="100%"
+              height="100%"
+              style="border:0; border-radius:14px; min-height: 440px; display:block;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Kaara Saaram Claypot - Brickfields Location"
+            ></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL MEDIA -->
+  <section style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 72px 0;">
+    <div class="container">
+      <div class="text-center">
+        <p class="section-label">Follow Our Journey</p>
+        <h2 class="section-title reveal">Connect With Us</h2>
+        <span class="section-underline"></span>
+        <p class="reveal" style="color: var(--muted); max-width: 500px; margin: 0 auto 32px; font-size: 17px;">Follow us for daily specials, behind-the-scenes kitchen moments, and the latest from all our branches.</p>
+        <div class="social-row reveal">
+          <a href="https://www.facebook.com/KaaraSaaram.net" target="_blank" class="social-btn">
+            <span>f</span> Facebook — KaaraSaaram.net
+          </a>
+          <a href="https://www.instagram.com/kaarasaaramclaypot" target="_blank" class="social-btn">
+            <span>📷</span> Instagram — @kaarasaaramclaypot
+          </a>
+          <a href="https://wa.me/60129362526" target="_blank" class="social-btn">
+            <span>💬</span> WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DELIVERY -->
+  <section style="background: var(--bg); padding: 72px 0;">
+    <div class="container">
+      <div class="text-center">
+        <p class="section-label">Order from Your Couch</p>
+        <h2 class="section-title reveal">Available on Delivery Platforms</h2>
+        <span class="section-underline"></span>
+        <p class="reveal" style="color: var(--muted); max-width: 500px; margin: 0 auto 32px; font-size: 17px;">Can't make it in? No problem — your favourite claypot dishes are just a few taps away.</p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;" class="reveal">
+          <a href="https://www.foodpanda.my" target="_blank" class="delivery-pill" style="padding: 14px 32px; font-size: 16px; border-radius: 8px;">
+            🐼 Order on Foodpanda
+          </a>
+          <a href="https://food.grab.com" target="_blank" class="delivery-pill" style="padding: 14px 32px; font-size: 16px; border-radius: 8px;">
+            🚗 Order on GrabFood
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIND OTHER BRANCHES -->
+  <section style="background: var(--surface-alt); border-top: 1px solid var(--border); padding: 72px 0;">
+    <div class="container">
+      <div class="text-center">
+        <p class="section-label">Not Near Brickfields?</p>
+        <h2 class="section-title reveal">Find Your Nearest Branch</h2>
+        <span class="section-underline"></span>
+        <p class="reveal" style="color: var(--muted); max-width: 500px; margin: 0 auto 32px; font-size: 17px;">We have 15+ branches across Malaysia. Find the one closest to you.</p>
+        <a href="branches.html" class="btn-primary reveal">View All Branches</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOD IMAGE BREAK -->
+  <div style="position: relative; overflow: hidden; height: 320px;">
+    <img
+      src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?auto=format&fit=crop&w=1600&q=80"
+      alt="South Indian food spread laid out on table"
+      loading="lazy"
+      style="width:100%; height:100%; object-fit:cover; object-position:center;"
+      onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=1600&q=80'"
+    />
+    <div style="position:absolute; inset:0; background: rgba(15,7,3,0.5); display:flex; align-items:center; justify-content:center;">
+      <div style="text-align:center;">
+        <p style="font-family:'Cinzel', serif; font-style:italic; font-size:24px; color:var(--cream); max-width:600px; padding: 0 24px; line-height:1.6;">"Come hungry. Leave happy. That's the Kaara Saaram promise."</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-logo-area">
+          <div class="nav-logo">
+            <span class="nav-logo-top"><span class="nav-logo-emoji">🍲</span> KAARA SAARAM</span>
+            <span class="nav-logo-sub" style="margin-left:0; margin-top:4px;">CLAYPOT</span>
+          </div>
+          <p class="footer-tagline">"The Taste of Spice &amp; Soul"</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/KaaraSaaram.net" target="_blank" class="social-icon" aria-label="Facebook">f</a>
+            <a href="https://www.instagram.com/kaarasaaramclaypot" target="_blank" class="social-icon" aria-label="Instagram">in</a>
+            <a href="https://wa.me/60129362526" target="_blank" class="social-icon" aria-label="WhatsApp">wa</a>
+          </div>
+          <span class="halal-badge">✓ Halal Certified</span>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="menu.html">Our Menu</a></li>
+            <li><a href="branches.html">Branches</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact &amp; Hours</h4>
+          <div class="contact-info-row">
+            <span class="contact-info-icon">📍</span>
+            <p class="contact-info-text">290, Jalan Tun Sambanthan, Brickfields, 50470 Kuala Lumpur</p>
+          </div>
+          <div class="contact-info-row">
+            <span class="contact-info-icon">📞</span>
+            <p class="contact-info-text"><a href="tel:+60129362526">+60 12-936 2526</a></p>
+          </div>
+          <div class="contact-info-row">
+            <span class="contact-info-icon">✉️</span>
+            <p class="contact-info-text"><a href="mailto:kaara.saaram@outlook.com">kaara.saaram@outlook.com</a></p>
+          </div>
+          <div class="contact-info-row">
+            <span class="contact-info-icon">🕙</span>
+            <p class="contact-info-text">Daily: 11:00 AM – 12:00 AM (Midnight)</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Kaara Saaram Claypot. All Rights Reserved. &nbsp;|&nbsp; Halal Certified &nbsp;|&nbsp; 15+ Branches Across Malaysia</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

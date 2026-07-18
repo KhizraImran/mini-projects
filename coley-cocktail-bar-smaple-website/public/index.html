@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COLEY — Award-Winning Cocktail Bar in Bangsar, Kuala Lumpur</title>
+  <meta name="description" content="COLEY is an award-winning cocktail bar in Bangsar, Kuala Lumpur. Founded by CK Kho, COLEY was named Malaysia's Best Bar 2019 and featured in Asia's 50 Best Bars 2022." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-logo">COLEY</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">✕</button>
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="menu.html">Menu</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="particles" id="particles"></div>
+    <div class="hero-content">
+      <span class="gold-label">Bangsar, Kuala Lumpur</span>
+      <h1>COLEY</h1>
+      <p class="hero-tagline">Where Classic Meets Malaysian Soul</p>
+      <p class="hero-desc">Award-winning cocktail bar in the heart of Bangsar — where every glass tells a story.</p>
+      <div class="btn-group" style="justify-content:center;">
+        <a href="menu.html" class="btn-primary">Explore Our Menu</a>
+        <a href="contact.html" class="btn-outline">Find Us</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ========== AWARDS BANNER ========== -->
+  <section class="awards-banner">
+    <div class="container">
+      <div class="awards-inner reveal-stagger">
+        <div class="award-item">
+          <span class="award-icon">🏆</span>
+          <div class="award-title">Malaysia's Best Bar</div>
+          <div class="award-year">2019</div>
+        </div>
+        <div class="award-divider"></div>
+        <div class="award-item">
+          <span class="award-icon">🏆</span>
+          <div class="award-title">Asia's 50 Best Bars</div>
+          <div class="award-year">2022 — No. 100 Extended List</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SNIPPET ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="about-snippet">
+        <div class="reveal">
+          <span class="gold-label">Our Heritage</span>
+          <h2 class="mb-16">The Spirit Behind the Name</h2>
+          <p style="color:var(--muted); margin-bottom:16px;">Ada 'Coley' Coleman was the legendary female head bartender of London's Savoy Hotel in the early 1900s — the inventor of the iconic Hanky Panky cocktail and a trailblazer who proved that craft behind the bar knows no gender.</p>
+          <p style="color:var(--muted); margin-bottom:28px;">Founded by CK Kho — with over 17 years in Malaysia's beverage industry — COLEY began as a humble pop-up in Bangsar in 2014. Today, from its permanent home on Jalan Abdullah, it carries her legacy into every meticulously crafted glass.</p>
+          <a href="about.html" class="btn-outline">Our Story →</a>
+        </div>
+        <div class="quote-block reveal">
+          <span class="quote-mark">"</span>
+          <p class="quote-text">You can spell cocktails without 'fun', so we're putting the 'fun' back into cocktails. Let us tipple you pink!</p>
+          <div class="quote-attr">— Ada 'Coley' Coleman</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURED COCKTAILS ========== -->
+  <section class="section" style="background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="reveal">
+        <span class="gold-label" style="display:block;text-align:center;">Signature Cocktails</span>
+        <h2 class="section-heading">Our Signatures</h2>
+        <p class="section-subtitle">Crafted with precision, passion, and a touch of Malaysian soul</p>
+      </div>
+      <div class="grid-3 reveal-stagger">
+        <!-- Card 1 -->
+        <div class="cocktail-card">
+          <span class="badge">Signature</span>
+          <h3>Hanky Panky</h3>
+          <p>Our namesake cocktail, aged in a claypot. Gin · Sweet Vermouth · Fernet Branca</p>
+          <div class="cocktail-price">RM 46</div>
+        </div>
+        <!-- Card 2 -->
+        <div class="cocktail-card">
+          <span class="badge">Signature</span>
+          <h3>Saffron Sour</h3>
+          <p>The iconic Whiskey Sour reimagined with saffron-infused bourbon and citrus zest.</p>
+          <div class="cocktail-price">RM 38</div>
+        </div>
+        <!-- Card 3 -->
+        <div class="cocktail-card">
+          <span class="badge">Signature</span>
+          <h3>Kopi Old Fashioned</h3>
+          <p>Plantation Dark Rum meets Ethiopia Chelelectu coffee and Pedro Ximenez.</p>
+          <div class="cocktail-price">RM 44</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:40px;" class="reveal">
+        <a href="menu.html" class="btn-outline">View Full Menu →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== KOKTEL TEASER ========== -->
+  <section class="section koktel-teaser">
+    <div class="koktel-inner reveal">
+      <span class="gold-label">Koktel Menu</span>
+      <h2>Discover the Koktel Menu</h2>
+      <p>Drawing from the rich heritage of Malaysian kopitiam culture — think kedondong, kalamansi, asamboi, and fresh nutmeg — our Koktel menu is a celebration of home in a glass.</p>
+      <a href="menu.html" class="btn-primary">View Full Menu →</a>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="section testimonials-section">
+    <div class="container">
+      <div class="reveal">
+        <span class="gold-label" style="display:block;text-align:center;">Guest Reviews</span>
+        <h2 class="section-heading">What Guests Say</h2>
+        <div class="gold-divider"></div>
+      </div>
+      <div class="grid-3 mt-40 reveal-stagger">
+        <div class="testimonial-card">
+          <span class="testimonial-quote-mark">"</span>
+          <p class="testimonial-text">A hidden gem in Bangsar — the most unique cocktails I've ever had.</p>
+          <div class="testimonial-author">— KL Visitor</div>
+        </div>
+        <div class="testimonial-card">
+          <span class="testimonial-quote-mark">"</span>
+          <p class="testimonial-text">The staff's knowledge and passion is unmatched anywhere in Kuala Lumpur.</p>
+          <div class="testimonial-author">— International Guest</div>
+        </div>
+        <div class="testimonial-card">
+          <span class="testimonial-quote-mark">"</span>
+          <p class="testimonial-text">Coley is simply the best cocktail experience Malaysia has to offer.</p>
+          <div class="testimonial-author">— TripAdvisor Review</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== VISIT US CTA ========== -->
+  <section class="cta-section reveal">
+    <div class="container">
+      <h2>Ready for an unforgettable night?</h2>
+      <p>We're open Tuesday to Saturday from 5pm. Walk in or reach us on WhatsApp.</p>
+      <div class="btn-group" style="justify-content:center;">
+        <a href="contact.html" class="btn-primary">Get Directions</a>
+        <a href="https://wa.me/60192709179" target="_blank" class="btn-outline">WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1 -->
+        <div>
+          <span class="footer-logo">COLEY</span>
+          <p class="footer-tagline">Where Classic Meets Malaysian Soul</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/LongLiveColey" target="_blank" class="social-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+              Facebook
+            </a>
+            <a href="https://www.instagram.com/coleylumpur" target="_blank" class="social-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram
+            </a>
+          </div>
+        </div>
+        <!-- Col 2 -->
+        <div>
+          <div class="footer-heading">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Col 3 -->
+        <div>
+          <div class="footer-heading">Visit Us</div>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div class="contact-text">6-G, Jalan Abdullah, Bangsar,<br>59000 Kuala Lumpur, Malaysia</div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <div class="contact-text"><a href="tel:+60192709179">+60 19-270 9179</a></div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <div class="contact-text"><a href="mailto:info@liquidmentality.com">info@liquidmentality.com</a></div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">🕐</span>
+            <div class="contact-text">
+              Tue–Sat: 5:00 PM – 1:00 AM<br>
+              Sun: 12:00 PM – 6:00 PM<br>
+              <span class="hours-mini">Monday: Closed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        © <span class="footer-year">2025</span> COLEY. All Rights Reserved. | Bangsar, Kuala Lumpur
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
