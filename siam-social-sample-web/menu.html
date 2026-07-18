@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu — Siam Social Penang | Northern Thai Fusion</title>
+  <meta name="description" content="Explore the full menu at Siam Social Penang. Northern Thai fusion dishes, tapas, cocktails and more. 73 Lebuh Noordin, George Town." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <div class="nav-left">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="menu.html" class="nav-link">Menu</a>
+      <a href="about.html" class="nav-link">About</a>
+    </div>
+    <a href="index.html" class="nav-logo">
+      <svg class="nav-logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="20" cy="32" rx="3" ry="6" fill="#C9A84C" opacity="0.9"/>
+        <ellipse cx="20" cy="32" rx="3" ry="6" fill="#C9A84C" transform="rotate(72 20 20)" opacity="0.9"/>
+        <ellipse cx="20" cy="32" rx="3" ry="6" fill="#C9A84C" transform="rotate(144 20 20)" opacity="0.9"/>
+        <ellipse cx="20" cy="32" rx="3" ry="6" fill="#C9A84C" transform="rotate(216 20 20)" opacity="0.9"/>
+        <ellipse cx="20" cy="32" rx="3" ry="6" fill="#C9A84C" transform="rotate(288 20 20)" opacity="0.9"/>
+        <circle cx="20" cy="20" r="3.5" fill="#C9A84C"/>
+      </svg>
+      <span class="nav-logo-text">SIAM SOCIAL</span>
+      <span class="nav-logo-sub">PENANG</span>
+    </a>
+    <div class="nav-right">
+      <a href="gallery.html" class="nav-link">Gallery</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="https://wa.me/60102035244" target="_blank" rel="noopener" class="nav-book-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Book / WhatsApp
+      </a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav Overlay -->
+<div class="mobile-nav-overlay" id="mobileNavOverlay">
+  <div class="mobile-nav-logo">
+    <svg width="34" height="34" viewBox="0 0 40 40" fill="none"><ellipse cx="20" cy="32" rx="3" ry="6" fill="#C9A84C" opacity="0.9"/><ellipse cx="20" cy="32" rx="3" ry="6" fill="#C9A84C" transform="rotate(72 20 20)" opacity="0.9"/><ellipse cx="20" cy="32" rx="3" ry="6" fill="#C9A84C" transform="rotate(144 20 20)" opacity="0.9"/><ellipse cx="20" cy="32" rx="3" ry="6" fill="#C9A84C" transform="rotate(216 20 20)" opacity="0.9"/><ellipse cx="20" cy="32" rx="3" ry="6" fill="#C9A84C" transform="rotate(288 20 20)" opacity="0.9"/><circle cx="20" cy="20" r="3.5" fill="#C9A84C"/></svg>
+    <span class="mobile-nav-logo-text">SIAM SOCIAL</span>
+    <span class="mobile-nav-logo-sub">PENANG</span>
+  </div>
+  <nav class="mobile-nav-links">
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="menu.html" class="mobile-nav-link">Menu</a>
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="gallery.html" class="mobile-nav-link">Gallery</a>
+    <a href="contact.html" class="mobile-nav-link">Contact</a>
+    <a href="https://wa.me/60102035244" target="_blank" rel="noopener" class="mobile-nav-link" style="color: var(--burnished-gold);">Book Now</a>
+  </nav>
+  <div class="mobile-nav-socials">
+    <a href="https://www.instagram.com/siamsocialpenang/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+    <a href="https://www.facebook.com/61580298068418" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+    <a href="https://wa.me/60102035244" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+  </div>
+  <p class="mobile-nav-tagline">Open Daily from 12 PM</p>
+</div>
+
+<!-- HERO -->
+<section class="hero-medium">
+  <img class="hero-bg" src="https://images.pexels.com/photos/31886248/pexels-photo-31886248.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=1600" alt="Thai food spread with seafood and noodles" loading="eager"/>
+  <div class="hero-overlay-stronger"></div>
+  <div class="hero-content">
+    <div class="page-hero-breadcrumb" style="margin-bottom: 12px;">
+      <a href="index.html">Home</a><span>›</span>Menu
+    </div>
+    <h1 class="page-hero-title">OUR MENU</h1>
+    <p style="font-family: var(--font-dm); font-size: 16px; color: rgba(245,238,217,0.7); letter-spacing: 3px; text-transform: uppercase;">Bold Northern Thai Flavours</p>
+  </div>
+</section>
+
+<!-- MENU SECTION -->
+<section class="menu-section">
+  <div class="container">
+
+    <!-- Filter Tabs -->
+    <div class="filter-tabs">
+      <button class="filter-tab active" data-filter="all">All</button>
+      <button class="filter-tab" data-filter="starters">Starters &amp; Salads</button>
+      <button class="filter-tab" data-filter="mains">Mains</button>
+      <button class="filter-tab" data-filter="fusion">Thai Fusion</button>
+      <button class="filter-tab" data-filter="pizza">Pizza &amp; Pasta</button>
+      <button class="filter-tab" data-filter="desserts">Desserts</button>
+      <button class="filter-tab" data-filter="drinks">Drinks</button>
+    </div>
+
+    <!-- Menu Grid -->
+    <div class="menu-grid">
+
+      <!-- STARTERS & SALADS -->
+      <div class="menu-card reveal" data-category="starters">
+        <div class="menu-img-wrap">
+          <img src="https://images.pexels.com/photos/36075894/pexels-photo-36075894.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Indonesian Gado-Gado salad with peanut sauce" loading="lazy"/>
+        </div>
+        <div class="menu-card-body">
+          <h3 class="menu-item-name">Siam Social Rojak</h3>
+          <p class="menu-item-desc">Local-style salad with Thai sauce, crushed peanuts, roasted sesame and cashew nuts.</p>
+          <div class="menu-item-price">RM 22++</div><br/>
+          <span class="menu-item-tag">🌿 Local Favourite</span>
+        </div>
+      </div>
+
+      <div class="menu-card reveal reveal-delay-1" data-category="starters">
+        <div class="menu-img-wrap">
+          <img src="https://images.pexels.com/photos/32689586/pexels-photo-32689586.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Fresh papaya salad with cherry tomatoes" loading="lazy"/>
+        </div>
+        <div class="menu-card-body">
+          <h3 class="menu-item-name">Crispy Green Papaya Somtum</h3>
+          <p class="menu-item-desc">Deep-fried papaya strands with zesty chilli sauce, crushed peanuts and bird's eye chillies.</p>
+          <div class="menu-item-price">RM 28++</div><br/>
+          <span class="menu-item-tag">🔥 Spicy</span>
+        </div>
+      </div>
+
+      <!-- MAINS -->
+      <div class="menu-card reveal reveal-delay-2" data-category="mains">
+        <div class="menu-img-wrap">
+          <img src="https://images.pexels.com/photos/12824410/pexels-photo-12824410.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Thai basil pork with fried egg and rice" loading="lazy"/>
+        </div>
+        <div class="menu-card-body">
+          <h3 class="menu-item-name">Pad Kaprao Roast Pork Set</h3>
+          <p class="menu-item-desc">Wok-fried roast pork, Thai basil, steamed rice, bull's eye egg, chilli lime sauce.</p>
+          <div class="menu-item-price">RM 32++</div><br/>
+          <span class="menu-item-tag">⭐ Must Try</span>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-category="mains">
+        <div class="menu-img-wrap">
+          <img src="https://images.pexels.com/photos/12824409/pexels-photo-12824409.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Thai meal with rice chicken and vegetables" loading="lazy"/>
+        </div>
+        <div class="menu-card-body">
+          <h3 class="menu-item-name">Pad Kaprao Minced Pork</h3>
+          <p class="menu-item-desc">Classic Thai basil stir-fry with minced pork — "The best Pad Kaprao I have ever tried" — Guest Review.</p>
+          <div class="menu-item-price">Market Price</div><br/>
+          <span class="menu-item-tag">🌟 Guest Favourite</span>
+        </div>
+      </div>
+
+      <div class="menu-card reveal reveal-delay-1" data-category="mains">
+        <div class="menu-img-wrap">
+          <img src="https://images.pexels.com/photos/27777833/pexels-photo-27777833.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Grilled chicken on charcoal barbecue" loading="lazy"/>
+        </div>
+        <div class="menu-card-body">
+          <h3 class="menu-item-name">Barbeque Chicken</h3>
+          <p class="menu-item-desc">Charcoal-flamed Thai-style BBQ chicken, steamed rice, fresh herbs and two dipping sauces.</p>
+          <div class="menu-item-price">RM 38++</div><br/>
+          <span class="menu-item-tag">🔥 Charcoal Grilled</span>
+        </div>
+      </div>
+
+      <div class="menu-card reveal reveal-delay-2" data-category="mains">
+        <div class="menu-img-wrap">
+          <img src="https://images.pexels.com/photos/29838572/pexels-photo-29838572.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Grilled seafood on banana leaf" loading="lazy"/>
+        </div>
+        <div class="menu-card-body">
+          <h3 class="menu-item-name">Siam Social Thai Grilled Fish</h3>
+          <p class="menu-item-desc">Sea bass over banana leaves, house sambal, served with three dipping sauces.</p>
+          <div class="menu-item-price">RM 55++</div><br/>
+          <span class="menu-item-tag">👨‍🍳 Chef's Signature</span>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-category="mains">
+        <div class="menu-img-wrap">
+          <img src="https://images.pexels.com/photos/5424049/pexels-photo-5424049.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Thai Tom Yum soup with prawns and herbs" loading="lazy"/>
+        </div>
+        <div class="menu-card-body">
+          <h3 class="menu-item-name">Tom Yum</h3>
+          <p class="menu-item-desc">Bold and aromatic — not too spicy, full of flavour. A Thai classic done right.</p>
+          <div class="menu-item-price">Market Price</div><br/>
+          <span class="menu-item-tag">🍜 Thai Classic</span>
+        </div>
+      </div>
+
+      <!-- THAI FUSION -->
+      <div class="menu-card reveal reveal-delay-1" data-category="fusion">
+        <div class="menu-img-wrap">
+          <img src="https://images.pexels.com/photos/14661492/pexels-photo-14661492.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Chicken wings and fries sharing platter" loading="lazy"/>
+        </div>
+        <div class="menu-card-body">
+          <h3 class="menu-item-name">Jumbo Snack Platter</h3>
+          <p class="menu-item-desc">Truffle fries, fish sauce chicken wings, crispy pork belly, garden greens. Best for groups.</p>
+          <div class="menu-item-price">RM 68++</div><br/>
+          <span class="menu-item-tag">🎉 Best for Groups</span>
+        </div>
+      </div>
+
+      <!-- PIZZA & PASTA -->
+      <div class="menu-card reveal reveal-delay-2" data-category="pizza">
+        <div class="menu-img-wrap">
+          <img src="https://images.pexels.com/photos/11653776/pexels-photo-11653776.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Spicy chilli pizza with mushrooms and cheese" loading="lazy"/>
+        </div>
+        <div class="menu-card-body">
+          <h3 class="menu-item-name">Chilli Padi Pizza</h3>
+          <p class="menu-item-desc">Nazlina's special crispy dough, mushrooms, capsicum, cheeses and fiery chilli padi.</p>
+          <div class="menu-item-price">RM 48++</div><br/>
+          <span class="menu-item-tag">🍕 House Special</span>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-category="pizza">
+        <div class="menu-img-wrap">
+          <img src="https://images.pexels.com/photos/5724556/pexels-photo-5724556.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Creamy carbonara pasta with bacon" loading="lazy"/>
+        </div>
+        <div class="menu-card-body">
+          <h3 class="menu-item-name">Spaghetti "Thaibonara" with Bacon</h3>
+          <p class="menu-item-desc">A Thai twist on classic carbonara — bold, creamy, uniquely Siam Social.</p>
+          <div class="menu-item-price">Market Price</div><br/>
+          <span class="menu-item-tag">🌟 Fusion Original</span>
+        </div>
+      </div>
+
+      <!-- DESSERTS -->
+      <div class="menu-card reveal reveal-delay-1" data-category="desserts">
+        <div class="menu-img-wrap">
+          <img src="https://images.pexels.com/photos/8451297/pexels-photo-8451297.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Coconut ice cream in wooden bowl" loading="lazy"/>
+        </div>
+        <div class="menu-card-body">
+          <h3 class="menu-item-name">Coconut Ice Cream</h3>
+          <p class="menu-item-desc">Creamy coconut ice cream with shredded coconut, peanuts and sweet corn. Refreshing finish.</p>
+          <div class="menu-item-price">Market Price</div><br/>
+          <span class="menu-item-tag">🥥 Tropical Treat</span>
+        </div>
+      </div>
+
+      <!-- DRINKS -->
+      <div class="menu-card reveal reveal-delay-2" data-category="drinks">
+        <div class="menu-img-wrap">
+          <img src="https://images.pexels.com/photos/15161548/pexels-photo-15161548.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Vibrant cocktails on a bar counter" loading="lazy"/>
+        </div>
+        <div class="menu-card-body">
+          <h3 class="menu-item-name">Signature Cocktails</h3>
+          <p class="menu-item-desc">Ask our bartender for tonight's specials. Crafted fresh, always inventive.</p>
+          <div class="menu-item-price">Seasonal Pricing</div><br/>
+          <span class="menu-item-tag">🍸 Bartender's Pick</span>
+        </div>
+      </div>
+
+      <div class="menu-card reveal" data-category="drinks">
+        <div class="menu-img-wrap">
+          <img src="https://images.pexels.com/photos/1080383/pexels-photo-1080383.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Wine glasses hanging in a dimly lit bar" loading="lazy"/>
+        </div>
+        <div class="menu-card-body">
+          <h3 class="menu-item-name">Wines &amp; Spirits</h3>
+          <p class="menu-item-desc">A curated selection of wines and spirits to complement your meal perfectly.</p>
+          <div class="menu-item-price">Ask Our Team</div><br/>
+          <span class="menu-item-tag">🍷 Curated Selection</span>
+        </div>
+      </div>
+
+      <div class="menu-card reveal reveal-delay-1" data-category="drinks">
+        <div class="menu-img-wrap">
+          <img src="https://images.pexels.com/photos/2410165/pexels-photo-2410165.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Chilled beer bottles in an ice bucket" loading="lazy"/>
+        </div>
+        <div class="menu-card-body">
+          <h3 class="menu-item-name">Chang Beer</h3>
+          <p class="menu-item-desc">Classic Thai beer, ice cold. The perfect companion to bold, spicy Thai food.</p>
+          <div class="menu-item-price">Market Price</div><br/>
+          <span class="menu-item-tag">🍺 Thai Classic</span>
+        </div>
+      </div>
+
+    </div><!-- end menu-grid -->
+
+    <p class="menu-note reveal">
+      Prices subject to ++. Menu may change seasonally.<br/>
+      Follow <strong style="color: var(--burnished-gold);">@siamsocialpenang</strong> for the latest updates and specials.
+    </p>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-gold-line"></div>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">SIAM SOCIAL</div>
+        <div class="footer-brand-sub">PENANG</div>
+        <p class="footer-tagline" style="margin-top: 8px;">Northern Thai Fusion · Poolside Bar · Vinyl Lounge<br/>Where George Town meets Northern Thailand.</p>
+      </div>
+      <div>
+        <div class="footer-heading">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="menu.html" class="footer-link">Menu</a></li>
+          <li><a href="about.html" class="footer-link">About</a></li>
+          <li><a href="gallery.html" class="footer-link">Gallery</a></li>
+          <li><a href="contact.html" class="footer-link">Visit Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Contact</div>
+        <div class="footer-contact-item"><span>📍</span><span>73 Lebuh Noordin, George Town,<br/>10300 Penang, Malaysia</span></div>
+        <div class="footer-contact-item"><span>📞</span><a href="tel:+60102035244">+60 10-203 5244</a></div>
+        <div class="footer-contact-item"><span>⏰</span><span>Mon–Thu & Sun: 12–10PM<br/>Fri–Sat: 12–11:30PM</span></div>
+        <div class="footer-social-row">
+          <a href="https://www.instagram.com/siamsocialpenang/" target="_blank" rel="noopener" class="footer-social-icon" aria-label="Instagram"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a href="https://www.facebook.com/61580298068418" target="_blank" rel="noopener" class="footer-social-icon" aria-label="Facebook"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://wa.me/60102035244" target="_blank" rel="noopener" class="footer-social-icon" aria-label="WhatsApp"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-mobile">
+      <div class="footer-mobile-logo">SIAM SOCIAL PENANG</div>
+      <div class="footer-mobile-socials">
+        <a href="https://www.instagram.com/siamsocialpenang/" target="_blank" rel="noopener" class="footer-mobile-social-btn" aria-label="Instagram">📷</a>
+        <a href="https://www.facebook.com/61580298068418" target="_blank" rel="noopener" class="footer-mobile-social-btn" aria-label="Facebook">📘</a>
+        <a href="https://wa.me/60102035244" target="_blank" rel="noopener" class="footer-mobile-social-btn" aria-label="WhatsApp">💬</a>
+      </div>
+      <div class="footer-mobile-info"><a href="tel:+60102035244">📞 +60 10-203 5244</a></div>
+      <div class="footer-mobile-info">📍 73 Lebuh Noordin, George Town, Penang</div>
+      <div class="footer-mobile-hours">Mon–Thu 12–10PM · Fri–Sat 12–11:30PM</div>
+      <div class="footer-mobile-copy">© 2025 Siam Social Penang</div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Siam Social Penang. All rights reserved. &nbsp;|&nbsp; 73 Lebuh Noordin, George Town, Penang</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/60102035244" target="_blank" rel="noopener" class="floating-wa" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<script src="script.js" defer></script>
+</body>
+</html>
