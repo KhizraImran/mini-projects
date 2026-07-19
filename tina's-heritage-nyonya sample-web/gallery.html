@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Scrapbook — Tina's Kitchen, Penang</title>
+  <meta name="description" content="A scrapbook of moments from Tina's Kitchen — dishes, people, and the warmth of a family kitchen in George Town, Penang.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Gallery-specific polaroid layout */
+    .scrapbook-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 36px 28px;
+      padding: 36px 0 48px;
+      align-items: start;
+    }
+
+    .scrapbook-item {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+
+    .scrapbook-item .polaroid {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .scrapbook-item:hover .polaroid {
+      transform: rotate(0deg) scale(1.06) !important;
+      box-shadow: 6px 12px 32px rgba(43,36,32,0.3) !important;
+      z-index: 10;
+      position: relative;
+    }
+
+    /* Individual rotation classes */
+    .rot-m4 .polaroid { transform: rotate(-4deg); }
+    .rot-m3 .polaroid { transform: rotate(-3deg); }
+    .rot-m2 .polaroid { transform: rotate(-2deg); }
+    .rot-m1 .polaroid { transform: rotate(-1deg); }
+    .rot-0  .polaroid { transform: rotate(0deg); }
+    .rot-p1 .polaroid { transform: rotate(1deg); }
+    .rot-p2 .polaroid { transform: rotate(2deg); }
+    .rot-p3 .polaroid { transform: rotate(3deg); }
+    .rot-p4 .polaroid { transform: rotate(4deg); }
+
+    /* Some items lifted with margin tweaks for natural scatter */
+    .lift-1 { margin-top: 12px; }
+    .lift-2 { margin-top: 24px; }
+    .lift-3 { margin-top: -8px; }
+
+    @media (max-width: 767px) {
+      .scrapbook-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px 14px;
+      }
+
+      .rot-m4 .polaroid { transform: rotate(-2deg); }
+      .rot-m3 .polaroid { transform: rotate(-1.5deg); }
+      .rot-m2 .polaroid { transform: rotate(-1deg); }
+      .rot-p2 .polaroid { transform: rotate(1deg); }
+      .rot-p3 .polaroid { transform: rotate(1.5deg); }
+      .rot-p4 .polaroid { transform: rotate(2deg); }
+
+      .lift-1, .lift-2, .lift-3 { margin-top: 0; }
+    }
+
+    @media (max-width: 380px) {
+      .scrapbook-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Side Ribbon -->
+  <nav class="side-ribbon" aria-label="Main navigation">
+    <div class="ribbon-logo" title="Tina's Kitchen">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="16" cy="20" r="9" stroke="#B4552F" stroke-width="1.8" fill="none"/>
+        <path d="M11 20 Q16 14 21 20" stroke="#B4552F" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path d="M16 11 L16 5" stroke="#B4552F" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M13 7 Q16 5 19 7" stroke="#B4552F" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <circle cx="16" cy="20" r="2.5" fill="#B4552F" opacity="0.6"/>
+      </svg>
+    </div>
+    <div class="ribbon-tabs">
+      <a href="index.html" class="ribbon-tab" data-page="home" title="Home"><span class="tab-icon">🏠</span><span class="tab-label">Home</span></a>
+      <a href="menu.html" class="ribbon-tab" data-page="menu" title="The Recipe Book"><span class="tab-icon">📖</span><span class="tab-label">Menu</span></a>
+      <a href="story.html" class="ribbon-tab" data-page="story" title="Our Story"><span class="tab-icon">📜</span><span class="tab-label">Story</span></a>
+      <a href="gallery.html" class="ribbon-tab" data-page="gallery" title="The Scrapbook"><span class="tab-icon">📷</span><span class="tab-label">Album</span></a>
+      <a href="visit.html" class="ribbon-tab" data-page="visit" title="Come Visit"><span class="tab-icon">✉️</span><span class="tab-label">Visit</span></a>
+    </div>
+  </nav>
+
+  <!-- Bottom Tab Bar -->
+  <nav class="bottom-tab-bar" aria-label="Main navigation">
+    <a href="index.html" class="bottom-tab" data-page="home"><span class="tab-dot"></span><span class="tab-icon">🏠</span><span class="tab-label">Home</span></a>
+    <a href="menu.html" class="bottom-tab" data-page="menu"><span class="tab-dot"></span><span class="tab-icon">📖</span><span class="tab-label">Menu</span></a>
+    <a href="story.html" class="bottom-tab" data-page="story"><span class="tab-dot"></span><span class="tab-icon">📜</span><span class="tab-label">Story</span></a>
+    <a href="gallery.html" class="bottom-tab" data-page="gallery"><span class="tab-dot"></span><span class="tab-icon">📷</span><span class="tab-label">Album</span></a>
+    <a href="visit.html" class="bottom-tab" data-page="visit"><span class="tab-dot"></span><span class="tab-icon">✉️</span><span class="tab-label">Visit</span></a>
+  </nav>
+
+  <a href="https://wa.me/60124806666" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="WhatsApp Tina's Kitchen">💬</a>
+
+  <div class="page-wrapper">
+
+    <!-- Page Header -->
+    <header class="page-header">
+      <h1>The Scrapbook</h1>
+      <p class="page-hand-sub">Moments from our kitchen table.</p>
+      <p style="font-family:var(--font-body); font-size:16px; color:var(--rattan); max-width:440px; margin:12px auto 0; font-style:italic;">
+        Click any photo to open it. Every picture tells a part of our story.
+      </p>
+    </header>
+
+    <!-- ══════════════════════════════════════
+         SCRAPBOOK / POLAROID GRID
+    ══════════════════════════════════════ -->
+    <section class="paper-section" aria-label="Photo gallery">
+      <div style="max-width:1060px; margin:0 auto; padding:0 28px 56px;">
+
+        <div class="scrapbook-grid" role="list" aria-label="Photo scrapbook">
+
+          <!-- 1: Chicken Kapitan -->
+          <div class="scrapbook-item rot-m3 lift-0 reveal" role="listitem" data-delay="0" tabindex="0" aria-label="Open photo: Chicken Kapitan Curry">
+            <div class="washi-tape" style="position:absolute; top:-8px; left:28px; width:50px; height:13px; background:rgba(201,123,99,0.48); border-radius:2px; transform:rotate(-4deg); z-index:3;"></div>
+            <div class="polaroid">
+              <img
+                src="https://images.pexels.com/photos/10692534/pexels-photo-10692534.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=360"
+                alt="Chicken Kapitan Curry in a white bowl — deep, fragrant gravy"
+                loading="lazy"
+                data-fallback-seed="kapitan-photo"
+                data-fw="360" data-fh="400"
+              >
+              <p class="polaroid-caption">Chicken Kapitan</p>
+            </div>
+          </div>
+
+          <!-- 2: Nasi Ulam -->
+          <div class="scrapbook-item rot-p4 lift-2 reveal" role="listitem" data-delay="80" tabindex="0" aria-label="Open photo: Nasi Ulam">
+            <div class="washi-tape" style="position:absolute; top:-6px; right:20px; width:48px; height:12px; background:rgba(44,110,99,0.42); border-radius:2px; transform:rotate(5deg); z-index:3;"></div>
+            <div class="polaroid">
+              <img
+                src="https://images.pexels.com/photos/37106996/pexels-photo-37106996.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=360"
+                alt="Nasi Ulam — vibrant herb rice platter"
+                loading="lazy"
+                data-fallback-seed="nasi-ulam-photo"
+                data-fw="360" data-fh="400"
+              >
+              <p class="polaroid-caption">Nasi Ulam</p>
+            </div>
+          </div>
+
+          <!-- 3: Mutton Curry -->
+          <div class="scrapbook-item rot-m2 lift-1 reveal" role="listitem" data-delay="140" tabindex="0" aria-label="Open photo: Mutton Curry">
+            <div class="washi-tape" style="position:absolute; top:-7px; left:22px; width:52px; height:13px; background:rgba(180,85,47,0.4); border-radius:2px; transform:rotate(-2deg); z-index:3;"></div>
+            <div class="polaroid">
+              <img
+                src="https://images.pexels.com/photos/28674690/pexels-photo-28674690.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=360"
+                alt="Rich lamb mutton curry in a traditional bowl"
+                loading="lazy"
+                data-fallback-seed="mutton-photo"
+                data-fw="360" data-fh="400"
+              >
+              <p class="polaroid-caption">Mutton Curry</p>
+            </div>
+          </div>
+
+          <!-- 4: Bubur Cha Cha -->
+          <div class="scrapbook-item rot-p3 lift-3 reveal" role="listitem" data-delay="200" tabindex="0" aria-label="Open photo: Bubur Cha Cha">
+            <div class="washi-tape" style="position:absolute; top:-6px; right:24px; width:46px; height:12px; background:rgba(122,92,62,0.38); border-radius:2px; transform:rotate(3deg); z-index:3;"></div>
+            <div class="polaroid">
+              <img
+                src="https://images.pexels.com/photos/5652196/pexels-photo-5652196.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=360"
+                alt="Bubur Cha Cha — traditional coconut dessert in decorative bowls"
+                loading="lazy"
+                data-fallback-seed="bubur-photo"
+                data-fw="360" data-fh="400"
+              >
+              <p class="polaroid-caption">Bubur Cha Cha</p>
+            </div>
+          </div>
+
+          <!-- 5: Our Kitchen -->
+          <div class="scrapbook-item rot-m4 lift-2 reveal" role="listitem" data-delay="260" tabindex="0" aria-label="Open photo: Our Little Kitchen">
+            <div class="washi-tape" style="position:absolute; top:-8px; left:30px; width:54px; height:13px; background:rgba(44,110,99,0.45); border-radius:2px; transform:rotate(-5deg); z-index:3;"></div>
+            <div class="polaroid">
+              <img
+                src="https://images.pexels.com/photos/31132843/pexels-photo-31132843.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=360"
+                alt="Warm and inviting table setup with soft lamp light — Our Little Kitchen"
+                loading="lazy"
+                data-fallback-seed="kitchen-interior"
+                data-fw="360" data-fh="400"
+              >
+              <p class="polaroid-caption">Our Little Kitchen</p>
+            </div>
+          </div>
+
+          <!-- 6: Tina at Work -->
+          <div class="scrapbook-item rot-p2 lift-0 reveal" role="listitem" data-delay="320" tabindex="0" aria-label="Open photo: Tina at Work">
+            <div class="washi-tape" style="position:absolute; top:-6px; right:18px; width:50px; height:12px; background:rgba(201,123,99,0.5); border-radius:2px; transform:rotate(4deg); z-index:3;"></div>
+            <div class="polaroid">
+              <img
+                src="https://images.pexels.com/photos/19257062/pexels-photo-19257062.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=360"
+                alt="Tina at work — preparing food with traditional kitchen tools"
+                loading="lazy"
+                data-fallback-seed="tina-work"
+                data-fw="360" data-fh="400"
+              >
+              <p class="polaroid-caption">Tina at Work</p>
+            </div>
+          </div>
+
+          <!-- 7: Kiam Hu Kut Gulai -->
+          <div class="scrapbook-item rot-m3 lift-1 reveal" role="listitem" data-delay="380" tabindex="0" aria-label="Open photo: Kiam Hu Kut Gulai">
+            <div class="washi-tape" style="position:absolute; top:-7px; left:20px; width:48px; height:13px; background:rgba(180,85,47,0.42); border-radius:2px; transform:rotate(-3deg); z-index:3;"></div>
+            <div class="polaroid">
+              <img
+                src="https://images.pexels.com/photos/30613288/pexels-photo-30613288.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=360"
+                alt="Vietnamese braised fish dish — similar to Kiam Hu Kut Gulai"
+                loading="lazy"
+                data-fallback-seed="kiam-hu"
+                data-fw="360" data-fh="400"
+              >
+              <p class="polaroid-caption">Kiam Hu Kut Gulai</p>
+            </div>
+          </div>
+
+          <!-- 8: Spring Rolls -->
+          <div class="scrapbook-item rot-p3 lift-2 reveal" role="listitem" data-delay="440" tabindex="0" aria-label="Open photo: Fresh Spring Rolls">
+            <div class="washi-tape" style="position:absolute; top:-6px; right:22px; width:52px; height:12px; background:rgba(44,110,99,0.4); border-radius:2px; transform:rotate(3deg); z-index:3;"></div>
+            <div class="polaroid">
+              <img
+                src="https://images.pexels.com/photos/35407775/pexels-photo-35407775.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=360"
+                alt="Golden crispy spring rolls on a decorative tray"
+                loading="lazy"
+                data-fallback-seed="spring-rolls-gallery"
+                data-fw="360" data-fh="400"
+              >
+              <p class="polaroid-caption">Fresh Spring Rolls</p>
+            </div>
+          </div>
+
+          <!-- 9: Nutmeg Juice -->
+          <div class="scrapbook-item rot-m1 lift-0 reveal" role="listitem" data-delay="500" tabindex="0" aria-label="Open photo: Nutmeg Juice">
+            <div class="washi-tape" style="position:absolute; top:-8px; left:28px; width:48px; height:13px; background:rgba(122,92,62,0.4); border-radius:2px; transform:rotate(-1deg); z-index:3;"></div>
+            <div class="polaroid">
+              <img
+                src="https://images.pexels.com/photos/31664022/pexels-photo-31664022.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=360"
+                alt="Refreshing iced drink on a wooden table — Nutmeg Juice"
+                loading="lazy"
+                data-fallback-seed="nutmeg-gallery"
+                data-fw="360" data-fh="400"
+              >
+              <p class="polaroid-caption">Nutmeg Juice</p>
+            </div>
+          </div>
+
+          <!-- 10: Our Team -->
+          <div class="scrapbook-item rot-p4 lift-3 reveal" role="listitem" data-delay="560" tabindex="0" aria-label="Open photo: Our Team">
+            <div class="washi-tape" style="position:absolute; top:-7px; right:20px; width:50px; height:12px; background:rgba(201,123,99,0.46); border-radius:2px; transform:rotate(5deg); z-index:3;"></div>
+            <div class="polaroid">
+              <img
+                src="https://images.pexels.com/photos/19771754/pexels-photo-19771754.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=360"
+                alt="Two chefs smiling in the kitchen — our wonderful team"
+                loading="lazy"
+                data-fallback-seed="our-team"
+                data-fw="360" data-fh="400"
+              >
+              <p class="polaroid-caption">Our Team</p>
+            </div>
+          </div>
+
+        </div><!-- /scrapbook-grid -->
+
+        <div style="text-align:center; padding-top:16px;" class="reveal">
+          <p style="font-family:var(--font-hand); font-size:22px; color:var(--rattan);">
+            Tap any photo to take a closer look 📎
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Slim Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-desktop">
+        <span>🍜</span>
+        <span>Tina's Kitchen</span>
+        <span class="footer-dot">·</span>
+        <span>70 Lebuh Kimberley, George Town, Penang</span>
+        <span class="footer-dot">·</span>
+        <a href="tel:+60124806666" style="color:var(--rattan);">+60 12-480 6666</a>
+        <span class="footer-dot">·</span>
+        <a href="https://www.instagram.com/tinas_kitchen_penang/" class="footer-social-icon" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
+        <a href="https://www.facebook.com/tinaskitchenpenang/" class="footer-social-icon" target="_blank" rel="noopener" aria-label="Facebook">📘</a>
+        <span class="footer-dot">·</span>
+        <span>© 2025</span>
+      </div>
+      <div class="footer-mobile">
+        <div class="footer-mobile-socials">
+          <a href="https://www.instagram.com/tinas_kitchen_penang/" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
+          <a href="https://www.facebook.com/tinaskitchenpenang/" target="_blank" rel="noopener" aria-label="Facebook">📘</a>
+          <a href="https://wa.me/60124806666" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+        </div>
+        <p class="footer-mobile-copy">© 2025 Tina's Kitchen Penang</p>
+      </div>
+    </footer>
+
+  </div><!-- /page-wrapper -->
+
+  <!-- ══════════════════════════════════════
+       LIGHTBOX
+  ══════════════════════════════════════ -->
+  <div class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" aria-label="Close photo viewer">✕</button>
+      <div class="polaroid">
+        <img class="lightbox-img" src="" alt="" style="height:360px; width:100%; object-fit:cover;">
+        <p class="polaroid-caption lightbox-caption" style="font-size:20px;"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

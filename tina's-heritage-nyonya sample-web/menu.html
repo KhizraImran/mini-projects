@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Recipe Book — Tina's Kitchen, Penang</title>
+  <meta name="description" content="Browse Tina's Kitchen menu — Nyonya Kampung Style dishes passed down through three generations. Chicken Kapitan, Nasi Ulam, Mutton Curry & more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       SIDE RIBBON NAVIGATION (Desktop)
+  ═══════════════════════════════════════════ -->
+  <nav class="side-ribbon" aria-label="Main navigation">
+    <div class="ribbon-logo" title="Tina's Kitchen">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="16" cy="20" r="9" stroke="#B4552F" stroke-width="1.8" fill="none"/>
+        <path d="M11 20 Q16 14 21 20" stroke="#B4552F" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path d="M16 11 L16 5" stroke="#B4552F" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M13 7 Q16 5 19 7" stroke="#B4552F" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <circle cx="16" cy="20" r="2.5" fill="#B4552F" opacity="0.6"/>
+      </svg>
+    </div>
+    <div class="ribbon-tabs">
+      <a href="index.html" class="ribbon-tab" data-page="home" title="Home"><span class="tab-icon">🏠</span><span class="tab-label">Home</span></a>
+      <a href="menu.html" class="ribbon-tab" data-page="menu" title="The Recipe Book"><span class="tab-icon">📖</span><span class="tab-label">Menu</span></a>
+      <a href="story.html" class="ribbon-tab" data-page="story" title="Our Story"><span class="tab-icon">📜</span><span class="tab-label">Story</span></a>
+      <a href="gallery.html" class="ribbon-tab" data-page="gallery" title="The Scrapbook"><span class="tab-icon">📷</span><span class="tab-label">Album</span></a>
+      <a href="visit.html" class="ribbon-tab" data-page="visit" title="Come Visit"><span class="tab-icon">✉️</span><span class="tab-label">Visit</span></a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       BOTTOM TAB BAR (Mobile/Tablet)
+  ═══════════════════════════════════════════ -->
+  <nav class="bottom-tab-bar" aria-label="Main navigation">
+    <a href="index.html" class="bottom-tab" data-page="home"><span class="tab-dot"></span><span class="tab-icon">🏠</span><span class="tab-label">Home</span></a>
+    <a href="menu.html" class="bottom-tab" data-page="menu"><span class="tab-dot"></span><span class="tab-icon">📖</span><span class="tab-label">Menu</span></a>
+    <a href="story.html" class="bottom-tab" data-page="story"><span class="tab-dot"></span><span class="tab-icon">📜</span><span class="tab-label">Story</span></a>
+    <a href="gallery.html" class="bottom-tab" data-page="gallery"><span class="tab-dot"></span><span class="tab-icon">📷</span><span class="tab-label">Album</span></a>
+    <a href="visit.html" class="bottom-tab" data-page="visit"><span class="tab-dot"></span><span class="tab-icon">✉️</span><span class="tab-label">Visit</span></a>
+  </nav>
+
+  <a href="https://wa.me/60124806666" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="WhatsApp Tina's Kitchen">💬</a>
+
+  <div class="page-wrapper">
+
+    <!-- Page Header -->
+    <header class="page-header">
+      <h1>The Recipe Book</h1>
+      <p class="page-hand-sub">Every dish, a story.</p>
+      <p style="font-family:var(--font-body); font-size:16px; color:var(--rattan); max-width:480px; margin:12px auto 0; font-style:italic;">
+        Scroll through like flipping through a cookbook — each dish has its own page, its own memory.
+      </p>
+    </header>
+
+    <!-- Category Tabs Navigation -->
+    <div class="cream-section" style="padding:20px 32px 16px; border-bottom:1px dashed rgba(122,92,62,0.3);">
+      <div class="category-tabs-wrap">
+        <div class="category-tabs" role="tablist" aria-label="Menu categories">
+          <a class="category-tab active" data-target="starters" href="#starters" role="tab">🥢 Starters</a>
+          <a class="category-tab" data-target="mains" href="#mains" role="tab">🍛 Mains</a>
+          <a class="category-tab" data-target="rice-noodles" href="#rice-noodles" role="tab">🍜 Rice &amp; Noodles</a>
+          <a class="category-tab" data-target="desserts" href="#desserts" role="tab">🍮 Desserts &amp; Drinks</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         STARTERS SECTION
+    ══════════════════════════════════════ -->
+    <section id="starters" class="cream-section" style="padding:0 32px 0;">
+      <div style="max-width:1060px; margin:0 auto; padding:40px 0;">
+        <h2 class="menu-category-heading"><span class="cat-emoji">🥢</span> Starters</h2>
+
+        <!-- Spring Rolls -->
+        <div class="recipe-spread reveal">
+          <div>
+            <div class="photo-frame reveal-rotate" style="--rot:-1.5deg; transform:rotate(-1.5deg); position:relative;">
+              <div class="washi-tape top-left" aria-hidden="true"></div>
+              <img
+                src="https://images.pexels.com/photos/35407775/pexels-photo-35407775.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=440&w=560"
+                alt="Crispy golden spring rolls served on a tray"
+                loading="lazy"
+                style="height:300px; object-fit:cover;"
+                data-fallback-seed="spring-rolls"
+                data-fw="560" data-fh="440"
+              >
+            </div>
+          </div>
+          <div class="recipe-text reveal" data-delay="150">
+            <div class="dish-category">Starters</div>
+            <h3 class="dish-name">Spring Rolls &amp; Vegetarian Spring Rolls</h3>
+            <p class="dish-desc">
+              Crisp and fresh without being heavy — the perfect way to begin a Nyonya feast. Made with a traditional filling and fried to a perfect golden crunch, these are a beloved opening act for every table.
+            </p>
+            <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:8px;">
+              <span style="font-family:var(--font-ui); font-size:13px; background:var(--kraft); border:1px solid var(--teal); color:var(--teal); border-radius:20px; padding:4px 12px;">🌿 Veg option available</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         MAINS SECTION
+    ══════════════════════════════════════ -->
+    <section id="mains" class="paper-section" style="padding:0 32px;">
+      <div style="max-width:1060px; margin:0 auto; padding:40px 0;">
+        <h2 class="menu-category-heading"><span class="cat-emoji">🍛</span> Mains</h2>
+
+        <!-- Chicken Kapitan Curry -->
+        <div class="recipe-spread reverse reveal">
+          <div class="recipe-text reveal" data-delay="150">
+            <div class="dish-category">Mains · Signature</div>
+            <h3 class="dish-name">Chicken Kapitan Curry</h3>
+            <span class="dish-signature">⭐ Signature Dish</span>
+            <p class="dish-desc">
+              Rich, fragrant curry stewed slowly with lemongrass and spices. Our most-loved dish, hands down — guests return again and again just for this. A true Nyonya masterpiece passed down unchanged.
+            </p>
+          </div>
+          <div>
+            <div class="photo-frame reveal-rotate" style="--rot:1.8deg; transform:rotate(1.8deg); position:relative;">
+              <div class="washi-tape top-right teal" aria-hidden="true"></div>
+              <img
+                src="https://images.pexels.com/photos/10692534/pexels-photo-10692534.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=440&w=560"
+                alt="Chicken Kapitan Curry in a white ceramic bowl — deep, rich, fragrant gravy"
+                loading="lazy"
+                style="height:300px; object-fit:cover;"
+                data-fallback-seed="kapitan"
+                data-fw="560" data-fh="440"
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Mutton Curry -->
+        <div class="recipe-spread reveal">
+          <div>
+            <div class="photo-frame reveal-rotate" style="--rot:-2deg; transform:rotate(-2deg); position:relative;">
+              <div class="washi-tape top-left amber" aria-hidden="true"></div>
+              <img
+                src="https://images.pexels.com/photos/28674690/pexels-photo-28674690.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=440&w=560"
+                alt="Rich Indian-style mutton curry garnished with fresh coriander"
+                loading="lazy"
+                style="height:300px; object-fit:cover;"
+                data-fallback-seed="mutton-curry"
+                data-fw="560" data-fh="440"
+              >
+            </div>
+          </div>
+          <div class="recipe-text reveal" data-delay="150">
+            <div class="dish-category">Mains</div>
+            <h3 class="dish-name">Mutton Curry</h3>
+            <p class="dish-desc">
+              Aromatic, tender, and one of the best gravies you'll ever taste — a guest favourite. Slow-cooked until the mutton falls off the bone in a deeply spiced, warming sauce. Guests have called it life-changing.
+            </p>
+          </div>
+        </div>
+
+        <!-- Nasi Ulam -->
+        <div class="recipe-spread reverse reveal">
+          <div class="recipe-text reveal" data-delay="150">
+            <div class="dish-category">Mains · Signature</div>
+            <h3 class="dish-name">Nasi Ulam (Basmati Rice)</h3>
+            <span class="dish-signature">⭐ Signature Dish</span>
+            <p class="dish-desc">
+              Exceptionally fresh and aromatic herb rice — a wonderful blend of ingredients passed down through generations. Every grain carries the fragrance of pomelo leaves, lemongrass, and torch ginger flower.
+            </p>
+            <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:8px;">
+              <span style="font-family:var(--font-ui); font-size:13px; background:var(--kraft); border:1px solid var(--teal); color:var(--teal); border-radius:20px; padding:4px 12px;">🌿 Vegan friendly</span>
+            </div>
+          </div>
+          <div>
+            <div class="photo-frame reveal-rotate" style="--rot:1.2deg; transform:rotate(1.2deg); position:relative;">
+              <div class="washi-tape top-right" aria-hidden="true"></div>
+              <img
+                src="https://images.pexels.com/photos/37106996/pexels-photo-37106996.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=440&w=560"
+                alt="Nasi Ulam — fragrant herb rice platter with traditional sides"
+                loading="lazy"
+                style="height:300px; object-fit:cover;"
+                data-fallback-seed="nasi-ulam"
+                data-fw="560" data-fh="440"
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Sambal Okra -->
+        <div class="recipe-spread reveal">
+          <div>
+            <div class="photo-frame reveal-rotate" style="--rot:-1.5deg; transform:rotate(-1.5deg); position:relative;">
+              <div class="washi-tape top-left teal" aria-hidden="true"></div>
+              <img
+                src="https://images.pexels.com/photos/6063309/pexels-photo-6063309.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=440&w=560"
+                alt="Sambal okra dish — spicy and flavourful"
+                loading="lazy"
+                style="height:300px; object-fit:cover;"
+                data-fallback-seed="sambal-okra"
+                data-fw="560" data-fh="440"
+              >
+            </div>
+          </div>
+          <div class="recipe-text reveal" data-delay="150">
+            <div class="dish-category">Mains · Side</div>
+            <h3 class="dish-name">Sambal Okra</h3>
+            <p class="dish-desc">
+              Top-notch and full of flavour — a beloved side dish that disappears from the table first. The sambal paste is made from scratch, giving it a deep, rounded heat that complements every main.
+            </p>
+          </div>
+        </div>
+
+        <!-- Stir-Fried Squid -->
+        <div class="recipe-spread reverse reveal">
+          <div class="recipe-text reveal" data-delay="150">
+            <div class="dish-category">Mains · Seafood</div>
+            <h3 class="dish-name">Stir-Fried Squid</h3>
+            <p class="dish-desc">
+              Perfectly cooked, full of wok flavour — the squid is tender with a satisfying bite, tossed with aromatics and seasoned to the point of perfection. Simple, but everything is in the technique.
+            </p>
+          </div>
+          <div>
+            <div class="photo-frame reveal-rotate" style="--rot:2deg; transform:rotate(2deg); position:relative;">
+              <div class="washi-tape top-right amber" aria-hidden="true"></div>
+              <img
+                src="https://images.pexels.com/photos/16561737/pexels-photo-16561737.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=440&w=560"
+                alt="Stir-fried seafood noodles with squid and aromatics"
+                loading="lazy"
+                style="height:300px; object-fit:cover;"
+                data-fallback-seed="squid-stir"
+                data-fw="560" data-fh="440"
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Stir-Fried Eggplant -->
+        <div class="recipe-spread reveal">
+          <div>
+            <div class="photo-frame reveal-rotate" style="--rot:-1deg; transform:rotate(-1deg); position:relative;">
+              <div class="washi-tape top-left" aria-hidden="true"></div>
+              <img
+                src="https://images.pexels.com/photos/37297752/pexels-photo-37297752.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=440&w=560"
+                alt="Stir-fried eggplant with green peppers on a white plate"
+                loading="lazy"
+                style="height:300px; object-fit:cover;"
+                data-fallback-seed="eggplant"
+                data-fw="560" data-fh="440"
+              >
+            </div>
+          </div>
+          <div class="recipe-text reveal" data-delay="150">
+            <div class="dish-category">Mains · Vegetable</div>
+            <h3 class="dish-name">Stir-Fried Eggplant</h3>
+            <p class="dish-desc">
+              A guest-favourite side — simple, humble, and delicious. The eggplant soaks up every bit of flavour from the wok, becoming silky and deeply savoury. A perfect example of Kampung Style cooking at its best.
+            </p>
+            <div style="margin-top:8px;">
+              <span style="font-family:var(--font-ui); font-size:13px; background:var(--kraft); border:1px solid var(--teal); color:var(--teal); border-radius:20px; padding:4px 12px;">🌿 Vegan</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kiam Hu Kut Gulai -->
+        <div class="recipe-spread reverse reveal">
+          <div class="recipe-text reveal" data-delay="150">
+            <div class="dish-category">Mains · Kampung Style</div>
+            <h3 class="dish-name">Kiam Hu Kut Gulai</h3>
+            <p class="font-hand" style="font-size:20px; color:var(--terracotta); margin-bottom:4px;">Salted Fish Bone Stew</p>
+            <p class="dish-desc">
+              A true Kampung Style dish with strong Peranakan, Hokkien and Malay roots — humble, thrifty, and deeply flavourful. This is the kind of dish you can't find anywhere else. The kind that makes you feel like you're sitting in someone's grandmother's kitchen.
+            </p>
+          </div>
+          <div>
+            <div class="photo-frame reveal-rotate" style="--rot:1.5deg; transform:rotate(1.5deg); position:relative;">
+              <div class="washi-tape top-right" aria-hidden="true"></div>
+              <img
+                src="https://images.pexels.com/photos/30613288/pexels-photo-30613288.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=440&w=560"
+                alt="Vietnamese braised fish with eggplant — similar to Kiam Hu Kut Gulai"
+                loading="lazy"
+                style="height:300px; object-fit:cover;"
+                data-fallback-seed="fish-stew"
+                data-fw="560" data-fh="440"
+              >
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         RICE & NOODLES SECTION
+    ══════════════════════════════════════ -->
+    <section id="rice-noodles" class="cream-section" style="padding:0 32px;">
+      <div style="max-width:1060px; margin:0 auto; padding:40px 0;">
+        <h2 class="menu-category-heading"><span class="cat-emoji">🍜</span> Rice &amp; Noodles</h2>
+
+        <!-- Nyonya Udon -->
+        <div class="recipe-spread reveal">
+          <div>
+            <div class="photo-frame reveal-rotate" style="--rot:-1.8deg; transform:rotate(-1.8deg); position:relative;">
+              <div class="washi-tape top-left teal" aria-hidden="true"></div>
+              <img
+                src="https://images.pexels.com/photos/33662943/pexels-photo-33662943.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=440&w=560"
+                alt="Herb noodles with crispy spring roll and fresh greens"
+                loading="lazy"
+                style="height:300px; object-fit:cover;"
+                data-fallback-seed="nyonya-noodles"
+                data-fw="560" data-fh="440"
+              >
+            </div>
+          </div>
+          <div class="recipe-text reveal" data-delay="150">
+            <div class="dish-category">Rice &amp; Noodles</div>
+            <h3 class="dish-name">Nyonya Udon</h3>
+            <p class="dish-desc">
+              Fragrant noodles seasoned with pomelo leaves, lemongrass and shrimp paste — slightly spicy, deeply layered. A dish that carries the full complexity of Nyonya cooking in every mouthful.
+            </p>
+          </div>
+        </div>
+
+        <!-- Duck Ramen -->
+        <div class="recipe-spread reverse reveal">
+          <div class="recipe-text reveal" data-delay="150">
+            <div class="dish-category">Rice &amp; Noodles</div>
+            <h3 class="dish-name">Duck Slices with Egg Ramen Noodles</h3>
+            <p class="dish-desc">
+              Comforting broth with tender duck slices — a lunchtime favourite. The broth is simmered low and slow, creating a depth of flavour that warms you from the inside out. Served with springy egg noodles.
+            </p>
+          </div>
+          <div>
+            <div class="photo-frame reveal-rotate" style="--rot:1.6deg; transform:rotate(1.6deg); position:relative;">
+              <div class="washi-tape top-right amber" aria-hidden="true"></div>
+              <img
+                src="https://images.pexels.com/photos/16143086/pexels-photo-16143086.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=440&w=560"
+                alt="Bowl of ramen with duck slices, meatballs and greens"
+                loading="lazy"
+                style="height:300px; object-fit:cover;"
+                data-fallback-seed="duck-ramen"
+                data-fw="560" data-fh="440"
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Onion Omelette -->
+        <div class="recipe-spread reveal">
+          <div>
+            <div class="photo-frame reveal-rotate" style="--rot:-1.3deg; transform:rotate(-1.3deg); position:relative;">
+              <div class="washi-tape top-left" aria-hidden="true"></div>
+              <img
+                src="https://images.pexels.com/photos/31667179/pexels-photo-31667179.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=440&w=560"
+                alt="Japanese-style omelette with chopsticks — silky and golden"
+                loading="lazy"
+                style="height:300px; object-fit:cover;"
+                data-fallback-seed="omelette"
+                data-fw="560" data-fh="440"
+              >
+            </div>
+          </div>
+          <div class="recipe-text reveal" data-delay="150">
+            <div class="dish-category">Rice &amp; Noodles · Simple</div>
+            <h3 class="dish-name">Onion Omelette</h3>
+            <p class="dish-desc">
+              Simple, humble, and always satisfying. A reminder that the best comfort food needs no introduction — just good eggs, sweet onions, and a well-seasoned pan. Perfect paired with steamed rice.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         DESSERTS & DRINKS SECTION
+    ══════════════════════════════════════ -->
+    <section id="desserts" class="paper-section" style="padding:0 32px;">
+      <div style="max-width:1060px; margin:0 auto; padding:40px 0;">
+        <h2 class="menu-category-heading"><span class="cat-emoji">🍮</span> Desserts &amp; Drinks</h2>
+
+        <!-- Bubur Cha Cha -->
+        <div class="recipe-spread reverse reveal">
+          <div class="recipe-text reveal" data-delay="150">
+            <div class="dish-category">Desserts</div>
+            <h3 class="dish-name">Bubur Cha Cha</h3>
+            <p class="dish-desc">
+              A comforting coconut milk dessert with sweet yam and taro — the perfect finish to a Nyonya meal. Warm or chilled, it's a bowl of pure comfort that connects you to generations of Peranakan tradition.
+            </p>
+          </div>
+          <div>
+            <div class="photo-frame reveal-rotate" style="--rot:1.8deg; transform:rotate(1.8deg); position:relative;">
+              <div class="washi-tape top-right teal" aria-hidden="true"></div>
+              <img
+                src="https://images.pexels.com/photos/5652196/pexels-photo-5652196.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=440&w=560"
+                alt="Traditional Asian coconut dessert in ceramic bowls — Bubur Cha Cha style"
+                loading="lazy"
+                style="height:300px; object-fit:cover;"
+                data-fallback-seed="bubur-cha-cha"
+                data-fw="560" data-fh="440"
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Barley Dessert -->
+        <div class="recipe-spread reveal">
+          <div>
+            <div class="photo-frame reveal-rotate" style="--rot:-2deg; transform:rotate(-2deg); position:relative;">
+              <div class="washi-tape top-left amber" aria-hidden="true"></div>
+              <img
+                src="https://images.pexels.com/photos/5652186/pexels-photo-5652186.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=440&w=560"
+                alt="Traditional sweet soup with tofu and grains in a decorative bowl"
+                loading="lazy"
+                style="height:300px; object-fit:cover;"
+                data-fallback-seed="barley-dessert"
+                data-fw="560" data-fh="440"
+              >
+            </div>
+          </div>
+          <div class="recipe-text reveal" data-delay="150">
+            <div class="dish-category">Desserts</div>
+            <h3 class="dish-name">Barley with Beancurd &amp; Gingko Dessert</h3>
+            <p class="dish-desc">
+              A gentle, comforting classic Peranakan sweet. The barley is cooked until soft and creamy, the beancurd silken, and the gingko nuts add a subtle earthy warmth. Light enough to enjoy at the end of a hearty meal.
+            </p>
+          </div>
+        </div>
+
+        <!-- Iced Nutmeg Juice -->
+        <div class="recipe-spread reverse reveal">
+          <div class="recipe-text reveal" data-delay="150">
+            <div class="dish-category">Drinks</div>
+            <h3 class="dish-name">Iced Nutmeg Juice</h3>
+            <p class="dish-desc">
+              Refreshing, sweet, with a mild spiced flavour — a true local Penang favourite. Made from fresh nutmeg, this drink is rare outside of Penang and a must-try for every visitor. Cooling, fragrant, unforgettable.
+            </p>
+          </div>
+          <div>
+            <div class="photo-frame reveal-rotate" style="--rot:1.2deg; transform:rotate(1.2deg); position:relative;">
+              <div class="washi-tape top-right" aria-hidden="true"></div>
+              <img
+                src="https://images.pexels.com/photos/322341/pexels-photo-322341.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=440&w=560"
+                alt="Refreshing iced pink drink in a mason jar with a green straw"
+                loading="lazy"
+                style="height:300px; object-fit:cover;"
+                data-fallback-seed="nutmeg-juice"
+                data-fw="560" data-fh="440"
+              >
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Price Note -->
+    <div class="cream-section">
+      <div class="price-note reveal">
+        <span class="font-hand" style="font-size:22px; color:var(--terracotta); display:block; margin-bottom:8px;">A Note on Prices</span>
+        Price Range: <strong>RM 20–40 per dish.</strong><br>
+        Ask our staff for today's specials — Tina cooks something new every week.
+      </div>
+    </div>
+
+    <!-- Slim Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-desktop">
+        <span>🍜</span>
+        <span>Tina's Kitchen</span>
+        <span class="footer-dot">·</span>
+        <span>70 Lebuh Kimberley, George Town, Penang</span>
+        <span class="footer-dot">·</span>
+        <a href="tel:+60124806666" style="color:var(--rattan);">+60 12-480 6666</a>
+        <span class="footer-dot">·</span>
+        <a href="https://www.instagram.com/tinas_kitchen_penang/" class="footer-social-icon" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
+        <a href="https://www.facebook.com/tinaskitchenpenang/" class="footer-social-icon" target="_blank" rel="noopener" aria-label="Facebook">📘</a>
+        <span class="footer-dot">·</span>
+        <span>© 2025</span>
+      </div>
+      <div class="footer-mobile">
+        <div class="footer-mobile-socials">
+          <a href="https://www.instagram.com/tinas_kitchen_penang/" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
+          <a href="https://www.facebook.com/tinaskitchenpenang/" target="_blank" rel="noopener" aria-label="Facebook">📘</a>
+          <a href="https://wa.me/60124806666" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+        </div>
+        <p class="footer-mobile-copy">© 2025 Tina's Kitchen Penang</p>
+      </div>
+    </footer>
+
+  </div><!-- /page-wrapper -->
+
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Story — Tina's Kitchen, George Town Penang</title>
+  <meta name="description" content="The story of Tina's Kitchen — three generations of Nyonya Peranakan cooking in George Town, Penang. Recipes passed down unchanged from grandmother to Tina to her daughter.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Story page specific overrides */
+    .story-stop {
+      display: grid;
+      grid-template-columns: 1fr 70px 1fr;
+      gap: 24px 20px;
+      align-items: center;
+      margin-bottom: 56px;
+    }
+
+    .story-stop .stop-visual {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .story-stop .stop-content {
+      background: var(--cream);
+      padding: 22px 24px;
+      border-radius: 4px;
+      box-shadow: 2px 4px 14px rgba(43,36,32,0.12);
+      border-left: 3px solid var(--terracotta);
+    }
+
+    .story-stop.left .stop-content {
+      border-left: none;
+      border-right: 3px solid var(--terracotta);
+      text-align: right;
+    }
+
+    .stop-photo-circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid var(--terracotta);
+      overflow: hidden;
+      background: var(--kraft);
+      flex-shrink: 0;
+    }
+
+    .stop-photo-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .stop-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--terracotta);
+      border: 3px solid var(--cream);
+      box-shadow: 0 0 0 2px var(--terracotta);
+      flex-shrink: 0;
+    }
+
+    .stop-title {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--aged-ink);
+      margin-bottom: 8px;
+    }
+
+    .stop-text {
+      font-family: var(--font-body);
+      font-size: 15.5px;
+      color: var(--aged-ink);
+      line-height: 1.72;
+    }
+
+    .stop-year {
+      font-family: var(--font-hand);
+      font-size: 18px;
+      color: var(--terracotta);
+    }
+
+    @media (max-width: 767px) {
+      .story-stop {
+        grid-template-columns: 56px 1fr;
+        gap: 12px 14px;
+        margin-bottom: 36px;
+      }
+
+      .story-stop .stop-visual {
+        grid-column: 1;
+        grid-row: 1;
+        align-items: center;
+      }
+
+      .story-stop .stop-content {
+        grid-column: 2;
+        grid-row: 1;
+        border-left: 3px solid var(--terracotta) !important;
+        border-right: none !important;
+        text-align: left !important;
+        padding: 16px;
+      }
+
+      .story-stop .stop-empty {
+        display: none;
+      }
+
+      .stop-photo-circle {
+        display: none;
+      }
+
+      .stop-dot {
+        margin-top: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Side Ribbon -->
+  <nav class="side-ribbon" aria-label="Main navigation">
+    <div class="ribbon-logo" title="Tina's Kitchen">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="16" cy="20" r="9" stroke="#B4552F" stroke-width="1.8" fill="none"/>
+        <path d="M11 20 Q16 14 21 20" stroke="#B4552F" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path d="M16 11 L16 5" stroke="#B4552F" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M13 7 Q16 5 19 7" stroke="#B4552F" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <circle cx="16" cy="20" r="2.5" fill="#B4552F" opacity="0.6"/>
+      </svg>
+    </div>
+    <div class="ribbon-tabs">
+      <a href="index.html" class="ribbon-tab" data-page="home" title="Home"><span class="tab-icon">🏠</span><span class="tab-label">Home</span></a>
+      <a href="menu.html" class="ribbon-tab" data-page="menu" title="The Recipe Book"><span class="tab-icon">📖</span><span class="tab-label">Menu</span></a>
+      <a href="story.html" class="ribbon-tab" data-page="story" title="Our Story"><span class="tab-icon">📜</span><span class="tab-label">Story</span></a>
+      <a href="gallery.html" class="ribbon-tab" data-page="gallery" title="The Scrapbook"><span class="tab-icon">📷</span><span class="tab-label">Album</span></a>
+      <a href="visit.html" class="ribbon-tab" data-page="visit" title="Come Visit"><span class="tab-icon">✉️</span><span class="tab-label">Visit</span></a>
+    </div>
+  </nav>
+
+  <!-- Bottom Tab Bar -->
+  <nav class="bottom-tab-bar" aria-label="Main navigation">
+    <a href="index.html" class="bottom-tab" data-page="home"><span class="tab-dot"></span><span class="tab-icon">🏠</span><span class="tab-label">Home</span></a>
+    <a href="menu.html" class="bottom-tab" data-page="menu"><span class="tab-dot"></span><span class="tab-icon">📖</span><span class="tab-label">Menu</span></a>
+    <a href="story.html" class="bottom-tab" data-page="story"><span class="tab-dot"></span><span class="tab-icon">📜</span><span class="tab-label">Story</span></a>
+    <a href="gallery.html" class="bottom-tab" data-page="gallery"><span class="tab-dot"></span><span class="tab-icon">📷</span><span class="tab-label">Album</span></a>
+    <a href="visit.html" class="bottom-tab" data-page="visit"><span class="tab-dot"></span><span class="tab-icon">✉️</span><span class="tab-label">Visit</span></a>
+  </nav>
+
+  <a href="https://wa.me/60124806666" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="WhatsApp Tina's Kitchen">💬</a>
+
+  <div class="page-wrapper">
+
+    <!-- Page Header -->
+    <header class="page-header">
+      <h1>Our Story</h1>
+      <p class="page-hand-sub">Three generations, one kitchen.</p>
+      <p style="font-family:var(--font-body); font-size:16px; color:var(--rattan); max-width:480px; margin:12px auto 0; font-style:italic;">
+        Not just a restaurant — a living archive of heritage, love, and memory.
+      </p>
+    </header>
+
+    <!-- ══════════════════════════════════════
+         VERTICAL TIMELINE
+    ══════════════════════════════════════ -->
+    <section class="paper-section" aria-label="Our history">
+      <div class="section-container">
+
+        <div class="story-timeline-wrap" style="position:relative;">
+          <!-- Vertical dashed center line -->
+          <div class="story-center-line" aria-hidden="true"></div>
+
+          <!-- STOP 1: The Beginning (RIGHT side — content right) -->
+          <div class="story-stop">
+            <!-- Left: empty -->
+            <div class="stop-empty"></div>
+            <!-- Center: visual -->
+            <div class="stop-visual stamp-reveal">
+              <div class="stop-photo-circle">
+                <img
+                  src="https://images.pexels.com/photos/36475330/pexels-photo-36475330.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=300"
+                  alt="Traditional Chinese kitchen with bamboo steamers — the origin of Tina's recipes"
+                  loading="lazy"
+                  data-fallback-seed="vintage-kitchen"
+                  data-fw="300" data-fh="300"
+                >
+              </div>
+              <div class="stop-dot"></div>
+              <div class="stop-year">The Beginning</div>
+            </div>
+            <!-- Right: content -->
+            <div class="stop-content reveal">
+              <h2 class="stop-title">Where It All Started</h2>
+              <p class="stop-text">
+                Long before Tina's Kitchen had a name, there was a family kitchen — recipes taught by hand, passed from grandmother to daughter, generation after generation. Nothing written down. Everything remembered. The smell of lemongrass, the sound of the mortar and pestle, the colour of turmeric staining the wooden board.
+              </p>
+            </div>
+          </div>
+
+          <!-- STOP 2: Tina Opens (LEFT side — content left) -->
+          <div class="story-stop left">
+            <!-- Left: content -->
+            <div class="stop-content reveal">
+              <h2 class="stop-title">Tina Opens Her Doors</h2>
+              <p class="stop-text">
+                Tina brought those same unaltered recipes to 70 Lebuh Kimberley, George Town — determined to keep every flavour exactly as she remembered it. No shortcuts. No substitutions. Just natural ingredients, traditional technique, and a deep respect for every dish she'd been taught to make.
+              </p>
+            </div>
+            <!-- Center: visual -->
+            <div class="stop-visual stamp-reveal">
+              <div class="stop-dot"></div>
+              <div class="stop-photo-circle">
+                <img
+                  src="https://images.pexels.com/photos/19257062/pexels-photo-19257062.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300&w=300"
+                  alt="Woman cooking with passion in a traditional Asian kitchen"
+                  loading="lazy"
+                  data-fallback-seed="restaurant-owner"
+                  data-fw="300" data-fh="300"
+                >
+              </div>
+              <div class="stop-year">70 Kimberley</div>
+            </div>
+            <!-- Right: empty -->
+            <div class="stop-empty"></div>
+          </div>
+
+          <!-- STOP 3: Kampung Philosophy (RIGHT) -->
+          <div class="story-stop">
+            <div class="stop-empty"></div>
+            <div class="stop-visual stamp-reveal">
+              <div class="stop-photo-circle">
+                <img
+                  src="https://images.pexels.com/photos/37193630/pexels-photo-37193630.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=300"
+                  alt="Family cooking together in a traditional Indonesian kitchen"
+                  loading="lazy"
+                  data-fallback-seed="kampung-cooking"
+                  data-fw="300" data-fh="300"
+                >
+              </div>
+              <div class="stop-dot"></div>
+              <div class="stop-year">Kampung Soul</div>
+            </div>
+            <div class="stop-content reveal">
+              <h2 class="stop-title">A Kampung Style Philosophy</h2>
+              <p class="stop-text">
+                Every dish at Tina's Kitchen carries the spirit of <em>Kampung Style</em> cooking — humble, thrifty, and deeply flavourful. Nothing wasted. Everything intentional. Dishes like our Kiam Hu Kut Gulai connect directly to Peranakan, Hokkien and Malay roots that stretch back centuries in Penang's remarkable cultural heritage.
+              </p>
+            </div>
+          </div>
+
+          <!-- STOP 4: The Next Generation (LEFT) -->
+          <div class="story-stop left">
+            <div class="stop-content reveal">
+              <h2 class="stop-title">The Next Generation</h2>
+              <p class="stop-text">
+                Today, Tina's daughter works alongside her in the kitchen — learning every recipe, every technique, every unwritten secret. She didn't learn from a cookbook. She learned by watching, by tasting, by standing at the stove. The story continues exactly as it always has: by hand, by memory, by love.
+              </p>
+            </div>
+            <div class="stop-visual stamp-reveal">
+              <div class="stop-dot"></div>
+              <div class="stop-photo-circle">
+                <img
+                  src="https://images.pexels.com/photos/19257079/pexels-photo-19257079.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300&w=300"
+                  alt="Young woman learning her craft in the kitchen"
+                  loading="lazy"
+                  data-fallback-seed="next-generation"
+                  data-fw="300" data-fh="300"
+                >
+              </div>
+              <div class="stop-year">Still Going</div>
+            </div>
+            <div class="stop-empty"></div>
+          </div>
+
+          <!-- STOP 5: Home Away From Home (RIGHT) -->
+          <div class="story-stop">
+            <div class="stop-empty"></div>
+            <div class="stop-visual stamp-reveal">
+              <div class="stop-photo-circle">
+                <img
+                  src="https://images.pexels.com/photos/19771754/pexels-photo-19771754.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=300"
+                  alt="Two chefs smiling together in the kitchen — our team"
+                  loading="lazy"
+                  data-fallback-seed="restaurant-team"
+                  data-fw="300" data-fh="300"
+                >
+              </div>
+              <div class="stop-dot"></div>
+              <div class="stop-year">Today</div>
+            </div>
+            <div class="stop-content reveal">
+              <h2 class="stop-title">A Home Away From Home</h2>
+              <p class="stop-text">
+                Guests don't just come for the food — they come for the warmth. Our team, including a wonderful member of staff who is deaf and mute and always greets every visitor with the loveliest smile, makes everyone feel like family. That feeling? It's not an accident. It's who we are.
+              </p>
+            </div>
+          </div>
+
+        </div><!-- /story-timeline-wrap -->
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         QUOTE BLOCK
+    ══════════════════════════════════════ -->
+    <section class="quote-block" aria-label="Tina's philosophy">
+      <div class="reveal">
+        <blockquote>
+          "We don't cook to impress. We cook to remember."
+          <footer style="font-family:var(--font-ui); font-size:15px; color:var(--rattan); margin-top:12px; display:block;">— Tina</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         VALUES ROW
+    ══════════════════════════════════════ -->
+    <section class="cream-section" aria-label="Our values">
+      <div class="section-container">
+        <div style="text-align:center; margin-bottom:8px;">
+          <h2 class="section-heading reveal">What We Stand For</h2>
+          <p class="section-subheading reveal" data-delay="80">The pillars of every dish we serve</p>
+        </div>
+
+        <div class="values-row">
+          <div class="value-card reveal" data-delay="0">
+            <span class="value-icon">🌿</span>
+            <h3 class="value-title">Natural Ingredients</h3>
+            <p class="value-desc">No shortcuts, ever. Every ingredient is chosen with care — fresh, honest, and as close to how grandmother would have sourced them as possible.</p>
+          </div>
+
+          <div class="value-card reveal" data-delay="120">
+            <span class="value-icon">👵</span>
+            <h3 class="value-title">Unaltered Recipes</h3>
+            <p class="value-desc">Exactly as passed down. Not modernised, not "elevated", not adapted for fashion. The same proportions, the same methods, the same result — every single time.</p>
+          </div>
+
+          <div class="value-card reveal" data-delay="240">
+            <span class="value-icon">❤️</span>
+            <h3 class="value-title">Family First</h3>
+            <p class="value-desc">Every guest treated like kin. When you sit at our table, you're not a customer — you're a guest in our home. That's not marketing. That's just how we were raised.</p>
+          </div>
+        </div>
+
+        <div style="text-align:center; margin-top:40px;" class="reveal">
+          <a href="menu.html" class="btn-primary" style="margin-right:12px; display:inline-flex;">📖 Browse Our Dishes</a>
+          <a href="visit.html" class="btn-ticket">📍 Come Visit Us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slim Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-desktop">
+        <span>🍜</span>
+        <span>Tina's Kitchen</span>
+        <span class="footer-dot">·</span>
+        <span>70 Lebuh Kimberley, George Town, Penang</span>
+        <span class="footer-dot">·</span>
+        <a href="tel:+60124806666" style="color:var(--rattan);">+60 12-480 6666</a>
+        <span class="footer-dot">·</span>
+        <a href="https://www.instagram.com/tinas_kitchen_penang/" class="footer-social-icon" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
+        <a href="https://www.facebook.com/tinaskitchenpenang/" class="footer-social-icon" target="_blank" rel="noopener" aria-label="Facebook">📘</a>
+        <span class="footer-dot">·</span>
+        <span>© 2025</span>
+      </div>
+      <div class="footer-mobile">
+        <div class="footer-mobile-socials">
+          <a href="https://www.instagram.com/tinas_kitchen_penang/" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
+          <a href="https://www.facebook.com/tinaskitchenpenang/" target="_blank" rel="noopener" aria-label="Facebook">📘</a>
+          <a href="https://wa.me/60124806666" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+        </div>
+        <p class="footer-mobile-copy">© 2025 Tina's Kitchen Penang</p>
+      </div>
+    </footer>
+
+  </div><!-- /page-wrapper -->
+
+  <script src="script.js" defer></script>
+</body>
+</html>
