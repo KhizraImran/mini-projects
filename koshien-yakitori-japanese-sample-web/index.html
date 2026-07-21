@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Koshien Yakitori Japanese – Premium Japanese Bar & Restaurant in Penang, Malaysia. Authentic yakitori, sushi, ramen, and sake in a luxury izakaya atmosphere." />
+  <meta name="keywords" content="Japanese restaurant Penang, yakitori, sushi, ramen, sake, izakaya, Japanese bar, Koshien" />
+  <meta name="author" content="Koshien Yakitori Japanese" />
+  <meta property="og:title" content="Koshien Yakitori Japanese – Penang" />
+  <meta property="og:description" content="Experience authentic Japanese izakaya culture. Premium yakitori, omakase dining, and handcrafted cocktails in Penang, Malaysia." />
+  <meta property="og:type" content="website" />
+  <title>Koshien Yakitori Japanese | Premium Izakaya · Penang, Malaysia</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- SCROLL PROGRESS BAR -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- CUSTOM CURSOR -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- LOADING SCREEN -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-inner">
+      <div class="loading-kanji">焼</div>
+      <div class="loading-bar-wrap">
+        <div class="loading-bar-fill" id="loadingFill"></div>
+      </div>
+      <p class="loading-label">Koshien Yakitori</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- NAVIGATION -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Koshien Yakitori Home">
+        <span class="logo-kanji">焼</span>
+        <span class="logo-text">Koshien<em>Yakitori</em></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#menu" class="nav-link">Menu</a></li>
+        <li><a href="#omakase" class="nav-link">Omakase</a></li>
+        <li><a href="#bar" class="nav-link">Bar</a></li>
+        <li><a href="#atmosphere" class="nav-link">Atmosphere</a></li>
+        <li><a href="#reviews" class="nav-link">Reviews</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li>
+          <a href="#contact" class="nav-cta magnetic-btn" aria-label="Reserve Table">Reserve</a>
+        </li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu-inner">
+        <nav class="mobile-nav" role="navigation">
+          <a href="#menu" class="mobile-link" data-index="1">Menu</a>
+          <a href="#omakase" class="mobile-link" data-index="2">Omakase</a>
+          <a href="#bar" class="mobile-link" data-index="3">Bar</a>
+          <a href="#atmosphere" class="mobile-link" data-index="4">Atmosphere</a>
+          <a href="#reviews" class="mobile-link" data-index="5">Reviews</a>
+          <a href="#contact" class="mobile-link" data-index="6">Contact</a>
+        </nav>
+        <a href="#contact" class="mobile-reserve">Reserve a Table</a>
+        <div class="mobile-footer-info">
+          <p>+60 11-2063 5251</p>
+          <p>Penang, Malaysia</p>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- HERO SECTION -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="hero" id="hero" aria-label="Hero">
+    <!-- Background layers -->
+    <div class="hero-bg">
+      <img
+        src="https://images.pexels.com/photos/8080303/pexels-photo-8080303.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+        alt="Japanese lantern street night"
+        class="hero-bg-img"
+        id="heroBgImg"
+        loading="eager"
+      />
+      <div class="hero-overlay"></div>
+      <div class="hero-grain"></div>
+    </div>
+
+    <!-- Floating lanterns -->
+    <div class="lantern-group" aria-hidden="true">
+      <div class="lantern l1">
+        <div class="lantern-body"></div>
+        <div class="lantern-glow"></div>
+      </div>
+      <div class="lantern l2">
+        <div class="lantern-body"></div>
+        <div class="lantern-glow"></div>
+      </div>
+      <div class="lantern l3">
+        <div class="lantern-body"></div>
+        <div class="lantern-glow"></div>
+      </div>
+    </div>
+
+    <!-- Smoke particles -->
+    <div class="smoke-container" aria-hidden="true">
+      <div class="smoke s1"></div>
+      <div class="smoke s2"></div>
+      <div class="smoke s3"></div>
+      <div class="smoke s4"></div>
+    </div>
+
+    <!-- Hero content -->
+    <div class="hero-content" id="heroContent">
+      <div class="hero-eyebrow reveal-up">
+        <span class="eyebrow-line"></span>
+        <span>Penang · Malaysia</span>
+        <span class="eyebrow-line"></span>
+      </div>
+
+      <h1 class="hero-title reveal-up" style="--delay:0.1s">
+        <span class="title-jp">焼き鳥</span>
+        <span class="title-en">Koshien</span>
+        <span class="title-sub">Yakitori</span>
+      </h1>
+
+      <p class="hero-tagline reveal-up" style="--delay:0.2s">
+        <span class="typing-text" id="typingText"></span><span class="typing-cursor">|</span>
+      </p>
+
+      <div class="hero-actions reveal-up" style="--delay:0.35s">
+        <a href="#contact" class="btn-primary magnetic-btn">
+          <span class="btn-bg"></span>
+          <span class="btn-label">Reserve a Table</span>
+          <span class="btn-arrow">→</span>
+        </a>
+        <a href="#menu" class="btn-ghost magnetic-btn">
+          <span class="btn-label">Explore Menu</span>
+          <span class="btn-icon">↓</span>
+        </a>
+      </div>
+
+      <div class="hero-meta reveal-up" style="--delay:0.45s">
+        <div class="meta-item">
+          <span class="meta-val">12+</span>
+          <span class="meta-label">Yakitori Cuts</span>
+        </div>
+        <div class="meta-divider" aria-hidden="true"></div>
+        <div class="meta-item">
+          <span class="meta-val">6PM</span>
+          <span class="meta-label">Opens Daily</span>
+        </div>
+        <div class="meta-divider" aria-hidden="true"></div>
+        <div class="meta-item">
+          <span class="meta-val">★ 4.9</span>
+          <span class="meta-label">Guest Rating</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator reveal-up" style="--delay:0.6s" aria-hidden="true">
+      <div class="scroll-wheel"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- MARQUEE STRIP -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <div class="marquee-section" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-inner">
+        <span>焼き鳥 · YAKITORI ·</span><span>IZAKAYA ·</span><span>寿司 · SUSHI ·</span>
+        <span>ラーメン · RAMEN ·</span><span>OMAKASE ·</span><span>日本酒 · SAKE ·</span>
+        <span>焼き鳥 · YAKITORI ·</span><span>IZAKAYA ·</span><span>寿司 · SUSHI ·</span>
+        <span>ラーメン · RAMEN ·</span><span>OMAKASE ·</span><span>日本酒 · SAKE ·</span>
+        <span>焼き鳥 · YAKITORI ·</span><span>IZAKAYA ·</span><span>寿司 · SUSHI ·</span>
+        <span>ラーメン · RAMEN ·</span><span>OMAKASE ·</span><span>日本酒 · SAKE ·</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- CHEF'S SPECIAL MENU -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="menu-section" id="menu" aria-labelledby="menuHeading">
+    <div class="section-container">
+      <!-- Section header: editorial offset -->
+      <div class="section-header-offset">
+        <div class="section-header-left">
+          <p class="section-eyebrow reveal-up">Chef's Curation</p>
+          <h2 class="section-title reveal-up" id="menuHeading">
+            Special<br/><em>Menu</em>
+          </h2>
+        </div>
+        <div class="section-header-right reveal-up" style="--delay:0.15s">
+          <p class="section-desc">
+            Each dish is a meditation — handcrafted from premium ingredients, grilled over binchotan charcoal, and presented with Japanese precision and soul.
+          </p>
+          <a href="#contact" class="text-link">View Full Menu →</a>
+        </div>
+      </div>
+
+      <!-- Menu grid: broken layout -->
+      <div class="menu-grid">
+
+        <!-- Card 1 – Yakitori -->
+        <article class="menu-card reveal-scale" style="--delay:0s" aria-label="Yakitori">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.pexels.com/photos/30682935/pexels-photo-30682935.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=600"
+              alt="Classic Yakitori skewers on dark plate"
+              loading="lazy"
+              class="card-img"
+            />
+            <div class="card-img-overlay"></div>
+            <span class="card-tag">Signature</span>
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="card-name">Yakitori Moriawase</h3>
+              <span class="card-price">RM 42</span>
+            </div>
+            <p class="card-desc">Assorted premium skewers — thigh, neck, cartilage & skin — basted with housemade tare sauce over bincho charcoal.</p>
+            <div class="card-footer">
+              <span class="card-cat">焼き鳥</span>
+              <button class="card-btn" aria-label="Add Yakitori to order">Order</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 – Sushi Platter (large offset card) -->
+        <article class="menu-card card-wide reveal-scale" style="--delay:0.1s" aria-label="Sushi Platter">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.pexels.com/photos/343870/pexels-photo-343870.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              alt="Premium sushi platter"
+              loading="lazy"
+              class="card-img"
+            />
+            <div class="card-img-overlay"></div>
+            <span class="card-tag">Popular</span>
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="card-name">Omakase Sushi Platter</h3>
+              <span class="card-price">RM 88</span>
+            </div>
+            <p class="card-desc">Chef's daily selection of 12 premium nigiri & maki — crafted from the finest seafood, imported nori, and seasoned sushi rice.</p>
+            <div class="card-footer">
+              <span class="card-cat">寿司</span>
+              <button class="card-btn" aria-label="Add Sushi Platter to order">Order</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 – Salmon Nigiri -->
+        <article class="menu-card reveal-scale" style="--delay:0.15s" aria-label="Salmon Nigiri">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.pexels.com/photos/31815435/pexels-photo-31815435.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              alt="Gourmet salmon sashimi"
+              loading="lazy"
+              class="card-img"
+            />
+            <div class="card-img-overlay"></div>
+            <span class="card-tag">Chef's Pick</span>
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="card-name">Salmon Nigiri</h3>
+              <span class="card-price">RM 28</span>
+            </div>
+            <p class="card-desc">Silky Atlantic salmon draped over hand-pressed sushi rice — lightly torched, finished with truffle oil and sea salt flakes.</p>
+            <div class="card-footer">
+              <span class="card-cat">にぎり</span>
+              <button class="card-btn" aria-label="Add Salmon Nigiri to order">Order</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 – Wagyu Skewer -->
+        <article class="menu-card card-tall reveal-scale" style="--delay:0.2s" aria-label="Wagyu Skewers">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.pexels.com/photos/31461528/pexels-photo-31461528.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+              alt="Japanese BBQ dining indoor grill"
+              loading="lazy"
+              class="card-img"
+            />
+            <div class="card-img-overlay"></div>
+            <span class="card-tag gold-tag">Premium</span>
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="card-name">Wagyu Skewers</h3>
+              <span class="card-price">RM 68</span>
+            </div>
+            <p class="card-desc">A5 Wagyu beef skewers kissed by binchotan flame — served with wasabi, ponzu, and shaved daikon.</p>
+            <div class="card-footer">
+              <span class="card-cat">和牛</span>
+              <button class="card-btn" aria-label="Add Wagyu Skewers to order">Order</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 – Ramen -->
+        <article class="menu-card reveal-scale" style="--delay:0.25s" aria-label="Ramen">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.pexels.com/photos/343871/pexels-photo-343871.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              alt="Steaming Japanese ramen bowl"
+              loading="lazy"
+              class="card-img"
+            />
+            <div class="card-img-overlay"></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="card-name">Tonkotsu Ramen</h3>
+              <span class="card-price">RM 34</span>
+            </div>
+            <p class="card-desc">18-hour pork bone broth, wavy noodles, chashu pork, soft egg, bamboo shoots, and nori — deeply umami and soul-warming.</p>
+            <div class="card-footer">
+              <span class="card-cat">ラーメン</span>
+              <button class="card-btn" aria-label="Add Ramen to order">Order</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6 – Tempura -->
+        <article class="menu-card reveal-scale" style="--delay:0.3s" aria-label="Tempura">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.pexels.com/photos/31815433/pexels-photo-31815433.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              alt="Premium Japanese seafood dish"
+              loading="lazy"
+              class="card-img"
+            />
+            <div class="card-img-overlay"></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="card-name">Ebi Tempura</h3>
+              <span class="card-price">RM 36</span>
+            </div>
+            <p class="card-desc">Tiger prawn tempura with a feather-light batter, served with tentsuyu dipping sauce and grated daikon radish.</p>
+            <div class="card-footer">
+              <span class="card-cat">天ぷら</span>
+              <button class="card-btn" aria-label="Add Tempura to order">Order</button>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /.menu-grid -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- OMAKASE EXPERIENCE -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="omakase-section" id="omakase" aria-labelledby="omakaseHeading">
+    <div class="omakase-inner">
+
+      <!-- Left: editorial image panel -->
+      <div class="omakase-visual reveal-from-left">
+        <div class="omakase-img-frame">
+          <img
+            src="https://images.pexels.com/photos/9424910/pexels-photo-9424910.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+            alt="Chefs at omakase bar in dimly lit Japanese restaurant"
+            loading="lazy"
+            class="omakase-img"
+          />
+          <div class="omakase-badge">
+            <span class="badge-kanji">お</span>
+            <span class="badge-text">OMAKASE</span>
+          </div>
+        </div>
+        <div class="omakase-float-card">
+          <span class="float-number">12</span>
+          <span class="float-desc">Curated<br/>Courses</span>
+        </div>
+      </div>
+
+      <!-- Right: story text -->
+      <div class="omakase-text reveal-from-right">
+        <p class="section-eyebrow">The Chef's Vision</p>
+        <h2 class="omakase-title" id="omakaseHeading">
+          お任せ<br/>
+          <em>Omakase</em><br/>
+          Experience
+        </h2>
+
+        <div class="jp-divider" aria-hidden="true">
+          <span class="divider-line"></span>
+          <span class="divider-diamond">◆</span>
+          <span class="divider-line"></span>
+        </div>
+
+        <p class="omakase-lead">
+          "I leave it up to you" — <em>Omakase</em> is the ultimate expression of trust between chef and guest.
+        </p>
+        <p class="omakase-body">
+          Each evening, our head chef curates a 12-course tasting journey — from delicate sashimi and house-made tofu to binchotan-grilled wagyu and handcrafted mochi. Every plate is a conversation between tradition and modern Japanese craft.
+        </p>
+
+        <div class="omakase-details">
+          <div class="detail-item">
+            <span class="detail-icon">🕕</span>
+            <div>
+              <strong>6:00 PM – 10:00 PM</strong>
+              <p>Nightly seatings — reservation required</p>
+            </div>
+          </div>
+          <div class="detail-item">
+            <span class="detail-icon">👤</span>
+            <div>
+              <strong>4 – 8 Guests</strong>
+              <p>Private counter seating available</p>
+            </div>
+          </div>
+          <div class="detail-item">
+            <span class="detail-icon">💴</span>
+            <div>
+              <strong>From RM 280 / pax</strong>
+              <p>Includes curated sake pairing</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn-primary magnetic-btn">
+          <span class="btn-bg"></span>
+          <span class="btn-label">Reserve Omakase</span>
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- SAKE & BAR -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="bar-section" id="bar" aria-labelledby="barHeading">
+    <div class="bar-bg-text" aria-hidden="true">BAR</div>
+
+    <div class="section-container">
+      <div class="bar-header">
+        <div>
+          <p class="section-eyebrow reveal-up">Crafted Libations</p>
+          <h2 class="section-title reveal-up" id="barHeading">Sake<br/>&amp; <em>Bar</em></h2>
+        </div>
+        <p class="bar-subtext reveal-up" style="--delay:0.15s">
+          Our bar program spans centuries of Japanese distillation tradition — paired with modern mixology and premium spirits from Fushimi, Nada, and beyond.
+        </p>
+      </div>
+
+      <!-- Horizontal scroll drinks -->
+      <div class="drinks-track-wrap">
+        <div class="drinks-track" id="drinksTrack">
+
+          <div class="drink-card reveal-scale" style="--delay:0s">
+            <div class="drink-img-wrap">
+              <img
+                src="https://images.pexels.com/photos/15602697/pexels-photo-15602697.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800"
+                alt="Sake bottles Japanese restaurant"
+                loading="lazy"
+                class="drink-img"
+              />
+              <div class="drink-shimmer"></div>
+            </div>
+            <div class="drink-info">
+              <span class="drink-category">日本酒 Sake</span>
+              <h3 class="drink-name">Junmai Daiginjo</h3>
+              <p class="drink-desc">Ultra-premium sake — floral, fruity, and exceptionally smooth. Served chilled in a carved cedar masu.</p>
+              <span class="drink-price">RM 48 / glass</span>
+            </div>
+          </div>
+
+          <div class="drink-card reveal-scale" style="--delay:0.1s">
+            <div class="drink-img-wrap">
+              <img
+                src="https://images.pexels.com/photos/34075973/pexels-photo-34075973.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800"
+                alt="Whiskey cocktail Tokyo bar"
+                loading="lazy"
+                class="drink-img"
+              />
+              <div class="drink-shimmer"></div>
+            </div>
+            <div class="drink-info">
+              <span class="drink-category">ウイスキー Whisky</span>
+              <h3 class="drink-name">Yamazaki Highball</h3>
+              <p class="drink-desc">Suntory Yamazaki single malt, chilled soda water, lemon zest. Crisp, honeyed, irreplaceable.</p>
+              <span class="drink-price">RM 62 / glass</span>
+            </div>
+          </div>
+
+          <div class="drink-card reveal-scale" style="--delay:0.2s">
+            <div class="drink-img-wrap">
+              <img
+                src="https://images.pexels.com/photos/29097084/pexels-photo-29097084.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800"
+                alt="Classic cocktail with cherry garnish"
+                loading="lazy"
+                class="drink-img"
+              />
+              <div class="drink-shimmer"></div>
+            </div>
+            <div class="drink-info">
+              <span class="drink-category">カクテル Cocktail</span>
+              <h3 class="drink-name">Sakura Blossom</h3>
+              <p class="drink-desc">Gin, sakura syrup, yuzu juice, elderflower, and prosecco foam. Delicate, floral, and memorable.</p>
+              <span class="drink-price">RM 38 / glass</span>
+            </div>
+          </div>
+
+          <div class="drink-card reveal-scale" style="--delay:0.3s">
+            <div class="drink-img-wrap">
+              <img
+                src="https://images.pexels.com/photos/15642990/pexels-photo-15642990.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800"
+                alt="Bartender pouring whiskey"
+                loading="lazy"
+                class="drink-img"
+              />
+              <div class="drink-shimmer"></div>
+            </div>
+            <div class="drink-info">
+              <span class="drink-category">バーボン Bourbon</span>
+              <h3 class="drink-name">Tokyo Old Fashioned</h3>
+              <p class="drink-desc">Japanese bourbon blend, bitters, smoked cherry, and a sesame-smoked ice sphere. Theatre in a glass.</p>
+              <span class="drink-price">RM 52 / glass</span>
+            </div>
+          </div>
+
+          <div class="drink-card reveal-scale" style="--delay:0.4s">
+            <div class="drink-img-wrap">
+              <img
+                src="https://images.pexels.com/photos/30683025/pexels-photo-30683025.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800"
+                alt="Japanese sake cups artistic"
+                loading="lazy"
+                class="drink-img"
+              />
+              <div class="drink-shimmer"></div>
+            </div>
+            <div class="drink-info">
+              <span class="drink-category">熱燗 Atsukan</span>
+              <h3 class="drink-name">Hot Sake Ritual</h3>
+              <p class="drink-desc">Traditional warmed Junmai sake served in hand-painted tokkuri and ochoko cups. Pure ceremony.</p>
+              <span class="drink-price">RM 32 / set</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Drag hint -->
+      <p class="drag-hint" aria-hidden="true">← Scroll to explore →</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- DINING ATMOSPHERE -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="atmosphere-section" id="atmosphere" aria-labelledby="atmosphereHeading">
+    <div class="section-container">
+      <p class="section-eyebrow reveal-up" style="text-align:center">A World Apart</p>
+      <h2 class="section-title atm-title reveal-up" id="atmosphereHeading">
+        Dining<br/><em>Atmosphere</em>
+      </h2>
+    </div>
+
+    <!-- Layered collage gallery -->
+    <div class="atm-gallery">
+
+      <div class="atm-img atm-img-1 reveal-scale" style="--delay:0s">
+        <img
+          src="https://images.pexels.com/photos/24964905/pexels-photo-24964905.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+          alt="Dimly lit restaurant with lanterns and guests dining"
+          loading="lazy"
+        />
+        <div class="atm-caption">The Main Floor</div>
+      </div>
+
+      <div class="atm-img atm-img-2 reveal-scale" style="--delay:0.15s">
+        <img
+          src="https://images.pexels.com/photos/32027903/pexels-photo-32027903.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+          alt="Traditional Japanese dining table setting"
+          loading="lazy"
+        />
+        <div class="atm-caption">Private Room</div>
+      </div>
+
+      <div class="atm-img atm-img-3 reveal-scale" style="--delay:0.25s">
+        <img
+          src="https://images.pexels.com/photos/33269326/pexels-photo-33269326.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+          alt="Vibrant Japanese sushi bar interior"
+          loading="lazy"
+        />
+        <div class="atm-caption">Sushi Counter</div>
+      </div>
+
+      <div class="atm-img atm-img-4 reveal-scale" style="--delay:0.35s">
+        <img
+          src="https://images.pexels.com/photos/18859067/pexels-photo-18859067.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+          alt="Elegant wooden Tokyo restaurant interior"
+          loading="lazy"
+        />
+        <div class="atm-caption">Yakitori Bar</div>
+      </div>
+
+      <div class="atm-img atm-img-5 reveal-scale" style="--delay:0.45s">
+        <img
+          src="https://images.pexels.com/photos/37126959/pexels-photo-37126959.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+          alt="Tokyo lantern street at night"
+          loading="lazy"
+        />
+        <div class="atm-caption">Night Vibes</div>
+      </div>
+
+      <!-- Floating text label -->
+      <div class="atm-float-text" aria-hidden="true">居酒屋</div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- WHY CHOOSE US – ANIMATED FEATURE TIMELINE -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="why-section" id="why" aria-labelledby="whyHeading">
+    <div class="section-container">
+
+      <div class="why-header">
+        <p class="section-eyebrow reveal-up">Our Promise</p>
+        <h2 class="section-title reveal-up" id="whyHeading">Why <em>Koshien</em></h2>
+      </div>
+
+      <div class="why-timeline">
+
+        <div class="timeline-item reveal-from-left" style="--delay:0s">
+          <div class="timeline-icon-wrap">
+            <div class="timeline-icon">🔥</div>
+            <div class="timeline-connector" aria-hidden="true"></div>
+          </div>
+          <div class="timeline-content">
+            <h3>Authentic Japanese Flavors</h3>
+            <p>Every recipe is rooted in regional Japanese tradition — sourced from Fukuoka, Kyoto, and Osaka culinary lineages, prepared with zero compromise.</p>
+          </div>
+          <span class="timeline-num">01</span>
+        </div>
+
+        <div class="timeline-item reveal-from-right" style="--delay:0.1s">
+          <span class="timeline-num">02</span>
+          <div class="timeline-content align-right">
+            <h3>Premium Ingredients</h3>
+            <p>We fly in Hokkaido seafood, A5 Wagyu, Kyoto matcha, and Fushimi sake weekly. Nothing is compromised. Everything is intentional.</p>
+          </div>
+          <div class="timeline-icon-wrap">
+            <div class="timeline-icon">🌿</div>
+            <div class="timeline-connector" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-from-left" style="--delay:0.2s">
+          <div class="timeline-icon-wrap">
+            <div class="timeline-icon">👨‍🍳</div>
+            <div class="timeline-connector" aria-hidden="true"></div>
+          </div>
+          <div class="timeline-content">
+            <h3>Master Chefs</h3>
+            <p>Our culinary team trained in Tokyo and Osaka kitchens for over a decade. Every cut, grill, and presentation is executed with Japanese mastery.</p>
+          </div>
+          <span class="timeline-num">03</span>
+        </div>
+
+        <div class="timeline-item reveal-from-right" style="--delay:0.3s">
+          <span class="timeline-num">04</span>
+          <div class="timeline-content align-right">
+            <h3>Luxury Interior</h3>
+            <p>Designed with handcrafted wood panels, washi paper lanterns, and bespoke ceramics. A space that feels like Kyoto — in the heart of Penang.</p>
+          </div>
+          <div class="timeline-icon-wrap">
+            <div class="timeline-icon">🏮</div>
+            <div class="timeline-connector" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-from-left" style="--delay:0.4s">
+          <div class="timeline-icon-wrap">
+            <div class="timeline-icon">🚪</div>
+            <div class="timeline-connector" aria-hidden="true"></div>
+          </div>
+          <div class="timeline-content">
+            <h3>Private Dining</h3>
+            <p>Host intimate gatherings, corporate events, or omakase celebrations in our exclusive private rooms — fully customizable with curated menus.</p>
+          </div>
+          <span class="timeline-num">05</span>
+        </div>
+
+        <div class="timeline-item reveal-from-right" style="--delay:0.5s">
+          <span class="timeline-num">06</span>
+          <div class="timeline-content align-right">
+            <h3>Fresh Daily</h3>
+            <p>Zero frozen proteins. Zero shortcuts. Our fish, vegetables, and sauces are prepared fresh every single day — because you deserve nothing less.</p>
+          </div>
+          <div class="timeline-icon-wrap">
+            <div class="timeline-icon">🌊</div>
+          </div>
+        </div>
+
+      </div><!-- /.why-timeline -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- CUSTOMER REVIEWS -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="reviews-section" id="reviews" aria-labelledby="reviewsHeading">
+    <div class="reviews-bg-img">
+      <img
+        src="https://images.pexels.com/photos/31312977/pexels-photo-31312977.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+        alt="Japanese lanterns background"
+        loading="lazy"
+      />
+      <div class="reviews-overlay"></div>
+    </div>
+
+    <div class="section-container">
+      <p class="section-eyebrow reveal-up" style="text-align:center">Guest Words</p>
+      <h2 class="section-title reveal-up" style="text-align:center" id="reviewsHeading">
+        What They<br/><em>Say</em>
+      </h2>
+
+      <!-- Review slider -->
+      <div class="reviews-slider-wrap" role="region" aria-label="Customer Reviews">
+        <div class="reviews-track" id="reviewsTrack">
+
+          <div class="review-card" role="article">
+            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote class="review-text">
+              "Hands down the most authentic yakitori I've had outside of Tokyo. The binchotan smoke, the tare — it's pure magic. Koshien is a Penang gem."
+            </blockquote>
+            <div class="review-author">
+              <div class="author-avatar" style="background: linear-gradient(135deg, #C1121F, #F4B400);">A</div>
+              <div class="author-info">
+                <strong>Amira Tan</strong>
+                <span>Food Critic, Penang</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card" role="article">
+            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote class="review-text">
+              "The Omakase experience here was transformative. 12 courses of perfection — each plate told a story. The sake pairing was absolutely inspired."
+            </blockquote>
+            <div class="review-author">
+              <div class="author-avatar" style="background: linear-gradient(135deg, #5A3E2B, #C1121F);">K</div>
+              <div class="author-info">
+                <strong>Kevin Loh</strong>
+                <span>Executive, Kuala Lumpur</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card" role="article">
+            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote class="review-text">
+              "The atmosphere transports you to a Tokyo back-alley izakaya — warm lanterns, wood, and the smell of charcoal. I was completely enchanted."
+            </blockquote>
+            <div class="review-author">
+              <div class="author-avatar" style="background: linear-gradient(135deg, #F4B400, #5A3E2B);">S</div>
+              <div class="author-info">
+                <strong>Sakura Yamamoto</strong>
+                <span>Travel Blogger, Tokyo</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card" role="article">
+            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote class="review-text">
+              "Best Japanese restaurant in Penang by a mile. The Wagyu skewers and the Sakura Blossom cocktail are reasons alone to come back every week."
+            </blockquote>
+            <div class="review-author">
+              <div class="author-avatar" style="background: linear-gradient(135deg, #161616, #C1121F);">R</div>
+              <div class="author-info">
+                <strong>Rahman Idris</strong>
+                <span>Restaurateur, Penang</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card" role="article">
+            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote class="review-text">
+              "From the moment you step in, you know this is something different. The team is warm, the food is impeccable, and the sake list is extraordinary."
+            </blockquote>
+            <div class="review-author">
+              <div class="author-avatar" style="background: linear-gradient(135deg, #C1121F, #5A3E2B);">M</div>
+              <div class="author-info">
+                <strong>Michelle Wong</strong>
+                <span>Chef & Culinary Instructor</span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.reviews-track -->
+
+        <!-- Controls -->
+        <div class="reviews-controls">
+          <button class="review-btn prev-btn" id="prevReview" aria-label="Previous review">←</button>
+          <div class="reviews-dots" id="reviewsDots" aria-label="Review navigation"></div>
+          <button class="review-btn next-btn" id="nextReview" aria-label="Next review">→</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- LOCATION SECTION -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="location-section" id="location" aria-labelledby="locationHeading">
+    <div class="location-inner">
+
+      <!-- Left: Info -->
+      <div class="location-info reveal-from-left">
+        <p class="section-eyebrow">Find Us</p>
+        <h2 class="section-title" id="locationHeading">Visit<br/><em>Koshien</em></h2>
+
+        <div class="loc-details">
+          <div class="loc-item">
+            <div class="loc-icon" aria-hidden="true">📍</div>
+            <div>
+              <strong>Location</strong>
+              <p>Penang, Malaysia</p>
+            </div>
+          </div>
+          <div class="loc-item">
+            <div class="loc-icon" aria-hidden="true">📞</div>
+            <div>
+              <strong>Reservations</strong>
+              <a href="tel:+601120635251" class="loc-phone">+60 11-2063 5251</a>
+            </div>
+          </div>
+          <div class="loc-item">
+            <div class="loc-icon" aria-hidden="true">🕐</div>
+            <div>
+              <strong>Operating Hours</strong>
+              <div class="hours-grid">
+                <span>Monday – Thursday</span><span>6:00 PM – 12:00 AM</span>
+                <span>Friday – Saturday</span><span>6:00 PM – 2:00 AM</span>
+                <span>Sunday</span><span>5:00 PM – 11:00 PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="https://maps.app.goo.gl/TPAxfqLmTGLvGLSMA"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary magnetic-btn"
+          aria-label="Open in Google Maps"
+        >
+          <span class="btn-bg"></span>
+          <span class="btn-label">Open in Google Maps</span>
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+
+      <!-- Right: Map embed visual -->
+      <div class="location-map-wrap reveal-from-right">
+        <div class="map-frame">
+          <iframe
+            title="Koshien Yakitori Japanese location in Penang"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127299.93997090388!2d100.28574714999999!3d5.3596073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac7be0c5c3a0d%3A0x2c4eb10ba4f7bea0!2sPenang%2C%20Malaysia!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <div class="map-overlay-pin" aria-hidden="true">
+            <div class="map-pin-pulse"></div>
+            <div class="map-pin-label">Koshien</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- CONTACT SECTION -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="contact-section" id="contact" aria-labelledby="contactHeading">
+    <div class="section-container">
+
+      <div class="contact-wrapper">
+        <!-- Left: Info panel -->
+        <div class="contact-info-panel reveal-from-left">
+          <p class="section-eyebrow">Get In Touch</p>
+          <h2 class="contact-title" id="contactHeading">
+            Reserve<br/>Your<br/><em>Table</em>
+          </h2>
+          <p class="contact-body">
+            Whether you're joining us for yakitori after dark, an omakase celebration, or a private dining experience — we're ready to welcome you.
+          </p>
+          <div class="contact-details">
+            <a href="tel:+601120635251" class="contact-link">📞 +60 11-2063 5251</a>
+            <span class="contact-link">📍 Penang, Malaysia</span>
+            <span class="contact-link">🕕 Nightly from 6:00 PM</span>
+          </div>
+          <div class="contact-social">
+            <a href="#" class="social-chip" aria-label="Instagram">IG</a>
+            <a href="#" class="social-chip" aria-label="Facebook">FB</a>
+            <a href="#" class="social-chip" aria-label="TikTok">TK</a>
+          </div>
+        </div>
+
+        <!-- Right: Contact form -->
+        <div class="contact-form-wrap reveal-from-right">
+          <form class="contact-form" id="contactForm" novalidate aria-label="Reservation Form">
+
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="fname" name="fname" required autocomplete="given-name" placeholder=" " aria-label="First Name" />
+                <label for="fname">First Name</label>
+                <span class="form-error" role="alert" aria-live="polite"></span>
+              </div>
+              <div class="form-group">
+                <input type="text" id="lname" name="lname" required autocomplete="family-name" placeholder=" " aria-label="Last Name" />
+                <label for="lname">Last Name</label>
+                <span class="form-error" role="alert" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder=" " aria-label="Email Address" />
+              <label for="email">Email Address</label>
+              <span class="form-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder=" " aria-label="Phone Number" />
+                <label for="phone">Phone Number</label>
+                <span class="form-error" role="alert" aria-live="polite"></span>
+              </div>
+              <div class="form-group">
+                <input type="date" id="resdate" name="resdate" required placeholder=" " aria-label="Reservation Date" />
+                <label for="resdate">Date</label>
+                <span class="form-error" role="alert" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <select id="guests" name="guests" required aria-label="Number of Guests">
+                  <option value="" disabled selected></option>
+                  <option value="1">1 Guest</option>
+                  <option value="2">2 Guests</option>
+                  <option value="3">3 Guests</option>
+                  <option value="4">4 Guests</option>
+                  <option value="5">5 Guests</option>
+                  <option value="6">6+ Guests</option>
+                </select>
+                <label for="guests">Guests</label>
+                <span class="form-error" role="alert" aria-live="polite"></span>
+              </div>
+              <div class="form-group">
+                <select id="experience" name="experience" aria-label="Dining Experience">
+                  <option value="" disabled selected></option>
+                  <option value="yakitori">Yakitori Bar</option>
+                  <option value="omakase">Omakase</option>
+                  <option value="private">Private Dining</option>
+                  <option value="general">General Dining</option>
+                </select>
+                <label for="experience">Experience</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <textarea id="message" name="message" rows="3" placeholder=" " aria-label="Special Requests"></textarea>
+              <label for="message">Special Requests</label>
+            </div>
+
+            <button type="submit" class="form-submit magnetic-btn" id="formSubmit">
+              <span class="btn-bg"></span>
+              <span class="btn-label">Send Reservation</span>
+              <span class="btn-arrow">→</span>
+            </button>
+
+          </form>
+
+          <!-- Success message -->
+          <div class="form-success" id="formSuccess" aria-live="polite" role="status">
+            <div class="success-icon">
+              <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle class="success-circle" cx="26" cy="26" r="25" stroke="#F4B400" stroke-width="2"/>
+                <path class="success-check" d="M14 27l8 8 16-16" stroke="#F4B400" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Reservation Received!</h3>
+            <p>We'll confirm your table within 2 hours. See you soon at Koshien.</p>
+            <button class="btn-ghost" id="resetForm">Make Another Reservation</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- FOOTER -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-top">
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="#hero" class="footer-logo" aria-label="Koshien home">
+            <span class="logo-kanji">焼</span>
+            <span class="logo-text">Koshien<em>Yakitori</em></span>
+          </a>
+          <p class="footer-tagline">An authentic Japanese izakaya experience — <br/>crafted with passion, served with soul.</p>
+          <div class="footer-social">
+            <a href="#" class="f-social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" class="f-social-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="#" class="f-social-btn" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.45a8.27 8.27 0 004.83 1.54V6.54a4.83 4.83 0 01-1.06-.15z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigate</h4>
+          <ul class="footer-links" role="list">
+            <li><a href="#menu">Chef's Menu</a></li>
+            <li><a href="#omakase">Omakase</a></li>
+            <li><a href="#bar">Sake & Bar</a></li>
+            <li><a href="#atmosphere">Atmosphere</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Reserve Table</a></li>
+          </ul>
+        </div>
+
+        <!-- Hours -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Hours</h4>
+          <ul class="footer-hours" role="list">
+            <li><span>Mon – Thu</span><span>6PM – 12AM</span></li>
+            <li><span>Fri – Sat</span><span>6PM – 2AM</span></li>
+            <li><span>Sunday</span><span>5PM – 11PM</span></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact</h4>
+          <address class="footer-address">
+            <a href="tel:+601120635251">+60 11-2063 5251</a>
+            <span>Penang, Malaysia</span>
+            <a href="https://maps.app.goo.gl/TPAxfqLmTGLvGLSMA" target="_blank" rel="noopener noreferrer">View on Google Maps</a>
+          </address>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Koshien Yakitori Japanese. All rights reserved.</p>
+      <p class="footer-craft">Crafted in Penang with ❤️ &amp; 日本の魂</p>
+    </div>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true">
+        <polyline points="18 15 12 9 6 15"/>
+      </svg>
+    </button>
+
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
