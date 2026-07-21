@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gala House Penang — A Michelin-inspired luxury dining experience celebrating authentic Malaysian cuisine in the heart of Penang, Malaysia.">
+  <meta name="keywords" content="Gala House Penang, fine dining, Malaysian restaurant, Penang, luxury restaurant">
+  <meta name="author" content="Gala House Penang">
+  <title>Gala House Penang | Luxury Malaysian Fine Dining</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <div class="loader__logo">Gala House</div>
+      <div class="loader__bar"><span class="loader__progress"></span></div>
+      <p class="loader__text">Preparing your experience</p>
+    </div>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" role="progressbar" aria-label="Page scroll progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <span class="scroll-progress__bar"></span>
+  </div>
+
+  <!-- Navigation -->
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#hero" class="nav__logo" aria-label="Gala House Penang home">
+        <span class="nav__logo-mark">GH</span>
+        <span class="nav__logo-text">Gala House</span>
+      </a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#dishes" class="nav__link">Menu</a></li>
+        <li><a href="#features" class="nav__link">Experience</a></li>
+        <li><a href="#gallery" class="nav__link">Gallery</a></li>
+        <li><a href="#reviews" class="nav__link">Reviews</a></li>
+        <li><a href="#location" class="nav__link">Location</a></li>
+        <li><a href="#contact" class="nav__link nav__link--cta">Reserve</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="hero" id="hero" aria-label="Welcome">
+      <div class="hero__bg" id="heroBg">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=85&auto=format&fit=crop" alt="" class="hero__bg-img" aria-hidden="true">
+      </div>
+      <div class="hero__overlay"></div>
+      <div class="hero__particles" aria-hidden="true">
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+      </div>
+
+      <div class="hero__content container">
+        <p class="hero__eyebrow fade-up">Penang, Malaysia</p>
+        <h1 class="hero__title fade-up">Gala House <em>Penang</em></h1>
+        <p class="hero__subtitle fade-up">Where Heritage Meets Haute Cuisine</p>
+        <p class="hero__desc fade-up">An intimate sanctuary of Malaysian flavours, refined through contemporary culinary artistry and served within an atmosphere of timeless elegance.</p>
+        <p class="hero__typing fade-up" aria-live="polite"><span id="typingText"></span><span class="typing-cursor">|</span></p>
+
+        <div class="hero__actions fade-up">
+          <a href="#contact" class="btn btn--primary btn--glow ripple">Reserve Table</a>
+          <a href="#dishes" class="btn btn--outline ripple">View Menu</a>
+        </div>
+
+        <div class="hero__stats fade-up">
+          <div class="hero__stat">
+            <span class="hero__stat-num counter" data-target="12">0</span>
+            <span class="hero__stat-label">Years of Excellence</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <span class="hero__stat-num counter" data-target="48">0</span>
+            <span class="hero__stat-label">Signature Dishes</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <span class="hero__stat-num counter" data-target="4">0</span><span class="hero__stat-suffix">.9</span>
+            <span class="hero__stat-label">Guest Rating</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="hero__scroll" aria-label="Scroll to about section">
+        <span class="hero__scroll-text">Discover</span>
+        <span class="hero__scroll-line"></span>
+      </a>
+    </section>
+
+    <!-- About -->
+    <section class="about section" id="about">
+      <div class="about__deco about__deco--1" aria-hidden="true"></div>
+      <div class="container about__grid">
+        <div class="about__visual reveal-left">
+          <div class="about__frame">
+            <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=800&q=80&auto=format&fit=crop" alt="Executive chef preparing a fine dining dish at Gala House Penang" loading="lazy" width="600" height="750">
+          </div>
+          <div class="about__badge">
+            <span class="about__badge-num">Est.</span>
+            <span class="about__badge-year">2013</span>
+          </div>
+          <div class="about__accent-img">
+            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&q=80&auto=format&fit=crop" alt="Elegant restaurant interior detail" loading="lazy" width="280" height="200">
+          </div>
+        </div>
+
+        <div class="about__content reveal-right">
+          <span class="section-tag">Our Story</span>
+          <h2 class="section-title">A Legacy of<br><span class="title-accent">Malaysian Elegance</span></h2>
+          <div class="title-underline"></div>
+          <p class="about__lead">Nestled in the cultural heart of Penang, Gala House reimagines the island's rich culinary heritage through a lens of modern luxury.</p>
+          <p class="about__text">Every plate tells a story — from hand-ground rempah passed down through generations to meticulously sourced seafood from the Straits of Malacca. Our kitchen bridges tradition and innovation, creating an experience that honours Malaysia's diverse flavours while elevating them to haute cuisine standards.</p>
+          <p class="about__text">Whether you're celebrating a milestone or simply seeking an extraordinary evening, Gala House invites you to dine slowly, savour deeply, and leave transformed.</p>
+
+          <div class="about__highlights">
+            <div class="about__highlight">
+              <span class="about__highlight-icon" aria-hidden="true">✦</span>
+              <div>
+                <strong>Seasonal Menus</strong>
+                <p>Rotating selections inspired by Penang's markets</p>
+              </div>
+            </div>
+            <div class="about__highlight">
+              <span class="about__highlight-icon" aria-hidden="true">✦</span>
+              <div>
+                <strong>Private Dining</strong>
+                <p>Intimate rooms for celebrations up to 24 guests</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Special Dishes -->
+    <section class="dishes section" id="dishes">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">Curated Selection</span>
+          <h2 class="section-title">Signature <span class="title-accent">Creations</span></h2>
+          <div class="title-underline title-underline--center"></div>
+          <p class="section-desc">Six masterpieces from our kitchen — each a celebration of Malaysian terroir, refined technique, and artistic presentation.</p>
+        </div>
+
+        <div class="dishes__grid">
+          <article class="dish-card dish-card--featured reveal-up" style="--delay: 0">
+            <div class="dish-card__img-wrap">
+              <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=700&q=80&auto=format&fit=crop" alt="Charcoal-grilled satay with peanut sauce" loading="lazy" width="700" height="500">
+              <span class="dish-card__tag">Chef's Choice</span>
+            </div>
+            <div class="dish-card__body">
+              <h3 class="dish-card__name">Royal Satay Royale</h3>
+              <p class="dish-card__desc">Wagyu beef satay, 72-hour fermented peanut jus, pickled shallots, and edible gold leaf.</p>
+              <div class="dish-card__footer">
+                <span class="dish-card__price">RM 68</span>
+                <span class="dish-card__line"></span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dish-card reveal-up" style="--delay: 1">
+            <div class="dish-card__img-wrap">
+              <img src="https://images.unsplash.com/photo-1569058242567-f8935643a35c?w=600&q=80&auto=format&fit=crop" alt="Nasi lemak reimagined as fine dining" loading="lazy" width="600" height="400">
+            </div>
+            <div class="dish-card__body">
+              <h3 class="dish-card__name">Deconstructed Nasi Lemak</h3>
+              <p class="dish-card__desc">Coconut rice sphere, sambal gel, crispy ikan bilis, and soft-boiled quail egg.</p>
+              <div class="dish-card__footer">
+                <span class="dish-card__price">RM 52</span>
+                <span class="dish-card__line"></span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dish-card reveal-up" style="--delay: 2">
+            <div class="dish-card__img-wrap">
+              <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80&auto=format&fit=crop" alt="Grilled seafood platter" loading="lazy" width="600" height="400">
+            </div>
+            <div class="dish-card__body">
+              <h3 class="dish-card__name">Straits Seafood Symphony</h3>
+              <p class="dish-card__desc">Tiger prawns, squid, and snapper with assam pedas foam and torch ginger.</p>
+              <div class="dish-card__footer">
+                <span class="dish-card__price">RM 98</span>
+                <span class="dish-card__line"></span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dish-card reveal-up" style="--delay: 3">
+            <div class="dish-card__img-wrap">
+              <img src="https://images.unsplash.com/photo-1606491956689-2ea866884784?w=600&q=80&auto=format&fit=crop" alt="Rich Malaysian curry laksa" loading="lazy" width="600" height="400">
+            </div>
+            <div class="dish-card__body">
+              <h3 class="dish-card__name">Penang Laksa Essence</h3>
+              <p class="dish-card__desc">Concentrated laksa broth, prawn mousse, rice noodle nest, and fresh herbs.</p>
+              <div class="dish-card__footer">
+                <span class="dish-card__price">RM 45</span>
+                <span class="dish-card__line"></span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dish-card reveal-up" style="--delay: 4">
+            <div class="dish-card__img-wrap">
+              <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&q=80&auto=format&fit=crop" alt="Artisan dessert with tropical fruits" loading="lazy" width="600" height="400">
+            </div>
+            <div class="dish-card__body">
+              <h3 class="dish-card__name">Coconut Pandan Sphere</h3>
+              <p class="dish-card__desc">Liquid-centre pandan mousse, gula melaka crumble, and dragon fruit sorbet.</p>
+              <div class="dish-card__footer">
+                <span class="dish-card__price">RM 38</span>
+                <span class="dish-card__line"></span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dish-card reveal-up" style="--delay: 5">
+            <div class="dish-card__img-wrap">
+              <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80&auto=format&fit=crop" alt="Specialty coffee and petit fours" loading="lazy" width="600" height="400">
+            </div>
+            <div class="dish-card__body">
+              <h3 class="dish-card__name">White Coffee Affogato</h3>
+              <p class="dish-card__desc">Ipoh white coffee reduction, vanilla bean gelato, and palm sugar tuile.</p>
+              <div class="dish-card__footer">
+                <span class="dish-card__price">RM 28</span>
+                <span class="dish-card__line"></span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="features section" id="features">
+      <div class="features__bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">The Gala Difference</span>
+          <h2 class="section-title">Why Dine <span class="title-accent">With Us</span></h2>
+          <div class="title-underline title-underline--center"></div>
+        </div>
+
+        <div class="features__grid">
+          <article class="feature-card reveal-up" style="--delay: 0">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Fresh Ingredients</h3>
+            <p>Daily-sourced produce from Penang's finest markets and trusted local fishermen.</p>
+          </article>
+
+          <article class="feature-card reveal-up" style="--delay: 1">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Professional Chefs</h3>
+            <p>A brigade trained in Michelin kitchens, united by passion for Malaysian cuisine.</p>
+          </article>
+
+          <article class="feature-card reveal-up" style="--delay: 2">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h3>Authentic Malaysian Cuisine</h3>
+            <p>Heritage recipes reinterpreted with precision, respect, and contemporary flair.</p>
+          </article>
+
+          <article class="feature-card reveal-up" style="--delay: 3">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <h3>Luxury Dining</h3>
+            <p>Impeccable service, curated wine pairings, and an ambiance of understated opulence.</p>
+          </article>
+
+          <article class="feature-card reveal-up" style="--delay: 4">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Family Friendly</h3>
+            <p>Thoughtful children's menus and flexible seating for gatherings of every size.</p>
+          </article>
+
+          <article class="feature-card reveal-up" style="--delay: 5">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3>Fast Service</h3>
+            <p>Seamless pacing that respects your evening — never rushed, always attentive.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery section" id="gallery">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">Visual Journey</span>
+          <h2 class="section-title">Inside <span class="title-accent">Gala House</span></h2>
+          <div class="title-underline title-underline--center"></div>
+        </div>
+
+        <div class="gallery__masonry" id="galleryGrid">
+          <button class="gallery__item reveal-up" style="--delay: 0" data-index="0" aria-label="View gallery image 1">
+            <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&q=80&auto=format&fit=crop" alt="Fine dining table setting with candlelight" loading="lazy" width="600" height="800">
+            <span class="gallery__overlay"><span class="gallery__zoom">+</span></span>
+          </button>
+          <button class="gallery__item gallery__item--wide reveal-up" style="--delay: 1" data-index="1" aria-label="View gallery image 2">
+            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80&auto=format&fit=crop" alt="Luxury restaurant interior with warm lighting" loading="lazy" width="800" height="500">
+            <span class="gallery__overlay"><span class="gallery__zoom">+</span></span>
+          </button>
+          <button class="gallery__item reveal-up" style="--delay: 2" data-index="2" aria-label="View gallery image 3">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80&auto=format&fit=crop" alt="Gourmet plated dish with artistic presentation" loading="lazy" width="600" height="450">
+            <span class="gallery__overlay"><span class="gallery__zoom">+</span></span>
+          </button>
+          <button class="gallery__item gallery__item--tall reveal-up" style="--delay: 3" data-index="3" aria-label="View gallery image 4">
+            <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=600&q=80&auto=format&fit=crop" alt="Professional chef plating a dish" loading="lazy" width="600" height="900">
+            <span class="gallery__overlay"><span class="gallery__zoom">+</span></span>
+          </button>
+          <button class="gallery__item reveal-up" style="--delay: 4" data-index="4" aria-label="View gallery image 5">
+            <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7444?w=600&q=80&auto=format&fit=crop" alt="Malaysian-inspired gourmet cuisine" loading="lazy" width="600" height="450">
+            <span class="gallery__overlay"><span class="gallery__zoom">+</span></span>
+          </button>
+          <button class="gallery__item gallery__item--wide reveal-up" style="--delay: 5" data-index="5" aria-label="View gallery image 6">
+            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=800&q=80&auto=format&fit=crop" alt="Craft cocktails at the bar" loading="lazy" width="800" height="500">
+            <span class="gallery__overlay"><span class="gallery__zoom">+</span></span>
+          </button>
+          <button class="gallery__item reveal-up" style="--delay: 6" data-index="6" aria-label="View gallery image 7">
+            <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=600&q=80&auto=format&fit=crop" alt="Elegant dessert presentation" loading="lazy" width="600" height="450">
+            <span class="gallery__overlay"><span class="gallery__zoom">+</span></span>
+          </button>
+          <button class="gallery__item reveal-up" style="--delay: 7" data-index="7" aria-label="View gallery image 8">
+            <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=600&q=80&auto=format&fit=crop" alt="Guests enjoying fine dining experience" loading="lazy" width="600" height="450">
+            <span class="gallery__overlay"><span class="gallery__zoom">+</span></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image gallery lightbox" hidden>
+      <button class="lightbox__close" id="lightboxClose" aria-label="Close lightbox">&times;</button>
+      <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous image">&#8249;</button>
+      <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next image">&#8250;</button>
+      <div class="lightbox__content">
+        <img src="" alt="" id="lightboxImg" class="lightbox__img">
+      </div>
+      <p class="lightbox__counter" id="lightboxCounter"></p>
+    </div>
+
+    <!-- Reviews -->
+    <section class="reviews section" id="reviews">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">Guest Voices</span>
+          <h2 class="section-title">What Our <span class="title-accent">Guests Say</span></h2>
+          <div class="title-underline title-underline--center"></div>
+        </div>
+
+        <div class="reviews__slider" id="reviewsSlider">
+          <div class="reviews__track" id="reviewsTrack">
+            <article class="review-card">
+              <div class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <blockquote class="review-card__quote">"An unforgettable evening. The deconstructed nasi lemak was poetry on a plate — familiar yet entirely new. Service was flawless without being intrusive."</blockquote>
+              <div class="review-card__author">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80&auto=format&fit=crop" alt="" width="56" height="56" loading="lazy">
+                <div>
+                  <cite class="review-card__name">Sarah Lim</cite>
+                  <span class="review-card__meta">Food Critic, KL</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <blockquote class="review-card__quote">"We chose Gala House for our anniversary and it exceeded every expectation. The ambiance, the wine pairing, the attention to detail — simply world-class."</blockquote>
+              <div class="review-card__author">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80&auto=format&fit=crop" alt="" width="56" height="56" loading="lazy">
+                <div>
+                  <cite class="review-card__name">David Tan</cite>
+                  <span class="review-card__meta">Regular Guest</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <blockquote class="review-card__quote">"As a Penang native, I was skeptical — but Gala House honours our food heritage beautifully. The laksa essence brought tears to my eyes. Magnificent."</blockquote>
+              <div class="review-card__author">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&q=80&auto=format&fit=crop" alt="" width="56" height="56" loading="lazy">
+                <div>
+                  <cite class="review-card__name">Nurul Aisha</cite>
+                  <span class="review-card__meta">Penang Local</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <blockquote class="review-card__quote">"Brought my business clients here and they were thoroughly impressed. The private dining room and customised menu made for a perfect corporate dinner."</blockquote>
+              <div class="review-card__author">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&q=80&auto=format&fit=crop" alt="" width="56" height="56" loading="lazy">
+                <div>
+                  <cite class="review-card__name">James Wong</cite>
+                  <span class="review-card__meta">Business Executive</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="reviews__controls">
+            <button class="reviews__arrow reviews__arrow--prev" id="reviewPrev" aria-label="Previous review">&#8249;</button>
+            <div class="reviews__dots" id="reviewDots" role="tablist" aria-label="Review navigation"></div>
+            <button class="reviews__arrow reviews__arrow--next" id="reviewNext" aria-label="Next review">&#8250;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location -->
+    <section class="location section" id="location">
+      <div class="location__map-bg" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy">
+      </div>
+      <div class="container location__grid">
+        <div class="location__info reveal-left">
+          <span class="section-tag">Find Us</span>
+          <h2 class="section-title">Visit <span class="title-accent">Gala House</span></h2>
+          <div class="title-underline"></div>
+          <p class="location__desc">Located in the heart of Penang, our doors are open for lunch and dinner. We recommend reservations, especially on weekends.</p>
+
+          <ul class="location__details">
+            <li>
+              <span class="location__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <div>
+                <strong>Address</strong>
+                <p>Penang, Malaysia</p>
+              </div>
+            </li>
+            <li>
+              <span class="location__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </span>
+              <div>
+                <strong>Phone</strong>
+                <p><a href="tel:+60124889040">+60 12-488 9040</a></p>
+              </div>
+            </li>
+            <li>
+              <span class="location__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </span>
+              <div>
+                <strong>Hours</strong>
+                <p>Tue – Sun: 12:00 PM – 10:30 PM</p>
+              </div>
+            </li>
+          </ul>
+
+          <a href="https://share.google/prIk9GFLmxDSOVKqi" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--glow btn--large ripple location__maps-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Open Google Maps
+          </a>
+        </div>
+
+        <div class="location__visual reveal-right">
+          <div class="location__card">
+            <div class="location__card-map">
+              <img src="https://images.unsplash.com/photo-1569336410530-0a1dedd6a1cf?w=700&q=80&auto=format&fit=crop" alt="Penang cityscape at dusk" loading="lazy" width="700" height="450">
+              <div class="location__pin" aria-hidden="true">
+                <span></span>
+              </div>
+            </div>
+            <div class="location__card-footer">
+              <span>George Town, Penang Island</span>
+              <span class="location__card-dot"></span>
+              <span>Malaysia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact section" id="contact">
+      <div class="contact__deco" aria-hidden="true"></div>
+      <div class="container contact__grid">
+        <div class="contact__intro reveal-left">
+          <span class="section-tag">Reservations</span>
+          <h2 class="section-title">Reserve Your <span class="title-accent">Table</span></h2>
+          <div class="title-underline"></div>
+          <p class="contact__desc">Share your details and our concierge team will confirm your reservation within the hour. For parties larger than 8, please mention in your message.</p>
+          <div class="contact__direct">
+            <p>Prefer to call?</p>
+            <a href="tel:+60124889040" class="contact__phone">+60 12-488 9040</a>
+          </div>
+        </div>
+
+        <form class="contact__form reveal-right" id="contactForm" novalidate>
+          <div class="form-group">
+            <input type="text" id="name" name="name" required autocomplete="name" placeholder=" ">
+            <label for="name">Full Name</label>
+            <span class="form-error" id="nameError"></span>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder=" ">
+            <label for="email">Email Address</label>
+            <span class="form-error" id="emailError"></span>
+          </div>
+          <div class="form-group">
+            <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder=" ">
+            <label for="phone">Phone Number</label>
+            <span class="form-error" id="phoneError"></span>
+          </div>
+          <div class="form-group form-group--full">
+            <textarea id="message" name="message" rows="4" required placeholder=" "></textarea>
+            <label for="message">Your Message</label>
+            <span class="form-error" id="messageError"></span>
+          </div>
+          <button type="submit" class="btn btn--primary btn--glow btn--full ripple">Send Reservation Request</button>
+          <p class="form-success" id="formSuccess" hidden>Thank you! We'll confirm your reservation shortly.</p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="#hero" class="footer__logo">
+          <span class="footer__logo-mark">GH</span>
+          Gala House Penang
+        </a>
+        <p class="footer__tagline">Luxury Malaysian fine dining in the heart of Penang.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram" class="footer__social-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook" class="footer__social-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="TripAdvisor" class="footer__social-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#dishes">Menu</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Reservations</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__contact">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+60124889040">+60 12-488 9040</a></li>
+          <li>Penang, Malaysia</li>
+          <li>
+            <a href="https://share.google/prIk9GFLmxDSOVKqi" target="_blank" rel="noopener noreferrer" class="footer__maps-link">Google Maps →</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom container">
+      <p>&copy; 2026 Gala House Penang. All rights reserved.</p>
+      <p>Crafted with passion in Penang, Malaysia.</p>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
