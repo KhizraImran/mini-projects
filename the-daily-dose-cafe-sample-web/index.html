@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Daily Dose Cafe — Warm Mornings, Penang</title>
+<meta name="description" content="The Daily Dose Cafe in Penang, Malaysia — a warm, minimal Scandinavian-inspired café serving specialty coffee, fresh pastries and hearty breakfasts. Visit us for cozy mornings.">
+<meta name="keywords" content="cafe penang, coffee shop penang, breakfast penang, the daily dose cafe, specialty coffee malaysia">
+<meta property="og:title" content="The Daily Dose Cafe — Penang">
+<meta property="og:description" content="A warm, minimal Scandinavian-inspired café in Penang serving specialty coffee and fresh pastries.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ LOADING SCREEN ============ -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-cup">
+    <div class="loader-steam s1"></div>
+    <div class="loader-steam s2"></div>
+    <div class="loader-steam s3"></div>
+    <svg viewBox="0 0 120 120" class="loader-svg">
+      <path d="M20 45 h65 a10 10 0 0 1 10 10 a18 18 0 0 1 -18 18 h-2" fill="none" stroke="#EADBC8" stroke-width="3"/>
+      <path d="M20 45 h65 v28 a14 14 0 0 1 -14 14 h-37 a14 14 0 0 1 -14 -14 z" fill="#C68B59" class="loader-fill"/>
+      <path d="M20 45 h65 v28 a14 14 0 0 1 -14 14 h-37 a14 14 0 0 1 -14 -14 z" fill="none" stroke="#F8F4EE" stroke-width="3"/>
+      <ellipse cx="52.5" cy="45" rx="32.5" ry="4" fill="#4a3120"/>
+    </svg>
+  </div>
+  <p class="loader-text">brewing something warm<span class="dots"><span>.</span><span>.</span><span>.</span></span></p>
+</div>
+
+<!-- ============ CUSTOM CURSOR ============ -->
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<!-- ============ SCROLL PROGRESS ============ -->
+<div class="scroll-progress" aria-hidden="true"><span id="scrollProgressBar"></span></div>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo" data-cursor="pointer">
+      <span class="nav-logo-mark">☕</span>
+      <span class="nav-logo-text">The Daily Dose<em>Cafe</em></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#story" class="nav-link">Our Story</a>
+      <a href="#drinks" class="nav-link">Drinks</a>
+      <a href="#breakfast" class="nav-link">Breakfast</a>
+      <a href="#gallery" class="nav-link">Gallery</a>
+      <a href="#reviews" class="nav-link">Reviews</a>
+      <a href="#location" class="nav-link">Visit</a>
+      <a href="#contact" class="nav-link nav-cta">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home" aria-label="Welcome to The Daily Dose Cafe">
+    <div class="hero-bg-shape" aria-hidden="true"></div>
+    <div class="hero-beans" id="heroBeans" aria-hidden="true"></div>
+
+    <div class="hero-media" data-parallax>
+      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80" alt="Warm sunlit flat lay of a latte cup with croissant and coffee beans" loading="lazy" class="hero-img hero-img-1">
+      <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=900&q=80" alt="Latte art heart in a warm ceramic cup" loading="lazy" class="hero-img hero-img-2">
+      <div class="hero-steam" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="hero-card-float" data-parallax-slow>
+        <span class="hero-card-emoji">🌱</span>
+        <div>
+          <strong>Locally Roasted</strong>
+          <small>Fresh beans, every morning</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <p class="eyebrow fade-up">PENANG, MALAYSIA</p>
+      <h1 class="hero-title">
+        <span class="typing-line" id="typingLine1"></span>
+        <span class="typing-line" id="typingLine2"></span>
+      </h1>
+      <p class="hero-sub fade-up" data-delay="2">Slow mornings, honest coffee and warm pastries — a quiet corner of Penang made for lingering a little longer.</p>
+      <div class="hero-actions fade-up" data-delay="3">
+        <a href="#drinks" class="btn btn-solid" data-magnetic><span>Explore Menu</span></a>
+        <a href="#location" class="btn btn-outline" data-magnetic><span>Visit Cafe</span></a>
+      </div>
+    </div>
+
+    <a href="#story" class="scroll-cue" aria-label="Scroll to next section">
+      <span class="scroll-cue-line"></span>
+      <span class="scroll-cue-text">scroll</span>
+    </a>
+  </section>
+
+  <!-- ============ OUR STORY ============ -->
+  <section class="story" id="story" aria-label="Our story">
+    <div class="story-blob" aria-hidden="true"></div>
+    <div class="story-inner">
+      <div class="story-media">
+        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=1000&q=80" alt="Warm interior of The Daily Dose Cafe with wooden tables and soft light" loading="lazy" class="story-img-main reveal-scale">
+        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80" alt="Freshly baked croissant on a rustic plate" loading="lazy" class="story-img-small reveal-scale" data-delay="2">
+      </div>
+      <div class="story-text">
+        <p class="eyebrow fade-right">SINCE THE FIRST POUR</p>
+        <h2 class="section-title fade-right">A little slower,<br>a little warmer.</h2>
+        <p class="story-p fade-right" data-delay="1">The Daily Dose Cafe began as a single espresso machine and a stubborn belief: mornings deserve more care. Tucked into a quiet Penang street, we roast in small batches, bake before sunrise, and set tables the way we'd want to find them ourselves — unhurried.</p>
+        <p class="story-p fade-right" data-delay="2">Every cup is pulled to order. Every pastry is made that day. No shortcuts, just good habits kept daily.</p>
+        <div class="story-stats fade-right" data-delay="3">
+          <div class="stat"><strong>08+</strong><span>Years Brewing</span></div>
+          <div class="stat"><strong>120k</strong><span>Cups Served</span></div>
+          <div class="stat"><strong>4.9★</strong><span>Guest Rating</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POPULAR DRINKS ============ -->
+  <section class="drinks" id="drinks" aria-label="Popular drinks menu">
+    <div class="section-head">
+      <p class="eyebrow fade-up">HOUSE FAVOURITES</p>
+      <h2 class="section-title fade-up">Popular Drinks</h2>
+      <p class="section-sub fade-up" data-delay="1">Slow-pulled, hand-poured, always fresh.</p>
+    </div>
+
+    <div class="drinks-grid">
+      <article class="drink-card reveal-up">
+        <div class="drink-img-wrap">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=600&q=80" alt="Creamy latte with smooth milk foam" loading="lazy">
+          <span class="drink-tag">Bestseller</span>
+        </div>
+        <div class="drink-info">
+          <div class="drink-title-row"><h3>Latte</h3><span class="drink-price">RM 12</span></div>
+          <p>Espresso, steamed milk, silky microfoam.</p>
+          <div class="drink-rating" aria-label="Rated 4.9 out of 5">★★★★★ <span>4.9</span></div>
+        </div>
+      </article>
+
+      <article class="drink-card reveal-up" data-delay="1">
+        <div class="drink-img-wrap">
+          <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=600&q=80" alt="Cappuccino topped with rich foam art" loading="lazy">
+        </div>
+        <div class="drink-info">
+          <div class="drink-title-row"><h3>Cappuccino</h3><span class="drink-price">RM 13</span></div>
+          <p>Bold espresso balanced with airy foam.</p>
+          <div class="drink-rating">★★★★★ <span>4.8</span></div>
+        </div>
+      </article>
+
+      <article class="drink-card reveal-up" data-delay="2">
+        <div class="drink-img-wrap">
+          <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=600&q=80" alt="Rich mocha with chocolate drizzle" loading="lazy">
+          <span class="drink-tag">Chocolate lovers</span>
+        </div>
+        <div class="drink-info">
+          <div class="drink-title-row"><h3>Mocha</h3><span class="drink-price">RM 15</span></div>
+          <p>Dark chocolate meets espresso and cream.</p>
+          <div class="drink-rating">★★★★★ <span>4.9</span></div>
+        </div>
+      </article>
+
+      <article class="drink-card reveal-up" data-delay="3">
+        <div class="drink-img-wrap">
+          <img src="https://images.unsplash.com/photo-1521305916504-4a1121188589?auto=format&fit=crop&w=600&q=80" alt="Classic americano served in a warm cafe" loading="lazy">
+        </div>
+        <div class="drink-info">
+          <div class="drink-title-row"><h3>Americano</h3><span class="drink-price">RM 10</span></div>
+          <p>Espresso lengthened with hot water.</p>
+          <div class="drink-rating">★★★★☆ <span>4.6</span></div>
+        </div>
+      </article>
+
+      <article class="drink-card reveal-up" data-delay="1">
+        <div class="drink-img-wrap">
+          <img src="https://images.unsplash.com/photo-1559496417-e7f25cb247f3?auto=format&fit=crop&w=600&q=80" alt="Small strong espresso shot in a white cup" loading="lazy">
+        </div>
+        <div class="drink-info">
+          <div class="drink-title-row"><h3>Espresso</h3><span class="drink-price">RM 9</span></div>
+          <p>Single origin, pulled short and strong.</p>
+          <div class="drink-rating">★★★★★ <span>4.8</span></div>
+        </div>
+      </article>
+
+      <article class="drink-card reveal-up" data-delay="2">
+        <div class="drink-img-wrap">
+          <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=600&q=80" alt="Refreshing cold brew coffee with ice" loading="lazy">
+          <span class="drink-tag">Iced</span>
+        </div>
+        <div class="drink-info">
+          <div class="drink-title-row"><h3>Cold Brew</h3><span class="drink-price">RM 14</span></div>
+          <p>Steeped 18 hours for a smooth, sweet body.</p>
+          <div class="drink-rating">★★★★★ <span>4.9</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ BREAKFAST MENU ============ -->
+  <section class="breakfast" id="breakfast" aria-label="Breakfast menu">
+    <div class="section-head section-head-left">
+      <p class="eyebrow fade-up">MORNING TABLE</p>
+      <h2 class="section-title fade-up">Breakfast, Slowly Made</h2>
+    </div>
+    <div class="breakfast-track-wrap">
+      <div class="breakfast-track" id="breakfastTrack">
+        <article class="breakfast-card">
+          <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=500&q=80" alt="Golden sunny-side eggs plated with herbs" loading="lazy">
+          <div class="breakfast-card-body"><h3>Sunrise Eggs</h3><p>Two eggs, sourdough, herb butter</p><span>RM 18</span></div>
+        </article>
+        <article class="breakfast-card">
+          <img src="https://images.unsplash.com/photo-1481070555726-e2fe8357725c?auto=format&fit=crop&w=500&q=80" alt="Layered breakfast sandwich with fresh greens" loading="lazy">
+          <div class="breakfast-card-body"><h3>Garden Sandwich</h3><p>Egg, avocado, rocket, ciabatta</p><span>RM 20</span></div>
+        </article>
+        <article class="breakfast-card">
+          <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=500&q=80" alt="Fluffy pancake stack with syrup and berries" loading="lazy">
+          <div class="breakfast-card-body"><h3>Berry Pancakes</h3><p>Buttermilk stack, maple, berries</p><span>RM 22</span></div>
+        </article>
+        <article class="breakfast-card">
+          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80" alt="Freshly baked flaky butter croissant" loading="lazy">
+          <div class="breakfast-card-body"><h3>Butter Croissant</h3><p>Baked daily, flaky & golden</p><span>RM 9</span></div>
+        </article>
+        <article class="breakfast-card">
+          <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=500&q=80" alt="Thick toast with jam and fresh fruit" loading="lazy">
+          <div class="breakfast-card-body"><h3>Orchard Toast</h3><p>Ricotta, seasonal fruit, honey</p><span>RM 16</span></div>
+        </article>
+      </div>
+      <div class="breakfast-scrollbar" aria-hidden="true"><span id="breakfastProgress"></span></div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section class="gallery" id="gallery" aria-label="Cafe gallery">
+    <div class="section-head">
+      <p class="eyebrow fade-up">A LOOK INSIDE</p>
+      <h2 class="section-title fade-up">Cafe Gallery</h2>
+    </div>
+    <div class="gallery-masonry">
+      <figure class="g-item"><img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=500&q=80" alt="Latte art poured into a warm ceramic cup" loading="lazy"></figure>
+      <figure class="g-item"><img src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?auto=format&fit=crop&w=500&q=80" alt="Display case of fresh bakery pastries" loading="lazy"></figure>
+      <figure class="g-item"><img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=500&q=80" alt="Cosy cafe workspace corner with laptop and coffee" loading="lazy"></figure>
+      <figure class="g-item"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=500&q=80" alt="Coffee cup resting on a rustic wooden table" loading="lazy"></figure>
+      <figure class="g-item"><img src="https://images.unsplash.com/photo-1521305916504-4a1121188589?auto=format&fit=crop&w=500&q=80" alt="Friends enjoying coffee together and laughing" loading="lazy"></figure>
+      <figure class="g-item"><img src="https://images.unsplash.com/photo-1517093157656-b9eccef91cb1?auto=format&fit=crop&w=500&q=80" alt="Fresh croissants stacked on a bakery tray" loading="lazy"></figure>
+      <figure class="g-item"><img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=500&q=80" alt="Whole coffee beans scattered on a table" loading="lazy"></figure>
+      <figure class="g-item"><img src="https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=500&q=80" alt="Warm cafe interior seating with natural light" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <!-- ============ WHY PEOPLE LOVE US ============ -->
+  <section class="why" id="why" aria-label="Why people love us">
+    <div class="section-head">
+      <p class="eyebrow fade-up">THE LITTLE THINGS</p>
+      <h2 class="section-title fade-up">Why People Love Us</h2>
+    </div>
+    <div class="why-timeline">
+      <svg class="why-line" viewBox="0 0 4 1000" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M2 0 V1000" />
+      </svg>
+      <div class="why-item reveal-left">
+        <div class="why-icon">☕</div>
+        <div class="why-text"><h3>Fresh Coffee</h3><p>Roasted weekly in small batches for peak flavour.</p></div>
+      </div>
+      <div class="why-item reveal-right" data-delay="1">
+        <div class="why-icon">📶</div>
+        <div class="why-text"><h3>Free WiFi</h3><p>Fast, reliable connection for slow work mornings.</p></div>
+      </div>
+      <div class="why-item reveal-left" data-delay="2">
+        <div class="why-icon">🌿</div>
+        <div class="why-text"><h3>Peaceful Workspace</h3><p>Soft light, quiet corners, room to think.</p></div>
+      </div>
+      <div class="why-item reveal-right" data-delay="3">
+        <div class="why-icon">🥐</div>
+        <div class="why-text"><h3>Fresh Bakery</h3><p>Baked before sunrise, gone by afternoon.</p></div>
+      </div>
+      <div class="why-item reveal-left" data-delay="4">
+        <div class="why-icon">💛</div>
+        <div class="why-text"><h3>Friendly Staff</h3><p>We remember your name and your order.</p></div>
+      </div>
+      <div class="why-item reveal-right" data-delay="5">
+        <div class="why-icon">⚡</div>
+        <div class="why-text"><h3>Fast Service</h3><p>Quick without ever feeling rushed.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CUSTOMER REVIEWS ============ -->
+  <section class="reviews" id="reviews" aria-label="Customer reviews">
+    <div class="section-head">
+      <p class="eyebrow fade-up">KIND WORDS</p>
+      <h2 class="section-title fade-up">Customer Reviews</h2>
+    </div>
+    <div class="reviews-slider-wrap">
+      <div class="reviews-track" id="reviewsTrack">
+        <blockquote class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>"The quietest, warmest cafe in Georgetown. Their latte art alone is worth the visit — but the croissants keep me coming back."</p>
+          <footer><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80" alt="Portrait of customer Ain Sofea" loading="lazy"><div><strong>Ain Sofea</strong><span>Regular Guest</span></div></footer>
+        </blockquote>
+        <blockquote class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>"I work from here twice a week. Great wifi, better coffee, and the staff never rush you out. Exactly what a cafe should feel like."</p>
+          <footer><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Portrait of customer Wei Jian" loading="lazy"><div><strong>Wei Jian</strong><span>Freelancer</span></div></footer>
+        </blockquote>
+        <blockquote class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>"Their cold brew is unreal — smooth, never bitter. The whole space feels like someone's beautifully designed living room."</p>
+          <footer><img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?auto=format&fit=crop&w=100&q=80" alt="Portrait of customer Priya A." loading="lazy"><div><strong>Priya A.</strong><span>Coffee Enthusiast</span></div></footer>
+        </blockquote>
+        <blockquote class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>"Breakfast here is a small ritual now. Fresh, unhurried, and the sourdough toast is easily the best in Penang."</p>
+          <footer><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Portrait of customer Daniel Tan" loading="lazy"><div><strong>Daniel Tan</strong><span>Local Guide</span></div></footer>
+        </blockquote>
+      </div>
+      <div class="reviews-dots" id="reviewsDots"></div>
+    </div>
+  </section>
+
+  <!-- ============ LOCATION ============ -->
+  <section class="location" id="location" aria-label="Location and hours">
+    <div class="location-inner">
+      <div class="location-info">
+        <p class="eyebrow fade-left">FIND US</p>
+        <h2 class="section-title fade-left">Come Sit With Us</h2>
+        <ul class="location-list fade-left" data-delay="1">
+          <li><span class="loc-icon">📍</span><div><strong>Address</strong><p>The Daily Dose Cafe, Penang, Malaysia</p></div></li>
+          <li><span class="loc-icon">📞</span><div><strong>Phone</strong><p><a href="tel:+60124388373">+60 12 438 8373</a></p></div></li>
+          <li><span class="loc-icon">🕒</span><div><strong>Hours</strong><p>Mon – Fri: 8:00am – 7:00pm<br>Sat – Sun: 8:00am – 9:00pm</p></div></li>
+        </ul>
+        <a class="btn btn-solid fade-left" data-delay="2" data-magnetic href="https://maps.app.goo.gl/AeA4yVyjXY2j49ZCA" target="_blank" rel="noopener">
+          <span>Open in Google Maps</span>
+        </a>
+      </div>
+      <div class="location-map reveal-scale">
+        <div class="map-pulse" aria-hidden="true"></div>
+        <iframe
+          title="The Daily Dose Cafe location map"
+          src="https://www.google.com/maps?q=Penang,Malaysia&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          aria-label="Map showing The Daily Dose Cafe location in Penang">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact" aria-label="Contact us">
+    <div class="contact-inner">
+      <div class="contact-copy">
+        <p class="eyebrow fade-up">SAY HELLO</p>
+        <h2 class="section-title fade-up">Let's Talk Coffee</h2>
+        <p class="section-sub fade-up" data-delay="1">Questions, private bookings, or just want to say hi — drop us a note.</p>
+      </div>
+      <form class="contact-form reveal-up" id="contactForm" novalidate>
+        <div class="field">
+          <input type="text" id="name" name="name" placeholder=" " required>
+          <label for="name">Your Name</label>
+          <span class="field-error">Please enter your name</span>
+        </div>
+        <div class="field">
+          <input type="email" id="email" name="email" placeholder=" " required>
+          <label for="email">Email Address</label>
+          <span class="field-error">Please enter a valid email</span>
+        </div>
+        <div class="field">
+          <input type="tel" id="phone" name="phone" placeholder=" ">
+          <label for="phone">Phone (optional)</label>
+        </div>
+        <div class="field">
+          <textarea id="message" name="message" placeholder=" " rows="4" required></textarea>
+          <label for="message">Your Message</label>
+          <span class="field-error">Please write a short message</span>
+        </div>
+        <button type="submit" class="btn btn-solid btn-block" data-magnetic><span id="submitText">Send Message</span></button>
+        <div class="form-success" id="formSuccess" aria-live="polite">
+          <span class="success-check">✓</span> Thank you — we'll reply within a day!
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <a href="#home" class="nav-logo">
+        <span class="nav-logo-mark">☕</span>
+        <span class="nav-logo-text">The Daily Dose<em>Cafe</em></span>
+      </a>
+      <p>Warm mornings, honest coffee — Penang, Malaysia.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram" data-magnetic>IG</a>
+        <a href="#" aria-label="Facebook" data-magnetic>FB</a>
+        <a href="#" aria-label="TikTok" data-magnetic>TT</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#story">Our Story</a>
+      <a href="#drinks">Drinks</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:+60124388373">+60 12 438 8373</a>
+      <a href="https://maps.app.goo.gl/AeA4yVyjXY2j49ZCA" target="_blank" rel="noopener">Penang, Malaysia</a>
+      <a href="#contact">Send a message</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> The Daily Dose Cafe. All rights reserved.</p>
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
