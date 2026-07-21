@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cheang's Restaurant — Authentic Chinese Fine Dining in Penang, Malaysia. Experience the art of traditional Chinese cuisine with a modern luxury touch." />
+  <meta name="keywords" content="Chinese restaurant Penang, authentic Chinese food, fine dining Malaysia, Cheang's Restaurant" />
+  <meta property="og:title" content="Cheang's Restaurant — Authentic Chinese Fine Dining, Penang" />
+  <meta property="og:description" content="A premium Chinese dining experience in the heart of Penang, Malaysia." />
+  <meta property="og:type" content="website" />
+  <title>Cheang's Restaurant — Authentic Chinese Fine Dining, Penang</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       CUSTOM CURSOR
+  ============================================================ -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- ============================================================
+       LOADING SCREEN
+  ============================================================ -->
+  <div class="loader" id="loader">
+    <div class="loader__inner">
+      <div class="loader__char">餐</div>
+      <div class="loader__bar"><span></span></div>
+      <p class="loader__text">Cheang's Restaurant</p>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SCROLL PROGRESS
+  ============================================================ -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__logo">
+      <span class="nav__logo-char">餐</span>
+      <span class="nav__logo-text">Cheang's</span>
+    </div>
+
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#about" class="nav__link" data-text="About">About</a></li>
+      <li><a href="#menu" class="nav__link" data-text="Menu">Menu</a></li>
+      <li><a href="#chef" class="nav__link" data-text="Chef">Chef</a></li>
+      <li><a href="#experience" class="nav__link" data-text="Experience">Experience</a></li>
+      <li><a href="#testimonials" class="nav__link" data-text="Reviews">Reviews</a></li>
+      <li><a href="#contact" class="nav__link" data-text="Contact">Contact</a></li>
+    </ul>
+
+    <a href="#contact" class="nav__cta magnetic-btn">Reserve Table</a>
+
+    <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <ul class="mobile-menu__links">
+      <li><a href="#about" class="mobile-menu__link">About</a></li>
+      <li><a href="#menu" class="mobile-menu__link">Menu</a></li>
+      <li><a href="#chef" class="mobile-menu__link">Chef</a></li>
+      <li><a href="#experience" class="mobile-menu__link">Experience</a></li>
+      <li><a href="#testimonials" class="mobile-menu__link">Reviews</a></li>
+      <li><a href="#contact" class="mobile-menu__link">Contact</a></li>
+    </ul>
+    <div class="mobile-menu__footer">
+      <p>+60 16-403 7166</p>
+      <p>Penang, Malaysia</p>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       HERO SECTION
+  ============================================================ -->
+  <section class="hero" id="hero" aria-label="Hero">
+    <!-- Cinematic Background -->
+    <div class="hero__bg">
+      <img
+        src="https://images.pexels.com/photos/32860310/pexels-photo-32860310.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1080&w=1920"
+        alt="Elegant Chinese banquet"
+        class="hero__bg-img"
+        id="heroBgImg"
+      />
+      <div class="hero__overlay"></div>
+    </div>
+
+    <!-- Smoke / Particle Canvas -->
+    <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
+
+    <!-- Floating Lanterns -->
+    <div class="hero__lanterns" aria-hidden="true">
+      <div class="lantern lantern--1"></div>
+      <div class="lantern lantern--2"></div>
+      <div class="lantern lantern--3"></div>
+      <div class="lantern lantern--4"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="hero__content" id="heroContent">
+      <div class="hero__eyebrow reveal-text">
+        <span class="hero__eyebrow-line"></span>
+        Authentic Chinese Fine Dining
+        <span class="hero__eyebrow-line"></span>
+      </div>
+
+      <h1 class="hero__title">
+        <span class="hero__title-line" data-line="1">Cheang's</span>
+        <span class="hero__title-line hero__title-line--italic" data-line="2">Restaurant</span>
+      </h1>
+
+      <p class="hero__subtitle reveal-fade">
+        Where ancient culinary traditions meet <br />
+        modern luxury in the heart of Penang
+      </p>
+
+      <div class="hero__actions reveal-fade">
+        <a href="#contact" class="btn btn--primary magnetic-btn ripple-btn">
+          <span>Reserve Table</span>
+        </a>
+        <a href="#menu" class="btn btn--ghost magnetic-btn">
+          <span>Explore Menu</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Decorative side element -->
+    <div class="hero__side-text" aria-hidden="true">
+      <span>Penang · Malaysia · Est. 1988</span>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="hero__scroll" id="heroScroll" aria-label="Scroll down">
+      <div class="hero__scroll-wheel"></div>
+      <span>Scroll</span>
+    </div>
+
+    <!-- Gold accent line -->
+    <div class="hero__accent-line" aria-hidden="true"></div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT SECTION
+  ============================================================ -->
+  <section class="about" id="about" aria-label="About Cheang's Restaurant">
+    <div class="about__container">
+
+      <!-- Left: Decorative vertical title + image -->
+      <div class="about__visual">
+        <div class="about__vertical-title" aria-hidden="true">
+          <span>关 于 我 们</span>
+        </div>
+        <div class="about__image-wrap reveal-scale">
+          <img
+            src="https://images.pexels.com/photos/32860319/pexels-photo-32860319.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=800&w=600"
+            alt="Traditional Chinese cuisine spread on round table"
+            class="about__image"
+            loading="lazy"
+          />
+          <div class="about__image-border"></div>
+        </div>
+        <div class="about__float-badge reveal-fade">
+          <span class="about__float-badge-num">35+</span>
+          <span class="about__float-badge-label">Years of<br/>Excellence</span>
+        </div>
+      </div>
+
+      <!-- Right: Story content -->
+      <div class="about__content">
+        <div class="about__tag reveal-fade">Our Story</div>
+        <h2 class="about__title reveal-text">
+          A Legacy Rooted<br />
+          in <em>Culinary Art</em>
+        </h2>
+
+        <div class="about__brush-divider reveal-fade" aria-hidden="true">
+          <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg" class="brush-svg">
+            <path d="M0,10 Q50,2 100,10 Q150,18 200,10" stroke="#D4AF37" stroke-width="1.5" fill="none" stroke-dasharray="200" stroke-dashoffset="200" class="brush-path"/>
+          </svg>
+        </div>
+
+        <p class="about__body reveal-fade">
+          Founded in 1988 by Master Chef Cheang Wei Liang, our restaurant has been the heartbeat of authentic Chinese gastronomy in Penang for over three decades. Every dish is a tribute to the rich, layered traditions of Cantonese and Sichuan cooking.
+        </p>
+        <p class="about__body reveal-fade">
+          We source only the finest seasonal ingredients — from hand-picked herbs along the slopes of Cameron Highlands to day-fresh seafood from the Straits of Malacca — crafting a dining journey that honours the soul of Chinese culinary philosophy.
+        </p>
+
+        <div class="about__pillars reveal-fade">
+          <div class="about__pillar">
+            <div class="about__pillar-icon">🍵</div>
+            <span>Tea Mastery</span>
+          </div>
+          <div class="about__pillar">
+            <div class="about__pillar-icon">🔥</div>
+            <span>Wok Mastery</span>
+          </div>
+          <div class="about__pillar">
+            <div class="about__pillar-icon">🦐</div>
+            <span>Fresh Seafood</span>
+          </div>
+        </div>
+
+        <a href="#menu" class="btn btn--primary-outline reveal-fade magnetic-btn">
+          <span>Discover Our Menu</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SIGNATURE MENU SECTION
+  ============================================================ -->
+  <section class="menu" id="menu" aria-label="Signature Menu">
+    <div class="menu__header">
+      <div class="menu__header-bg" aria-hidden="true">精选菜单</div>
+      <span class="menu__tag reveal-fade">Signature Dishes</span>
+      <h2 class="menu__title reveal-text">The Art of <em>Chinese Cuisine</em></h2>
+      <p class="menu__subtitle reveal-fade">
+        Each creation is a masterwork — steeped in tradition, elevated by craft
+      </p>
+    </div>
+
+    <div class="menu__grid">
+
+      <!-- Card 1: Peking Duck -->
+      <article class="menu__card reveal-card" data-index="1">
+        <div class="menu__card-visual">
+          <img
+            src="https://images.pexels.com/photos/30469694/pexels-photo-30469694.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=500"
+            alt="Elegant plated duck breast"
+            class="menu__card-img"
+            loading="lazy"
+          />
+          <div class="menu__card-overlay"></div>
+          <span class="menu__card-number">01</span>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-top">
+            <h3 class="menu__card-title">Peking Duck</h3>
+            <span class="menu__card-price">RM 128</span>
+          </div>
+          <p class="menu__card-desc">Lacquered whole duck roasted to a crisp mahogany finish, served with hand-rolled pancakes, hoisin, and scallion julienne.</p>
+          <div class="menu__card-tags">
+            <span>Signature</span><span>Chef's Pick</span>
+          </div>
+        </div>
+        <div class="menu__card-hover">
+          <span class="menu__card-hover-text">View Details</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </article>
+
+      <!-- Card 2: Sweet & Sour Fish -->
+      <article class="menu__card reveal-card" data-index="2">
+        <div class="menu__card-visual">
+          <img
+            src="https://images.pexels.com/photos/36694551/pexels-photo-36694551.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=500"
+            alt="Crispy fish in sweet and sour sauce"
+            class="menu__card-img"
+            loading="lazy"
+          />
+          <div class="menu__card-overlay"></div>
+          <span class="menu__card-number">02</span>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-top">
+            <h3 class="menu__card-title">Sweet & Sour Fish</h3>
+            <span class="menu__card-price">RM 68</span>
+          </div>
+          <p class="menu__card-desc">Crispy whole sea bass bathed in our house-crafted sweet and sour glaze, garnished with fresh pineapple and bell peppers.</p>
+          <div class="menu__card-tags">
+            <span>Crowd Favourite</span>
+          </div>
+        </div>
+        <div class="menu__card-hover">
+          <span class="menu__card-hover-text">View Details</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </article>
+
+      <!-- Card 3: Kung Pao Chicken -->
+      <article class="menu__card reveal-card" data-index="3">
+        <div class="menu__card-visual">
+          <img
+            src="https://images.pexels.com/photos/30708204/pexels-photo-30708204.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=500"
+            alt="Kung Pao Chicken"
+            class="menu__card-img"
+            loading="lazy"
+          />
+          <div class="menu__card-overlay"></div>
+          <span class="menu__card-number">03</span>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-top">
+            <h3 class="menu__card-title">Kung Pao Chicken</h3>
+            <span class="menu__card-price">RM 52</span>
+          </div>
+          <p class="menu__card-desc">Tender wok-tossed chicken with dried chillies, Sichuan peppercorns, and roasted peanuts in a bold, aromatic sauce.</p>
+          <div class="menu__card-tags">
+            <span>Spicy</span><span>Sichuan</span>
+          </div>
+        </div>
+        <div class="menu__card-hover">
+          <span class="menu__card-hover-text">View Details</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </article>
+
+      <!-- Card 4: Dim Sum -->
+      <article class="menu__card reveal-card" data-index="4">
+        <div class="menu__card-visual">
+          <img
+            src="https://images.pexels.com/photos/32860331/pexels-photo-32860331.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=600&w=500"
+            alt="Chinese dim sum in bamboo steamers"
+            class="menu__card-img"
+            loading="lazy"
+          />
+          <div class="menu__card-overlay"></div>
+          <span class="menu__card-number">04</span>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-top">
+            <h3 class="menu__card-title">Imperial Dim Sum</h3>
+            <span class="menu__card-price">RM 48</span>
+          </div>
+          <p class="menu__card-desc">A curated selection of handcrafted dumplings, har gow, siu mai, and char siu bao — steamed to perfection in bamboo.</p>
+          <div class="menu__card-tags">
+            <span>Handcrafted</span><span>Traditional</span>
+          </div>
+        </div>
+        <div class="menu__card-hover">
+          <span class="menu__card-hover-text">View Details</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </article>
+
+      <!-- Card 5: Seafood Fried Rice -->
+      <article class="menu__card reveal-card" data-index="5">
+        <div class="menu__card-visual">
+          <img
+            src="https://images.pexels.com/photos/31710629/pexels-photo-31710629.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=500"
+            alt="Gourmet seafood fried rice"
+            class="menu__card-img"
+            loading="lazy"
+          />
+          <div class="menu__card-overlay"></div>
+          <span class="menu__card-number">05</span>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-top">
+            <h3 class="menu__card-title">Seafood Fried Rice</h3>
+            <span class="menu__card-price">RM 58</span>
+          </div>
+          <p class="menu__card-desc">Wok-charred jasmine rice with tiger prawns, scallops, and crab meat — finished with aged soy and crispy shallots.</p>
+          <div class="menu__card-tags">
+            <span>Wok Hei</span><span>Seafood</span>
+          </div>
+        </div>
+        <div class="menu__card-hover">
+          <span class="menu__card-hover-text">View Details</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </article>
+
+      <!-- Card 6: Hot Pot -->
+      <article class="menu__card reveal-card" data-index="6">
+        <div class="menu__card-visual">
+          <img
+            src="https://images.pexels.com/photos/15177422/pexels-photo-15177422.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=500"
+            alt="Seafood hot pot"
+            class="menu__card-img"
+            loading="lazy"
+          />
+          <div class="menu__card-overlay"></div>
+          <span class="menu__card-number">06</span>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-top">
+            <h3 class="menu__card-title">Imperial Hot Pot</h3>
+            <span class="menu__card-price">RM 98</span>
+          </div>
+          <p class="menu__card-desc">A rich, slow-simmered broth of premium bones and aromatics, served tableside with fresh seafood, tofu, and seasonal greens.</p>
+          <div class="menu__card-tags">
+            <span>Sharing</span><span>Premium</span>
+          </div>
+        </div>
+        <div class="menu__card-hover">
+          <span class="menu__card-hover-text">View Details</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="menu__cta reveal-fade">
+      <a href="#contact" class="btn btn--primary magnetic-btn ripple-btn">
+        <span>Reserve Your Table</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CHEF SECTION
+  ============================================================ -->
+  <section class="chef" id="chef" aria-label="Master Chef">
+    <div class="chef__bg-text" aria-hidden="true">CHEF</div>
+
+    <div class="chef__container">
+
+      <!-- Left: Portrait + Stats -->
+      <div class="chef__portrait-col">
+        <div class="chef__portrait-wrap reveal-scale">
+          <img
+            src="https://images.pexels.com/photos/32513359/pexels-photo-32513359.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=800&w=650"
+            alt="Master Chef cooking with wok flames"
+            class="chef__portrait"
+            loading="lazy"
+          />
+          <div class="chef__portrait-frame" aria-hidden="true"></div>
+          <div class="chef__portrait-badge">
+            <span class="chef__portrait-badge-cn">主厨</span>
+            <span class="chef__portrait-badge-en">Master Chef</span>
+          </div>
+        </div>
+
+        <!-- Animated Counters -->
+        <div class="chef__stats">
+          <div class="chef__stat reveal-fade">
+            <span class="chef__stat-num" data-target="35">0</span>
+            <span class="chef__stat-suffix">+</span>
+            <span class="chef__stat-label">Years Experience</span>
+          </div>
+          <div class="chef__stat reveal-fade">
+            <span class="chef__stat-num" data-target="12">0</span>
+            <span class="chef__stat-suffix"></span>
+            <span class="chef__stat-label">Awards Won</span>
+          </div>
+          <div class="chef__stat reveal-fade">
+            <span class="chef__stat-num" data-target="48">0</span>
+            <span class="chef__stat-suffix">+</span>
+            <span class="chef__stat-label">Signature Dishes</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Story + Timeline -->
+      <div class="chef__content">
+        <div class="chef__tag reveal-fade">Meet the Maestro</div>
+        <h2 class="chef__title reveal-text">
+          Master Chef<br />
+          <em>Cheang Wei Liang</em>
+        </h2>
+        <p class="chef__bio reveal-fade">
+          With over 35 years commanding the wok, Chef Cheang is one of Malaysia's most celebrated Chinese culinary masters. Trained in Guangzhou, Hong Kong, and Chengdu, he brings an unparalleled breadth of technique — from the delicate fold of a har gow to the fierce heat of a Cantonese claypot.
+        </p>
+
+        <!-- Timeline -->
+        <div class="chef__timeline">
+          <div class="chef__timeline-item reveal-fade">
+            <div class="chef__timeline-year">1988</div>
+            <div class="chef__timeline-content">
+              <h4>Founded Cheang's Restaurant</h4>
+              <p>Opened the doors of Penang's most beloved Chinese dining institution</p>
+            </div>
+          </div>
+          <div class="chef__timeline-item reveal-fade">
+            <div class="chef__timeline-year">1999</div>
+            <div class="chef__timeline-content">
+              <h4>Malaysia Culinary Gold Award</h4>
+              <p>Recognised as Best Chinese Chef at the National Culinary Championships</p>
+            </div>
+          </div>
+          <div class="chef__timeline-item reveal-fade">
+            <div class="chef__timeline-year">2008</div>
+            <div class="chef__timeline-content">
+              <h4>Asia Pacific Heritage Award</h4>
+              <p>Honoured for preserving authentic Cantonese cooking traditions</p>
+            </div>
+          </div>
+          <div class="chef__timeline-item reveal-fade">
+            <div class="chef__timeline-year">2024</div>
+            <div class="chef__timeline-content">
+              <h4>Penang Culinary Legend</h4>
+              <p>Inducted into the Penang Food Heritage Hall of Fame</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DINING EXPERIENCE SECTION
+  ============================================================ -->
+  <section class="experience" id="experience" aria-label="Dining Experience">
+    <div class="experience__header">
+      <span class="experience__tag reveal-fade">The Space</span>
+      <h2 class="experience__title reveal-text">
+        An Atmosphere of<br /><em>Refined Elegance</em>
+      </h2>
+    </div>
+
+    <!-- Horizontal scroll gallery -->
+    <div class="experience__track-wrap" id="expTrackWrap">
+      <div class="experience__track" id="expTrack">
+
+        <div class="experience__item">
+          <img
+            src="https://images.pexels.com/photos/12756684/pexels-photo-12756684.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=700&w=900"
+            alt="Sophisticated dining setup with chandelier"
+            loading="lazy"
+          />
+          <div class="experience__item-overlay">
+            <span>Grand Dining Hall</span>
+          </div>
+        </div>
+
+        <div class="experience__item experience__item--tall">
+          <img
+            src="https://images.pexels.com/photos/26729400/pexels-photo-26729400.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=700&w=900"
+            alt="Elegant modern restaurant interior"
+            loading="lazy"
+          />
+          <div class="experience__item-overlay">
+            <span>Private Dining</span>
+          </div>
+        </div>
+
+        <div class="experience__item">
+          <img
+            src="https://images.pexels.com/photos/29000038/pexels-photo-29000038.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=700&w=900"
+            alt="Spacious dining area with modern lighting"
+            loading="lazy"
+          />
+          <div class="experience__item-overlay">
+            <span>The Main Hall</span>
+          </div>
+        </div>
+
+        <div class="experience__item experience__item--wide">
+          <img
+            src="https://images.pexels.com/photos/32860325/pexels-photo-32860325.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=700&w=1200"
+            alt="Dim sum and Asian cuisine spread"
+            loading="lazy"
+          />
+          <div class="experience__item-overlay">
+            <span>Dim Sum Garden</span>
+          </div>
+        </div>
+
+        <div class="experience__item">
+          <img
+            src="https://images.pexels.com/photos/4087604/pexels-photo-4087604.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=700&w=600"
+            alt="Elegant Chinese tea cups"
+            loading="lazy"
+          />
+          <div class="experience__item-overlay">
+            <span>Tea Ceremony</span>
+          </div>
+        </div>
+
+        <div class="experience__item">
+          <img
+            src="https://images.pexels.com/photos/14872561/pexels-photo-14872561.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=700&w=900"
+            alt="Traditional Chinese teapot and cups"
+            loading="lazy"
+          />
+          <div class="experience__item-overlay">
+            <span>Art of Tea</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Drag hint -->
+    <div class="experience__hint reveal-fade">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 7l-5 5 5 5M17 7l5 5-5 5"/></svg>
+      <span>Drag to explore</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TESTIMONIALS SECTION
+  ============================================================ -->
+  <section class="testimonials" id="testimonials" aria-label="Customer Testimonials">
+    <div class="testimonials__bg-char" aria-hidden="true">好</div>
+
+    <div class="testimonials__header">
+      <span class="testimonials__tag reveal-fade">Guest Reviews</span>
+      <h2 class="testimonials__title reveal-text">
+        Words from Our<br /><em>Distinguished Guests</em>
+      </h2>
+    </div>
+
+    <div class="testimonials__slider-wrap">
+      <div class="testimonials__slider" id="testimonialsSlider">
+
+        <!-- Slide 1 -->
+        <div class="testimonials__slide">
+          <div class="testimonials__card">
+            <div class="testimonials__card-quote">"</div>
+            <div class="testimonials__stars">★★★★★</div>
+            <p class="testimonials__text">
+              An absolutely transcendent dining experience. The Peking Duck at Cheang's is the finest I have tasted outside of Beijing. Every detail — from the porcelain to the plating — speaks of mastery and passion.
+            </p>
+            <div class="testimonials__author">
+              <div class="testimonials__author-avatar">
+                <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=80&w=80" alt="Sarah Chen" loading="lazy" />
+              </div>
+              <div class="testimonials__author-info">
+                <strong>Sarah Chen</strong>
+                <span>Food Critic · Kuala Lumpur</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="testimonials__slide">
+          <div class="testimonials__card">
+            <div class="testimonials__card-quote">"</div>
+            <div class="testimonials__stars">★★★★★</div>
+            <p class="testimonials__text">
+              Cheang's Restaurant is Penang's best-kept secret. The Imperial Dim Sum is extraordinary — each piece handcrafted with a finesse that rivals any five-star establishment in Hong Kong. A truly memorable evening.
+            </p>
+            <div class="testimonials__author">
+              <div class="testimonials__author-avatar">
+                <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=80&w=80" alt="Marcus Tan" loading="lazy" />
+              </div>
+              <div class="testimonials__author-info">
+                <strong>Marcus Tan</strong>
+                <span>Travel Blogger · Singapore</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="testimonials__slide">
+          <div class="testimonials__card">
+            <div class="testimonials__card-quote">"</div>
+            <div class="testimonials__stars">★★★★★</div>
+            <p class="testimonials__text">
+              We celebrated our anniversary here and it was unforgettable. The ambiance is stunning, the service impeccable, and the Kung Pao Chicken was a revelation. Chef Cheang is a true legend of Chinese cuisine.
+            </p>
+            <div class="testimonials__author">
+              <div class="testimonials__author-avatar">
+                <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=80&w=80" alt="Priya Sharma" loading="lazy" />
+              </div>
+              <div class="testimonials__author-info">
+                <strong>Priya Sharma</strong>
+                <span>Corporate Executive · Penang</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="testimonials__slide">
+          <div class="testimonials__card">
+            <div class="testimonials__card-quote">"</div>
+            <div class="testimonials__stars">★★★★★</div>
+            <p class="testimonials__text">
+              The Hot Pot experience here is unlike any other. The broth is deeply complex, the ingredients impeccably fresh, and the service — attentive without being intrusive. Cheang's defines fine Chinese dining in Malaysia.
+            </p>
+            <div class="testimonials__author">
+              <div class="testimonials__author-avatar">
+                <img src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=80&w=80" alt="David Wong" loading="lazy" />
+              </div>
+              <div class="testimonials__author-info">
+                <strong>David Wong</strong>
+                <span>Restauranteur · Penang</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Slider Controls -->
+      <div class="testimonials__controls">
+        <button class="testimonials__arrow testimonials__arrow--prev" id="testimonialPrev" aria-label="Previous review">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        </button>
+        <div class="testimonials__dots" id="testimonialDots"></div>
+        <button class="testimonials__arrow testimonials__arrow--next" id="testimonialNext" aria-label="Next review">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LOCATION SECTION
+  ============================================================ -->
+  <section class="location" id="location" aria-label="Location">
+    <div class="location__container">
+
+      <div class="location__visual reveal-scale">
+        <img
+          src="https://images.pexels.com/photos/24433378/pexels-photo-24433378.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=700&w=900"
+          alt="Elegantly set dining table"
+          class="location__img"
+          loading="lazy"
+        />
+        <div class="location__img-overlay"></div>
+        <div class="location__map-btn-wrap">
+          <a
+            href="https://share.google/Qf5w6MPQgzl4QnkOF"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="location__map-btn magnetic-btn ripple-btn"
+            aria-label="Open in Google Maps"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            <span>Open in Google Maps</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="location__info">
+        <span class="location__tag reveal-fade">Find Us</span>
+        <h2 class="location__title reveal-text">
+          Visit Us in<br /><em>Penang, Malaysia</em>
+        </h2>
+
+        <div class="location__details">
+          <div class="location__detail-item reveal-fade">
+            <div class="location__detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            </div>
+            <div>
+              <strong>Location</strong>
+              <span>Penang, Malaysia</span>
+            </div>
+          </div>
+
+          <div class="location__detail-item reveal-fade">
+            <div class="location__detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.12 1.18 2 2 0 012.1 0h3a2 2 0 012 1.72c.13 1.02.37 2.02.72 2.99a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.09-1.08a2 2 0 012.11-.45c.97.35 1.97.59 2.99.72A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <strong>Phone</strong>
+              <a href="tel:+601640371660">+60 16-403 7166</a>
+            </div>
+          </div>
+
+          <div class="location__detail-item reveal-fade">
+            <div class="location__detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div>
+              <strong>Hours</strong>
+              <span>Mon–Sun: 11:00 – 22:00</span>
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="https://share.google/Qf5w6MPQgzl4QnkOF"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn--primary magnetic-btn ripple-btn reveal-fade"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <span>Get Directions</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT SECTION
+  ============================================================ -->
+  <section class="contact" id="contact" aria-label="Contact & Reservations">
+    <div class="contact__bg-text" aria-hidden="true">预约</div>
+
+    <div class="contact__container">
+
+      <div class="contact__info">
+        <span class="contact__tag reveal-fade">Reservations</span>
+        <h2 class="contact__title reveal-text">
+          Begin Your<br /><em>Culinary Journey</em>
+        </h2>
+        <p class="contact__body reveal-fade">
+          Reserve your table at Cheang's Restaurant and step into a world of authentic Chinese luxury. Our team is delighted to accommodate any occasion — from intimate dinners to grand celebrations.
+        </p>
+
+        <div class="contact__phone reveal-fade">
+          <span>Or call us directly</span>
+          <a href="tel:+601640371660" class="contact__phone-num">+60 16-403 7166</a>
+        </div>
+      </div>
+
+      <div class="contact__form-wrap reveal-fade">
+        <form class="contact__form" id="contactForm" novalidate>
+          <div class="form-group">
+            <input type="text" id="fullName" name="fullName" required autocomplete="name" />
+            <label for="fullName">Full Name</label>
+            <span class="form-error" id="fullNameError"></span>
+          </div>
+
+          <div class="form-group">
+            <input type="email" id="email" name="email" required autocomplete="email" />
+            <label for="email">Email Address</label>
+            <span class="form-error" id="emailError"></span>
+          </div>
+
+          <div class="form-group">
+            <input type="tel" id="phone" name="phone" required autocomplete="tel" />
+            <label for="phone">Phone Number</label>
+            <span class="form-error" id="phoneError"></span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <input type="date" id="resDate" name="resDate" required />
+              <label for="resDate" class="label--active">Date</label>
+              <span class="form-error" id="resDateError"></span>
+            </div>
+            <div class="form-group">
+              <input type="number" id="guests" name="guests" min="1" max="20" required />
+              <label for="guests">Guests</label>
+              <span class="form-error" id="guestsError"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <textarea id="message" name="message" rows="3"></textarea>
+            <label for="message">Special Requests (optional)</label>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full ripple-btn magnetic-btn" id="submitBtn">
+            <span>Confirm Reservation</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+
+          <div class="form-success" id="formSuccess" aria-live="polite">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+            <span>Your reservation has been sent! We'll confirm shortly.</span>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <span class="footer__logo-char">餐</span>
+          <span class="footer__logo-name">Cheang's Restaurant</span>
+        </div>
+        <p class="footer__tagline">Authentic Chinese Fine Dining<br />Since 1988 · Penang, Malaysia</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" class="footer__social" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="footer__social" aria-label="TikTok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.27 8.27 0 004.84 1.55V6.79a4.85 4.85 0 01-1.07-.1z"/></svg>
+          </a>
+          <a href="tel:+601640371660" class="footer__social" aria-label="WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.93 0C5.354 0 0 5.354 0 11.93c0 2.09.546 4.05 1.498 5.754L0 24l6.514-1.458a11.865 11.865 0 005.416 1.308c6.576 0 11.93-5.354 11.93-11.93S18.506 0 11.93 0zm0 21.805a9.87 9.87 0 01-5.026-1.372l-.36-.214-3.73.835.849-3.638-.235-.374a9.837 9.837 0 01-1.498-5.312c0-5.444 4.426-9.87 9.87-9.87s9.87 4.426 9.87 9.87-4.426 9.875-9.74 9.875z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__links-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#menu">Signature Menu</a></li>
+          <li><a href="#chef">Master Chef</a></li>
+          <li><a href="#experience">Dining Experience</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__links-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+601640371660">+60 16-403 7166</a></li>
+          <li><span>Penang, Malaysia</span></li>
+          <li><a href="#contact">Make a Reservation</a></li>
+          <li><a href="https://share.google/Qf5w6MPQgzl4QnkOF" target="_blank" rel="noopener">Get Directions</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__links-col">
+        <h4>Hours</h4>
+        <ul>
+          <li><span>Monday – Friday</span></li>
+          <li><span>11:00 – 22:00</span></li>
+          <li><span>Saturday – Sunday</span></li>
+          <li><span>10:00 – 23:00</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; 2025 Cheang's Restaurant. All rights reserved.</p>
+      <p>Crafted with passion in Penang, Malaysia</p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       BACK TO TOP
+  ============================================================ -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
