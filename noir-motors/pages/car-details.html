@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Phantom Noir — NOIR MOTORS™ Grand Tourer. 710hp, 3.1s to 100km/h, 328km/h top speed. Discover full specifications, gallery and commissioning details." />
+  <title>Phantom Noir — NOIR MOTORS™</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@100;200;300;400;500&family=Bebas+Neue&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+  <style>
+    /* ── Car Details Specific ── */
+    .car-hero {
+      height: 100svh;
+      min-height: 600px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+    .car-hero__bg {
+      position: absolute;
+      inset: 0;
+    }
+    .car-hero__bg img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 8s ease;
+    }
+    .car-hero__bg:hover img { transform: scale(1.03); }
+    .car-hero__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(8,8,8,0.05) 0%, rgba(8,8,8,0.85) 80%, var(--noir) 100%);
+    }
+    .car-hero__content {
+      position: relative; z-index: 1;
+      padding: 0 clamp(1.5rem,5vw,6rem) clamp(5rem,9vw,9rem);
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: flex-end;
+      gap: 3rem;
+    }
+    .car-hero__name {
+      font-family: var(--font-display);
+      font-size: clamp(4rem, 9vw, 9.5rem);
+      font-weight: 300;
+      line-height: 0.92;
+      letter-spacing: -0.025em;
+    }
+    .car-hero__name em { font-style: italic; color: var(--gold-light); }
+    .car-hero__right {
+      display: flex; flex-direction: column; align-items: flex-end; gap: 1.5rem;
+    }
+    .car-hero__price {
+      font-family: var(--font-display); font-size: 1.8rem; font-weight: 300;
+      color: var(--gold); text-align: right;
+    }
+    .car-hero__price-label {
+      font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--muted); text-align: right;
+      margin-bottom: 0.25rem;
+    }
+
+    /* ── Specs Section ── */
+    .car-specs-section {
+      padding: clamp(5rem,10vw,10rem) 0;
+      background: var(--surface);
+    }
+    .car-specs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+    }
+    .spec-group {
+      padding: clamp(2rem,4vw,4rem);
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+    }
+    .spec-group:nth-child(even) { border-right: none; }
+    .spec-group:last-child, .spec-group:nth-last-child(2):not(:nth-child(even)) {
+      border-bottom: none;
+    }
+    .spec-group__title {
+      font-size: 0.58rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1.5rem; font-weight: 400;
+    }
+    .spec-row {
+      display: flex; justify-content: space-between;
+      align-items: baseline; padding: 0.65rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      gap: 1rem;
+    }
+    .spec-row:last-child { border-bottom: none; }
+    .spec-row__key {
+      font-size: 0.75rem; color: var(--text-secondary); font-weight: 300;
+    }
+    .spec-row__value {
+      font-family: var(--font-display); font-size: 1rem; font-weight: 400;
+      color: var(--white); text-align: right;
+    }
+
+    /* ── Gallery Swiper ── */
+    .car-gallery-section { padding: clamp(5rem,10vw,10rem) 0; }
+    .car-gallery-swiper { overflow: hidden; }
+    .car-gallery-swiper .swiper-slide {
+      aspect-ratio: 16/9;
+      overflow: hidden;
+    }
+    .car-gallery-swiper .swiper-slide img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.8s var(--ease-smooth);
+    }
+    .car-gallery-swiper .swiper-slide:hover img { transform: scale(1.04); }
+    .car-gallery-nav {
+      display: flex; justify-content: center; gap: 1rem; margin-top: 2rem;
+      padding: 0 clamp(1.5rem,5vw,6rem);
+    }
+
+    /* ── Interior Section ── */
+    .car-interior-section {
+      padding: clamp(5rem,10vw,10rem) 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .car-interior-visual {
+      position: relative; overflow: hidden;
+    }
+    .car-interior-visual img { width: 100%; height: 100%; object-fit: cover; }
+    .car-interior-text {
+      background: var(--surface);
+      padding: clamp(3rem,7vw,7rem) clamp(2.5rem,5vw,5rem);
+      display: flex; flex-direction: column; justify-content: center;
+    }
+
+    /* ── Technology Section ── */
+    .technology-section {
+      padding: clamp(5rem,10vw,10rem) 0;
+      background: var(--noir-soft);
+    }
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-top: clamp(3rem,5vw,5rem);
+    }
+    .tech-item {
+      background: var(--noir-soft);
+      padding: clamp(2rem,4vw,3.5rem);
+      transition: background var(--transition-mid);
+    }
+    .tech-item:hover { background: var(--surface); }
+    .tech-item__icon {
+      width: 2.5rem; height: 2.5rem;
+      border: 1px solid var(--border-light);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.5rem;
+      color: var(--gold);
+    }
+    .tech-item__title {
+      font-family: var(--font-display); font-size: 1.2rem;
+      font-weight: 400; color: var(--white); margin-bottom: 0.75rem;
+    }
+    .tech-item__desc {
+      font-size: 0.78rem; line-height: 1.7; color: var(--text-secondary);
+    }
+
+    /* ── CTA Section ── */
+    .car-cta {
+      padding: clamp(6rem,12vw,12rem) 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .car-cta-bg {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    .car-cta-bg img {
+      width: 100%; height: 100%; object-fit: cover; opacity: 0.08;
+    }
+    .car-cta-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, transparent 30%, var(--noir-soft) 100%);
+    }
+    .car-cta-inner {
+      position: relative; z-index: 1;
+      max-width: 680px; margin: 0 auto;
+      padding: 0 clamp(1.5rem,5vw,6rem);
+    }
+    .car-cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2.5rem; }
+
+    /* ── Related ── */
+    .related-section { padding: clamp(5rem,10vw,10rem) 0; border-top: 1px solid var(--border); }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: clamp(3rem,5vw,5rem);
+    }
+    .related-card { position: relative; overflow: hidden; aspect-ratio: 4/3; cursor: pointer; }
+    .related-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease-smooth); }
+    .related-card:hover img { transform: scale(1.07); }
+    .related-card__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(8,8,8,0.9) 0%, transparent 60%);
+    }
+    .related-card__body {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 1.75rem;
+    }
+    .related-card__name {
+      font-family: var(--font-display); font-size: 1.6rem;
+      font-weight: 300; line-height: 1.1;
+    }
+    .related-card__price { font-size: 0.8rem; color: var(--gold); margin-top: 0.4rem; }
+
+    @media (max-width: 1024px) {
+      .car-hero__content { grid-template-columns: 1fr; }
+      .car-hero__right { align-items: flex-start; }
+      .car-hero__price { text-align: left; }
+      .car-hero__price-label { text-align: left; }
+      .car-specs-grid { grid-template-columns: 1fr; }
+      .spec-group { border-right: none; }
+      .car-interior-section { grid-template-columns: 1fr; }
+      .car-interior-visual { min-height: 50vw; }
+      .tech-grid { grid-template-columns: 1fr 1fr; }
+      .related-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .tech-grid { grid-template-columns: 1fr; }
+      .related-grid { grid-template-columns: 1fr; }
+      .car-hero__name { font-size: clamp(3rem,10vw,5rem); }
+    }
+    @media (max-width: 640px) {
+      .car-cta-actions { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="scroll-progress"></div>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+
+<!-- ── Navigation ── -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <span class="nav-logo__wordmark">NOIR MOTORS</span>
+      <span class="nav-logo__tagline">Ultra-Luxury Automotive</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html" class="nav-link">Home</a></li>
+      <li><a href="collection.html" class="nav-link active">Collection</a></li>
+      <li><a href="about.html" class="nav-link">Atelier</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Book Test Drive</a>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu">
+  <button class="mobile-menu__close" aria-label="Close menu">
+    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
+      <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </button>
+  <ul class="mobile-nav-links">
+    <li><a href="../index.html" class="mobile-nav-link">Home</a></li>
+    <li><a href="collection.html" class="mobile-nav-link">Collection</a></li>
+    <li><a href="about.html" class="mobile-nav-link">Atelier</a></li>
+    <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+  </ul>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     CAR HERO
+════════════════════════════════════════════════════════ -->
+<section class="car-hero" aria-label="Phantom Noir Hero">
+  <div class="car-hero__bg">
+    <img
+      src="https://images.pexels.com/photos/33345481/pexels-photo-33345481.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1080&w=1920"
+      alt="Phantom Noir — Full hero photograph"
+      width="1920" height="1080"
+    />
+  </div>
+  <div class="car-hero__overlay" aria-hidden="true"></div>
+  <div class="car-hero__content">
+    <div>
+      <span class="t-label" style="display:block; margin-bottom: 1.5rem;">Grand Tourer — Model Year 2025</span>
+      <h1 class="car-hero__name">Phantom<br /><em>Noir</em></h1>
+    </div>
+    <div class="car-hero__right">
+      <div>
+        <p class="car-hero__price-label">Starting Price</p>
+        <p class="car-hero__price">CHF 485,000</p>
+      </div>
+      <div style="display: flex; gap: 3rem;">
+        <div>
+          <div style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 300; color: var(--white); line-height: 1;">710<span style="font-size: 1.2rem; color: var(--muted);">hp</span></div>
+          <div class="t-label" style="margin-top: 0.25rem; color: var(--muted);">Power</div>
+        </div>
+        <div>
+          <div style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 300; color: var(--white); line-height: 1;">3.1<span style="font-size: 1.2rem; color: var(--muted);">s</span></div>
+          <div class="t-label" style="margin-top: 0.25rem; color: var(--muted);">0–100</div>
+        </div>
+        <div>
+          <div style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 300; color: var(--white); line-height: 1;">328<span style="font-size: 1.2rem; color: var(--muted);">km/h</span></div>
+          <div class="t-label" style="margin-top: 0.25rem; color: var(--muted);">Top Speed</div>
+        </div>
+      </div>
+      <a href="contact.html" class="btn btn--primary" style="align-self: flex-start;">
+        <span>Book Test Drive</span>
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     INTRODUCTION
+════════════════════════════════════════════════════════ -->
+<section class="section--padded" style="background: var(--noir);">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: clamp(3rem,6vw,8rem); align-items: start;" class="intro-text-grid">
+      <div data-reveal>
+        <p class="t-label">Model Overview</p>
+        <p style="font-family: var(--font-display); font-size: 5rem; font-weight: 300; color: var(--border-light); line-height: 1; margin-top: 0.5rem;">01</p>
+      </div>
+      <div data-reveal style="padding-top: 0.5rem;">
+        <span class="accent-line"></span>
+        <h2 class="t-display" style="margin-bottom: 2rem;">The Machine<br />That <em>Started</em><br />Everything.</h2>
+        <p class="t-body" style="font-size: 1rem; margin-bottom: 1.5rem;">The Phantom Noir arrived in 2021 as an answer to a question the automotive world had stopped asking: what would happen if a car was designed without compromise, without market research, and without a single concession to commercial expectation?</p>
+        <p class="t-body" style="font-size: 1rem; margin-bottom: 1.5rem;">The result was a machine that inhabits its own category. Not supercar — too refined. Not grand tourer — too fast. Not luxury sedan — too raw. The Phantom Noir is simply, and entirely, itself.</p>
+        <p class="t-body" style="font-size: 1rem;">Each one is commissioned individually. Each one differs from the last. Over the three years since its debut, no two Phantom Noirs have been identical.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     GALLERY
+════════════════════════════════════════════════════════ -->
+<section class="car-gallery-section" aria-label="Photo Gallery">
+  <div class="container" style="padding-bottom: 2rem;">
+    <span class="t-label">Visual Gallery</span>
+  </div>
+  <div class="swiper car-gallery-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="https://images.pexels.com/photos/33345481/pexels-photo-33345481.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=1600" alt="Phantom Noir — Studio side profile" loading="lazy" width="1600" height="900" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://images.pexels.com/photos/33268786/pexels-photo-33268786.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=1600" alt="Phantom Noir — White variant garage" loading="lazy" width="1600" height="900" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://images.pexels.com/photos/12066287/pexels-photo-12066287.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=1600" alt="Phantom Noir — Exterior black" loading="lazy" width="1600" height="900" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://images.pexels.com/photos/94272/sports-car-pkw-auto-vehicle-94272.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=1600" alt="Phantom Noir — Front profile" loading="lazy" width="1600" height="900" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://images.pexels.com/photos/31417508/pexels-photo-31417508.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=1600" alt="Phantom Noir — Action city" loading="lazy" width="1600" height="900" />
+      </div>
+    </div>
+    <div class="car-gallery-nav">
+      <button class="swiper-btn swiper-btn--prev" id="galleryPrev" aria-label="Previous image">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </button>
+      <div class="swiper-pagination" id="galleryPagination"></div>
+      <button class="swiper-btn swiper-btn--next" id="galleryNext" aria-label="Next image">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     PERFORMANCE SPECIFICATIONS
+════════════════════════════════════════════════════════ -->
+<section class="car-specs-section" aria-label="Performance Specifications">
+  <div class="container">
+    <div data-reveal>
+      <span class="t-label">Full Specification</span>
+      <h2 class="t-display" style="margin: 1.2rem 0 3rem;">Technical<br /><em>Excellence</em></h2>
+    </div>
+    <div class="car-specs-grid">
+      <div class="spec-group">
+        <div class="spec-group__title">Powertrain</div>
+        <div class="spec-row"><span class="spec-row__key">Engine</span><span class="spec-row__value">5.2L V10 Twin-Turbo</span></div>
+        <div class="spec-row"><span class="spec-row__key">Displacement</span><span class="spec-row__value">5,204 cc</span></div>
+        <div class="spec-row"><span class="spec-row__key">Max Power</span><span class="spec-row__value">710 hp @ 7,200 rpm</span></div>
+        <div class="spec-row"><span class="spec-row__key">Max Torque</span><span class="spec-row__value">850 Nm @ 4,500 rpm</span></div>
+        <div class="spec-row"><span class="spec-row__key">Compression Ratio</span><span class="spec-row__value">11.2:1</span></div>
+        <div class="spec-row"><span class="spec-row__key">Fuel System</span><span class="spec-row__value">Direct Injection, Dual Turbo</span></div>
+        <div class="spec-row"><span class="spec-row__key">Transmission</span><span class="spec-row__value">8-Speed DCT, Paddle Shift</span></div>
+        <div class="spec-row"><span class="spec-row__key">Drive</span><span class="spec-row__value">Rear-Wheel Drive (AWD Optional)</span></div>
+      </div>
+      <div class="spec-group">
+        <div class="spec-group__title">Performance</div>
+        <div class="spec-row"><span class="spec-row__key">0–100 km/h</span><span class="spec-row__value">3.1 seconds</span></div>
+        <div class="spec-row"><span class="spec-row__key">0–200 km/h</span><span class="spec-row__value">8.7 seconds</span></div>
+        <div class="spec-row"><span class="spec-row__key">Top Speed</span><span class="spec-row__value">328 km/h</span></div>
+        <div class="spec-row"><span class="spec-row__key">Braking 100–0</span><span class="spec-row__value">31 metres</span></div>
+        <div class="spec-row"><span class="spec-row__key">Lateral G</span><span class="spec-row__value">1.38g (dry)</span></div>
+        <div class="spec-row"><span class="spec-row__key">Nürburgring</span><span class="spec-row__value">7:04.2 (optional GTR)</span></div>
+        <div class="spec-row"><span class="spec-row__key">Fuel Consumption</span><span class="spec-row__value">12.4L/100km (combined)</span></div>
+        <div class="spec-row"><span class="spec-row__key">CO₂ Emissions</span><span class="spec-row__value">281 g/km</span></div>
+      </div>
+      <div class="spec-group">
+        <div class="spec-group__title">Chassis & Suspension</div>
+        <div class="spec-row"><span class="spec-row__key">Chassis</span><span class="spec-row__value">Carbon Fibre Monocoque</span></div>
+        <div class="spec-row"><span class="spec-row__key">Front Suspension</span><span class="spec-row__value">Double Wishbone, MR Dampers</span></div>
+        <div class="spec-row"><span class="spec-row__key">Rear Suspension</span><span class="spec-row__value">Multi-Link, MR Dampers</span></div>
+        <div class="spec-row"><span class="spec-row__key">Front Brakes</span><span class="spec-row__value">420mm Carbon Ceramic, 10-Piston</span></div>
+        <div class="spec-row"><span class="spec-row__key">Rear Brakes</span><span class="spec-row__value">390mm Carbon Ceramic, 6-Piston</span></div>
+        <div class="spec-row"><span class="spec-row__key">Traction Control</span><span class="spec-row__value">Adaptive Torque Vectoring</span></div>
+        <div class="spec-row"><span class="spec-row__key">Steering</span><span class="spec-row__value">Variable Ratio, Electrohydraulic</span></div>
+      </div>
+      <div class="spec-group">
+        <div class="spec-group__title">Dimensions & Weight</div>
+        <div class="spec-row"><span class="spec-row__key">Length</span><span class="spec-row__value">4,620 mm</span></div>
+        <div class="spec-row"><span class="spec-row__key">Width</span><span class="spec-row__value">2,010 mm (mirrors folded)</span></div>
+        <div class="spec-row"><span class="spec-row__key">Height</span><span class="spec-row__value">1,195 mm</span></div>
+        <div class="spec-row"><span class="spec-row__key">Wheelbase</span><span class="spec-row__value">2,680 mm</span></div>
+        <div class="spec-row"><span class="spec-row__key">Dry Weight</span><span class="spec-row__value">1,340 kg</span></div>
+        <div class="spec-row"><span class="spec-row__key">Weight Distribution</span><span class="spec-row__value">42:58 F:R</span></div>
+        <div class="spec-row"><span class="spec-row__key">Fuel Tank</span><span class="spec-row__value">82 litres</span></div>
+        <div class="spec-row"><span class="spec-row__key">Luggage Capacity</span><span class="spec-row__value">320 litres</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     INTERIOR PHOTOGRAPHY
+════════════════════════════════════════════════════════ -->
+<section class="car-interior-section" aria-label="Interior">
+  <div class="car-interior-visual parallax-wrap">
+    <img
+      class="parallax-img"
+      src="https://images.pexels.com/photos/20695257/pexels-photo-20695257.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=900"
+      alt="Phantom Noir interior — Red leather cockpit"
+      loading="lazy"
+      width="900" height="900"
+    />
+  </div>
+  <div class="car-interior-text" data-reveal="right">
+    <span class="t-label">The Sanctuary</span>
+    <h2 class="t-display" style="margin: 1.2rem 0 2rem; font-size: clamp(2rem,4vw,4rem);">An Interior<br /><em>Tailored</em><br />To You Alone</h2>
+    <p class="t-body" style="margin-bottom: 1.5rem;">The Phantom Noir's cabin is a commission in itself. No two interiors have ever been identical. Your Commissioning Director will spend four to six months understanding your preferences before a single stitch is made.</p>
+    <p class="t-body" style="margin-bottom: 2rem;">Options include 847 exterior colours, 340 leather shades, 16 wood and carbon trim combinations, and complete embroidery personalisation on every fabric surface.</p>
+    <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem;">
+      <div class="interior-feature">
+        <div class="interior-feature__icon" aria-hidden="true"></div>
+        <span class="interior-feature__text">Full-grain Florentine nappa leather</span>
+      </div>
+      <div class="interior-feature">
+        <div class="interior-feature__icon" aria-hidden="true"></div>
+        <span class="interior-feature__text">Bespoke OLED driver information display</span>
+      </div>
+      <div class="interior-feature">
+        <div class="interior-feature__icon" aria-hidden="true"></div>
+        <span class="interior-feature__text">18-speaker Meridian Signature audio</span>
+      </div>
+      <div class="interior-feature">
+        <div class="interior-feature__icon" aria-hidden="true"></div>
+        <span class="interior-feature__text">Titanium and carbon trim packages</span>
+      </div>
+      <div class="interior-feature">
+        <div class="interior-feature__icon" aria-hidden="true"></div>
+        <span class="interior-feature__text">Climate-controlled sport seats, 22-way</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     TECHNOLOGY HIGHLIGHTS
+════════════════════════════════════════════════════════ -->
+<section class="technology-section" aria-label="Technology">
+  <div class="container">
+    <div data-reveal>
+      <span class="t-label">Technology</span>
+      <h2 class="t-display" style="margin: 1.2rem 0 0.5rem; max-width: 540px;">Intelligence<br /><em>Woven</em> Into<br />Every System</h2>
+    </div>
+    <div class="tech-grid stagger-children">
+      <div class="tech-item">
+        <div class="tech-item__icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div class="tech-item__title">Active Aerodynamics</div>
+        <p class="tech-item__desc">Adaptive front splitter and rear wing generate up to 320kg of downforce. The system reads conditions 500 times per second and adjusts within 12ms.</p>
+      </div>
+      <div class="tech-item">
+        <div class="tech-item__icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="tech-item__title">Adaptive MR Suspension</div>
+        <p class="tech-item__desc">Magnetorheological dampers respond in under 3ms, continuously adjusting to road surface data from six accelerometers and 12 body sensors.</p>
+      </div>
+      <div class="tech-item">
+        <div class="tech-item__icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="tech-item__title">OLED Driver Interface</div>
+        <p class="tech-item__desc">A custom-designed curved OLED instrument cluster provides critical information at a glance. Content adapts to driving mode — track, sport, or touring.</p>
+      </div>
+      <div class="tech-item">
+        <div class="tech-item__icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="tech-item__title">Dynamic Torque Vectoring</div>
+        <p class="tech-item__desc">Electronic rear differential distributes torque across both axles with 100ms precision, eliminating understeer and maximising traction at all speeds.</p>
+      </div>
+      <div class="tech-item">
+        <div class="tech-item__icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+        </div>
+        <div class="tech-item__title">Meridian Signature Audio</div>
+        <p class="tech-item__desc">An 18-speaker, 1,300W Meridian Signature Reference system, calibrated individually for each cabin configuration. The only audio system we approve.</p>
+      </div>
+      <div class="tech-item">
+        <div class="tech-item__icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        </div>
+        <div class="tech-item__title">Night Vision & HUD</div>
+        <p class="tech-item__desc">Forward infrared camera detects obstacles at up to 280m. Key data is projected on the windscreen via full-colour HUD — speed, navigation, night-detection alerts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     TEST DRIVE CTA
+════════════════════════════════════════════════════════ -->
+<section class="car-cta" aria-label="Commission CTA">
+  <div class="car-cta-bg" aria-hidden="true">
+    <img
+      src="https://images.pexels.com/photos/31574920/pexels-photo-31574920.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1600"
+      alt=""
+      loading="lazy"
+      width="1600" height="800"
+    />
+  </div>
+  <div class="car-cta-inner" data-reveal>
+    <span class="t-label">Begin Your Journey</span>
+    <h2 class="t-display" style="margin: 1.5rem 0 1.5rem;">Commission<br /><em>Your</em> Phantom Noir</h2>
+    <p class="t-body" style="max-width: 500px; margin: 0 auto;">Your Commissioning Director will guide you through every decision, from mechanical specification to the exact shade of thread used in your headrest embroidery. The process takes four to six months. The result lasts a lifetime.</p>
+    <div class="car-cta-actions">
+      <a href="contact.html" class="btn btn--primary">
+        <span>Begin Commission</span>
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="contact.html" class="btn btn--outline"><span>Book Test Drive</span></a>
+      <a href="collection.html" class="btn btn--ghost"><span>View Full Collection</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     RELATED MODELS
+════════════════════════════════════════════════════════ -->
+<section class="related-section" aria-label="Related Models">
+  <div class="container">
+    <span class="t-label">Also in the Collection</span>
+    <div class="related-grid">
+      <div class="related-card">
+        <img
+          src="https://images.pexels.com/photos/30664842/pexels-photo-30664842.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800"
+          alt="Obsidian R — Related model"
+          loading="lazy"
+          width="800" height="600"
+        />
+        <div class="related-card__overlay" aria-hidden="true"></div>
+        <div class="related-card__body">
+          <span class="t-label">Track–Road</span>
+          <h3 class="related-card__name">Obsidian <em style="font-style:italic;">R</em></h3>
+          <p class="related-card__price">From CHF 640,000</p>
+        </div>
+      </div>
+      <div class="related-card">
+        <img
+          src="https://images.pexels.com/photos/35319488/pexels-photo-35319488.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800"
+          alt="Séraph V — Related model"
+          loading="lazy"
+          width="800" height="600"
+        />
+        <div class="related-card__overlay" aria-hidden="true"></div>
+        <div class="related-card__body">
+          <span class="t-label">Hyper GT</span>
+          <h3 class="related-card__name">Séraph <em style="font-style:italic;">V</em></h3>
+          <p class="related-card__price">From CHF 1,200,000</p>
+        </div>
+      </div>
+      <div class="related-card">
+        <img
+          src="https://images.pexels.com/photos/31574915/pexels-photo-31574915.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800"
+          alt="Eclipse GT — Related model"
+          loading="lazy"
+          width="800" height="600"
+        />
+        <div class="related-card__overlay" aria-hidden="true"></div>
+        <div class="related-card__body">
+          <span class="t-label">Open Top</span>
+          <h3 class="related-card__name">Eclipse <em style="font-style:italic;">GT</em></h3>
+          <p class="related-card__price">From CHF 395,000</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand__logo">NOIR MOTORS</div>
+        <div class="footer-brand__tagline">Ultra-Luxury Automotive</div>
+        <p class="footer-brand__desc">Established 2019 in Geneva, Switzerland.</p>
+      </div>
+      <div>
+        <div class="footer-nav-title">Collection</div>
+        <ul class="footer-nav-links">
+          <li><a href="collection.html#phantom-noir" class="footer-nav-link">Phantom Noir</a></li>
+          <li><a href="collection.html#obsidian-r" class="footer-nav-link">Obsidian R</a></li>
+          <li><a href="collection.html#seraph-v" class="footer-nav-link">Séraph V</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-nav-title">Company</div>
+        <ul class="footer-nav-links">
+          <li><a href="about.html" class="footer-nav-link">Our Atelier</a></li>
+          <li><a href="contact.html" class="footer-nav-link">Commission</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-nav-title">Contact</div>
+        <a href="mailto:commission@noirmotors.com" class="footer-contact-value">commission@noirmotors.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom__copy">© 2025 Noir Motors SA. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/animations.js" defer></script>
+<script src="../js/app.js" defer></script>
+<script>
+  // Gallery Swiper init
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof Swiper !== 'undefined') {
+      new Swiper('.car-gallery-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 2,
+        speed: 900,
+        loop: true,
+        autoplay: { delay: 5000, disableOnInteraction: false },
+        pagination: { el: '#galleryPagination', clickable: true },
+        navigation: { prevEl: '#galleryPrev', nextEl: '#galleryNext' },
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
