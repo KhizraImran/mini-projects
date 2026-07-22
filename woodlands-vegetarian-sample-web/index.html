@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Woodlands Vegetarian Restaurant — George Town, Penang</title>
+  <meta name="description" content="Authentic South & North Indian vegetarian cuisine in the heart of Little India, George Town, Penang. Pure vegetarian since decades." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════ NAVBAR ═══════════════════════════════════════ -->
+<header id="site-header">
+  <nav>
+    <a href="#hero" class="nav-logo" aria-label="Woodlands Home">W</a>
+
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <a href="#contact" class="nav-reserve">Reserve a Table</a>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <button class="mobile-menu-close" id="mobile-close" aria-label="Close menu">&times;</button>
+  <ul class="mobile-menu-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════════════════════ MAIN ═══════════════════════════════════════ -->
+<main>
+
+  <!-- ─── HERO ─── -->
+  <section id="hero">
+    <!-- Floating particles -->
+    <span class="particle" style="width:3px;height:3px;background:var(--gold);left:7%;animation-duration:9s;animation-delay:0s;top:90%;"></span>
+    <span class="particle" style="width:2px;height:2px;background:var(--sage);left:15%;animation-duration:12s;animation-delay:1.2s;top:85%;"></span>
+    <span class="particle" style="width:4px;height:4px;background:var(--gold);left:23%;animation-duration:8s;animation-delay:0.5s;top:92%;"></span>
+    <span class="particle" style="width:2px;height:2px;background:var(--sage);left:31%;animation-duration:11s;animation-delay:2.1s;top:88%;"></span>
+    <span class="particle" style="width:3px;height:3px;background:var(--gold);left:40%;animation-duration:7s;animation-delay:0.8s;top:95%;"></span>
+    <span class="particle" style="width:2px;height:2px;background:var(--sage);left:50%;animation-duration:10s;animation-delay:3s;top:80%;"></span>
+    <span class="particle" style="width:4px;height:4px;background:var(--gold);left:58%;animation-duration:9s;animation-delay:1.5s;top:90%;"></span>
+    <span class="particle" style="width:2px;height:2px;background:var(--sage);left:65%;animation-duration:13s;animation-delay:0.3s;top:86%;"></span>
+    <span class="particle" style="width:3px;height:3px;background:var(--gold);left:72%;animation-duration:8s;animation-delay:4s;top:93%;"></span>
+    <span class="particle" style="width:2px;height:2px;background:var(--sage);left:79%;animation-duration:11s;animation-delay:2.7s;top:88%;"></span>
+    <span class="particle" style="width:4px;height:4px;background:var(--gold);left:85%;animation-duration:6s;animation-delay:0.9s;top:91%;"></span>
+    <span class="particle" style="width:2px;height:2px;background:var(--sage);left:91%;animation-duration:10s;animation-delay:1.8s;top:84%;"></span>
+    <span class="particle" style="width:3px;height:3px;background:var(--gold);left:4%;animation-duration:14s;animation-delay:5s;top:78%;"></span>
+    <span class="particle" style="width:2px;height:2px;background:var(--sage);left:96%;animation-duration:9s;animation-delay:3.5s;top:87%;"></span>
+
+    <div class="hero-content">
+      <p class="hero-label">Pure Vegetarian Since George Town</p>
+
+      <div class="hero-image-wrap">
+        <img
+          src="https://images.pexels.com/photos/29148133/pexels-photo-29148133.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=650&w=650"
+          alt="Woodlands Special Thali — the heart of South Indian vegetarian cuisine"
+          loading="eager"
+        />
+      </div>
+
+      <h1 class="hero-title">Woodlands</h1>
+      <p class="hero-subtitle">Vegetarian Restaurant</p>
+      <p class="hero-tagline">Authentic South &amp; North Indian Cuisine &middot; 60 Lebuh Penang, George Town</p>
+
+      <div class="hero-cta">
+        <a href="#menu" class="btn-primary">Explore Menu</a>
+        <a href="#about" class="btn-ghost">Our Heritage</a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <div class="scroll-line"></div>
+      <div class="scroll-chevron"></div>
+    </div>
+  </section>
+
+  <!-- ─── MARQUEE STRIP ─── -->
+  <div id="marquee-strip" aria-hidden="true">
+    <div class="marquee-inner">
+      <span>Masala Dosa &middot; Woodlands Thali &middot; Madras Filter Coffee &middot; Chenna Batura &middot; Uttapam &middot; Rasam Vada &middot; Appam &middot; Paniyaram &middot; Pudina Paratha &middot; Idli &middot; Biryani &middot; Salted Lassi &middot;&nbsp;&nbsp;&nbsp;</span>
+      <span>Masala Dosa &middot; Woodlands Thali &middot; Madras Filter Coffee &middot; Chenna Batura &middot; Uttapam &middot; Rasam Vada &middot; Appam &middot; Paniyaram &middot; Pudina Paratha &middot; Idli &middot; Biryani &middot; Salted Lassi &middot;&nbsp;&nbsp;&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- ─── MENU ─── -->
+  <section id="menu">
+    <div class="section-inner">
+      <h2 class="section-heading reveal">What We Serve</h2>
+      <hr class="gold-rule" />
+
+      <!-- Tab Buttons -->
+      <div class="tab-bar" role="tablist">
+        <button class="tab-btn" data-tab="tab-breakfast" role="tab" aria-selected="true">Breakfast</button>
+        <button class="tab-btn" data-tab="tab-mains" role="tab" aria-selected="false">Thali &amp; Mains</button>
+        <button class="tab-btn" data-tab="tab-breads" role="tab" aria-selected="false">Breads &amp; Sides</button>
+      </div>
+
+      <!-- Breakfast Tab -->
+      <div id="tab-breakfast" class="tab-content" role="tabpanel">
+
+        <article class="menu-card reveal">
+          <img class="menu-card-img" src="https://images.pexels.com/photos/20422138/pexels-photo-20422138.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Paper Dosa" loading="lazy" />
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">Paper Dosa</h3>
+            <p class="menu-card-desc">Crispy rice crepe, light as air</p>
+            <div class="menu-card-footer">
+              <span class="veg-badge">veg</span>
+              <span class="menu-card-price">RM 6</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card reveal">
+          <img class="menu-card-img" src="https://images.pexels.com/photos/20422128/pexels-photo-20422128.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Idli with Sambar" loading="lazy" />
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">Idli with Sambar</h3>
+            <p class="menu-card-desc">Steamed rice cakes, classic comfort</p>
+            <div class="menu-card-footer">
+              <span class="veg-badge">veg</span>
+              <span class="menu-card-price">RM 5</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card reveal">
+          <img class="menu-card-img" src="https://images.pexels.com/photos/8819843/pexels-photo-8819843.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Appam" loading="lazy" />
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">Appam</h3>
+            <p class="menu-card-desc">Soft hoppers, slight coconut sweetness</p>
+            <div class="menu-card-footer">
+              <span class="veg-badge">veg</span>
+              <span class="menu-card-price">RM 4</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card reveal">
+          <img class="menu-card-img" src="https://images.pexels.com/photos/20422126/pexels-photo-20422126.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Kuzli Paniyaram" loading="lazy" />
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">Kuzli Paniyaram</h3>
+            <p class="menu-card-desc">Bite-sized savory rice spheres</p>
+            <div class="menu-card-footer">
+              <span class="veg-badge">veg</span>
+              <span class="menu-card-price">RM 5</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card reveal">
+          <img class="menu-card-img" src="https://images.pexels.com/photos/20422133/pexels-photo-20422133.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Masala Dosa" loading="lazy" />
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">Masala Dosa</h3>
+            <p class="menu-card-desc">Golden crepe, spiced potato filling</p>
+            <div class="menu-card-footer">
+              <span class="veg-badge">veg</span>
+              <span class="menu-card-price">RM 7</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Thali & Mains Tab -->
+      <div id="tab-mains" class="tab-content" role="tabpanel">
+
+        <article class="menu-card reveal">
+          <img class="menu-card-img" src="https://images.pexels.com/photos/8818723/pexels-photo-8818723.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Woodlands Special Thali" loading="lazy" />
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">Woodlands Special Thali</h3>
+            <p class="menu-card-desc">Rice, 9 gravies, dhal, vegetables, chapati, papadom</p>
+            <div class="menu-card-footer">
+              <span class="veg-badge">veg</span>
+              <span class="menu-card-price">RM 13</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card reveal">
+          <img class="menu-card-img" src="https://images.pexels.com/photos/29148133/pexels-photo-29148133.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Bombay Thali Set" loading="lazy" />
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">Bombay Thali Set</h3>
+            <p class="menu-card-desc">North Indian platter, full spread</p>
+            <div class="menu-card-footer">
+              <span class="veg-badge">veg</span>
+              <span class="menu-card-price">RM 15</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card reveal">
+          <img class="menu-card-img" src="https://images.pexels.com/photos/28674713/pexels-photo-28674713.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Tairu Saadam" loading="lazy" />
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">Tairu Saadam</h3>
+            <p class="menu-card-desc">Curd rice, cooling and comforting</p>
+            <div class="menu-card-footer">
+              <span class="veg-badge">veg</span>
+              <span class="menu-card-price">RM 7</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card reveal">
+          <img class="menu-card-img" src="https://images.pexels.com/photos/35287417/pexels-photo-35287417.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Vegetable Biryani" loading="lazy" />
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">Vegetable Biryani</h3>
+            <p class="menu-card-desc">Aromatic basmati, whole spices</p>
+            <div class="menu-card-footer">
+              <span class="veg-badge">veg</span>
+              <span class="menu-card-price">RM 11</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card reveal">
+          <img class="menu-card-img" src="https://images.pexels.com/photos/17223838/pexels-photo-17223838.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Chana Paneer" loading="lazy" />
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">Chana Paneer</h3>
+            <p class="menu-card-desc">Chickpeas in rich North Indian masala</p>
+            <div class="menu-card-footer">
+              <span class="veg-badge">veg</span>
+              <span class="menu-card-price">RM 9</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Breads & Sides Tab -->
+      <div id="tab-breads" class="tab-content" role="tabpanel">
+
+        <article class="menu-card reveal">
+          <img class="menu-card-img" src="https://images.pexels.com/photos/12427783/pexels-photo-12427783.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Chenna Batura" loading="lazy" />
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">Chenna Batura</h3>
+            <p class="menu-card-desc">Football-sized puffed bread with chickpea curry</p>
+            <div class="menu-card-footer">
+              <span class="veg-badge">veg</span>
+              <span class="menu-card-price">RM 5.50</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card reveal">
+          <img class="menu-card-img" src="https://images.pexels.com/photos/20422133/pexels-photo-20422133.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Pudina Paratha" loading="lazy" />
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">Pudina Paratha</h3>
+            <p class="menu-card-desc">Flaky flatbread stuffed with fresh mint</p>
+            <div class="menu-card-footer">
+              <span class="veg-badge">veg</span>
+              <span class="menu-card-price">RM 6</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card reveal">
+          <img class="menu-card-img" src="https://images.pexels.com/photos/37223237/pexels-photo-37223237.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Butter Naan" loading="lazy" />
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">Butter Naan</h3>
+            <p class="menu-card-desc">Tandoor-kissed, brushed with butter</p>
+            <div class="menu-card-footer">
+              <span class="veg-badge">veg</span>
+              <span class="menu-card-price">RM 5</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card reveal">
+          <img class="menu-card-img" src="https://images.pexels.com/photos/20422130/pexels-photo-20422130.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Tomato Uttapam" loading="lazy" />
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">Tomato Uttapam</h3>
+            <p class="menu-card-desc">Thick savory pancake with tomato topping</p>
+            <div class="menu-card-footer">
+              <span class="veg-badge">veg</span>
+              <span class="menu-card-price">RM 7</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card reveal">
+          <img class="menu-card-img" src="https://images.pexels.com/photos/6252732/pexels-photo-6252732.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Baigen Bartha" loading="lazy" />
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">Baigen Bartha</h3>
+            <p class="menu-card-desc">Smoky slow-roasted brinjal dip</p>
+            <div class="menu-card-footer">
+              <span class="veg-badge">veg</span>
+              <span class="menu-card-price">RM 6</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT ─── -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+
+        <!-- Photo Side -->
+        <div class="about-photos reveal">
+          <div class="about-accent-bar"></div>
+          <img
+            class="about-img-top"
+            src="https://images.pexels.com/photos/6876600/pexels-photo-6876600.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=700"
+            alt="Restaurant interior — warm heritage dining atmosphere"
+            loading="lazy"
+          />
+          <img
+            class="about-img-bottom"
+            src="https://images.pexels.com/photos/8819771/pexels-photo-8819771.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=340&w=480"
+            alt="Traditional Indian food spread — the Woodlands experience"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Text Side -->
+        <div class="about-text reveal">
+          <p class="about-label">Our Heritage</p>
+          <h2 class="about-heading">Decades of Pure, Honest Flavour</h2>
+          <p class="about-body">
+            Rooted in the heart of Little India, George Town — a UNESCO World Heritage enclave — Woodlands has been serving pure vegetarian Indian cuisine for decades. From the first paper dosa at 8:30 in the morning to a hearty thali at noon, every dish is made with the same commitment to authentic South and North Indian cooking. No meat. No compromise.
+          </p>
+          <div class="about-stats">
+            <span class="stat-chip">450+ Reviews</span>
+            <span class="stat-chip">#125 in George Town</span>
+          </div>
+          <a href="#menu" class="about-cta">View Full Menu</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SIGNATURE HORIZONTAL SCROLL ─── -->
+  <section id="signatures">
+    <div class="section-inner">
+      <h2 class="section-heading section-heading-centered reveal">Our Signatures</h2>
+
+      <div class="sig-scroll-wrap" id="sig-scroll">
+
+        <div class="sig-card reveal">
+          <img class="sig-card-bg" src="https://images.pexels.com/photos/8818723/pexels-photo-8818723.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=760&w=560" alt="Woodlands Thali" loading="lazy" />
+          <div class="sig-card-overlay"></div>
+          <div class="sig-card-text">
+            <p class="sig-card-desc">Nine gravies, dhal, chapati &amp; papadom — served with ceremony</p>
+            <h3 class="sig-card-name">Woodlands Thali</h3>
+          </div>
+        </div>
+
+        <div class="sig-card reveal">
+          <img class="sig-card-bg" src="https://images.pexels.com/photos/20422138/pexels-photo-20422138.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=760&w=560" alt="Masala Dosa" loading="lazy" />
+          <div class="sig-card-overlay"></div>
+          <div class="sig-card-text">
+            <p class="sig-card-desc">Golden, paper-thin crepe wrapped around spiced potato filling</p>
+            <h3 class="sig-card-name">Masala Dosa</h3>
+          </div>
+        </div>
+
+        <div class="sig-card reveal">
+          <img class="sig-card-bg" src="https://images.pexels.com/photos/13376622/pexels-photo-13376622.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=760&w=560" alt="Madras Filter Coffee" loading="lazy" />
+          <div class="sig-card-overlay"></div>
+          <div class="sig-card-text">
+            <p class="sig-card-desc">Slow-dripped, chicory-blended, poured from a height for that signature froth</p>
+            <h3 class="sig-card-name">Madras Filter Coffee</h3>
+          </div>
+        </div>
+
+        <div class="sig-card reveal">
+          <img class="sig-card-bg" src="https://images.pexels.com/photos/12427783/pexels-photo-12427783.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=760&w=560" alt="Chenna Batura" loading="lazy" />
+          <div class="sig-card-overlay"></div>
+          <div class="sig-card-text">
+            <p class="sig-card-desc">Football-sized puffed bread paired with robust chickpea curry</p>
+            <h3 class="sig-card-name">Chenna Batura</h3>
+          </div>
+        </div>
+
+        <div class="sig-card reveal">
+          <img class="sig-card-bg" src="https://images.pexels.com/photos/37223237/pexels-photo-37223237.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=760&w=560" alt="Pudina Paratha" loading="lazy" />
+          <div class="sig-card-overlay"></div>
+          <div class="sig-card-text">
+            <p class="sig-card-desc">Layers of flaky dough, stuffed with fresh wild mint leaves</p>
+            <h3 class="sig-card-name">Pudina Paratha</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── GALLERY ─── -->
+  <section id="gallery">
+    <div class="section-inner">
+      <h2 class="section-heading section-heading-centered reveal">A Feast for the Eyes</h2>
+
+      <div class="gallery-grid">
+
+        <div class="gallery-item reveal">
+          <img src="https://images.pexels.com/photos/20422138/pexels-photo-20422138.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=500&w=700" alt="South Indian dosa restaurant" loading="lazy" />
+        </div>
+
+        <div class="gallery-item reveal">
+          <img src="https://images.pexels.com/photos/29148133/pexels-photo-29148133.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=700&w=700" alt="Indian thali plate" loading="lazy" />
+        </div>
+
+        <div class="gallery-item reveal">
+          <img src="https://images.pexels.com/photos/8819843/pexels-photo-8819843.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=450&w=700" alt="Indian sweets mithai" loading="lazy" />
+        </div>
+
+        <div class="gallery-item reveal">
+          <img src="https://images.pexels.com/photos/6876600/pexels-photo-6876600.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=700" alt="Restaurant interior India style" loading="lazy" />
+        </div>
+
+        <div class="gallery-item reveal">
+          <img src="https://images.pexels.com/photos/13376622/pexels-photo-13376622.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=520&w=700" alt="Filter coffee South India" loading="lazy" />
+        </div>
+
+        <div class="gallery-item reveal">
+          <img src="https://images.pexels.com/photos/8818723/pexels-photo-8818723.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=480&w=700" alt="Indian vegetarian spread" loading="lazy" />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ─── -->
+  <section id="contact">
+    <div class="section-inner">
+      <h2 class="section-heading section-heading-centered reveal">Find Us in George Town</h2>
+
+      <div class="contact-grid">
+
+        <!-- Info Card -->
+        <div class="info-card reveal">
+          <h3 class="info-card-title">Woodlands Vegetarian Restaurant</h3>
+
+          <div class="info-row">
+            <span class="info-dot"></span>
+            <span>60 Lebuh Penang, George Town, 10200 Penang, Malaysia</span>
+          </div>
+
+          <div class="info-row">
+            <span class="info-dot"></span>
+            <a href="tel:+60426397649">+60 4-263 9764</a>
+          </div>
+
+          <div class="info-row">
+            <span class="info-dot"></span>
+            <a href="mailto:woodlandspenang@gmail.com">woodlandspenang@gmail.com</a>
+          </div>
+
+          <p class="hours-heading">Opening Hours</p>
+
+          <div class="info-row">
+            <span class="info-dot"></span>
+            <span>Monday – Wednesday&nbsp;&nbsp;8:30 AM – 9:00 PM</span>
+          </div>
+
+          <div class="info-row">
+            <span class="info-dot"></span>
+            <span>Thursday&nbsp;&nbsp;8:30 AM – 10:00 PM</span>
+          </div>
+
+          <div class="info-row">
+            <span class="info-dot"></span>
+            <span>Friday – Sunday&nbsp;&nbsp;8:30 AM – 9:00 PM</span>
+          </div>
+
+          <p class="info-heritage">Located in Little India &middot; UNESCO Heritage Zone</p>
+        </div>
+
+        <!-- Map -->
+        <div class="reveal">
+          <iframe
+            src="https://maps.google.com/maps?q=5.41802,100.34052&z=16&output=embed"
+            width="100%"
+            height="420"
+            style="border:0; border-radius:16px; filter: saturate(0.7) brightness(0.85); display:block;"
+            allowfullscreen
+            loading="lazy"
+            title="Woodlands Vegetarian Restaurant location in George Town, Penang">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════════════════════════════ FOOTER ═══════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+
+    <!-- Col 1: Brand -->
+    <div>
+      <span class="footer-logo-mark">W</span>
+      <span class="footer-brand-name">Woodlands</span>
+      <p class="footer-tagline">Pure Vegetarian &middot; George Town, Penang</p>
+    </div>
+
+    <!-- Col 2: Quick Links -->
+    <div>
+      <p class="footer-col-title">Quick Links</p>
+      <ul class="footer-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 3: Contact -->
+    <div>
+      <p class="footer-col-title">Contact</p>
+      <div class="footer-contact-text">
+        <p>60 Lebuh Penang, George Town<br />10200 Penang, Malaysia</p>
+        <p style="margin-top:10px;"><a href="tel:+604263964">+60 4-263 9764</a></p>
+        <p><a href="mailto:woodlandspenang@gmail.com">woodlandspenang@gmail.com</a></p>
+        <p style="margin-top:10px;">Mon–Wed &amp; Fri–Sun: 8:30 AM – 9:00 PM<br />Thu: 8:30 AM – 10:00 PM</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Woodlands Vegetarian Restaurant &middot; 60 Lebuh Penang, George Town, Penang</p>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
