@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lumiere Restaurant Penang X Dejeuner Bistro - A modern French bistro offering fine dining with contemporary presentation in George Town, Penang, Malaysia.">
+    <meta name="keywords" content="French restaurant, fine dining, George Town, Penang, Lumiere, Dejeuner Bistro, French cuisine">
+    <title>Lumiere X Dejeuner Bistro | Modern French Fine Dining in Penang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loader" class="loader" aria-hidden="true">
+        <div class="loader-inner">
+            <div class="loader-line"></div>
+            <span class="loader-text">Lumiere</span>
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <header id="navbar" class="navbar">
+        <div class="navbar-inner">
+            <a href="#hero" class="nav-logo" aria-label="Lumiere Home">
+                <span class="logo-mark">L</span>
+                <span class="logo-text">Lumiere</span>
+            </a>
+            <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#dishes" class="nav-link">Menu</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <a href="#reservation" class="nav-reserve ripple-btn">Reserve a Table</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="toggle-bar"></span>
+                <span class="toggle-bar"></span>
+                <span class="toggle-bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+        <nav class="mobile-nav-links">
+            <a href="#about" class="mobile-link">About</a>
+            <a href="#dishes" class="mobile-link">Menu</a>
+            <a href="#experience" class="mobile-link">Experience</a>
+            <a href="#gallery" class="mobile-link">Gallery</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+            <a href="#reservation" class="mobile-link mobile-reserve ripple-btn">Reserve a Table</a>
+        </nav>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-bg">
+                <img src="https://images.pexels.com/photos/30786095/pexels-photo-30786095.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=1920" alt="Luxurious dining room with ornate decor and soft lighting" class="hero-img" fetchpriority="high">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-tag reveal-up">
+                    <span class="tag-line"></span>
+                    <span>George Town, Penang</span>
+                    <span class="tag-line"></span>
+                </div>
+                <h1 class="hero-title reveal-up">
+                    <span class="hero-title-line">Lumiere</span>
+                    <span class="hero-title-accent">x</span>
+                    <span class="hero-title-line">Dejeuner Bistro</span>
+                </h1>
+                <p class="hero-subtitle reveal-up">Modern French Cuisine with Contemporary Artistry</p>
+                <div class="hero-cta reveal-up">
+                    <a href="#reservation" class="btn btn-primary ripple-btn">Reserve Your Evening</a>
+                    <a href="#dishes" class="btn btn-ghost ripple-btn">Explore the Menu</a>
+                </div>
+            </div>
+            <div class="hero-scroll" aria-hidden="true">
+                <div class="scroll-indicator">
+                    <span>Scroll</span>
+                    <div class="scroll-line"></div>
+                </div>
+            </div>
+            <div class="hero-float-badge floating" aria-hidden="true">
+                <span>Est. 2018</span>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-images">
+                        <div class="about-img-main reveal-left">
+                            <img src="https://images.pexels.com/photos/20184685/pexels-photo-20184685.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=600" alt="Elegant restaurant interior with sophisticated chairs and tables" loading="lazy">
+                        </div>
+                        <div class="about-img-accent reveal-up">
+                            <img src="https://images.pexels.com/photos/4253303/pexels-photo-4253303.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=350" alt="Two chefs working in an open kitchen" loading="lazy">
+                        </div>
+                        <div class="about-float-card glass-card floating-slow" aria-hidden="true">
+                            <span class="float-number counter" data-target="8">0</span>
+                            <span class="float-label">Years of Excellence</span>
+                        </div>
+                    </div>
+                    <div class="about-content">
+                        <span class="section-tag reveal-up">Our Story</span>
+                        <h2 class="section-title reveal-up">Where French Tradition Meets Penang Soul</h2>
+                        <div class="about-text reveal-up">
+                            <p>Nestled in the heart of George Town's heritage quarter, Lumiere X Dejeuner Bistro reimagines classic French gastronomy through the lens of Southeast Asian terroir. Our open kitchen invites you into a theatre of culinary precision, where every plate tells a story of provenance and passion.</p>
+                            <p>Founded by a collective of French-trained chefs with deep roots in Penang's vibrant food culture, our bistro bridges two worlds -- the meticulous discipline of Parisian kitchens and the bold, aromatic spirit of Malaysian ingredients.</p>
+                        </div>
+                        <div class="about-stats reveal-up">
+                            <div class="stat-item">
+                                <span class="stat-number counter" data-target="15">0</span>
+                                <span class="stat-label">Signature Dishes</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number counter" data-target="120">0</span>
+                                <span class="stat-label">Wine Labels</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number counter" data-target="4">0</span>
+                                <span class="stat-label">Award-Winning Chefs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Signature Dishes Section -->
+        <section id="dishes" class="dishes section">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-tag reveal-up">The Menu</span>
+                    <h2 class="section-title reveal-up">Signature French Dishes</h2>
+                    <p class="section-desc reveal-up">Each creation is a testament to our philosophy: respect the ingredient, honour the technique, surprise the palate.</p>
+                </div>
+                <div class="dishes-grid">
+                    <article class="dish-card card-3d reveal-up" tabindex="0">
+                        <div class="dish-img-wrap">
+                            <img src="https://images.pexels.com/photos/5555878/pexels-photo-5555878.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Beautifully plated scallop dish with vegetables" loading="lazy">
+                            <div class="dish-price">RM 128</div>
+                        </div>
+                        <div class="dish-info">
+                            <h3>Seared Saint-Jacques</h3>
+                            <p>Pan-seared Hokkaido scallops, cauliflower mousseline, golden raisin reduction, toasted almond crumble</p>
+                        </div>
+                    </article>
+                    <article class="dish-card card-3d reveal-up" tabindex="0">
+                        <div class="dish-img-wrap">
+                            <img src="https://images.pexels.com/photos/8112979/pexels-photo-8112979.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Gourmet beef plate with grilled vegetable garnish" loading="lazy">
+                            <div class="dish-price">RM 168</div>
+                        </div>
+                        <div class="dish-info">
+                            <h3>Boeuf Bourguignon Moderne</h3>
+                            <p>48-hour braised Wagyu cheek, heirloom carrots, pearl onions, burgundy jus, truffle pomme puree</p>
+                        </div>
+                    </article>
+                    <article class="dish-card card-3d reveal-up" tabindex="0">
+                        <div class="dish-img-wrap">
+                            <img src="https://images.pexels.com/photos/32083416/pexels-photo-32083416.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Elegant gourmet salmon dish with creative garnish" loading="lazy">
+                            <div class="dish-price">RM 138</div>
+                        </div>
+                        <div class="dish-info">
+                            <h3>Saumon en Croute</h3>
+                            <p>Atlantic salmon wrapped in puff pastry, spinach duxelles, champagne beurre blanc, micro herbs</p>
+                        </div>
+                    </article>
+                    <article class="dish-card card-3d reveal-up" tabindex="0">
+                        <div class="dish-img-wrap">
+                            <img src="https://images.pexels.com/photos/4870430/pexels-photo-4870430.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Exquisite gourmet tuna steak on mashed potatoes" loading="lazy">
+                            <div class="dish-price">RM 148</div>
+                        </div>
+                        <div class="dish-info">
+                            <h3>Thon Nicoise Revisited</h3>
+                            <p>Seared yellowfin tuna, olive tapenade, confit potato, anchovy vinaigrette, edible flowers</p>
+                        </div>
+                    </article>
+                    <article class="dish-card card-3d reveal-up" tabindex="0">
+                        <div class="dish-img-wrap">
+                            <img src="https://images.pexels.com/photos/29380162/pexels-photo-29380162.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=650&w=940" alt="Elegant plated eclair with artistic decoration" loading="lazy">
+                            <div class="dish-price">RM 58</div>
+                        </div>
+                        <div class="dish-info">
+                            <h3>Eclair Parisienne</h3>
+                            <p>Valrhona dark chocolate eclair, praline cream, caramelised hazelnuts, gold leaf</p>
+                        </div>
+                    </article>
+                    <article class="dish-card card-3d reveal-up" tabindex="0">
+                        <div class="dish-img-wrap">
+                            <img src="https://images.pexels.com/photos/34760121/pexels-photo-34760121.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Poached pear dessert with chocolate cake" loading="lazy">
+                            <div class="dish-price">RM 62</div>
+                        </div>
+                        <div class="dish-info">
+                            <h3>Poire Belle-Helene</h3>
+                            <p>Wine-poached pear, dark chocolate fondant, vanilla bean ice cream, spiced crumble</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chef's Selection -->
+        <section id="chef" class="chef section">
+            <div class="chef-bg parallax-bg">
+                <img src="https://images.pexels.com/photos/4253310/pexels-photo-4253310.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1200&w=1920" alt="Chef cooking in an open kitchen" loading="lazy">
+            </div>
+            <div class="chef-overlay"></div>
+            <div class="container chef-inner">
+                <div class="chef-content">
+                    <span class="section-tag light reveal-up">Chef's Selection</span>
+                    <h2 class="section-title light reveal-up">A Nightly Tasting Journey</h2>
+                    <p class="chef-desc reveal-up">Our chef curates a seven-course degustation menu that evolves with the seasons. Each evening brings a new narrative, composed from the finest market-fresh ingredients and the deep well of classical French technique.</p>
+                    <div class="chef-menu-preview reveal-up">
+                        <div class="chef-course">
+                            <span class="course-num">01</span>
+                            <div>
+                                <h4>Amuse-Bouche</h4>
+                                <p>A whimsical bite to awaken the senses</p>
+                            </div>
+                        </div>
+                        <div class="chef-course">
+                            <span class="course-num">02</span>
+                            <div>
+                                <h4>Foie Gras Torchon</h4>
+                                <p>Sauternes gelée, brioche, fig compote</p>
+                            </div>
+                        </div>
+                        <div class="chef-course">
+                            <span class="course-num">03</span>
+                            <div>
+                                <h4>Langoustine Bisque</h4>
+                                <p>Cognac cream, tarragon oil, puff crisp</p>
+                            </div>
+                        </div>
+                        <div class="chef-course">
+                            <span class="course-num">04</span>
+                            <div>
+                                <h4>Filet de Boeuf</h4>
+                                <p>Aged tenderloin, bone marrow butter, seasonal roots</p>
+                            </div>
+                        </div>
+                        <div class="chef-course">
+                            <span class="course-num">05</span>
+                            <div>
+                                <h4>Fromage Affine</h4>
+                                <p>Selection of artisanal French cheeses</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chef-price reveal-up">
+                        <span class="price-amount">RM 488</span>
+                        <span class="price-label">per person / 7 courses with wine pairing</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fine Dining Experience -->
+        <section id="experience" class="experience section">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-tag reveal-up">The Experience</span>
+                    <h2 class="section-title reveal-up">Fine Dining, Redefined</h2>
+                </div>
+                <div class="experience-grid">
+                    <div class="exp-card glass-card reveal-up">
+                        <div class="exp-icon">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M24 4v16M16 12h16M8 28c0 8.8 7.2 16 16 16s16-7.2 16-16H8z"/></svg>
+                        </div>
+                        <h3>Open Kitchen Theatre</h3>
+                        <p>Watch our brigade craft each dish with precision. The kitchen is our stage, and every service is a performance.</p>
+                    </div>
+                    <div class="exp-card glass-card reveal-up">
+                        <div class="exp-icon">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="20" r="12"/><path d="M16 32l-4 12h24l-4-12"/><path d="M20 16h8M24 14v8"/></svg>
+                        </div>
+                        <h3>Sommelier's Table</h3>
+                        <p>An intimate experience for six guests, paired with rare vintages selected by our head sommelier from the private cellar.</p>
+                    </div>
+                    <div class="exp-card glass-card reveal-up">
+                        <div class="exp-icon">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 24c0-10 8-18 18-18s18 8 18 18"/><path d="M12 24c0-6.6 5.4-12 12-12s12 5.4 12 12"/><circle cx="24" cy="24" r="4"/><path d="M24 28v16M16 44h16"/></svg>
+                        </div>
+                        <h3>Private Dining</h3>
+                        <p>Our heritage salon seats twelve for celebrations and corporate gatherings, with bespoke menus and dedicated service.</p>
+                    </div>
+                    <div class="exp-card glass-card reveal-up">
+                        <div class="exp-icon">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 8h32v32H8z"/><path d="M16 8V4M32 8V4M8 16h32"/><circle cx="20" cy="28" r="3"/><circle cx="32" cy="24" r="3"/></svg>
+                        </div>
+                        <h3>Chef's Masterclass</h3>
+                        <p>Join our chefs for an exclusive Saturday afternoon class. Learn French techniques with hands-on guidance and a seated lunch.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wine Collection -->
+        <section id="wine" class="wine section">
+            <div class="container">
+                <div class="wine-layout">
+                    <div class="wine-content">
+                        <span class="section-tag reveal-up">The Cellar</span>
+                        <h2 class="section-title reveal-up">Curated Wine Collection</h2>
+                        <p class="wine-desc reveal-up">Our cellar houses over 120 labels, personally sourced from family-owned estates across Bordeaux, Burgundy, the Rhone Valley, and beyond. Each bottle is chosen to complement the bold flavours and delicate textures of our cuisine.</p>
+                        <div class="wine-regions reveal-up">
+                            <div class="wine-region">
+                                <h4>Bordeaux</h4>
+                                <p>Grand Crus and hidden gems from the Left and Right Banks</p>
+                            </div>
+                            <div class="wine-region">
+                                <h4>Burgundy</h4>
+                                <p>Premier Cru Pinot Noirs and crisp Chablis selections</p>
+                            </div>
+                            <div class="wine-region">
+                                <h4>Champagne</h4>
+                                <p>Grower champagnes and prestige cuvees for every occasion</p>
+                            </div>
+                            <div class="wine-region">
+                                <h4>Rhone Valley</h4>
+                                <p>Robust Syrahs and elegant Grenache-based blends</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wine-images">
+                        <div class="wine-img-main reveal-right">
+                            <img src="https://images.pexels.com/photos/19714324/pexels-photo-19714324.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Wine bottles lying in rows in a cellar" loading="lazy">
+                        </div>
+                        <div class="wine-img-secondary reveal-up">
+                            <img src="https://images.pexels.com/photos/12181763/pexels-photo-12181763.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=500" alt="Wine setting with glasses and warm lighting" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section id="gallery" class="gallery section">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-tag reveal-up">Gallery</span>
+                    <h2 class="section-title reveal-up">Moments at Lumiere</h2>
+                </div>
+                <div class="gallery-mosaic">
+                    <div class="gallery-item gi-tall reveal-up">
+                        <img src="https://images.pexels.com/photos/29380192/pexels-photo-29380192.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Elegant chocolate dessert on a black plate" loading="lazy">
+                    </div>
+                    <div class="gallery-item reveal-up">
+                        <img src="https://images.pexels.com/photos/8856555/pexels-photo-8856555.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Luxurious table setup with wine glasses" loading="lazy">
+                    </div>
+                    <div class="gallery-item reveal-up">
+                        <img src="https://images.pexels.com/photos/4253292/pexels-photo-4253292.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Chef organizing ingredients in the kitchen" loading="lazy">
+                    </div>
+                    <div class="gallery-item gi-wide reveal-up">
+                        <img src="https://images.pexels.com/photos/34989205/pexels-photo-34989205.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Sophisticated dining setup with gourmet dishes" loading="lazy">
+                    </div>
+                    <div class="gallery-item reveal-up">
+                        <img src="https://images.pexels.com/photos/299348/pexels-photo-299348.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Beautifully presented beef steak in fine dining setting" loading="lazy">
+                    </div>
+                    <div class="gallery-item gi-tall reveal-up">
+                        <img src="https://images.pexels.com/photos/35273773/pexels-photo-35273773.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Elegant wine display in winery" loading="lazy">
+                    </div>
+                    <div class="gallery-item reveal-up">
+                        <img src="https://images.pexels.com/photos/3953852/pexels-photo-3953852.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Wine glasses and candles on a restaurant table" loading="lazy">
+                    </div>
+                    <div class="gallery-item reveal-up">
+                        <img src="https://images.pexels.com/photos/32333752/pexels-photo-32333752.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Gourmet chocolate tart on elegant plate" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews -->
+        <section id="reviews" class="reviews section">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-tag reveal-up">Testimonials</span>
+                    <h2 class="section-title reveal-up">Words from Our Guests</h2>
+                </div>
+                <div class="reviews-track" id="reviewsTrack">
+                    <div class="review-card glass-card reveal-up">
+                        <div class="review-stars" aria-label="5 out of 5 stars">
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.4 6.4H19l-5.3 4 2 6.6L10 14l-5.7 4 2-6.6L1 7.4h6.6z"/></svg>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.4 6.4H19l-5.3 4 2 6.6L10 14l-5.7 4 2-6.6L1 7.4h6.6z"/></svg>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.4 6.4H19l-5.3 4 2 6.6L10 14l-5.7 4 2-6.6L1 7.4h6.6z"/></svg>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.4 6.4H19l-5.3 4 2 6.6L10 14l-5.7 4 2-6.6L1 7.4h6.6z"/></svg>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.4 6.4H19l-5.3 4 2 6.6L10 14l-5.7 4 2-6.6L1 7.4h6.6z"/></svg>
+                        </div>
+                        <blockquote>"An extraordinary dining experience. The seven-course degustation was nothing short of art on a plate. The ambience, the service, the wine pairings -- everything was impeccable."</blockquote>
+                        <div class="review-author">
+                            <span class="author-name">Sarah Lim</span>
+                            <span class="author-detail">Food Critic, The Star Malaysia</span>
+                        </div>
+                    </div>
+                    <div class="review-card glass-card reveal-up">
+                        <div class="review-stars" aria-label="5 out of 5 stars">
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.4 6.4H19l-5.3 4 2 6.6L10 14l-5.7 4 2-6.6L1 7.4h6.6z"/></svg>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.4 6.4H19l-5.3 4 2 6.6L10 14l-5.7 4 2-6.6L1 7.4h6.6z"/></svg>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.4 6.4H19l-5.3 4 2 6.6L10 14l-5.7 4 2-6.6L1 7.4h6.6z"/></svg>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.4 6.4H19l-5.3 4 2 6.6L10 14l-5.7 4 2-6.6L1 7.4h6.6z"/></svg>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.4 6.4H19l-5.3 4 2 6.6L10 14l-5.7 4 2-6.6L1 7.4h6.6z"/></svg>
+                        </div>
+                        <blockquote>"We celebrated our anniversary here and it was magical. The sommelier recommended a Burgundy that paired perfectly with our meal. A true gem in George Town."</blockquote>
+                        <div class="review-author">
+                            <span class="author-name">David & Christine Tan</span>
+                            <span class="author-detail">Returning Guests</span>
+                        </div>
+                    </div>
+                    <div class="review-card glass-card reveal-up">
+                        <div class="review-stars" aria-label="5 out of 5 stars">
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.4 6.4H19l-5.3 4 2 6.6L10 14l-5.7 4 2-6.6L1 7.4h6.6z"/></svg>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.4 6.4H19l-5.3 4 2 6.6L10 14l-5.7 4 2-6.6L1 7.4h6.6z"/></svg>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.4 6.4H19l-5.3 4 2 6.6L10 14l-5.7 4 2-6.6L1 7.4h6.6z"/></svg>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.4 6.4H19l-5.3 4 2 6.6L10 14l-5.7 4 2-6.6L1 7.4h6.6z"/></svg>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.4 6.4H19l-5.3 4 2 6.6L10 14l-5.7 4 2-6.6L1 7.4h6.6z"/></svg>
+                        </div>
+                        <blockquote>"Having dined at fine establishments across Europe, I can say Lumiere holds its own against any Michelin-starred restaurant. The Boeuf Bourguignon was genuinely the best I have had."</blockquote>
+                        <div class="review-author">
+                            <span class="author-name">Jean-Pierre Moreau</span>
+                            <span class="author-detail">Restaurateur, Lyon</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reservation CTA -->
+        <section id="reservation" class="reservation section">
+            <div class="container">
+                <div class="reservation-card glass-card-dark">
+                    <div class="res-content">
+                        <span class="section-tag light reveal-up">Reservations</span>
+                        <h2 class="section-title light reveal-up">Secure Your Table</h2>
+                        <p class="res-desc reveal-up">We welcome guests for dinner service from Tuesday through Sunday. Reservations are recommended to ensure the full Lumiere experience.</p>
+                    </div>
+                    <form class="res-form reveal-up" id="reservationForm" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="resName">Full Name</label>
+                                <input type="text" id="resName" name="name" required autocomplete="name" placeholder="Your full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="resEmail">Email</label>
+                                <input type="email" id="resEmail" name="email" required autocomplete="email" placeholder="your@email.com">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="resDate">Date</label>
+                                <input type="date" id="resDate" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="resTime">Time</label>
+                                <select id="resTime" name="time" required>
+                                    <option value="" disabled selected>Select time</option>
+                                    <option value="18:00">6:00 PM</option>
+                                    <option value="18:30">6:30 PM</option>
+                                    <option value="19:00">7:00 PM</option>
+                                    <option value="19:30">7:30 PM</option>
+                                    <option value="20:00">8:00 PM</option>
+                                    <option value="20:30">8:30 PM</option>
+                                    <option value="21:00">9:00 PM</option>
+                                    <option value="21:30">9:30 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="resGuests">Guests</label>
+                                <select id="resGuests" name="guests" required>
+                                    <option value="" disabled selected>Number of guests</option>
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                    <option value="5">5 Guests</option>
+                                    <option value="6">6 Guests</option>
+                                    <option value="7-12">7-12 (Private Dining)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="resPhone">Phone</label>
+                                <input type="tel" id="resPhone" name="phone" autocomplete="tel" placeholder="+60 17-xxx xxxx">
+                            </div>
+                        </div>
+                        <div class="form-group full">
+                            <label for="resNotes">Special Requests</label>
+                            <textarea id="resNotes" name="notes" rows="3" placeholder="Dietary requirements, celebrations, seating preferences..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full ripple-btn">Confirm Reservation</button>
+                    </form>
+                    <div class="res-confirmation" id="resConfirmation" hidden>
+                        <div class="confirm-icon">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><circle cx="24" cy="24" r="20"/><path d="M14 24l7 7 13-13"/></svg>
+                        </div>
+                        <h3>Reservation Received</h3>
+                        <p>Thank you for choosing Lumiere. We will confirm your booking via email shortly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="contact section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <span class="section-tag reveal-up">Find Us</span>
+                        <h2 class="section-title reveal-up">Visit Lumiere</h2>
+                        <div class="contact-details reveal-up">
+                            <div class="contact-item">
+                                <h4>Address</h4>
+                                <p>George Town, Penang<br>Malaysia</p>
+                            </div>
+                            <div class="contact-item">
+                                <h4>Phone</h4>
+                                <a href="tel:+60175423188">+60 17-542 3188</a>
+                            </div>
+                            <div class="contact-item">
+                                <h4>Hours</h4>
+                                <p>Tuesday - Sunday<br>6:00 PM - 11:00 PM</p>
+                            </div>
+                            <div class="contact-item">
+                                <h4>Closed</h4>
+                                <p>Every Monday</p>
+                            </div>
+                        </div>
+                        <a href="https://share.google/e1d3ZafW3jGALFnRA" target="_blank" rel="noopener noreferrer" class="btn btn-outline ripple-btn reveal-up">View on Google Maps</a>
+                    </div>
+                    <div class="contact-map reveal-right">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.1!2d100.33!3d5.42!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMjUnMTIuMCJOIDEwMMKwMTknNDguMCJF!5e0!3m2!1sen!2smy!4v1" loading="lazy" title="Lumiere Restaurant location on Google Maps" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <span class="footer-logo">Lumiere <span class="footer-x">x</span> Dejeuner</span>
+                    <p>Modern French Bistro in George Town, Penang</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#dishes">Menu</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#reservation">Reservations</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Lumiere Restaurant Penang X Dejeuner Bistro. All rights reserved.</p>
+                    <a href="tel:+60175423188">+60 17-542 3188</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
