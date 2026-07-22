@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="No.11 Penang – A health food restaurant in Pulau Tikus, George Town. Non-GMO, MSG-free, preservative-free dining with Beacon Chicken and fresh ingredients." />
+  <meta name="keywords" content="No.11 Penang, health food restaurant, Pulau Tikus, George Town, Non-GMO, MSG-free, Beacon Chicken, healthy dining Penang" />
+  <meta property="og:title" content="No.11 Penang – Wholesome. Honest. Delicious." />
+  <meta property="og:description" content="Good food starts with great care. Eat clean, feel good at No.11 Penang." />
+  <title>No.11 Penang — Wholesome. Honest. Delicious.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== PRELOADER ===================== -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-logo">No.11</div>
+      <div class="preloader-tagline">Penang</div>
+      <div class="preloader-bar"><span></span></div>
+    </div>
+  </div>
+
+  <!-- ===================== CURSOR ===================== -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-number">No.11</span>
+        <span class="logo-text">Penang</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">Our Story</a></li>
+        <li><a href="#menu" class="nav-link">Menu</a></li>
+        <li><a href="#philosophy" class="nav-link">Philosophy</a></li>
+        <li><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li><a href="#reviews" class="nav-link">Reviews</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Reserve a Table</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" id="mobileClose" aria-label="Close menu">✕</button>
+    <nav class="mobile-nav">
+      <a href="#about" class="mobile-nav-link">Our Story</a>
+      <a href="#menu" class="mobile-nav-link">Menu</a>
+      <a href="#philosophy" class="mobile-nav-link">Philosophy</a>
+      <a href="#gallery" class="mobile-nav-link">Gallery</a>
+      <a href="#reviews" class="mobile-nav-link">Reviews</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+    </nav>
+    <div class="mobile-menu-footer">
+      <p>+60 12-522 5287</p>
+      <p>11, Jalan Yeoh Guan Seok, Pulau Tikus</p>
+    </div>
+  </div>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-bg-img" style="background-image: url('https://images.pexels.com/photos/18405036/pexels-photo-18405036.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=1600');"></div>
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow reveal-up">
+        <span class="eyebrow-dot"></span>
+        <span>Health Food Restaurant · Pulau Tikus, Penang</span>
+      </div>
+      <h1 class="hero-title reveal-up">
+        <span class="title-line">Good Food</span>
+        <span class="title-line title-italic">Starts With</span>
+        <span class="title-line">Great Care.</span>
+      </h1>
+      <p class="hero-sub reveal-up">Non-GMO · MSG-Free · Preservative-Free · Lard-Free<br/>Nourishing meals crafted with intention, served with warmth.</p>
+      <div class="hero-actions reveal-up">
+        <a href="#menu" class="btn btn-primary">Explore Our Menu</a>
+        <a href="#about" class="btn btn-ghost">Our Story</a>
+      </div>
+    </div>
+
+    <div class="hero-badge">
+      <div class="hero-badge-inner">
+        <svg viewBox="0 0 100 100" class="badge-ring">
+          <path id="textPath" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none"/>
+          <text>
+            <textPath href="#textPath">CLEAN EATING · WHOLESOME LIVING · PENANG ·</textPath>
+          </text>
+        </svg>
+        <div class="badge-center">✦</div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"><span></span></div>
+    </div>
+
+    <!-- Floating info cards -->
+    <div class="hero-card hero-card--hours reveal-float">
+      <div class="hero-card-icon">⏰</div>
+      <div>
+        <p class="card-label">Open Daily</p>
+        <p class="card-value">10am – 9pm</p>
+        <p class="card-note">Closed Mondays</p>
+      </div>
+    </div>
+
+    <div class="hero-card hero-card--loc reveal-float" style="animation-delay:0.3s">
+      <div class="hero-card-icon">📍</div>
+      <div>
+        <p class="card-label">Find Us</p>
+        <p class="card-value">Pulau Tikus</p>
+        <p class="card-note">George Town, Penang</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MARQUEE ===================== -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <span>Non-GMO Ingredients</span><span class="marquee-dot">✦</span>
+      <span>MSG-Free Kitchen</span><span class="marquee-dot">✦</span>
+      <span>Preservative-Free</span><span class="marquee-dot">✦</span>
+      <span>Beacon Chicken</span><span class="marquee-dot">✦</span>
+      <span>Pork & Lard Free</span><span class="marquee-dot">✦</span>
+      <span>Dine In · Takeout · Delivery</span><span class="marquee-dot">✦</span>
+      <span>Non-GMO Ingredients</span><span class="marquee-dot">✦</span>
+      <span>MSG-Free Kitchen</span><span class="marquee-dot">✦</span>
+      <span>Preservative-Free</span><span class="marquee-dot">✦</span>
+      <span>Beacon Chicken</span><span class="marquee-dot">✦</span>
+      <span>Pork & Lard Free</span><span class="marquee-dot">✦</span>
+      <span>Dine In · Takeout · Delivery</span><span class="marquee-dot">✦</span>
+    </div>
+  </div>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-images">
+          <div class="about-img-main reveal-left">
+            <img src="https://images.pexels.com/photos/14955235/pexels-photo-14955235.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=700&w=560" alt="No.11 Penang cozy interior with green plants and wooden furniture" loading="lazy"/>
+            <div class="about-img-badge">
+              <span class="badge-number">Since</span>
+              <span class="badge-year">2023</span>
+            </div>
+          </div>
+          <div class="about-img-secondary reveal-right">
+            <img src="https://images.pexels.com/photos/4113915/pexels-photo-4113915.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=380" alt="Fresh herbs and natural ingredients used at No.11 Penang" loading="lazy"/>
+          </div>
+          <div class="about-stats-card reveal-up">
+            <div class="stat-item">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">Non-GMO</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-num">0</span>
+              <span class="stat-label">MSG Added</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-num">★ 5.0</span>
+              <span class="stat-label">Rated</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <div class="section-eyebrow reveal-up">
+            <span class="eyebrow-dot"></span>
+            <span>Our Story</span>
+          </div>
+          <h2 class="section-title reveal-up">
+            A Place to <em>Eat Well</em><br/>& Live Better
+          </h2>
+          <p class="about-text reveal-up">
+            Nestled in the heart of Pulau Tikus, No.11 Penang was born from a simple belief — that food should nourish the body and lift the spirit. Tucked along Jalan Yeoh Guan Seok, just steps from the beloved Pulau Tikus market, we've become a sanctuary for those who believe great taste and clean ingredients are never mutually exclusive.
+          </p>
+          <p class="about-text reveal-up">
+            Our kitchen is guided by one unbreakable promise: every dish is prepared with Non-GMO ingredients, free from MSG, preservatives, pork, and lard. We use Beacon Chicken — raised without antibiotics or hormones — because we believe what goes into your food matters as much as how it tastes.
+          </p>
+          <div class="about-values reveal-up">
+            <div class="value-item">
+              <div class="value-icon">🌿</div>
+              <div>
+                <h4>Clean Ingredients</h4>
+                <p>Every ingredient is hand-selected for purity and freshness.</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">🍜</div>
+              <div>
+                <h4>Diverse Menu</h4>
+                <p>From herbal soups and donburi to pizzas and specialty coffee.</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">💕</div>
+              <div>
+                <h4>Made with Care</h4>
+                <p>Prepared fresh daily by a team that genuinely loves what they do.</p>
+              </div>
+            </div>
+          </div>
+          <a href="#menu" class="btn btn-primary reveal-up">See Our Full Menu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PHILOSOPHY ===================== -->
+  <section class="philosophy section" id="philosophy">
+    <div class="philosophy-bg" style="background-image: url('https://images.pexels.com/photos/5418660/pexels-photo-5418660.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=1600');"></div>
+    <div class="philosophy-overlay"></div>
+    <div class="container">
+      <div class="philosophy-content">
+        <div class="section-eyebrow reveal-up" style="--eyebrow-color: rgba(255,255,255,0.7);">
+          <span class="eyebrow-dot" style="background: var(--accent);"></span>
+          <span style="color: rgba(255,255,255,0.7);">Our Philosophy</span>
+        </div>
+        <h2 class="philosophy-title reveal-up">
+          "We believe good food<br/>starts with <em>great care</em> —<br/>in how it's prepared and<br/>the ingredients we choose."
+        </h2>
+        <div class="philosophy-pillars reveal-up">
+          <div class="pillar">
+            <div class="pillar-icon">
+              <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5"/><path d="M20 10c-3 4-8 6-8 12a8 8 0 0016 0c0-6-5-8-8-12z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+            </div>
+            <h4>Non-GMO Always</h4>
+            <p>No genetically modified organisms — ever. We source with integrity.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">
+              <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5"/><path d="M12 26l4-8 4 6 4-4 4 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h4>Zero MSG</h4>
+            <p>Natural flavours only. Real taste from real food, no shortcuts.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">
+              <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5"/><path d="M14 20a6 6 0 0012 0M20 14v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h4>Beacon Chicken</h4>
+            <p>Hormone-free, antibiotic-free poultry for a cleaner plate.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">
+              <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5"/><path d="M13 20h14M20 13l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h4>Preservative-Free</h4>
+            <p>Cooked fresh daily. What you taste is as nature intended.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MENU ===================== -->
+  <section class="menu-section section" id="menu">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span>Our Menu</span>
+        </div>
+        <h2 class="section-title">Signature <em>Dishes</em></h2>
+        <p class="section-sub">A thoughtfully curated selection spanning Asian home-cooking,<br/>Japanese-inspired bowls, Western classics and more.</p>
+      </div>
+
+      <!-- Menu Tabs -->
+      <div class="menu-tabs reveal-up">
+        <button class="menu-tab active" data-tab="featured">Featured</button>
+        <button class="menu-tab" data-tab="asian">Asian Comfort</button>
+        <button class="menu-tab" data-tab="western">Western</button>
+        <button class="menu-tab" data-tab="drinks">Drinks</button>
+      </div>
+
+      <!-- Featured Tab -->
+      <div class="menu-tab-content active" data-content="featured">
+        <div class="menu-featured-grid">
+
+          <div class="menu-card menu-card--hero reveal-up" data-cursor="view">
+            <div class="menu-card-img">
+              <img src="https://images.pexels.com/photos/32149259/pexels-photo-32149259.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=500&w=700" alt="Herbal Chicken Noodle Soup" loading="lazy"/>
+              <div class="menu-card-overlay">
+                <span class="menu-tag menu-tag--signature">Signature</span>
+              </div>
+            </div>
+            <div class="menu-card-body">
+              <h3>Herbal Chicken Noodle Soup</h3>
+              <p>Our soul-warming signature — slow-simmered Beacon Chicken in a rich herbal broth with silky noodles and fresh garnishes. Available as a frozen pack for takeaway.</p>
+              <div class="menu-card-footer">
+                <div class="menu-tags-row">
+                  <span class="tag">Non-GMO</span>
+                  <span class="tag">MSG-Free</span>
+                  <span class="tag">Bestseller</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card reveal-up" style="--delay: 0.1s" data-cursor="view">
+            <div class="menu-card-img">
+              <img src="https://images.pexels.com/photos/1893563/pexels-photo-1893563.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Garden Poke Bowl" loading="lazy"/>
+              <div class="menu-card-overlay">
+                <span class="menu-tag">Popular</span>
+              </div>
+            </div>
+            <div class="menu-card-body">
+              <h3>Nourish Poke Bowl</h3>
+              <p>Vibrant seasonal greens, tofu, sesame, and a house umami drizzle over brown rice.</p>
+              <div class="menu-tags-row">
+                <span class="tag">Plant-Based</span>
+                <span class="tag">MSG-Free</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card reveal-up" style="--delay: 0.2s" data-cursor="view">
+            <div class="menu-card-img">
+              <img src="https://images.pexels.com/photos/8286764/pexels-photo-8286764.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Salmon Donburi" loading="lazy"/>
+              <div class="menu-card-overlay">
+                <span class="menu-tag">Chef's Pick</span>
+              </div>
+            </div>
+            <div class="menu-card-body">
+              <h3>Salmon Mentaiko Donburi</h3>
+              <p>Fresh salmon over steamed Japanese rice with a luxurious mentaiko sauce and pickled garnishes.</p>
+              <div class="menu-tags-row">
+                <span class="tag">Japanese-Inspired</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card reveal-up" style="--delay: 0.3s" data-cursor="view">
+            <div class="menu-card-img">
+              <img src="https://images.pexels.com/photos/14457211/pexels-photo-14457211.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Fresh Garden Salad" loading="lazy"/>
+              <div class="menu-card-overlay">
+                <span class="menu-tag">Light & Fresh</span>
+              </div>
+            </div>
+            <div class="menu-card-body">
+              <h3>Seasonal Garden Salad</h3>
+              <p>Market-fresh greens tossed with house-made dressing, topped with house-roasted seeds and a hint of citrus.</p>
+              <div class="menu-tags-row">
+                <span class="tag">Vegan Option</span>
+                <span class="tag">MSG-Free</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Asian Comfort Tab -->
+      <div class="menu-tab-content" data-content="asian">
+        <div class="menu-list-grid">
+          <div class="menu-list-card reveal-up">
+            <div class="menu-list-img">
+              <img src="https://images.pexels.com/photos/24186430/pexels-photo-24186430.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=400" alt="Noodle Soup" loading="lazy"/>
+            </div>
+            <div class="menu-list-info">
+              <h3>Soul Broth Noodles</h3>
+              <p>Golden clear broth with Beacon Chicken, handmade noodles and fresh herbs. A comforting classic.</p>
+              <div class="menu-tags-row"><span class="tag">Beacon Chicken</span><span class="tag">MSG-Free</span></div>
+            </div>
+          </div>
+          <div class="menu-list-card reveal-up" style="--delay:0.1s">
+            <div class="menu-list-img">
+              <img src="https://images.pexels.com/photos/21482823/pexels-photo-21482823.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=400" alt="Stir Fry" loading="lazy"/>
+            </div>
+            <div class="menu-list-info">
+              <h3>Wholesome Stir Fry</h3>
+              <p>Seasonal vegetables wok-tossed with garlic, ginger and a light soy sauce over steamed rice.</p>
+              <div class="menu-tags-row"><span class="tag">Non-GMO</span><span class="tag">Pork-Free</span></div>
+            </div>
+          </div>
+          <div class="menu-list-card reveal-up" style="--delay:0.2s">
+            <div class="menu-list-img">
+              <img src="https://images.pexels.com/photos/16217813/pexels-photo-16217813.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=400" alt="Herbal Beef" loading="lazy"/>
+            </div>
+            <div class="menu-list-info">
+              <h3>Herbal Braised Beef</h3>
+              <p>Tender slow-cooked beef in a deep, herbal-infused broth. Pairs beautifully with steamed white rice.</p>
+              <div class="menu-tags-row"><span class="tag">Slow-Cooked</span><span class="tag">MSG-Free</span></div>
+            </div>
+          </div>
+          <div class="menu-list-card reveal-up" style="--delay:0.3s">
+            <div class="menu-list-img">
+              <img src="https://images.pexels.com/photos/4223944/pexels-photo-4223944.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=400" alt="Noodle Bowl" loading="lazy"/>
+            </div>
+            <div class="menu-list-info">
+              <h3>Spicy Pan Mee</h3>
+              <p>Handmade pan mee in a robust anchovy broth with crispy shallots and a touch of chilli. A local favourite.</p>
+              <div class="menu-tags-row"><span class="tag">House Special</span><span class="tag">Non-GMO</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Western Tab -->
+      <div class="menu-tab-content" data-content="western">
+        <div class="menu-list-grid">
+          <div class="menu-list-card reveal-up">
+            <div class="menu-list-img">
+              <img src="https://images.pexels.com/photos/1435903/pexels-photo-1435903.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=400" alt="Stone Pizza" loading="lazy"/>
+            </div>
+            <div class="menu-list-info">
+              <h3>Garden Stone Pizza</h3>
+              <p>Thin-crust pizza topped with seasonal vegetables, mozzarella, basil, and our house tomato sauce. No pork, no lard.</p>
+              <div class="menu-tags-row"><span class="tag">Pork-Free</span><span class="tag">MSG-Free</span></div>
+            </div>
+          </div>
+          <div class="menu-list-card reveal-up" style="--delay:0.1s">
+            <div class="menu-list-img">
+              <img src="https://images.pexels.com/photos/8414741/pexels-photo-8414741.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=400" alt="Mentaiko Pasta" loading="lazy"/>
+            </div>
+            <div class="menu-list-info">
+              <h3>Hotate Mentaiko Pasta</h3>
+              <p>Al dente pasta generously coated in a creamy mentaiko sauce with plump scallops. A customer favourite.</p>
+              <div class="menu-tags-row"><span class="tag">Chef's Favourite</span><span class="tag">MSG-Free</span></div>
+            </div>
+          </div>
+          <div class="menu-list-card reveal-up" style="--delay:0.2s">
+            <div class="menu-list-img">
+              <img src="https://images.pexels.com/photos/28427552/pexels-photo-28427552.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=400" alt="Big Breakfast" loading="lazy"/>
+            </div>
+            <div class="menu-list-info">
+              <h3>No.11 Big Breakfast</h3>
+              <p>A hearty all-day breakfast with eggs, toast, fresh salad greens and wholesome sides to start your day right.</p>
+              <div class="menu-tags-row"><span class="tag">All Day</span><span class="tag">Pork-Free</span></div>
+            </div>
+          </div>
+          <div class="menu-list-card reveal-up" style="--delay:0.3s">
+            <div class="menu-list-img">
+              <img src="https://images.pexels.com/photos/4839985/pexels-photo-4839985.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=400" alt="Greek Salad" loading="lazy"/>
+            </div>
+            <div class="menu-list-info">
+              <h3>House Salad Bowl</h3>
+              <p>Crisp seasonal greens, feta-style cheese, olives and radishes in our signature house dressing.</p>
+              <div class="menu-tags-row"><span class="tag">Light & Fresh</span><span class="tag">Vegan Option</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Drinks Tab -->
+      <div class="menu-tab-content" data-content="drinks">
+        <div class="drinks-grid reveal-up">
+          <div class="drink-card">
+            <div class="drink-icon">☕</div>
+            <h4>Specialty Coffee</h4>
+            <p>Single-origin beans, expertly pulled. From smooth flat whites to rich long blacks.</p>
+          </div>
+          <div class="drink-card">
+            <div class="drink-icon">🥤</div>
+            <h4>Cold-Pressed Juices</h4>
+            <p>Seasonal fruits and vegetables, no added sugars, no preservatives — just pure goodness.</p>
+          </div>
+          <div class="drink-card">
+            <div class="drink-icon">🍵</div>
+            <h4>Herbal Teas</h4>
+            <p>Curated blends of traditional herbs and botanicals to soothe, energise and restore.</p>
+          </div>
+          <div class="drink-card">
+            <div class="drink-icon">🥛</div>
+            <h4>Smoothies</h4>
+            <p>Refreshing blended fruit and vegetable smoothies — a cool and healthy way to refuel.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== WHY CHOOSE US ===================== -->
+  <section class="why-section section">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-content">
+          <div class="section-eyebrow reveal-up">
+            <span class="eyebrow-dot"></span>
+            <span>Why No.11 Penang</span>
+          </div>
+          <h2 class="section-title reveal-up">A Different Kind<br/>of <em>Dining</em></h2>
+          <p class="section-sub reveal-up" style="text-align:left; max-width:480px;">
+            Not just a restaurant — a commitment to your wellbeing. Every visit to No.11 Penang is a step toward a healthier, happier you.
+          </p>
+          <div class="why-features reveal-up">
+            <div class="why-feature">
+              <div class="why-feature-num">01</div>
+              <div class="why-feature-text">
+                <h4>Beacon Chicken — The Gold Standard</h4>
+                <p>We exclusively use Beacon Chicken, raised without antibiotics or growth hormones, for a cleaner and healthier protein source.</p>
+              </div>
+            </div>
+            <div class="why-feature">
+              <div class="why-feature-num">02</div>
+              <div class="why-feature-text">
+                <h4>Health-Forward Location</h4>
+                <p>Situated near Penang's leading hospitals and wellness community, we're the natural choice for those prioritising their health.</p>
+              </div>
+            </div>
+            <div class="why-feature">
+              <div class="why-feature-num">03</div>
+              <div class="why-feature-text">
+                <h4>Take the Goodness Home</h4>
+                <p>Our signature Herbal Chicken Stew is available as a frozen pack — so you can enjoy restaurant-quality nutrition anytime.</p>
+              </div>
+            </div>
+            <div class="why-feature">
+              <div class="why-feature-num">04</div>
+              <div class="why-feature-text">
+                <h4>A Community Favourite</h4>
+                <p>We have many loyal regulars who trust us for consistently flavourful, clean meals — dine-in, takeaway or delivery.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="why-visual reveal-right">
+          <div class="why-img-wrap">
+            <img src="https://images.pexels.com/photos/33234706/pexels-photo-33234706.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=700&w=560" alt="No.11 Penang warm restaurant ambience" loading="lazy"/>
+            <div class="why-float-card">
+              <div class="float-card-icon">🏆</div>
+              <div>
+                <p class="float-card-title">5-Star Rated</p>
+                <p class="float-card-sub">Tripadvisor Reviews</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GALLERY ===================== -->
+  <section class="gallery-section section" id="gallery">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span>The Experience</span>
+        </div>
+        <h2 class="section-title">Life at <em>No.11</em></h2>
+      </div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item gallery-item--tall reveal-up" data-cursor="view">
+        <img src="https://images.pexels.com/photos/18405036/pexels-photo-18405036.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=600" alt="Cozy sunlit dining space at No.11 Penang" loading="lazy"/>
+        <div class="gallery-item-overlay"><span>Atmosphere</span></div>
+      </div>
+      <div class="gallery-item reveal-up" style="--delay:0.1s" data-cursor="view">
+        <img src="https://images.pexels.com/photos/32149259/pexels-photo-32149259.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=500&w=600" alt="Asian noodle soup" loading="lazy"/>
+        <div class="gallery-item-overlay"><span>Noodle Broth</span></div>
+      </div>
+      <div class="gallery-item reveal-up" style="--delay:0.2s" data-cursor="view">
+        <img src="https://images.pexels.com/photos/1893563/pexels-photo-1893563.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=500&w=600" alt="Colourful poke bowl" loading="lazy"/>
+        <div class="gallery-item-overlay"><span>Poke Bowl</span></div>
+      </div>
+      <div class="gallery-item gallery-item--wide reveal-up" style="--delay:0.1s" data-cursor="view">
+        <img src="https://images.pexels.com/photos/5418661/pexels-photo-5418661.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=500&w=900" alt="Fresh vegetables and ingredients" loading="lazy"/>
+        <div class="gallery-item-overlay"><span>Fresh Ingredients</span></div>
+      </div>
+      <div class="gallery-item reveal-up" style="--delay:0.3s" data-cursor="view">
+        <img src="https://images.pexels.com/photos/8414741/pexels-photo-8414741.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=500&w=600" alt="Pasta dish" loading="lazy"/>
+        <div class="gallery-item-overlay"><span>Mentaiko Pasta</span></div>
+      </div>
+      <div class="gallery-item reveal-up" style="--delay:0.4s" data-cursor="view">
+        <img src="https://images.pexels.com/photos/4113915/pexels-photo-4113915.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=500&w=600" alt="Fresh herbs" loading="lazy"/>
+        <div class="gallery-item-overlay"><span>Garden Fresh</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== REVIEWS ===================== -->
+  <section class="reviews-section section" id="reviews">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span>Guest Reviews</span>
+        </div>
+        <h2 class="section-title">What Our Guests <em>Say</em></h2>
+        <div class="reviews-rating-summary">
+          <div class="rating-stars">★★★★★</div>
+          <span class="rating-score">5.0</span>
+          <span class="rating-platform">on Tripadvisor</span>
+        </div>
+      </div>
+
+      <div class="reviews-track" id="reviewsTrack">
+        <div class="review-card reveal-up">
+          <div class="review-header">
+            <div class="review-avatar">S</div>
+            <div>
+              <h4>Sarah L.</h4>
+              <div class="review-stars">★★★★★</div>
+            </div>
+            <div class="review-source">Tripadvisor</div>
+          </div>
+          <p class="review-text">"This restaurant has an excellent and huge menu, from Chinese home-cooked dishes to western mainstays. We enjoyed everything we ordered, and even tabao'd their frozen pack of herbal chicken stew. Price is very reasonable for the quality of ingredients and taste."</p>
+          <div class="review-tags">
+            <span>Herbal Chicken</span>
+            <span>Great Value</span>
+          </div>
+        </div>
+
+        <div class="review-card reveal-up" style="--delay:0.15s">
+          <div class="review-header">
+            <div class="review-avatar" style="background: var(--green-mid);">M</div>
+            <div>
+              <h4>Mark T.</h4>
+              <div class="review-stars">★★★★★</div>
+            </div>
+            <div class="review-source">Tripadvisor</div>
+          </div>
+          <p class="review-text">"We have dined here three times within the past month and it has quickly become a favourite. The food is consistently flavorful, healthy options served without MSG — allowing us to enjoy meals with peace of mind. Staff are attentive and welcoming."</p>
+          <div class="review-tags">
+            <span>MSG-Free</span>
+            <span>Consistent Quality</span>
+          </div>
+        </div>
+
+        <div class="review-card reveal-up" style="--delay:0.3s">
+          <div class="review-header">
+            <div class="review-avatar" style="background: var(--gold);">A</div>
+            <div>
+              <h4>Amirah R.</h4>
+              <div class="review-stars">★★★★★</div>
+            </div>
+            <div class="review-source">Google</div>
+          </div>
+          <p class="review-text">"Makanan sehat yang sedap! Surprising that healthy food can taste this good. They don't compromise on flavour at all. Using Beacon Chicken makes such a big difference — you can really taste the quality. Perfect spot near the hospital area. Will be back!"</p>
+          <div class="review-tags">
+            <span>Beacon Chicken</span>
+            <span>Healthy Dining</span>
+          </div>
+        </div>
+
+        <div class="review-card reveal-up" style="--delay:0.45s">
+          <div class="review-header">
+            <div class="review-avatar" style="background: #8b6f47;">C</div>
+            <div>
+              <h4>Chen Wei</h4>
+              <div class="review-stars">★★★★★</div>
+            </div>
+            <div class="review-source">Facebook</div>
+          </div>
+          <p class="review-text">"The place is clean and neat, and service is prompt. The main person overseeing was knowledgeable about all the dishes. Looks like the place had many regulars picking up their orders. The herbal broth noodles are absolutely soul-warming — I'll definitely be back!"</p>
+          <div class="review-tags">
+            <span>Regulars Favourite</span>
+            <span>Clean & Neat</span>
+          </div>
+        </div>
+
+        <div class="review-card reveal-up" style="--delay:0.6s">
+          <div class="review-header">
+            <div class="review-avatar" style="background: #6b8f71;">J</div>
+            <div>
+              <h4>Janet K.</h4>
+              <div class="review-stars">★★★★★</div>
+            </div>
+            <div class="review-source">Google</div>
+          </div>
+          <p class="review-text">"A hidden gem in Pulau Tikus! The No.11 speciality coffee is really good, and the juice smoothies are a refreshing and healthy option. Love that they're MSG-free and Non-GMO. Great ambiance for casual meetups. The Mentaiko pasta is absolutely divine!"</p>
+          <div class="review-tags">
+            <span>Specialty Coffee</span>
+            <span>Hidden Gem</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reviews-nav reveal-up">
+        <button class="reviews-btn" id="reviewsPrev" aria-label="Previous review">←</button>
+        <div class="reviews-dots" id="reviewsDots"></div>
+        <button class="reviews-btn" id="reviewsNext" aria-label="Next review">→</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HEALTHY LIFESTYLE ===================== -->
+  <section class="lifestyle-section section">
+    <div class="container">
+      <div class="lifestyle-grid">
+        <div class="lifestyle-content reveal-left">
+          <div class="section-eyebrow">
+            <span class="eyebrow-dot"></span>
+            <span>Eat Well, Live Well</span>
+          </div>
+          <h2 class="section-title">Food as Medicine,<br/><em>Taste as Reward</em></h2>
+          <p>At No.11 Penang, we understand that your health doesn't pause at mealtime. Our menu has been thoughtfully developed to support an active, health-conscious lifestyle without ever sacrificing the joy of eating.</p>
+          <p style="margin-top:1rem;">Close to Penang's leading healthcare district, we've become a trusted dining destination for patients, caregivers, doctors and wellness advocates who refuse to settle for anything less than clean, nourishing food.</p>
+          <ul class="lifestyle-list">
+            <li>
+              <span class="list-check">✓</span>
+              <span>Ideal for post-hospital recovery meals</span>
+            </li>
+            <li>
+              <span class="list-check">✓</span>
+              <span>Suitable for health-conscious diets</span>
+            </li>
+            <li>
+              <span class="list-check">✓</span>
+              <span>Frozen packs available for home preparation</span>
+            </li>
+            <li>
+              <span class="list-check">✓</span>
+              <span>Muslim-friendly — pork and lard free</span>
+            </li>
+            <li>
+              <span class="list-check">✓</span>
+              <span>Delivery via FoodPanda available</span>
+            </li>
+          </ul>
+        </div>
+        <div class="lifestyle-images reveal-right">
+          <div class="lifestyle-img-top">
+            <img src="https://images.pexels.com/photos/30136632/pexels-photo-30136632.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=580" alt="Wholesome Vietnamese noodle salad" loading="lazy"/>
+          </div>
+          <div class="lifestyle-img-bottom">
+            <img src="https://images.pexels.com/photos/4113901/pexels-photo-4113901.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=380" alt="Fresh herbs and aromatics" loading="lazy"/>
+            <div class="lifestyle-quote">
+              <p>"A place you can shop and eat in a healthier way."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RESERVATION / CONTACT ===================== -->
+  <section class="contact-section section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal-left">
+          <div class="section-eyebrow">
+            <span class="eyebrow-dot"></span>
+            <span>Visit Us</span>
+          </div>
+          <h2 class="section-title">Come Dine<br/>with <em>Us</em></h2>
+          <p class="contact-intro">We'd love to welcome you. Whether it's a quiet lunch, a family gathering, or a post-recovery meal — No.11 Penang is ready to serve you with care.</p>
+
+          <div class="contact-details">
+            <div class="contact-detail-item">
+              <div class="contact-icon">📍</div>
+              <div>
+                <h4>Address</h4>
+                <p>11, Jalan Yeoh Guan Seok<br/>Pulau Tikus, 10350<br/>George Town, Penang, Malaysia</p>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="contact-icon">📞</div>
+              <div>
+                <h4>Phone</h4>
+                <a href="tel:+60125225287">+60 12-522 5287</a>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="contact-icon">✉️</div>
+              <div>
+                <h4>Email</h4>
+                <a href="mailto:nombor.eleven@gmail.com">nombor.eleven@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="contact-icon">⏰</div>
+              <div>
+                <h4>Opening Hours</h4>
+                <p>Tuesday – Sunday: 10am – 9pm</p>
+                <p style="color: var(--terracotta);">Closed on Mondays</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-social">
+            <a href="https://www.facebook.com/no11penang/" target="_blank" rel="noopener" class="social-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+              Facebook
+            </a>
+            <a href="https://www.instagram.com/no11_penang/" target="_blank" rel="noopener" class="social-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap reveal-right">
+          <div class="contact-form-card">
+            <h3>Send Us a Message</h3>
+            <p>Have a question or want to arrange a large group visit? Drop us a message below.</p>
+            <form class="contact-form" id="contactForm" novalidate>
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="e.g. Ahmad Zulkifli" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+60 12 345 6789" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Tell us about your visit, dietary needs, or group size..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-icon">→</span>
+              </button>
+              <div class="form-success" id="formSuccess">
+                <span>✓</span> Thank you! We'll get back to you soon.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MAP ===================== -->
+  <section class="map-section">
+    <div class="map-header">
+      <h3>Find <em>No.11 Penang</em></h3>
+      <p>11, Jalan Yeoh Guan Seok, Pulau Tikus, George Town</p>
+      <a href="https://share.google/342AYptPL83JkJMn7" target="_blank" rel="noopener" class="btn btn-primary map-directions-btn">Get Directions →</a>
+    </div>
+    <div class="map-container">
+      <iframe
+        title="No.11 Penang Location on Google Maps"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.1234567890!2d100.311493!3d5.428813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac7977beefef1%3A0x5c4e3a6b7f8c9d1e!2s11%2C%20Jalan%20Yeoh%20Guan%20Seok%2C%20Pulau%20Tikus%2C%2010350%20George%20Town%2C%20Pulau%20Pinang!5e0!3m2!1sen!2smy!4v1700000000000!5m2!1sen!2smy"
+        width="100%"
+        height="420"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <span class="logo-number">No.11</span>
+              <span class="logo-text">Penang</span>
+            </div>
+            <p class="footer-tagline">Wholesome. Honest. Delicious.</p>
+            <p class="footer-desc">A health food restaurant in the heart of Pulau Tikus, crafting clean, nourishing meals with Non-GMO ingredients and genuine care.</p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#about">Our Story</a></li>
+              <li><a href="#menu">Menu</a></li>
+              <li><a href="#philosophy">Philosophy</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#reviews">Reviews</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="tel:+60125225287">+60 12-522 5287</a></li>
+              <li><a href="mailto:nombor.eleven@gmail.com">nombor.eleven@gmail.com</a></li>
+              <li>11, Jalan Yeoh Guan Seok</li>
+              <li>Pulau Tikus, 10350</li>
+              <li>George Town, Penang</li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Hours</h4>
+            <ul class="hours-list">
+              <li><span>Tue – Sun</span><span>10am – 9pm</span></li>
+              <li><span class="closed">Monday</span><span class="closed">Closed</span></li>
+            </ul>
+            <div class="footer-badges">
+              <span class="footer-badge">Non-GMO</span>
+              <span class="footer-badge">MSG-Free</span>
+              <span class="footer-badge">Pork-Free</span>
+              <span class="footer-badge">Lard-Free</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 No.11 Penang. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/no11penang/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/no11_penang/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
