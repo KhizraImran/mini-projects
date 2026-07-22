@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+/* Reset Tailwind base that may conflict with our custom design */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
