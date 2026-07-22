@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="OPPA Korean BBQ Penang — Premium all-you-can-eat Korean BBQ buffet in George Town, Penang. Authentic Samgyeopsal, Kimchi Jjigae, and more. Dine-in at 139 Lebuh Carnarvon." />
+  <meta name="keywords" content="OPPA Korean BBQ, Penang Korean restaurant, Korean BBQ Penang, George Town food, pork belly BBQ, Samgyeopsal, Korean buffet Penang" />
+  <meta property="og:title" content="OPPA Korean BBQ Penang — The Floating Grill District" />
+  <meta property="og:description" content="Experience authentic Korean BBQ in the heart of George Town, Penang. All-you-can-eat buffet with premium meats and banchan." />
+  <meta property="og:type" content="restaurant" />
+  <title>OPPA Korean BBQ Penang — Authentic K-BBQ Experience</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Preload critical image -->
+  <link rel="preload" as="image" href="https://images.pexels.com/photos/5774152/pexels-photo-5774152.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1080&w=1920" />
+</head>
+<body>
+
+  <!-- Floating Particle Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- ========================================
+       FLOATING NAVIGATION
+       ======================================== -->
+  <nav class="nav-wrapper" id="mainNav">
+    <div class="nav-container">
+      <!-- Logo -->
+      <div class="nav-logo">
+        <div class="nav-logo-icon">🔥</div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-main">OPPA</span>
+          <span class="nav-logo-sub">Korean BBQ · Penang</span>
+        </div>
+      </div>
+
+      <!-- Desktop Nav Links -->
+      <div class="nav-links" id="navLinks">
+        <div class="nav-indicator" id="navIndicator"></div>
+        <a class="nav-link active" href="#hero" onclick="scrollToSection('hero')">Home</a>
+        <a class="nav-link" href="#story" onclick="scrollToSection('story')">Our Story</a>
+        <a class="nav-link" href="#menu" onclick="scrollToSection('menu')">Menu</a>
+        <a class="nav-link" href="#gallery" onclick="scrollToSection('gallery')">Gallery</a>
+        <a class="nav-link" href="#reservation" onclick="scrollToSection('reservation')">Reserve</a>
+      </div>
+
+      <!-- CTA Button -->
+      <button class="nav-cta" onclick="scrollToSection('reservation')" title="Make a Reservation">
+        <span style="position:relative;z-index:1;font-size:18px;">📅</span>
+      </button>
+
+      <!-- Hamburger for Mobile -->
+      <div class="nav-hamburger" id="navHamburger" onclick="toggleMobileNav()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-link" onclick="scrollToSection('hero'); closeMobileNav()">Home</div>
+    <div class="mobile-nav-link" onclick="scrollToSection('story'); closeMobileNav()">Our Story</div>
+    <div class="mobile-nav-link" onclick="scrollToSection('menu'); closeMobileNav()">Menu</div>
+    <div class="mobile-nav-link" onclick="scrollToSection('gallery'); closeMobileNav()">Gallery</div>
+    <div class="mobile-nav-link" onclick="scrollToSection('reservation'); closeMobileNav()">Reserve</div>
+    <div class="mobile-nav-link" onclick="window.open('tel:+60124290747'); closeMobileNav()">Call Us</div>
+  </div>
+
+  <!-- ========================================
+       HERO SECTION
+       ======================================== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-bg-image" id="heroBgImage"></div>
+      <div class="hero-bg-gradient"></div>
+      <div class="hero-smoke">
+        <div class="smoke-particle smoke-1"></div>
+        <div class="smoke-particle smoke-2"></div>
+        <div class="smoke-particle smoke-3"></div>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <!-- Left: Text -->
+      <div class="hero-text">
+        <div class="hero-badge">
+          <div class="hero-badge-dot"></div>
+          George Town, Penang · Est. 2018
+        </div>
+
+        <h1 class="hero-title">
+          <span class="hero-title-top">Where Every</span>
+          <span class="hero-title-accent">Flame Tells</span>
+          <span class="hero-title-top">a Story</span>
+          <span class="hero-title-bottom">OPPA · Korean BBQ</span>
+        </h1>
+
+        <p class="hero-description">
+          Authentic Korean BBQ in the heart of George Town — where premium marinated meats meet a sizzling grill, surrounded by the warmth of Korean hospitality.
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="scrollToSection('reservation')">
+            <span>Reserve a Table</span>
+            <span>→</span>
+          </button>
+          <button class="btn-secondary" onclick="scrollToSection('menu')">
+            Explore Menu
+          </button>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-number">4.4★</div>
+            <div class="hero-stat-label">Google Rating</div>
+          </div>
+          <div class="hero-divider"></div>
+          <div class="hero-stat">
+            <div class="hero-stat-number">RM39</div>
+            <div class="hero-stat-label">Buffet From</div>
+          </div>
+          <div class="hero-divider"></div>
+          <div class="hero-stat">
+            <div class="hero-stat-number">∞</div>
+            <div class="hero-stat-label">All-You-Can-Eat</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Visual -->
+      <div class="hero-visual">
+        <div class="hero-image-frame">
+          <div class="hero-img-glow"></div>
+          <img
+            class="hero-img-main"
+            src="https://images.pexels.com/photos/5774152/pexels-photo-5774152.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=700"
+            alt="Korean BBQ spread at OPPA Penang"
+            loading="eager"
+          />
+          <img
+            class="hero-img-secondary"
+            src="https://images.pexels.com/photos/5785545/pexels-photo-5785545.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=500&w=600"
+            alt="Sizzling BBQ meats on grill"
+            loading="eager"
+          />
+
+          <div class="hero-floating-card">
+            <div class="hero-fc-icon">🥩</div>
+            <div>
+              <div class="hero-fc-title">All-You-Can-Eat</div>
+              <div class="hero-fc-sub">Premium Buffet · RM39/pax</div>
+            </div>
+          </div>
+
+          <div class="hero-tag">🏆 #1 Korean BBQ<br>in George Town</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="hero-scroll-indicator">
+      <div class="scroll-line"></div>
+      <div class="scroll-text">Scroll</div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       STORY SECTION
+       ======================================== -->
+  <section id="story" class="story-wrapper">
+    <div class="story-inner">
+      <!-- Image Side -->
+      <div class="story-image-side reveal-left">
+        <img
+          class="story-img"
+          src="https://images.pexels.com/photos/34688717/pexels-photo-34688717.png?auto=compress&cs=tinysrgb&fit=crop&h=800&w=700"
+          alt="Authentic Korean BBQ dining experience"
+          loading="lazy"
+        />
+        <div class="story-image-overlay"></div>
+        <div class="story-image-badge">
+          <div class="story-badge-rating">
+            <span class="story-badge-stars">★★★★★</span>
+            <span class="story-badge-score">4.4</span>
+          </div>
+          <div class="story-badge-label">Customer Rating · Google</div>
+        </div>
+      </div>
+
+      <!-- Text Side -->
+      <div class="story-text-side reveal-right">
+        <div class="section-label">
+          <div class="section-label-line"></div>
+          <span class="section-label-text">Our Story</span>
+        </div>
+
+        <h2 class="section-title">
+          Born from <em>Passion,</em><br>Fired by <em>Flavour</em>
+        </h2>
+
+        <p class="story-body">
+          OPPA Korean BBQ began as a beloved neighbourhood spot in Tanjung Tokong before finding its permanent home at <strong>139 Lebuh Carnarvon, George Town</strong> — right on the vibrant Armenian Street Heritage corridor. What started as a humble Korean eatery quickly became one of Penang's most talked-about dining experiences.
+        </p>
+
+        <p class="story-body">
+          Managed with a passion for <strong>authentic Korean flavours</strong>, every dish at OPPA is crafted to honour the traditions of Korean cuisine — from the perfectly marinated Samgyeopsal sizzling on the tabletop grill, to the deeply comforting bowls of Kimchi Jjigae. The banchan (side dishes) are made fresh, and the buffet experience is designed for those who believe great food deserves no limits.
+        </p>
+
+        <div class="story-features">
+          <div class="story-feature">
+            <div class="story-feature-icon">🇰🇷</div>
+            <span>Authentic Korean recipes and preparation techniques</span>
+          </div>
+          <div class="story-feature">
+            <div class="story-feature-icon">🥩</div>
+            <span>Premium quality meats — pork belly, shoulder & duck</span>
+          </div>
+          <div class="story-feature">
+            <div class="story-feature-icon">🏠</div>
+            <span>Spacious, cozy interior — perfect for groups & families</span>
+          </div>
+          <div class="story-feature">
+            <div class="story-feature-icon">👨‍🍳</div>
+            <span>Staff assist with grilling for a seamless experience</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SIGNATURE DISHES
+       ======================================== -->
+  <section id="dishes" class="section-island dishes-section">
+    <div class="dishes-header reveal">
+      <div>
+        <div class="section-label">
+          <div class="section-label-line"></div>
+          <span class="section-label-text">Signature</span>
+        </div>
+        <h2 class="section-title">The Dishes <em>Everyone</em><br>Talks About</h2>
+      </div>
+      <p class="section-subtitle" style="max-width: 320px;">
+        From sizzling pork belly to soul-warming stews — each dish is a chapter of our Korean story.
+      </p>
+    </div>
+
+    <div class="dishes-grid">
+      <!-- Featured Card -->
+      <div class="dish-card dish-card-featured reveal" data-tilt>
+        <div class="dish-card-image">
+          <img
+            src="https://images.pexels.com/photos/5774145/pexels-photo-5774145.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=900"
+            alt="Samgyeopsal Pork Belly"
+            loading="lazy"
+          />
+          <div class="dish-card-image-overlay"></div>
+          <div class="dish-card-tag">⭐ Signature</div>
+        </div>
+        <div class="dish-card-body">
+          <div class="dish-card-name">Samgyeopsal (삼겹살)</div>
+          <div class="dish-card-desc">Thick-cut premium pork belly grilled to golden perfection at your table. Wrapped in crisp lettuce with house-made ssamjang and fresh kimchi. The crowd favourite that defined OPPA Penang.</div>
+          <div class="dish-card-footer">
+            <div class="dish-card-price">Buffet <span>included</span></div>
+            <div class="dish-card-cta">→</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="dish-card reveal" style="transition-delay: 0.1s" data-tilt>
+        <div class="dish-card-image">
+          <img
+            src="https://images.pexels.com/photos/5858466/pexels-photo-5858466.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600"
+            alt="Kimchi Jjigae"
+            loading="lazy"
+          />
+          <div class="dish-card-image-overlay"></div>
+          <div class="dish-card-tag">🌶 Fan Fave</div>
+        </div>
+        <div class="dish-card-body">
+          <div class="dish-card-name">Kimchi Jjigae (김치찌개)</div>
+          <div class="dish-card-desc">Slow-simmered kimchi stew served piping hot. Perfect acidity, bold spice, and deeply satisfying — served with a bowl of steamed rice.</div>
+          <div class="dish-card-footer">
+            <div class="dish-card-price">RM <span>à la carte</span></div>
+            <div class="dish-card-cta">→</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="dish-card reveal" style="transition-delay: 0.15s" data-tilt>
+        <div class="dish-card-image">
+          <img
+            src="https://images.pexels.com/photos/34688685/pexels-photo-34688685.png?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600"
+            alt="Gochujang Samgyeopsal"
+            loading="lazy"
+          />
+          <div class="dish-card-image-overlay"></div>
+          <div class="dish-card-tag">🔥 Spicy</div>
+        </div>
+        <div class="dish-card-body">
+          <div class="dish-card-name">Gochujang Samgyeopsal</div>
+          <div class="dish-card-desc">Pork belly marinated in our house gochujang blend — sweet, fiery, and deeply umami. A bold twist on the Korean BBQ classic.</div>
+          <div class="dish-card-footer">
+            <div class="dish-card-price">Buffet <span>included</span></div>
+            <div class="dish-card-cta">→</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="dish-card reveal" style="transition-delay: 0.2s" data-tilt>
+        <div class="dish-card-image">
+          <img
+            src="https://images.pexels.com/photos/32196405/pexels-photo-32196405.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600"
+            alt="Korean Ramen"
+            loading="lazy"
+          />
+          <div class="dish-card-image-overlay"></div>
+          <div class="dish-card-tag">🍜 Noodles</div>
+        </div>
+        <div class="dish-card-body">
+          <div class="dish-card-name">Ramyeon & Jajangmyeon</div>
+          <div class="dish-card-desc">Hearty Korean noodle soups and black bean noodles. Generous portions, bold broth, and the comforting warmth of Seoul in every bowl.</div>
+          <div class="dish-card-footer">
+            <div class="dish-card-price">RM15 <span>– RM18</span></div>
+            <div class="dish-card-cta">→</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="dish-card reveal" style="transition-delay: 0.25s" data-tilt>
+        <div class="dish-card-image">
+          <img
+            src="https://images.pexels.com/photos/31986858/pexels-photo-31986858.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600"
+            alt="Korean Fried Chicken"
+            loading="lazy"
+          />
+          <div class="dish-card-image-overlay"></div>
+          <div class="dish-card-tag">🍗 Sides</div>
+        </div>
+        <div class="dish-card-body">
+          <div class="dish-card-name">Gun Mandu & Starters</div>
+          <div class="dish-card-desc">Crispy pan-fried dumplings with glass noodle and veggie filling, paired with a subtly spiced dipping sauce. The perfect pre-grill bites.</div>
+          <div class="dish-card-footer">
+            <div class="dish-card-price">RM15 <span>per serving</span></div>
+            <div class="dish-card-cta">→</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       BUILD YOUR GRILL EXPERIENCE
+       ======================================== -->
+  <section class="section-island grill-section" id="experience">
+    <div class="grill-section-bg"></div>
+    <div class="grill-inner">
+      <div class="grill-layout">
+        <!-- Text + Steps -->
+        <div class="grill-text-content reveal-left">
+          <div class="section-label">
+            <div class="section-label-line"></div>
+            <span class="section-label-text">The Experience</span>
+          </div>
+          <h2 class="section-title">Build Your<br><em>Perfect Grill</em></h2>
+          <p class="section-subtitle">Every visit is an experience crafted around your table. Here's how your OPPA BBQ journey unfolds.</p>
+
+          <div class="grill-steps">
+            <div class="grill-step active" id="step1" onclick="setStep(1)">
+              <div class="grill-step-num">01</div>
+              <div class="grill-step-content">
+                <div class="grill-step-title">Choose Your Buffet or À La Carte</div>
+                <div class="grill-step-desc">Select the all-you-can-eat buffet (from RM39/pax, min. 2 persons) or order individual items from our authentic Korean menu.</div>
+              </div>
+            </div>
+            <div class="grill-step" id="step2" onclick="setStep(2)">
+              <div class="grill-step-num">02</div>
+              <div class="grill-step-content">
+                <div class="grill-step-title">Premium Banchan Arrives First</div>
+                <div class="grill-step-desc">A spread of complimentary side dishes hits the table — kimchi, egg rolls, stir-fried potato strips, and seasonal banchan.</div>
+              </div>
+            </div>
+            <div class="grill-step" id="step3" onclick="setStep(3)">
+              <div class="grill-step-num">03</div>
+              <div class="grill-step-content">
+                <div class="grill-step-title">Grill, Wrap & Savour</div>
+                <div class="grill-step-desc">Our staff assist with the grill whenever needed, changing the BBQ plate and ensuring every cut of meat is cooked to golden perfection.</div>
+              </div>
+            </div>
+            <div class="grill-step" id="step4" onclick="setStep(4)">
+              <div class="grill-step-num">04</div>
+              <div class="grill-step-content">
+                <div class="grill-step-title">Wrap It in Ssam & Enjoy</div>
+                <div class="grill-step-desc">Take a crisp lettuce leaf, add grilled meat, kimchi, and house ssamjang — wrap and savour the full Korean BBQ ritual.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual -->
+        <div class="grill-visual reveal-right">
+          <img
+            class="grill-main-img"
+            id="grillStepImg"
+            src="https://images.pexels.com/photos/23383499/pexels-photo-23383499.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=700"
+            alt="Korean BBQ Grill Experience"
+            loading="lazy"
+          />
+          <div class="grill-overlay-cards">
+            <div class="grill-float-item grill-float-1">
+              <div class="grill-float-emoji">🥩</div>
+              <div class="grill-float-text">
+                <strong>Fresh Daily</strong>
+                <span>Premium cuts, never frozen</span>
+              </div>
+            </div>
+            <div class="grill-float-item grill-float-2">
+              <div class="grill-float-emoji">♻️</div>
+              <div class="grill-float-text">
+                <strong>Plate Changed</strong>
+                <span>Without asking</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       MENU SECTION
+       ======================================== -->
+  <section id="menu" class="section-island menu-section">
+    <div class="reveal">
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span class="section-label-text">Full Menu</span>
+      </div>
+      <h2 class="section-title">Explore the <em>Full</em> Menu</h2>
+      <p class="section-subtitle" style="margin-bottom: 40px;">From sizzling BBQ to comforting stews — our menu is a love letter to authentic Korean cuisine.</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="menu-tabs">
+      <div class="menu-tab active" onclick="switchTab(this, 'bbq')">🔥 BBQ Buffet</div>
+      <div class="menu-tab" onclick="switchTab(this, 'noodles')">🍜 Noodles</div>
+      <div class="menu-tab" onclick="switchTab(this, 'starters')">🥟 Starters</div>
+      <div class="menu-tab" onclick="switchTab(this, 'soups')">🍲 Soups & Stews</div>
+      <div class="menu-tab" onclick="switchTab(this, 'sides')">🥗 Banchan</div>
+    </div>
+
+    <!-- BBQ Buffet Tab -->
+    <div class="menu-grid active" id="tab-bbq">
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <div class="menu-item-name">Samgyeopsal (Pork Belly — Original)</div>
+          <div class="menu-item-desc">Classic thick-cut pork belly, grilled tableside</div>
+        </div>
+        <div class="menu-item-price">Buffet</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <div class="menu-item-name">Gochujang Samgyeopsal (Spicy)</div>
+          <div class="menu-item-desc">Pork belly in fermented red chilli marinade</div>
+        </div>
+        <div class="menu-item-price">Buffet</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <div class="menu-item-name">Teriyaki Pork Shoulder</div>
+          <div class="menu-item-desc">Soy-glazed shoulder, tender and smoky</div>
+        </div>
+        <div class="menu-item-price">Buffet</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <div class="menu-item-name">Duck Meat (Oori Gogi)</div>
+          <div class="menu-item-desc">Seasoned duck — a rich, flavourful alternative</div>
+        </div>
+        <div class="menu-item-price">Buffet</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <div class="menu-item-name">Fresh Tiger Prawns</div>
+          <div class="menu-item-desc">Huge, incredibly fresh prawns grilled to perfection</div>
+        </div>
+        <div class="menu-item-price">Buffet</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <div class="menu-item-name">Kimchi Pancake (Kimchijeon)</div>
+          <div class="menu-item-desc">Crispy fermented cabbage pancake — buffet staple</div>
+        </div>
+        <div class="menu-item-price">Buffet</div>
+      </div>
+    </div>
+
+    <!-- Noodles Tab -->
+    <div class="menu-grid" id="tab-noodles">
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <div class="menu-item-name">Jajangmyeon (자장면)</div>
+          <div class="menu-item-desc">Handmade noodles in black bean paste — available in regular & large</div>
+        </div>
+        <div class="menu-item-price">RM15 – RM18</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <div class="menu-item-name">Buldak Bokkeum Myeon</div>
+          <div class="menu-item-desc">Ultra-spicy stir-fried fire chicken flavour noodles</div>
+        </div>
+        <div class="menu-item-price">RM16</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <div class="menu-item-name">Ramen (라면)</div>
+          <div class="menu-item-desc">Rich Korean ramen broth with egg, scallions & toppings</div>
+        </div>
+        <div class="menu-item-price">RM14</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <div class="menu-item-name">Kimbap (김밥)</div>
+          <div class="menu-item-desc">Korean rice rolls with vegetables, egg, and ham</div>
+        </div>
+        <div class="menu-item-price">RM12</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <div class="menu-item-name">Tteokbokki (떡볶이)</div>
+          <div class="menu-item-desc">Spicy stir-fried rice cakes in gochujang sauce</div>
+        </div>
+        <div class="menu-item-price">RM14</div>
+      </div>
+    </div>
+
+    <!-- Starters Tab -->
+    <div class="menu-grid" id="tab-starters">
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <div class="menu-item-name">Gun Mandu (군만두)</div>
+          <div class="menu-item-desc">Pan-fried dumplings — glass noodle, veggie & tofu filling</div>
+        </div>
+        <div class="menu-item-price">RM15</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <div class="menu-item-name">Samgyetang Ginseng Stew</div>
+          <div class="menu-item-desc">Traditional whole-chicken ginseng soup — a must-try</div>
+        </div>
+        <div class="menu-item-price">RM28</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <div class="menu-item-name">Korean Fried Chicken</div>
+          <div class="menu-item-desc">Crispy double-fried chicken with sweet-spicy glaze</div>
+        </div>
+        <div class="menu-item-price">RM20</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <div class="menu-item-name">Dosirak Set Meal</div>
+          <div class="menu-item-desc">Korean lunchbox set with rice, protein & side dishes</div>
+        </div>
+        <div class="menu-item-price">RM18</div>
+      </div>
+    </div>
+
+    <!-- Soups Tab -->
+    <div class="menu-grid" id="tab-soups">
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <div class="menu-item-name">Kimchi Jjigae (김치찌개)</div>
+          <div class="menu-item-desc">Spicy kimchi stew — perfectly acidic, bold, and warming</div>
+        </div>
+        <div class="menu-item-price">RM16</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <div class="menu-item-name">Samgyetang (삼계탕)</div>
+          <div class="menu-item-desc">Nourishing ginseng chicken soup served whole</div>
+        </div>
+        <div class="menu-item-price">RM28</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <div class="menu-item-name">Kimchi Soup (Buffet)</div>
+          <div class="menu-item-desc">Complimentary kimchi soup included with every buffet</div>
+        </div>
+        <div class="menu-item-price">Buffet</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <div class="menu-item-name">Doenjang Jjigae</div>
+          <div class="menu-item-desc">Fermented soybean paste stew with tofu and vegetables</div>
+        </div>
+        <div class="menu-item-price">RM15</div>
+      </div>
+    </div>
+
+    <!-- Sides / Banchan Tab -->
+    <div class="menu-grid" id="tab-sides">
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <div class="menu-item-name">Kimchi (김치)</div>
+          <div class="menu-item-desc">House-fermented napa cabbage kimchi — fresh and tangy</div>
+        </div>
+        <div class="menu-item-price">Complimentary</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <div class="menu-item-name">Egg Rolls (Gyeran Mari)</div>
+          <div class="menu-item-desc">Rolled omelette with vegetables — Korean-style</div>
+        </div>
+        <div class="menu-item-price">Complimentary</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <div class="menu-item-name">Stir-Fried Potato Strips</div>
+          <div class="menu-item-desc">Gamja jorim — sweet and savoury glazed potatoes</div>
+        </div>
+        <div class="menu-item-price">Complimentary</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <div class="menu-item-name">Tomato & Egg Salad</div>
+          <div class="menu-item-desc">Light and refreshing house salad side dish</div>
+        </div>
+        <div class="menu-item-price">Complimentary</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <div class="menu-item-name">Steamed Rice (Bap)</div>
+          <div class="menu-item-desc">Fluffy Japanese-style steamed white rice</div>
+        </div>
+        <div class="menu-item-price">Complimentary</div>
+      </div>
+    </div>
+
+    <!-- Buffet Banner -->
+    <div class="menu-buffet-banner reveal">
+      <div class="buffet-info">
+        <div class="buffet-label">🔥 Best Value</div>
+        <div class="buffet-title">All-You-Can-Eat BBQ Buffet</div>
+        <div class="buffet-desc">Unlimited Samgyeopsal, Gochujang Pork, Duck, Prawns, Kimchi Pancake & Kimchi Soup. Min. 2 persons.</div>
+      </div>
+      <div class="buffet-prices">
+        <div class="buffet-price">
+          <div class="buffet-price-amount">RM36</div>
+          <div class="buffet-price-label">Lunch (before 4pm)</div>
+        </div>
+        <div style="width:1px;height:50px;background:var(--glass-border)"></div>
+        <div class="buffet-price">
+          <div class="buffet-price-amount">RM39</div>
+          <div class="buffet-price-label">Dinner (after 4pm)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       GALLERY SECTION
+       ======================================== -->
+  <section id="gallery" class="section-island gallery-section">
+    <div class="reveal">
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span class="section-label-text">Gallery</span>
+      </div>
+      <h2 class="section-title">Moments from<br>the <em>Grill</em></h2>
+    </div>
+
+    <div class="gallery-wrapper">
+      <div class="gallery-masonry">
+        <!-- Item 1 — Large -->
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <div class="gallery-item-inner">
+            <img class="gallery-img" src="https://images.pexels.com/photos/5774152/pexels-photo-5774152.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=800" alt="Korean BBQ Table Spread" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-title">The Full Spread</div>
+              <div class="gallery-overlay-sub">Korean BBQ feast at OPPA Penang</div>
+            </div>
+          </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <div class="gallery-item-inner">
+            <img class="gallery-img" src="https://images.pexels.com/photos/23383499/pexels-photo-23383499.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Sizzling Grill" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-title">On the Grill</div>
+              <div class="gallery-overlay-sub">Premium cuts sizzling live</div>
+            </div>
+          </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <div class="gallery-item-inner">
+            <img class="gallery-img" src="https://images.pexels.com/photos/5858466/pexels-photo-5858466.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Banchan Side Dishes" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-title">Banchan Spread</div>
+              <div class="gallery-overlay-sub">Fresh kimchi & side dishes daily</div>
+            </div>
+          </div>
+        </div>
+        <!-- Item 4 -->
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <div class="gallery-item-inner">
+            <img class="gallery-img" src="https://images.pexels.com/photos/5785545/pexels-photo-5785545.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Grilled Meats" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-title">The Grill</div>
+              <div class="gallery-overlay-sub">Beef & vegetables on the BBQ</div>
+            </div>
+          </div>
+        </div>
+        <!-- Item 5 -->
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <div class="gallery-item-inner">
+            <img class="gallery-img" src="https://images.pexels.com/photos/34688685/pexels-photo-34688685.png?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Ssam Wrap" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-title">Ssam Ritual</div>
+              <div class="gallery-overlay-sub">Pork belly & daikon leaf wrap</div>
+            </div>
+          </div>
+        </div>
+        <!-- Item 6 -->
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <div class="gallery-item-inner">
+            <img class="gallery-img" src="https://images.pexels.com/photos/6646091/pexels-photo-6646091.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Korean Side Dishes" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-title">Complimentary Sides</div>
+              <div class="gallery-overlay-sub">Served fresh with every meal</div>
+            </div>
+          </div>
+        </div>
+        <!-- Item 7 — Wide -->
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <div class="gallery-item-inner">
+            <img class="gallery-img" src="https://images.pexels.com/photos/34688717/pexels-photo-34688717.png?auto=compress&cs=tinysrgb&fit=crop&h=400&w=900" alt="Korean BBQ Dining" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-title">Family Dining Experience</div>
+              <div class="gallery-overlay-sub">Diverse selection for the whole table</div>
+            </div>
+          </div>
+        </div>
+        <!-- Item 8 -->
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <div class="gallery-item-inner">
+            <img class="gallery-img" src="https://images.pexels.com/photos/36481287/pexels-photo-36481287.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Shrimp Ramen" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-title">Korean Ramen</div>
+              <div class="gallery-overlay-sub">Rich broth, bold flavours</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       TESTIMONIALS
+       ======================================== -->
+  <section class="section-island testimonials-section" id="reviews">
+    <div class="testimonials-bg"></div>
+    <div class="reveal">
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span class="section-label-text">Reviews</span>
+      </div>
+      <h2 class="section-title">What Our Guests<br><em>Are Saying</em></h2>
+    </div>
+
+    <div class="testimonials-slider" style="overflow:hidden">
+      <div class="testimonials-track" id="testimonialTrack">
+        <!-- Card 1 -->
+        <div class="testimonial-card featured">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-text">Absolutely fantastic Korean BBQ experience! The star of the show was the incredible quality of the meat, especially their wide variety of well-marinated pork cuts. The prawns were huge and incredibly fresh. Staff helped us cook without even asking — truly exceptional service.</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">J</div>
+            <div class="testimonial-author-info">
+              <div class="testimonial-author-name">Jason W.</div>
+              <div class="testimonial-author-label">Google Review · Penang</div>
+              <div class="testimonial-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-text">This is definitely one of the underrated gems in Penang. The meat quality is exceptional — simple menu but outstanding food. The side dishes like kimchi and egg roll were also very delicious. I will revisit this restaurant again in future.</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">S</div>
+            <div class="testimonial-author-info">
+              <div class="testimonial-author-name">Sarah T.</div>
+              <div class="testimonial-author-label">Google Review · KL</div>
+              <div class="testimonial-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-text">The Kimchi Jjigae was the dish we enjoyed the most — served piping hot with perfect acidity and spiciness. Great value for money and the buffet deal is very reasonable. A cozy, spacious restaurant perfect for group gatherings.</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">R</div>
+            <div class="testimonial-author-info">
+              <div class="testimonial-author-name">Rachel C.</div>
+              <div class="testimonial-author-label">Wanderlog Review</div>
+              <div class="testimonial-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-text">First time visiting — very nice and worth every ringgit! RM42 per person for all-you-can-eat Korean BBQ. The boss is friendly and the staff go above and beyond to make sure your plates are always fresh. The kimchi here is outstanding.</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">M</div>
+            <div class="testimonial-author-info">
+              <div class="testimonial-author-name">Ming K.</div>
+              <div class="testimonial-author-label">Google Review · Penang</div>
+              <div class="testimonial-stars">★★★★☆</div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-text">Reasonably priced, comfortable dining environment — one of the best options to satisfy Korean BBQ cravings in Penang without breaking the wallet. The meat quality is consistently good and the atmosphere is warm and welcoming.</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">L</div>
+            <div class="testimonial-author-info">
+              <div class="testimonial-author-name">Lim Y.</div>
+              <div class="testimonial-author-label">Ken Hunts Food · Blogger</div>
+              <div class="testimonial-stars">★★★★☆</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonials-controls">
+      <button class="testimonial-btn" onclick="testimonialPrev()">←</button>
+      <div class="testimonial-dots" id="testimonialDots"></div>
+      <button class="testimonial-btn" onclick="testimonialNext()">→</button>
+    </div>
+  </section>
+
+  <!-- ========================================
+       RESERVATION SECTION
+       ======================================== -->
+  <section id="reservation" class="section-island reservation-section">
+    <div class="reservation-layout">
+      <!-- Info Side -->
+      <div class="reservation-info reveal-left">
+        <div>
+          <div class="section-label">
+            <div class="section-label-line"></div>
+            <span class="section-label-text">Reserve</span>
+          </div>
+          <h2 class="section-title">Book Your<br><em>Grill Session</em></h2>
+          <p class="section-subtitle">Reservations are recommended, especially for groups. Call us or fill out the form — we'll confirm your spot at the grill.</p>
+        </div>
+
+        <div class="reservation-details">
+          <div class="reservation-detail">
+            <div class="reservation-detail-icon">📍</div>
+            <div>
+              <div class="reservation-detail-label">Address</div>
+              <div class="reservation-detail-value">139 Lebuh Carnarvon</div>
+              <div class="reservation-detail-sub">George Town, 10100, Penang, Malaysia</div>
+            </div>
+          </div>
+          <div class="reservation-detail">
+            <div class="reservation-detail-icon">📞</div>
+            <div>
+              <div class="reservation-detail-label">Phone</div>
+              <div class="reservation-detail-value"><a href="tel:+60124290747">+60 12-429 0747</a></div>
+              <div class="reservation-detail-sub">Call or WhatsApp to reserve</div>
+            </div>
+          </div>
+          <div class="reservation-detail">
+            <div class="reservation-detail-icon">🕐</div>
+            <div>
+              <div class="reservation-detail-label">Opening Hours</div>
+              <div class="hours-grid" style="margin-top:8px;">
+                <div class="hours-row"><span class="hours-day">Mon, Wed–Sun</span><span class="hours-time">11:30 – 22:00</span></div>
+                <div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-closed">Closed</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="reservation-detail">
+            <div class="reservation-detail-icon">ℹ️</div>
+            <div>
+              <div class="reservation-detail-label">Buffet Info</div>
+              <div class="reservation-detail-value">Minimum 2 persons</div>
+              <div class="reservation-detail-sub">Non-halal · Accepts reservations · Cash & card</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Side -->
+      <div class="reservation-form-wrapper reveal-right">
+        <div class="form-title">Make a Reservation</div>
+        <div class="form-subtitle">We'll confirm your booking via WhatsApp or phone</div>
+
+        <form id="reservationForm" onsubmit="submitForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="guestName">Full Name</label>
+              <input class="form-input" type="text" id="guestName" placeholder="e.g. Ahmad Rizal" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="guestPhone">Phone Number</label>
+              <input class="form-input" type="tel" id="guestPhone" placeholder="+60 12-XXX XXXX" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="resDate">Date</label>
+              <input class="form-input" type="date" id="resDate" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="resTime">Time</label>
+              <select class="form-select" id="resTime" required>
+                <option value="" disabled selected>Select time</option>
+                <option value="11:30">11:30 AM (Lunch)</option>
+                <option value="12:00">12:00 PM</option>
+                <option value="12:30">12:30 PM</option>
+                <option value="13:00">1:00 PM</option>
+                <option value="13:30">1:30 PM</option>
+                <option value="17:30">5:30 PM (Dinner)</option>
+                <option value="18:00">6:00 PM</option>
+                <option value="18:30">6:30 PM</option>
+                <option value="19:00">7:00 PM</option>
+                <option value="19:30">7:30 PM</option>
+                <option value="20:00">8:00 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="guestCount">Guests</label>
+              <select class="form-select" id="guestCount" required>
+                <option value="" disabled selected>No. of guests</option>
+                <option value="2">2 guests</option>
+                <option value="3">3 guests</option>
+                <option value="4">4 guests</option>
+                <option value="5">5 guests</option>
+                <option value="6">6 guests</option>
+                <option value="7">7 guests</option>
+                <option value="8">8+ guests</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="mealType">Preference</label>
+              <select class="form-select" id="mealType">
+                <option value="buffet">BBQ Buffet</option>
+                <option value="alacarte">À La Carte</option>
+                <option value="both">Both</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="notes">Special Requests</label>
+            <textarea class="form-textarea" id="notes" placeholder="Any dietary needs, occasion, or seating preference..."></textarea>
+          </div>
+
+          <button type="submit" class="form-submit" id="submitBtn">
+            Confirm Reservation →
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       MAP SECTION
+       ======================================== -->
+  <section id="location" class="map-section">
+    <div class="map-wrapper">
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.7014890474737!2d100.33522!3d5.4153714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac3276d981d21%3A0x8170425767ce9d11!2sOPPA%20Korean%20BBQ%20Penang!5e0!3m2!1sen!2smy!4v1699876543210!5m2!1sen!2smy"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="OPPA Korean BBQ Penang Location"
+        ></iframe>
+
+        <div class="map-overlay-card">
+          <div class="map-card-name">OPPA Korean BBQ</div>
+          <div class="map-card-address">139 Lebuh Carnarvon, George Town, 10100 Penang, Malaysia</div>
+          <a class="map-card-cta" href="https://share.google/x6vjPxTADRcMjgFf4" target="_blank" rel="noopener">
+            📍 Get Directions
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       FOOTER
+       ======================================== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon">🔥</div>
+            <span class="footer-logo-name">OPPA Korean BBQ Penang</span>
+          </div>
+          <div class="footer-tagline">
+            Authentic Korean BBQ in the heart of George Town, Penang. Sizzle, savour, and gather around the grill for a true Korean dining experience.
+          </div>
+          <div class="footer-social">
+            <a class="footer-social-link" href="https://www.facebook.com/oppakoreanbbqarmenian/" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook">f</a>
+            <a class="footer-social-link" href="https://www.instagram.com/opppkoreanbbq/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">📷</a>
+            <a class="footer-social-link" href="tel:+60124290747" title="Call Us" aria-label="Phone">📞</a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <div class="footer-links">
+            <div class="footer-link" onclick="scrollToSection('hero')">→ Home</div>
+            <div class="footer-link" onclick="scrollToSection('story')">→ Our Story</div>
+            <div class="footer-link" onclick="scrollToSection('menu')">→ Menu</div>
+            <div class="footer-link" onclick="scrollToSection('gallery')">→ Gallery</div>
+            <div class="footer-link" onclick="scrollToSection('reservation')">→ Reservations</div>
+            <div class="footer-link" onclick="scrollToSection('location')">→ Location</div>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <div class="footer-col-title">Contact Us</div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📍</span>
+            <div class="footer-contact-text">139 Lebuh Carnarvon, George Town, 10100 Penang</div>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📞</span>
+            <div class="footer-contact-text"><a href="tel:+60124290747">+60 12-429 0747</a></div>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">🕐</span>
+            <div class="footer-contact-text">
+              Mon & Wed–Sun: 11:30 AM – 10:00 PM<br>
+              <span style="color: var(--burnt-orange);">Closed on Tuesdays</span>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">💳</span>
+            <div class="footer-contact-text">Cash · Card · E-Wallet Accepted</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2025 OPPA Korean BBQ Penang. All rights reserved.</div>
+        <div class="footer-tagline-bottom">Sizzle, Savour, Repeat — 오빠 Korean BBQ</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================
+       LIGHTBOX
+       ======================================== -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <div class="toast-icon">✅</div>
+    <div class="toast-text" id="toastText">Reservation request sent!</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
