@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* Base reset for BRGR premium theme */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
