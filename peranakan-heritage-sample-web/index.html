@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sifu Nyonya Cuisine — Authentic Traditional Peranakan dining experience in the heart of George Town, Penang. Heritage recipes passed down through generations." />
+  <meta name="keywords" content="Nyonya food, Peranakan cuisine, Penang restaurant, George Town, Malaysian food, heritage dining" />
+  <meta name="author" content="Sifu Nyonya Cuisine" />
+  <meta property="og:title" content="Sifu Nyonya Cuisine — Heritage Peranakan Dining, George Town Penang" />
+  <meta property="og:description" content="Step into a world where every dish tells a story. Authentic Nyonya recipes, lovingly preserved through generations." />
+  <meta property="og:type" content="website" />
+  <title>Sifu Nyonya Cuisine — Heritage Peranakan Dining, George Town Penang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-outer" id="cursorOuter" aria-hidden="true"></div>
+  <div class="cursor-inner" id="cursorInner" aria-hidden="true"></div>
+
+  <!-- Loading Screen -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-emblem">
+        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="40" cy="40" r="36" stroke="#C8A96A" stroke-width="1.5"/>
+          <circle cx="40" cy="40" r="28" stroke="#C8A96A" stroke-width="0.75" stroke-dasharray="4 4"/>
+          <path d="M40 16 L44 32 L58 28 L48 40 L58 52 L44 48 L40 64 L36 48 L22 52 L32 40 L22 28 L36 32 Z" fill="#C8A96A" opacity="0.7"/>
+        </svg>
+      </div>
+      <p class="loader-text">Sifu Nyonya Cuisine</p>
+    </div>
+  </div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <header class="site-header" id="siteHeader" role="banner">
+    <nav class="nav-container" aria-label="Primary Navigation">
+      <a href="#home" class="nav-logo" aria-label="Sifu Nyonya Cuisine Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="18" stroke="#C8A96A" stroke-width="1"/>
+            <path d="M20 8 L22 16 L30 14 L24 20 L30 26 L22 24 L20 32 L18 24 L10 26 L16 20 L10 14 L18 16 Z" fill="#C8A96A"/>
+          </svg>
+        </span>
+        <span class="logo-text">
+          <span class="logo-main">Sifu Nyonya</span>
+          <span class="logo-sub">George Town, Penang</span>
+        </span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Open navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#journey" class="nav-link">Our Journey</a></li>
+        <li><a href="#dishes" class="nav-link">The Kitchen</a></li>
+        <li><a href="#recipes" class="nav-link">Recipes</a></li>
+        <li><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li><a href="#reviews" class="nav-link">Stories</a></li>
+        <li><a href="#contact" class="nav-link">Find Us</a></li>
+        <li><a href="#reservation" class="nav-cta">Reserve a Table</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="home">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero-section" aria-labelledby="heroHeading">
+      <div class="hero-bg" aria-hidden="true">
+        <img
+          src="https://images.pexels.com/photos/38443076/pexels-photo-38443076.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1080&w=1920"
+          alt="Vintage heritage dining room with antique wooden furniture"
+          class="hero-bg-img"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="hero-overlay"></div>
+        <div class="hero-paper-texture" aria-hidden="true"></div>
+      </div>
+
+      <!-- Floating spice illustrations -->
+      <div class="spice-float spice-1" aria-hidden="true">
+        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="30" cy="30" rx="8" ry="22" fill="#C8A96A" opacity="0.6" transform="rotate(-20 30 30)"/>
+          <ellipse cx="30" cy="30" rx="8" ry="22" fill="#C8A96A" opacity="0.4" transform="rotate(40 30 30)"/>
+          <ellipse cx="30" cy="30" rx="8" ry="22" fill="#C8A96A" opacity="0.3" transform="rotate(100 30 30)"/>
+          <circle cx="30" cy="30" r="5" fill="#C8A96A" opacity="0.8"/>
+        </svg>
+      </div>
+      <div class="spice-float spice-2" aria-hidden="true">
+        <svg viewBox="0 0 50 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M25 5 Q35 20 25 35 Q15 20 25 5Z" fill="#C8A96A" opacity="0.5"/>
+          <line x1="25" y1="35" x2="25" y2="75" stroke="#C8A96A" stroke-width="1.5" opacity="0.6"/>
+          <path d="M18 50 Q25 44 32 50" stroke="#C8A96A" stroke-width="1" fill="none" opacity="0.5"/>
+          <path d="M16 60 Q25 54 34 60" stroke="#C8A96A" stroke-width="1" fill="none" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="spice-float spice-3" aria-hidden="true">
+        <svg viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M35 5 C55 15 65 35 55 55 C45 65 25 65 15 55 C5 45 5 15 35 5Z" fill="none" stroke="#C8A96A" stroke-width="1" opacity="0.5"/>
+          <path d="M35 15 C48 22 55 35 48 48 C42 58 28 58 22 48 C15 38 15 22 35 15Z" fill="#C8A96A" opacity="0.15"/>
+          <circle cx="35" cy="35" r="4" fill="#C8A96A" opacity="0.7"/>
+          <path d="M35 35 L50 20 M35 35 L20 20 M35 35 L15 40 M35 35 L55 40" stroke="#C8A96A" stroke-width="0.8" opacity="0.4"/>
+        </svg>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-badge" data-reveal>
+          <span class="badge-line" aria-hidden="true"></span>
+          <span class="badge-text">Est. George Town, Penang</span>
+          <span class="badge-line" aria-hidden="true"></span>
+        </div>
+        <h1 class="hero-title" id="heroHeading" data-reveal>
+          <span class="hero-title-line">Where Every</span>
+          <span class="hero-title-line hero-title-italic">Dish Tells</span>
+          <span class="hero-title-line">A Story</span>
+        </h1>
+        <p class="hero-desc" data-reveal>
+          Four centuries of Peranakan heritage, preserved in every morsel. Sifu Nyonya brings the soul of the Straits Chinese kitchen to the tables of George Town.
+        </p>
+        <div class="hero-actions" data-reveal>
+          <a href="#journey" class="btn-primary">Discover Our Heritage</a>
+          <a href="#dishes" class="btn-ghost">Explore The Kitchen</a>
+        </div>
+      </div>
+
+      <div class="hero-scroll-cue" aria-hidden="true">
+        <span class="scroll-line"></span>
+        <span class="scroll-label">Scroll</span>
+      </div>
+
+      <div class="hero-accent-frame" aria-hidden="true">
+        <img
+          src="https://images.pexels.com/photos/9772442/pexels-photo-9772442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=600&w=400"
+          alt="Authentic Curry Laksa — a signature Nyonya dish"
+          loading="lazy"
+        />
+        <div class="frame-caption">Curry Laksa — A Nyonya Signature</div>
+      </div>
+    </section>
+
+    <!-- ===================== INTRO STRIP ===================== -->
+    <section class="intro-strip" aria-label="Restaurant introduction">
+      <div class="intro-strip-inner">
+        <div class="intro-stat" data-reveal>
+          <span class="stat-number">4</span>
+          <span class="stat-label">Centuries of Heritage</span>
+        </div>
+        <div class="intro-divider" aria-hidden="true"></div>
+        <div class="intro-stat" data-reveal>
+          <span class="stat-number">60+</span>
+          <span class="stat-label">Authentic Recipes</span>
+        </div>
+        <div class="intro-divider" aria-hidden="true"></div>
+        <div class="intro-stat" data-reveal>
+          <span class="stat-number">3</span>
+          <span class="stat-label">Generations of Family Craft</span>
+        </div>
+        <div class="intro-divider" aria-hidden="true"></div>
+        <div class="intro-stat" data-reveal>
+          <span class="stat-number">1</span>
+          <span class="stat-label">Home in George Town</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PERANAKAN JOURNEY TIMELINE ===================== -->
+    <section class="timeline-section" id="journey" aria-labelledby="journeyHeading">
+      <div class="timeline-header" data-reveal>
+        <span class="section-label">The Peranakan Journey</span>
+        <h2 id="journeyHeading">A Story Written in Spice</h2>
+        <p class="section-sub">Four eras that shaped the soul of Nyonya cuisine</p>
+      </div>
+
+      <!-- Desktop Horizontal Timeline -->
+      <div class="timeline-track-wrapper" id="timelineWrapper" aria-live="polite">
+        <div class="timeline-track" id="timelineTrack">
+
+          <!-- Panel 1: 1400s -->
+          <article class="timeline-panel" data-panel="0" aria-label="The 1400s — The Straits Chinese Begin">
+            <div class="panel-bg-texture" aria-hidden="true"></div>
+            <div class="panel-batik-watermark" aria-hidden="true"></div>
+            <div class="panel-inner">
+              <div class="panel-year-col">
+                <span class="panel-year" aria-hidden="true">1400s</span>
+                <div class="panel-era-tag">Era I</div>
+              </div>
+              <div class="panel-content-col">
+                <div class="panel-tile-divider" aria-hidden="true">
+                  <svg viewBox="0 0 60 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 10 L15 2 L30 10 L45 2 L60 10" stroke="#C8A96A" stroke-width="1" fill="none"/>
+                    <path d="M0 10 L15 18 L30 10 L45 18 L60 10" stroke="#C8A96A" stroke-width="1" fill="none"/>
+                  </svg>
+                </div>
+                <h3 class="panel-era-title">The Straits Chinese Begin</h3>
+                <p class="panel-copy">In the great age of maritime trade, Chinese merchants sailed south along the Strait of Malacca and made landfall on the Malay Peninsula. They married local women, adopted Malay customs, and gave birth to an entirely new culture — the Peranakan. Neither wholly Chinese nor wholly Malay, this new people forged a language, a fashion, an architecture, and above all, a cuisine unlike anything the world had tasted before.</p>
+                <div class="panel-image-frame">
+                  <img
+                    src="https://images.pexels.com/photos/33795982/pexels-photo-33795982.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=400"
+                    alt="Historic shophouses representing early Straits Chinese settlement"
+                    loading="lazy"
+                  />
+                  <div class="frame-arch" aria-hidden="true"></div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-rail" aria-hidden="true">
+              <div class="rail-dot active"></div>
+              <div class="rail-line"></div>
+            </div>
+          </article>
+
+          <!-- Panel 2: 1800s -->
+          <article class="timeline-panel" data-panel="1" aria-label="The 1800s — The Golden Age of Nyonya Kitchens">
+            <div class="panel-bg-texture" aria-hidden="true"></div>
+            <div class="panel-batik-watermark" aria-hidden="true"></div>
+            <div class="panel-inner">
+              <div class="panel-year-col">
+                <span class="panel-year" aria-hidden="true">1800s</span>
+                <div class="panel-era-tag">Era II</div>
+              </div>
+              <div class="panel-content-col">
+                <div class="panel-tile-divider" aria-hidden="true">
+                  <svg viewBox="0 0 60 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 10 L15 2 L30 10 L45 2 L60 10" stroke="#C8A96A" stroke-width="1" fill="none"/>
+                    <path d="M0 10 L15 18 L30 10 L45 18 L60 10" stroke="#C8A96A" stroke-width="1" fill="none"/>
+                  </svg>
+                </div>
+                <h3 class="panel-era-title">The Golden Age of Nyonya Kitchens</h3>
+                <p class="panel-copy">As the spice trade flourished and Peranakan merchants grew wealthy, their wives — the Nyonyas — turned the kitchen into a sacred stage. Recipes were whispered from mother to daughter, never written, only felt. Rendang simmered for hours. Rempah was pounded before dawn. Each dish was a negotiation between Chinese technique and Malay pantry — lemongrass meeting soy, galangal shaking hands with coconut milk. These were the years that gave Nyonya cuisine its soul.</p>
+                <div class="panel-image-frame">
+                  <img
+                    src="https://images.pexels.com/photos/33428714/pexels-photo-33428714.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=400"
+                    alt="Hand grinding spices with traditional mortar and pestle"
+                    loading="lazy"
+                  />
+                  <div class="frame-arch" aria-hidden="true"></div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-rail" aria-hidden="true">
+              <div class="rail-dot"></div>
+              <div class="rail-line"></div>
+            </div>
+          </article>
+
+          <!-- Panel 3: 1900s -->
+          <article class="timeline-panel" data-panel="2" aria-label="The 1900s — Heritage Preserved in George Town">
+            <div class="panel-bg-texture" aria-hidden="true"></div>
+            <div class="panel-batik-watermark" aria-hidden="true"></div>
+            <div class="panel-inner">
+              <div class="panel-year-col">
+                <span class="panel-year" aria-hidden="true">1900s</span>
+                <div class="panel-era-tag">Era III</div>
+              </div>
+              <div class="panel-content-col">
+                <div class="panel-tile-divider" aria-hidden="true">
+                  <svg viewBox="0 0 60 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 10 L15 2 L30 10 L45 2 L60 10" stroke="#C8A96A" stroke-width="1" fill="none"/>
+                    <path d="M0 10 L15 18 L30 10 L45 18 L60 10" stroke="#C8A96A" stroke-width="1" fill="none"/>
+                  </svg>
+                </div>
+                <h3 class="panel-era-title">Heritage Preserved in George Town</h3>
+                <p class="panel-copy">George Town became the great crucible of Peranakan identity. Its shophouses — pastel-painted, tile-floored, five-foot-way shaded — sheltered families whose kitchens were its beating heart. UNESCO would later recognise what Peranakans had always known: that this city was unlike any other. The recipes lived in the tiles, the aromas drifted down the lanes, and the markets overflowed with the raw materials of an ancient culinary tradition refusing to yield.</p>
+                <div class="panel-image-frame">
+                  <img
+                    src="https://images.pexels.com/photos/32214572/pexels-photo-32214572.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=400"
+                    alt="Charming heritage street in Penang, George Town"
+                    loading="lazy"
+                  />
+                  <div class="frame-arch" aria-hidden="true"></div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-rail" aria-hidden="true">
+              <div class="rail-dot"></div>
+              <div class="rail-line"></div>
+            </div>
+          </article>
+
+          <!-- Panel 4: Today -->
+          <article class="timeline-panel" data-panel="3" aria-label="Today — Sifu Nyonya Carries the Flame">
+            <div class="panel-bg-texture" aria-hidden="true"></div>
+            <div class="panel-batik-watermark" aria-hidden="true"></div>
+            <div class="panel-inner">
+              <div class="panel-year-col">
+                <span class="panel-year" aria-hidden="true">Today</span>
+                <div class="panel-era-tag">Era IV</div>
+              </div>
+              <div class="panel-content-col">
+                <div class="panel-tile-divider" aria-hidden="true">
+                  <svg viewBox="0 0 60 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 10 L15 2 L30 10 L45 2 L60 10" stroke="#C8A96A" stroke-width="1" fill="none"/>
+                    <path d="M0 10 L15 18 L30 10 L45 18 L60 10" stroke="#C8A96A" stroke-width="1" fill="none"/>
+                  </svg>
+                </div>
+                <h3 class="panel-era-title">Sifu Nyonya Carries the Flame</h3>
+                <p class="panel-copy">In a beautifully preserved corner of George Town, Sifu Nyonya Cuisine stands as keeper of the flame. Every morning, our kitchen awakens to the same rhythms that guided the Nyonyas of old. Fresh rempah is ground, coconut milk is pressed, and banana leaves are prepared to cradle the day's offerings. We do not simply serve food. We serve memory — the memory of centuries, the love of generations, and the irreplaceable taste of a culture that chose never to be forgotten.</p>
+                <div class="panel-image-frame">
+                  <img
+                    src="https://images.pexels.com/photos/38443076/pexels-photo-38443076.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=400"
+                    alt="Heritage dining room at Sifu Nyonya Cuisine"
+                    loading="lazy"
+                  />
+                  <div class="frame-arch" aria-hidden="true"></div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-rail" aria-hidden="true">
+              <div class="rail-dot"></div>
+              <div class="rail-line last"></div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Navigation -->
+        <nav class="timeline-nav" aria-label="Timeline navigation">
+          <button class="timeline-arrow timeline-prev" id="timelinePrev" aria-label="Previous era" disabled>
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="timeline-dots" role="tablist" aria-label="Timeline panels">
+            <button class="t-dot active" data-dot="0" role="tab" aria-selected="true" aria-label="Era 1: 1400s"></button>
+            <button class="t-dot" data-dot="1" role="tab" aria-selected="false" aria-label="Era 2: 1800s"></button>
+            <button class="t-dot" data-dot="2" role="tab" aria-selected="false" aria-label="Era 3: 1900s"></button>
+            <button class="t-dot" data-dot="3" role="tab" aria-selected="false" aria-label="Era 4: Today"></button>
+          </div>
+          <button class="timeline-arrow timeline-next" id="timelineNext" aria-label="Next era">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ===================== SIGNATURE DISHES ===================== -->
+    <section class="dishes-section" id="dishes" aria-labelledby="dishesHeading">
+      <div class="dishes-bg-pattern" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-label">Signature Nyonya Dishes</span>
+          <h2 id="dishesHeading">The Kitchen Speaks</h2>
+          <p class="section-sub">Each dish a chapter in our heritage story, crafted from recipes that have never left the family.</p>
+        </div>
+
+        <div class="dishes-editorial">
+
+          <article class="dish-feature" data-reveal>
+            <div class="dish-img-wrap">
+              <img
+                src="https://images.pexels.com/photos/9772441/pexels-photo-9772441.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=700&w=500"
+                alt="Penang Asam Laksa — a tangy, aromatic fish-based noodle soup"
+                loading="lazy"
+                class="dish-img"
+              />
+              <div class="dish-img-overlay" aria-hidden="true"></div>
+              <div class="dish-tag">Signature</div>
+            </div>
+            <div class="dish-info">
+              <span class="dish-number" aria-hidden="true">01</span>
+              <h3 class="dish-name">Penang Asam Laksa</h3>
+              <p class="dish-origin">Roots in Minnan &amp; Malay Kitchens</p>
+              <p class="dish-desc">A bold, tamarind-soured broth of flaked mackerel, thick rice noodles, and a crown of fresh herbs. The prawn paste finish transforms the bowl into something unforgettable. Named one of CNN's Top 50 Foods in the World.</p>
+              <div class="dish-details">
+                <span class="dish-spice">
+                  <span class="spice-icon" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" fill="none"><path d="M8 2l1.5 4h4l-3.2 2.3 1.2 4L8 10l-3.5 2.3 1.2-4L2.5 6h4z" fill="#C8A96A"/></svg>
+                  </span>
+                  Spice Level: Bold
+                </span>
+                <span class="dish-diet">Pescatarian</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dish-feature dish-feature--reverse" data-reveal>
+            <div class="dish-img-wrap">
+              <img
+                src="https://images.pexels.com/photos/36359896/pexels-photo-36359896.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=700&w=500"
+                alt="Nyonya Laksa — creamy coconut milk noodle soup with shrimp"
+                loading="lazy"
+                class="dish-img"
+              />
+              <div class="dish-img-overlay" aria-hidden="true"></div>
+              <div class="dish-tag">Heritage</div>
+            </div>
+            <div class="dish-info">
+              <span class="dish-number" aria-hidden="true">02</span>
+              <h3 class="dish-name">Nyonya Curry Laksa</h3>
+              <p class="dish-origin">A Grandmother's Recipe, Unchanged</p>
+              <p class="dish-desc">Coconut milk, freshly ground rempah, and a depth of dried shrimp create a broth that takes twelve hours to perfect. Served with fresh prawns, tofu puffs, fish cake, and vermicelli — a complete world in a bowl.</p>
+              <div class="dish-details">
+                <span class="dish-spice">
+                  <span class="spice-icon" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" fill="none"><path d="M8 2l1.5 4h4l-3.2 2.3 1.2 4L8 10l-3.5 2.3 1.2-4L2.5 6h4z" fill="#C8A96A"/></svg>
+                  </span>
+                  Spice Level: Moderate
+                </span>
+                <span class="dish-diet">Can be adapted</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dish-feature" data-reveal>
+            <div class="dish-img-wrap">
+              <img
+                src="https://images.pexels.com/photos/37205641/pexels-photo-37205641.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=700&w=500"
+                alt="Authentic Peranakan feast spread with multiple traditional dishes"
+                loading="lazy"
+                class="dish-img"
+              />
+              <div class="dish-img-overlay" aria-hidden="true"></div>
+              <div class="dish-tag">Feast</div>
+            </div>
+            <div class="dish-info">
+              <span class="dish-number" aria-hidden="true">03</span>
+              <h3 class="dish-name">Nasi Ulam</h3>
+              <p class="dish-origin">The Nyonya Herb Rice Tradition</p>
+              <p class="dish-desc">Forty varieties of freshly hand-sliced herbs folded through fragrant rice. A dish that demands patience and mastery. Nasi Ulam is the truest expression of Nyonya philosophy: that nature's pantry, treated with respect, needs nothing more.</p>
+              <div class="dish-details">
+                <span class="dish-spice">
+                  <span class="spice-icon" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" fill="none"><path d="M8 2l1.5 4h4l-3.2 2.3 1.2 4L8 10l-3.5 2.3 1.2-4L2.5 6h4z" fill="#C8A96A"/></svg>
+                  </span>
+                  Spice Level: Gentle
+                </span>
+                <span class="dish-diet">Vegetarian option</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FAMILY RECIPES ===================== -->
+    <section class="recipes-section" id="recipes" aria-labelledby="recipesHeading">
+      <div class="recipes-parallax-bg" aria-hidden="true">
+        <img
+          src="https://images.pexels.com/photos/35473886/pexels-photo-35473886.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1080&w=1920"
+          alt="Traditional cooking scene in an Indonesian kitchen"
+          loading="lazy"
+          class="parallax-img"
+          id="parallaxImg"
+        />
+        <div class="recipes-overlay" aria-hidden="true"></div>
+      </div>
+      <div class="container">
+        <div class="recipes-content" data-reveal>
+          <span class="section-label light">Family Recipes &amp; Traditional Cooking</span>
+          <h2 id="recipesHeading" class="recipes-title">Secrets Passed<br/><em>Mother to Daughter</em></h2>
+          <p class="recipes-body">Nyonya cooking was never written in cookbooks. The knowledge lived in hands — in the rhythm of the batu lesong, the mortar and pestle that woke the neighbourhood before sunrise. It lived in the eye, judging colour and consistency. In the nose, reading the transformation of raw aromatics into something transcendent.</p>
+          <p class="recipes-body">At Sifu Nyonya, we honour this oral tradition. Our chefs trained under the guidance of elders who still remember the original proportions, the seasonal adjustments, the tiny variations that distinguish a dish made with love from one made with merely skill.</p>
+          <div class="recipes-pillars">
+            <div class="pillar">
+              <div class="pillar-icon" aria-hidden="true">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="20" cy="20" r="18" stroke="#C8A96A" stroke-width="1"/>
+                  <path d="M12 28 C12 20 16 14 20 12 C24 14 28 20 28 28" stroke="#C8A96A" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+                  <path d="M14 26 Q20 18 26 26" stroke="#C8A96A" stroke-width="1" fill="none"/>
+                  <line x1="20" y1="12" x2="20" y2="8" stroke="#C8A96A" stroke-width="1"/>
+                </svg>
+              </div>
+              <h4>Fresh Rempah Daily</h4>
+              <p>Ground every morning from whole spices. No pastes, no shortcuts.</p>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon" aria-hidden="true">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="20" cy="20" r="18" stroke="#C8A96A" stroke-width="1"/>
+                  <path d="M20 10 L20 30 M12 18 L20 14 L28 18" stroke="#C8A96A" stroke-width="1.2" stroke-linecap="round"/>
+                  <circle cx="20" cy="10" r="2" fill="#C8A96A" opacity="0.5"/>
+                </svg>
+              </div>
+              <h4>Slow-Cooked Broths</h4>
+              <p>Minimum twelve hours. Never rushed. Patience is the secret ingredient.</p>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon" aria-hidden="true">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="20" cy="20" r="18" stroke="#C8A96A" stroke-width="1"/>
+                  <rect x="12" y="14" width="16" height="14" rx="2" stroke="#C8A96A" stroke-width="1.2" fill="none"/>
+                  <path d="M16 14 L16 12 C16 10 24 10 24 12 L24 14" stroke="#C8A96A" stroke-width="1" fill="none"/>
+                  <line x1="15" y1="20" x2="25" y2="20" stroke="#C8A96A" stroke-width="0.8"/>
+                  <line x1="15" y1="23" x2="22" y2="23" stroke="#C8A96A" stroke-width="0.8"/>
+                </svg>
+              </div>
+              <h4>Heritage Recipes Only</h4>
+              <p>Every dish carries a lineage. We cook nothing we cannot trace back to its origin.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CHEF'S HERITAGE ===================== -->
+    <section class="chef-section" id="chef" aria-labelledby="chefHeading">
+      <div class="container">
+        <div class="chef-layout">
+          <div class="chef-visual" data-reveal>
+            <div class="chef-img-outer">
+              <div class="chef-img-inner">
+                <img
+                  src="https://images.pexels.com/photos/8092564/pexels-photo-8092564.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=800&w=600"
+                  alt="Head chef holding a traditional bamboo steamer, representing heritage cooking"
+                  loading="lazy"
+                  class="chef-img"
+                />
+              </div>
+              <div class="chef-ornament" aria-hidden="true">
+                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1" y="1" width="198" height="198" stroke="#C8A96A" stroke-width="0.75" stroke-dasharray="8 4"/>
+                  <rect x="10" y="10" width="180" height="180" stroke="#C8A96A" stroke-width="0.5" opacity="0.5"/>
+                  <circle cx="1" cy="1" r="3" fill="#C8A96A"/>
+                  <circle cx="199" cy="1" r="3" fill="#C8A96A"/>
+                  <circle cx="1" cy="199" r="3" fill="#C8A96A"/>
+                  <circle cx="199" cy="199" r="3" fill="#C8A96A"/>
+                </svg>
+              </div>
+            </div>
+            <div class="chef-spice-cluster" aria-hidden="true">
+              <img
+                src="https://images.pexels.com/photos/23020460/pexels-photo-23020460.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300&w=400"
+                alt="Star anise and aromatic spices"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="chef-narrative" data-reveal>
+            <span class="section-label">Chef's Heritage</span>
+            <h2 id="chefHeading">The Hands Behind<br/><em>the Heritage</em></h2>
+            <div class="chef-quote-block">
+              <blockquote class="chef-quote">
+                "My grandmother said: when the rempah smells like home, it is ready. I have been chasing that smell my entire life."
+              </blockquote>
+            </div>
+            <p class="chef-bio">Our head chef grew up in a George Town shophouse, waking each morning to the percussion of batu lesong and the heady perfume of shrimp paste frying. Trained under two generations of Nyonya matriarchs, she carries thirty years of accumulated knowledge — not in recipes written on paper, but in instinct, memory, and love.</p>
+            <p class="chef-bio">Every dish that leaves our kitchen passes through her final taste. She adjusts not with measuring spoons, but with judgment honed by decades. This is the Nyonya way — and it is the only way at Sifu.</p>
+            <div class="chef-credentials">
+              <div class="credential">
+                <span class="cred-value">30+</span>
+                <span class="cred-label">Years of Craft</span>
+              </div>
+              <div class="credential">
+                <span class="cred-value">3</span>
+                <span class="cred-label">Generations Trained Under</span>
+              </div>
+              <div class="credential">
+                <span class="cred-value">60+</span>
+                <span class="cred-label">Recipes Mastered</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HERITAGE GALLERY ===================== -->
+    <section class="gallery-section" id="gallery" aria-labelledby="galleryHeading">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-label">Heritage Gallery</span>
+          <h2 id="galleryHeading">Moments Preserved</h2>
+        </div>
+      </div>
+      <div class="gallery-mosaic" role="list" aria-label="Gallery of Sifu Nyonya Cuisine">
+        <figure class="gallery-item gallery-large" data-reveal role="listitem">
+          <img
+            src="https://images.pexels.com/photos/20089303/pexels-photo-20089303.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=800&w=600"
+            alt="Traditional family feast with multiple Nyonya dishes on the table"
+            loading="lazy"
+          />
+          <figcaption class="gallery-caption">The Family Table</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-portrait" data-reveal role="listitem">
+          <img
+            src="https://images.pexels.com/photos/37708457/pexels-photo-37708457.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=600&w=400"
+            alt="Vintage building with Chinese signage in Penang heritage area"
+            loading="lazy"
+          />
+          <figcaption class="gallery-caption">George Town Heritage</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-square" data-reveal role="listitem">
+          <img
+            src="https://images.pexels.com/photos/37911515/pexels-photo-37911515.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=500"
+            alt="Colorful spice box with assorted aromatic spices"
+            loading="lazy"
+          />
+          <figcaption class="gallery-caption">The Spice Pantry</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-wide" data-reveal role="listitem">
+          <img
+            src="https://images.pexels.com/photos/19141541/pexels-photo-19141541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=800"
+            alt="Traditional Asian chicken dish with chopsticks and colorful accompaniments"
+            loading="lazy"
+          />
+          <figcaption class="gallery-caption">Ayam Pongteh</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-portrait" data-reveal role="listitem">
+          <img
+            src="https://images.pexels.com/photos/38546798/pexels-photo-38546798.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=600&w=400"
+            alt="Traditional Penang shophouse with vibrant signage"
+            loading="lazy"
+          />
+          <figcaption class="gallery-caption">Our Neighbourhood</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-square" data-reveal role="listitem">
+          <img
+            src="https://images.pexels.com/photos/33654799/pexels-photo-33654799.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=500"
+            alt="Fresh aromatic cinnamon sticks"
+            loading="lazy"
+          />
+          <figcaption class="gallery-caption">Cinnamon &amp; Clove</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===================== CUSTOMER REVIEWS ===================== -->
+    <section class="reviews-section" id="reviews" aria-labelledby="reviewsHeading">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-label">Guest Stories</span>
+          <h2 id="reviewsHeading">What Our Guests Say</h2>
+        </div>
+        <div class="reviews-carousel" id="reviewsCarousel">
+          <div class="reviews-track" id="reviewsTrack">
+
+            <article class="review-card" aria-label="Review by Sarah Chen">
+              <div class="review-header">
+                <div class="reviewer-avatar" aria-hidden="true">S</div>
+                <div class="reviewer-info">
+                  <strong class="reviewer-name">Sarah Chen</strong>
+                  <span class="reviewer-origin">Singapore</span>
+                </div>
+                <div class="review-stars" aria-label="5 out of 5 stars">
+                  <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                </div>
+              </div>
+              <blockquote class="review-text">
+                "The Asam Laksa transported me straight to my grandmother's kitchen in Malacca. I had forgotten that food could carry this much memory. Sifu Nyonya is not just a restaurant — it is a time machine."
+              </blockquote>
+              <div class="review-footer">
+                <span class="review-dish">Ordered: Penang Asam Laksa &amp; Nasi Ulam</span>
+              </div>
+            </article>
+
+            <article class="review-card" aria-label="Review by Marcus Tan">
+              <div class="review-header">
+                <div class="reviewer-avatar" aria-hidden="true">M</div>
+                <div class="reviewer-info">
+                  <strong class="reviewer-name">Marcus Tan</strong>
+                  <span class="reviewer-origin">Kuala Lumpur</span>
+                </div>
+                <div class="review-stars" aria-label="5 out of 5 stars">
+                  <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                </div>
+              </div>
+              <blockquote class="review-text">
+                "I have eaten Nyonya food across Penang, Malacca, and Singapore. Sifu Nyonya's Curry Laksa is, without exaggeration, the finest I have encountered. The rempah has a depth that tells you someone worked on it for a very long time."
+              </blockquote>
+              <div class="review-footer">
+                <span class="review-dish">Ordered: Nyonya Curry Laksa</span>
+              </div>
+            </article>
+
+            <article class="review-card" aria-label="Review by Dr. Amelia Raj">
+              <div class="review-header">
+                <div class="reviewer-avatar" aria-hidden="true">A</div>
+                <div class="reviewer-info">
+                  <strong class="reviewer-name">Dr. Amelia Raj</strong>
+                  <span class="reviewer-origin">London, United Kingdom</span>
+                </div>
+                <div class="review-stars" aria-label="5 out of 5 stars">
+                  <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                </div>
+              </div>
+              <blockquote class="review-text">
+                "As a food anthropologist specialising in Southeast Asia, I can say with confidence that Sifu Nyonya maintains a level of authenticity rarely found even in Penang. The attention to detail in preparation is scholarly in its precision."
+              </blockquote>
+              <div class="review-footer">
+                <span class="review-dish">Full Heritage Tasting Menu</span>
+              </div>
+            </article>
+
+            <article class="review-card" aria-label="Review by James &amp; Linh Whitfield">
+              <div class="review-header">
+                <div class="reviewer-avatar" aria-hidden="true">J</div>
+                <div class="reviewer-info">
+                  <strong class="reviewer-name">James &amp; Linh Whitfield</strong>
+                  <span class="reviewer-origin">Melbourne, Australia</span>
+                </div>
+                <div class="review-stars" aria-label="5 out of 5 stars">
+                  <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                </div>
+              </div>
+              <blockquote class="review-text">
+                "We planned our entire Penang trip around eating here twice. The space, the service, and above all the food — it all feels considered, warm, and deeply personal. This is how heritage dining should feel."
+              </blockquote>
+              <div class="review-footer">
+                <span class="review-dish">Dinner for two, both visits</span>
+              </div>
+            </article>
+
+          </div>
+          <div class="carousel-controls" aria-label="Review navigation">
+            <button class="carousel-prev" id="carouselPrev" aria-label="Previous review">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+            <div class="carousel-indicators" id="carouselIndicators" aria-label="Review pages"></div>
+            <button class="carousel-next" id="carouselNext" aria-label="Next review">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== RESERVATION CTA ===================== -->
+    <section class="reservation-section" id="reservation" aria-labelledby="reservationHeading">
+      <div class="reservation-bg" aria-hidden="true">
+        <img
+          src="https://images.pexels.com/photos/36072689/pexels-photo-36072689.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1080&w=1920"
+          alt="Group of guests sharing a festive traditional meal together"
+          loading="lazy"
+          class="res-bg-img"
+          id="reservationParallax"
+        />
+        <div class="reservation-overlay" aria-hidden="true"></div>
+      </div>
+      <div class="container">
+        <div class="reservation-content" data-reveal>
+          <span class="section-label light">Reserve Your Experience</span>
+          <h2 id="reservationHeading">Come, Sit at<br/><em>Our Table</em></h2>
+          <p class="reservation-body">A meal at Sifu Nyonya is more than dining — it is an invitation to experience four centuries of living heritage. We welcome guests who come with curiosity, appetite, and an open heart.</p>
+          <div class="reservation-actions">
+            <a href="tel:+60430501867" class="btn-primary btn-large">Call to Reserve</a>
+            <a href="https://share.google/lgKukKc37cLGJQXlt" class="btn-ghost btn-ghost-light" target="_blank" rel="noopener noreferrer">View on Maps</a>
+          </div>
+          <p class="reservation-note">We accept reservations by phone. Walk-ins welcome subject to availability.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="contact-section" id="contact" aria-labelledby="contactHeading">
+      <div class="container">
+        <div class="contact-layout">
+          <div class="contact-info" data-reveal>
+            <span class="section-label">Find Us</span>
+            <h2 id="contactHeading">Visit Sifu Nyonya</h2>
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#C8A96A"/>
+                  </svg>
+                </div>
+                <div class="contact-text">
+                  <strong>Location</strong>
+                  <span>George Town, Penang, Malaysia</span>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="#C8A96A"/>
+                  </svg>
+                </div>
+                <div class="contact-text">
+                  <strong>Phone</strong>
+                  <a href="tel:+60430501867">+60 4-305 1867</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" fill="#C8A96A"/>
+                  </svg>
+                </div>
+                <div class="contact-text">
+                  <strong>Opening Hours</strong>
+                  <span>Daily: 11:00 AM — 9:30 PM</span>
+                  <span>Closed Tuesdays</span>
+                </div>
+              </div>
+            </div>
+            <a href="https://share.google/lgKukKc37cLGJQXlt" class="contact-map-btn" target="_blank" rel="noopener noreferrer" aria-label="Open location on Google Maps">
+              Open in Google Maps
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="contact-map-embed" data-reveal>
+            <div class="map-frame">
+              <img
+                src="https://images.pexels.com/photos/32214572/pexels-photo-32214572.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=600&w=800"
+                alt="Heritage street in George Town, Penang — the neighbourhood of Sifu Nyonya"
+                loading="lazy"
+                class="map-visual"
+              />
+              <div class="map-pin-overlay" aria-hidden="true">
+                <div class="map-pin-card">
+                  <strong>Sifu Nyonya Cuisine</strong>
+                  <span>George Town, Penang</span>
+                  <a href="https://share.google/lgKukKc37cLGJQXlt" target="_blank" rel="noopener noreferrer">Get Directions</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#home" class="footer-logo" aria-label="Sifu Nyonya Cuisine — Back to top">
+          <span class="footer-logo-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="14" stroke="#C8A96A" stroke-width="0.8"/>
+              <path d="M16 6 L17.8 12 L24 10 L20 16 L24 22 L17.8 20 L16 26 L14.2 20 L8 22 L12 16 L8 10 L14.2 12 Z" fill="#C8A96A" opacity="0.8"/>
+            </svg>
+          </span>
+          <span>Sifu Nyonya Cuisine</span>
+        </a>
+        <p class="footer-tagline">Heritage Peranakan Dining Since Generations</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#journey">Journey</a>
+        <a href="#dishes">Kitchen</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Stories</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer-contact">
+        <a href="tel:+60430501867">+60 4-305 1867</a>
+        <span class="footer-sep" aria-hidden="true">|</span>
+        <span>George Town, Penang</span>
+      </div>
+      <div class="footer-copy">
+        <p>&copy; 2025 Sifu Nyonya Cuisine. All rights reserved.</p>
+        <p class="footer-credit">Preserving Peranakan Heritage with Every Dish.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <script src="script.js" type="module"></script>
+</body>
+</html>
