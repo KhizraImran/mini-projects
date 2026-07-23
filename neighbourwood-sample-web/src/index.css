@@ -1,0 +1,3 @@
+/* Base reset — Tailwind preflight is handled by our custom CSS */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
