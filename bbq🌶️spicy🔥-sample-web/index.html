@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BBQ Spicy Restaurant Farwaniya – Premium charcoal grilled meats, authentic Arabic BBQ, family platters, kebabs & more in Farwaniya, Kuwait." />
+  <meta name="keywords" content="BBQ restaurant Kuwait, Farwaniya restaurant, Arabic grill, kebab Kuwait, mixed grill Kuwait" />
+  <title>BBQ 🌶️ SPICY 🔥 RESTAURANT FARWANIYA</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Manrope:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/SplitText.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== LOADER ===================== -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <span class="loader-icon">🔥</span>
+        <span class="loader-brand" data-en="BBQ SPICY" data-ar="مطعم سبايسي">BBQ SPICY</span>
+      </div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <p class="loader-sub" data-en="Crafting your experience..." data-ar="نُعدّ تجربتك...">Crafting your experience...</p>
+    </div>
+  </div>
+
+  <!-- ===================== CURSOR ===================== -->
+  <div id="cursor"></div>
+  <div id="cursor-follower"></div>
+
+  <!-- ===================== HEADER ===================== -->
+  <header id="header">
+    <nav class="nav-container">
+      <!-- Logo -->
+      <a href="#home" class="nav-logo">
+        <span class="logo-icon">🔥</span>
+        <div class="logo-text">
+          <span class="logo-main" data-en="BBQ SPICY" data-ar="BBQ SPICY">BBQ SPICY</span>
+          <span class="logo-sub" data-en="RESTAURANT" data-ar="مطعم فروانية">RESTAURANT</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active" data-en="Home" data-ar="الرئيسية">Home</a></li>
+        <li><a href="#about" class="nav-link" data-en="About" data-ar="عن المطعم">About</a></li>
+        <li><a href="#menu" class="nav-link" data-en="Menu" data-ar="القائمة">Menu</a></li>
+        <li><a href="#gallery" class="nav-link" data-en="Gallery" data-ar="المعرض">Gallery</a></li>
+        <li><a href="#events" class="nav-link" data-en="Events" data-ar="الفعاليات">Events</a></li>
+        <li><a href="#contact" class="nav-link" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+      </ul>
+
+      <!-- Controls -->
+      <div class="nav-controls">
+        <!-- Language Toggle -->
+        <button id="langToggle" class="ctrl-btn lang-btn" aria-label="Switch language">
+          <span class="lang-label" id="langLabel">العربية</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button id="themeToggle" class="ctrl-btn theme-btn" aria-label="Toggle theme">
+          <span class="theme-icon" id="themeIcon">☀️</span>
+        </button>
+
+        <!-- Reserve CTA -->
+        <a href="#reservation" class="nav-cta magnetic" data-en="Reserve" data-ar="احجز">Reserve</a>
+
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===================== MOBILE MENU ===================== -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <button class="mobile-close" id="mobileClose">✕</button>
+      <ul class="mobile-nav-links">
+        <li><a href="#home" class="mobile-link" data-en="Home" data-ar="الرئيسية">Home</a></li>
+        <li><a href="#about" class="mobile-link" data-en="About" data-ar="عن المطعم">About</a></li>
+        <li><a href="#menu" class="mobile-link" data-en="Menu" data-ar="القائمة">Menu</a></li>
+        <li><a href="#gallery" class="mobile-link" data-en="Gallery" data-ar="المعرض">Gallery</a></li>
+        <li><a href="#events" class="mobile-link" data-en="Events" data-ar="الفعاليات">Events</a></li>
+        <li><a href="#contact" class="mobile-link" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+      </ul>
+      <div class="mobile-menu-cta">
+        <a href="tel:+96566346668" class="mobile-cta-btn" data-en="Call Us" data-ar="اتصل بنا">Call Us</a>
+        <a href="https://wa.me/96566346668" class="mobile-cta-btn whatsapp" data-en="WhatsApp" data-ar="واتساب">WhatsApp</a>
+      </div>
+      <p class="mobile-menu-tag">Farwaniya, Kuwait 🇰🇼</p>
+    </div>
+  </div>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="home" class="hero-section">
+    <div class="hero-bg">
+      <img src="https://images.pexels.com/photos/36799182/pexels-photo-36799182.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=1600" alt="BBQ Grill fire" class="hero-img" id="heroBg" />
+      <div class="hero-overlay"></div>
+      <div class="hero-gradient"></div>
+    </div>
+
+    <!-- Floating Particles -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Smoke Elements -->
+    <div class="smoke-wrap">
+      <div class="smoke s1"></div>
+      <div class="smoke s2"></div>
+      <div class="smoke s3"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge" data-en="Farwaniya · Kuwait" data-ar="فروانية · الكويت">Farwaniya · Kuwait</div>
+      <h1 class="hero-title split-text">
+        <span class="hero-line" data-en="Fire-Kissed" data-ar="نكهات">Fire-Kissed</span>
+        <span class="hero-line hero-line-2" data-en="Flavours" data-ar="مشوية على الجمر">Flavours</span>
+      </h1>
+      <p class="hero-desc" data-en="Authentic Arabic BBQ crafted over live charcoal — bold spices, premium cuts, and an unforgettable dining experience in the heart of Kuwait." data-ar="مشاوي عربية أصيلة على الفحم الحي — توابل فريدة، لحوم فاخرة، وتجربة طعام لا تُنسى في قلب الكويت.">
+        Authentic Arabic BBQ crafted over live charcoal — bold spices, premium cuts, and an unforgettable dining experience in the heart of Kuwait.
+      </p>
+      <div class="hero-actions">
+        <a href="#reservation" class="btn-primary magnetic" data-en="Reserve a Table" data-ar="احجز طاولة">Reserve a Table</a>
+        <a href="#menu" class="btn-outline magnetic" data-en="View Menu" data-ar="عرض القائمة">View Menu</a>
+      </div>
+
+      <!-- Floating badges -->
+      <div class="hero-floats">
+        <div class="hero-float f1">
+          <span class="float-icon">🌶️</span>
+          <span class="float-text" data-en="Spicy &amp; Bold" data-ar="حار ومميز">Spicy &amp; Bold</span>
+        </div>
+        <div class="hero-float f2">
+          <span class="float-icon">🔥</span>
+          <span class="float-text" data-en="Live Charcoal" data-ar="فحم حي">Live Charcoal</span>
+        </div>
+        <div class="hero-float f3">
+          <span class="float-icon">🥩</span>
+          <span class="float-text" data-en="Premium Cuts" data-ar="لحوم فاخرة">Premium Cuts</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span data-en="Scroll" data-ar="اسحب">Scroll</span>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" class="about-section section-pad">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="about-img-wrap reveal-img">
+            <img src="https://images.pexels.com/photos/8813933/pexels-photo-8813933.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=700&w=600" alt="Charcoal grill" />
+            <div class="about-img-badge">
+              <span class="badge-num">10+</span>
+              <span class="badge-label" data-en="Years of Passion" data-ar="سنوات من الشغف">Years of Passion</span>
+            </div>
+          </div>
+          <div class="about-img-secondary reveal-img">
+            <img src="https://images.pexels.com/photos/28575445/pexels-photo-28575445.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=350" alt="Restaurant interior" />
+          </div>
+        </div>
+
+        <div class="about-content">
+          <div class="section-tag" data-en="Our Story" data-ar="قصتنا">Our Story</div>
+          <h2 class="section-title split-title" data-en="Where Tradition Meets the Flame" data-ar="حيث يلتقي التراث باللهب">Where Tradition Meets the Flame</h2>
+          <div class="gold-divider"></div>
+          <p class="about-text" data-en="Born from a deep love for Arabic culinary heritage, BBQ Spicy Restaurant Farwaniya is more than a place to eat — it's an experience. Every cut of meat is marinated with hand-selected spices, grilled over live charcoal, and served with warmth and pride." data-ar="وُلد مطعم سبايسي من حب عميق للموروث الطهوي العربي — إنه أكثر من مجرد مطعم، إنه تجربة. كل قطعة لحم تتبّل بتوابل مختارة بعناية، تُشوى على الفحم الحي وتُقدَّم بدفء وفخر.">
+            Born from a deep love for Arabic culinary heritage, BBQ Spicy Restaurant Farwaniya is more than a place to eat — it's an experience. Every cut of meat is marinated with hand-selected spices, grilled over live charcoal, and served with warmth and pride.
+          </p>
+          <p class="about-text" data-en="Located in the vibrant heart of Farwaniya, Kuwait, we invite families, friends, and food lovers to gather around the fire and create memories that last." data-ar="يقع مطعمنا في قلب فروانية النابض بالحياة، ويدعو الأسر والأصدقاء وعشاق الطعام للجلوس حول النار وصنع ذكريات تدوم.">
+            Located in the vibrant heart of Farwaniya, Kuwait, we invite families, friends, and food lovers to gather around the fire and create memories that last.
+          </p>
+
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-num counter" data-target="50">0</span><span class="stat-plus">+</span>
+              <span class="stat-label" data-en="Menu Items" data-ar="أطباق في القائمة">Menu Items</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num counter" data-target="5000">0</span><span class="stat-plus">+</span>
+              <span class="stat-label" data-en="Happy Guests" data-ar="ضيف سعيد">Happy Guests</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num counter" data-target="10">0</span><span class="stat-plus">+</span>
+              <span class="stat-label" data-en="Years Serving" data-ar="سنوات خدمة">Years Serving</span>
+            </div>
+          </div>
+
+          <div class="about-features">
+            <div class="feat-chip">🔥 <span data-en="Live BBQ" data-ar="شواء حي">Live BBQ</span></div>
+            <div class="feat-chip">🥗 <span data-en="Fresh Ingredients" data-ar="مكونات طازجة">Fresh Ingredients</span></div>
+            <div class="feat-chip">👨‍👩‍👧 <span data-en="Family Seating" data-ar="جلسات عائلية">Family Seating</span></div>
+            <div class="feat-chip">🚗 <span data-en="Delivery" data-ar="توصيل">Delivery</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SIGNATURE BBQ ===================== -->
+  <section id="signature" class="signature-section section-pad">
+    <div class="sig-bg">
+      <img src="https://images.pexels.com/photos/1275691/pexels-photo-1275691.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=700&w=1400" alt="fire" />
+      <div class="sig-overlay"></div>
+    </div>
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-tag" data-en="Signature" data-ar="المميز">Signature</div>
+        <h2 class="section-title" data-en="What We're Known For" data-ar="ما نُعرف به">What We're Known For</h2>
+        <div class="gold-divider center"></div>
+      </div>
+      <div class="sig-grid">
+        <div class="sig-card" data-index="0">
+          <div class="sig-card-icon">🥩</div>
+          <h3 class="sig-card-title" data-en="Signature Mixed Grill" data-ar="مشاوي مشكّلة">Signature Mixed Grill</h3>
+          <p class="sig-card-desc" data-en="A royal selection of grilled meats — chicken, lamb, kofta &amp; more — seasoned to perfection." data-ar="تشكيلة ملكية من المشاوي: دجاج، لحم غنم، كفتة وأكثر — متبّلة بإتقان.">A royal selection of grilled meats — chicken, lamb, kofta &amp; more — seasoned to perfection.</p>
+        </div>
+        <div class="sig-card" data-index="1">
+          <div class="sig-card-icon">🍗</div>
+          <h3 class="sig-card-title" data-en="Fresh Charcoal Chicken" data-ar="دجاج فحم طازج">Fresh Charcoal Chicken</h3>
+          <p class="sig-card-desc" data-en="Whole chicken marinated in our secret spice blend, slow-grilled over glowing charcoal." data-ar="دجاجة كاملة متبّلة بمزيج توابلنا السري، مشوية ببطء على الفحم المتوهج.">Whole chicken marinated in our secret spice blend, slow-grilled over glowing charcoal.</p>
+        </div>
+        <div class="sig-card" data-index="2">
+          <div class="sig-card-icon">🫙</div>
+          <h3 class="sig-card-title" data-en="Family BBQ Platters" data-ar="أطباق عائلية">Family BBQ Platters</h3>
+          <p class="sig-card-desc" data-en="Generous family platters crafted to bring everyone together — the ultimate sharing experience." data-ar="أطباق عائلية سخية صُممت لتجمع الجميع — تجربة مشاركة لا مثيل لها.">Generous family platters crafted to bring everyone together — the ultimate sharing experience.</p>
+        </div>
+        <div class="sig-card" data-index="3">
+          <div class="sig-card-icon">🌯</div>
+          <h3 class="sig-card-title" data-en="Authentic Kebabs" data-ar="كباب أصيل">Authentic Kebabs</h3>
+          <p class="sig-card-desc" data-en="Hand-rolled kofta and shish kebabs with a smoky char finish that takes you back to the roots." data-ar="كفتة مدلوفة يدوياً وشيش كباب مع نهاية مدخّنة تعيدك إلى الجذور.">Hand-rolled kofta and shish kebabs with a smoky char finish that takes you back to the roots.</p>
+        </div>
+        <div class="sig-card" data-index="4">
+          <div class="sig-card-icon">🍔</div>
+          <h3 class="sig-card-title" data-en="Craft Burgers" data-ar="برغر مميز">Craft Burgers</h3>
+          <p class="sig-card-desc" data-en="Premium charcoal-grilled burgers stacked with bold toppings and our signature sauces." data-ar="برغر مشوي على الفحم مع إضافات جريئة وصلصاتنا المميزة.">Premium charcoal-grilled burgers stacked with bold toppings and our signature sauces.</p>
+        </div>
+        <div class="sig-card" data-index="5">
+          <div class="sig-card-icon">🥤</div>
+          <h3 class="sig-card-title" data-en="Fresh Juices" data-ar="عصائر طازجة">Fresh Juices</h3>
+          <p class="sig-card-desc" data-en="Squeezed to order — refreshing blends to complement every BBQ dish on our menu." data-ar="تُعصر عند الطلب — مزيجات منعشة تتكامل مع كل طبق مشاوي في قائمتنا.">Squeezed to order — refreshing blends to complement every BBQ dish on our menu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MENU ===================== -->
+  <section id="menu" class="menu-section section-pad">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-tag" data-en="Our Menu" data-ar="قائمة الطعام">Our Menu</div>
+        <h2 class="section-title" data-en="Crafted With Fire &amp; Passion" data-ar="صُنع بالنار والشغف">Crafted With Fire &amp; Passion</h2>
+        <div class="gold-divider center"></div>
+      </div>
+
+      <!-- Menu Tabs -->
+      <div class="menu-tabs" id="menuTabs">
+        <button class="menu-tab active" data-cat="grill" data-en="Grills" data-ar="المشاوي">Grills</button>
+        <button class="menu-tab" data-cat="chicken" data-en="Chicken" data-ar="الدجاج">Chicken</button>
+        <button class="menu-tab" data-cat="burgers" data-en="Burgers" data-ar="البرغر">Burgers</button>
+        <button class="menu-tab" data-cat="drinks" data-en="Drinks" data-ar="المشروبات">Drinks</button>
+      </div>
+
+      <!-- Menu Cards -->
+      <div class="menu-grid" id="menuGrid">
+
+        <!-- GRILL -->
+        <div class="menu-card" data-cat="grill">
+          <div class="menu-card-img-wrap">
+            <img src="https://images.pexels.com/photos/30307766/pexels-photo-30307766.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Mixed Grill Platter" />
+            <div class="menu-card-badge chef-badge" data-en="Chef's Choice" data-ar="اختيار الشيف">Chef's Choice</div>
+            <div class="menu-spicy">🌶️🌶️🌶️</div>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-meta">
+              <span class="menu-ar-name">مشاوي مشكّلة</span>
+              <span class="menu-price">3.500 KD</span>
+            </div>
+            <h3 class="menu-item-title" data-en="Signature Mixed Grill Platter" data-ar="طبق مشاوي مشكّلة">Signature Mixed Grill Platter</h3>
+            <p class="menu-item-desc" data-en="A royal mix of chicken, lamb chops, kofta, shish taouk served with rice &amp; sauces." data-ar="مزيج ملكي من الدجاج، ضلوع الغنم، الكفتة، شيش طاووق مع أرز وصلصات.">A royal mix of chicken, lamb chops, kofta, shish taouk served with rice &amp; sauces.</p>
+          </div>
+        </div>
+
+        <div class="menu-card" data-cat="grill">
+          <div class="menu-card-img-wrap">
+            <img src="https://images.pexels.com/photos/18330988/pexels-photo-18330988.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Kebab Platter" />
+            <div class="menu-spicy">🌶️🌶️</div>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-meta">
+              <span class="menu-ar-name">كباب مشوي</span>
+              <span class="menu-price">1.800 KD</span>
+            </div>
+            <h3 class="menu-item-title" data-en="Grilled Kebab Skewers" data-ar="أسياخ الكباب المشوي">Grilled Kebab Skewers</h3>
+            <p class="menu-item-desc" data-en="Hand-seasoned kofta kebabs grilled over charcoal, served with fresh salad &amp; pita." data-ar="كباب كفتة مُتبّل يدوياً ومشوي على الفحم، يُقدَّم مع سلطة طازجة وخبز.">Hand-seasoned kofta kebabs grilled over charcoal, served with fresh salad &amp; pita.</p>
+          </div>
+        </div>
+
+        <div class="menu-card" data-cat="grill">
+          <div class="menu-card-img-wrap">
+            <img src="https://images.pexels.com/photos/18330996/pexels-photo-18330996.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Family BBQ Platter" />
+            <div class="menu-card-badge pop-badge" data-en="Most Popular" data-ar="الأكثر طلباً">Most Popular</div>
+            <div class="menu-spicy">🌶️🌶️🌶️</div>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-meta">
+              <span class="menu-ar-name">طبق عائلي</span>
+              <span class="menu-price">6.500 KD</span>
+            </div>
+            <h3 class="menu-item-title" data-en="Family BBQ Platter" data-ar="الطبق العائلي الكبير">Family BBQ Platter</h3>
+            <p class="menu-item-desc" data-en="A grand feast for 4–6 — mixed grills, rice, salads, hummus, and beverages." data-ar="وليمة كاملة لـ 4-6 أشخاص: مشاوي مشكّلة، أرز، سلطات، حمص ومشروبات.">A grand feast for 4–6 — mixed grills, rice, salads, hummus, and beverages.</p>
+          </div>
+        </div>
+
+        <div class="menu-card" data-cat="grill">
+          <div class="menu-card-img-wrap">
+            <img src="https://images.pexels.com/photos/32902401/pexels-photo-32902401.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Lamb Chops" />
+            <div class="menu-spicy">🌶️</div>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-meta">
+              <span class="menu-ar-name">ضلوع الغنم</span>
+              <span class="menu-price">2.500 KD</span>
+            </div>
+            <h3 class="menu-item-title" data-en="Charcoal Lamb Chops" data-ar="ضلوع غنم على الفحم">Charcoal Lamb Chops</h3>
+            <p class="menu-item-desc" data-en="Tender lamb chops marinated in aromatic spices, grilled to charred perfection." data-ar="ضلوع غنم طرية متبّلة بتوابل عطرية، مشوية بشكل مثالي على الفحم.">Tender lamb chops marinated in aromatic spices, grilled to charred perfection.</p>
+          </div>
+        </div>
+
+        <!-- CHICKEN -->
+        <div class="menu-card" data-cat="chicken">
+          <div class="menu-card-img-wrap">
+            <img src="https://images.pexels.com/photos/8112392/pexels-photo-8112392.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Shish Taouk" />
+            <div class="menu-card-badge chef-badge" data-en="Chef's Choice" data-ar="اختيار الشيف">Chef's Choice</div>
+            <div class="menu-spicy">🌶️🌶️</div>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-meta">
+              <span class="menu-ar-name">شيش طاووق</span>
+              <span class="menu-price">1.500 KD</span>
+            </div>
+            <h3 class="menu-item-title" data-en="Shish Taouk Skewers" data-ar="أسياخ شيش طاووق">Shish Taouk Skewers</h3>
+            <p class="menu-item-desc" data-en="Juicy chicken cubes marinated in garlic yoghurt sauce, perfectly charred on skewers." data-ar="مكعبات دجاج طرية متبّلة بصلصة الثوم واللبن، محروقة بشكل مثالي على الأسياخ.">Juicy chicken cubes marinated in garlic yoghurt sauce, perfectly charred on skewers.</p>
+          </div>
+        </div>
+
+        <div class="menu-card" data-cat="chicken">
+          <div class="menu-card-img-wrap">
+            <img src="https://images.pexels.com/photos/13203938/pexels-photo-13203938.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Whole Charcoal Chicken" />
+            <div class="menu-card-badge pop-badge" data-en="Best Seller" data-ar="الأكثر مبيعاً">Best Seller</div>
+            <div class="menu-spicy">🌶️🌶️🌶️</div>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-meta">
+              <span class="menu-ar-name">دجاج فحم كامل</span>
+              <span class="menu-price">2.200 KD</span>
+            </div>
+            <h3 class="menu-item-title" data-en="Whole Charcoal Chicken" data-ar="دجاجة فحم كاملة">Whole Charcoal Chicken</h3>
+            <p class="menu-item-desc" data-en="Slow-grilled whole chicken with our secret spice rub — smoky, juicy, addictive." data-ar="دجاجة كاملة تُشوى ببطء بمزيج توابلنا السري — مدخّنة، طرية، لا تُقاوم.">Slow-grilled whole chicken with our secret spice rub — smoky, juicy, addictive.</p>
+          </div>
+        </div>
+
+        <div class="menu-card" data-cat="chicken">
+          <div class="menu-card-img-wrap">
+            <img src="https://images.pexels.com/photos/15060447/pexels-photo-15060447.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Grilled Chicken Wings" />
+            <div class="menu-spicy">🌶️🌶️</div>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-meta">
+              <span class="menu-ar-name">أجنحة مشوية</span>
+              <span class="menu-price">1.200 KD</span>
+            </div>
+            <h3 class="menu-item-title" data-en="Spicy Grilled Wings" data-ar="أجنحة مشوية حارة">Spicy Grilled Wings</h3>
+            <p class="menu-item-desc" data-en="Crispy charcoal wings glazed with our BBQ spice blend — a crowd favourite." data-ar="أجنحة مشوية مقرمشة مطلية بمزيج توابل الشواء الخاص بنا.">Crispy charcoal wings glazed with our BBQ spice blend — a crowd favourite.</p>
+          </div>
+        </div>
+
+        <!-- BURGERS -->
+        <div class="menu-card" data-cat="burgers">
+          <div class="menu-card-img-wrap">
+            <img src="https://images.pexels.com/photos/16605109/pexels-photo-16605109.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Signature Burger" />
+            <div class="menu-card-badge chef-badge" data-en="Chef's Choice" data-ar="اختيار الشيف">Chef's Choice</div>
+            <div class="menu-spicy">🌶️🌶️</div>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-meta">
+              <span class="menu-ar-name">برغر سبايسي</span>
+              <span class="menu-price">1.800 KD</span>
+            </div>
+            <h3 class="menu-item-title" data-en="BBQ Spicy Signature Burger" data-ar="برغر سبايسي المميز">BBQ Spicy Signature Burger</h3>
+            <p class="menu-item-desc" data-en="Double smash patty, caramelised onions, special sauce &amp; crispy fries on the side." data-ar="باتي مزدوج، بصل مكرمل، صوص خاص وبطاطس مقرمشة على الجانب.">Double smash patty, caramelised onions, special sauce &amp; crispy fries on the side.</p>
+          </div>
+        </div>
+
+        <div class="menu-card" data-cat="burgers">
+          <div class="menu-card-img-wrap">
+            <img src="https://images.pexels.com/photos/17300434/pexels-photo-17300434.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Chicken Burger" />
+            <div class="menu-spicy">🌶️</div>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-meta">
+              <span class="menu-ar-name">برغر دجاج</span>
+              <span class="menu-price">1.500 KD</span>
+            </div>
+            <h3 class="menu-item-title" data-en="Crispy Chicken Burger" data-ar="برغر الدجاج المقرمش">Crispy Chicken Burger</h3>
+            <p class="menu-item-desc" data-en="Crunchy fried chicken fillet, lettuce, pickles &amp; garlic aioli in a toasted brioche bun." data-ar="فيليه دجاج مقلي مقرمش، خس، مخلل وصلصة ثوم في خبز بريوش.">Crunchy fried chicken fillet, lettuce, pickles &amp; garlic aioli in a toasted brioche bun.</p>
+          </div>
+        </div>
+
+        <div class="menu-card" data-cat="burgers">
+          <div class="menu-card-img-wrap">
+            <img src="https://images.pexels.com/photos/33244072/pexels-photo-33244072.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="BBQ Burger" />
+            <div class="menu-card-badge pop-badge" data-en="Fan Favorite" data-ar="المفضّل">Fan Favorite</div>
+            <div class="menu-spicy">🌶️🌶️🌶️</div>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-meta">
+              <span class="menu-ar-name">برغر لحم فاخر</span>
+              <span class="menu-price">2.000 KD</span>
+            </div>
+            <h3 class="menu-item-title" data-en="Smoked BBQ Beef Burger" data-ar="برغر لحم بقري مدخّن">Smoked BBQ Beef Burger</h3>
+            <p class="menu-item-desc" data-en="Premium beef patty with smoky BBQ sauce, grilled jalapeños &amp; melted cheese." data-ar="باتي لحم بقري فاخر مع صوص BBQ مدخّن، جالابينو مشوي وجبن مذاب.">Premium beef patty with smoky BBQ sauce, grilled jalapeños &amp; melted cheese.</p>
+          </div>
+        </div>
+
+        <!-- DRINKS -->
+        <div class="menu-card" data-cat="drinks">
+          <div class="menu-card-img-wrap">
+            <img src="https://images.pexels.com/photos/18698230/pexels-photo-18698230.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Fresh Juice" />
+            <div class="menu-spicy"></div>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-meta">
+              <span class="menu-ar-name">عصائر طازجة</span>
+              <span class="menu-price">0.500 KD</span>
+            </div>
+            <h3 class="menu-item-title" data-en="Freshly Squeezed Juices" data-ar="عصائر طازجة">Freshly Squeezed Juices</h3>
+            <p class="menu-item-desc" data-en="Orange, mango, watermelon, lemon mint — all squeezed to order, every time." data-ar="برتقال، مانجو، بطيخ، ليمون بالنعنع — تُعصر لحظة الطلب في كل مرة.">Orange, mango, watermelon, lemon mint — all squeezed to order, every time.</p>
+          </div>
+        </div>
+
+        <div class="menu-card" data-cat="drinks">
+          <div class="menu-card-img-wrap">
+            <img src="https://images.pexels.com/photos/34688740/pexels-photo-34688740.png?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Soft Drinks" />
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-meta">
+              <span class="menu-ar-name">مشروبات غازية</span>
+              <span class="menu-price">0.250 KD</span>
+            </div>
+            <h3 class="menu-item-title" data-en="Soft Drinks &amp; Water" data-ar="مشروبات غازية ومياه">Soft Drinks &amp; Water</h3>
+            <p class="menu-item-desc" data-en="Pepsi, 7Up, Miranda, Mirinda, local sparkling &amp; still water options." data-ar="بيبسي، سفن أب، ميراندا وخيارات المياه الغازية والعادية.">Pepsi, 7Up, Miranda, local sparkling &amp; still water options.</p>
+          </div>
+        </div>
+
+      </div><!-- end menu-grid -->
+    </div>
+  </section>
+
+  <!-- ===================== CHEF'S SPECIALS ===================== -->
+  <section id="chefs" class="chefs-section section-pad">
+    <div class="container">
+      <div class="chefs-grid">
+        <div class="chefs-content">
+          <div class="section-tag" data-en="Chef's Table" data-ar="طاولة الشيف">Chef's Table</div>
+          <h2 class="section-title" data-en="Specials Crafted by Our Head Chef" data-ar="مميزات من الشيف الرئيسي">Specials Crafted by Our Head Chef</h2>
+          <div class="gold-divider"></div>
+          <p class="chefs-desc" data-en="Every week, our head chef curates a special selection of dishes inspired by seasonal ingredients and authentic Kuwaiti flavours — a true celebration of fire and craft." data-ar="كل أسبوع، يُعدّ الشيف الرئيسي تشكيلة خاصة من الأطباق مستوحاة من المكونات الموسمية والنكهات الكويتية الأصيلة.">
+            Every week, our head chef curates a special selection of dishes inspired by seasonal ingredients and authentic Kuwaiti flavours — a true celebration of fire and craft.
+          </p>
+          <div class="chefs-specials-list">
+            <div class="special-item">
+              <span class="special-dot"></span>
+              <div>
+                <span class="special-name" data-en="Ouzi Platter" data-ar="طبق أوزي">Ouzi Platter</span>
+                <span class="special-desc" data-en="Slow-cooked lamb over fragrant rice with nuts" data-ar="لحم غنم مطهو ببطء فوق أرز معطر بالمكسرات">Slow-cooked lamb over fragrant rice with nuts</span>
+              </div>
+            </div>
+            <div class="special-item">
+              <span class="special-dot"></span>
+              <div>
+                <span class="special-name" data-en="Mashawi Royale" data-ar="مشاوي رويال">Mashawi Royale</span>
+                <span class="special-desc" data-en="5-type premium grill with sides and dips" data-ar="5 أنواع من المشاوي الفاخرة مع مرافقات وصلصات">5-type premium grill with sides and dips</span>
+              </div>
+            </div>
+            <div class="special-item">
+              <span class="special-dot"></span>
+              <div>
+                <span class="special-name" data-en="Seafood Grill Mix" data-ar="مشاوي بحرية مشكّلة">Seafood Grill Mix</span>
+                <span class="special-desc" data-en="Shrimp, hammour &amp; squid over charcoal" data-ar="روبيان، هامور وحبّار على الفحم">Shrimp, hammour &amp; squid over charcoal</span>
+              </div>
+            </div>
+            <div class="special-item">
+              <span class="special-dot"></span>
+              <div>
+                <span class="special-name" data-en="Spicy Arabic Sandwich" data-ar="ساندوتش عربي حار">Spicy Arabic Sandwich</span>
+                <span class="special-desc" data-en="Tangy marinated grilled meat in khubz bread" data-ar="لحم مشوي متبّل في خبز الكماج">Tangy marinated grilled meat in khubz bread</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chefs-visual reveal-img">
+          <img src="https://images.pexels.com/photos/36630804/pexels-photo-36630804.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=700&w=600" alt="Chef plating" />
+          <div class="chefs-badge">
+            <span class="chef-badge-icon">👨‍🍳</span>
+            <span class="chef-badge-text" data-en="Head Chef" data-ar="الشيف الرئيسي">Head Chef</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GALLERY ===================== -->
+  <section id="gallery" class="gallery-section section-pad">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-tag" data-en="Gallery" data-ar="المعرض">Gallery</div>
+        <h2 class="section-title" data-en="A Feast for the Eyes" data-ar="وليمة للعيون">A Feast for the Eyes</h2>
+        <div class="gold-divider center"></div>
+      </div>
+
+      <div class="masonry-grid">
+        <div class="masonry-item m-tall reveal-img" data-parallax>
+          <img src="https://images.pexels.com/photos/36799182/pexels-photo-36799182.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=700&w=600" alt="BBQ Open Flames" />
+          <div class="masonry-overlay"><span data-en="Open Fire Grill" data-ar="شوّاية مفتوحة">Open Fire Grill</span></div>
+        </div>
+        <div class="masonry-item reveal-img" data-parallax>
+          <img src="https://images.pexels.com/photos/30307766/pexels-photo-30307766.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=500" alt="Middle Eastern Feast" />
+          <div class="masonry-overlay"><span data-en="Arabic Feast" data-ar="وليمة عربية">Arabic Feast</span></div>
+        </div>
+        <div class="masonry-item reveal-img" data-parallax>
+          <img src="https://images.pexels.com/photos/8813933/pexels-photo-8813933.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=500" alt="Charcoal Grill" />
+          <div class="masonry-overlay"><span data-en="Live Charcoal" data-ar="فحم حي">Live Charcoal</span></div>
+        </div>
+        <div class="masonry-item m-wide reveal-img" data-parallax>
+          <img src="https://images.pexels.com/photos/14262704/pexels-photo-14262704.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=700" alt="Restaurant interior" />
+          <div class="masonry-overlay"><span data-en="Dining Experience" data-ar="تجربة الطعام">Dining Experience</span></div>
+        </div>
+        <div class="masonry-item reveal-img" data-parallax>
+          <img src="https://images.pexels.com/photos/18330996/pexels-photo-18330996.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Kebab Skewers" />
+          <div class="masonry-overlay"><span data-en="Fresh Kebabs" data-ar="كباب طازج">Fresh Kebabs</span></div>
+        </div>
+        <div class="masonry-item m-tall reveal-img" data-parallax>
+          <img src="https://images.pexels.com/photos/4253292/pexels-photo-4253292.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=700&w=500" alt="Chef" />
+          <div class="masonry-overlay"><span data-en="Our Chef" data-ar="شيفنا">Our Chef</span></div>
+        </div>
+        <div class="masonry-item reveal-img" data-parallax>
+          <img src="https://images.pexels.com/photos/18698230/pexels-photo-18698230.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Grilled Meat" />
+          <div class="masonry-overlay"><span data-en="Grilled Perfection" data-ar="إتقان الشواء">Grilled Perfection</span></div>
+        </div>
+        <div class="masonry-item reveal-img" data-parallax>
+          <img src="https://images.pexels.com/photos/28575445/pexels-photo-28575445.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Cozy restaurant" />
+          <div class="masonry-overlay"><span data-en="Warm Ambiance" data-ar="أجواء دافئة">Warm Ambiance</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHY CHOOSE US ===================== -->
+  <section id="why" class="why-section section-pad">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-tag" data-en="Why Us" data-ar="لماذا نحن">Why Us</div>
+        <h2 class="section-title" data-en="The BBQ Spicy Difference" data-ar="الفرق مع BBQ سبايسي">The BBQ Spicy Difference</h2>
+        <div class="gold-divider center"></div>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">🔥</div>
+          <h3 class="why-title" data-en="Live BBQ Experience" data-ar="تجربة شواء حي">Live BBQ Experience</h3>
+          <p class="why-desc" data-en="Watch your food grilled fresh over glowing charcoal — the theatre of fire in every visit." data-ar="شاهد طعامك يُشوى طازجاً فوق الفحم المتوهج — مسرح النار في كل زيارة.">Watch your food grilled fresh over glowing charcoal.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🥩</div>
+          <h3 class="why-title" data-en="Premium Fresh Cuts" data-ar="قطع طازجة فاخرة">Premium Fresh Cuts</h3>
+          <p class="why-desc" data-en="Only the finest locally-sourced meat arrives fresh daily — never frozen, always premium." data-ar="أفضل اللحوم من مصادر محلية تصل طازجة يومياً — غير مجمّدة، دائماً فاخرة.">Only the finest locally-sourced meat arrives fresh daily.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">👨‍👩‍👧‍👦</div>
+          <h3 class="why-title" data-en="Family Atmosphere" data-ar="أجواء عائلية">Family Atmosphere</h3>
+          <p class="why-desc" data-en="Spacious family sections designed for comfort, warmth and memorable gatherings." data-ar="أقسام عائلية فسيحة مصمّمة للراحة والدفء والتجمعات التي لا تُنسى.">Spacious family sections designed for comfort and warmth.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🚀</div>
+          <h3 class="why-title" data-en="Fast Delivery" data-ar="توصيل سريع">Fast Delivery</h3>
+          <p class="why-desc" data-en="Hot, fresh and delivered fast — because your BBQ shouldn't wait." data-ar="ساخن، طازج ويُسلَّم بسرعة — لأن شواءك لا ينتظر.">Hot, fresh and delivered fast across Farwaniya.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🎉</div>
+          <h3 class="why-title" data-en="Catering Services" data-ar="خدمات التموين">Catering Services</h3>
+          <p class="why-desc" data-en="From corporate events to family weddings — we bring the grill to you." data-ar="من الفعاليات الشركاتية إلى أعراس العائلة — نحضر الشواء إليك.">From corporate events to family weddings — we cater.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">⭐</div>
+          <h3 class="why-title" data-en="Friendly Staff" data-ar="طاقم ودود">Friendly Staff</h3>
+          <p class="why-desc" data-en="Our team treats every guest like family — with a smile, every single time." data-ar="يعامل فريقنا كل ضيف كأفراد العائلة — بابتسامة، في كل مرة.">Our team treats every guest like family.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section id="reviews" class="reviews-section section-pad">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-tag" data-en="Reviews" data-ar="التقييمات">Reviews</div>
+        <h2 class="section-title" data-en="What Our Guests Say" data-ar="ما يقوله ضيوفنا">What Our Guests Say</h2>
+        <div class="gold-divider center"></div>
+      </div>
+
+      <div class="reviews-track-wrap">
+        <div class="reviews-track" id="reviewsTrack">
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text" data-en="The mixed grill platter was absolutely exceptional. The charcoal flavour, the spices, the tenderness — nothing in Farwaniya compares." data-ar="طبق المشاوي المشكّلة كان استثنائياً بحق. نكهة الفحم والتوابل والطراوة — لا شيء في فروانية يقارن بذلك.">"The mixed grill platter was absolutely exceptional. The charcoal flavour, the spices, the tenderness — nothing compares."</p>
+            <div class="review-author">
+              <div class="review-avatar">A</div>
+              <div>
+                <span class="review-name" data-en="Ahmad Al-Rashidi" data-ar="أحمد الراشدي">Ahmad Al-Rashidi</span>
+                <span class="review-loc" data-en="Kuwait City" data-ar="مدينة الكويت">Kuwait City</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text" data-en="We ordered the family platter for 6 people and it was a feast! The staff were warm, the food was piping hot. Will definitely return." data-ar="طلبنا الطبق العائلي لـ 6 أشخاص وكان وليمة حقيقية! الطاقم كان دافئاً والطعام ساخناً. سنعود بالتأكيد.">"We ordered the family platter for 6 people and it was a feast! Warm staff, piping hot food. Will definitely return."</p>
+            <div class="review-author">
+              <div class="review-avatar">F</div>
+              <div>
+                <span class="review-name" data-en="Fatima Al-Enezi" data-ar="فاطمة العنزي">Fatima Al-Enezi</span>
+                <span class="review-loc" data-en="Farwaniya" data-ar="فروانية">Farwaniya</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text" data-en="The spicy whole chicken is addictive. I've been coming every week since I first tried it. The charcoal smoke takes it to another level." data-ar="دجاجة الفحم الحارة مدمنة! أزورهم كل أسبوع منذ أن جرّبتها لأول مرة. الدخان يأخذها لمستوى آخر.">"The spicy whole chicken is addictive. Been coming every week. The charcoal smoke takes it to another level."</p>
+            <div class="review-author">
+              <div class="review-avatar">K</div>
+              <div>
+                <span class="review-name" data-en="Khalid Al-Mutairi" data-ar="خالد المطيري">Khalid Al-Mutairi</span>
+                <span class="review-loc" data-en="Jahra" data-ar="الجهراء">Jahra</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text" data-en="Perfect place for a family dinner. The ambiance is cozy, prices are reasonable, and the food quality is consistently top-tier." data-ar="مكان مثالي لعشاء عائلي. الأجواء مريحة، الأسعار معقولة وجودة الطعام متميزة باستمرار.">"Perfect for family dinner. Cozy ambiance, reasonable prices, consistently top-tier food quality."</p>
+            <div class="review-author">
+              <div class="review-avatar">M</div>
+              <div>
+                <span class="review-name" data-en="Maha Al-Sabah" data-ar="مها الصباح">Maha Al-Sabah</span>
+                <span class="review-loc" data-en="Salwa" data-ar="سلوى">Salwa</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text" data-en="Ordered via delivery and was blown away. The food arrived hot and the packaging was premium. BBQ Spicy is our go-to now." data-ar="طلبت عبر التوصيل وانبهرت. الطعام وصل ساخناً والتغليف كان فاخراً. سبايسي أصبح خيارنا الأول.">"Ordered delivery — food arrived hot and packaging was premium. BBQ Spicy is our go-to now."</p>
+            <div class="review-author">
+              <div class="review-avatar">S</div>
+              <div>
+                <span class="review-name" data-en="Sara Al-Hajri" data-ar="سارة الحاجري">Sara Al-Hajri</span>
+                <span class="review-loc" data-en="Salmiya" data-ar="السالمية">Salmiya</span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- end reviews-track -->
+        <div class="reviews-fade-left"></div>
+        <div class="reviews-fade-right"></div>
+      </div>
+
+      <!-- Dots -->
+      <div class="reviews-dots" id="reviewsDots"></div>
+    </div>
+  </section>
+
+  <!-- ===================== EVENTS & CATERING ===================== -->
+  <section id="events" class="events-section section-pad">
+    <div class="events-bg">
+      <img src="https://images.pexels.com/photos/17001849/pexels-photo-17001849.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=700&w=1400" alt="Event dining" />
+      <div class="events-overlay"></div>
+    </div>
+    <div class="container">
+      <div class="events-content">
+        <div class="section-tag light" data-en="Events &amp; Catering" data-ar="الفعاليات والتموين">Events &amp; Catering</div>
+        <h2 class="section-title light" data-en="We Bring the Fire to You" data-ar="نحضر النار إليك">We Bring the Fire to You</h2>
+        <div class="gold-divider"></div>
+        <p class="events-desc" data-en="Planning a wedding, corporate event, or family celebration? Our professional catering team brings the full BBQ Spicy experience directly to your venue — live grills, premium platters, and impeccable service." data-ar="هل تخطط لزفاف أو فعالية شركة أو احتفال عائلي؟ فريق تموين BBQ سبايسي يجلب التجربة الكاملة إلى مكانك — شوايات حية وأطباق فاخرة وخدمة رفيعة.">
+          Planning a wedding, corporate event, or family celebration? Our professional catering team brings the full BBQ Spicy experience directly to your venue.
+        </p>
+        <div class="events-list">
+          <div class="event-chip">🎊 <span data-en="Weddings" data-ar="الأعراس">Weddings</span></div>
+          <div class="event-chip">🏢 <span data-en="Corporate Events" data-ar="فعاليات الشركات">Corporate Events</span></div>
+          <div class="event-chip">👨‍👩‍👧 <span data-en="Family Gatherings" data-ar="التجمعات العائلية">Family Gatherings</span></div>
+          <div class="event-chip">🎂 <span data-en="Birthday Parties" data-ar="حفلات الأعياد">Birthday Parties</span></div>
+          <div class="event-chip">🕌 <span data-en="Ramadan Events" data-ar="فعاليات رمضان">Ramadan Events</span></div>
+        </div>
+        <a href="https://wa.me/96566346668" class="btn-primary magnetic" data-en="Book Catering" data-ar="احجز تموين">Book Catering</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RESERVATION CTA ===================== -->
+  <section id="reservation" class="reservation-section section-pad">
+    <div class="container">
+      <div class="reservation-inner">
+        <div class="res-badge">🔥</div>
+        <div class="section-tag" data-en="Reserve" data-ar="حجز">Reserve</div>
+        <h2 class="section-title" data-en="Secure Your Table Tonight" data-ar="احجز طاولتك الليلة">Secure Your Table Tonight</h2>
+        <div class="gold-divider center"></div>
+        <p class="res-desc" data-en="Experience the warmth of authentic Arabic BBQ — reserve your table now and prepare for an unforgettable evening in Farwaniya." data-ar="اختبر دفء الشواء العربي الأصيل — احجز طاولتك الآن واستعد لأمسية لا تُنسى في فروانية.">
+          Experience the warmth of authentic Arabic BBQ — reserve your table now and prepare for an unforgettable evening in Farwaniya.
+        </p>
+        <div class="res-actions">
+          <a href="tel:+96566346668" class="btn-primary magnetic" data-en="📞 Call to Reserve" data-ar="📞 اتصل للحجز">📞 Call to Reserve</a>
+          <a href="https://wa.me/96566346668" class="btn-outline magnetic" data-en="💬 WhatsApp Us" data-ar="💬 واتساب">💬 WhatsApp Us</a>
+        </div>
+
+        <!-- Opening Hours -->
+        <div class="hours-grid">
+          <div class="hours-card">
+            <span class="hours-day" data-en="Saturday – Thursday" data-ar="السبت – الخميس">Saturday – Thursday</span>
+            <span class="hours-time">11:00 AM – 12:00 AM</span>
+          </div>
+          <div class="hours-card">
+            <span class="hours-day" data-en="Friday" data-ar="الجمعة">Friday</span>
+            <span class="hours-time">1:00 PM – 12:00 AM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GOOGLE MAP ===================== -->
+  <section id="map-section" class="map-section">
+    <div class="container">
+      <div class="section-header center" style="margin-bottom:2.5rem">
+        <div class="section-tag" data-en="Find Us" data-ar="موقعنا">Find Us</div>
+        <h2 class="section-title" data-en="Visit Us in Farwaniya" data-ar="زُرنا في فروانية">Visit Us in Farwaniya</h2>
+        <div class="gold-divider center"></div>
+      </div>
+      <div class="map-wrap">
+        <iframe
+          src="https://maps.google.com/maps?q=Farwaniya+Kuwait&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          allowfullscreen
+          loading="lazy"
+          title="BBQ Spicy Restaurant Farwaniya Location">
+        </iframe>
+        <div class="map-info-card">
+          <div class="map-info-icon">📍</div>
+          <h4 class="map-info-title" data-en="BBQ Spicy Restaurant" data-ar="مطعم BBQ سبايسي">BBQ Spicy Restaurant</h4>
+          <p class="map-info-addr" data-en="Farwaniya, Kuwait" data-ar="فروانية، الكويت">Farwaniya, Kuwait</p>
+          <a href="https://share.google/LsbmCW0YNC5pouKDV" class="map-btn" target="_blank" data-en="Get Directions" data-ar="احصل على الاتجاهات">Get Directions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="contact-section section-pad">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-tag" data-en="Contact" data-ar="تواصل معنا">Contact</div>
+        <h2 class="section-title" data-en="Get in Touch" data-ar="تواصل معنا">Get in Touch</h2>
+        <div class="gold-divider center"></div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-icon">📞</div>
+          <h3 class="contact-label" data-en="Call Us" data-ar="اتصل بنا">Call Us</h3>
+          <a href="tel:+96566346668" class="contact-value">+965 6634 6668</a>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">💬</div>
+          <h3 class="contact-label" data-en="WhatsApp" data-ar="واتساب">WhatsApp</h3>
+          <a href="https://wa.me/96566346668" class="contact-value" data-en="Message Us" data-ar="راسلنا">Message Us</a>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">📍</div>
+          <h3 class="contact-label" data-en="Location" data-ar="الموقع">Location</h3>
+          <a href="https://share.google/LsbmCW0YNC5pouKDV" class="contact-value" data-en="Farwaniya, Kuwait" data-ar="فروانية، الكويت">Farwaniya, Kuwait</a>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">🕐</div>
+          <h3 class="contact-label" data-en="Hours" data-ar="أوقات العمل">Hours</h3>
+          <span class="contact-value small" data-en="Sat–Thu: 11AM–12AM | Fri: 1PM–12AM" data-ar="السبت–الخميس: 11ص–12م | الجمعة: 1م–12م">Sat–Thu: 11AM–12AM | Fri: 1PM–12AM</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo">🔥 <span data-en="BBQ SPICY" data-ar="BBQ SPICY">BBQ SPICY</span></span>
+          <p class="footer-tagline" data-en="Farwaniya · Kuwait · Est. 2014" data-ar="فروانية · الكويت · تأسس 2014">Farwaniya · Kuwait · Est. 2014</p>
+        </div>
+        <div class="footer-links">
+          <a href="#home" data-en="Home" data-ar="الرئيسية">Home</a>
+          <a href="#menu" data-en="Menu" data-ar="القائمة">Menu</a>
+          <a href="#gallery" data-en="Gallery" data-ar="المعرض">Gallery</a>
+          <a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a>
+        </div>
+        <div class="footer-contact">
+          <a href="tel:+96566346668">+965 6634 6668</a>
+          <a href="https://wa.me/96566346668" data-en="WhatsApp" data-ar="واتساب">WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-en="© 2025 BBQ Spicy Restaurant Farwaniya. All rights reserved." data-ar="© 2025 مطعم BBQ سبايسي فروانية. جميع الحقوق محفوظة.">© 2025 BBQ Spicy Restaurant Farwaniya. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
