@@ -346,6 +346,7 @@ ul { list-style: none; }
 .btn-nav-reserve {
   height: 36px;
   padding: 0 20px;
+  padding-top: 10px;
   border-radius: 10px;
   background: linear-gradient(135deg, var(--gold), var(--bronze));
   font-size: 0.72rem;
@@ -490,6 +491,7 @@ ul { list-style: none; }
   transition: all var(--transition-fast);
   position: relative;
   overflow: hidden;
+  padding-top: 15px;
 }
 
 [lang="ar"] .btn-primary {
@@ -532,6 +534,7 @@ ul { list-style: none; }
   color: var(--gold);
   transition: all var(--transition-fast);
   background: transparent;
+  padding-top: 15px;
 }
 
 [lang="ar"] .btn-outline {
@@ -1247,6 +1250,7 @@ ul { list-style: none; }
 .btn-order {
   height: 34px;
   padding: 0 16px;
+  padding-top: 10px;
   border-radius: 8px;
   background: rgba(200,163,95,0.1);
   border: 1px solid rgba(200,163,95,0.25);
