@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BOOM BOOM Pakistani Restaurant – Authentic Pakistani cuisine in Farwaniya, Kuwait. Premium halal food, family dining, and catering services." />
+  <meta name="keywords" content="Pakistani restaurant Kuwait, Biryani Farwaniya, halal food Kuwait, BOOM BOOM restaurant" />
+  <title>BOOM BOOM | Authentic Pakistani Restaurant – Kuwait</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/SplitText.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="preloader-active">
+
+  <!-- ═══════════════════════════════════════════ PRELOADER ═══ -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-logo">
+        <span class="pl-boom1">BOOM</span>
+        <span class="pl-boom2">BOOM</span>
+      </div>
+      <div class="preloader-bar"><div class="preloader-fill"></div></div>
+      <p class="preloader-tagline" data-en="Authentic Pakistani Flavors" data-ar="نكهات باكستانية أصيلة">Authentic Pakistani Flavors</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ CURSOR ═══════ -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ═══════════════════════════════════════════ HEADER ════════ -->
+  <header id="site-header">
+    <!-- Floating Navigation Craft Bar -->
+    <div class="nav-craft-container">
+      <nav class="nav-craft" id="mainNav">
+
+        <!-- Logo -->
+        <div class="nav-logo" id="navLogo">
+          <a href="#hero">
+            <span class="logo-boom">BOOM</span>
+            <span class="logo-divider">✦</span>
+            <span class="logo-boom">BOOM</span>
+          </a>
+          <span class="logo-sub" data-en="Pakistani Restaurant" data-ar="مطعم باكستاني">Pakistani Restaurant</span>
+        </div>
+
+        <!-- Nav Links -->
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about" class="nav-link" data-en="Our Story" data-ar="قصتنا">Our Story</a></li>
+          <li><a href="#menu" class="nav-link" data-en="Menu" data-ar="القائمة">Menu</a></li>
+          <li><a href="#gallery" class="nav-link" data-en="Gallery" data-ar="المعرض">Gallery</a></li>
+          <li><a href="#contact" class="nav-link" data-en="Contact" data-ar="تواصل">Contact</a></li>
+        </ul>
+
+        <!-- Nav Controls -->
+        <div class="nav-controls">
+          <!-- Language Toggle -->
+          <button class="lang-toggle" id="langToggle" aria-label="Toggle Language">
+            <span class="lang-en" id="langLabel">EN</span>
+            <span class="lang-divider">|</span>
+            <span class="lang-ar">ع</span>
+          </button>
+
+          <!-- Theme Toggle -->
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+            <span class="theme-icon theme-sun">☀</span>
+            <span class="theme-icon theme-moon">🌙</span>
+          </button>
+
+          <!-- Reserve Button -->
+          <a href="#reservation" class="nav-reserve-btn" data-en="Reserve" data-ar="احجز">Reserve</a>
+
+          <!-- Mobile Burger -->
+          <button class="burger-btn" id="burgerBtn" aria-label="Toggle Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Fullscreen Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-inner">
+        <ul class="mobile-nav-links">
+          <li><a href="#about" class="mobile-link" data-en="Our Story" data-ar="قصتنا">Our Story</a></li>
+          <li><a href="#menu" class="mobile-link" data-en="Menu" data-ar="القائمة">Menu</a></li>
+          <li><a href="#why-us" class="mobile-link" data-en="Why Us" data-ar="لماذا نحن">Why Us</a></li>
+          <li><a href="#gallery" class="mobile-link" data-en="Gallery" data-ar="المعرض">Gallery</a></li>
+          <li><a href="#testimonials" class="mobile-link" data-en="Reviews" data-ar="التقييمات">Reviews</a></li>
+          <li><a href="#contact" class="mobile-link" data-en="Contact" data-ar="تواصل">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-bottom">
+          <a href="tel:+96594080612" class="mobile-cta">+965 9408 0612</a>
+          <p class="mobile-address" data-en="Farwaniya, Kuwait" data-ar="الفروانية، الكويت">Farwaniya, Kuwait</p>
+        </div>
+        <div class="mobile-menu-decor">
+          <span class="md-spice md-s1">✦</span>
+          <span class="md-spice md-s2">❋</span>
+          <span class="md-spice md-s3">✦</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════ HERO ══════════ -->
+    <section id="hero" class="hero-section">
+      <!-- Background Image -->
+      <div class="hero-bg">
+        <img src="https://images.pexels.com/photos/6876589/pexels-photo-6876589.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=1600" alt="Luxury restaurant interior" class="hero-bg-img" loading="eager" />
+        <div class="hero-overlay"></div>
+      </div>
+
+      <!-- Smoke / Particle Canvas -->
+      <canvas id="particleCanvas"></canvas>
+
+      <!-- Spice Particles -->
+      <div class="spice-particles" id="spiceParticles">
+        <span class="sp sp1">✦</span>
+        <span class="sp sp2">❋</span>
+        <span class="sp sp3">✦</span>
+        <span class="sp sp4">✿</span>
+        <span class="sp sp5">❋</span>
+        <span class="sp sp6">✦</span>
+        <span class="sp sp7">✿</span>
+        <span class="sp sp8">❋</span>
+      </div>
+
+      <!-- Decorative Lines -->
+      <div class="hero-line hero-line-left"></div>
+      <div class="hero-line hero-line-right"></div>
+
+      <!-- Hero Content -->
+      <div class="hero-content">
+        <div class="hero-badge" data-en="Est. in Kuwait · Farwaniya" data-ar="في الكويت · الفروانية">Est. in Kuwait · Farwaniya</div>
+
+        <h1 class="hero-title">
+          <span class="ht-word ht-w1">BOOM</span>
+          <span class="ht-divider">✦</span>
+          <span class="ht-word ht-w2">BOOM</span>
+        </h1>
+
+        <p class="hero-sub" data-en="Pakistani Restaurant" data-ar="مطعم باكستاني">Pakistani Restaurant</p>
+
+        <div class="hero-tagline-wrap">
+          <span class="htl-line"></span>
+          <p class="hero-tagline" data-en="Where Every Bite Tells a Story of Authentic Pakistani Heritage" data-ar="حيث تحكي كل لقمة قصة التراث الباكستاني الأصيل">Where Every Bite Tells a Story of Authentic Pakistani Heritage</p>
+          <span class="htl-line"></span>
+        </div>
+
+        <div class="hero-ctas">
+          <a href="#reservation" class="btn-primary magnetic-btn" data-en="Reserve a Table" data-ar="احجز طاولة">Reserve a Table</a>
+          <a href="#menu" class="btn-outline magnetic-btn" data-en="Explore Menu" data-ar="استكشف القائمة">Explore Menu</a>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+          <span class="scroll-label" data-en="Scroll to discover" data-ar="مرر للاستكشاف">Scroll to discover</span>
+          <div class="scroll-line"><div class="scroll-dot"></div></div>
+        </div>
+      </div>
+
+      <!-- Parallax Layers -->
+      <div class="hero-parallax-layer" id="parallaxLayer" data-speed="0.3"></div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ ABOUT ═════════ -->
+    <section id="about" class="about-section">
+      <div class="about-inner">
+
+        <!-- Left: Editorial Image Stack -->
+        <div class="about-visual">
+          <div class="av-frame av-frame1">
+            <img src="https://images.pexels.com/photos/17001731/pexels-photo-17001731.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=700&w=560" alt="Restaurant atmosphere" loading="lazy" />
+          </div>
+          <div class="av-frame av-frame2">
+            <img src="https://images.pexels.com/photos/18698225/pexels-photo-18698225.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" alt="Pakistani food platter" loading="lazy" />
+          </div>
+          <div class="av-badge">
+            <span class="avb-num">07+</span>
+            <span class="avb-text" data-en="Years of Mastery" data-ar="سنوات من الإتقان">Years of Mastery</span>
+          </div>
+          <div class="av-ornament">✦</div>
+        </div>
+
+        <!-- Right: Story Text -->
+        <div class="about-text">
+          <span class="section-label" data-en="Our Heritage" data-ar="تراثنا">Our Heritage</span>
+          <h2 class="about-title" data-en="A Legacy of<br/>Authentic Flavors" data-ar="إرث من<br/>النكهات الأصيلة">A Legacy of<br/>Authentic Flavors</h2>
+          <div class="about-divider"><span>✦</span></div>
+          <p class="about-desc" data-en="Born from the rich culinary traditions of Pakistan, BOOM BOOM brings the soul of authentic Pakistani cooking to the heart of Kuwait. Our recipes have been perfected over generations — each dish carrying the warmth of family, the depth of tradition, and the richness of the finest halal ingredients." data-ar="وُلد مطعم بوم بوم من التقاليد الطهوية الغنية لباكستان، ليجلب روح الطبخ الباكستاني الأصيل إلى قلب الكويت. صُقلت وصفاتنا عبر أجيال — كل طبق يحمل دفء العائلة وعمق التراث وثراء أجود المكونات الحلال.">Born from the rich culinary traditions of Pakistan, BOOM BOOM brings the soul of authentic Pakistani cooking to the heart of Kuwait. Our recipes have been perfected over generations — each dish carrying the warmth of family, the depth of tradition, and the richness of the finest halal ingredients.</p>
+
+          <div class="about-pillars">
+            <div class="pillar">
+              <span class="pillar-icon">🌿</span>
+              <span class="pillar-label" data-en="Premium Halal" data-ar="حلال فاخر">Premium Halal</span>
+            </div>
+            <div class="pillar">
+              <span class="pillar-icon">👨‍🍳</span>
+              <span class="pillar-label" data-en="Master Chefs" data-ar="طهاة محترفون">Master Chefs</span>
+            </div>
+            <div class="pillar">
+              <span class="pillar-icon">🏺</span>
+              <span class="pillar-label" data-en="Traditional Recipes" data-ar="وصفات تقليدية">Traditional Recipes</span>
+            </div>
+            <div class="pillar">
+              <span class="pillar-icon">❤</span>
+              <span class="pillar-label" data-en="Family First" data-ar="العائلة أولاً">Family First</span>
+            </div>
+          </div>
+
+          <a href="#menu" class="btn-gold magnetic-btn" data-en="Discover Our Menu" data-ar="اكتشف قائمتنا">Discover Our Menu</a>
+        </div>
+      </div>
+
+      <!-- Background Ornament -->
+      <div class="about-bg-ornament">✦</div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ MENU ══════════ -->
+    <section id="menu" class="menu-section">
+      <div class="section-header">
+        <span class="section-label" data-en="Signature Dishes" data-ar="أطباق مميزة">Signature Dishes</span>
+        <h2 class="section-title" data-en="Our Culinary<br/>Masterpieces" data-ar="روائعنا<br/>الطهوية">Our Culinary<br/>Masterpieces</h2>
+        <p class="section-desc" data-en="Every dish is a celebration of authentic Pakistani flavors, prepared with the finest halal ingredients." data-ar="كل طبق احتفال بالنكهات الباكستانية الأصيلة، محضّر بأجود المكونات الحلال.">Every dish is a celebration of authentic Pakistani flavors, prepared with the finest halal ingredients.</p>
+      </div>
+
+      <!-- Menu Filter -->
+      <div class="menu-filter">
+        <button class="mf-btn active" data-filter="all" data-en="All" data-ar="الكل">All</button>
+        <button class="mf-btn" data-filter="rice" data-en="Rice" data-ar="أرز">Rice</button>
+        <button class="mf-btn" data-filter="karahi" data-en="Karahi" data-ar="كراهي">Karahi</button>
+        <button class="mf-btn" data-filter="bbq" data-en="BBQ" data-ar="مشويات">BBQ</button>
+        <button class="mf-btn" data-filter="slow" data-en="Slow Cook" data-ar="طهي بطيء">Slow Cook</button>
+        <button class="mf-btn" data-filter="breads" data-en="Breads" data-ar="خبز">Breads</button>
+        <button class="mf-btn" data-filter="drinks" data-en="Drinks" data-ar="مشروبات">Drinks</button>
+        <button class="mf-btn" data-filter="desserts" data-en="Desserts" data-ar="حلويات">Desserts</button>
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="menu-grid" id="menuGrid">
+
+        <!-- Chicken Biryani -->
+        <div class="menu-card" data-category="rice">
+          <div class="mc-image-wrap">
+            <img src="https://images.pexels.com/photos/17696653/pexels-photo-17696653.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" alt="Chicken Biryani" loading="lazy" />
+            <div class="mc-overlay"></div>
+            <span class="mc-badge chef-badge" data-en="Chef's Special" data-ar="اختيار الشيف">Chef's Special</span>
+          </div>
+          <div class="mc-body">
+            <div class="mc-top">
+              <h3 class="mc-title" data-en="Chicken Biryani" data-ar="برياني دجاج">Chicken Biryani</h3>
+              <span class="mc-price">2.500 KD</span>
+            </div>
+            <p class="mc-desc" data-en="Aromatic basmati rice layered with tender chicken, saffron, and secret spice blend" data-ar="أرز بسمتي عطري مطبوخ مع دجاج طري وزعفران ومزيج توابل سري">Aromatic basmati rice layered with tender chicken, saffron, and secret spice blend</p>
+            <div class="mc-footer">
+              <span class="mc-tag" data-en="Signature" data-ar="مميز">Signature</span>
+              <button class="mc-order" data-en="Order" data-ar="اطلب">Order</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mutton Biryani -->
+        <div class="menu-card" data-category="rice">
+          <div class="mc-image-wrap">
+            <img src="https://images.pexels.com/photos/17696654/pexels-photo-17696654.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" alt="Mutton Biryani" loading="lazy" />
+            <div class="mc-overlay"></div>
+            <span class="mc-badge popular-badge" data-en="Most Popular" data-ar="الأكثر طلباً">Most Popular</span>
+          </div>
+          <div class="mc-body">
+            <div class="mc-top">
+              <h3 class="mc-title" data-en="Mutton Biryani" data-ar="برياني لحم">Mutton Biryani</h3>
+              <span class="mc-price">3.500 KD</span>
+            </div>
+            <p class="mc-desc" data-en="Slow-cooked mutton on fragrant rice with caramelized onions and golden saffron" data-ar="لحم الضأن المطبوخ ببطء على أرز عطر مع بصل كرمل وزعفران ذهبي">Slow-cooked mutton on fragrant rice with caramelized onions and golden saffron</p>
+            <div class="mc-footer">
+              <span class="mc-tag" data-en="Premium" data-ar="فاخر">Premium</span>
+              <button class="mc-order" data-en="Order" data-ar="اطلب">Order</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chicken Karahi -->
+        <div class="menu-card" data-category="karahi">
+          <div class="mc-image-wrap">
+            <img src="https://images.pexels.com/photos/29684985/pexels-photo-29684985.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" alt="Chicken Karahi" loading="lazy" />
+            <div class="mc-overlay"></div>
+            <span class="mc-badge chef-badge" data-en="Chef's Special" data-ar="اختيار الشيف">Chef's Special</span>
+          </div>
+          <div class="mc-body">
+            <div class="mc-top">
+              <h3 class="mc-title" data-en="Chicken Karahi" data-ar="كراهي دجاج">Chicken Karahi</h3>
+              <span class="mc-price">2.800 KD</span>
+            </div>
+            <p class="mc-desc" data-en="Farm-fresh chicken stir-fried in a traditional wok with tomatoes, green chilies, and ginger" data-ar="دجاج طازج من المزرعة مقلي في مقلاة تقليدية مع طماطم وفلفل أخضر وزنجبيل">Farm-fresh chicken stir-fried in a traditional wok with tomatoes, green chilies, and ginger</p>
+            <div class="mc-footer">
+              <span class="mc-tag" data-en="Signature" data-ar="مميز">Signature</span>
+              <button class="mc-order" data-en="Order" data-ar="اطلب">Order</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mutton Karahi -->
+        <div class="menu-card" data-category="karahi">
+          <div class="mc-image-wrap">
+            <img src="https://images.pexels.com/photos/29684990/pexels-photo-29684990.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" alt="Mutton Karahi" loading="lazy" />
+            <div class="mc-overlay"></div>
+          </div>
+          <div class="mc-body">
+            <div class="mc-top">
+              <h3 class="mc-title" data-en="Mutton Karahi" data-ar="كراهي لحم">Mutton Karahi</h3>
+              <span class="mc-price">3.800 KD</span>
+            </div>
+            <p class="mc-desc" data-en="Tender mutton cooked to perfection in a brass wok with smoky charred spices" data-ar="لحم الضأن الطري المطبوخ في مقلاة نحاسية مع توابل مدخنة لذيذة">Tender mutton cooked to perfection in a brass wok with smoky charred spices</p>
+            <div class="mc-footer">
+              <span class="mc-tag" data-en="Premium" data-ar="فاخر">Premium</span>
+              <button class="mc-order" data-en="Order" data-ar="اطلب">Order</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chicken Handi -->
+        <div class="menu-card" data-category="karahi">
+          <div class="mc-image-wrap">
+            <img src="https://images.pexels.com/photos/29685081/pexels-photo-29685081.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" alt="Chicken Handi" loading="lazy" />
+            <div class="mc-overlay"></div>
+            <span class="mc-badge chef-badge" data-en="Chef's Special" data-ar="اختيار الشيف">Chef's Special</span>
+          </div>
+          <div class="mc-body">
+            <div class="mc-top">
+              <h3 class="mc-title" data-en="Chicken Handi" data-ar="هاندي دجاج">Chicken Handi</h3>
+              <span class="mc-price">2.500 KD</span>
+            </div>
+            <p class="mc-desc" data-en="Creamy chicken slow-cooked in a clay pot with aromatic spices and fresh cream" data-ar="دجاج كريمي مطبوخ ببطء في وعاء طيني مع توابل عطرية وقشدة طازجة">Creamy chicken slow-cooked in a clay pot with aromatic spices and fresh cream</p>
+            <div class="mc-footer">
+              <span class="mc-tag" data-en="Signature" data-ar="مميز">Signature</span>
+              <button class="mc-order" data-en="Order" data-ar="اطلب">Order</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- BBQ Platter -->
+        <div class="menu-card menu-card-wide" data-category="bbq">
+          <div class="mc-image-wrap">
+            <img src="https://images.pexels.com/photos/18698225/pexels-photo-18698225.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="BBQ Platter" loading="lazy" />
+            <div class="mc-overlay"></div>
+            <span class="mc-badge popular-badge" data-en="Best Seller" data-ar="الأكثر مبيعاً">Best Seller</span>
+          </div>
+          <div class="mc-body">
+            <div class="mc-top">
+              <h3 class="mc-title" data-en="BBQ Mixed Platter" data-ar="طبق مشاوي مشكل">BBQ Mixed Platter</h3>
+              <span class="mc-price">5.500 KD</span>
+            </div>
+            <p class="mc-desc" data-en="A royal spread of seekh kebabs, chicken tikka, boti, and chapli kebab with grilled naan" data-ar="مزيج ملكي من سيخ كباب، تكا دجاج، بوتي وكباب تشابلي مع خبز نان مشوي">A royal spread of seekh kebabs, chicken tikka, boti, and chapli kebab with grilled naan</p>
+            <div class="mc-footer">
+              <span class="mc-tag" data-en="For 2–3 People" data-ar="لـ 2-3 أشخاص">For 2–3 People</span>
+              <button class="mc-order" data-en="Order" data-ar="اطلب">Order</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seekh Kebabs -->
+        <div class="menu-card" data-category="bbq">
+          <div class="mc-image-wrap">
+            <img src="https://images.pexels.com/photos/18698226/pexels-photo-18698226.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" alt="Seekh Kebabs" loading="lazy" />
+            <div class="mc-overlay"></div>
+          </div>
+          <div class="mc-body">
+            <div class="mc-top">
+              <h3 class="mc-title" data-en="Seekh Kebabs" data-ar="سيخ كباب">Seekh Kebabs</h3>
+              <span class="mc-price">2.200 KD</span>
+            </div>
+            <p class="mc-desc" data-en="Minced meat seasoned with herbs and spices, grilled on iron skewers over coal fire" data-ar="لحم مفروم متبل بالأعشاب والتوابل مشوي على أسياخ حديدية فوق الفحم">Minced meat seasoned with herbs and spices, grilled on iron skewers over coal fire</p>
+            <div class="mc-footer">
+              <span class="mc-tag" data-en="BBQ" data-ar="مشوي">BBQ</span>
+              <button class="mc-order" data-en="Order" data-ar="اطلب">Order</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chicken Tikka -->
+        <div class="menu-card" data-category="bbq">
+          <div class="mc-image-wrap">
+            <img src="https://images.pexels.com/photos/18698230/pexels-photo-18698230.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" alt="Chicken Tikka" loading="lazy" />
+            <div class="mc-overlay"></div>
+            <span class="mc-badge chef-badge" data-en="Chef's Special" data-ar="اختيار الشيف">Chef's Special</span>
+          </div>
+          <div class="mc-body">
+            <div class="mc-top">
+              <h3 class="mc-title" data-en="Chicken Tikka" data-ar="تكا دجاج">Chicken Tikka</h3>
+              <span class="mc-price">2.500 KD</span>
+            </div>
+            <p class="mc-desc" data-en="Marinated chicken pieces grilled in a clay oven, served with mint chutney" data-ar="قطع دجاج متبلة مشوية في فرن طيني، تُقدم مع صلصة النعناع">Marinated chicken pieces grilled in a clay oven, served with mint chutney</p>
+            <div class="mc-footer">
+              <span class="mc-tag" data-en="Tandoor" data-ar="طندوري">Tandoor</span>
+              <button class="mc-order" data-en="Order" data-ar="اطلب">Order</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nihari -->
+        <div class="menu-card" data-category="slow">
+          <div class="mc-image-wrap">
+            <img src="https://images.pexels.com/photos/29684989/pexels-photo-29684989.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" alt="Nihari" loading="lazy" />
+            <div class="mc-overlay"></div>
+            <span class="mc-badge chef-badge" data-en="Chef's Special" data-ar="اختيار الشيف">Chef's Special</span>
+          </div>
+          <div class="mc-body">
+            <div class="mc-top">
+              <h3 class="mc-title" data-en="Nihari" data-ar="نهاري">Nihari</h3>
+              <span class="mc-price">3.000 KD</span>
+            </div>
+            <p class="mc-desc" data-en="Royal slow-cooked beef stew simmered overnight with whole spices and bone marrow" data-ar="يخنة اللحم الملكية المطبوخة ببطء طوال الليل مع التوابل الكاملة ونخاع العظام">Royal slow-cooked beef stew simmered overnight with whole spices and bone marrow</p>
+            <div class="mc-footer">
+              <span class="mc-tag" data-en="Slow Cook" data-ar="طهي بطيء">Slow Cook</span>
+              <button class="mc-order" data-en="Order" data-ar="اطلب">Order</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Haleem -->
+        <div class="menu-card" data-category="slow">
+          <div class="mc-image-wrap">
+            <img src="https://images.pexels.com/photos/17696680/pexels-photo-17696680.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" alt="Haleem" loading="lazy" />
+            <div class="mc-overlay"></div>
+          </div>
+          <div class="mc-body">
+            <div class="mc-top">
+              <h3 class="mc-title" data-en="Haleem" data-ar="حليم">Haleem</h3>
+              <span class="mc-price">2.500 KD</span>
+            </div>
+            <p class="mc-desc" data-en="A hearty lentil and meat porridge slow-cooked for hours with fragrant Mughal spices" data-ar="عصيدة دسمة من العدس واللحم مطبوخة ببطء لساعات مع توابل مغولية عطرية">A hearty lentil and meat porridge slow-cooked for hours with fragrant Mughal spices</p>
+            <div class="mc-footer">
+              <span class="mc-tag" data-en="Traditional" data-ar="تقليدي">Traditional</span>
+              <button class="mc-order" data-en="Order" data-ar="اطلب">Order</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapli Kebab -->
+        <div class="menu-card" data-category="bbq">
+          <div class="mc-image-wrap">
+            <img src="https://images.pexels.com/photos/18698233/pexels-photo-18698233.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" alt="Chapli Kebab" loading="lazy" />
+            <div class="mc-overlay"></div>
+          </div>
+          <div class="mc-body">
+            <div class="mc-top">
+              <h3 class="mc-title" data-en="Chapli Kebab" data-ar="كباب تشابلي">Chapli Kebab</h3>
+              <span class="mc-price">2.000 KD</span>
+            </div>
+            <p class="mc-desc" data-en="Peshawari-style flat beef patties with pomegranate seeds, coriander and chili" data-ar="قرص لحم بقري على طريقة بيشاور مع بذور الرمان والكزبرة والفلفل">Peshawari-style flat beef patties with pomegranate seeds, coriander and chili</p>
+            <div class="mc-footer">
+              <span class="mc-tag" data-en="Peshawari" data-ar="بيشاوري">Peshawari</span>
+              <button class="mc-order" data-en="Order" data-ar="اطلب">Order</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Peshawari Namkeen Karahi -->
+        <div class="menu-card" data-category="karahi">
+          <div class="mc-image-wrap">
+            <img src="https://images.pexels.com/photos/29684985/pexels-photo-29684985.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" alt="Namkeen Karahi" loading="lazy" />
+            <div class="mc-overlay"></div>
+            <span class="mc-badge popular-badge" data-en="Fan Favorite" data-ar="مفضل الجميع">Fan Favorite</span>
+          </div>
+          <div class="mc-body">
+            <div class="mc-top">
+              <h3 class="mc-title" data-en="Peshawari Namkeen Karahi" data-ar="كراهي نمكين بيشاوري">Peshawari Namkeen Karahi</h3>
+              <span class="mc-price">3.200 KD</span>
+            </div>
+            <p class="mc-desc" data-en="White karahi from Peshawar – mutton cooked with salt, pepper, and ghee only" data-ar="الكراهي البيضاء من بيشاور – لحم الضأن مع الملح والفلفل والسمن فقط">White karahi from Peshawar – mutton cooked with salt, pepper, and ghee only</p>
+            <div class="mc-footer">
+              <span class="mc-tag" data-en="Peshawari" data-ar="بيشاوري">Peshawari</span>
+              <button class="mc-order" data-en="Order" data-ar="اطلب">Order</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Butter Naan -->
+        <div class="menu-card" data-category="breads">
+          <div class="mc-image-wrap">
+            <img src="https://images.pexels.com/photos/18698234/pexels-photo-18698234.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" alt="Butter Naan" loading="lazy" />
+            <div class="mc-overlay"></div>
+          </div>
+          <div class="mc-body">
+            <div class="mc-top">
+              <h3 class="mc-title" data-en="Butter Naan" data-ar="نان بالزبدة">Butter Naan</h3>
+              <span class="mc-price">0.300 KD</span>
+            </div>
+            <p class="mc-desc" data-en="Freshly baked tandoor bread brushed with rich butter and served piping hot" data-ar="خبز نان طازج من التنور مدهون بزبدة غنية ويُقدم ساخناً">Freshly baked tandoor bread brushed with rich butter and served piping hot</p>
+            <div class="mc-footer">
+              <span class="mc-tag" data-en="Tandoor" data-ar="طندوري">Tandoor</span>
+              <button class="mc-order" data-en="Order" data-ar="اطلب">Order</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Garlic Naan -->
+        <div class="menu-card" data-category="breads">
+          <div class="mc-image-wrap">
+            <img src="https://images.pexels.com/photos/18698238/pexels-photo-18698238.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" alt="Garlic Naan" loading="lazy" />
+            <div class="mc-overlay"></div>
+          </div>
+          <div class="mc-body">
+            <div class="mc-top">
+              <h3 class="mc-title" data-en="Garlic Naan" data-ar="نان بالثوم">Garlic Naan</h3>
+              <span class="mc-price">0.400 KD</span>
+            </div>
+            <p class="mc-desc" data-en="Soft tandoor flatbread topped with golden garlic, butter, and fresh coriander" data-ar="خبز تنور طري مع ثوم ذهبي وزبدة وكزبرة طازجة">Soft tandoor flatbread topped with golden garlic, butter, and fresh coriander</p>
+            <div class="mc-footer">
+              <span class="mc-tag" data-en="Tandoor" data-ar="طندوري">Tandoor</span>
+              <button class="mc-order" data-en="Order" data-ar="اطلب">Order</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fresh Lassi -->
+        <div class="menu-card" data-category="drinks">
+          <div class="mc-image-wrap">
+            <img src="https://images.pexels.com/photos/6416553/pexels-photo-6416553.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" alt="Fresh Lassi" loading="lazy" />
+            <div class="mc-overlay"></div>
+          </div>
+          <div class="mc-body">
+            <div class="mc-top">
+              <h3 class="mc-title" data-en="Fresh Mango Lassi" data-ar="لاسي المانجو الطازج">Fresh Mango Lassi</h3>
+              <span class="mc-price">0.800 KD</span>
+            </div>
+            <p class="mc-desc" data-en="Thick creamy yogurt blended with fresh Alphonso mangoes and a pinch of cardamom" data-ar="زبادي كريمي سميك ممزوج مع مانجو ألفونسو الطازج وقليل من الهيل">Thick creamy yogurt blended with fresh Alphonso mangoes and a pinch of cardamom</p>
+            <div class="mc-footer">
+              <span class="mc-tag" data-en="Refreshing" data-ar="منعش">Refreshing</span>
+              <button class="mc-order" data-en="Order" data-ar="اطلب">Order</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kashmiri Tea -->
+        <div class="menu-card" data-category="drinks">
+          <div class="mc-image-wrap">
+            <img src="https://images.pexels.com/photos/17696680/pexels-photo-17696680.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" alt="Kashmiri Tea" loading="lazy" />
+            <div class="mc-overlay"></div>
+          </div>
+          <div class="mc-body">
+            <div class="mc-top">
+              <h3 class="mc-title" data-en="Kashmiri Pink Tea" data-ar="شاي كشميري وردي">Kashmiri Pink Tea</h3>
+              <span class="mc-price">0.600 KD</span>
+            </div>
+            <p class="mc-desc" data-en="Traditional pink chai brewed with gunpowder tea, topped with crushed pistachios and almonds" data-ar="شاي وردي تقليدي مطبوخ مع الشاي البارود، محلى بالفستق المجروش واللوز">Traditional pink chai brewed with gunpowder tea, topped with crushed pistachios and almonds</p>
+            <div class="mc-footer">
+              <span class="mc-tag" data-en="Kashmiri" data-ar="كشميري">Kashmiri</span>
+              <button class="mc-order" data-en="Order" data-ar="اطلب">Order</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kheer -->
+        <div class="menu-card" data-category="desserts">
+          <div class="mc-image-wrap">
+            <img src="https://images.pexels.com/photos/29253305/pexels-photo-29253305.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" alt="Kheer" loading="lazy" />
+            <div class="mc-overlay"></div>
+          </div>
+          <div class="mc-body">
+            <div class="mc-top">
+              <h3 class="mc-title" data-en="Kheer" data-ar="خير">Kheer</h3>
+              <span class="mc-price">1.000 KD</span>
+            </div>
+            <p class="mc-desc" data-en="Slow-simmered rice pudding with full-fat milk, sugar, saffron, and rose water" data-ar="أرز حليب مطبوخ ببطء بحليب كامل الدسم مع سكر وزعفران وماء ورد">Slow-simmered rice pudding with full-fat milk, sugar, saffron, and rose water</p>
+            <div class="mc-footer">
+              <span class="mc-tag" data-en="Traditional" data-ar="تقليدي">Traditional</span>
+              <button class="mc-order" data-en="Order" data-ar="اطلب">Order</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gulab Jamun -->
+        <div class="menu-card" data-category="desserts">
+          <div class="mc-image-wrap">
+            <img src="https://images.pexels.com/photos/18698239/pexels-photo-18698239.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" alt="Gulab Jamun" loading="lazy" />
+            <div class="mc-overlay"></div>
+            <span class="mc-badge popular-badge" data-en="Most Loved" data-ar="الأكثر حباً">Most Loved</span>
+          </div>
+          <div class="mc-body">
+            <div class="mc-top">
+              <h3 class="mc-title" data-en="Gulab Jamun" data-ar="غلاب جامون">Gulab Jamun</h3>
+              <span class="mc-price">1.200 KD</span>
+            </div>
+            <p class="mc-desc" data-en="Soft milk-solid dumplings soaked in rose and cardamom syrup, garnished with pistachios" data-ar="كرات حليب طرية منقوعة في شراب الورد والهيل، مزينة بالفستق">Soft milk-solid dumplings soaked in rose and cardamom syrup, garnished with pistachios</p>
+            <div class="mc-footer">
+              <span class="mc-tag" data-en="Sweet" data-ar="حلو">Sweet</span>
+              <button class="mc-order" data-en="Order" data-ar="اطلب">Order</button>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /menu-grid -->
+    </section>
+
+    <!-- ═══════════════════════════════════════════ WHY US ════════ -->
+    <section id="why-us" class="why-section">
+      <div class="why-bg-pattern"></div>
+      <div class="section-header">
+        <span class="section-label" data-en="Our Promise" data-ar="وعدنا">Our Promise</span>
+        <h2 class="section-title" data-en="Why Families Choose<br/>BOOM BOOM" data-ar="لماذا تختار العائلات<br/>بوم بوم">Why Families Choose<br/>BOOM BOOM</h2>
+      </div>
+
+      <div class="why-grid">
+
+        <div class="why-card">
+          <div class="wc-icon-ring">
+            <span class="wc-icon">🥩</span>
+          </div>
+          <h3 class="wc-title" data-en="Authentic Pakistani Taste" data-ar="طعم باكستاني أصيل">Authentic Pakistani Taste</h3>
+          <p class="wc-desc" data-en="Recipes passed down through generations, unchanged and uncompromised." data-ar="وصفات متوارثة عبر الأجيال، لم تتغير ولم تُساوَم عليها.">Recipes passed down through generations, unchanged and uncompromised.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="wc-icon-ring">
+            <span class="wc-icon">✅</span>
+          </div>
+          <h3 class="wc-title" data-en="Premium Halal Ingredients" data-ar="مكونات حلال فاخرة">Premium Halal Ingredients</h3>
+          <p class="wc-desc" data-en="Every ingredient is 100% halal certified and sourced from trusted suppliers." data-ar="كل مكون حاصل على شهادة حلال 100٪ ومصدره موردون موثوقون.">Every ingredient is 100% halal certified and sourced from trusted suppliers.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="wc-icon-ring">
+            <span class="wc-icon">📜</span>
+          </div>
+          <h3 class="wc-title" data-en="Traditional Recipes" data-ar="وصفات تقليدية">Traditional Recipes</h3>
+          <p class="wc-desc" data-en="Ancient spice blends and cooking methods preserved with reverence and care." data-ar="مزيجات التوابل القديمة وأساليب الطهي محفوظة بعناية واحترام.">Ancient spice blends and cooking methods preserved with reverence and care.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="wc-icon-ring">
+            <span class="wc-icon">👨‍🍳</span>
+          </div>
+          <h3 class="wc-title" data-en="Expert Chefs" data-ar="طهاة متخصصون">Expert Chefs</h3>
+          <p class="wc-desc" data-en="Our culinary team brings decades of expertise from Pakistan's finest kitchens." data-ar="يجلب فريقنا الطهوي عقوداً من الخبرة من أفضل مطابخ باكستان.">Our culinary team brings decades of expertise from Pakistan's finest kitchens.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="wc-icon-ring">
+            <span class="wc-icon">👨‍👩‍👧‍👦</span>
+          </div>
+          <h3 class="wc-title" data-en="Family Dining" data-ar="تجربة عائلية">Family Dining</h3>
+          <p class="wc-desc" data-en="A warm, welcoming atmosphere perfect for families, celebrations, and gatherings." data-ar="أجواء دافئة وترحيبية مثالية للعائلات والاحتفالات والتجمعات.">A warm, welcoming atmosphere perfect for families, celebrations, and gatherings.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="wc-icon-ring">
+            <span class="wc-icon">⚡</span>
+          </div>
+          <h3 class="wc-title" data-en="Fast Service" data-ar="خدمة سريعة">Fast Service</h3>
+          <p class="wc-desc" data-en="Efficient, attentive service without ever compromising on quality or experience." data-ar="خدمة فعالة ومنتبهة دون المساس بالجودة أو التجربة.">Efficient, attentive service without ever compromising on quality or experience.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="wc-icon-ring">
+            <span class="wc-icon">🎉</span>
+          </div>
+          <h3 class="wc-title" data-en="Private Gatherings" data-ar="تجمعات خاصة">Private Gatherings</h3>
+          <p class="wc-desc" data-en="Exclusive spaces for your celebrations, corporate events, and private dining." data-ar="مساحات حصرية لاحتفالاتك وفعالياتك المؤسسية وعشاءاتك الخاصة.">Exclusive spaces for your celebrations, corporate events, and private dining.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="wc-icon-ring">
+            <span class="wc-icon">🚚</span>
+          </div>
+          <h3 class="wc-title" data-en="Catering Services" data-ar="خدمات تموين">Catering Services</h3>
+          <p class="wc-desc" data-en="Full-scale catering for weddings, office events, and large gatherings across Kuwait." data-ar="تموين شامل للأفراح والفعاليات المكتبية والتجمعات الكبرى في الكويت.">Full-scale catering for weddings, office events, and large gatherings across Kuwait.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ GALLERY ═══════ -->
+    <section id="gallery" class="gallery-section">
+      <div class="section-header">
+        <span class="section-label" data-en="Visual Stories" data-ar="قصص بصرية">Visual Stories</span>
+        <h2 class="section-title" data-en="A Feast for<br/>Your Eyes" data-ar="وليمة<br/>للعيون">A Feast for<br/>Your Eyes</h2>
+      </div>
+
+      <div class="gallery-masonry" id="galleryMasonry">
+        <div class="gal-item gi-tall">
+          <img src="https://images.pexels.com/photos/17001731/pexels-photo-17001731.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=700&w=560" alt="Restaurant interior" loading="lazy" />
+          <div class="gal-overlay"><span data-en="Ambiance" data-ar="الأجواء">Ambiance</span></div>
+        </div>
+        <div class="gal-item gi-normal">
+          <img src="https://images.pexels.com/photos/17696653/pexels-photo-17696653.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" alt="Biryani" loading="lazy" />
+          <div class="gal-overlay"><span data-en="Biryani" data-ar="برياني">Biryani</span></div>
+        </div>
+        <div class="gal-item gi-normal">
+          <img src="https://images.pexels.com/photos/18698225/pexels-photo-18698225.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" alt="BBQ Platter" loading="lazy" />
+          <div class="gal-overlay"><span data-en="BBQ Feast" data-ar="وليمة مشوية">BBQ Feast</span></div>
+        </div>
+        <div class="gal-item gi-wide">
+          <img src="https://images.pexels.com/photos/6876589/pexels-photo-6876589.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=800" alt="Dining hall" loading="lazy" />
+          <div class="gal-overlay"><span data-en="Dining Hall" data-ar="قاعة الطعام">Dining Hall</span></div>
+        </div>
+        <div class="gal-item gi-normal">
+          <img src="https://images.pexels.com/photos/29684985/pexels-photo-29684985.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" alt="Karahi" loading="lazy" />
+          <div class="gal-overlay"><span data-en="Karahi" data-ar="كراهي">Karahi</span></div>
+        </div>
+        <div class="gal-item gi-normal">
+          <img src="https://images.pexels.com/photos/18698226/pexels-photo-18698226.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" alt="Kebabs" loading="lazy" />
+          <div class="gal-overlay"><span data-en="Kebabs" data-ar="كباب">Kebabs</span></div>
+        </div>
+        <div class="gal-item gi-tall">
+          <img src="https://images.pexels.com/photos/35326200/pexels-photo-35326200.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=700&w=560" alt="Restaurant lighting" loading="lazy" />
+          <div class="gal-overlay"><span data-en="Luxury" data-ar="الفخامة">Luxury</span></div>
+        </div>
+        <div class="gal-item gi-normal">
+          <img src="https://images.pexels.com/photos/29253305/pexels-photo-29253305.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" alt="Desserts spread" loading="lazy" />
+          <div class="gal-overlay"><span data-en="Desserts" data-ar="حلويات">Desserts</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ TESTIMONIALS ══ -->
+    <section id="testimonials" class="testimonials-section">
+      <div class="section-header">
+        <span class="section-label" data-en="What They Say" data-ar="ماذا يقولون">What They Say</span>
+        <h2 class="section-title" data-en="Voices of Our<br/>Valued Guests" data-ar="أصوات ضيوفنا<br/>الكرام">Voices of Our<br/>Valued Guests</h2>
+      </div>
+
+      <div class="testimonials-track-wrap">
+        <div class="testimonials-track" id="testimonialsTrack">
+
+          <div class="testi-card">
+            <div class="tc-quote">❝</div>
+            <p class="tc-text" data-en="The Mutton Biryani is absolutely divine. I've eaten biryani across Pakistan and Kuwait, and BOOM BOOM's version takes me straight back to Karachi." data-ar="برياني اللحم رائع بشكل مطلق. تناولت البرياني في أنحاء باكستان والكويت، ونسخة بوم بوم تعيدني مباشرة إلى كراتشي.">The Mutton Biryani is absolutely divine. I've eaten biryani across Pakistan and Kuwait, and BOOM BOOM's version takes me straight back to Karachi.</p>
+            <div class="tc-author">
+              <div class="tc-avatar">AM</div>
+              <div class="tc-info">
+                <span class="tc-name">Ahmed Malik</span>
+                <span class="tc-loc" data-en="Farwaniya, Kuwait" data-ar="الفروانية، الكويت">Farwaniya, Kuwait</span>
+              </div>
+              <div class="tc-stars">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="tc-quote">❝</div>
+            <p class="tc-text" data-en="The Peshawari Namkeen Karahi is a masterpiece. Simple, bold, and utterly authentic. Our family visits every Friday without fail." data-ar="كراهي نمكين بيشاوري تحفة فنية. بسيطة وجريئة وأصيلة تماماً. عائلتنا تزور كل جمعة بدون استثناء.">The Peshawari Namkeen Karahi is a masterpiece. Simple, bold, and utterly authentic. Our family visits every Friday without fail.</p>
+            <div class="tc-author">
+              <div class="tc-avatar">SK</div>
+              <div class="tc-info">
+                <span class="tc-name">Sara Khan</span>
+                <span class="tc-loc" data-en="Salmiya, Kuwait" data-ar="السالمية، الكويت">Salmiya, Kuwait</span>
+              </div>
+              <div class="tc-stars">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="tc-quote">❝</div>
+            <p class="tc-text" data-en="BOOM BOOM catered our daughter's wedding and it was flawless. 200 guests, every dish perfect. Highly recommend for any special occasion." data-ar="بوم بوم قدم خدمة التموين لحفل زفاف ابنتنا وكان رائعاً. 200 ضيف وكل طبق مثالي. أنصح به لأي مناسبة خاصة.">BOOM BOOM catered our daughter's wedding and it was flawless. 200 guests, every dish perfect. Highly recommend for any special occasion.</p>
+            <div class="tc-author">
+              <div class="tc-avatar">MR</div>
+              <div class="tc-info">
+                <span class="tc-name">Mohammed Al-Rashidi</span>
+                <span class="tc-loc" data-en="Kuwait City" data-ar="مدينة الكويت">Kuwait City</span>
+              </div>
+              <div class="tc-stars">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="tc-quote">❝</div>
+            <p class="tc-text" data-en="The Kashmiri Tea and Gulab Jamun together — pure bliss. The ambiance is warm and the staff treats you like family. My favorite spot in Farwaniya." data-ar="شاي كشميري وغلاب جامون معاً — نعيم خالص. الأجواء دافئة والموظفون يعاملونك كالعائلة. مكاني المفضل في الفروانية.">The Kashmiri Tea and Gulab Jamun together — pure bliss. The ambiance is warm and the staff treats you like family. My favorite spot in Farwaniya.</p>
+            <div class="tc-author">
+              <div class="tc-avatar">FA</div>
+              <div class="tc-info">
+                <span class="tc-name">Fatima Al-Anzi</span>
+                <span class="tc-loc" data-en="Farwaniya, Kuwait" data-ar="الفروانية، الكويت">Farwaniya, Kuwait</span>
+              </div>
+              <div class="tc-stars">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="tc-quote">❝</div>
+            <p class="tc-text" data-en="Finally, a Pakistani restaurant in Kuwait that truly understands the craft. The Nihari is extraordinary — rich, slow-cooked perfection." data-ar="أخيراً مطعم باكستاني في الكويت يفهم الفن حقاً. النهاري استثنائي — غني ومثالية الطهي البطيء.">Finally, a Pakistani restaurant in Kuwait that truly understands the craft. The Nihari is extraordinary — rich, slow-cooked perfection.</p>
+            <div class="tc-author">
+              <div class="tc-avatar">IQ</div>
+              <div class="tc-info">
+                <span class="tc-name">Imran Qureshi</span>
+                <span class="tc-loc" data-en="Hawally, Kuwait" data-ar="حولي، الكويت">Hawally, Kuwait</span>
+              </div>
+              <div class="tc-stars">★★★★★</div>
+            </div>
+          </div>
+
+        </div><!-- /track -->
+
+        <div class="testi-controls">
+          <button class="testi-prev" id="testiPrev" aria-label="Previous">←</button>
+          <div class="testi-dots" id="testiDots"></div>
+          <button class="testi-next" id="testiNext" aria-label="Next">→</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ RESERVATION ═══ -->
+    <section id="reservation" class="reservation-section">
+      <div class="res-bg">
+        <img src="https://images.pexels.com/photos/12181763/pexels-photo-12181763.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=700&w=1400" alt="Reservation ambiance" loading="lazy" />
+        <div class="res-overlay"></div>
+      </div>
+      <div class="res-content">
+        <span class="section-label light" data-en="Reservations" data-ar="الحجوزات">Reservations</span>
+        <h2 class="res-title" data-en="Reserve Your Table<br/>at BOOM BOOM" data-ar="احجز طاولتك<br/>في بوم بوم">Reserve Your Table<br/>at BOOM BOOM</h2>
+        <p class="res-desc" data-en="Experience the finest Pakistani hospitality in Kuwait. Call us or WhatsApp to reserve your table for dine-in, family gatherings, or private events." data-ar="اختبر أرقى الضيافة الباكستانية في الكويت. اتصل بنا أو واتساب لحجز طاولتك للعشاء العائلي أو الفعاليات الخاصة.">Experience the finest Pakistani hospitality in Kuwait. Call us or WhatsApp to reserve your table for dine-in, family gatherings, or private events.</p>
+        <div class="res-ctas">
+          <a href="tel:+96594080612" class="btn-primary magnetic-btn" data-en="📞 Call Now" data-ar="📞 اتصل الآن">📞 Call Now</a>
+          <a href="https://wa.me/96594080612" target="_blank" rel="noopener" class="btn-whatsapp magnetic-btn" data-en="💬 WhatsApp Us" data-ar="💬 واتساب">💬 WhatsApp Us</a>
+        </div>
+        <div class="res-info">
+          <div class="ri-item">
+            <span class="ri-icon">🕐</span>
+            <div>
+              <span class="ri-label" data-en="Sat–Thu" data-ar="السبت–الخميس">Sat–Thu</span>
+              <span class="ri-val">11:00 AM – 12:00 AM</span>
+            </div>
+          </div>
+          <div class="ri-item">
+            <span class="ri-icon">🕐</span>
+            <div>
+              <span class="ri-label" data-en="Friday" data-ar="الجمعة">Friday</span>
+              <span class="ri-val">1:00 PM – 12:00 AM</span>
+            </div>
+          </div>
+          <div class="ri-item">
+            <span class="ri-icon">📍</span>
+            <div>
+              <span class="ri-label" data-en="Location" data-ar="الموقع">Location</span>
+              <span class="ri-val" data-en="Farwaniya, Kuwait" data-ar="الفروانية، الكويت">Farwaniya, Kuwait</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ CONTACT ═══════ -->
+    <section id="contact" class="contact-section">
+      <div class="section-header">
+        <span class="section-label" data-en="Find Us" data-ar="جدنا">Find Us</span>
+        <h2 class="section-title" data-en="Visit BOOM BOOM<br/>in Farwaniya" data-ar="زر بوم بوم<br/>في الفروانية">Visit BOOM BOOM<br/>in Farwaniya</h2>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- Info Cards -->
+        <div class="contact-info">
+
+          <div class="ci-card">
+            <div class="ci-icon">📞</div>
+            <div class="ci-body">
+              <h4 class="ci-title" data-en="Phone" data-ar="هاتف">Phone</h4>
+              <a href="tel:+96594080612" class="ci-value">+965 9408 0612</a>
+            </div>
+          </div>
+
+          <div class="ci-card">
+            <div class="ci-icon">📍</div>
+            <div class="ci-body">
+              <h4 class="ci-title" data-en="Address" data-ar="العنوان">Address</h4>
+              <p class="ci-value" data-en="Farwaniya, Kuwait" data-ar="الفروانية، الكويت">Farwaniya, Kuwait</p>
+            </div>
+          </div>
+
+          <div class="ci-card">
+            <div class="ci-icon">🕐</div>
+            <div class="ci-body">
+              <h4 class="ci-title" data-en="Opening Hours" data-ar="ساعات العمل">Opening Hours</h4>
+              <p class="ci-value" data-en="Sat–Thu: 11:00 AM – 12:00 AM" data-ar="السبت–الخميس: 11:00 ص – 12:00 م">Sat–Thu: 11:00 AM – 12:00 AM</p>
+              <p class="ci-value" data-en="Friday: 1:00 PM – 12:00 AM" data-ar="الجمعة: 1:00 م – 12:00 م">Friday: 1:00 PM – 12:00 AM</p>
+            </div>
+          </div>
+
+          <div class="ci-card">
+            <div class="ci-icon">💬</div>
+            <div class="ci-body">
+              <h4 class="ci-title" data-en="WhatsApp" data-ar="واتساب">WhatsApp</h4>
+              <a href="https://wa.me/96594080612" target="_blank" rel="noopener" class="ci-value">+965 9408 0612</a>
+            </div>
+          </div>
+
+          <div class="contact-ctas">
+            <a href="tel:+96594080612" class="btn-primary magnetic-btn" data-en="Call Now" data-ar="اتصل الآن">Call Now</a>
+            <a href="https://wa.me/96594080612" target="_blank" rel="noopener" class="btn-outline magnetic-btn" data-en="WhatsApp" data-ar="واتساب">WhatsApp</a>
+            <a href="https://share.google/NlbA60vSSpsCviskT" target="_blank" rel="noopener" class="btn-gold magnetic-btn" data-en="Get Directions" data-ar="الاتجاهات">Get Directions</a>
+          </div>
+
+        </div>
+
+        <!-- Map -->
+        <div class="contact-map">
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3478.9!2d47.97!3d29.28!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zBoom+Boom+Pakistani+Restaurant!5e0!3m2!1sen!2skw!4v1700000000000"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="BOOM BOOM Pakistani Restaurant Location"
+            ></iframe>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════ FOOTER ═══════════ -->
+  <footer id="site-footer" class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span>BOOM</span><span class="footer-divider">✦</span><span>BOOM</span>
+          </div>
+          <p class="footer-tagline" data-en="Authentic Pakistani Restaurant · Farwaniya, Kuwait" data-ar="مطعم باكستاني أصيل · الفروانية، الكويت">Authentic Pakistani Restaurant · Farwaniya, Kuwait</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#about" data-en="Our Story" data-ar="قصتنا">Our Story</a>
+          <a href="#menu" data-en="Menu" data-ar="القائمة">Menu</a>
+          <a href="#gallery" data-en="Gallery" data-ar="المعرض">Gallery</a>
+          <a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a>
+        </div>
+
+        <div class="footer-contact">
+          <a href="tel:+96594080612">+965 9408 0612</a>
+          <a href="https://wa.me/96594080612" target="_blank" rel="noopener" data-en="WhatsApp Us" data-ar="واتساب">WhatsApp Us</a>
+          <a href="https://share.google/NlbA60vSSpsCviskT" target="_blank" rel="noopener" data-en="Get Directions" data-ar="الاتجاهات">Get Directions</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy" data-en="© 2025 BOOM BOOM Pakistani Restaurant. All rights reserved. Farwaniya, Kuwait." data-ar="© 2025 مطعم بوم بوم الباكستاني. جميع الحقوق محفوظة. الفروانية، الكويت.">© 2025 BOOM BOOM Pakistani Restaurant. All rights reserved. Farwaniya, Kuwait.</p>
+        <p class="footer-halal" data-en="🌿 100% Halal Certified" data-ar="🌿 حلال معتمد 100%">🌿 100% Halal Certified</p>
+      </div>
+    </div>
+
+    <!-- Footer Ornament -->
+    <div class="footer-ornament">
+      <span>✦</span><span>BOOM BOOM</span><span>✦</span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
