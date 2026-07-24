@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sakura Japanese Restaurant – Premium Japanese fine dining in Al Thuraya City, Farwaniya, Kuwait. Authentic sushi, sashimi, wagyu, and more." />
+  <meta name="keywords" content="Japanese restaurant Kuwait, sushi Kuwait, sashimi, wagyu, fine dining Farwaniya" />
+  <title>桜 Sakura – Japanese Fine Dining | Al Thuraya City, Kuwait</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/SplitText.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============================================================
+     CURSOR
+============================================================ -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ============================================================
+     PRELOADER
+============================================================ -->
+<div id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-kanji">桜</div>
+    <div class="preloader-bar"><div class="preloader-fill"></div></div>
+    <div class="preloader-text" data-en="Loading Sakura Experience..." data-ar="جار التحميل...">Loading Sakura Experience...</div>
+  </div>
+</div>
+
+<!-- ============================================================
+     HEADER / NAV
+============================================================ -->
+<header id="mainHeader">
+  <nav class="nav-container">
+
+    <!-- Logo -->
+    <a href="#hero" class="nav-logo" aria-label="Sakura Restaurant">
+      <span class="logo-kanji">桜</span>
+      <span class="logo-divider"></span>
+      <span class="logo-text">
+        <span class="logo-main" data-en="SAKURA" data-ar="ساكورا">SAKURA</span>
+        <span class="logo-sub" data-en="Japanese Restaurant" data-ar="مطعم ياباني">Japanese Restaurant</span>
+      </span>
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <ul class="nav-links" role="list">
+      <li><a href="#about" class="nav-link" data-en="About" data-ar="عن المطعم">About</a></li>
+      <li><a href="#menu" class="nav-link" data-en="Menu" data-ar="القائمة">Menu</a></li>
+      <li><a href="#gallery" class="nav-link" data-en="Gallery" data-ar="المعرض">Gallery</a></li>
+      <li><a href="#testimonials" class="nav-link" data-en="Reviews" data-ar="التقييمات">Reviews</a></li>
+      <li><a href="#contact" class="nav-link" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+    </ul>
+
+    <!-- Controls -->
+    <div class="nav-controls">
+      <!-- Theme Toggle -->
+      <button class="toggle-btn theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
+        <span class="toggle-icon sun">☀</span>
+        <span class="toggle-icon moon">🌙</span>
+        <span class="toggle-track"></span>
+      </button>
+
+      <!-- Language Toggle -->
+      <button class="toggle-btn lang-toggle" id="langToggle" aria-label="Toggle language">
+        <span class="lang-label en-label">EN</span>
+        <span class="lang-sep">|</span>
+        <span class="lang-label ar-label">ع</span>
+      </button>
+
+      <!-- Reserve Button -->
+      <a href="#reservation" class="nav-reserve-btn magnetic-btn" data-en="Reserve" data-ar="احجز طاولة">Reserve</a>
+
+      <!-- Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </nav>
+</header>
+
+<!-- Mobile Full-Screen Menu -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">✕</button>
+  <div class="mobile-menu-kanji">桜</div>
+  <nav class="mobile-nav">
+    <ul>
+      <li><a href="#about" class="mobile-nav-link" data-en="About" data-ar="عن المطعم">About</a></li>
+      <li><a href="#menu" class="mobile-nav-link" data-en="Menu" data-ar="القائمة">Menu</a></li>
+      <li><a href="#gallery" class="mobile-nav-link" data-en="Gallery" data-ar="المعرض">Gallery</a></li>
+      <li><a href="#testimonials" class="mobile-nav-link" data-en="Reviews" data-ar="التقييمات">Reviews</a></li>
+      <li><a href="#contact" class="mobile-nav-link" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="mobile-menu-footer">
+    <a href="tel:+96596961300" class="mobile-contact-link">+965 9696 1300</a>
+    <div class="mobile-controls">
+      <button class="toggle-btn theme-toggle" id="mobileThemeToggle" aria-label="Toggle theme">
+        <span class="toggle-icon sun">☀</span>
+        <span class="toggle-icon moon">🌙</span>
+      </button>
+      <button class="toggle-btn lang-toggle" id="mobileLangToggle" aria-label="Toggle language">
+        <span class="lang-label en-label">EN</span>
+        <span class="lang-sep">|</span>
+        <span class="lang-label ar-label">ع</span>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section id="hero" class="hero">
+  <!-- Background -->
+  <div class="hero-bg">
+    <img src="https://images.pexels.com/photos/26729400/pexels-photo-26729400.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1080&w=1920" alt="Sakura Japanese Restaurant Interior" class="hero-bg-img" loading="eager" />
+    <div class="hero-overlay"></div>
+    <div class="hero-grain"></div>
+  </div>
+
+  <!-- Sakura Petals Canvas -->
+  <canvas id="sakuraCanvas" class="sakura-canvas" aria-hidden="true"></canvas>
+
+  <!-- Content -->
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="hero-line-left"></span>
+      <span class="hero-eyebrow-text" data-en="Al Thuraya City · Farwaniya · Kuwait" data-ar="مدينة الثريا · الفروانية · الكويت">Al Thuraya City · Farwaniya · Kuwait</span>
+      <span class="hero-line-right"></span>
+    </div>
+
+    <div class="hero-kanji-large" aria-hidden="true">桜</div>
+
+    <h1 class="hero-title">
+      <span class="hero-title-line hero-split" data-en="Sakura" data-ar="ساكورا">Sakura</span>
+      <span class="hero-title-line hero-split italic" data-en="Japanese Restaurant" data-ar="المطعم الياباني">Japanese Restaurant</span>
+    </h1>
+
+    <p class="hero-desc" data-en="Where ancient Japanese artistry meets modern luxury. Every plate is a masterpiece, every moment, an experience." data-ar="حيث يلتقي الفن الياباني العريق بالرقي العصري. كل طبق تحفة فنية، وكل لحظة تجربة لا تُنسى.">
+      Where ancient Japanese artistry meets modern luxury. Every plate is a masterpiece, every moment, an experience.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#reservation" class="btn-primary magnetic-btn" data-en="Reserve a Table" data-ar="احجز طاولة">Reserve a Table</a>
+      <a href="#menu" class="btn-secondary magnetic-btn" data-en="Explore Menu" data-ar="استكشف القائمة">Explore Menu</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num">15+</span>
+        <span class="hero-stat-label" data-en="Years of Excellence" data-ar="سنوات من التميز">Years of Excellence</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">80+</span>
+        <span class="hero-stat-label" data-en="Signature Dishes" data-ar="أطباق مميزة">Signature Dishes</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">5★</span>
+        <span class="hero-stat-label" data-en="Premium Service" data-ar="خدمة فاخرة">Premium Service</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span class="scroll-text" data-en="Scroll" data-ar="تمرير">Scroll</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT
+============================================================ -->
+<section id="about" class="section about-section">
+  <div class="section-container about-grid">
+
+    <!-- Image Column -->
+    <div class="about-image-col">
+      <div class="about-img-main reveal-img">
+        <img src="https://images.pexels.com/photos/8951048/pexels-photo-8951048.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=700" alt="Master Sushi Chef" loading="lazy" />
+      </div>
+      <div class="about-img-accent reveal-img">
+        <img src="https://images.pexels.com/photos/32027903/pexels-photo-32027903.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Japanese Dining Setting" loading="lazy" />
+      </div>
+      <div class="about-badge">
+        <span class="about-badge-kanji">匠</span>
+        <span class="about-badge-text" data-en="Master Craft" data-ar="الحرفة الراقية">Master Craft</span>
+      </div>
+    </div>
+
+    <!-- Text Column -->
+    <div class="about-text-col">
+      <div class="section-label" data-en="Our Story" data-ar="قصتنا">Our Story</div>
+      <h2 class="section-title about-title">
+        <span class="about-title-line" data-en="The Art of" data-ar="فن">The Art of</span>
+        <span class="about-title-line italic" data-en="Japanese Cuisine" data-ar="المطبخ الياباني">Japanese Cuisine</span>
+      </h2>
+      <div class="about-divider"></div>
+      <p class="about-body" data-en="At Sakura, we believe that dining is a ceremony—a moment where time slows and every detail matters. Founded on the principles of Omotenashi, the Japanese art of selfless hospitality, we bring to Kuwait an unrivaled fine-dining experience that honors tradition while embracing modern elegance." data-ar="في ساكورا، نؤمن أن تناول الطعام احتفال راقٍ، لحظة تتوقف فيها الأوقات وتتجلى كل التفاصيل. أُسست على مبادئ الأوموتيناشي، فن الضيافة اليابانية الأصيل، لنقدم للكويت تجربة طعام فاخرة تُكرّم التراث وتحتضن الرقي العصري.">
+        At Sakura, we believe that dining is a ceremony—a moment where time slows and every detail matters. Founded on the principles of Omotenashi, the Japanese art of selfless hospitality, we bring to Kuwait an unrivaled fine-dining experience that honors tradition while embracing modern elegance.
+      </p>
+      <p class="about-body" data-en="Our master chefs—trained in Tokyo's most prestigious kitchens—craft each dish with precision and passion, using only the freshest daily ingredients. From hand-sliced sashimi to our signature wagyu creations, every bite tells a story." data-ar="طهاتنا الماهرون، المتدربون في أرقى مطابخ طوكيو، يصنعون كل طبق بدقة متناهية وشغف عميق، مستخدمين أجود المكونات الطازجة يومياً. من الساشيمي المقطوع يدوياً إلى إبداعات الواغيو الخاصة بنا، كل لقمة تحكي قصة.">
+        Our master chefs—trained in Tokyo's most prestigious kitchens—craft each dish with precision and passion, using only the freshest daily ingredients. From hand-sliced sashimi to our signature wagyu creations, every bite tells a story.
+      </p>
+      <div class="about-pillars">
+        <div class="about-pillar">
+          <span class="pillar-icon">🍣</span>
+          <span class="pillar-text" data-en="Fresh Daily" data-ar="طازج يومياً">Fresh Daily</span>
+        </div>
+        <div class="about-pillar">
+          <span class="pillar-icon">🎌</span>
+          <span class="pillar-text" data-en="Authentic Recipes" data-ar="وصفات أصيلة">Authentic Recipes</span>
+        </div>
+        <div class="about-pillar">
+          <span class="pillar-icon">👨‍🍳</span>
+          <span class="pillar-text" data-en="Master Chefs" data-ar="طهاة خبراء">Master Chefs</span>
+        </div>
+      </div>
+      <a href="#reservation" class="btn-primary magnetic-btn" data-en="Experience Sakura" data-ar="اكتشف ساكورا">Experience Sakura</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     MENU
+============================================================ -->
+<section id="menu" class="section menu-section">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-label" data-en="Culinary Excellence" data-ar="التميز الطهوي">Culinary Excellence</div>
+      <h2 class="section-title">
+        <span data-en="Signature" data-ar="أطباقنا">Signature</span>
+        <span class="italic" data-en=" Menu" data-ar=" المميزة"> Menu</span>
+      </h2>
+      <p class="section-subtitle" data-en="Each dish is a canvas painted with the finest Japanese flavors" data-ar="كل طبق لوحة فنية رُسمت بأجود النكهات اليابانية">Each dish is a canvas painted with the finest Japanese flavors</p>
+    </div>
+
+    <!-- Menu Filter Tabs -->
+    <div class="menu-tabs" role="tablist">
+      <button class="menu-tab active" data-cat="all" data-en="All" data-ar="الكل" role="tab" aria-selected="true">All</button>
+      <button class="menu-tab" data-cat="sushi" data-en="Sushi" data-ar="سوشي" role="tab">Sushi</button>
+      <button class="menu-tab" data-cat="mains" data-en="Mains" data-ar="الرئيسية" role="tab">Mains</button>
+      <button class="menu-tab" data-cat="desserts" data-en="Desserts" data-ar="الحلويات" role="tab">Desserts</button>
+    </div>
+
+    <!-- Menu Grid -->
+    <div class="menu-grid" id="menuGrid">
+
+      <!-- Sushi Items -->
+      <div class="menu-card" data-cat="sushi">
+        <div class="menu-card-img-wrap">
+          <img src="https://images.pexels.com/photos/343870/pexels-photo-343870.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Premium Sushi Platter" loading="lazy" />
+          <div class="menu-card-badge chef-badge" data-en="Chef's Choice" data-ar="اختيار الشيف">Chef's Choice</div>
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-cat" data-en="Sushi" data-ar="سوشي">Sushi</div>
+          <h3 class="menu-card-title" data-en="Omakase Platter" data-ar="طبق أوماكاسي">Omakase Platter</h3>
+          <p class="menu-card-desc" data-en="Chef's handpicked selection of premium nigiri & maki, celebrating seasonal ingredients" data-ar="تشكيلة الشيف من النيغيري والماكي الفاخرة، تحتفي بمكونات الموسم">Chef's handpicked selection of premium nigiri & maki, celebrating seasonal ingredients</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">KD 18.500</span>
+            <button class="menu-order-btn magnetic-btn" data-en="Order" data-ar="اطلب">Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-cat="sushi">
+        <div class="menu-card-img-wrap">
+          <img src="https://images.pexels.com/photos/31815435/pexels-photo-31815435.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Salmon Sashimi" loading="lazy" />
+          <div class="menu-card-badge fresh-badge" data-en="Daily Fresh" data-ar="طازج يومياً">Daily Fresh</div>
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-cat" data-en="Sashimi" data-ar="ساشيمي">Sashimi</div>
+          <h3 class="menu-card-title" data-en="Salmon Sashimi" data-ar="ساشيمي السلمون">Salmon Sashimi</h3>
+          <p class="menu-card-desc" data-en="Hand-sliced Atlantic salmon, served with ponzu and micro herbs on artisan stone" data-ar="سلمون أطلسي مقطوع يدوياً، يُقدم مع البونزو والأعشاب الدقيقة على حجارة فنية">Hand-sliced Atlantic salmon, served with ponzu and micro herbs on artisan stone</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">KD 12.000</span>
+            <button class="menu-order-btn magnetic-btn" data-en="Order" data-ar="اطلب">Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-cat="sushi">
+        <div class="menu-card-img-wrap">
+          <img src="https://images.pexels.com/photos/34556825/pexels-photo-34556825.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Tuna Tartare" loading="lazy" />
+          <div class="menu-card-badge chef-badge" data-en="Signature" data-ar="مميز">Signature</div>
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-cat" data-en="Tuna" data-ar="تونا">Tuna</div>
+          <h3 class="menu-card-title" data-en="Bluefin Tuna Tartare" data-ar="تارتار التونة الزرقاء">Bluefin Tuna Tartare</h3>
+          <p class="menu-card-desc" data-en="Premium bluefin tuna with truffle soy, sesame oil, and crispy wonton chips" data-ar="تونة بلوفين فاخرة مع صلصة التروفل، زيت السمسم، وشرائح الوانتون المقرمشة">Premium bluefin tuna with truffle soy, sesame oil, and crispy wonton chips</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">KD 16.000</span>
+            <button class="menu-order-btn magnetic-btn" data-en="Order" data-ar="اطلب">Order</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mains -->
+      <div class="menu-card" data-cat="mains">
+        <div class="menu-card-img-wrap">
+          <img src="images (2).jpg" alt="Wagyu Roll" loading="lazy" />
+          <div class="menu-card-badge chef-badge" data-en="Chef's Choice" data-ar="اختيار الشيف">Chef's Choice</div>
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-cat" data-en="Wagyu" data-ar="واغيو">Wagyu</div>
+          <h3 class="menu-card-title" data-en="Wagyu Dragon Roll" data-ar="رول الواغيو دراغون">Wagyu Dragon Roll</h3>
+          <p class="menu-card-desc" data-en="A5 Wagyu beef, crispy shrimp tempura, avocado, drizzled with truffle aioli" data-ar="لحم واغيو A5، روبيان تمبورا مقرمش، أفوكادو، مع صلصة أيولي التروفل">A5 Wagyu beef, crispy shrimp tempura, avocado, drizzled with truffle aioli</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">KD 22.000</span>
+            <button class="menu-order-btn magnetic-btn" data-en="Order" data-ar="اطلب">Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-cat="mains">
+        <div class="menu-card-img-wrap">
+          <img src="https://images.pexels.com/photos/8951109/pexels-photo-8951109.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Chef Making Sushi" loading="lazy" />
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-cat" data-en="Teriyaki" data-ar="تيرياكي">Teriyaki</div>
+          <h3 class="menu-card-title" data-en="Teriyaki Chicken" data-ar="دجاج التيرياكي">Teriyaki Chicken</h3>
+          <p class="menu-card-desc" data-en="Tender grilled chicken glazed with house teriyaki sauce, sesame, steamed rice" data-ar="دجاج مشوي طري مع صلصة التيرياكي الخاصة، السمسم، والأرز المطهو على البخار">Tender grilled chicken glazed with house teriyaki sauce, sesame, steamed rice</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">KD 9.500</span>
+            <button class="menu-order-btn magnetic-btn" data-en="Order" data-ar="اطلب">Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-cat="mains">
+        <div class="menu-card-img-wrap">
+          <img src="https://images.pexels.com/photos/343871/pexels-photo-343871.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Ramen Bowl" loading="lazy" />
+          <div class="menu-card-badge fresh-badge" data-en="House Special" data-ar="خاص بالمطعم">House Special</div>
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-cat" data-en="Ramen" data-ar="رامن">Ramen</div>
+          <h3 class="menu-card-title" data-en="Tonkotsu Ramen" data-ar="رامن تونكوتسو">Tonkotsu Ramen</h3>
+          <p class="menu-card-desc" data-en="Rich 18-hour slow-cooked pork broth, chashu pork, marinated egg, nori, bamboo shoots" data-ar="مرق لحم الخنزير الغني المطهو ببطء 18 ساعة، شاشو بورك، بيض متبل، نوري، براعم البامبو">Rich 18-hour slow-cooked pork broth, chashu pork, marinated egg, nori, bamboo shoots</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">KD 8.500</span>
+            <button class="menu-order-btn magnetic-btn" data-en="Order" data-ar="اطلب">Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-cat="mains">
+        <div class="menu-card-img-wrap">
+          <img src="https://images.pexels.com/photos/28701152/pexels-photo-28701152.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Sashimi Platter" loading="lazy" />
+          <div class="menu-card-badge chef-badge" data-en="Premium" data-ar="فاخر">Premium</div>
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-cat" data-en="Sashimi" data-ar="ساشيمي">Sashimi</div>
+          <h3 class="menu-card-title" data-en="Imperial Sashimi Board" data-ar="لوح الساشيمي الإمبراطوري">Imperial Sashimi Board</h3>
+          <p class="menu-card-desc" data-en="A grand selection of 18 pieces including tuna, salmon, yellowtail, and sea bream" data-ar="تشكيلة فاخرة من 18 قطعة تشمل التونة والسلمون واليلوتيل وسمك الدنيس">A grand selection of 18 pieces including tuna, salmon, yellowtail, and sea bream</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">KD 28.000</span>
+            <button class="menu-order-btn magnetic-btn" data-en="Order" data-ar="اطلب">Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-cat="mains">
+        <div class="menu-card-img-wrap">
+          <img src="https://images.pexels.com/photos/8951246/pexels-photo-8951246.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Bento Box" loading="lazy" />
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-cat" data-en="Bento" data-ar="بينتو">Bento</div>
+          <h3 class="menu-card-title" data-en="Sakura Bento Box" data-ar="صندوق بينتو ساكورا">Sakura Bento Box</h3>
+          <p class="menu-card-desc" data-en="Curated bento with 4 nigiri, miso soup, edamame, gyoza, and seasonal salad" data-ar="بينتو مختار مع 4 نيغيري، حساء ميسو، إيدامامي، جيوزا، وسلطة موسمية">Curated bento with 4 nigiri, miso soup, edamame, gyoza, and seasonal salad</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">KD 13.500</span>
+            <button class="menu-order-btn magnetic-btn" data-en="Order" data-ar="اطلب">Order</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desserts -->
+      <div class="menu-card" data-cat="desserts">
+        <div class="menu-card-img-wrap">
+          <img src="https://images.pexels.com/photos/33094634/pexels-photo-33094634.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Matcha" loading="lazy" />
+          <div class="menu-card-badge chef-badge" data-en="Signature" data-ar="مميز">Signature</div>
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-cat" data-en="Dessert" data-ar="حلويات">Dessert</div>
+          <h3 class="menu-card-title" data-en="Matcha Ceremony" data-ar="حفل الماتشا">Matcha Ceremony</h3>
+          <p class="menu-card-desc" data-en="Ceremonial grade matcha tiramisu layered with yuzu cream, served with mochi ice cream" data-ar="تيراميسو بالماتشا الفاخر مع كريمة اليوزو، يُقدم مع آيس كريم الموشي">Ceremonial grade matcha tiramisu layered with yuzu cream, served with mochi ice cream</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">KD 6.500</span>
+            <button class="menu-order-btn magnetic-btn" data-en="Order" data-ar="اطلب">Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-cat="desserts">
+        <div class="menu-card-img-wrap">
+          <img src="https://images.pexels.com/photos/33094639/pexels-photo-33094639.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Japanese Tea" loading="lazy" />
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-cat" data-en="Beverage" data-ar="مشروبات">Beverage</div>
+          <h3 class="menu-card-title" data-en="Japanese Tea Collection" data-ar="مجموعة الشاي الياباني">Japanese Tea Collection</h3>
+          <p class="menu-card-desc" data-en="Premium sencha, gyokuro, and hojicha served in authentic Japanese teaware" data-ar="سنشا وجيوكورو وهوجيشا فاخرة تُقدم في أدوات الشاي اليابانية الأصيلة">Premium sencha, gyokuro, and hojicha served in authentic Japanese teaware</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">KD 4.000</span>
+            <button class="menu-order-btn magnetic-btn" data-en="Order" data-ar="اطلب">Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-cat="desserts">
+        <div class="menu-card-img-wrap">
+          <img src="https://images.pexels.com/photos/33094644/pexels-photo-33094644.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Iced Matcha" loading="lazy" />
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-cat" data-en="Dessert" data-ar="حلويات">Dessert</div>
+          <h3 class="menu-card-title" data-en="Iced Matcha Parfait" data-ar="بارفيه الماتشا المثلج">Iced Matcha Parfait</h3>
+          <p class="menu-card-desc" data-en="Layered iced matcha with azuki beans, mochi bites, and sweet cream" data-ar="ماتشا مثلج متعدد الطبقات مع حبوب أدزوكي وقطع الموشي والقشدة الحلوة">Layered iced matcha with azuki beans, mochi bites, and sweet cream</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">KD 5.000</span>
+            <button class="menu-order-btn magnetic-btn" data-en="Order" data-ar="اطلب">Order</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /menu-grid -->
+
+    <div class="menu-cta-wrap">
+      <a href="#reservation" class="btn-primary magnetic-btn" data-en="View Full Menu" data-ar="عرض القائمة الكاملة">View Full Menu</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHY CHOOSE US
+============================================================ -->
+<section id="why" class="section why-section">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-label" data-en="Our Promise" data-ar="وعدنا لك">Our Promise</div>
+      <h2 class="section-title">
+        <span data-en="Why Dine" data-ar="لماذا">Why Dine</span>
+        <span class="italic" data-en=" at Sakura" data-ar=" ساكورا"> at Sakura</span>
+      </h2>
+    </div>
+
+    <div class="why-grid">
+
+      <div class="why-card">
+        <div class="why-card-icon">🍱</div>
+        <h3 class="why-card-title" data-en="Authentic Cuisine" data-ar="مطبخ أصيل">Authentic Cuisine</h3>
+        <p class="why-card-desc" data-en="Traditional Japanese recipes passed down through generations, executed with modern precision" data-ar="وصفات يابانية تقليدية توارثتها الأجيال، تُنفّذ بدقة عصرية متناهية">Traditional Japanese recipes passed down through generations, executed with modern precision</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-card-icon">🌿</div>
+        <h3 class="why-card-title" data-en="Fresh Daily Import" data-ar="واردات طازجة يومياً">Fresh Daily Import</h3>
+        <p class="why-card-desc" data-en="Premium seafood and ingredients sourced and imported daily to guarantee maximum freshness" data-ar="مأكولات بحرية ومكونات فاخرة تُستورد يومياً لضمان أعلى درجات الطزاجة">Premium seafood and ingredients sourced and imported daily to guarantee maximum freshness</p>
+      </div>
+
+      <div class="why-card why-card-featured">
+        <div class="why-card-icon">👨‍🍳</div>
+        <h3 class="why-card-title" data-en="Master Sushi Chefs" data-ar="طهاة سوشي خبراء">Master Sushi Chefs</h3>
+        <p class="why-card-desc" data-en="Our chefs hold decades of experience from Tokyo's finest establishments, bringing true mastery to every plate" data-ar="يمتلك طهاتنا عقوداً من الخبرة في أرقى مطاعم طوكيو، يجلبون إتقاناً حقيقياً لكل طبق">Our chefs hold decades of experience from Tokyo's finest establishments, bringing true mastery to every plate</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-card-icon">🕯️</div>
+        <h3 class="why-card-title" data-en="Elegant Atmosphere" data-ar="أجواء راقية">Elegant Atmosphere</h3>
+        <p class="why-card-desc" data-en="Immersive Japanese ambiance with curated lighting, music, and décor for an unforgettable experience" data-ar="أجواء يابانية آسرة بإضاءة وموسيقى وديكور مختار لتجربة لا تُنسى">Immersive Japanese ambiance with curated lighting, music, and décor for an unforgettable experience</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-card-icon">🎎</div>
+        <h3 class="why-card-title" data-en="Private Dining" data-ar="طعام خاص">Private Dining</h3>
+        <p class="why-card-desc" data-en="Exclusive private rooms for special occasions, business meetings, and intimate celebrations" data-ar="غرف خاصة حصرية للمناسبات الخاصة واجتماعات الأعمال والاحتفالات الحميمة">Exclusive private rooms for special occasions, business meetings, and intimate celebrations</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-card-icon">🌸</div>
+        <h3 class="why-card-title" data-en="Premium Service" data-ar="خدمة فاخرة">Premium Service</h3>
+        <p class="why-card-desc" data-en="Attentive, graceful service inspired by the Japanese Omotenashi tradition of heartfelt hospitality" data-ar="خدمة رفيعة ومتفانية مستوحاة من تقليد الأوموتيناشي الياباني في الضيافة الصادقة">Attentive, graceful service inspired by the Japanese Omotenashi tradition of heartfelt hospitality</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     GALLERY
+============================================================ -->
+<section id="gallery" class="section gallery-section">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-label" data-en="Visual Journey" data-ar="رحلة بصرية">Visual Journey</div>
+      <h2 class="section-title">
+        <span data-en="Moments of" data-ar="لحظات">Moments of</span>
+        <span class="italic" data-en=" Excellence" data-ar=" التميز"> Excellence</span>
+      </h2>
+    </div>
+
+    <div class="gallery-masonry" id="galleryGrid">
+      <div class="gallery-item gallery-large">
+        <div class="gallery-img-wrap">
+          <img src="https://images.pexels.com/photos/26729400/pexels-photo-26729400.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=700&w=600" alt="Restaurant Interior" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gallery-caption" data-en="Dining Hall" data-ar="قاعة الطعام">Dining Hall</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item gallery-small">
+        <div class="gallery-img-wrap">
+          <img src="https://images.pexels.com/photos/343870/pexels-photo-343870.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=340&w=600" alt="Sushi Platter" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gallery-caption" data-en="Omakase Platter" data-ar="طبق أوماكاسي">Omakase Platter</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item gallery-small">
+        <div class="gallery-img-wrap">
+          <img src="https://images.pexels.com/photos/32027903/pexels-photo-32027903.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=340&w=600" alt="Japanese Table Setting" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gallery-caption" data-en="Table Ceremony" data-ar="طقوس الطاولة">Table Ceremony</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item gallery-medium">
+        <div class="gallery-img-wrap">
+          <img src="https://images.pexels.com/photos/31815435/pexels-photo-31815435.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=500&w=600" alt="Salmon Sashimi" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gallery-caption" data-en="Salmon Sashimi" data-ar="ساشيمي السلمون">Salmon Sashimi</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item gallery-medium">
+        <div class="gallery-img-wrap">
+          <img src="https://images.pexels.com/photos/8951106/pexels-photo-8951106.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=500&w=600" alt="Sushi Chef" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gallery-caption" data-en="Master Chef" data-ar="الشيف الخبير">Master Chef</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item gallery-small">
+        <div class="gallery-img-wrap">
+          <img src="https://images.pexels.com/photos/33094634/pexels-photo-33094634.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=340&w=600" alt="Matcha Preparation" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gallery-caption" data-en="Matcha Art" data-ar="فن الماتشا">Matcha Art</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item gallery-small">
+        <div class="gallery-img-wrap">
+          <img src="https://images.pexels.com/photos/28701152/pexels-photo-28701152.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=340&w=600" alt="Sashimi Display" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gallery-caption" data-en="Sashimi Art" data-ar="فن الساشيمي">Sashimi Art</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONIALS
+============================================================ -->
+<section id="testimonials" class="section testimonials-section">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-label" data-en="Guest Voices" data-ar="آراء ضيوفنا">Guest Voices</div>
+      <h2 class="section-title">
+        <span data-en="What Our" data-ar="ما يقوله">What Our</span>
+        <span class="italic" data-en=" Guests Say" data-ar=" ضيوفنا"> Guests Say</span>
+      </h2>
+    </div>
+
+    <div class="testimonials-track-wrap">
+      <div class="testimonials-track" id="testimonialsTrack">
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text" data-en="Sakura is not just a restaurant — it's a transcendent experience. The omakase platter was extraordinary, and the service is genuinely the best in Kuwait." data-ar="ساكورا ليست مجرد مطعم، بل تجربة استثنائية. طبق الأوماكاسي كان رائعاً، والخدمة هي الأفضل في الكويت بحق.">Sakura is not just a restaurant — it's a transcendent experience. The omakase platter was extraordinary, and the service is genuinely the best in Kuwait.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #B22222, #C8A96A);">A</div>
+            <div>
+              <div class="testimonial-name" data-en="Ahmed Al-Rashidi" data-ar="أحمد الراشدي">Ahmed Al-Rashidi</div>
+              <div class="testimonial-location" data-en="Kuwait City" data-ar="مدينة الكويت">Kuwait City</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text" data-en="The wagyu dragon roll is unlike anything I've had before. The chef's precision and the presentation were absolutely breathtaking. Will be back next week!" data-ar="رول الواغيو دراغون لا يشبه أي شيء تذوقته من قبل. دقة الشيف وطريقة التقديم كانت مذهلة حقاً. سأعود الأسبوع القادم!">The wagyu dragon roll is unlike anything I've had before. The chef's precision and the presentation were absolutely breathtaking. Will be back next week!</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #C8A96A, #556B2F);">S</div>
+            <div>
+              <div class="testimonial-name" data-en="Sara Al-Mutairi" data-ar="سارة المطيري">Sara Al-Mutairi</div>
+              <div class="testimonial-location" data-en="Salmiya, Kuwait" data-ar="السالمية، الكويت">Salmiya, Kuwait</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text" data-en="We celebrated our anniversary at Sakura's private dining room. The entire experience — from the ambiance to the food to the staff — was pure perfection. Highly recommended." data-ar="احتفلنا بذكرى زواجنا في غرفة الطعام الخاصة بساكورا. كانت التجربة بأكملها — من الأجواء إلى الطعام إلى الطاقم — كمالاً خالصاً. أنصح بشدة.">We celebrated our anniversary at Sakura's private dining room. The entire experience — from the ambiance to the food to the staff — was pure perfection. Highly recommended.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #556B2F, #B22222);">F</div>
+            <div>
+              <div class="testimonial-name" data-en="Fahad Al-Sabah" data-ar="فهد الصباح">Fahad Al-Sabah</div>
+              <div class="testimonial-location" data-en="Farwaniya, Kuwait" data-ar="الفروانية، الكويت">Farwaniya, Kuwait</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text" data-en="I travel to Japan regularly, and Sakura's authenticity rivals any top-tier Tokyo restaurant. The matcha ceremony dessert alone is worth the visit." data-ar="أسافر إلى اليابان بانتظام، وأصالة ساكورا تضاهي أرقى مطاعم طوكيو. حفل الماتشا لوحده يستحق الزيارة.">I travel to Japan regularly, and Sakura's authenticity rivals any top-tier Tokyo restaurant. The matcha ceremony dessert alone is worth the visit.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #B22222, #F5D7DC);">N</div>
+            <div>
+              <div class="testimonial-name" data-en="Noura Al-Ameeri" data-ar="نورة العميري">Noura Al-Ameeri</div>
+              <div class="testimonial-location" data-en="Hawalli, Kuwait" data-ar="حولي، الكويت">Hawalli, Kuwait</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text" data-en="Outstanding business lunch experience. The bento boxes are exquisite, the service is discreet and professional. Sakura has redefined Japanese dining in Kuwait." data-ar="تجربة غداء عمل رائعة. صناديق البينتو فاخرة، والخدمة راقية ومهنية. ساكورا أعادت تعريف تجربة الطعام الياباني في الكويت.">Outstanding business lunch experience. The bento boxes are exquisite, the service is discreet and professional. Sakura has redefined Japanese dining in Kuwait.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #C8A96A, #B22222);">K</div>
+            <div>
+              <div class="testimonial-name" data-en="Khalid Al-Kandari" data-ar="خالد الكندري">Khalid Al-Kandari</div>
+              <div class="testimonial-location" data-en="Jabriya, Kuwait" data-ar="الجابرية، الكويت">Jabriya, Kuwait</div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /track -->
+      <div class="testimonials-nav">
+        <button class="t-nav-btn" id="tPrev" aria-label="Previous">←</button>
+        <div class="t-dots" id="tDots"></div>
+        <button class="t-nav-btn" id="tNext" aria-label="Next">→</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     RESERVATION CTA
+============================================================ -->
+<section id="reservation" class="section reservation-section">
+  <div class="reservation-bg">
+    <img src="https://images.pexels.com/photos/33432653/pexels-photo-33432653.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1600" alt="Elegant Japanese Dining" loading="lazy" />
+    <div class="reservation-overlay"></div>
+  </div>
+  <div class="section-container reservation-content">
+    <div class="section-label light" data-en="Book Your Experience" data-ar="احجز تجربتك">Book Your Experience</div>
+    <h2 class="section-title reservation-title">
+      <span data-en="Reserve Your" data-ar="احجز">Reserve Your</span>
+      <span class="italic" data-en=" Table" data-ar=" طاولتك"> Table</span>
+    </h2>
+    <p class="reservation-desc" data-en="Join us for an unforgettable Japanese fine-dining experience in Al Thuraya City. Every reservation is a promise of excellence." data-ar="انضم إلينا لتجربة طعام ياباني فاخرة لا تُنسى في مدينة الثريا. كل حجز هو وعد بالتميز.">
+      Join us for an unforgettable Japanese fine-dining experience in Al Thuraya City. Every reservation is a promise of excellence.
+    </p>
+    <div class="reservation-actions">
+      <a href="tel:+96596961300" class="btn-primary magnetic-btn reservation-btn" data-en="📞 Call to Reserve" data-ar="📞 اتصل للحجز">📞 Call to Reserve</a>
+      <a href="https://wa.me/96596961300" target="_blank" rel="noopener" class="btn-secondary magnetic-btn reservation-btn" data-en="💬 WhatsApp Us" data-ar="💬 واتساب">💬 WhatsApp Us</a>
+    </div>
+    <div class="reservation-hours">
+      <div class="hours-item">
+        <span class="hours-day" data-en="Sat – Thu" data-ar="السبت – الخميس">Sat – Thu</span>
+        <span class="hours-divider">·</span>
+        <span class="hours-time" data-en="11:00 AM – 12:00 AM" data-ar="11:00 ص – 12:00 م">11:00 AM – 12:00 AM</span>
+      </div>
+      <div class="hours-sep"></div>
+      <div class="hours-item">
+        <span class="hours-day" data-en="Friday" data-ar="الجمعة">Friday</span>
+        <span class="hours-divider">·</span>
+        <span class="hours-time" data-en="1:00 PM – 12:00 AM" data-ar="1:00 م – 12:00 م">1:00 PM – 12:00 AM</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT & MAP
+============================================================ -->
+<section id="contact" class="section contact-section">
+  <div class="section-container contact-grid">
+
+    <!-- Contact Info -->
+    <div class="contact-info-col">
+      <div class="section-label" data-en="Find Us" data-ar="تجدنا">Find Us</div>
+      <h2 class="section-title contact-title">
+        <span data-en="Visit" data-ar="تفضل">Visit</span>
+        <span class="italic" data-en=" Sakura" data-ar=" ساكورا"> Sakura</span>
+      </h2>
+
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div class="contact-item-body">
+            <div class="contact-item-label" data-en="Location" data-ar="الموقع">Location</div>
+            <div class="contact-item-text" data-en="Al Thuraya City, Farwaniya, Kuwait" data-ar="مدينة الثريا، الفروانية، الكويت">Al Thuraya City, Farwaniya, Kuwait</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📞</div>
+          <div class="contact-item-body">
+            <div class="contact-item-label" data-en="Phone" data-ar="الهاتف">Phone</div>
+            <a href="tel:+96596961300" class="contact-item-text contact-link">+965 9696 1300</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">🕐</div>
+          <div class="contact-item-body">
+            <div class="contact-item-label" data-en="Opening Hours" data-ar="أوقات العمل">Opening Hours</div>
+            <div class="contact-item-text" data-en="Sat–Thu: 11AM–12AM | Fri: 1PM–12AM" data-ar="السبت–الخميس: 11ص–12م | الجمعة: 1م–12م">Sat–Thu: 11AM–12AM | Fri: 1PM–12AM</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">💬</div>
+          <div class="contact-item-body">
+            <div class="contact-item-label" data-en="WhatsApp" data-ar="واتساب">WhatsApp</div>
+            <a href="https://wa.me/96596961300" target="_blank" rel="noopener" class="contact-item-text contact-link">+965 9696 1300</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-cta-btns">
+        <a href="https://wa.me/96596961300" target="_blank" rel="noopener" class="btn-primary magnetic-btn" data-en="💬 WhatsApp" data-ar="💬 واتساب">💬 WhatsApp</a>
+        <a href="https://share.google/A9uo3zZp4HbyMNoDT" target="_blank" rel="noopener" class="btn-secondary magnetic-btn" data-en="📍 Directions" data-ar="📍 الاتجاهات">📍 Directions</a>
+      </div>
+    </div>
+
+    <!-- Map -->
+    <div class="contact-map-col">
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3479.123456789!2d47.9!3d29.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjnCsDE4JzAwLjAiTiA0N8KwNTQnMDAuMCJF!5e0!3m2!1sen!2skw!4v1234567890!5m2!1sen!2skw"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Sakura Japanese Restaurant Location"
+          aria-label="Google Maps showing Sakura restaurant location">
+        </iframe>
+        <div class="map-overlay-card">
+          <span class="map-card-kanji">桜</span>
+          <span class="map-card-name" data-en="Sakura Restaurant" data-ar="مطعم ساكورا">Sakura Restaurant</span>
+          <a href="https://share.google/A9uo3zZp4HbyMNoDT" target="_blank" rel="noopener" class="map-card-link" data-en="Open in Maps" data-ar="افتح في الخرائط">Open in Maps</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer id="footer" class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-kanji">桜</div>
+      <div class="footer-brand-text">
+        <span class="footer-name" data-en="SAKURA" data-ar="ساكورا">SAKURA</span>
+        <span class="footer-tagline" data-en="Japanese Fine Dining · Kuwait" data-ar="طعام ياباني فاخر · الكويت">Japanese Fine Dining · Kuwait</span>
+      </div>
+    </div>
+    <div class="footer-links-group">
+      <a href="#about" data-en="About" data-ar="عن المطعم">About</a>
+      <a href="#menu" data-en="Menu" data-ar="القائمة">Menu</a>
+      <a href="#gallery" data-en="Gallery" data-ar="المعرض">Gallery</a>
+      <a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a>
+    </div>
+    <div class="footer-contact-group">
+      <a href="tel:+96596961300">+965 9696 1300</a>
+      <a href="https://wa.me/96596961300" target="_blank" rel="noopener" data-en="WhatsApp" data-ar="واتساب">WhatsApp</a>
+      <a href="https://share.google/A9uo3zZp4HbyMNoDT" target="_blank" rel="noopener" data-en="Get Directions" data-ar="الاتجاهات">Get Directions</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy" data-en="© 2025 Sakura Japanese Restaurant. All rights reserved." data-ar="© 2025 مطعم ساكورا الياباني. جميع الحقوق محفوظة.">© 2025 Sakura Japanese Restaurant. All rights reserved.</span>
+    <span class="footer-loc" data-en="Al Thuraya City · Farwaniya · Kuwait" data-ar="مدينة الثريا · الفروانية · الكويت">Al Thuraya City · Farwaniya · Kuwait</span>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <span>↑</span>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
