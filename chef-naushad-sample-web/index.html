@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Chef Naushad's Signature Restaurant — 66 Years of Culinary Excellence in Farwaniya, Kuwait. Indian | Chinese | Mughlai | Arabic cuisine.">
+  <title>Chef Naushad's Signature Restaurant | Farwaniya, Kuwait</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Jost:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════ NAVBAR ═══════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <!-- Logo -->
+      <a href="#home" class="nav-logo" aria-label="Chef Naushad's Signature Restaurant">
+        <div class="logo-emblem">
+          <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="23" cy="23" r="21" stroke="#C9973A" stroke-width="1.5"/>
+            <!-- Chef Hat -->
+            <g transform="translate(12, 9)">
+              <rect x="3" y="14" width="16" height="4" rx="1" fill="#C9973A"/>
+              <rect x="5" y="11" width="12" height="5" rx="1" fill="#C9973A"/>
+              <ellipse cx="11" cy="9" rx="7" ry="6" fill="#C9973A"/>
+              <ellipse cx="6" cy="10" rx="3.5" ry="5" fill="#C9973A"/>
+              <ellipse cx="16" cy="10" rx="3.5" ry="5" fill="#C9973A"/>
+              <ellipse cx="11" cy="7" rx="4" ry="5.5" fill="#C9973A"/>
+            </g>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Chef Naushad's</span>
+          <span class="logo-sub">SIGNATURE</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active" data-en="HOME" data-ar="الرئيسية">HOME</a></li>
+        <li><a href="#menu" class="nav-link" data-en="MENU" data-ar="القائمة">MENU</a></li>
+        <li><a href="#about" class="nav-link" data-en="ABOUT" data-ar="عن المطعم">ABOUT</a></li>
+        <li><a href="#gallery" class="nav-link" data-en="GALLERY" data-ar="المعرض">GALLERY</a></li>
+        <li><a href="#contact" class="nav-link" data-en="CONTACT" data-ar="تواصل معنا">CONTACT</a></li>
+      </ul>
+
+      <!-- Right Side -->
+      <div class="nav-right">
+        <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+          <span class="lang-en">EN</span>
+          <span class="lang-sep">|</span>
+          <span class="lang-ar">عربي</span>
+        </button>
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Scallop/Arch Bottom Edge -->
+    <div class="navbar-scallop">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 24" preserveAspectRatio="none" width="100%" height="24">
+        <path d="M0,0 
+          Q20,24 40,0 Q60,24 80,0 Q100,24 120,0 Q140,24 160,0 Q180,24 200,0
+          Q220,24 240,0 Q260,24 280,0 Q300,24 320,0 Q340,24 360,0 Q380,24 400,0
+          Q420,24 440,0 Q460,24 480,0 Q500,24 520,0 Q540,24 560,0 Q580,24 600,0
+          Q620,24 640,0 Q660,24 680,0 Q700,24 720,0 Q740,24 760,0 Q780,24 800,0
+          Q820,24 840,0 Q860,24 880,0 Q900,24 920,0 Q940,24 960,0 Q980,24 1000,0
+          Q1020,24 1040,0 Q1060,24 1080,0 Q1100,24 1120,0 Q1140,24 1160,0 Q1180,24 1200,0
+          Q1220,24 1240,0 Q1260,24 1280,0 Q1300,24 1320,0 Q1340,24 1360,0 Q1380,24 1400,0
+          Q1420,24 1440,0 L1440,24 L0,24 Z"
+          fill="#100B08"/>
+      </svg>
+    </div>
+  </nav>
+
+  <!-- Mobile Full-Screen Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay">
+    <button class="overlay-close" id="overlayClose" aria-label="Close menu">&#x2715;</button>
+    <ul class="overlay-links" id="overlayLinks">
+      <li><a href="#home" class="overlay-link" data-en="HOME" data-ar="الرئيسية">HOME</a></li>
+      <li><a href="#menu" class="overlay-link" data-en="MENU" data-ar="القائمة">MENU</a></li>
+      <li><a href="#about" class="overlay-link" data-en="ABOUT" data-ar="عن المطعم">ABOUT</a></li>
+      <li><a href="#gallery" class="overlay-link" data-en="GALLERY" data-ar="المعرض">GALLERY</a></li>
+      <li><a href="#contact" class="overlay-link" data-en="CONTACT" data-ar="تواصل معنا">CONTACT</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════════════════════════ HERO ═══════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow" data-en="66 YEARS OF CULINARY LEGACY  ·  FARWANIYA, KUWAIT" data-ar="٦٦ عاماً من التميز الطهوي  ·  الفروانية، الكويت">
+        66 YEARS OF CULINARY LEGACY  ·  FARWANIYA, KUWAIT
+      </p>
+      <h1 class="hero-h1" data-en="Chef Naushad's Signature" data-ar="مطعم الشيف نوشاد سيغنيتشر">
+        Chef Naushad's Signature
+      </h1>
+      <p class="hero-subline" data-en="Indian  •  Chinese  •  Mughlai  •  Arabic" data-ar="هندي  •  صيني  •  مغلوي  •  عربي">
+        Indian  •  Chinese  •  Mughlai  •  Arabic
+      </p>
+      <p class="hero-tagline" data-en="Crafted with Tradition. Served with Pride." data-ar="بصنعة الأصالة. وروح الضيافة.">
+        Crafted with Tradition. Served with Pride.
+      </p>
+      <div class="hero-buttons">
+        <a href="https://wa.me/96599982927" target="_blank" rel="noopener" class="btn-primary" data-en="Reserve via WhatsApp" data-ar="احجز عبر واتساب">
+          Reserve via WhatsApp
+        </a>
+        <a href="#menu" class="btn-secondary" data-en="Explore Our Menu" data-ar="استعرض القائمة">
+          Explore Our Menu
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Decorative Divider -->
+  <div class="section-divider">
+    <div class="divider-line">
+      <svg class="divider-diamond" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="12,2 22,12 12,22 2,12" fill="#C9973A"/>
+        <polygon points="12,5 19,12 12,19 5,12" fill="#0B0607"/>
+      </svg>
+    </div>
+    <div class="divider-arabesque">
+      <svg width="100%" height="20" viewBox="0 0 600 20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+        <g fill="none" stroke="#C9973A" stroke-width="0.8" opacity="0.4">
+          <path d="M10,10 Q20,2 30,10 Q40,18 50,10 Q60,2 70,10"/>
+          <path d="M80,10 Q90,2 100,10 Q110,18 120,10 Q130,2 140,10"/>
+          <path d="M150,10 Q160,2 170,10 Q180,18 190,10 Q200,2 210,10"/>
+          <path d="M220,10 Q230,2 240,10 Q250,18 260,10 Q270,2 280,10"/>
+          <path d="M290,10 Q300,2 310,10 Q320,18 330,10 Q340,2 350,10"/>
+          <path d="M360,10 Q370,2 380,10 Q390,18 400,10 Q410,2 420,10"/>
+          <path d="M430,10 Q440,2 450,10 Q460,18 470,10 Q480,2 490,10"/>
+          <path d="M500,10 Q510,2 520,10 Q530,18 540,10 Q550,2 560,10"/>
+          <path d="M570,10 Q580,2 590,10 Q600,18 610,10"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ ABOUT ═══════════════════════════════════════ -->
+  <section class="about-section" id="about">
+    <div class="container about-grid">
+      <!-- Image -->
+      <div class="about-image-wrap">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80"
+             alt="Chef Naushad's Restaurant interior ambiance"
+             class="about-img" loading="lazy">
+      </div>
+
+      <!-- Text -->
+      <div class="about-text">
+        <span class="section-label" data-en="OUR STORY" data-ar="قصتنا">OUR STORY</span>
+        <h2 class="section-h2" data-en="A Legacy Built on Flavor" data-ar="إرث بُني على النكهة">
+          A Legacy Built on Flavor
+        </h2>
+        <div class="gold-line"></div>
+        <p class="about-body" data-en="For over 66 years, Chef Naushad's Signature has stood as a beacon of culinary excellence in Kuwait. We bring together the finest traditions of Indian, Chinese, Mughlai, and Arabic cuisine under one roof — every dish crafted with decades of expertise and served with the warmth of true Kuwaiti hospitality. From aromatic biryanis to velvety curries, from sizzling tandoori to delicate Arabic flavors, every plate tells a story."
+           data-ar="منذ أكثر من ٦٦ عاماً، يقف مطعم الشيف نوشاد سيغنيتشر شامخاً رمزاً للتميز الطهوي في الكويت. نجمع تحت سقف واحد أرقى تقاليد المطبخ الهندي والصيني والمغلوي والعربي — كل طبق يُجسّد عقوداً من الخبرة، ويُقدَّم بدفء الضيافة الكويتية الأصيلة. من البرياني العطري إلى الكاري الكريمي، ومن التندوري المشوي إلى النكهات العربية الأصيلة.">
+          For over 66 years, Chef Naushad's Signature has stood as a beacon of culinary excellence in Kuwait. We bring together the finest traditions of Indian, Chinese, Mughlai, and Arabic cuisine under one roof — every dish crafted with decades of expertise and served with the warmth of true Kuwaiti hospitality. From aromatic biryanis to velvety curries, from sizzling tandoori to delicate Arabic flavors, every plate tells a story.
+        </p>
+
+        <!-- Stat Counters -->
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number" data-target="66" data-suffix="+">0</span>
+            <span class="stat-label" data-en="Years Legacy" data-ar="سنة خبرة">Years Legacy</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="4" data-suffix="">0</span>
+            <span class="stat-label" data-en="Cuisines" data-ar="مطابخ">Cuisines</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="1000" data-suffix="+">0</span>
+            <span class="stat-label" data-en="Daily Guests" data-ar="ضيف يومياً">Daily Guests</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ MENU ═══════════════════════════════════════ -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" data-en="SIGNATURE DISHES" data-ar="أطباقنا المميزة">SIGNATURE DISHES</span>
+        <h2 class="section-h2" data-en="Handcrafted with Tradition" data-ar="مصنوعة بأيدٍ ماهرة">
+          Handcrafted with Tradition
+        </h2>
+      </div>
+
+      <div class="menu-grid">
+
+        <!-- Card 1 -->
+        <div class="menu-card">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&q=80"
+                 alt="Butter Chicken - Velvety tomato cream sauce with tender chicken" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3 class="card-name" data-en="Butter Chicken" data-ar="مرغ مخمل">Butter Chicken</h3>
+            <div class="card-line"></div>
+            <p class="card-desc" data-en="Velvety tomato-cream sauce with tender, spiced chicken" data-ar="دجاج طري متبل في صلصة طماطم كريمية ناعمة">
+              Velvety tomato-cream sauce with tender, spiced chicken
+            </p>
+            <p class="card-price">From KWD 1.800</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="menu-card">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=600&q=80"
+                 alt="Dum Biryani - Slow cooked aromatic rice with saffron" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3 class="card-name" data-en="Dum Biryani" data-ar="دم برياني">Dum Biryani</h3>
+            <div class="card-line"></div>
+            <p class="card-desc" data-en="Slow-cooked aromatic rice layered with spiced meat and saffron" data-ar="أرز عطري مطهو ببطء بطبقات اللحم المتبل والزعفران">
+              Slow-cooked aromatic rice layered with spiced meat and saffron
+            </p>
+            <p class="card-price">From KWD 2.000</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="menu-card">
+          <div class="card-img-wrap">
+            <img src="images.jpg"
+                 alt="Tandoori Platter - Mixed tandoori meats from traditional clay oven" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3 class="card-name" data-en="Tandoori Platter" data-ar="طبق التندوري">Tandoori Platter</h3>
+            <div class="card-line"></div>
+            <p class="card-desc" data-en="Mixed tandoori meats fresh from our traditional clay oven" data-ar="تشكيلة لحوم تندوري مشوية في الفرن الطيني التقليدي">
+              Mixed tandoori meats fresh from our traditional clay oven
+            </p>
+            <p class="card-price">From KWD 2.500</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="menu-card">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80"
+                 alt="Mughlai Curry - Rich royal curry with Mughal era spice blend" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3 class="card-name" data-en="Mughlai Curry" data-ar="كاري مغلوي">Mughlai Curry</h3>
+            <div class="card-line"></div>
+            <p class="card-desc" data-en="Rich royal curry with an authentic Mughal-era spice blend" data-ar="كاري ملكي غني بتوابل العهد المغلوي الأصيلة">
+              Rich royal curry with an authentic Mughal-era spice blend
+            </p>
+            <p class="card-price">From KWD 1.500</p>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="menu-card">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=80"
+                 alt="Garlic Naan - Freshly baked leavened bread with garlic butter" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3 class="card-name" data-en="Garlic Naan" data-ar="خبز النان بالثوم">Garlic Naan</h3>
+            <div class="card-line"></div>
+            <p class="card-desc" data-en="Freshly baked leavened bread brushed with garlic butter" data-ar="خبز طازج من الفرن مدهون بزبدة الثوم العطرية">
+              Freshly baked leavened bread brushed with garlic butter
+            </p>
+            <p class="card-price">KWD 0.300</p>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="menu-card">
+          <div class="card-img-wrap">
+            <img src="images (1).jpg"
+                 alt="Gulab Jamun - Soft milk dumplings in rose scented sugar syrup" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3 class="card-name" data-en="Gulab Jamun" data-ar="جلاب جامون">Gulab Jamun</h3>
+            <div class="card-line"></div>
+            <p class="card-desc" data-en="Soft milk dumplings soaked in rose-scented sugar syrup" data-ar="كرات الحليب الطرية منقوعة بشراب السكر بعطر الورد">
+              Soft milk dumplings soaked in rose-scented sugar syrup
+            </p>
+            <p class="card-price">KWD 0.500</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ GALLERY ═══════════════════════════════════════ -->
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" data-en="THE EXPERIENCE" data-ar="التجربة">THE EXPERIENCE</span>
+        <h2 class="section-h2" data-en="A Feast for the Eyes" data-ar="وليمة للأبصار">
+          A Feast for the Eyes
+        </h2>
+      </div>
+
+      <div class="gallery-masonry">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=500&q=80" alt="Authentic Indian spiced dish presentation" loading="lazy">
+          <div class="gallery-overlay"></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=500&q=80" alt="Colorful spice arrangement and aromatic herbs" loading="lazy">
+          <div class="gallery-overlay"></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500&q=80" alt="Elegant plated meal with vibrant colors" loading="lazy">
+          <div class="gallery-overlay"></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=500&q=80" alt="Gourmet food plating with fresh ingredients" loading="lazy">
+          <div class="gallery-overlay"></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=500&q=80" alt="Fresh colorful salad and vegetable bowl" loading="lazy">
+          <div class="gallery-overlay"></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80" alt="Traditional pizza and bread from stone oven" loading="lazy">
+          <div class="gallery-overlay"></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=500&q=80" alt="Rich curry dish served in traditional bowl" loading="lazy">
+          <div class="gallery-overlay"></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=500&q=80" alt="Restaurant dining atmosphere with warm lighting" loading="lazy">
+          <div class="gallery-overlay"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ TESTIMONIALS ═══════════════════════════════════════ -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" data-en="GUEST REVIEWS" data-ar="آراء ضيوفنا">GUEST REVIEWS</span>
+        <h2 class="section-h2" data-en="What Our Guests Say" data-ar="ماذا يقول ضيوفنا">
+          What Our Guests Say
+        </h2>
+      </div>
+
+      <div class="carousel-wrap">
+        <div class="carousel" id="carousel">
+
+          <!-- Slide 1 -->
+          <div class="testimonial-card active" data-slide="0">
+            <span class="quote-mark">"</span>
+            <p class="quote-text"
+               data-en="The biryani is unlike anything I've tasted in Kuwait — authentic, rich, and deeply satisfying. This place is a true hidden gem."
+               data-ar="البرياني هنا لا يُضاهى في الكويت — أصيل وغني ومُرضٍ تماماً. هذا المكان كنز حقيقي مخفي.">
+              The biryani is unlike anything I've tasted in Kuwait — authentic, rich, and deeply satisfying. This place is a true hidden gem.
+            </p>
+            <p class="guest-name">Ahmed Al-Rashidi</p>
+            <p class="guest-country">🇰🇼 Kuwait</p>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="testimonial-card" data-slide="1">
+            <span class="quote-mark">"</span>
+            <p class="quote-text"
+               data-en="A hidden treasure in Farwaniya! The tandoori platter was absolutely divine. We come back every single weekend."
+               data-ar="كنز خفي في الفروانية! طبق التندوري كان رائعاً بحق. نعود إليه كل أسبوع دون توقف.">
+              A hidden treasure in Farwaniya! The tandoori platter was absolutely divine. We come back every single weekend.
+            </p>
+            <p class="guest-name">Priya Sharma</p>
+            <p class="guest-country">🇮🇳 India</p>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="testimonial-card" data-slide="2">
+            <span class="quote-mark">"</span>
+            <p class="quote-text"
+               data-en="The best butter chicken in all of Kuwait, bar none. The staff are incredibly warm — they treat every guest like family."
+               data-ar="أفضل مرغ مخمل في الكويت بلا منافس. الموظفون دافئون بشكل لا يُصدق — يعاملون كل ضيف كالعائلة.">
+              The best butter chicken in all of Kuwait, bar none. The staff are incredibly warm — they treat every guest like family.
+            </p>
+            <p class="guest-name">Mohammed Al-Azemi</p>
+            <p class="guest-country">🇰🇼 Kuwait</p>
+          </div>
+
+        </div>
+
+        <!-- Dots -->
+        <div class="carousel-dots">
+          <button class="dot active" data-dot="0" aria-label="Go to slide 1"></button>
+          <button class="dot" data-dot="1" aria-label="Go to slide 2"></button>
+          <button class="dot" data-dot="2" aria-label="Go to slide 3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ CONTACT ═══════════════════════════════════════ -->
+  <section class="contact-section" id="contact">
+    <div class="container contact-grid">
+
+      <!-- Left: Info -->
+      <div class="contact-info">
+        <span class="section-label" data-en="VISIT US" data-ar="زورونا">VISIT US</span>
+        <h2 class="section-h2" data-en="Find Our Flavors" data-ar="اعثر على نكهاتنا">
+          Find Our Flavors
+        </h2>
+
+        <ul class="info-list">
+          <li class="info-item">
+            <span class="info-icon">
+              <!-- Map Pin SVG -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="#C9973A" stroke-width="1.8" fill="rgba(201,151,58,0.15)"/>
+                <circle cx="12" cy="9" r="2.5" stroke="#C9973A" stroke-width="1.5"/>
+              </svg>
+            </span>
+            <span data-en="1st Floor, Al Daijani Center, Farwaniya, Kuwait" data-ar="الدور الأول، مركز الديجاني، الفروانية، الكويت">
+              1st Floor, Al Daijani Center, Farwaniya, Kuwait
+            </span>
+          </li>
+          <li class="info-item">
+            <span class="info-icon">
+              <!-- Phone SVG -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" stroke="#C9973A" stroke-width="1.8" fill="rgba(201,151,58,0.15)"/>
+              </svg>
+            </span>
+            <a href="tel:+96599982927" class="info-link">+965 9998 2927</a>
+          </li>
+          <li class="info-item">
+            <span class="info-icon">
+              <!-- Clock SVG -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="9" stroke="#C9973A" stroke-width="1.8" fill="rgba(201,151,58,0.15)"/>
+                <path d="M12 7v5l3 3" stroke="#C9973A" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span data-en="11:00 AM – 11:00 PM, Every Day" data-ar="١١ صباحاً – ١١ مساءً، كل يوم">
+              11:00 AM – 11:00 PM, Every Day
+            </span>
+          </li>
+          <li class="info-item">
+            <span class="info-icon">
+              <!-- Envelope SVG -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="4" width="20" height="16" rx="2" stroke="#C9973A" stroke-width="1.8" fill="rgba(201,151,58,0.15)"/>
+                <path d="M2 7l10 7 10-7" stroke="#C9973A" stroke-width="1.8"/>
+              </svg>
+            </span>
+            <a href="mailto:chefnaushadfarwaniya@gmail.com" class="info-link">chefnaushadfarwaniya@gmail.com</a>
+          </li>
+        </ul>
+
+        <a href="https://wa.me/96599982927" target="_blank" rel="noopener" class="wa-cta-btn">
+          <!-- WhatsApp Icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          <span data-en="Book a Table via WhatsApp" data-ar="احجز طاولة عبر واتساب">Book a Table via WhatsApp</span>
+        </a>
+      </div>
+
+      <!-- Right: Map -->
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps?q=29.2770497,47.9622621&z=16&output=embed"
+          width="100%"
+          height="380"
+          style="border:0;"
+          allowfullscreen
+          loading="lazy"
+          title="Chef Naushad's Signature Restaurant Location">
+        </iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ FOOTER ═══════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <!-- Col 1: Brand -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg width="44" height="44" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="23" cy="23" r="21" stroke="#C9973A" stroke-width="1.5"/>
+            <g transform="translate(12, 9)">
+              <rect x="3" y="14" width="16" height="4" rx="1" fill="#C9973A"/>
+              <rect x="5" y="11" width="12" height="5" rx="1" fill="#C9973A"/>
+              <ellipse cx="11" cy="9" rx="7" ry="6" fill="#C9973A"/>
+              <ellipse cx="6" cy="10" rx="3.5" ry="5" fill="#C9973A"/>
+              <ellipse cx="16" cy="10" rx="3.5" ry="5" fill="#C9973A"/>
+              <ellipse cx="11" cy="7" rx="4" ry="5.5" fill="#C9973A"/>
+            </g>
+          </svg>
+          <div class="footer-name-wrap">
+            <span class="footer-name">Chef Naushad's Signature</span>
+            <span class="footer-tagline" data-en="66 Years of Culinary Excellence" data-ar="٦٦ عاماً من التميز الطهوي">
+              66 Years of Culinary Excellence
+            </span>
+          </div>
+        </div>
+        <div class="social-icons">
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/chefnaushadfarwaniya/" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="20" height="20" rx="5" stroke="#C9973A" stroke-width="1.8"/>
+              <circle cx="12" cy="12" r="4.5" stroke="#C9973A" stroke-width="1.8"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="#C9973A"/>
+            </svg>
+          </a>
+          <!-- Facebook -->
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="#C9973A" stroke-width="1.8" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <!-- WhatsApp -->
+          <a href="https://wa.me/96599982927" target="_blank" rel="noopener" class="social-icon" aria-label="WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" stroke="#C9973A" stroke-width="0.5" fill="none"/>
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="#C9973A" opacity="0.6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="footer-links-col">
+        <h4 class="footer-col-title" data-en="QUICK LINKS" data-ar="روابط سريعة">QUICK LINKS</h4>
+        <ul class="footer-links">
+          <li><a href="#home" class="footer-link" data-en="Home" data-ar="الرئيسية">Home</a></li>
+          <li><a href="#menu" class="footer-link" data-en="Menu" data-ar="القائمة">Menu</a></li>
+          <li><a href="#about" class="footer-link" data-en="About" data-ar="عن المطعم">About</a></li>
+          <li><a href="#gallery" class="footer-link" data-en="Gallery" data-ar="المعرض">Gallery</a></li>
+          <li><a href="#contact" class="footer-link" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Hours & Location -->
+      <div class="footer-info-col">
+        <h4 class="footer-col-title" data-en="OPENING HOURS" data-ar="ساعات العمل">OPENING HOURS</h4>
+        <p class="footer-info-text" data-en="11:00 AM – 11:00 PM" data-ar="١١ صباحاً – ١١ مساءً">11:00 AM – 11:00 PM</p>
+        <p class="footer-info-text" data-en="Open Every Day" data-ar="مفتوح كل يوم">Open Every Day</p>
+        <p class="footer-info-text" style="margin-top:12px;" data-en="1st Floor, Al Daijani Center," data-ar="الدور الأول، مركز الديجاني،">1st Floor, Al Daijani Center,</p>
+        <p class="footer-info-text" data-en="Farwaniya, Kuwait" data-ar="الفروانية، الكويت">Farwaniya, Kuwait</p>
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-copyright">
+      <p data-en="© 2025 Chef Naushad's Signature Restaurant. All rights reserved." data-ar="© ٢٠٢٥ مطعم الشيف نوشاد سيغنيتشر. جميع الحقوق محفوظة.">
+        © 2025 Chef Naushad's Signature Restaurant. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════ FLOATING WHATSAPP ═══════════════════════════════════════ -->
+  <a href="https://wa.me/96599982927" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Book via WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <span class="wa-tooltip" data-en="Book via WhatsApp" data-ar="احجز عبر واتساب">Book via WhatsApp</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
