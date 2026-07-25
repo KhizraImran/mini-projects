@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khaled Al Dwaihi | خالد الدويحي – Luxury Restaurant Kuwait</title>
+  <meta name="description" content="Khaled Al Dwaihi – Premium multi-cuisine restaurant in Kuwait. Authentic Arabic, Indian & Grilled cuisine. Rated 4.9/5. Open 24/7 across 5 branches.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;600&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ══════════════ KNIFE NAVBAR ══════════════ -->
+  <nav class="knife-nav" id="navbar">
+    <div class="knife-blade">
+      <div class="knife-logo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C10.5 2 9 3 9 4.5V7H7C6 7 5 8 5 9v1c0 1.5 1 3 3 3h1v1H8c-1 0-2 1-2 2v1h12v-1c0-1-1-2-2-2h-1v-1h1c2 0 3-1.5 3-3V9c0-1-1-2-2-2h-2V4.5C15 3 13.5 2 12 2z"/>
+          <rect x="9" y="17" width="6" height="1.5" rx="0.75"/>
+          <rect x="10" y="19" width="4" height="1.5" rx="0.75"/>
+        </svg>
+      </div>
+
+      <ul class="knife-links">
+        <li class="active" data-target="#hero" data-en="HOME" data-ar="الرئيسية">HOME<span class="nav-underline"></span></li>
+        <li data-target="#dishes" data-en="MENU" data-ar="القائمة">MENU<span class="nav-underline"></span></li>
+        <li data-target="#about" data-en="ABOUT" data-ar="عنّا">ABOUT<span class="nav-underline"></span></li>
+        <li data-target="#branches" data-en="BRANCHES" data-ar="الفروع">BRANCHES<span class="nav-underline"></span></li>
+        <li data-target="#contact" data-en="CONTACT" data-ar="تواصل">CONTACT<span class="nav-underline"></span></li>
+      </ul>
+
+      <div class="knife-toggles">
+        <button class="lang-toggle" id="langBtn">AR</button>
+        <button class="theme-toggle" id="themeBtn">☀️</button>
+      </div>
+
+      <!-- Mobile hamburger inside blade -->
+      <button class="mobile-menu-btn" id="hamburger" aria-label="Open menu">
+        <span class="hline"></span>
+        <span class="hline"></span>
+        <span class="hline"></span>
+      </button>
+    </div>
+
+    <div class="knife-bolster"></div>
+    <div class="knife-handle">
+      <div class="handle-rivets">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile fullscreen overlay -->
+  <div class="mobile-overlay" id="mobileOverlay">
+    <button class="mob-close-btn" id="mobClose" aria-label="Close menu">✕</button>
+    <div class="mob-logo">
+      <span class="mob-logo-ar">خالد الدويحي</span>
+    </div>
+    <ul class="mob-links">
+      <li data-target="#hero" data-en="Home" data-ar="الرئيسية">Home</li>
+      <li data-target="#dishes" data-en="Menu" data-ar="القائمة">Menu</li>
+      <li data-target="#about" data-en="About" data-ar="عنّا">About</li>
+      <li data-target="#branches" data-en="Branches" data-ar="الفروع">Branches</li>
+      <li data-target="#contact" data-en="Contact" data-ar="تواصل">Contact</li>
+    </ul>
+    <div class="mob-toggles">
+      <button class="lang-toggle" id="langBtn2">AR</button>
+      <button class="theme-toggle" id="themeBtn2">☀️</button>
+    </div>
+    <div class="mob-info">
+      <span>⭐ 4.9 / 5</span>
+      <span>•</span>
+      <span data-en="Open 24/7" data-ar="مفتوح 24/7">Open 24/7</span>
+    </div>
+  </div>
+
+  <!-- ══════════════ HERO ══════════════ -->
+  <section id="hero" class="hero-section">
+    <div class="hero-bg-img"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span data-en="Est. Kuwait · Open 24/7" data-ar="الكويت · مفتوح 24/7">Est. Kuwait · Open 24/7</span>
+        </div>
+        <h1 class="hero-title">Where Every Meal Tells a Story</h1>
+        <p class="hero-subtitle" data-en="Authentic Arabic, Indian & Grilled cuisine crafted with passion across 5 branches in Kuwait." data-ar="مأكولات عربية وهندية ومشاوي أصيلة، نصنعها بشغف عبر 5 فروع في الكويت.">
+          Authentic Arabic, Indian & Grilled cuisine crafted with passion across 5 branches in Kuwait.
+        </p>
+        <div class="hero-ctas">
+          <button class="btn-gold" id="viewMenuBtn" data-en="View Menu" data-ar="استعرض القائمة">View Menu</button>
+          <a class="btn-outline" href="https://wa.me/96551789303" target="_blank" rel="noopener" data-en="WhatsApp Us" data-ar="واتساب">WhatsApp Us</a>
+        </div>
+        <div class="hero-rating">
+          <div class="rating-stars">⭐⭐⭐⭐⭐</div>
+          <span class="rating-score">4.9</span>
+          <span class="rating-sep">·</span>
+          <span class="rating-count" data-en="1,000+ Reviews" data-ar="+1000 تقييم">1,000+ Reviews</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-float-card">
+          <img class="hero-float-img" src="https://images.pexels.com/photos/18698236/pexels-photo-18698236.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Signature dish" loading="eager" />
+          <div class="float-card-badge">
+            <span class="fcb-icon">👨‍🍳</span>
+            <div>
+              <div class="fcb-title" data-en="Chef's Special" data-ar="طبق الشيف">Chef's Special</div>
+              <div class="fcb-sub" data-en="Today's Signature" data-ar="توصية اليوم">Today's Signature</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-accent-ring"></div>
+        <div class="hero-accent-ring hero-accent-ring-2"></div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+      <span data-en="Scroll" data-ar="تمرير">Scroll</span>
+    </div>
+  </section>
+
+  <!-- ══════════════ MARQUEE ══════════════ -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>Arabic Cuisine</span><span class="marquee-dot">✦</span>
+      <span>Grills</span><span class="marquee-dot">✦</span>
+      <span>Indian Dishes</span><span class="marquee-dot">✦</span>
+      <span>Machboos</span><span class="marquee-dot">✦</span>
+      <span>Grilled Lamb</span><span class="marquee-dot">✦</span>
+      <span>Biryani</span><span class="marquee-dot">✦</span>
+      <span>Chicken 65</span><span class="marquee-dot">✦</span>
+      <span>Mixed Grill</span><span class="marquee-dot">✦</span>
+      <span>Open 24/7</span><span class="marquee-dot">✦</span>
+      <span>5 Branches</span><span class="marquee-dot">✦</span>
+      <span>مطعم خالد الدويحي</span><span class="marquee-dot">✦</span>
+      <span>مشاوي</span><span class="marquee-dot">✦</span>
+      <span>مأكولات هندية</span><span class="marquee-dot">✦</span>
+      <!-- Duplicate for seamless loop -->
+      <span>Arabic Cuisine</span><span class="marquee-dot">✦</span>
+      <span>Grills</span><span class="marquee-dot">✦</span>
+      <span>Indian Dishes</span><span class="marquee-dot">✦</span>
+      <span>Machboos</span><span class="marquee-dot">✦</span>
+      <span>Grilled Lamb</span><span class="marquee-dot">✦</span>
+      <span>Biryani</span><span class="marquee-dot">✦</span>
+      <span>Chicken 65</span><span class="marquee-dot">✦</span>
+      <span>Mixed Grill</span><span class="marquee-dot">✦</span>
+      <span>Open 24/7</span><span class="marquee-dot">✦</span>
+      <span>5 Branches</span><span class="marquee-dot">✦</span>
+      <span>مطعم خالد الدويحي</span><span class="marquee-dot">✦</span>
+      <span>مشاوي</span><span class="marquee-dot">✦</span>
+      <span>مأكولات هندية</span><span class="marquee-dot">✦</span>
+    </div>
+  </div>
+
+  <!-- ══════════════ ABOUT ══════════════ -->
+  <section id="about" class="about-section">
+    <div class="about-container">
+      <div class="about-image reveal">
+        <img src="https://images.pexels.com/photos/12645217/pexels-photo-12645217.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Restaurant ambiance" loading="lazy" />
+        <div class="about-img-badge">
+          <span class="aib-year" data-en="30+" data-ar="+30">30+</span>
+          <span class="aib-label" data-en="Years of Excellence" data-ar="سنوات من التميز">Years of Excellence</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="section-label reveal" data-en="Our Story" data-ar="قصتنا">Our Story</div>
+        <h2 class="reveal" data-en="Rooted in Tradition, Served with Pride" data-ar="أصيلون في التراث، فخورون بالخدمة">
+          Rooted in Tradition,<br><em>Served with Pride</em>
+        </h2>
+        <p class="reveal" data-en="For over three decades, Khaled Al Dwaihi has been a landmark in Kuwait's culinary scene. From our signature grilled meats to aromatic biryanis, every dish is crafted with the finest halal ingredients and recipes passed down through generations." data-ar="لأكثر من ثلاثة عقود، كان مطعم خالد الدويحي علامة بارزة في المشهد الطهوي الكويتي. من مشاوينا الشهيرة إلى البرياني العطر، كل طبق محضّر بأجود المكونات الحلال ووصفات متوارثة عبر الأجيال.">
+          For over three decades, Khaled Al Dwaihi has been a landmark in Kuwait's culinary scene. From our signature grilled meats to aromatic biryanis, every dish is crafted with the finest halal ingredients and recipes passed down through generations.
+        </p>
+        <div class="about-stats reveal">
+          <div class="stat-box">
+            <span class="counter" data-target="30">0+</span>
+            <span class="stat-label" data-en="Years" data-ar="سنة">Years</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-box">
+            <span class="counter" data-target="5">0+</span>
+            <span class="stat-label" data-en="Branches" data-ar="فروع">Branches</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-box">
+            <span class="counter" data-target="1000">0+</span>
+            <span class="stat-label" data-en="Daily Guests" data-ar="ضيف يومياً">Daily Guests</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ DISHES / MENU ══════════════ -->
+  <section id="dishes" class="dishes-section">
+    <div class="section-header">
+      <div class="section-label reveal" data-en="Signature Dishes" data-ar="أبرز أطباقنا">Signature Dishes</div>
+      <h2 class="reveal" data-en="Crafted to Perfection" data-ar="مُعدّة بإتقان">Crafted to Perfection</h2>
+      <p class="section-sub reveal" data-en="A curated selection of our most beloved plates." data-ar="تشكيلة مختارة من أشهر أطباقنا.">A curated selection of our most beloved plates.</p>
+    </div>
+
+    <div class="dishes-grid stagger-group">
+      <!-- Card 1 -->
+      <div class="card dish-card">
+        <div class="dish-img-wrap">
+          <img src="https://images.pexels.com/photos/18698236/pexels-photo-18698236.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Chicken Machboos" loading="lazy" />
+          <div class="dish-tag" data-en="Arabic" data-ar="عربي">Arabic</div>
+        </div>
+        <div class="dish-info">
+          <h3 data-en="Chicken Machboos" data-ar="مجبوس دجاج">Chicken Machboos</h3>
+          <p data-en="Slow-cooked spiced rice with tender chicken, loomi & dried limes." data-ar="أرز مطبوخ ببطء مع دجاج طري والليمون الأسود.">Slow-cooked spiced rice with tender chicken, loomi & dried limes.</p>
+          <div class="dish-footer">
+            <span class="dish-cuisine" data-en="🍽 Arabic Specialty" data-ar="🍽 تخصص عربي">🍽 Arabic Specialty</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card dish-card">
+        <div class="dish-img-wrap">
+          <img src="https://images.pexels.com/photos/12645205/pexels-photo-12645205.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Mixed Grill" loading="lazy" />
+          <div class="dish-tag" data-en="Grill" data-ar="مشاوي">Grill</div>
+        </div>
+        <div class="dish-info">
+          <h3 data-en="Mixed Grill" data-ar="مشاوي مشكلة">Mixed Grill</h3>
+          <p data-en="A lavish platter of marinated lamb, chicken & kofta, charcoal-grilled." data-ar="طبق فاخر من اللحم المتبل والدجاج والكفتة المشوية على الفحم.">A lavish platter of marinated lamb, chicken & kofta, charcoal-grilled.</p>
+          <div class="dish-footer">
+            <span class="dish-cuisine" data-en="🔥 Chef's Pick" data-ar="🔥 اختيار الشيف">🔥 Chef's Pick</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card dish-card">
+        <div class="dish-img-wrap">
+          <img src="https://images.pexels.com/photos/18698239/pexels-photo-18698239.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Chicken 65" loading="lazy" />
+          <div class="dish-tag" data-en="Indian" data-ar="هندي">Indian</div>
+        </div>
+        <div class="dish-info">
+          <h3 data-en="Chicken 65" data-ar="تشيكن 65">Chicken 65</h3>
+          <p data-en="Crispy deep-fried chicken with bold South Indian spices & curry leaves." data-ar="دجاج مقلي مقرمش بتوابل جنوب الهند وأوراق الكاري.">Crispy deep-fried chicken with bold South Indian spices & curry leaves.</p>
+          <div class="dish-footer">
+            <span class="dish-cuisine" data-en="🌶 Spicy Favorite" data-ar="🌶 المفضل الحار">🌶 Spicy Favorite</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card dish-card">
+        <div class="dish-img-wrap">
+          <img src="https://images.pexels.com/photos/17696655/pexels-photo-17696655.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Chicken Biryani" loading="lazy" />
+          <div class="dish-tag" data-en="Indian" data-ar="هندي">Indian</div>
+        </div>
+        <div class="dish-info">
+          <h3 data-en="Chicken Biryani" data-ar="برياني دجاج">Chicken Biryani</h3>
+          <p data-en="Fragrant basmati layered with juicy chicken, saffron & fried onions." data-ar="أرز بسمتي عطر متعدد الطبقات مع دجاج طري وزعفران وبصل مقلي.">Fragrant basmati layered with juicy chicken, saffron & fried onions.</p>
+          <div class="dish-footer">
+            <span class="dish-cuisine" data-en="⭐ Most Ordered" data-ar="⭐ الأكثر طلباً">⭐ Most Ordered</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="card dish-card">
+        <div class="dish-img-wrap">
+          <img src="https://images.pexels.com/photos/17696654/pexels-photo-17696654.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Grilled Lamb" loading="lazy" />
+          <div class="dish-tag" data-en="Grill" data-ar="مشاوي">Grill</div>
+        </div>
+        <div class="dish-info">
+          <h3 data-en="Grilled Lamb" data-ar="لحم ضأن مشوي">Grilled Lamb</h3>
+          <p data-en="Premium whole lamb, slow-grilled over charcoal with Kuwaiti spice blend." data-ar="خروف كامل فاخر، مشوي ببطء على الفحم مع توابل كويتية.">Premium whole lamb, slow-grilled over charcoal with Kuwaiti spice blend.</p>
+          <div class="dish-footer">
+            <span class="dish-cuisine" data-en="🏆 Signature" data-ar="🏆 الطبق المميز">🏆 Signature</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="card dish-card">
+        <div class="dish-img-wrap">
+          <img src="https://images.pexels.com/photos/2290743/pexels-photo-2290743.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Arabic Mezze" loading="lazy" />
+          <div class="dish-tag" data-en="Arabic" data-ar="عربي">Arabic</div>
+        </div>
+        <div class="dish-info">
+          <h3 data-en="Arabic Mezze" data-ar="مقبلات عربية">Arabic Mezze</h3>
+          <p data-en="A vibrant spread of hummus, mutabal, tabouleh, fattoush & fresh pita." data-ar="مجموعة متنوعة من الحمص والمتبل والتبولة والفتوش والخبز الطازج.">A vibrant spread of hummus, mutabal, tabouleh, fattoush & fresh pita.</p>
+          <div class="dish-footer">
+            <span class="dish-cuisine" data-en="🌿 Vegetarian Option" data-ar="🌿 خيار نباتي">🌿 Vegetarian Option</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ FEATURES STRIP ══════════════ -->
+  <section class="features-strip">
+    <div class="features-grid stagger-group">
+      <div class="card feature-card">
+        <div class="feature-icon-circle">🕐</div>
+        <h3 data-en="Open 24/7" data-ar="مفتوح 24/7">Open 24/7</h3>
+        <p data-en="Serving you round the clock, every single day of the year." data-ar="نخدمكم على مدار الساعة، كل أيام السنة.">Serving you round the clock, every single day of the year.</p>
+      </div>
+      <div class="card feature-card">
+        <div class="feature-icon-circle">🥩</div>
+        <h3 data-en="100% Halal" data-ar="حلال 100%">100% Halal</h3>
+        <p data-en="Every ingredient is certified halal — always fresh, always trustworthy." data-ar="جميع المكونات معتمدة حلال — طازجة دائماً وموثوقة.">Every ingredient is certified halal — always fresh, always trustworthy.</p>
+      </div>
+      <div class="card feature-card">
+        <div class="feature-icon-circle">🚗</div>
+        <h3 data-en="Fast Delivery" data-ar="توصيل سريع">Fast Delivery</h3>
+        <p data-en="Hot meals delivered swiftly across all Kuwait governorates." data-ar="وجبات ساخنة تُوصل بسرعة إلى جميع محافظات الكويت.">Hot meals delivered swiftly across all Kuwait governorates.</p>
+      </div>
+      <div class="card feature-card">
+        <div class="feature-icon-circle">⭐</div>
+        <h3 data-en="4.9 Rated" data-ar="تقييم 4.9">4.9 Rated</h3>
+        <p data-en="Over 1,000 five-star reviews from our loyal guests across Kuwait." data-ar="أكثر من 1000 تقييم بخمس نجوم من ضيوفنا الأوفياء.">Over 1,000 five-star reviews from our loyal guests across Kuwait.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ GALLERY ══════════════ -->
+  <section class="gallery-section">
+    <div class="section-header">
+      <div class="section-label reveal" data-en="Gallery" data-ar="معرض الصور">Gallery</div>
+      <h2 class="reveal" data-en="A Feast for the Eyes" data-ar="وليمة للعيون">A Feast for the Eyes</h2>
+    </div>
+    <div class="gallery-masonry">
+      <div class="gallery-item reveal">
+        <img src="https://images.pexels.com/photos/12645217/pexels-photo-12645217.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Dining experience" loading="lazy" />
+        <div class="gallery-hover-overlay"><span data-en="Luxury Dining" data-ar="تناول طعام فاخر">Luxury Dining</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://images.pexels.com/photos/18698231/pexels-photo-18698231.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Mandi dish" loading="lazy" />
+        <div class="gallery-hover-overlay"><span data-en="Chicken Mandi" data-ar="مندي دجاج">Chicken Mandi</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://images.pexels.com/photos/12645181/pexels-photo-12645181.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Fine dining" loading="lazy" />
+        <div class="gallery-hover-overlay"><span data-en="Fine Dining" data-ar="مطعم راقٍ">Fine Dining</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://images.pexels.com/photos/18698240/pexels-photo-18698240.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Special dish" loading="lazy" />
+        <div class="gallery-hover-overlay"><span data-en="Mandi Spread" data-ar="مجموعة المندي">Mandi Spread</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://images.pexels.com/photos/12645235/pexels-photo-12645235.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Gourmet food" loading="lazy" />
+        <div class="gallery-hover-overlay"><span data-en="Gourmet Plates" data-ar="أطباق راقية">Gourmet Plates</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://images.pexels.com/photos/12645187/pexels-photo-12645187.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Premium dish" loading="lazy" />
+        <div class="gallery-hover-overlay"><span data-en="Premium Cuisine" data-ar="مطبخ فاخر">Premium Cuisine</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ BRANCHES ══════════════ -->
+  <section id="branches" class="branches-section">
+    <div class="section-header">
+      <div class="section-label reveal" data-en="Our Branches" data-ar="فروعنا">Our Branches</div>
+      <h2 class="reveal" data-en="Find Us Across Kuwait" data-ar="نجدك في جميع أنحاء الكويت">Find Us Across Kuwait</h2>
+      <p class="section-sub reveal" data-en="5 convenient locations serving you round the clock." data-ar="5 فروع في متناولك على مدار الساعة.">5 convenient locations serving you round the clock.</p>
+    </div>
+
+    <div class="branches-scroll-wrap">
+      <div class="branches-grid stagger-group">
+        <div class="card branch-card">
+          <div class="branch-icon">📍</div>
+          <div class="branch-number">01</div>
+          <h3 data-en="Hawalli Branch" data-ar="فرع حولي">Hawalli Branch</h3>
+          <p class="branch-area" data-en="Muhammad Ali Al-Dukhan St, Hawalli" data-ar="شارع محمد علي الدخان، حولي">Muhammad Ali Al-Dukhan St, Hawalli</p>
+          <a href="https://wa.me/96551789303" target="_blank" class="branch-cta" data-en="Get Directions" data-ar="احصل على الاتجاهات">Get Directions</a>
+        </div>
+        <div class="card branch-card">
+          <div class="branch-icon">📍</div>
+          <div class="branch-number">02</div>
+          <h3 data-en="Farwaniya Branch" data-ar="فرع الفروانية">Farwaniya Branch</h3>
+          <p class="branch-area" data-en="Jleeb Al-Shuyoukh, Street 12" data-ar="جليب الشيوخ، شارع 12">Jleeb Al-Shuyoukh, Street 12</p>
+          <a href="https://wa.me/96551789303" target="_blank" class="branch-cta" data-en="Get Directions" data-ar="احصل على الاتجاهات">Get Directions</a>
+        </div>
+        <div class="card branch-card">
+          <div class="branch-icon">📍</div>
+          <div class="branch-number">03</div>
+          <h3 data-en="Khaitan Branch" data-ar="فرع خيطان">Khaitan Branch</h3>
+          <p class="branch-area" data-en="Khaitan, Al Farwaniyah" data-ar="خيطان، الفروانية">Khaitan, Al Farwaniyah</p>
+          <a href="https://wa.me/96551789303" target="_blank" class="branch-cta" data-en="Get Directions" data-ar="احصل على الاتجاهات">Get Directions</a>
+        </div>
+        <div class="card branch-card">
+          <div class="branch-icon">📍</div>
+          <div class="branch-number">04</div>
+          <h3 data-en="Jahra Branch" data-ar="فرع الجهراء">Jahra Branch</h3>
+          <p class="branch-area" data-en="Al Jahra Industrial Area" data-ar="المنطقة الصناعية، الجهراء">Al Jahra Industrial Area</p>
+          <a href="https://wa.me/96551789303" target="_blank" class="branch-cta" data-en="Get Directions" data-ar="احصل على الاتجاهات">Get Directions</a>
+        </div>
+        <div class="card branch-card">
+          <div class="branch-icon">📍</div>
+          <div class="branch-number">05</div>
+          <h3 data-en="Qortuba Branch" data-ar="فرع قرطبة">Qortuba Branch</h3>
+          <p class="branch-area" data-en="Qortuba, Kuwait" data-ar="قرطبة، الكويت">Qortuba, Kuwait</p>
+          <a href="https://wa.me/96551789303" target="_blank" class="branch-cta" data-en="Get Directions" data-ar="احصل على الاتجاهات">Get Directions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TESTIMONIALS ══════════════ -->
+  <section class="testimonials-section">
+    <div class="section-header">
+      <div class="section-label reveal" data-en="Reviews" data-ar="التقييمات">Reviews</div>
+      <h2 class="reveal" data-en="What Our Guests Say" data-ar="ماذا يقول ضيوفنا">What Our Guests Say</h2>
+    </div>
+    <div class="testimonials-wrapper">
+      <div class="testimonials-slider">
+        <div class="testimonial-card card">
+          <div class="t-quote">"</div>
+          <p data-en="The Mixed Grill here is absolutely unmatched in all of Kuwait. The flavors are deep, the meat is always perfectly cooked, and the service is outstanding. We visit every Friday without fail!" data-ar="المشاوي المشكلة هنا لا مثيل لها في الكويت. النكهات عميقة، واللحم يُطهى دائماً بشكل مثالي، والخدمة رائعة. نزورهم كل جمعة دون استثناء!">
+            The Mixed Grill here is absolutely unmatched in all of Kuwait. The flavors are deep, the meat is always perfectly cooked, and the service is outstanding. We visit every Friday without fail!
+          </p>
+          <div class="t-stars">⭐⭐⭐⭐⭐</div>
+          <div class="t-author">
+            <div class="t-avatar">A</div>
+            <div>
+              <div class="t-name" data-en="Ahmed Al-Rashidi" data-ar="أحمد الراشدي">Ahmed Al-Rashidi</div>
+              <div class="t-location" data-en="Kuwait City" data-ar="مدينة الكويت">Kuwait City</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card card">
+          <div class="t-quote">"</div>
+          <p data-en="As an Indian expat in Kuwait, finding authentic biryani was a dream until I discovered Khaled Al Dwaihi. Their Chicken 65 and Biryani are exactly like home. I order at least three times a week!" data-ar="كمغترب هندي في الكويت، كان إيجاد برياني أصيل حلماً حتى اكتشفت مطعم خالد الدويحي. التشيكن 65 والبرياني هنا مثل بلدي تماماً. أطلبه ثلاث مرات أسبوعياً على الأقل!">
+            As an Indian expat in Kuwait, finding authentic biryani was a dream until I discovered Khaled Al Dwaihi. Their Chicken 65 and Biryani are exactly like home. I order at least three times a week!
+          </p>
+          <div class="t-stars">⭐⭐⭐⭐⭐</div>
+          <div class="t-author">
+            <div class="t-avatar">R</div>
+            <div>
+              <div class="t-name" data-en="Rajesh Kumar" data-ar="راجيش كومار">Rajesh Kumar</div>
+              <div class="t-location" data-en="Farwaniya, Kuwait" data-ar="الفروانية، الكويت">Farwaniya, Kuwait</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card card">
+          <div class="t-quote">"</div>
+          <p data-en="Open at 2am and the food is still piping hot and freshly made! The Machboos is a masterpiece — exactly the way my grandmother used to make it. This is the taste of Kuwait's soul." data-ar="مفتوح الساعة 2 صباحاً والطعام لا يزال ساخناً وطازجاً! المجبوس تحفة فنية — تماماً كما كانت جدتي تعده. هذا هو طعم روح الكويت.">
+            Open at 2am and the food is still piping hot and freshly made! The Machboos is a masterpiece — exactly the way my grandmother used to make it. This is the taste of Kuwait's soul.
+          </p>
+          <div class="t-stars">⭐⭐⭐⭐⭐</div>
+          <div class="t-author">
+            <div class="t-avatar">ف</div>
+            <div>
+              <div class="t-name" data-en="Fatima Al-Mutairi" data-ar="فاطمة المطيري">Fatima Al-Mutairi</div>
+              <div class="t-location" data-en="Hawalli, Kuwait" data-ar="حولي، الكويت">Hawalli, Kuwait</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-dots">
+        <button class="t-dot active" aria-label="Slide 1"></button>
+        <button class="t-dot" aria-label="Slide 2"></button>
+        <button class="t-dot" aria-label="Slide 3"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ CONTACT ══════════════ -->
+  <section id="contact" class="contact-section">
+    <div class="section-header">
+      <div class="section-label reveal" data-en="Contact Us" data-ar="تواصل معنا">Contact Us</div>
+      <h2 class="reveal" data-en="We're Here for You" data-ar="نحن هنا من أجلك">We're Here for You</h2>
+    </div>
+    <div class="contact-container">
+      <div class="contact-info reveal">
+        <div class="contact-item">
+          <div class="ci-icon">📞</div>
+          <div>
+            <div class="ci-label" data-en="Phone / WhatsApp" data-ar="الهاتف / واتساب">Phone / WhatsApp</div>
+            <div class="ci-value">+965 5178 9303</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">📍</div>
+          <div>
+            <div class="ci-label" data-en="Main Branch" data-ar="الفرع الرئيسي">Main Branch</div>
+            <div class="ci-value" data-en="Muhammad Ali Al-Dukhan St, Hawalli, Kuwait" data-ar="شارع محمد علي الدخان، حولي، الكويت">Muhammad Ali Al-Dukhan St, Hawalli, Kuwait</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">🕐</div>
+          <div>
+            <div class="ci-label" data-en="Working Hours" data-ar="ساعات العمل">Working Hours</div>
+            <div class="ci-value" data-en="Open 24 Hours · 7 Days a Week" data-ar="مفتوح 24 ساعة · 7 أيام في الأسبوع">Open 24 Hours · 7 Days a Week</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">⭐</div>
+          <div>
+            <div class="ci-label" data-en="Rating" data-ar="التقييم">Rating</div>
+            <div class="ci-value">4.9 / 5.0 — ⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+        <a class="btn-whatsapp" href="https://wa.me/96551789303" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          <span data-en="Chat on WhatsApp" data-ar="تواصل عبر واتساب">Chat on WhatsApp</span>
+        </a>
+      </div>
+      <div class="contact-map reveal">
+        <iframe
+          src="https://www.google.com/maps?q=29.3117,47.9803&z=15&output=embed"
+          width="100%" height="340"
+          style="border:0;border-radius:16px;filter:grayscale(20%)"
+          loading="lazy" allowfullscreen
+          title="Khaled Al Dwaihi Location">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col footer-brand">
+        <div class="footer-logo">
+          <span class="fl-ar">خالد الدويحي</span>
+          <span class="fl-en">Khaled Al Dwaihi</span>
+        </div>
+        <p class="footer-tagline" data-en="Premium multi-cuisine restaurant in Kuwait. Arabic · Indian · Grills" data-ar="مطعم متعدد المطابخ في الكويت. عربي · هندي · مشاوي">Premium multi-cuisine restaurant in Kuwait. Arabic · Indian · Grills</p>
+        <div class="footer-rating-bar">
+          <span>⭐ 4.9 / 5.0</span>
+          <span class="footer-open" data-en="Open 24/7" data-ar="مفتوح 24/7">Open 24/7</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#hero" data-en="Home" data-ar="الرئيسية">Home</a></li>
+          <li><a href="#dishes" data-en="Menu" data-ar="القائمة">Menu</a></li>
+          <li><a href="#about" data-en="About Us" data-ar="عنّا">About Us</a></li>
+          <li><a href="#branches" data-en="Branches" data-ar="الفروع">Branches</a></li>
+          <li><a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-en="Connect" data-ar="تواصل">Connect</h4>
+        <div class="footer-social">
+          <a href="https://wa.me/96551789303" target="_blank" class="social-btn whatsapp-btn" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            <span>WhatsApp</span>
+          </a>
+          <a href="#" class="social-btn instagram-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <span>Instagram</span>
+          </a>
+        </div>
+        <div class="footer-phone">
+          <span>📞</span>
+          <a href="tel:+96551789303">+965 5178 9303</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-en="© 2025 Khaled Al Dwaihi · All rights reserved" data-ar="جميع الحقوق محفوظة · 2025 مطعم خالد الدويحي">© 2025 Khaled Al Dwaihi · All rights reserved</span>
+      <span class="footer-bottom-sep">|</span>
+      <span data-en="Kuwait" data-ar="الكويت">Kuwait</span>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a class="floating-wa" href="https://wa.me/96551789303" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
