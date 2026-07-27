@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saket Ajeeb Restaurant — Khaitan, Kuwait</title>
+  <meta name="description" content="Saket Ajeeb — One of Kuwait's oldest restaurants. 50+ years of chapati, karak, and honest food in Khaitan, Farwaniya." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner">
+
+      <!-- LOGO FLIP BOARD -->
+      <div class="navbar-logo">
+        <div class="flip-board" id="flipBoard" aria-label="Saket Ajeeb Restaurant">
+          <!-- tiles injected by JS -->
+        </div>
+        <div class="navbar-arabic-sub" id="navArabicSub">مطعم ساكت عجيب</div>
+      </div>
+
+      <!-- NAV LINKS -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="nav-link flip-link" data-en="Home" data-ar="الرئيسية">Home</a></li>
+        <li><a href="#story" class="nav-link flip-link" data-en="Our Story" data-ar="قصتنا">Our Story</a></li>
+        <li><a href="#menu" class="nav-link flip-link" data-en="Menu" data-ar="القائمة">Menu</a></li>
+        <li><a href="#legacy" class="nav-link flip-link" data-en="Legacy" data-ar="الإرث">Legacy</a></li>
+        <li><a href="#gallery" class="nav-link flip-link" data-en="Gallery" data-ar="المعرض">Gallery</a></li>
+        <li><a href="#contact" class="nav-link flip-link" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+      </ul>
+
+      <!-- CONTROLS -->
+      <div class="navbar-controls">
+        <div class="toggle-group theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <button class="toggle-btn active" id="btnDay" aria-pressed="false">DAY</button>
+          <button class="toggle-btn" id="btnNight" aria-pressed="true">NIGHT</button>
+        </div>
+        <div class="toggle-group lang-toggle" id="langToggle" aria-label="Toggle language">
+          <button class="toggle-btn active" id="btnEn" aria-pressed="true">EN</button>
+          <button class="toggle-btn" id="btnAr" aria-pressed="false">ع</button>
+        </div>
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span class="ham-line"></span>
+          <span class="ham-line"></span>
+          <span class="ham-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU PANEL -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <ul class="mobile-nav-links" id="mobileNavLinks">
+        <li><a href="#hero" class="nav-link" data-en="Home" data-ar="الرئيسية">Home</a></li>
+        <li><a href="#story" class="nav-link" data-en="Our Story" data-ar="قصتنا">Our Story</a></li>
+        <li><a href="#menu" class="nav-link" data-en="Menu" data-ar="القائمة">Menu</a></li>
+        <li><a href="#legacy" class="nav-link" data-en="Legacy" data-ar="الإرث">Legacy</a></li>
+        <li><a href="#gallery" class="nav-link" data-en="Gallery" data-ar="المعرض">Gallery</a></li>
+        <li><a href="#contact" class="nav-link" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+      </ul>
+      <div class="mobile-phone">+965 2473 4614</div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-grain"></div>
+    <div class="hero-content">
+      <p class="hero-est" data-en="EST. 1970s — KHAITAN, FARWANIYA, KUWAIT" data-ar="تأسس في السبعينيات — الخيطان، الفروانية، الكويت">EST. 1970s — KHAITAN, FARWANIYA, KUWAIT</p>
+      <div class="hero-rule"></div>
+      <h1 class="hero-heading">
+        <span class="hero-word">Saket</span>
+        <span class="hero-word">Ajeeb</span>
+      </h1>
+      <p class="hero-arabic" data-en="مطعم ساكت عجيب" data-ar="مطعم ساكت عجيب">مطعم ساكت عجيب</p>
+      <p class="hero-tagline" data-en="Fifty years of chapati, karak, and a magnet that keeps Kuwait coming back." data-ar="خمسون عاماً من الشباتي والكرك وسحر لا يُقاوَم">Fifty years of chapati, karak, and a magnet that keeps Kuwait coming back.</p>
+      <div class="hero-ctas">
+        <a href="#menu" class="btn-primary" data-en="Explore the Menu" data-ar="استكشف القائمة">Explore the Menu</a>
+        <a href="tel:+96524734614" class="btn-ghost">Call +965 2473 4614</a>
+      </div>
+    </div>
+
+    <!-- Steam decoration -->
+    <div class="steam-wrap">
+      <svg class="steam-svg" viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path class="steam-path steam-1" d="M20,90 C15,75 30,65 20,50 C10,35 25,25 20,10" fill="none" stroke-width="2" stroke-linecap="round"/>
+        <path class="steam-path steam-2" d="M38,90 C33,72 48,62 38,47 C28,32 43,22 38,7" fill="none" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <!-- Bottom strip -->
+    <div class="hero-strip">
+      <span data-en="Open from early morning · Indian · Arabic · Pakistani · Halal" data-ar="يفتح من الصباح الباكر · هندي · عربي · باكستاني · حلال">Open from early morning &nbsp;·&nbsp; Indian &nbsp;·&nbsp; Arabic &nbsp;·&nbsp; Pakistani &nbsp;·&nbsp; Halal</span>
+    </div>
+  </section>
+
+  <!-- ========== OUR STORY ========== -->
+  <section class="story" id="story">
+    <!-- Faux newspaper header -->
+    <div class="newspaper-header">
+      <span class="nh-left" data-en="THE KHAITAN CHRONICLE" data-ar="الخيطان كرونيكل">THE KHAITAN CHRONICLE</span>
+      <span class="nh-divider" aria-hidden="true">|</span>
+      <span class="nh-right" data-en="50 YEARS OF HONEST FOOD" data-ar="خمسون عاماً من الطعام الصادق">50 YEARS OF HONEST FOOD</span>
+    </div>
+
+    <div class="story-container">
+      <h2 class="section-heading story-heading" data-en="Our Story" data-ar="قصتنا">Our Story</h2>
+
+      <div class="newspaper-columns">
+        <!-- Left column — article -->
+        <div class="news-col-left" id="newsLeft">
+          <p class="article-body dropcap">Saket Ajeeb opened in the 1970s in Khaitan and never changed. In a city that tears down and rebuilds every decade, this restaurant simply kept making chapati. No renovation. No rebrand. No Instagram. Just the counter, the fire, and the food.</p>
+          <p class="article-body">The name holds its own poetry. Saket — meaning quiet and still, drawn from Sanskrit and Hindi. Ajeeb — meaning strange and wonderful, drawn from Arabic. Perhaps the founders knew something. The Wonderfully Strange. Fifty years later, Kuwaiti nationals, South Asian workers, and curious travellers all find their way here before the city wakes up.</p>
+          <p class="article-body">There is no secret recipe for what makes Saket Ajeeb special. Fast service. Unbelievably cheap prices. Karak chai that actually tastes like someone cared. The kind of place that reviewers say you are out of the loop for never visiting. One of the oldest restaurants in Kuwait — and still the most honest.</p>
+        </div>
+
+        <!-- Right column — pull quote -->
+        <div class="news-col-right" id="newsRight">
+          <blockquote class="pull-quote">
+            <p class="pq-text" data-en='"If you live in Kuwait and never been here — you are out of the loop."' data-ar='"لو عشت في الكويت ولم تأتِ هنا — فأنت بعيد عن الصورة."'>"If you live in Kuwait and never been here — you are out of the loop."</p>
+            <cite class="pq-cite">— TripAdvisor Reviewer, Kuwait</cite>
+          </blockquote>
+          <div class="story-note">
+            <p>Opposite Khaitan Co-operative Society. Open before sunrise. Cash only. No reservations needed — there never were.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats row -->
+      <div class="stats-row">
+        <div class="stat-block">
+          <div class="stat-rule"></div>
+          <div class="stat-number" id="statYears" data-target="50">0</div>
+          <div class="stat-label" data-en="Years in Khaitan" data-ar="عاماً في الخيطان">Years in Khaitan</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-rule"></div>
+          <div class="stat-number" id="statCuisines" data-target="3">0</div>
+          <div class="stat-label" data-en="Cuisines" data-ar="مطابخ">Cuisines</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-rule"></div>
+          <div class="stat-number" id="statRank" data-target="13">0</div>
+          <div class="stat-label" data-en="Ranked in Farwaniya" data-ar="تصنيفاً في الفروانية">Ranked in Farwaniya</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MENU ========== -->
+  <section class="menu-section" id="menu">
+    <div class="menu-container">
+      <h2 class="section-heading menu-section-heading" data-en="What We Serve" data-ar="قائمة الطعام">What We Serve</h2>
+
+      <div class="menu-card" id="menuCard">
+        <div class="menu-card-texture"></div>
+
+        <div class="menu-card-header">
+          <span class="menu-card-title" data-en="SAKET AJEEB — MENU" data-ar="مطعم ساكت عجيب — القائمة">SAKET AJEEB — MENU</span>
+          <div class="menu-ornament"></div>
+        </div>
+
+        <!-- Breakfast -->
+        <div class="menu-category">
+          <h3 class="menu-cat-label" data-en="BREAKFAST" data-ar="الإفطار">BREAKFAST</h3>
+          <div class="menu-items">
+            <div class="menu-item">
+              <span class="mi-name" data-en="Chapati with Keema Nashif" data-ar="شباتي مع كيما ناشف">Chapati with Keema Nashif</span>
+              <span class="mi-dots"></span>
+              <span class="mi-price">—</span>
+            </div>
+            <div class="menu-item">
+              <span class="mi-name" data-en="Shakshuka (Egg &amp; Tomato)" data-ar="شكشوكة (بيض وطماطم)">Shakshuka (Egg &amp; Tomato)</span>
+              <span class="mi-dots"></span>
+              <span class="mi-price">—</span>
+            </div>
+            <div class="menu-item">
+              <span class="mi-name" data-en="Omelette Plain" data-ar="عجة سادة">Omelette Plain</span>
+              <span class="mi-dots"></span>
+              <span class="mi-price">—</span>
+            </div>
+            <div class="menu-item">
+              <span class="mi-name" data-en="Paratha" data-ar="باراثا">Paratha</span>
+              <span class="mi-dots"></span>
+              <span class="mi-price">—</span>
+            </div>
+            <div class="menu-item">
+              <span class="mi-name" data-en="Sambousa" data-ar="سمبوسة">Sambousa</span>
+              <span class="mi-dots"></span>
+              <span class="mi-price">—</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-divider"></div>
+
+        <!-- Rice & Biryani -->
+        <div class="menu-category">
+          <h3 class="menu-cat-label" data-en="RICE &amp; BIRYANI" data-ar="أرز وبريياني">RICE &amp; BIRYANI</h3>
+          <div class="menu-items">
+            <div class="menu-item">
+              <span class="mi-name" data-en="Chicken Biryani" data-ar="برياني دجاج">Chicken Biryani</span>
+              <span class="mi-dots"></span>
+              <span class="mi-price">—</span>
+            </div>
+            <div class="menu-item">
+              <span class="mi-name" data-en="Mutton Biryani" data-ar="برياني لحم">Mutton Biryani</span>
+              <span class="mi-dots"></span>
+              <span class="mi-price">—</span>
+            </div>
+            <div class="menu-item">
+              <span class="mi-name" data-en="Prawn Biryani" data-ar="برياني جمبري">Prawn Biryani</span>
+              <span class="mi-dots"></span>
+              <span class="mi-price">—</span>
+            </div>
+            <div class="menu-item">
+              <span class="mi-name" data-en="Plain Rice with Dal" data-ar="أرز سادة مع عدس">Plain Rice with Dal</span>
+              <span class="mi-dots"></span>
+              <span class="mi-price">—</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-divider"></div>
+
+        <!-- Grills & Mains -->
+        <div class="menu-category">
+          <h3 class="menu-cat-label" data-en="GRILLS &amp; MAINS" data-ar="مشويات وأطباق رئيسية">GRILLS &amp; MAINS</h3>
+          <div class="menu-items">
+            <div class="menu-item">
+              <span class="mi-name" data-en="Chicken Tikka" data-ar="تكا دجاج">Chicken Tikka</span>
+              <span class="mi-dots"></span>
+              <span class="mi-price">—</span>
+            </div>
+            <div class="menu-item">
+              <span class="mi-name" data-en="Keema Curry" data-ar="كاري كيما">Keema Curry</span>
+              <span class="mi-dots"></span>
+              <span class="mi-price">—</span>
+            </div>
+            <div class="menu-item">
+              <span class="mi-name" data-en="Mixed Grill" data-ar="مشكل مشوي">Mixed Grill</span>
+              <span class="mi-dots"></span>
+              <span class="mi-price">—</span>
+            </div>
+            <div class="menu-item">
+              <span class="mi-name" data-en="Vegetable Curry" data-ar="كاري خضار">Vegetable Curry</span>
+              <span class="mi-dots"></span>
+              <span class="mi-price">—</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-divider"></div>
+
+        <!-- Drinks -->
+        <div class="menu-category">
+          <h3 class="menu-cat-label" data-en="DRINKS" data-ar="المشروبات">DRINKS</h3>
+          <div class="menu-items">
+            <div class="menu-item">
+              <span class="mi-name" data-en="Karak Chai (Spiced Milk Tea)" data-ar="كرك (شاي حليب بالتوابل)">Karak Chai (Spiced Milk Tea)</span>
+              <span class="mi-dots"></span>
+              <span class="mi-price">—</span>
+            </div>
+            <div class="menu-item">
+              <span class="mi-name" data-en="Masala Tea" data-ar="شاي مسالا">Masala Tea</span>
+              <span class="mi-dots"></span>
+              <span class="mi-price">—</span>
+            </div>
+            <div class="menu-item">
+              <span class="mi-name" data-en="Cold Water" data-ar="ماء بارد">Cold Water</span>
+              <span class="mi-dots"></span>
+              <span class="mi-price">—</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card-footer">
+          <p class="menu-footer-note" data-en="All food is freshly prepared and 100% Halal." data-ar="جميع الأطعمة طازجة ومعدّة بشكل يومي وحلال 100%.">All food is freshly prepared and 100% Halal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LEGACY ========== -->
+  <section class="legacy" id="legacy">
+    <div class="legacy-container">
+      <div class="legacy-stat" id="legStat1">
+        <div class="legacy-rule"></div>
+        <div class="legacy-number" id="legYears" data-target="50" data-suffix="+">0</div>
+        <div class="legacy-label" data-en="Years in Khaitan" data-ar="عاماً في الخيطان">Years in Khaitan</div>
+      </div>
+      <div class="legacy-stat" id="legStat2">
+        <div class="legacy-rule"></div>
+        <div class="legacy-number" id="legCuisines" data-target="3" data-suffix="">0</div>
+        <div class="legacy-label" data-en="Cuisines" data-ar="مطابخ">Cuisines</div>
+      </div>
+      <div class="legacy-stat" id="legStat3">
+        <div class="legacy-rule"></div>
+        <div class="legacy-number" id="legRank" data-target="13" data-prefix="#">0</div>
+        <div class="legacy-label" data-en="Ranked in Farwaniya" data-ar="تصنيفاً في الفروانية">Ranked in Farwaniya</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="testimonials" id="testimonials">
+    <div class="testimonials-container">
+      <h2 class="section-heading testimonials-heading" data-en="From the Counter" data-ar="يقولون عنّا">From the Counter</h2>
+      <div class="receipts-board">
+        <div class="receipt-slip" style="--rot: -2deg;">
+          <div class="receipt-top-edge"></div>
+          <div class="receipt-body">
+            <p class="receipt-quote">"If you live in Kuwait and never been here you are out of the loop. Nothing fancy but it has a special magnet."</p>
+            <p class="receipt-meta">TripAdvisor, Kuwait</p>
+          </div>
+          <div class="receipt-bottom-edge"></div>
+        </div>
+        <div class="receipt-slip" style="--rot: 1.5deg;">
+          <div class="receipt-top-edge"></div>
+          <div class="receipt-body">
+            <p class="receipt-quote">"Best chabati in Kuwait and the price is just unbelievably cheap."</p>
+            <p class="receipt-meta">TripAdvisor, Kuwait</p>
+          </div>
+          <div class="receipt-bottom-edge"></div>
+        </div>
+        <div class="receipt-slip" style="--rot: -1deg;">
+          <div class="receipt-top-edge"></div>
+          <div class="receipt-body">
+            <p class="receipt-quote">"One of the oldest restaurants in Kuwait. Serves Arabic, Indian and Pakistani dishes."</p>
+            <p class="receipt-meta">TripAdvisor, Kuwait</p>
+          </div>
+          <div class="receipt-bottom-edge"></div>
+        </div>
+        <div class="receipt-slip" style="--rot: 2.5deg;">
+          <div class="receipt-top-edge"></div>
+          <div class="receipt-body">
+            <p class="receipt-quote">"Great and traditional. Good Indian breakfast — chapati, keema, eggs. Very cheap. You should try it."</p>
+            <p class="receipt-meta">TripAdvisor, Kuwait</p>
+          </div>
+          <div class="receipt-bottom-edge"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALLERY ========== -->
+  <section class="gallery" id="gallery">
+    <div class="gallery-container">
+      <h2 class="section-heading gallery-heading" data-en="AT THE COUNTER" data-ar="عند الكاونتر">AT THE COUNTER</h2>
+      <div class="gallery-grid">
+        <div class="gallery-tile tile-wide" data-name="Chapati">
+          <img src="https://images.pexels.com/photos/37421007/pexels-photo-37421007.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Chapati with lentil curry" loading="lazy" />
+          <div class="tile-overlay"><span class="tile-name">Chapati</span></div>
+        </div>
+        <div class="gallery-tile tile-narrow" data-name="Karak Chai">
+          <img src="https://images.pexels.com/photos/29650995/pexels-photo-29650995.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Masala chai karak tea" loading="lazy" />
+          <div class="tile-overlay"><span class="tile-name">Karak Chai</span></div>
+        </div>
+        <div class="gallery-tile tile-narrow" data-name="Keema">
+          <img src="https://images.pexels.com/photos/7340942/pexels-photo-7340942.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Keema minced meat curry" loading="lazy" />
+          <div class="tile-overlay"><span class="tile-name">Keema</span></div>
+        </div>
+        <div class="gallery-tile tile-wide" data-name="Sambousa">
+          <img src="https://images.pexels.com/photos/37382223/pexels-photo-37382223.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Crispy sambousa" loading="lazy" />
+          <div class="tile-overlay"><span class="tile-name">Sambousa</span></div>
+        </div>
+        <div class="gallery-tile tile-wide" data-name="Biryani">
+          <img src="https://images.pexels.com/photos/9609860/pexels-photo-9609860.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Chicken biryani" loading="lazy" />
+          <div class="tile-overlay"><span class="tile-name">Biryani</span></div>
+        </div>
+        <div class="gallery-tile tile-narrow" data-name="Shakshuka">
+          <img src="https://images.pexels.com/photos/6275106/pexels-photo-6275106.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Shakshuka eggs in tomato sauce" loading="lazy" />
+          <div class="tile-overlay"><span class="tile-name">Shakshuka</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="contact" id="contact">
+    <div class="contact-container">
+      <h2 class="section-heading contact-heading" data-en="Find Us" data-ar="أين نحن">Find Us</h2>
+      <div class="contact-columns">
+
+        <!-- Left: Address info -->
+        <div class="contact-info">
+          <address class="address-stamp">
+            <span>SAKET AJEEB RESTAURANT</span>
+            <span>KHAITAN, OPP. CO-OP SOCIETY</span>
+            <span>FARWANIYA 83001, KUWAIT</span>
+            <span>TEL: +965 2473 4614</span>
+          </address>
+          <div class="contact-actions">
+            <a href="tel:+96524734614" class="btn-primary contact-btn" data-en="+965 2473 4614" data-ar="+965 2473 4614">+965 2473 4614</a>
+            <a href="https://wa.me/96524734614" target="_blank" rel="noopener noreferrer" class="btn-ghost contact-btn" data-en="WhatsApp Us" data-ar="واتساب">WhatsApp Us</a>
+          </div>
+          <p class="contact-hours" data-en="Open from early morning · Halal · Dine In &amp; Take Away" data-ar="يفتح من الصباح الباكر · حلال · داخل المطعم والطلب الخارجي">Open from early morning &nbsp;·&nbsp; Halal &nbsp;·&nbsp; Dine In &amp; Take Away</p>
+        </div>
+
+        <!-- Right: Google Maps embed -->
+        <div class="contact-map">
+          <div class="map-wrapper">
+            <iframe
+              src="https://maps.google.com/maps?q=29.293545,47.969414&z=16&output=embed"
+              width="100%"
+              height="400"
+              style="border:0; display:block; width:100%; height:400px;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer" id="footer">
+    <div class="footer-top-rule"></div>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <div class="footer-tiles" id="footerTiles" aria-label="Saket Ajeeb"></div>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#hero" class="footer-link" data-en="Home" data-ar="الرئيسية">Home</a>
+        <a href="#story" class="footer-link" data-en="Our Story" data-ar="قصتنا">Our Story</a>
+        <a href="#menu" class="footer-link" data-en="Menu" data-ar="القائمة">Menu</a>
+        <a href="#legacy" class="footer-link" data-en="Legacy" data-ar="الإرث">Legacy</a>
+        <a href="#gallery" class="footer-link" data-en="Gallery" data-ar="المعرض">Gallery</a>
+        <a href="#contact" class="footer-link" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+      </nav>
+      <div class="footer-phone">
+        <a href="tel:+96524734614" class="footer-phone-link">+965 2473 4614</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy" data-en="Saket Ajeeb Restaurant — Khaitan, Farwaniya, Kuwait · Est. 1970s" data-ar="مطعم ساكت عجيب — الخيطان، الفروانية، الكويت · تأسس منذ السبعينيات">Saket Ajeeb Restaurant — Khaitan, Farwaniya, Kuwait · Est. 1970s</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
