@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Green Pepper Restaurant — Kerala Kitchen, Farwaniya Kuwait</title>
+  <meta name="description" content="Authentic Kerala and South Indian home-style cooking in Farwaniya, Kuwait. Biryani, Kappa, Beef Curry, Monthly Mess subscription. Call +965 55012924." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-top-border"></div>
+    <div class="nav-inner">
+      <!-- Logo -->
+      <a href="#hero" class="nav-logo" id="nav-logo" aria-label="Green Pepper Restaurant Home">
+        <svg class="pepper-icon" id="pepper-svg" width="14" height="22" viewBox="0 0 14 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path class="pepper-stem" d="M7 1 C7 1 10 3 9 6" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          <path class="pepper-leaf" d="M9 4 C11 2 13 4 11 6" stroke="var(--accent)" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+          <path class="pepper-body" d="M5.5 6 C3 7 2 10 2.5 13.5 C3 17 5 20 7 20.5 C9 20 11 17 11.5 13.5 C12 10 11 7 8.5 6 Z" stroke="var(--accent)" stroke-width="1.4" fill="none" stroke-linejoin="round"/>
+        </svg>
+        <span class="logo-green" data-en="Green" data-ar="جرين">Green</span>
+        <span class="logo-pepper" data-en="Pepper" data-ar="بيبر">Pepper</span>
+      </a>
+
+      <!-- Nav Links -->
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#hero" class="nav-link" data-en="Home" data-ar="الرئيسية">Home</a></li>
+        <li><a href="#about" class="nav-link" data-en="About" data-ar="عن المطعم">About</a></li>
+        <li><a href="#dishes" class="nav-link" data-en="Menu" data-ar="القائمة">Menu</a></li>
+        <li><a href="#mess" class="nav-link" data-en="Mess" data-ar="الاشتراك">Mess</a></li>
+        <li><a href="#gallery" class="nav-link" data-en="Gallery" data-ar="المعرض">Gallery</a></li>
+        <li><a href="#contact" class="nav-link" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+      </ul>
+
+      <!-- Controls -->
+      <div class="nav-controls">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme" title="Toggle theme">
+          <span class="toggle-track">
+            <svg class="icon-sun" width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+              <line x1="12" y1="2" x2="12" y2="5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="12" y1="19" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="2" y1="12" x2="5" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="19" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="4.22" y1="4.22" x2="6.34" y2="6.34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="17.66" y1="17.66" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="4.22" y1="19.78" x2="6.34" y2="17.66" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="17.66" y1="6.34" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span class="toggle-thumb"></span>
+            <svg class="icon-moon" width="10" height="10" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </button>
+        <!-- Language Toggle -->
+        <button class="lang-toggle" id="lang-toggle" aria-label="Toggle Arabic/English language">
+          <span class="lang-en active">EN</span>
+          <span class="lang-divider">|</span>
+          <span class="lang-ar">AR</span>
+        </button>
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Open mobile menu" aria-expanded="false">
+          <span class="ham-line ham-line-1"></span>
+          <span class="ham-line ham-line-2"></span>
+          <span class="ham-line ham-line-3"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Panel -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+    <ul class="mobile-nav-links" role="list">
+      <li><a href="#hero" class="mobile-nav-link" data-en="Home" data-ar="الرئيسية">Home</a></li>
+      <li><a href="#about" class="mobile-nav-link" data-en="About" data-ar="عن المطعم">About</a></li>
+      <li><a href="#dishes" class="mobile-nav-link" data-en="Menu" data-ar="القائمة">Menu</a></li>
+      <li><a href="#mess" class="mobile-nav-link" data-en="Mess" data-ar="الاشتراك">Mess</a></li>
+      <li><a href="#gallery" class="mobile-nav-link" data-en="Gallery" data-ar="المعرض">Gallery</a></li>
+      <li><a href="#contact" class="mobile-nav-link" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+    </ul>
+    <div class="mobile-menu-footer">
+      <p class="mobile-hours">Open Daily · Delivery via Katch</p>
+      <p class="mobile-phones">+965 55012924 &nbsp;·&nbsp; +965 69392722</p>
+    </div>
+  </div>
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero" aria-label="Hero section">
+      <div class="hero-bg">
+        <img src="https://images.pexels.com/photos/35267281/pexels-photo-35267281.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1080&w=1920" alt="Authentic Kerala meal spread with rice, curry, and traditional dishes" class="hero-img" loading="eager" />
+        <div class="hero-overlay"></div>
+        <!-- Banana leaf parallax SVG -->
+        <div class="banana-leaf-wrap" id="banana-leaf-parallax" aria-hidden="true">
+          <svg class="banana-leaf-svg" viewBox="0 0 400 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M200 10 C120 60 40 200 80 350 C100 430 160 520 200 580 C240 520 300 430 320 350 C360 200 280 60 200 10Z" fill="var(--accent)" opacity="0.07"/>
+            <line x1="200" y1="10" x2="200" y2="580" stroke="var(--accent)" stroke-width="2" opacity="0.05"/>
+            <path d="M200 100 C160 130 130 180 140 230" stroke="var(--accent)" stroke-width="1" opacity="0.04"/>
+            <path d="M200 100 C240 130 270 180 260 230" stroke="var(--accent)" stroke-width="1" opacity="0.04"/>
+            <path d="M200 200 C155 230 125 280 135 330" stroke="var(--accent)" stroke-width="1" opacity="0.04"/>
+            <path d="M200 200 C245 230 275 280 265 330" stroke="var(--accent)" stroke-width="1" opacity="0.04"/>
+            <path d="M200 310 C160 340 135 390 145 430" stroke="var(--accent)" stroke-width="1" opacity="0.04"/>
+            <path d="M200 310 C240 340 265 390 255 430" stroke="var(--accent)" stroke-width="1" opacity="0.04"/>
+          </svg>
+        </div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-label-row" aria-hidden="true">
+          <span class="hero-label-dot"></span>
+          <span class="hero-label" data-en="AUTHENTIC KERALA KITCHEN — FARWANIYA, KUWAIT" data-ar="مطبخ كيرالا الأصيل — الفروانية، الكويت">AUTHENTIC KERALA KITCHEN — FARWANIYA, KUWAIT</span>
+        </div>
+        <h1 class="hero-heading" id="hero-heading">
+          <span class="hero-word" data-en="Cooked" data-ar="مطبوخ">Cooked</span>
+          <span class="hero-word" data-en="Like" data-ar="زي">Like</span>
+          <span class="hero-word" data-en="Home." data-ar="البيت.">Home.</span>
+          <br class="hero-br"/>
+          <span class="hero-word" data-en="Served" data-ar="يُقدَّم">Served</span>
+          <span class="hero-word" data-en="With" data-ar="باحترام.">With</span>
+          <span class="hero-word" data-en="Respect." data-ar="">Respect.</span>
+        </h1>
+        <p class="hero-sub" data-en="Kerala-style biryani, kappa, beef curry, and more — made fresh daily." data-ar="بريانية وكاپا وكاري لحم كيرالية — محضّرة طازجة كل يوم.">Kerala-style biryani, kappa, beef curry, and more — made fresh daily.</p>
+        <div class="hero-ctas">
+          <a href="#dishes" class="btn btn-filled" data-en="See the Menu" data-ar="القائمة الكاملة">See the Menu</a>
+          <a href="https://www.katchkw.com" target="_blank" rel="noopener" class="btn btn-ghost" data-en="Order Now" data-ar="اطلب الآن">Order Now</a>
+        </div>
+      </div>
+      <div class="hero-bottom-strip">
+        <span class="hero-strip-label" data-en="Call to Order" data-ar="اتصل للطلب">Call to Order</span>
+        <span class="hero-strip-sep">—</span>
+        <a href="tel:+96555012924" class="hero-strip-phone">+965 55012924</a>
+        <span class="hero-strip-dot">·</span>
+        <a href="tel:+96569392722" class="hero-strip-phone">+965 69392722</a>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="about" id="about" aria-label="About Green Pepper">
+      <!-- Banana leaf watermark -->
+      <div class="about-watermark" aria-hidden="true">
+        <svg viewBox="0 0 300 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M150 5 C90 45 30 150 60 270 C78 340 125 415 150 460 C175 415 222 340 240 270 C270 150 210 45 150 5Z" fill="var(--text)" opacity="0.04"/>
+          <line x1="150" y1="5" x2="150" y2="460" stroke="var(--text)" stroke-width="1.5" opacity="0.03"/>
+        </svg>
+      </div>
+      <div class="about-inner">
+        <div class="about-img-col">
+          <div class="about-img-frame">
+            <img src="https://images.pexels.com/photos/8250271/pexels-photo-8250271.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=600" alt="Colorful spices in a Kerala market" class="about-img" loading="lazy" />
+            <div class="about-img-tag">
+              <span data-en="Est. in Kuwait" data-ar="تأسس في الكويت">Est. in Kuwait</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-text-col">
+          <span class="section-label" data-en="Our Kitchen" data-ar="مطبخنا">Our Kitchen</span>
+          <h2 class="section-heading about-heading" data-en="The Flavors of Kerala, Right Here in Farwaniya" data-ar="نكهات كيرالا، هنا في الفروانية">The Flavors of Kerala, Right Here in Farwaniya</h2>
+          <p class="about-para" data-en="Green Pepper was born from a simple belief — that people living far from home deserve food that actually tastes like home. Every dish comes from Kerala kitchen tradition: whole spices, slow cooking, real coconut oil." data-ar="وُلد جرين بيبر من إيمان بسيط — أن من يعيشون بعيداً عن وطنهم يستحقون طعاماً يشبه طعم البيت فعلاً. كل طبق ينبع من تقاليد مطبخ كيرالا: توابل كاملة، طهي بطيء، وزيت جوز هند حقيقي.">Green Pepper was born from a simple belief — that people living far from home deserve food that actually tastes like home. Every dish comes from Kerala kitchen tradition: whole spices, slow cooking, real coconut oil.</p>
+          <p class="about-para" data-en="Whether it's a plate of Jeerakasala biryani layered with tender beef, or a humble bowl of Kappa with curry, Green Pepper delivers the kind of food that makes you forget you're in Kuwait." data-ar="سواء كان طبق بريانية جيراكاسالا المطبوخة مع اللحم الطري، أو وعاء كاپا بسيط مع الكاري، يقدم جرين بيبر الطعام الذي يجعلك تنسى أنك في الكويت.">Whether it's a plate of Jeerakasala biryani layered with tender beef, or a humble bowl of Kappa with curry, Green Pepper delivers the kind of food that makes you forget you're in Kuwait.</p>
+          <div class="about-stats">
+            <div class="about-stat">
+              <span class="stat-title" data-en="Kerala Recipes" data-ar="وصفات كيرالا">Kerala Recipes</span>
+              <span class="stat-sub" data-en="Passed down, not printed" data-ar="متوارثة، لا مكتوبة">Passed down, not printed</span>
+            </div>
+            <div class="about-stat">
+              <span class="stat-title" data-en="Family Kitchen" data-ar="مطبخ عائلي">Family Kitchen</span>
+              <span class="stat-sub" data-en="Run with care, every day" data-ar="يُدار بعناية كل يوم">Run with care, every day</span>
+            </div>
+            <div class="about-stat">
+              <span class="stat-title" data-en="Daily Fresh Prep" data-ar="تحضير يومي طازج">Daily Fresh Prep</span>
+              <span class="stat-sub" data-en="No shortcuts. No shortcuts." data-ar="لا تنازلات. أبداً.">No shortcuts. Ever.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SIGNATURE DISHES ===================== -->
+    <section class="dishes" id="dishes" aria-label="Signature dishes">
+      <div class="dishes-inner">
+        <div class="dishes-header">
+          <span class="section-label" data-en="Straight from the stove" data-ar="مباشرة من الموقد">Straight from the stove</span>
+          <h2 class="section-heading" data-en="From Our Stove" data-ar="من موقدنا">From Our Stove</h2>
+        </div>
+        <div class="dishes-grid">
+
+          <article class="dish-card" data-index="0">
+            <div class="dish-card-img-wrap">
+              <img src="https://images.pexels.com/photos/34159106/pexels-photo-34159106.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Jeerakasala Chicken Dum Biryani" loading="lazy" />
+              <div class="dish-card-border-accent"></div>
+            </div>
+            <div class="dish-card-body">
+              <span class="dish-tag" data-en="Kerala Special" data-ar="تخصص كيرالا">Kerala Special</span>
+              <h3 class="dish-name" data-en="Jeerakasala Chicken Dum Biryani" data-ar="بريانية دم دجاج جيراكاسالا">Jeerakasala Chicken Dum Biryani</h3>
+              <p class="dish-desc" data-en="Fragrant short-grain rice, slow-cooked under dum with whole spices and tender chicken." data-ar="أرز قصير الحبة عطر، مطبوخ ببطء مع توابل كاملة ودجاج طري.">Fragrant short-grain rice, slow-cooked under dum with whole spices and tender chicken.</p>
+            </div>
+          </article>
+
+          <article class="dish-card" data-index="1">
+            <div class="dish-card-img-wrap">
+              <img src="https://images.pexels.com/photos/20446382/pexels-photo-20446382.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Kappa with Beef Curry" loading="lazy" />
+              <div class="dish-card-border-accent"></div>
+            </div>
+            <div class="dish-card-body">
+              <span class="dish-tag" data-en="Rice &amp; Curry" data-ar="أرز وكاري">Rice &amp; Curry</span>
+              <h3 class="dish-name" data-en="Kappa with Beef Curry" data-ar="كاپا مع كاري اللحم">Kappa with Beef Curry</h3>
+              <p class="dish-desc" data-en="Mashed tapioca with fiery Kerala beef curry — the soul of every Malayali kitchen." data-ar="تابيوكا مهروسة مع كاري لحم كيرالي حار — روح كل مطبخ مالايالي.">Mashed tapioca with fiery Kerala beef curry — the soul of every Malayali kitchen.</p>
+            </div>
+          </article>
+
+          <article class="dish-card" data-index="2">
+            <div class="dish-card-img-wrap">
+              <img src="https://images.pexels.com/photos/14731625/pexels-photo-14731625.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Ghee Rice with Beef Varattiyathu" loading="lazy" />
+              <div class="dish-card-border-accent"></div>
+            </div>
+            <div class="dish-card-body">
+              <span class="dish-tag" data-en="Rice &amp; Curry" data-ar="أرز وكاري">Rice &amp; Curry</span>
+              <h3 class="dish-name" data-en="Ghee Rice with Beef Varattiyathu" data-ar="أرز سمن مع لحم فاراتياثو">Ghee Rice with Beef Varattiyathu</h3>
+              <p class="dish-desc" data-en="Buttery ghee rice paired with dry-roasted Kerala beef, crisped in coconut oil." data-ar="أرز سمن زبداني مع لحم كيرالي مشوي جاف، محمر بزيت جوز الهند.">Buttery ghee rice paired with dry-roasted Kerala beef, crisped in coconut oil.</p>
+            </div>
+          </article>
+
+          <article class="dish-card" data-index="3">
+            <div class="dish-card-img-wrap">
+              <img src="https://images.pexels.com/photos/35066816/pexels-photo-35066816.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Chicken Kadai" loading="lazy" />
+              <div class="dish-card-border-accent"></div>
+            </div>
+            <div class="dish-card-body">
+              <span class="dish-tag" data-en="Grill" data-ar="مشويات">Grill</span>
+              <h3 class="dish-name" data-en="Chicken Kadai" data-ar="دجاج كاداي">Chicken Kadai</h3>
+              <p class="dish-desc" data-en="Chicken seared in an iron wok with capsicum, tomato, and ground spices." data-ar="دجاج محمر في مقلاة حديدية مع فلفل رومي وطماطم وتوابل مطحونة.">Chicken seared in an iron wok with capsicum, tomato, and ground spices.</p>
+            </div>
+          </article>
+
+          <article class="dish-card" data-index="4">
+            <div class="dish-card-img-wrap">
+              <img src="https://images.pexels.com/photos/37081080/pexels-photo-37081080.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Beef Ribs Mandhi" loading="lazy" />
+              <div class="dish-card-border-accent"></div>
+            </div>
+            <div class="dish-card-body">
+              <span class="dish-tag tag-special" data-en="Festival Special" data-ar="خاص بالمهرجانات">Festival Special</span>
+              <h3 class="dish-name" data-en="Beef Ribs Mandhi" data-ar="مندي ضلوع لحم">Beef Ribs Mandhi</h3>
+              <p class="dish-desc" data-en="Our signature feast item — slow-smoked beef ribs over fragrant mandhi rice." data-ar="طبقنا المميز للمناسبات — ضلوع لحم مدخنة ببطء فوق أرز مندي عطر.">Our signature feast item — slow-smoked beef ribs over fragrant mandhi rice.</p>
+            </div>
+          </article>
+
+          <article class="dish-card" data-index="5">
+            <div class="dish-card-img-wrap">
+              <img src="https://images.pexels.com/photos/12737912/pexels-photo-12737912.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Pothichoru - Packed Meal" loading="lazy" />
+              <div class="dish-card-border-accent"></div>
+            </div>
+            <div class="dish-card-body">
+              <span class="dish-tag" data-en="Kerala Special" data-ar="تخصص كيرالا">Kerala Special</span>
+              <h3 class="dish-name" data-en="Pothichoru" data-ar="بوثيتشورو">Pothichoru</h3>
+              <p class="dish-desc" data-en="The packed Kerala meal — rice, curry, pickle, and pappadam wrapped in a banana leaf." data-ar="الوجبة الكيرالية المعبأة — أرز وكاري ومخلل وباباضام ملفوف في ورق الموز.">The packed Kerala meal — rice, curry, pickle, and pappadam wrapped in a banana leaf.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FULL MENU ===================== -->
+    <section class="menu-full" id="menu" aria-label="Full menu">
+      <div class="menu-inner">
+        <div class="menu-header">
+          <span class="section-label" data-en="Everything we serve" data-ar="كل ما نقدمه">Everything we serve</span>
+          <h2 class="section-heading" data-en="The Full Menu" data-ar="القائمة الكاملة">The Full Menu</h2>
+        </div>
+        <div class="menu-tabs" role="tablist" aria-label="Menu categories">
+          <button class="menu-tab active" data-tab="kerala" role="tab" aria-selected="true" aria-controls="tab-kerala" data-en="Kerala Mains" data-ar="الأطباق الرئيسية">Kerala Mains</button>
+          <button class="menu-tab" data-tab="rice" role="tab" aria-selected="false" aria-controls="tab-rice" data-en="Rice &amp; Biryani" data-ar="أرز وبريانية">Rice &amp; Biryani</button>
+          <button class="menu-tab" data-tab="fried" role="tab" aria-selected="false" aria-controls="tab-fried" data-en="Fried Rice &amp; Noodles" data-ar="أرز مقلي ونودلز">Fried Rice &amp; Noodles</button>
+          <button class="menu-tab" data-tab="specials" role="tab" aria-selected="false" aria-controls="tab-specials" data-en="Specials" data-ar="الأطباق المميزة">Specials</button>
+          <div class="tab-indicator" id="tab-indicator" aria-hidden="true"></div>
+        </div>
+
+        <div class="menu-tab-panels">
+          <div class="menu-panel active" id="tab-kerala" role="tabpanel">
+            <div class="menu-item"><span class="menu-item-name" data-en="Kappa with Beef Curry" data-ar="كاپا مع كاري اللحم">Kappa with Beef Curry</span><span class="menu-item-desc" data-en="Mashed tapioca, rich Kerala beef curry" data-ar="تابيوكا مهروسة مع كاري لحم كيرالي">Mashed tapioca, rich Kerala beef curry</span><span class="menu-item-price">—</span></div>
+            <div class="menu-item"><span class="menu-item-name" data-en="Kappa Biryani" data-ar="بريانية كاپا">Kappa Biryani</span><span class="menu-item-desc" data-en="Tapioca cooked biryani-style with spices" data-ar="تابيوكا مطبوخة على طريقة البريانية بالتوابل">Tapioca cooked biryani-style with spices</span><span class="menu-item-price">—</span></div>
+            <div class="menu-item"><span class="menu-item-name" data-en="Beef Masala" data-ar="لحم مسالا">Beef Masala</span><span class="menu-item-desc" data-en="Slow-cooked beef in roasted Kerala masala" data-ar="لحم مطبوخ ببطء في مسالا كيرالا المحمصة">Slow-cooked beef in roasted Kerala masala</span><span class="menu-item-price">—</span></div>
+            <div class="menu-item"><span class="menu-item-name" data-en="Chicken Kadai" data-ar="دجاج كاداي">Chicken Kadai</span><span class="menu-item-desc" data-en="Wok-seared chicken with capsicum &amp; tomato" data-ar="دجاج محمر بالمقلاة مع فلفل وطماطم">Wok-seared chicken with capsicum &amp; tomato</span><span class="menu-item-price">—</span></div>
+            <div class="menu-item"><span class="menu-item-name" data-en="Mushroom Masala" data-ar="مشروم مسالا">Mushroom Masala</span><span class="menu-item-desc" data-en="Button mushrooms in spiced onion-tomato gravy" data-ar="فطر في صلصة بصل وطماطم متبلة">Button mushrooms in spiced onion-tomato gravy</span><span class="menu-item-price">—</span></div>
+            <div class="menu-item"><span class="menu-item-name" data-en="Egg Curry" data-ar="كاري بيض">Egg Curry</span><span class="menu-item-desc" data-en="Kerala-style boiled eggs in coconut curry" data-ar="بيض مسلوق كيرالي في كاري جوز الهند">Kerala-style boiled eggs in coconut curry</span><span class="menu-item-price">—</span></div>
+          </div>
+
+          <div class="menu-panel" id="tab-rice" role="tabpanel">
+            <div class="menu-item"><span class="menu-item-name" data-en="Jeerakasala Chicken Dum Biryani" data-ar="بريانية دم دجاج جيراكاسالا">Jeerakasala Chicken Dum Biryani</span><span class="menu-item-desc" data-en="Short-grain rice, dum-sealed, tender chicken" data-ar="أرز قصير الحبة، مختوم بالبخار، دجاج طري">Short-grain rice, dum-sealed, tender chicken</span><span class="menu-item-price">—</span></div>
+            <div class="menu-item"><span class="menu-item-name" data-en="Ghee Rice with Beef Varattiyathu" data-ar="أرز سمن مع لحم فاراتياثو">Ghee Rice with Beef Varattiyathu</span><span class="menu-item-desc" data-en="Clarified butter rice with dry-roasted beef" data-ar="أرز بالسمن مع لحم مشوي جاف">Clarified butter rice with dry-roasted beef</span><span class="menu-item-price">—</span></div>
+            <div class="menu-item"><span class="menu-item-name" data-en="Plain Biryani" data-ar="بريانية سادة">Plain Biryani</span><span class="menu-item-desc" data-en="Fragrant basmati cooked with whole spices" data-ar="أرز بسمتي عطر مع توابل كاملة">Fragrant basmati cooked with whole spices</span><span class="menu-item-price">—</span></div>
+            <div class="menu-item"><span class="menu-item-name" data-en="Chicken Biryani" data-ar="بريانية دجاج">Chicken Biryani</span><span class="menu-item-desc" data-en="Classic Kerala chicken biryani with raita" data-ar="بريانية دجاج كيرالية كلاسيكية مع رايتا">Classic Kerala chicken biryani with raita</span><span class="menu-item-price">—</span></div>
+          </div>
+
+          <div class="menu-panel" id="tab-fried" role="tabpanel">
+            <div class="menu-item"><span class="menu-item-name" data-en="Chicken Fried Rice" data-ar="أرز مقلي بالدجاج">Chicken Fried Rice</span><span class="menu-item-desc" data-en="Wok-tossed rice with chicken and vegetables" data-ar="أرز مقلي بالمقلاة مع دجاج وخضار">Wok-tossed rice with chicken and vegetables</span><span class="menu-item-price">—</span></div>
+            <div class="menu-item"><span class="menu-item-name" data-en="Veg Fried Rice" data-ar="أرز مقلي نباتي">Veg Fried Rice</span><span class="menu-item-desc" data-en="Mixed vegetables tossed with rice and soy" data-ar="خضار متنوعة مع أرز وصلصة الصويا">Mixed vegetables tossed with rice and soy</span><span class="menu-item-price">—</span></div>
+            <div class="menu-item"><span class="menu-item-name" data-en="Egg Fried Rice" data-ar="أرز مقلي بالبيض">Egg Fried Rice</span><span class="menu-item-desc" data-en="Scrambled egg and rice wok-tossed together" data-ar="بيض مخفوق وأرز مقلي معاً">Scrambled egg and rice wok-tossed together</span><span class="menu-item-price">—</span></div>
+            <div class="menu-item"><span class="menu-item-name" data-en="Noodles" data-ar="نودلز">Noodles</span><span class="menu-item-desc" data-en="Wok-fried noodles with choice of chicken or veg" data-ar="نودلز مقلية باختيار الدجاج أو الخضار">Wok-fried noodles with choice of chicken or veg</span><span class="menu-item-price">—</span></div>
+          </div>
+
+          <div class="menu-panel" id="tab-specials" role="tabpanel">
+            <div class="menu-item"><span class="menu-item-name menu-item-highlight" data-en="Beef Ribs Mandhi" data-ar="مندي ضلوع لحم">Beef Ribs Mandhi</span><span class="menu-item-desc" data-en="Festival special — slow-smoked ribs over mandhi rice" data-ar="خاص بالمناسبات — ضلوع مدخنة فوق أرز مندي">Festival special — slow-smoked ribs over mandhi rice</span><span class="menu-item-price">—</span></div>
+            <div class="menu-item"><span class="menu-item-name" data-en="Pothichoru" data-ar="بوثيتشورو">Pothichoru</span><span class="menu-item-desc" data-en="Traditional packed meal — rice, curry, pickle, pappadam" data-ar="وجبة معبأة تقليدية — أرز وكاري ومخلل وباباضام">Traditional packed meal — rice, curry, pickle, pappadam</span><span class="menu-item-price">—</span></div>
+            <div class="menu-item"><span class="menu-item-name" data-en="Monthly Mess" data-ar="اشتراك شهري">Monthly Mess</span><span class="menu-item-desc" data-en="Subscription meal plan — 1, 2, or 3 meals daily" data-ar="خطة وجبات بالاشتراك — 1 أو 2 أو 3 وجبات يومياً">Subscription meal plan — 1, 2, or 3 meals daily</span><span class="menu-item-price">KD 15+</span></div>
+            <div class="menu-item"><span class="menu-item-name" data-en="Gobi Manchurian" data-ar="غوبي مانتشوريان">Gobi Manchurian</span><span class="menu-item-desc" data-en="Crispy cauliflower in tangy Indo-Chinese sauce" data-ar="قرنبيط مقرمش في صلصة صينية هندية لاذعة">Crispy cauliflower in tangy Indo-Chinese sauce</span><span class="menu-item-price">—</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MONTHLY MESS ===================== -->
+    <section class="mess" id="mess" aria-label="Monthly Mess subscription">
+      <div class="mess-grain" aria-hidden="true"></div>
+      <!-- Mortar watermark -->
+      <div class="mess-watermark" aria-hidden="true">
+        <svg viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="100" cy="130" rx="75" ry="20" stroke="var(--text)" stroke-width="1" opacity="0.05" fill="none"/>
+          <path d="M30 130 C30 80 170 80 170 130" stroke="var(--text)" stroke-width="1.5" opacity="0.05" fill="none"/>
+          <rect x="85" y="40" width="30" height="80" rx="4" stroke="var(--text)" stroke-width="1.5" opacity="0.05" fill="none"/>
+          <rect x="90" y="20" width="20" height="25" rx="3" stroke="var(--text)" stroke-width="1.5" opacity="0.05" fill="none"/>
+        </svg>
+      </div>
+      <div class="mess-inner">
+        <div class="mess-header">
+          <span class="section-label" data-en="Eat well, every day" data-ar="كل جيداً كل يوم">Eat well, every day</span>
+          <h2 class="section-heading" data-en="Monthly Mess Subscription" data-ar="اشتراك الوجبات الشهري">Monthly Mess Subscription</h2>
+          <p class="mess-intro" data-en="Kerala home food, delivered to you. Choose what fits your day." data-ar="طعام كيرالا المنزلي يوصل إليك. اختر ما يناسب يومك.">Kerala home food, delivered to you. Choose what fits your day.</p>
+        </div>
+        <div class="mess-cards">
+          <div class="mess-card" data-plan="1">
+            <div class="mess-card-top">
+              <span class="mess-meal-count" id="mess-count-1">1</span>
+              <span class="mess-meal-label" data-en="Meal / Day" data-ar="وجبة / يوم">Meal / Day</span>
+            </div>
+            <div class="mess-price">
+              <span class="mess-kd">KD</span>
+              <span class="mess-amount" id="mess-num-1">15</span>
+              <span class="mess-period" data-en="/month" data-ar="/شهر">/month</span>
+            </div>
+            <p class="mess-desc" data-en="One freshly prepared meal daily, delivered or collected." data-ar="وجبة واحدة يومياً محضرة طازجاً، توصيل أو استلام.">One freshly prepared meal daily, delivered or collected.</p>
+            <a href="tel:+96555012924" class="mess-cta" data-en="Enquire Now" data-ar="استفسر الآن">Enquire Now</a>
+          </div>
+          <div class="mess-card mess-card-featured" data-plan="2">
+            <div class="mess-best-value" data-en="Best Value" data-ar="أفضل قيمة">Best Value</div>
+            <div class="mess-card-top">
+              <span class="mess-meal-count" id="mess-count-2">3</span>
+              <span class="mess-meal-label" data-en="Meals / Day" data-ar="وجبات / يوم">Meals / Day</span>
+            </div>
+            <div class="mess-price">
+              <span class="mess-kd">KD</span>
+              <span class="mess-amount" id="mess-num-2">30</span>
+              <span class="mess-period" data-en="/month" data-ar="/شهر">/month</span>
+            </div>
+            <p class="mess-desc" data-en="Full-day meals covered — breakfast, lunch, dinner." data-ar="وجبات طوال اليوم — فطور وغداء وعشاء.">Full-day meals covered — breakfast, lunch, dinner.</p>
+            <a href="tel:+96555012924" class="mess-cta mess-cta-featured" data-en="Enquire Now" data-ar="استفسر الآن">Enquire Now</a>
+          </div>
+          <div class="mess-card" data-plan="3">
+            <div class="mess-card-top">
+              <span class="mess-meal-count" id="mess-count-3">2</span>
+              <span class="mess-meal-label" data-en="Meals / Day" data-ar="وجبتان / يوم">Meals / Day</span>
+            </div>
+            <div class="mess-price">
+              <span class="mess-kd">KD</span>
+              <span class="mess-amount" id="mess-num-3">25</span>
+              <span class="mess-period" data-en="/month" data-ar="/شهر">/month</span>
+            </div>
+            <p class="mess-desc" data-en="Morning and evening meals, never skip a proper plate." data-ar="وجبتا الصباح والمساء، لا تفوتك وجبة حقيقية.">Morning and evening meals, never skip a proper plate.</p>
+            <a href="tel:+96555012924" class="mess-cta" data-en="Enquire Now" data-ar="استفسر الآن">Enquire Now</a>
+          </div>
+        </div>
+        <div class="mess-contact">
+          <p data-en="To subscribe or enquire, call +965 55012924 or message on WhatsApp." data-ar="للاشتراك أو الاستفسار، اتصل بـ 55012924 965+ أو تواصل عبر واتساب.">To subscribe or enquire, call <a href="tel:+96555012924">+965 55012924</a> or message on WhatsApp.</p>
+          <a href="https://wa.me/96555012924?text=I%20want%20to%20enquire%20about%20the%20Monthly%20Mess%20subscription" target="_blank" rel="noopener" class="btn btn-whatsapp" data-en="Message on WhatsApp" data-ar="تواصل عبر واتساب">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.553 4.1 1.523 5.824L.057 23.57a.75.75 0 0 0 .923.923l5.747-1.466A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5a10.44 10.44 0 0 1-5.354-1.47l-.383-.228-3.974 1.014 1.013-3.974-.228-.383A10.44 10.44 0 0 1 1.5 12C1.5 6.201 6.201 1.5 12 1.5S22.5 6.201 22.5 12 17.799 22.5 12 22.5z"/></svg>
+            <span>Message on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== GALLERY ===================== -->
+    <section class="gallery" id="gallery" aria-label="Food gallery">
+      <div class="gallery-inner">
+        <div class="gallery-header">
+          <span class="section-label" data-en="A look inside" data-ar="نظرة من الداخل">A look inside</span>
+          <h2 class="section-heading" data-en="Inside the Kitchen." data-ar="من داخل المطبخ.">Inside the Kitchen.</h2>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-tile" data-name="Jeerakasala Biryani">
+            <img src="https://images.pexels.com/photos/34159111/pexels-photo-34159111.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800" alt="Jeerakasala Biryani in clay pot" loading="lazy" />
+            <div class="gallery-overlay"><span class="gallery-name" data-en="Jeerakasala Biryani" data-ar="بريانية جيراكاسالا">Jeerakasala Biryani</span></div>
+          </div>
+          <div class="gallery-tile gallery-tile-tall" data-name="Kerala Spice Market">
+            <img src="https://images.pexels.com/photos/31280796/pexels-photo-31280796.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=600" alt="Kerala spices in colorful bowls" loading="lazy" />
+            <div class="gallery-overlay"><span class="gallery-name" data-en="Kerala Spices" data-ar="توابل كيرالا">Kerala Spices</span></div>
+          </div>
+          <div class="gallery-tile" data-name="Beef Masala">
+            <img src="https://images.pexels.com/photos/32825911/pexels-photo-32825911.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800" alt="Beef Masala in traditional bowl" loading="lazy" />
+            <div class="gallery-overlay"><span class="gallery-name" data-en="Beef Masala" data-ar="لحم مسالا">Beef Masala</span></div>
+          </div>
+          <div class="gallery-tile gallery-tile-wide" data-name="Kitchen in Action">
+            <img src="https://images.pexels.com/photos/37708443/pexels-photo-37708443.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=1200" alt="Chef working in kitchen at night" loading="lazy" />
+            <div class="gallery-overlay"><span class="gallery-name" data-en="Kitchen in Action" data-ar="المطبخ في العمل">Kitchen in Action</span></div>
+          </div>
+          <div class="gallery-tile" data-name="Beef Ribs Mandhi">
+            <img src="https://images.pexels.com/photos/37081080/pexels-photo-37081080.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800" alt="Slow-cooked Beef Ribs Mandhi" loading="lazy" />
+            <div class="gallery-overlay"><span class="gallery-name" data-en="Beef Ribs Mandhi" data-ar="مندي ضلوع لحم">Beef Ribs Mandhi</span></div>
+          </div>
+          <div class="gallery-tile gallery-tile-tall" data-name="Mortar and Pestle">
+            <img src="https://images.pexels.com/photos/33428717/pexels-photo-33428717.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=600" alt="Traditional mortar and pestle with spices" loading="lazy" />
+            <div class="gallery-overlay"><span class="gallery-name" data-en="Stone Ground Spices" data-ar="توابل مطحونة بالحجارة">Stone Ground Spices</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ORDER & DELIVERY ===================== -->
+    <section class="order" id="order" aria-label="Order and delivery">
+      <div class="order-bg-accent" aria-hidden="true"></div>
+      <div class="order-inner">
+        <div class="order-content">
+          <span class="section-label" data-en="Delivery across Farwaniya" data-ar="توصيل عبر الفروانية">Delivery across Farwaniya</span>
+          <h2 class="section-heading order-heading" data-en="Hungry? We Deliver." data-ar="جائع؟ نوصّل.">Hungry? We Deliver.</h2>
+          <p class="order-sub" data-en="Order Green Pepper through Katch — fast delivery across Farwaniya." data-ar="اطلب من جرين بيبر عبر كاتش — توصيل سريع عبر الفروانية.">Order Green Pepper through Katch — fast delivery across Farwaniya.</p>
+          <a href="https://www.katchkw.com" target="_blank" rel="noopener" class="btn btn-filled btn-katch" data-en="Order on Katch" data-ar="اطلب عبر كاتش">Order on Katch</a>
+          <p class="order-phone-line">
+            <span data-en="Or call directly —" data-ar="أو اتصل مباشرة —">Or call directly —</span>
+            <a href="tel:+96555012924">+965 55012924</a>
+            <span class="sep">/</span>
+            <a href="tel:+96569392722">+965 69392722</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="contact" id="contact" aria-label="Contact and location">
+      <div class="contact-inner">
+        <div class="contact-info">
+          <span class="section-label" data-en="Find us" data-ar="اعثر علينا">Find us</span>
+          <h2 class="section-heading contact-heading" data-en="Come Visit Us" data-ar="تعال وزرنا">Come Visit Us</h2>
+          <address class="contact-address">
+            <div class="contact-row">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span data-en="Street 118, Block 4, Farwaniya, Kuwait" data-ar="شارع 118، قطعة 4، الفروانية، الكويت">Street 118, Block 4, Farwaniya, Kuwait</span>
+            </div>
+            <div class="contact-row">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.36 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+              <a href="tel:+96555012924" class="contact-link">+965 55012924</a>
+            </div>
+            <div class="contact-row">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.36 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+              <a href="tel:+96569392722" class="contact-link">+965 69392722</a>
+            </div>
+            <div class="contact-row">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.115.553 4.1 1.523 5.824L.057 23.57a.75.75 0 0 0 .923.923l5.747-1.466A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5a10.44 10.44 0 0 1-5.354-1.47l-.383-.228-3.974 1.014 1.013-3.974-.228-.383A10.44 10.44 0 0 1 1.5 12C1.5 6.201 6.201 1.5 12 1.5S22.5 6.201 22.5 12 17.799 22.5 12 22.5z"/></svg>
+              <a href="https://wa.me/96555012924" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" data-en="Message on WhatsApp" data-ar="تواصل عبر واتساب">Message on WhatsApp</a>
+            </div>
+            <div class="contact-row">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              <a href="https://www.instagram.com/green_pepperq8" target="_blank" rel="noopener" class="contact-link">@green_pepperq8</a>
+            </div>
+          </address>
+        </div>
+        <div class="contact-map">
+          <iframe src="https://share.google/2ZBLvNlqCFudYdaIb" width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy" title="Green Pepper Restaurant location on Google Maps"></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-logo">
+          <svg width="10" height="16" viewBox="0 0 14 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M7 1 C7 1 10 3 9 6" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M9 4 C11 2 13 4 11 6" stroke="var(--accent)" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+            <path d="M5.5 6 C3 7 2 10 2.5 13.5 C3 17 5 20 7 20.5 C9 20 11 17 11.5 13.5 C12 10 11 7 8.5 6 Z" stroke="var(--accent)" stroke-width="1.4" fill="none" stroke-linejoin="round"/>
+          </svg>
+          <span class="footer-logo-green" data-en="Green" data-ar="جرين">Green</span>
+          <span class="footer-logo-pepper" data-en="Pepper" data-ar="بيبر">Pepper</span>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="#hero" class="footer-link" data-en="Home" data-ar="الرئيسية">Home</a>
+          <a href="#about" class="footer-link" data-en="About" data-ar="عن المطعم">About</a>
+          <a href="#dishes" class="footer-link" data-en="Menu" data-ar="القائمة">Menu</a>
+          <a href="#mess" class="footer-link" data-en="Mess" data-ar="الاشتراك">Mess</a>
+          <a href="#gallery" class="footer-link" data-en="Gallery" data-ar="المعرض">Gallery</a>
+          <a href="#contact" class="footer-link" data-en="Contact" data-ar="تواصل">Contact</a>
+        </nav>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/green_pepperq8" target="_blank" rel="noopener" aria-label="Instagram @green_pepperq8" class="footer-social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://wa.me/96555012924" target="_blank" rel="noopener" aria-label="WhatsApp" class="footer-social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.115.553 4.1 1.523 5.824L.057 23.57a.75.75 0 0 0 .923.923l5.747-1.466A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5a10.44 10.44 0 0 1-5.354-1.47l-.383-.228-3.974 1.014 1.013-3.974-.228-.383A10.44 10.44 0 0 1 1.5 12C1.5 6.201 6.201 1.5 12 1.5S22.5 6.201 22.5 12 17.799 22.5 12 22.5z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-divider" aria-hidden="true"></div>
+      <div class="footer-bottom">
+        <p class="footer-copy" data-en="Green Pepper Restaurant — Farwaniya, Kuwait · Kerala Kitchen · All Rights Reserved." data-ar="مطعم جرين بيبر — الفروانية، الكويت · مطبخ كيرالا · جميع الحقوق محفوظة.">Green Pepper Restaurant — Farwaniya, Kuwait &nbsp;·&nbsp; Kerala Kitchen &nbsp;·&nbsp; All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
