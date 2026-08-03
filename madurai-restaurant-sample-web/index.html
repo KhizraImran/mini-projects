@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="antialiased">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="Madurai Restaurant — authentic South Indian Tamil cuisine in Farwaniya, Kuwait. Dosa, parotta, biryani, jigarthanda & more. Call +965 6008 5625.">
+  <title>Madurai Restaurant | Farwaniya, Kuwait</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FDF8F0;
+      --surface: #FFFDF7;
+      --primary: #C45C26;
+      --primary-2: #A8461B;
+      --secondary: #D4A017;
+      --accent: #2D5A4A;
+      --text: #2C241B;
+      --muted: #6B5E51;
+      --border: rgba(196, 92, 38, 0.22);
+      --shadow: rgba(44, 36, 27, 0.12);
+      --glow: rgba(212, 160, 23, 0.35);
+      --font-display: 'Cinzel Decorative', 'Georgia', serif;
+      --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-ar: 'Noto Naskh Arabic', 'Georgia', serif;
+      --radius: 1.25rem;
+      --transition: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    [data-theme="dark"] {
+      --bg: #0B1120;
+      --surface: #121B2E;
+      --primary: #E85D04;
+      --primary-2: #F48C06;
+      --secondary: #F4A261;
+      --accent: #2A9D8F;
+      --text: #F5F0E8;
+      --muted: #A9A29D;
+      --border: rgba(232, 93, 4, 0.25);
+      --shadow: rgba(0, 0, 0, 0.35);
+      --glow: rgba(244, 162, 97, 0.25);
+    }
+
+    [lang="ar"] { font-family: var(--font-ar); }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      transition: background var(--transition), color var(--transition);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 4px; }
+
+    /* Loading Screen */
+    #loader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: var(--bg);
+      transition: opacity 0.8s ease, visibility 0.8s;
+    }
+    .kadai {
+      width: 140px;
+      height: 70px;
+      background: radial-gradient(circle at 30% 30%, #8B5A2B, #3E2723);
+      border-radius: 0 0 70px 70px;
+      position: relative;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3), inset 0 -10px 20px rgba(0,0,0,0.4);
+      transform-style: preserve-3d;
+    }
+    .kadai::before, .kadai::after {
+      content: '';
+      position: absolute;
+      top: 8px;
+      width: 28px;
+      height: 12px;
+      background: #3E2723;
+      border-radius: 6px;
+    }
+    .kadai::before { left: -22px; transform: rotate(-12deg); }
+    .kadai::after { right: -22px; transform: rotate(12deg); }
+    .kadai-rim {
+      position: absolute;
+      top: -6px;
+      left: -8px;
+      right: -8px;
+      height: 12px;
+      background: linear-gradient(180deg, #D4A017, #8B5A2B);
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    .curry {
+      position: absolute;
+      top: 4px;
+      left: 10px;
+      right: 10px;
+      height: 42px;
+      background: radial-gradient(circle at 50% 30%, #E85D04, #9C2C0A);
+      border-radius: 0 0 60px 60px;
+      overflow: hidden;
+    }
+    .curry::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(90deg, transparent, transparent 8px, rgba(255,255,255,0.05) 8px, rgba(255,255,255,0.05) 10px);
+      animation: curryShimmer 2s linear infinite;
+    }
+    @keyframes curryShimmer { 0% { transform: translateX(0); } 100% { transform: translateX(-20px); } }
+    .steam {
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 100px;
+      pointer-events: none;
+    }
+    .steam span {
+      position: absolute;
+      bottom: 0;
+      width: 20px;
+      height: 60px;
+      background: radial-gradient(ellipse at center, rgba(255,255,255,0.35) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: steamRise 2.5s ease-in-out infinite;
+      filter: blur(4px);
+    }
+    .steam span:nth-child(1) { left: 20%; animation-delay: 0s; height: 70px; }
+    .steam span:nth-child(2) { left: 45%; animation-delay: 0.6s; height: 90px; }
+    .steam span:nth-child(3) { left: 70%; animation-delay: 1.2s; height: 60px; }
+    @keyframes steamRise {
+      0%, 100% { transform: translateY(0) scaleX(1); opacity: 0; }
+      20% { opacity: 0.6; }
+      80% { opacity: 0; }
+      100% { transform: translateY(-80px) scaleX(1.6); }
+    }
+    .loader-text {
+      margin-top: 2rem;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--primary);
+      letter-spacing: 0.1em;
+    }
+
+    /* Floating Controls */
+    #controls {
+      position: fixed;
+      top: 1.25rem;
+      right: 1.25rem;
+      z-index: 100;
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      backdrop-filter: blur(12px);
+      background: rgba(var(--surface), 0.7);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.35rem;
+      box-shadow: 0 8px 24px var(--shadow);
+      transition: all var(--transition);
+    }
+    [dir="rtl"] #controls { right: auto; left: 1.25rem; }
+    .ctrl-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: none;
+      background: transparent;
+      color: var(--text);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .ctrl-btn:hover { background: var(--border); transform: scale(1.08); }
+    .lang-switch {
+      display: flex;
+      align-items: center;
+      padding: 0 0.5rem;
+      gap: 0.35rem;
+      font-weight: 600;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+    .lang-switch span { opacity: 0.5; transition: opacity 0.2s; }
+    .lang-switch span.active { opacity: 1; color: var(--primary); }
+
+    /* Spice Rack Navigation */
+    #spice-rack {
+      position: fixed;
+      top: 50%;
+      right: 1.5rem;
+      transform: translateY(-50%);
+      z-index: 90;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    [dir="rtl"] #spice-rack { right: auto; left: 1.5rem; }
+    .spice-jar {
+      position: relative;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 4px 12px var(--shadow), inset 0 0 0 2px rgba(255,255,255,0.15);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
+      transform-style: preserve-3d;
+    }
+    .spice-jar::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .spice-jar:hover { transform: scale(1.18) rotate(10deg); }
+    .spice-jar.active::before { border-color: var(--secondary); transform: scale(1.15); }
+    .spice-jar svg { width: 22px; height: 22px; stroke: #fff; fill: none; stroke-width: 2; }
+    .spice-label {
+      position: absolute;
+      right: 130%;
+      white-space: nowrap;
+      background: var(--surface);
+      color: var(--text);
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      opacity: 0;
+      transform: translateX(10px);
+      pointer-events: none;
+      transition: all 0.25s;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 12px var(--shadow);
+    }
+    [dir="rtl"] .spice-label { right: auto; left: 130%; transform: translateX(-10px); }
+    .spice-jar:hover .spice-label { opacity: 1; transform: translateX(0); }
+    .spice-puff {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .spice-puff span {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: currentColor;
+      opacity: 0;
+    }
+    .spice-jar:hover .spice-puff span { animation: puff 0.6s ease-out forwards; }
+    @keyframes puff {
+      0% { transform: translate(0,0) scale(1); opacity: 0.8; }
+      100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
+    }
+
+    /* Mobile Nav */
+    #mobile-nav {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 95;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 0.5rem 1rem calc(0.5rem + env(safe-area-inset-bottom));
+      justify-content: space-around;
+      box-shadow: 0 -8px 24px var(--shadow);
+    }
+    @media (max-width: 1024px) {
+      #spice-rack { display: none; }
+      #mobile-nav { display: flex; }
+    }
+    .mob-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.65rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .mob-item svg { width: 22px; height: 22px; stroke-width: 2; }
+    .mob-item.active { color: var(--primary); }
+
+    /* Hero */
+    #hero {
+      min-height: 100vh;
+      position: relative;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      perspective: 1200px;
+    }
+    .hero-bg-layers {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .gopuram-layer {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(1200px, 180vw);
+      opacity: 0.08;
+      fill: var(--primary);
+      transition: fill var(--transition);
+    }
+    .leaf {
+      position: absolute;
+      width: 28px;
+      height: 14px;
+      background: var(--accent);
+      border-radius: 0 100% 0 100%;
+      opacity: 0.25;
+      filter: blur(1px);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      max-width: 900px;
+      padding: 0 1.5rem;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(8px);
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 10vw, 7rem);
+      line-height: 0.95;
+      margin: 0;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 10px 20px var(--glow));
+    }
+    .hero-title span { display: block; }
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      color: var(--muted);
+      margin-top: 1.5rem;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+    }
+    .hero-cta {
+      margin-top: 2.5rem;
+      display: inline-flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.95rem 2rem;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      overflow: hidden;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(196, 92, 38, 0.35);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(196, 92, 38, 0.45); }
+    .btn-outline {
+      border: 1.5px solid var(--border);
+      color: var(--text);
+      background: var(--surface);
+    }
+    .btn-outline:hover { border-color: var(--primary); transform: translateY(-2px); }
+
+    /* 3D Thali */
+    .thali-stage {
+      position: absolute;
+      bottom: -60px;
+      left: 50%;
+      width: min(520px, 90vw);
+      height: min(520px, 90vw);
+      transform: translateX(-50%) rotateX(60deg);
+      transform-style: preserve-3d;
+      opacity: 0.85;
+      z-index: 5;
+      pointer-events: none;
+    }
+    .thali {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #F4D06F, #B8860B 40%, #5C3A10 100%);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.35), inset 0 0 0 8px rgba(255,255,255,0.08);
+      transform-style: preserve-3d;
+      animation: thaliFloat 8s ease-in-out infinite;
+    }
+    .thali::before {
+      content: '';
+      position: absolute;
+      inset: 8%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #FFF8E7, #E8D4A2);
+      box-shadow: inset 0 10px 30px rgba(0,0,0,0.15);
+    }
+    .thali-katori {
+      position: absolute;
+      width: 18%;
+      height: 18%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #FFD700, #B8860B);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+      transform: translateZ(18px);
+    }
+    .thali-katori:nth-child(1) { top: 15%; left: 50%; transform: translateX(-50%) translateZ(20px); background: radial-gradient(circle at 30% 30%, #E85D04, #9C2C0A); }
+    .thali-katori:nth-child(2) { top: 50%; right: 12%; transform: translateY(-50%) translateZ(20px); background: radial-gradient(circle at 30% 30%, #2D5A4A, #1A332A); }
+    .thali-katori:nth-child(3) { bottom: 15%; left: 50%; transform: translateX(-50%) translateZ(20px); background: radial-gradient(circle at 30% 30%, #F4A261, #C45C26); }
+    .thali-katori:nth-child(4) { top: 50%; left: 12%; transform: translateY(-50%) translateZ(20px); background: radial-gradient(circle at 30% 30%, #FFF8E7, #D4A017); }
+    @keyframes thaliFloat {
+      0%, 100% { transform: translateZ(0) rotateZ(0deg); }
+      50% { transform: translateZ(30px) rotateZ(6deg); }
+    }
+
+    /* Section Base */
+    section { position: relative; padding: 7rem 1.5rem; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin: 0 0 1.5rem;
+    }
+    .section-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 680px;
+    }
+
+    /* About */
+    #about { background: linear-gradient(180deg, var(--bg) 0%, rgba(212,160,23,0.05) 100%); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+    .about-visual {
+      position: relative;
+      height: 480px;
+      perspective: 1000px;
+    }
+    .temple-card {
+      position: absolute;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 20px 50px var(--shadow);
+      transition: transform var(--transition);
+    }
+    .temple-card img { width: 100%; height: 100%; object-fit: cover; }
+    .temple-card.main { width: 75%; height: 85%; top: 7%; left: 5%; z-index: 2; }
+    .temple-card.accent { width: 45%; height: 45%; bottom: 5%; right: 5%; z-index: 3; border: 4px solid var(--surface); }
+    .temple-card.frame { width: 50%; height: 35%; top: 0; right: 0; z-index: 1; }
+    .about-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+    .stat {
+      padding: 1.25rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 24px var(--shadow);
+      transition: transform 0.2s;
+    }
+    .stat:hover { transform: translateY(-4px); }
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--primary);
+    }
+    .stat-label { font-size: 0.8rem; color: var(--muted); font-weight: 600; margin-top: 0.25rem; }
+
+    /* Menu */
+    #menu { background: var(--bg); }
+    .menu-tabs {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 2.5rem 0;
+    }
+    .menu-tab {
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .menu-tab:hover, .menu-tab.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      box-shadow: 0 6px 18px rgba(196,92,38,0.3);
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.75rem;
+    }
+    .menu-card {
+      position: relative;
+      height: 420px;
+      border-radius: var(--radius);
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+    .menu-card-inner {
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius);
+      transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      transform-style: preserve-3d;
+    }
+    .menu-card:hover .menu-card-inner { transform: rotateY(180deg); }
+    .menu-card-front, .menu-card-back {
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius);
+      backface-visibility: hidden;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .menu-card-front { background: var(--surface); }
+    .menu-card-front img { width: 100%; height: 65%; object-fit: cover; }
+    .menu-card-body { padding: 1.25rem; }
+    .menu-card-title { font-family: var(--font-display); font-size: 1.3rem; color: var(--text); margin-bottom: 0.35rem; }
+    .menu-card-desc { font-size: 0.85rem; color: var(--muted); }
+    .menu-card-back {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: #fff;
+      transform: rotateY(180deg);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .menu-card-back h4 { font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 1rem; }
+    .menu-card-back ul { list-style: none; padding: 0; margin: 0; }
+    .menu-card-back li { padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.2); font-size: 0.95rem; }
+    .menu-card-back li:last-child { border-bottom: none; }
+    .menu-card-tag {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--secondary);
+      color: #2C241B;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      z-index: 2;
+    }
+
+    /* Gallery */
+    #gallery { background: linear-gradient(180deg, var(--bg) 0%, rgba(45,90,74,0.04) 100%); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 220px;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transition: transform 0.4s, box-shadow 0.4s;
+      cursor: pointer;
+      border: 1px solid var(--border);
+    }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+    .gallery-item:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 20px 40px var(--shadow); }
+    .gallery-item:hover img { transform: scale(1.08); }
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      display: flex;
+      align-items: flex-end;
+      padding: 1.25rem;
+      color: #fff;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .g-1 { grid-column: span 7; grid-row: span 2; }
+    .g-2 { grid-column: span 5; grid-row: span 1; }
+    .g-3 { grid-column: span 5; grid-row: span 1; }
+    .g-4 { grid-column: span 4; grid-row: span 2; }
+    .g-5 { grid-column: span 4; grid-row: span 1; }
+    .g-6 { grid-column: span 4; grid-row: span 1; }
+    @media (max-width: 768px) {
+      .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 240px; }
+      .g-1, .g-2, .g-3, .g-4, .g-5, .g-6 { grid-column: span 1; grid-row: span 1; }
+    }
+
+    /* Location */
+    #location { padding-bottom: 0; }
+    .location-wrap {
+      position: relative;
+      border-radius: var(--radius) var(--radius) 0 0;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-bottom: none;
+      box-shadow: 0 -20px 60px var(--shadow);
+    }
+    .map-frame {
+      width: 100%;
+      height: 500px;
+      border: none;
+      filter: grayscale(20%) contrast(1.05);
+      transition: filter var(--transition);
+    }
+    [data-theme="dark"] .map-frame { filter: grayscale(60%) invert(90%) contrast(0.9); }
+    .location-card {
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+      max-width: 360px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: 0 20px 50px var(--shadow);
+      z-index: 10;
+      backdrop-filter: blur(12px);
+    }
+    [dir="rtl"] .location-card { left: auto; right: 2rem; }
+    @media (max-width: 768px) {
+      .location-card { position: relative; top: auto; left: auto; right: auto; max-width: 100%; border-radius: 0; border: none; border-bottom: 1px solid var(--border); }
+      [dir="rtl"] .location-card { right: auto; }
+    }
+
+    /* Contact */
+    #contact { padding-top: 5rem; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
+    .phone-big {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      color: var(--text);
+      text-decoration: none;
+      padding: 1.25rem 2rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .phone-big:hover { transform: translateY(-3px); box-shadow: 0 16px 40px var(--shadow); }
+    .hours-list {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0 0;
+      display: grid;
+      gap: 0.75rem;
+    }
+    .hours-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.85rem 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      color: var(--muted);
+    }
+    .hours-list li span { color: var(--text); font-weight: 600; }
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      padding: 1rem 2rem;
+      background: #25D366;
+      color: #fff;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(37,211,102,0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .whatsapp-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(37,211,102,0.4); }
+
+    /* Footer */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 3rem 1.5rem;
+      text-align: center;
+      color: var(--muted);
+    }
+    .footer-brand {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+    .socials { display: flex; justify-content: center; gap: 1rem; margin: 1.5rem 0; }
+    .social {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: grid;
+      place-items: center;
+      color: var(--text);
+      transition: all 0.2s;
+    }
+    .social:hover { background: var(--primary); color: #fff; border-color: var(--primary); transform: translateY(-3px); }
+
+    /* Decorative Patterns */
+    .kolam {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      opacity: 0.06;
+      pointer-events: none;
+      background-image: radial-gradient(circle, var(--primary) 2px, transparent 2px);
+      background-size: 24px 24px;
+    }
+
+    /* Reveal Animation Helper */
+    .reveal { opacity: 0; transform: translateY(40px); }
+
+    /* Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="kadai">
+      <div class="kadai-rim"></div>
+      <div class="curry"></div>
+      <div class="steam">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <div class="loader-text" data-en="Igniting the stove…" data-ar="يشعلون الموقد…">Igniting the stove…</div>
+  </div>
+
+  <!-- Floating Controls -->
+  <div id="controls">
+    <button class="ctrl-btn" id="theme-toggle" aria-label="Toggle theme">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5" class="sun-core"></circle>
+        <g class="sun-rays">
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </g>
+        <path class="moon" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" style="display:none"></path>
+      </svg>
+    </button>
+    <div class="lang-switch" id="lang-switch">
+      <span class="active" data-lang="en">EN</span>
+      <span>/</span>
+      <span data-lang="ar">عربي</span>
+    </div>
+  </div>
+
+  <!-- Spice Rack Navigation (Desktop) -->
+  <nav id="spice-rack" aria-label="Section navigation">
+    <div class="spice-jar active" data-target="hero" style="background: radial-gradient(circle at 30% 30%, #E85D04, #9C2C0A);" title="Home">
+      <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+      <div class="spice-puff"></div>
+      <div class="spice-label" data-en="Home" data-ar="الرئيسية">Home</div>
+    </div>
+    <div class="spice-jar" data-target="about" style="background: radial-gradient(circle at 30% 30%, #D4A017, #8B6914);" title="About">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+      <div class="spice-puff"></div>
+      <div class="spice-label" data-en="Our Story" data-ar="قصتنا">Our Story</div>
+    </div>
+    <div class="spice-jar" data-target="menu" style="background: radial-gradient(circle at 30% 30%, #2D5A4A, #1A332A);" title="Menu">
+      <svg viewBox="0 0 24 24"><path d="M3 3h18v18H3zM9 3v18M15 3v18M3 9h18M3 15h18"></path></svg>
+      <div class="spice-puff"></div>
+      <div class="spice-label" data-en="Menu" data-ar="القائمة">Menu</div>
+    </div>
+    <div class="spice-jar" data-target="gallery" style="background: radial-gradient(circle at 30% 30%, #9C6644, #5D3A1A);" title="Gallery">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+      <div class="spice-puff"></div>
+      <div class="spice-label" data-en="Gallery" data-ar="معرض الصور">Gallery</div>
+    </div>
+    <div class="spice-jar" data-target="location" style="background: radial-gradient(circle at 30% 30%, #8B5A2B, #3E2723);" title="Location">
+      <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+      <div class="spice-puff"></div>
+      <div class="spice-label" data-en="Find Us" data-ar="موقعنا">Find Us</div>
+    </div>
+    <div class="spice-jar" data-target="contact" style="background: radial-gradient(circle at 30% 30%, #C45C26, #7B3410);" title="Contact">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      <div class="spice-puff"></div>
+      <div class="spice-label" data-en="Contact" data-ar="اتصل بنا">Contact</div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <nav id="mobile-nav" aria-label="Mobile section navigation">
+    <a href="#hero" class="mob-item active" data-target="hero">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+      <span data-en="Home" data-ar="الرئيسية">Home</span>
+    </a>
+    <a href="#about" class="mob-item" data-target="about">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+      <span data-en="Story" data-ar="قصتنا">Story</span>
+    </a>
+    <a href="#menu" class="mob-item" data-target="menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM9 3v18M15 3v18M3 9h18M3 15h18"></path></svg>
+      <span data-en="Menu" data-ar="القائمة">Menu</span>
+    </a>
+    <a href="#gallery" class="mob-item" data-target="gallery">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+      <span data-en="Gallery" data-ar="صور">Gallery</span>
+    </a>
+    <a href="#contact" class="mob-item" data-target="contact">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      <span data-en="Call" data-ar="اتصل">Call</span>
+    </a>
+  </nav>
+
+  <!-- Hero -->
+  <header id="hero">
+    <div class="hero-bg-layers">
+      <svg class="gopuram-layer" viewBox="0 0 800 400" preserveAspectRatio="xMidYMax meet">
+        <path d="M400 400 L380 340 L420 340 Z M350 340 L450 340 L430 280 L370 280 Z M320 280 L480 280 L460 220 L340 220 Z M300 220 L500 220 L480 160 L320 160 Z M380 160 L420 160 L410 120 L390 120 Z M360 120 L440 120 L430 90 L370 90 Z M385 90 L415 90 L405 60 L395 60 Z"/>
+        <rect x="390" y="60" width="20" height="40" rx="2"/>
+        <circle cx="400" cy="50" r="12"/>
+      </svg>
+      <!-- Leaves generated by JS -->
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        <span data-en="Farwaniya, Kuwait" data-ar="الفروانية، الكويت">Farwaniya, Kuwait</span>
+      </div>
+      <h1 class="hero-title">
+        <span data-en="Madurai" data-ar="مادوراي">Madurai</span>
+        <span data-en="Restaurant" data-ar="مطعم">Restaurant</span>
+      </h1>
+      <p class="hero-subtitle" data-en="Temple Kitchen. Kuwait Table." data-ar="مطبخ المعبد. على مائدة الكويت.">Temple Kitchen. Kuwait Table.</p>
+      <div class="hero-cta">
+        <a href="#menu" class="btn btn-primary" data-en="Explore Menu" data-ar="استكشف القائمة">Explore Menu</a>
+        <a href="tel:+96560085625" class="btn btn-outline" data-en="Call to Order" data-ar="اتصل للطلب">Call to Order</a>
+      </div>
+    </div>
+
+    <div class="thali-stage" aria-hidden="true">
+      <div class="thali">
+        <div class="thali-katori"></div>
+        <div class="thali-katori"></div>
+        <div class="thali-katori"></div>
+        <div class="thali-katori"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container about-grid">
+      <div class="about-visual">
+        <div class="temple-card main parallax" data-speed="0.04">
+          <img src="https://images.pexels.com/photos/31280796/pexels-photo-31280796.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Indian spices arranged in bowls">
+        </div>
+        <div class="temple-card accent parallax" data-speed="-0.06">
+          <img src="https://images.pexels.com/photos/20422123/pexels-photo-20422123.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="South Indian dosa meal">
+        </div>
+        <div class="temple-card frame parallax" data-speed="0.08">
+          <img src="https://images.pexels.com/photos/30296301/pexels-photo-30296301.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Colorful Indian spices on wooden surface">
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="section-tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <span data-en="Our Story" data-ar="قصتنا">Our Story</span>
+        </div>
+        <h2 class="section-title" data-en="From Madurai's Alleys to Farwaniya" data-ar="من أزقة مادوراي إلى الفروانية">From Madurai's Alleys to Farwaniya</h2>
+        <p class="section-text" data-en="Madurai is not just a city — it is a language of flavor. Known as Thoonga Nagaram, the city that never sleeps, its kitchens have fed pilgrims, poets, and night-shift workers for centuries. We brought that same awake spirit to Kuwait." data-ar="مادوراي ليست مجرد مدينة — إنها لغة من النكهات. المعروفة بثونغا ناجرام، المدينة التي لا تنام، مطابخها تغذي الحجاج والشعراء وعمال المناوبات الليلية منذ قرون. لقد أحضرنا روح الاستيقاظ هذه إلى الكويت.">Madurai is not just a city — it is a language of flavor. Known as Thoonga Nagaram, the city that never sleeps, its kitchens have fed pilgrims, poets, and night-shift workers for centuries. We brought that same awake spirit to Kuwait.</p>
+        <p class="section-text" style="margin-top:1rem" data-en="Every dish here carries the heat of Tamil stone mills and the patience of overnight marinades. Our parottas are beaten by hand, our gravies simmered in copper, and our filter coffee poured with the slow discipline of a temple ritual." data-ar="يحمل كل طبق هنا حرارة المطاحن الحجرية التاميلية وصبر التتبيلات الليلية. نضرب البروتا باليد، ونطهو المرق في النحاس، ونسكب القهوة المصفاة ببطء الانضباط الطقسي للمعبد.">Every dish here carries the heat of Tamil stone mills and the patience of overnight marinades. Our parottas are beaten by hand, our gravies simmered in copper, and our filter coffee poured with the slow discipline of a temple ritual.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <div class="stat-number">15+</div>
+            <div class="stat-label" data-en="Years Serving Kuwait" data-ar="عاماً من الخدمة">Years Serving Kuwait</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">05:00</div>
+            <div class="stat-label" data-en="AM First Dosa" data-ar="صباحاً أول دوسا">AM First Dosa</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">24h</div>
+            <div class="stat-label" data-en="Weekend Kitchen" data-ar="مطبخ نهاية الأسبوع">Weekend Kitchen</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section id="menu">
+    <div class="container">
+      <div class="text-center max-w-2xl mx-auto">
+        <div class="section-tag justify-center">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <span data-en="The Menu" data-ar="القائمة">The Menu</span>
+        </div>
+        <h2 class="section-title" data-en="A Thali of Stories" data-ar="ثالي من القصص">A Thali of Stories</h2>
+        <p class="section-text mx-auto" data-en="Each category is a chapter of Madurai. Flip a card to meet the dishes." data-ar="كل فئة هي فصل من مادوراي. اقلب بطاقة لتتعرف على الأطباق.">Each category is a chapter of Madurai. Flip a card to meet the dishes.</p>
+      </div>
+
+      <div class="menu-tabs" id="menu-tabs">
+        <button class="menu-tab active" data-category="all" data-en="All" data-ar="الكل">All</button>
+        <button class="menu-tab" data-category="sunrise" data-en="Sunrise" data-ar="الإفطار">Sunrise</button>
+        <button class="menu-tab" data-category="parotta" data-en="Parotta Studio" data-ar="استوديو البروتا">Parotta Studio</button>
+        <button class="menu-tab" data-category="grills" data-en="Clay Pot & Grills" data-ar="الطيني والشواية">Clay Pot & Grills</button>
+        <button class="menu-tab" data-category="coolers" data-en="Coolers" data-ar="المشروبات">Coolers</button>
+      </div>
+
+      <div class="menu-grid" id="menu-grid">
+        <!-- Sunrise -->
+        <div class="menu-card" data-category="sunrise">
+          <div class="menu-card-inner">
+            <div class="menu-card-front">
+              <span class="menu-card-tag" data-en="Vegetarian" data-ar="نباتي">Vegetarian</span>
+              <img src="https://images.pexels.com/photos/20422138/pexels-photo-20422138.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Masala dosa">
+              <div class="menu-card-body">
+                <h3 class="menu-card-title" data-en="Sunrise Thali" data-ar="ثالي الشروق">Sunrise Thali</h3>
+                <p class="menu-card-desc" data-en="The first meal of a city that wakes before dawn." data-ar="الوجبة الأولى لمدينة تستيقظ قبل الفجر.">The first meal of a city that wakes before dawn.</p>
+              </div>
+            </div>
+            <div class="menu-card-back">
+              <h4 data-en="Sunrise" data-ar="الإفطار">Sunrise</h4>
+              <ul>
+                <li data-en="Idli Sambar" data-ar="إدلي سامبار">Idli Sambar</li>
+                <li data-en="Medu Vada & Chutney" data-ar="ميدو فادا وتشاتني">Medu Vada & Chutney</li>
+                <li data-en="Podi Dosa" data-ar="دوسا بالبودي">Podi Dosa</li>
+                <li data-en="Pongal & Vadai" data-ar="بونجال وفاداي">Pongal & Vadai</li>
+                <li data-en="Filter Coffee" data-ar="قهوة مصفاة">Filter Coffee</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Parotta Studio -->
+        <div class="menu-card" data-category="parotta">
+          <div class="menu-card-inner">
+            <div class="menu-card-front">
+              <img src="https://images.pexels.com/photos/20422133/pexels-photo-20422133.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Crispy triangular dosa">
+              <div class="menu-card-body">
+                <h3 class="menu-card-title" data-en="Parotta Studio" data-ar="استوديو البروتا">Parotta Studio</h3>
+                <p class="menu-card-desc" data-en="Hand-beaten layers, sizzling salna, midnight cravings." data-ar="طبقات مضروبة باليد، سالنا فوارة، رغبات منتصف الليل.">Hand-beaten layers, sizzling salna, midnight cravings.</p>
+              </div>
+            </div>
+            <div class="menu-card-back">
+              <h4 data-en="Parotta" data-ar="البروتا">Parotta</h4>
+              <ul>
+                <li data-en="Bun Parotta" data-ar="بروتا البن">Bun Parotta</li>
+                <li data-en="Kothu Parotta" data-ar="كوثو بروتا">Kothu Parotta</li>
+                <li data-en="Chilli Parotta" data-ar="بروتا الفلفل الحار">Chilli Parotta</li>
+                <li data-en="Egg Parotta" data-ar="بروتا بالبيض">Egg Parotta</li>
+                <li data-en="Chicken Salna" data-ar="سلنا الدجاج">Chicken Salna</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kari Dosa -->
+        <div class="menu-card" data-category="grills">
+          <div class="menu-card-inner">
+            <div class="menu-card-front">
+              <span class="menu-card-tag" data-en="Chef's Choice" data-ar="اختيار الشيف">Chef's Choice</span>
+              <img src="https://images.pexels.com/photos/20422121/pexels-photo-20422121.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Cone dosa">
+              <div class="menu-card-body">
+                <h3 class="menu-card-title" data-en="Kari Dosa" data-ar="كاري دوسا">Kari Dosa</h3>
+                <p class="menu-card-desc" data-en="Three layers: dosa, omelette, spiced minced meat." data-ar="ثلاث طبقات: دوسا، عجة، لحم مفروم متبل.">Three layers: dosa, omelette, spiced minced meat.</p>
+              </div>
+            </div>
+            <div class="menu-card-back">
+              <h4 data-en="Clay Pot & Grills" data-ar="الطيني والشواية">Clay Pot & Grills</h4>
+              <ul>
+                <li data-en="Kari Dosa" data-ar="كاري دوسا">Kari Dosa</li>
+                <li data-en="Mutton Chukka" data-ar="تشوكا لحم الضأن">Mutton Chukka</li>
+                <li data-en="Elumbu Roast" data-ar="إلمبو روست">Elumbu Roast</li>
+                <li data-en="Chicken Chettinad" data-ar="دجاج شيتيناد">Chicken Chettinad</li>
+                <li data-en="Kola Urundai" data-ar="كولا أورنداي">Kola Urundai</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jigarthanda -->
+        <div class="menu-card" data-category="coolers">
+          <div class="menu-card-inner">
+            <div class="menu-card-front">
+              <img src="https://images.pexels.com/photos/37469370/pexels-photo-37469370.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800" alt="Cold creamy beverage">
+              <div class="menu-card-body">
+                <h3 class="menu-card-title" data-en="Jigarthanda" data-ar="جيغارثاندا">Jigarthanda</h3>
+                <p class="menu-card-desc" data-en="Madurai's heart-cooling elixir of milk, almond gum, and ice cream." data-ar="المحلول المبرد لقلب مادوراي من الحليب والصمغ العربي والآيس كريم.">Madurai's heart-cooling elixir of milk, almond gum, and ice cream.</p>
+              </div>
+            </div>
+            <div class="menu-card-back">
+              <h4 data-en="Coolers" data-ar="المشروبات">Coolers</h4>
+              <ul>
+                <li data-en="Jigarthanda" data-ar="جيغارثاندا">Jigarthanda</li>
+                <li data-en="Filter Coffee" data-ar="قهوة مصفاة">Filter Coffee</li>
+                <li data-en="Masala Tea" data-ar="شاي بالبهارات">Masala Tea</li>
+                <li data-en="Tender Coconut" data-ar="جوز الهند الطري">Tender Coconut</li>
+                <li data-en="Rose Milk" data-ar="حليب الورد">Rose Milk</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <div class="container">
+      <div class="text-center max-w-2xl mx-auto">
+        <div class="section-tag justify-center">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <span data-en="Visual Feast" data-ar="وليمة بصرية">Visual Feast</span>
+        </div>
+        <h2 class="section-title" data-en="The Gallery" data-ar="المعرض">The Gallery</h2>
+        <p class="section-text mx-auto" data-en="Colors of the spice box, textures of the tawa, and the warmth of our kitchen." data-ar="ألوان صندوق التوابل، وقوام التاوا، ودفء مطبخنا.">Colors of the spice box, textures of the tawa, and the warmth of our kitchen.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item g-1">
+          <img src="https://images.pexels.com/photos/20422123/pexels-photo-20422123.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="South Indian dosa meal">
+          <div class="gallery-overlay">
+            <div>
+              <h4 class="font-display text-xl" data-en="Dosa Spread" data-ar="تشكيلة الدوسا">Dosa Spread</h4>
+              <p class="text-sm opacity-80" data-en="Crisp edges, soft center, three chutneys" data-ar="حواف مقرمشة، مركز ناعم، ثلاثة أنواع تشاتني">Crisp edges, soft center, three chutneys</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item g-2">
+          <img src="https://images.pexels.com/photos/31280796/pexels-photo-31280796.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Indian spice powders">
+          <div class="gallery-overlay">
+            <div>
+              <h4 class="font-display text-lg" data-en="Spice Box" data-ar="صندوق التوابل">Spice Box</h4>
+              <p class="text-xs opacity-80" data-en="Turmeric, chili, coriander, cumin" data-ar="كركم، فلفل حار، كزبرة، كمون">Turmeric, chili, coriander, cumin</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item g-3">
+          <img src="https://images.pexels.com/photos/30296301/pexels-photo-30296301.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Spices on wooden surface">
+          <div class="gallery-overlay">
+            <div>
+              <h4 class="font-display text-lg" data-en="Market Aromas" data-ar="عبق السوق">Market Aromas</h4>
+              <p class="text-xs opacity-80" data-en="Sourced from Tamil Nadu markets" data-ar="مستورد من أسواق تاميل نادو">Sourced from Tamil Nadu markets</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item g-4">
+          <img src="https://images.pexels.com/photos/37469370/pexels-photo-37469370.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800" alt="Creamy cold beverage">
+          <div class="gallery-overlay">
+            <div>
+              <h4 class="font-display text-lg" data-en="Jigarthanda" data-ar="جيغارثاندا">Jigarthanda</h4>
+              <p class="text-xs opacity-80" data-en="Cool heart, warm welcome" data-ar="قلب بارد، ترحيب دافئ">Cool heart, warm welcome</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item g-5">
+          <img src="https://images.pexels.com/photos/20422138/pexels-photo-20422138.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Masala dosa top view">
+          <div class="gallery-overlay">
+            <div>
+              <h4 class="font-display text-lg" data-en="Masala Dosa" data-ar="دوسا ماسالا">Masala Dosa</h4>
+              <p class="text-xs opacity-80" data-en="Potato, mustard seed, curry leaf" data-ar="بطاطس، خردل، ورق الكاري">Potato, mustard seed, curry leaf</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item g-6">
+          <img src="https://images.pexels.com/photos/20422133/pexels-photo-20422133.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Crispy dosa">
+          <div class="gallery-overlay">
+            <div>
+              <h4 class="font-display text-lg" data-en="Crisp Triangle" data-ar="المثلث المقرمش">Crisp Triangle</h4>
+              <p class="text-xs opacity-80" data-en="Golden, paper-thin perfection" data-ar="ذهبي، رقيق كالورق، مثالي">Golden, paper-thin perfection</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section id="location">
+    <div class="container" style="padding-bottom: 2rem;">
+      <div class="text-center max-w-2xl mx-auto">
+        <div class="section-tag justify-center">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <span data-en="Find Us" data-ar="موقعنا">Find Us</span>
+        </div>
+        <h2 class="section-title" data-en="Come to the Table" data-ar="تعال إلى المائدة">Come to the Table</h2>
+        <p class="section-text mx-auto" data-en="We are in the heart of Farwaniya, easy to reach and hard to forget." data-ar="نحن في قلب الفروانية، سهل الوصول إلينا وصعب نسياننا.">We are in the heart of Farwaniya, easy to reach and hard to forget.</p>
+      </div>
+    </div>
+    <div class="location-wrap">
+      <div class="location-card">
+        <h3 class="font-display text-2xl mb-2" style="color: var(--primary);" data-en="Madurai Restaurant" data-ar="مطعم مادوراي">Madurai Restaurant</h3>
+        <p class="text-sm mb-4" style="color: var(--muted);" data-en="Street 72, Al Farwaniyah 85000, Kuwait" data-ar="شارع 72، الفروانية 85000، الكويت">Street 72, Al Farwaniyah 85000, Kuwait</p>
+        <div class="space-y-3 text-sm" style="color: var(--text);">
+          <div class="flex items-start gap-3">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mt-0.5 shrink-0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span data-en="Street 72, Al Farwaniyah 85000, Kuwait" data-ar="شارع 72، الفروانية 85000، الكويت">Street 72, Al Farwaniyah 85000, Kuwait</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <a href="tel:+96560085625" style="color: var(--primary); font-weight: 700;">+965 6008 5625</a>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span data-en="Open daily: 5:00 AM – 11:45 PM" data-ar="مفتوح يومياً: 5:00 ص – 11:45 م">Open daily: 5:00 AM – 11:45 PM</span>
+          </div>
+        </div>
+        <a href="https://share.google/66Ynuq3GIrBcygB27" target="_blank" rel="noopener" class="btn btn-primary w-full mt-5 justify-center" data-en="Open in Google Maps" data-ar="افتح في خرائط جوجل">Open in Google Maps</a>
+      </div>
+      <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d34719.123456789!2d47.9585853!3d29.2804159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sMadurai%20Restaurant%20Farwaniya%20Kuwait!5e0!3m2!1sen!2skw!4v1700000000000!5m2!1sen!2skw" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container contact-grid">
+      <div>
+        <div class="section-tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <span data-en="Contact" data-ar="اتصل بنا">Contact</span>
+        </div>
+        <h2 class="section-title" data-en="Order, Reserve, or Just Say Vanakkam" data-ar="اطلب، احجز، أو قل فقط فاناكام">Order, Reserve, or Just Say Vanakkam</h2>
+        <p class="section-text" data-en="Whether it is a family dosa breakfast, a midnight parotta run, or a catering order for the office — we are one call away." data-ar="سواء كان إفطار دوسا عائلي، أو جولة بروتا منتصف الليل، أو طلب تموين للمكتب — نحن على بعد مكالمة.">Whether it is a family dosa breakfast, a midnight parotta run, or a catering order for the office — we are one call away.</p>
+
+        <a href="tel:+96560085625" class="phone-big mt-8">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          +965 6008 5625
+        </a>
+
+        <a href="https://wa.me/96560085625" target="_blank" rel="noopener" class="whatsapp-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span data-en="Message on WhatsApp" data-ar="راسلنا على واتساب">Message on WhatsApp</span>
+        </a>
+      </div>
+
+      <div>
+        <h3 class="font-display text-2xl mb-4" style="color: var(--text);" data-en="Opening Hours" data-ar="ساعات العمل">Opening Hours</h3>
+        <ul class="hours-list">
+          <li><span data-en="Sunday" data-ar="الأحد">Sunday</span> <span>5:00 AM – 11:45 PM</span></li>
+          <li><span data-en="Monday" data-ar="الإثنين">Monday</span> <span>5:00 AM – 11:45 PM</span></li>
+          <li><span data-en="Tuesday" data-ar="الثلاثاء">Tuesday</span> <span>5:00 AM – 11:45 PM</span></li>
+          <li><span data-en="Wednesday" data-ar="الأربعاء">Wednesday</span> <span>5:00 AM – 11:45 PM</span></li>
+          <li><span data-en="Thursday" data-ar="الخميس">Thursday</span> <span>5:00 AM – 11:45 PM</span></li>
+          <li><span data-en="Friday" data-ar="الجمعة">Friday</span> <span>5:00 AM – 11:45 PM</span></li>
+          <li><span data-en="Saturday" data-ar="السبت">Saturday</span> <span>5:00 AM – 11:45 PM</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-brand" data-en="Madurai Restaurant" data-ar="مطعم مادوراي">Madurai Restaurant</div>
+    <p class="text-sm" data-en="Authentic Tamil cuisine in the heart of Farwaniya, Kuwait." data-ar="المطبخ التاميل الأصيل في قلب الفروانية، الكويت.">Authentic Tamil cuisine in the heart of Farwaniya, Kuwait.</p>
+    <div class="socials">
+      <a href="#" class="social" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+      <a href="#" class="social" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+      <a href="https://wa.me/96560085625" class="social" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+    </div>
+    <p class="text-xs opacity-70" data-en="© 2026 Madurai Restaurant. All rights reserved." data-ar="© 2026 مطعم مادوراي. جميع الحقوق محفوظة.">© 2026 Madurai Restaurant. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // ===== State =====
+    let currentLang = localStorage.getItem('madurai-lang') || 'en';
+    let currentTheme = localStorage.getItem('madurai-theme') || 'light';
+
+    // ===== DOM Refs =====
+    const html = document.documentElement;
+    const loader = document.getElementById('loader');
+    const themeToggle = document.getElementById('theme-toggle');
+    const langSwitch = document.getElementById('lang-switch');
+    const spiceJars = document.querySelectorAll('.spice-jar');
+    const mobItems = document.querySelectorAll('.mob-item');
+    const menuTabs = document.querySelectorAll('.menu-tab');
+    const menuCards = document.querySelectorAll('.menu-card');
+    const revealEls = document.querySelectorAll('.reveal');
+
+    // ===== Loader =====
+    window.addEventListener('load', () => {
+      const tl = gsap.timeline();
+      tl.to('.kadai', { y: -20, duration: 0.6, ease: 'power2.out' })
+        .to('.kadai', { scale: 1.4, opacity: 0, duration: 0.5 })
+        .to(loader, { opacity: 0, duration: 0.6, onComplete: () => {
+          loader.style.visibility = 'hidden';
+          initAnimations();
+        }}, '-=0.2');
+    });
+
+    // ===== Theme Toggle =====
+    function setTheme(theme) {
+      currentTheme = theme;
+      html.setAttribute('data-theme', theme);
+      localStorage.setItem('madurai-theme', theme);
+      updateThemeIcon();
+    }
+    function updateThemeIcon() {
+      const rays = themeToggle.querySelector('.sun-rays');
+      const core = themeToggle.querySelector('.sun-core');
+      const moon = themeToggle.querySelector('.moon');
+      if (currentTheme === 'dark') {
+        rays.style.display = 'none';
+        core.style.display = 'none';
+        moon.style.display = 'block';
+      } else {
+        rays.style.display = 'block';
+        core.style.display = 'block';
+        moon.style.display = 'none';
+      }
+    }
+    themeToggle.addEventListener('click', () => {
+      setTheme(currentTheme === 'light' ? 'dark' : 'light');
+    });
+
+    // ===== Language Switcher =====
+    function setLang(lang) {
+      currentLang = lang;
+      html.lang = lang;
+      html.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      html.classList.toggle('font-ar', lang === 'ar');
+      localStorage.setItem('madurai-lang', lang);
+
+      document.querySelectorAll('[data-en]').forEach(el => {
+        if (el.dataset[lang]) el.textContent = el.dataset[lang];
+      });
+
+      langSwitch.querySelectorAll('span[data-lang]').forEach(span => {
+        span.classList.toggle('active', span.dataset.lang === lang);
+      });
+
+      // Re-render dynamic elements if needed
+      updateMapLang();
+    }
+    langSwitch.querySelectorAll('span[data-lang]').forEach(span => {
+      span.addEventListener('click', () => setLang(span.dataset.lang));
+    });
+    function updateMapLang() {
+      const iframe = document.querySelector('.map-frame');
+      if (!iframe) return;
+      const src = iframe.src;
+      iframe.src = src.replace(/!1sen|!1sar/g, currentLang === 'ar' ? '!1sar' : '!1sen');
+    }
+
+    // ===== Spice Particles =====
+    spiceJars.forEach(jar => {
+      const puff = jar.querySelector('.spice-puff');
+      for (let i = 0; i < 8; i++) {
+        const span = document.createElement('span');
+        const angle = (i / 8) * Math.PI * 2;
+        const dist = 28 + Math.random() * 14;
+        span.style.setProperty('--tx', `${Math.cos(angle) * dist}px`);
+        span.style.setProperty('--ty', `${Math.sin(angle) * dist}px`);
+        span.style.left = '50%';
+        span.style.top = '50%';
+        span.style.background = jar.style.background.match(/#[0-9A-Fa-f]+/g)?.[0] || '#C45C26';
+        span.style.animationDelay = `${i * 0.05}s`;
+        puff.appendChild(span);
+      }
+      jar.addEventListener('click', () => {
+        const target = document.getElementById(jar.dataset.target);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // ===== Active Nav on Scroll =====
+    const sections = ['hero', 'about', 'menu', 'gallery', 'location', 'contact'];
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          spiceJars.forEach(j => j.classList.toggle('active', j.dataset.target === id));
+          mobItems.forEach(m => m.classList.toggle('active', m.dataset.target === id));
+        }
+      });
+    }, { threshold: 0.4, rootMargin: '-10% 0px -40% 0px' });
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    // ===== Menu Filtering =====
+    menuTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const cat = tab.dataset.category;
+        menuTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        menuCards.forEach(card => {
+          const show = cat === 'all' || card.dataset.category === cat;
+          gsap.to(card, {
+            opacity: show ? 1 : 0,
+            scale: show ? 1 : 0.9,
+            duration: 0.4,
+            display: show ? 'block' : 'none'
+          });
+        });
+      });
+    });
+
+    // ===== Floating Curry Leaves =====
+    function createLeaves() {
+      const heroBg = document.querySelector('.hero-bg-layers');
+      if (!heroBg) return;
+      for (let i = 0; i < 18; i++) {
+        const leaf = document.createElement('div');
+        leaf.className = 'leaf';
+        leaf.style.left = `${Math.random() * 100}%`;
+        leaf.style.top = `${Math.random() * 100}%`;
+        leaf.style.transform = `rotate(${Math.random() * 360}deg) scale(${0.6 + Math.random()})`;
+        leaf.style.opacity = 0.1 + Math.random() * 0.2;
+        heroBg.appendChild(leaf);
+        gsap.to(leaf, {
+          y: `${-30 - Math.random() * 60}vh`,
+          x: `${(Math.random() - 0.5) * 20}vw`,
+          rotation: Math.random() * 360,
+          duration: 12 + Math.random() * 10,
+          repeat: -1,
+          yoyo: true,
+          ease: 'sine.inOut'
+        });
+      }
+    }
+    createLeaves();
+
+    // ===== GSAP Animations =====
+    function initAnimations() {
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Hero entrance
+      gsap.from('.hero-badge', { y: 30, opacity: 0, duration: 1, delay: 0.2, ease: 'power3.out' });
+      gsap.from('.hero-title span', { y: 80, opacity: 0, rotationX: -45, duration: 1.2, stagger: 0.15, ease: 'power3.out' });
+      gsap.from('.hero-subtitle', { y: 30, opacity: 0, duration: 1, delay: 0.8, ease: 'power3.out' });
+      gsap.from('.hero-cta', { y: 30, opacity: 0, duration: 1, delay: 1, ease: 'power3.out' });
+      gsap.from('.thali-stage', { scale: 0.5, opacity: 0, rotationX: 90, duration: 1.5, delay: 0.5, ease: 'elastic.out(1, 0.7)' });
+
+      // Parallax temple layers
+      gsap.to('.gopuram-layer', {
+        y: -120,
+        ease: 'none',
+        scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true }
+      });
+
+      // About parallax cards
+      document.querySelectorAll('.parallax').forEach(el => {
+        gsap.to(el, {
+          y: () => parseFloat(el.dataset.speed) * 200,
+          ease: 'none',
+          scrollTrigger: { trigger: '#about', start: 'top bottom', end: 'bottom top', scrub: true }
+        });
+      });
+
+      // Section reveals
+      const revealSections = ['#about .about-text', '#menu .text-center', '#gallery .text-center', '#location .text-center', '#contact > div > div'];
+      revealSections.forEach(sel => {
+        gsap.utils.toArray(sel).forEach(el => {
+          gsap.from(el, {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: 'power3.out',
+            scrollTrigger: { trigger: el, start: 'top 80%', toggleActions: 'play none none reverse' }
+          });
+        });
+      });
+
+      // Stats stagger
+      gsap.from('.stat', {
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: 'back.out(1.7)',
+        scrollTrigger: { trigger: '.about-stats', start: 'top 85%' }
+      });
+
+      // Menu cards stagger
+      gsap.from('.menu-card', {
+        y: 60,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.12,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: '#menu-grid', start: 'top 80%' }
+      });
+
+      // Gallery items
+      gsap.from('.gallery-item', {
+        y: 80,
+        opacity: 0,
+        scale: 0.95,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: '.gallery-grid', start: 'top 80%' }
+      });
+
+      // Location card
+      gsap.from('.location-card', {
+        x: -50,
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: '#location', start: 'top 60%' }
+      });
+
+      // Thali scroll rotation
+      gsap.to('.thali', {
+        rotationZ: 30,
+        ease: 'none',
+        scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: 1.5 }
+      });
+    }
+
+    // ===== Gallery 3D Tilt =====
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('mousemove', (e) => {
+        const rect = item.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        gsap.to(item, {
+          rotationY: x * 12,
+          rotationX: -y * 12,
+          duration: 0.4,
+          ease: 'power2.out'
+        });
+      });
+      item.addEventListener('mouseleave', () => {
+        gsap.to(item, { rotationY: 0, rotationX: 0, duration: 0.6, ease: 'elastic.out(1, 0.5)' });
+      });
+    });
+
+    // ===== Mobile nav smooth scroll =====
+    mobItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementById(item.dataset.target).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // ===== Initialize =====
+    setTheme(currentTheme);
+    setLang(currentLang);
+  </script>
+</body>
+</html>
