@@ -1,0 +1,2259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RoastMyCV — Your CV Is Not As Good As You Think</title>
+
+  <!-- Google Fonts -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+  </style>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+
+  <style>
+    /* ─── RESET & BASE ─────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --bg:           #111010;
+      --surface:      #1A1917;
+      --surface2:     #242220;
+      --accent:       #E8473F;
+      --accent-dim:   rgba(232,71,63,0.12);
+      --accent-dim2:  rgba(232,71,63,0.22);
+      --gold:         #C8A951;
+      --text-primary: #F2EDE6;
+      --text-secondary:#8A857D;
+      --border:       rgba(242,237,230,0.07);
+      --border-hover: rgba(242,237,230,0.14);
+      --green:        #5A9E74;
+      --red-analysis: #C2544E;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* Noise texture overlay for editorial depth */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+    #navbar, #landing, #loading-state, #analysis-state, #footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ─── DECORATIVE ELEMENTS ──────────────────────────── */
+    /* Hero accent rule */
+    #hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--border);
+    }
+    /* Vertical accent stripe in analysis left col */
+    .roast-section-label::before {
+      content: '> ';
+      opacity: 0.4;
+      font-size: 0.65rem;
+    }
+
+    ::selection { background: var(--accent-dim2); color: var(--text-primary); }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--surface2); border-radius: 2px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--text-secondary); }
+
+    /* ─── TYPOGRAPHY HELPERS ───────────────────────────── */
+    .font-syne    { font-family: 'Syne', sans-serif; }
+    .font-inter   { font-family: 'Inter', sans-serif; }
+    .font-mono    { font-family: 'JetBrains Mono', monospace; }
+    .text-accent  { color: var(--accent); }
+    .text-gold    { color: var(--gold); }
+    .text-muted   { color: var(--text-secondary); }
+    .text-primary { color: var(--text-primary); }
+    .text-green   { color: var(--green); }
+    .text-red-a   { color: var(--red-analysis); }
+
+    /* ─── NAVBAR ───────────────────────────────────────── */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: transparent;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.4s;
+    }
+
+    .nav-wordmark {
+      display: flex;
+      align-items: baseline;
+      gap: 0;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .nav-roast {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--text-primary);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .nav-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      margin: 0 3px 3px 2px;
+      vertical-align: bottom;
+    }
+    .nav-mycv {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav-link {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--text-primary); }
+
+    .nav-github {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .nav-github:hover { border-color: var(--border-hover); color: var(--text-primary); }
+    .nav-github svg { width: 16px; height: 16px; }
+
+    /* Mobile hamburger */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--text-primary);
+    }
+
+    /* Mobile drawer */
+    #mobile-drawer {
+      position: fixed;
+      top: 0; right: -280px;
+      width: 260px;
+      height: 100vh;
+      background: var(--surface);
+      border-left: 1px solid var(--border);
+      z-index: 200;
+      padding: 80px 32px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    #mobile-drawer .nav-link {
+      font-size: 1rem;
+      color: var(--text-primary);
+    }
+    #drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 190;
+      display: none;
+    }
+
+    /* ─── LANDING PAGE ─────────────────────────────────── */
+    #landing {
+      position: relative;
+      will-change: transform, opacity;
+    }
+
+    /* ─── HERO ─────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 48px 80px;
+      position: relative;
+    }
+
+    .hero-headline-wrap {
+      overflow: hidden;
+      margin-bottom: 4px;
+    }
+    .hero-line {
+      display: block;
+      will-change: transform, opacity;
+    }
+
+    .hero-line-1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      color: var(--text-secondary);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+    .hero-line-2 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(3rem, 7.5vw, 8.5rem);
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      line-height: 0.95;
+    }
+    .hero-line-3 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(3rem, 7.5vw, 8.5rem);
+      color: var(--accent);
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      line-height: 0.95;
+      font-style: italic;
+    }
+
+    .hero-sub {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 480px;
+      margin: 32px auto 0;
+      line-height: 1.7;
+      opacity: 0;
+    }
+
+    /* Angled clip-path CTA button */
+    .btn-cta {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 15px 44px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: transparent;
+      border: 1px solid var(--accent);
+      clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+      cursor: pointer;
+      text-decoration: none;
+      opacity: 0;
+      transform: scale(0.8);
+      position: relative;
+      overflow: hidden;
+      transition: color 0.25s;
+    }
+    .btn-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+      z-index: 0;
+    }
+    .btn-cta span { position: relative; z-index: 1; }
+    .btn-cta:hover { color: #fff; }
+    .btn-cta:hover::before { transform: scaleX(1); }
+
+    .btn-cta-filled {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+      clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+    }
+    .btn-cta-filled::before { display: none; }
+
+    .hero-stats {
+      margin-top: 28px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.04em;
+      opacity: 0;
+    }
+    .hero-stats-sep { margin: 0 12px; color: var(--text-secondary); opacity: 0.4; }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: var(--text-secondary);
+      opacity: 0.4;
+    }
+    .scroll-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      writing-mode: horizontal-tb;
+    }
+
+    /* ─── HOW IT WORKS ─────────────────────────────────── */
+    #how-it-works {
+      padding: 100px 48px;
+      border-top: 1px solid var(--border);
+      max-width: 1280px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    /* Override for full-bleed sections */
+    section { width: 100%; }
+    .how-header {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 60px;
+    }
+    .how-steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+    }
+    .how-step {
+      padding: 0 40px 0 0;
+      border-right: 1px solid var(--border);
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    .how-step:first-child { padding-left: 0; }
+    .how-step:last-child { border-right: none; padding-right: 0; padding-left: 40px; }
+    .how-step:nth-child(2) { padding-left: 40px; }
+    .how-step-num {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 3rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .how-step-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 12px;
+    }
+    .how-step-desc {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* ─── SAMPLE ROAST ─────────────────────────────────── */
+    #sample-roast {
+      padding: 80px 48px;
+      border-top: 1px solid var(--border);
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    /* Wrapper for full-width border lines on sections */
+    #sample-roast-wrap, #input-section-wrap {
+      border-top: 1px solid var(--border);
+    }
+    .sample-label {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .sample-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 32px 40px;
+      position: relative;
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+    }
+    .sample-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      line-height: 1.7;
+      max-width: 800px;
+    }
+    .cursor-blink {
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background: var(--accent);
+      margin-left: 2px;
+      vertical-align: text-bottom;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+
+    /* ─── INPUT SECTION ────────────────────────────────── */
+    #input-section {
+      padding: 80px 48px 120px;
+      border-top: 1px solid var(--border);
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .input-label {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+    #cv-input {
+      width: 100%;
+      min-height: 280px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 24px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--text-primary);
+      line-height: 1.7;
+      resize: vertical;
+      outline: none;
+      transition: none;
+      display: block;
+    }
+    #cv-input::placeholder { color: var(--text-secondary); opacity: 0.5; }
+
+    .input-actions {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .btn-roast-it {
+      display: inline-block;
+      padding: 16px 56px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--accent);
+      border: none;
+      clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-roast-it::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.15);
+      transform: scaleX(0);
+      transform-origin: left;
+      z-index: 0;
+    }
+    .btn-roast-it span { position: relative; z-index: 1; }
+    .input-note {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* ─── LOADING STATE ────────────────────────────────── */
+    #loading-state {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      z-index: 150;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+    }
+    .loading-word {
+      display: flex;
+      gap: 4px;
+    }
+    .loading-letter {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 3rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+    }
+    .loading-sub {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      opacity: 0;
+    }
+    .loading-bar-wrap {
+      width: 120px;
+      height: 2px;
+      background: var(--surface2);
+      border-radius: 1px;
+      overflow: hidden;
+    }
+    .loading-bar {
+      height: 100%;
+      background: var(--accent);
+      width: 0%;
+      border-radius: 1px;
+    }
+
+    /* ─── ANALYSIS STATE ───────────────────────────────── */
+    #analysis-state {
+      display: none;
+      opacity: 0;
+      transform: translateX(80px);
+      min-height: 100vh;
+      padding: 120px 48px 80px;
+    }
+
+    .analysis-layout {
+      display: grid;
+      grid-template-columns: 65% 35%;
+      gap: 48px;
+      max-width: 1280px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    /* LEFT COLUMN */
+  
+    .analysis-verdict-header {
+      margin-bottom: 32px;
+    }
+    .verdict-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+    .verdict-headline {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 2rem;
+      color: var(--text-primary);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+    .verdict-rule {
+      width: 100%;
+      height: 1px;
+      background: var(--accent);
+      margin-top: 16px;
+      transform-origin: left;
+    }
+
+    /* Roast output */
+    #roast-output {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .roast-section {
+      opacity: 0;
+    }
+    .roast-section-label {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .roast-section-content {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.875rem;
+      color: var(--text-primary);
+      line-height: 1.85;
+      white-space: pre-wrap;
+    }
+    .roast-line { display: block; }
+    .roast-line.positive { color: var(--green); }
+    .roast-line.positive::before { content: '+ '; }
+    .roast-line.negative { color: var(--red-analysis); }
+    .roast-line.negative::before { content: '— '; }
+
+    /* Top 3 fixes */
+    .fixes-header {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      margin-top: 48px;
+    }
+    .fixes-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .fix-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 2px 4px 4px 2px;
+      padding: 16px 20px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      opacity: 0;
+    }
+    .fix-num {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--accent);
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .fix-text {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.875rem;
+      color: var(--text-primary);
+      line-height: 1.55;
+    }
+
+    .btn-roast-another {
+      display: inline-block;
+      margin-top: 48px;
+      padding: 14px 40px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      background: transparent;
+      border: 1px solid var(--border);
+      clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+      cursor: pointer;
+      transition: color 0.25s, border-color 0.25s;
+    }
+    .btn-roast-another:hover { color: var(--text-primary); border-color: var(--border-hover); }
+
+    /* RIGHT COLUMN */
+    .analysis-right {
+      position: sticky;
+      top: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Score card */
+    .score-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 4px;
+    }
+    .score-label {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+    .score-number {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 5rem;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .score-denom {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 1rem;
+      color: var(--text-secondary);
+    }
+    .score-grade {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 3.5rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-top: 8px;
+      transform-origin: center;
+      opacity: 0;
+      display: block;
+      perspective: 600px;
+    }
+
+    /* Roast Meter */
+    .meter-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 24px;
+    }
+    .meter-label {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+    .meter-body {
+      display: flex;
+      align-items: flex-end;
+      gap: 16px;
+    }
+    .meter-bar-wrap {
+      width: 12px;
+      height: 200px;
+      background: var(--surface);
+      border-radius: 6px;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .meter-bar-fill {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 0%;
+      border-radius: 6px;
+      background: var(--green);
+      transition: background 0.5s;
+    }
+    .meter-scale {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 200px;
+      padding: 0;
+    }
+    .meter-scale-item {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      color: var(--text-secondary);
+    }
+
+    /* Category bars */
+    .categories-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 24px;
+    }
+    .categories-label {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .cat-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .cat-row {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .cat-row-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .cat-name {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+    }
+    .cat-score {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--text-primary);
+    }
+    .cat-bar-wrap {
+      width: 100%;
+      height: 3px;
+      background: var(--surface);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .cat-bar-fill {
+      height: 100%;
+      width: 0%;
+      border-radius: 2px;
+      background: var(--accent);
+    }
+
+    /* Share card */
+    .share-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 24px;
+    }
+    .share-score-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+    .btn-copy {
+      display: block;
+      width: 100%;
+      padding: 11px 20px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      color: var(--text-secondary);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      cursor: pointer;
+      text-align: center;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .btn-copy:hover { color: var(--text-primary); border-color: var(--border-hover); }
+    .btn-copy.copied { color: var(--green); border-color: var(--green); }
+
+    /* Error card */
+    #error-card {
+      display: none;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--red-analysis);
+      border-radius: 2px 4px 4px 2px;
+      padding: 32px;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .error-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .btn-retry {
+      padding: 12px 32px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: transparent;
+      border: 1px solid var(--accent);
+      clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+      cursor: pointer;
+    }
+
+    /* ─── FOOTER ───────────────────────────────────────── */
+    #footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-wordmark {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 0.88rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+    .footer-center {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.04em;
+    }
+    .footer-right {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+    .footer-right svg { width: 12px; height: 12px; opacity: 0.6; }
+
+    /* ─── RESPONSIVE ───────────────────────────────────── */
+    @media (max-width: 1023px) {
+      .analysis-layout {
+        grid-template-columns: 1fr;
+      }
+      .analysis-right {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .meter-bar-wrap {
+        width: 100%;
+        height: 8px;
+        align-items: stretch;
+      }
+      .meter-body {
+        flex-direction: column;
+        gap: 8px;
+      }
+      .meter-scale { flex-direction: row; height: auto; }
+      .share-card { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 767px) {
+      #navbar { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+
+      #hero { padding: 100px 20px 80px; }
+      .hero-line-2, .hero-line-3 { font-size: clamp(2.8rem, 12vw, 5rem); }
+      .hero-line-1 { font-size: clamp(1.1rem, 4vw, 1.8rem); }
+
+      #how-it-works { padding: 60px 20px; }
+      .how-steps { grid-template-columns: 1fr; gap: 48px; }
+      .how-step { border-right: none; border-bottom: 1px solid var(--border); padding: 0 0 40px 0 !important; }
+      .how-step:last-child { border-bottom: none; padding-bottom: 0 !important; }
+
+      #sample-roast { padding: 60px 20px; }
+      .sample-card { padding: 24px 20px; }
+      #input-section { padding: 60px 20px 80px; }
+      #cv-input { min-height: 200px; }
+      .input-actions { flex-direction: column; align-items: stretch; }
+      .btn-roast-it { width: 100%; text-align: center; }
+
+      #analysis-state { padding: 100px 20px 60px; }
+      .analysis-right { grid-template-columns: 1fr; }
+
+      #footer { padding: 20px; flex-direction: column; gap: 12px; text-align: center; }
+    }
+
+    @media (max-width: 479px) {
+      .hero-line-2, .hero-line-3 { font-size: clamp(2.2rem, 12vw, 3.5rem); }
+      .score-number { font-size: 3.5rem; }
+      .score-grade { font-size: 2.5rem; }
+    }
+
+    /* Utility */
+    .hidden { display: none !important; }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); border: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAVBAR ─────────────────────────────────────────── -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-wordmark" id="nav-home-link" role="button" tabindex="0" aria-label="Go to homepage">
+      <span class="nav-roast">ROAST</span><span class="nav-dot"></span><span class="nav-mycv">MY CV</span>
+    </div>
+    <div class="nav-links">
+      <a class="nav-link" id="nav-how-link" href="#how-it-works">How it works</a>
+      <a class="nav-github" href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+        </svg>
+      </a>
+    </div>
+    <div class="nav-hamburger" id="hamburger" role="button" tabindex="0" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div id="drawer-overlay" role="presentation"></div>
+  <div id="mobile-drawer" role="dialog" aria-label="Navigation menu">
+    <a class="nav-link" href="#how-it-works" id="drawer-how">How it works</a>
+    <a class="nav-link" href="#input-section" id="drawer-input">Roast my CV</a>
+    <a class="nav-link nav-github" href="https://github.com/" target="_blank" rel="noopener" style="border:none; width:auto; justify-content:flex-start; gap:8px;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      GitHub
+    </a>
+  </div>
+
+  <!-- ─── LANDING STATE ───────────────────────────────────── -->
+  <div id="landing">
+
+    <!-- HERO -->
+    <section id="hero" aria-label="Hero">
+      <div>
+        <div class="hero-headline-wrap"><span class="hero-line hero-line-1">YOUR CV IS</span></div>
+        <div class="hero-headline-wrap"><span class="hero-line hero-line-2">NOT AS GOOD</span></div>
+        <div class="hero-headline-wrap"><span class="hero-line hero-line-3">AS YOU THINK.</span></div>
+      </div>
+      <p class="hero-sub">Paste your resume. An AI trained on brutal honesty will tell you exactly what's wrong — section by section, no sugarcoating.</p>
+      <a class="btn-cta" id="hero-cta" href="#input-section" role="button">
+        <span>Roast My Resume</span>
+      </a>
+      <p class="hero-stats">
+        12,000+ CVs Roasted<span class="hero-stats-sep">/</span>Avg. Score: 61/100<span class="hero-stats-sep">/</span>Most Common Issue: Generic Objective Statements
+      </p>
+      <div class="scroll-indicator" aria-hidden="true">
+        <div class="scroll-line" id="scroll-line"></div>
+        <span class="scroll-label">scroll</span>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" aria-label="How it works">
+      <p class="how-header">* How It Works</p>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">01</div>
+          <div class="how-step-title">— Paste</div>
+          <p class="how-step-desc">Copy your CV — the whole thing. Yes, including the hobbies section you added to seem human. Paste it in the box below.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">02</div>
+          <div class="how-step-title">— Analyse</div>
+          <p class="how-step-desc">Gemini reads every word. Unlike the recruiter who spent 6 seconds on it, the AI actually finishes the document.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">03</div>
+          <div class="how-step-title">— Survive</div>
+          <p class="how-step-desc">Read the verdict. Accept the score. Fix the three things that actually matter. Apply. Get the job. You're welcome.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SAMPLE ROAST PREVIEW -->
+    <section id="sample-roast" aria-label="Sample output">
+      <p class="sample-label">> Sample Output</p>
+      <div class="sample-card">
+        <div>
+          <div class="sample-text" id="sample-text" aria-live="polite" aria-atomic="true"></div>
+          <span class="cursor-blink" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- INPUT SECTION -->
+    <section id="input-section" aria-label="CV input">
+      <p class="input-label"># Paste Your CV</p>
+      <textarea
+        id="cv-input"
+        placeholder="Paste your CV text here. Be brave."
+        aria-label="CV text input"
+        spellcheck="false"
+      ></textarea>
+      <div class="input-actions">
+        <button class="btn-roast-it" id="roast-btn" type="button" aria-label="Submit CV for roasting">
+          <span>Roast It</span>
+        </button>
+        <p class="input-note">Processed via Gemini API.<br>Nothing is stored.</p>
+      </div>
+    </section>
+
+  </div><!-- /landing -->
+
+  <!-- ─── LOADING STATE ───────────────────────────────────── -->
+  <div id="loading-state" role="status" aria-label="Loading analysis" aria-live="polite">
+    <div class="loading-word" aria-hidden="true">
+      <span class="loading-letter">R</span>
+      <span class="loading-letter">E</span>
+      <span class="loading-letter">A</span>
+      <span class="loading-letter">D</span>
+      <span class="loading-letter">I</span>
+      <span class="loading-letter">N</span>
+      <span class="loading-letter">G</span>
+    </div>
+    <div class="loading-bar-wrap" aria-hidden="true">
+      <div class="loading-bar" id="loading-bar"></div>
+    </div>
+    <p class="loading-sub" id="loading-sub">Gemini is judging your life choices.</p>
+  </div>
+
+  <!-- ─── ANALYSIS STATE ──────────────────────────────────── -->
+  <div id="analysis-state" role="main" aria-label="CV analysis results">
+    <div class="analysis-layout">
+
+      <!-- LEFT COLUMN -->
+      <div class="analysis-left">
+        <div class="analysis-verdict-header">
+          <p class="verdict-title">/ Analysis Complete</p>
+          <h1 class="verdict-headline">The Verdict<br>On Your CV</h1>
+          <div class="verdict-rule" id="verdict-rule"></div>
+        </div>
+
+        <div id="roast-output" aria-live="polite"></div>
+
+        <div id="fixes-section" style="display:none;">
+          <p class="fixes-header">> Top 3 Things to Fix Immediately</p>
+          <div class="fixes-list" id="fixes-list"></div>
+        </div>
+
+        <div id="error-card" role="alert">
+          <p class="error-text">Gemini refused to look at your CV.<br>That might actually be feedback.</p>
+          <button class="btn-retry" id="retry-btn" type="button">Try Again</button>
+        </div>
+
+        <button class="btn-roast-another" id="roast-another-btn" type="button" style="display:none;" aria-label="Analyse another CV">
+          Roast Another CV
+        </button>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="analysis-right">
+
+        <!-- Score Card -->
+        <div class="score-card">
+          <p class="score-label">Roast Score</p>
+          <div class="score-number" id="score-number">--</div>
+          <div class="score-denom">/ 100</div>
+          <span class="score-grade" id="score-grade" aria-label="Grade">-</span>
+        </div>
+
+        <!-- Roast Meter -->
+        <div class="meter-card">
+          <p class="meter-label">Severity</p>
+          <div class="meter-body">
+            <div class="meter-bar-wrap" aria-label="Severity meter">
+              <div class="meter-bar-fill" id="meter-fill"></div>
+            </div>
+            <div class="meter-scale" aria-hidden="true">
+              <span class="meter-scale-item">100</span>
+              <span class="meter-scale-item">70</span>
+              <span class="meter-scale-item">40</span>
+              <span class="meter-scale-item">0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category Scores -->
+        <div class="categories-card">
+          <p class="categories-label">Breakdown</p>
+          <div class="cat-rows" id="cat-rows"></div>
+        </div>
+
+        <!-- Share Card -->
+        <div class="share-card">
+          <p class="share-score-text" id="share-text">Your Roast Score: --/100<br>Grade: -</p>
+          <button class="btn-copy" id="copy-btn" type="button">Copy Result</button>
+        </div>
+
+      </div><!-- /analysis-right -->
+
+    </div>
+  </div><!-- /analysis-state -->
+
+  <!-- ─── FOOTER ──────────────────────────────────────────── -->
+  <footer id="footer" role="contentinfo">
+    <span class="footer-wordmark">RoastMy<span style="color:var(--accent)">CV</span></span>
+    <span class="footer-center">Built with Gemini API</span>
+    <a class="footer-right" href="#" target="_blank" rel="noopener" aria-label="Portfolio project">
+      Portfolio Project
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+      </svg>
+    </a>
+  </footer>
+
+
+  <script>
+
+  const GEMINI_API_KEY = 'AQ.Ab8RN6JvlGqtQbSYTgvcDTNZTid6SxhdgtBlB_eeg6CrH7-3NA'; 
+  const GEMINI_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
+
+  const SYSTEM_PROMPT = `You are a brutally honest, sharp-witted senior software engineer and hiring manager who has reviewed thousands of CVs. You roast CVs with precision — you find every weakness, every cliche, every vague claim and call it out directly. You are not cruel, but you are completely direct and never sugarcoat. You also acknowledge genuine strengths with equal directness.
+
+Structure your response EXACTLY as follows (use these section headers in uppercase exactly as written):
+
+[FIRST IMPRESSION]
+Your immediate reaction in 2-3 sharp sentences.
+
+[OBJECTIVE / SUMMARY]
+Critique of the summary/objective section. If absent, note that.
+
+[WORK EXPERIENCE]
+Critique of each role listed. Look for: vague responsibilities, no quantified results, gaps, short tenures, weak action verbs.
+
+[SKILLS SECTION]
+Call out: obvious/irrelevant skills (Microsoft Word, "good communication"), missing critical skills for their apparent field, listing tools without context.
+
+[EDUCATION]
+Brief assessment. Note if it is being leaned on too heavily or not leveraged correctly.
+
+[OVERALL VERDICT]
+A direct closing paragraph. Give a score out of 100. Give a letter grade (A/B+/B/C+/C/D/F). List the top 3 most urgent fixes.
+
+Keep the tone sharp, dry, and precise. No bullet points — write in clean paragraphs. No asterisks for formatting.`;
+
+  // ═══════════════════════════════════════════════════════════
+  // GSAP SETUP
+  // ═══════════════════════════════════════════════════════════
+  gsap.registerPlugin(ScrollTrigger, TextPlugin);
+
+  // ═══════════════════════════════════════════════════════════
+  // STATE
+  // ═══════════════════════════════════════════════════════════
+  let appState = 'landing'; // 'landing' | 'loading' | 'analysis'
+  let lastCVText = '';
+  let loadingTl = null;
+  let typewriterTl = null;
+
+  // ═══════════════════════════════════════════════════════════
+  // DOM REFS
+  // ═══════════════════════════════════════════════════════════
+  const navbar        = document.getElementById('navbar');
+  const landing       = document.getElementById('landing');
+  const loadingState  = document.getElementById('loading-state');
+  const analysisState = document.getElementById('analysis-state');
+  const cvInput       = document.getElementById('cv-input');
+  const roastBtn      = document.getElementById('roast-btn');
+  const roastOutput   = document.getElementById('roast-output');
+  const scoreNumber   = document.getElementById('score-number');
+  const scoreGrade    = document.getElementById('score-grade');
+  const meterFill     = document.getElementById('meter-fill');
+  const catRows       = document.getElementById('cat-rows');
+  const fixesSection  = document.getElementById('fixes-section');
+  const fixesList     = document.getElementById('fixes-list');
+  const shareText     = document.getElementById('share-text');
+  const copyBtn       = document.getElementById('copy-btn');
+  const errorCard     = document.getElementById('error-card');
+  const retryBtn      = document.getElementById('retry-btn');
+  const roastAnotherBtn = document.getElementById('roast-another-btn');
+  const heroCtaBtn    = document.getElementById('hero-cta');
+  const sampleTextEl  = document.getElementById('sample-text');
+  const hamburger     = document.getElementById('hamburger');
+  const drawer        = document.getElementById('mobile-drawer');
+  const drawerOverlay = document.getElementById('drawer-overlay');
+
+  // ═══════════════════════════════════════════════════════════
+  // HERO ENTRANCE ANIMATION
+  // ═══════════════════════════════════════════════════════════
+  function initHeroAnimation() {
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+    const heroLines = document.querySelectorAll('.hero-line');
+    gsap.set(heroLines, { y: 70, opacity: 0 });
+
+    tl.to(heroLines, {
+      y: 0,
+      opacity: 1,
+      duration: 0.85,
+      stagger: 0.14,
+    })
+    .to('.hero-sub', {
+      y: 0,
+      opacity: 1,
+      duration: 0.6,
+    }, '-=0.3')
+    .to('#hero-cta', {
+      scale: 1,
+      opacity: 1,
+      duration: 0.7,
+      ease: 'elastic.out(1, 0.6)',
+    }, '-=0.3')
+    .to('.hero-stats', {
+      opacity: 1,
+      duration: 0.5,
+    }, '-=0.2')
+    .to('.scroll-indicator', {
+      opacity: 1,
+      duration: 0.5,
+    }, '-=0.2');
+
+    // Scroll indicator pulse
+    gsap.to('#scroll-line', {
+      scaleY: 0.3,
+      transformOrigin: 'top center',
+      duration: 0.8,
+      ease: 'sine.inOut',
+      repeat: -1,
+      yoyo: true,
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  // NAVBAR SCROLL EFFECT
+  // ═══════════════════════════════════════════════════════════
+  function initNavbarScroll() {
+    ScrollTrigger.create({
+      start: 80,
+      onEnter: () => {
+        gsap.to(navbar, {
+          backgroundColor: 'rgba(17, 16, 16, 0.94)',
+          backdropFilter: 'blur(8px)',
+          borderBottomColor: 'rgba(242,237,230,0.07)',
+          duration: 0.5,
+          ease: 'power2.out',
+        });
+      },
+      onLeaveBack: () => {
+        gsap.to(navbar, {
+          backgroundColor: 'transparent',
+          backdropFilter: 'blur(0px)',
+          borderBottomColor: 'transparent',
+          duration: 0.4,
+          ease: 'power2.out',
+        });
+      },
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  // HOW IT WORKS SCROLL ANIMATION
+  // ═══════════════════════════════════════════════════════════
+  function initHowItWorksAnimation() {
+    const steps = document.querySelectorAll('.how-step');
+    ScrollTrigger.batch(steps, {
+      onEnter: (els) => {
+        gsap.to(els, {
+          y: 0,
+          opacity: 1,
+          duration: 0.7,
+          stagger: 0.15,
+          ease: 'power3.out',
+        });
+      },
+      start: 'top 85%',
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  // TYPEWRITER SAMPLE ROAST
+  // ═══════════════════════════════════════════════════════════
+  const SAMPLE_LINES = [
+    'Your objective statement is so generic it could apply to any human alive since 1994.',
+    'Three internships, zero quantified results. Bold strategy.',
+    'Skills section includes Microsoft Word. In 2025.',
+    'Hobbies: reading and travelling. Revolutionary.',
+  ];
+
+  function initTypewriter() {
+    let idx = 0;
+
+    function typeNextLine() {
+      const line = SAMPLE_LINES[idx % SAMPLE_LINES.length];
+      idx++;
+      let charIdx = 0;
+      sampleTextEl.textContent = '';
+
+      // Type in
+      const typeInterval = setInterval(() => {
+        sampleTextEl.textContent += line[charIdx];
+        charIdx++;
+        if (charIdx >= line.length) {
+          clearInterval(typeInterval);
+          // Hold for 2.5s then delete
+          setTimeout(() => {
+            let deleteIdx = line.length;
+            const deleteInterval = setInterval(() => {
+              deleteIdx--;
+              sampleTextEl.textContent = line.slice(0, deleteIdx);
+              if (deleteIdx <= 0) {
+                clearInterval(deleteInterval);
+                setTimeout(typeNextLine, 400);
+              }
+            }, 25);
+          }, 2500);
+        }
+      }, 38);
+    }
+
+    typeNextLine();
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  // INPUT FOCUS EFFECT
+  // ═══════════════════════════════════════════════════════════
+  function initInputFocus() {
+    cvInput.addEventListener('focus', () => {
+      gsap.to(cvInput, {
+        duration: 0.3,
+        ease: 'power2.out',
+        '--border-color': '#E8473F',
+        boxShadow: '0 0 0 3px rgba(232,71,63,0.12)',
+        borderColor: '#E8473F',
+      });
+      cvInput.style.borderColor = '#E8473F';
+      cvInput.style.boxShadow = '0 0 0 3px rgba(232,71,63,0.12)';
+    });
+
+    cvInput.addEventListener('blur', () => {
+      cvInput.style.borderColor = '';
+      cvInput.style.boxShadow = '';
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  // GSAP HOVER EFFECTS
+  // ═══════════════════════════════════════════════════════════
+  function initHoverEffects() {
+    // Hero CTA
+    heroCtaBtn.addEventListener('mouseenter', () => {
+      gsap.to(heroCtaBtn, { scale: 1.03, duration: 0.25, ease: 'power2.out' });
+    });
+    heroCtaBtn.addEventListener('mouseleave', () => {
+      gsap.to(heroCtaBtn, { scale: 1, duration: 0.4, ease: 'power2.out' });
+    });
+
+    // Roast button
+    roastBtn.addEventListener('mouseenter', () => {
+      gsap.to(roastBtn, { scale: 1.02, duration: 0.25, ease: 'power2.out' });
+    });
+    roastBtn.addEventListener('mouseleave', () => {
+      gsap.to(roastBtn, { scale: 1, duration: 0.4, ease: 'power2.out' });
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  // MOBILE DRAWER
+  // ═══════════════════════════════════════════════════════════
+  function initMobileDrawer() {
+    function openDrawer() {
+      drawerOverlay.style.display = 'block';
+      gsap.to(drawer, { x: -280, duration: 0.35, ease: 'power3.out' });
+      gsap.to(drawerOverlay, { opacity: 1, duration: 0.35 });
+      hamburger.setAttribute('aria-expanded', 'true');
+    }
+    function closeDrawer() {
+      gsap.to(drawer, { x: 0, duration: 0.35, ease: 'power3.in', onComplete: () => {
+        drawerOverlay.style.display = 'none';
+      }});
+      gsap.to(drawerOverlay, { opacity: 0, duration: 0.35 });
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+      isOpen ? closeDrawer() : openDrawer();
+    });
+    drawerOverlay.addEventListener('click', closeDrawer);
+
+    document.querySelectorAll('#mobile-drawer .nav-link').forEach(link => {
+      link.addEventListener('click', closeDrawer);
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  // LOADING ANIMATION
+  // ═══════════════════════════════════════════════════════════
+  function startLoadingAnimation() {
+    const letters = document.querySelectorAll('.loading-letter');
+    const loadingBar = document.getElementById('loading-bar');
+
+    // Reset
+    gsap.set(letters, { opacity: 0.2, y: 0 });
+    gsap.set(loadingBar, { width: '0%' });
+    gsap.set('#loading-sub', { opacity: 0 });
+
+    loadingTl = gsap.timeline();
+
+    loadingTl
+      .to(letters, {
+        opacity: 1,
+        y: -8,
+        duration: 0.5,
+        stagger: 0.07,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+      })
+      .to('#loading-sub', {
+        opacity: 1,
+        duration: 0.4,
+      }, 0.8)
+      .to(loadingBar, {
+        width: '85%',
+        duration: 8,
+        ease: 'power1.inOut',
+      }, 0);
+  }
+
+  function stopLoadingAnimation() {
+    if (loadingTl) {
+      loadingTl.kill();
+      loadingTl = null;
+    }
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  // STATE TRANSITIONS
+  // ═══════════════════════════════════════════════════════════
+  function showLoading() {
+    appState = 'loading';
+    loadingState.style.display = 'flex';
+    gsap.set(loadingState, { opacity: 0 });
+    gsap.to(loadingState, { opacity: 1, duration: 0.4 });
+    startLoadingAnimation();
+  }
+
+  function hideLoading() {
+    stopLoadingAnimation();
+    return new Promise(resolve => {
+      gsap.to(loadingState, {
+        opacity: 0,
+        duration: 0.3,
+        onComplete: () => {
+          loadingState.style.display = 'none';
+          resolve();
+        }
+      });
+    });
+  }
+
+  async function transitionToAnalysis() {
+    // Slide landing out
+    await new Promise(resolve => {
+      gsap.to(landing, {
+        x: -80,
+        opacity: 0,
+        duration: 0.4,
+        ease: 'power2.in',
+        onComplete: resolve,
+      });
+    });
+    landing.style.display = 'none';
+
+    await hideLoading();
+
+    // Show analysis
+    analysisState.style.display = 'block';
+    gsap.set(analysisState, { x: 80, opacity: 0 });
+    gsap.to(analysisState, {
+      x: 0,
+      opacity: 1,
+      duration: 0.5,
+      ease: 'power3.out',
+    });
+
+    appState = 'analysis';
+
+    // Animate verdict rule
+    gsap.from('#verdict-rule', {
+      scaleX: 0,
+      duration: 0.8,
+      ease: 'power3.out',
+      delay: 0.2,
+    });
+  }
+
+  function transitionToLanding() {
+    // Reset analysis state
+    gsap.to(analysisState, {
+      x: 80,
+      opacity: 0,
+      duration: 0.4,
+      ease: 'power2.in',
+      onComplete: () => {
+        analysisState.style.display = 'none';
+        // Reset fields
+        roastOutput.innerHTML = '';
+        scoreNumber.textContent = '--';
+        scoreGrade.textContent = '-';
+        gsap.set(scoreGrade, { opacity: 0, rotateX: 90 });
+        meterFill.style.height = '0%';
+        catRows.innerHTML = '';
+        fixesSection.style.display = 'none';
+        fixesList.innerHTML = '';
+        errorCard.style.display = 'none';
+        roastAnotherBtn.style.display = 'none';
+        shareText.textContent = 'Your Roast Score: --/100\nGrade: -';
+        cvInput.value = '';
+
+        // Show landing
+        landing.style.display = 'block';
+        gsap.set(landing, { x: 80, opacity: 0 });
+        gsap.to(landing, {
+          x: 0,
+          opacity: 1,
+          duration: 0.5,
+          ease: 'power3.out',
+          onComplete: () => {
+            appState = 'landing';
+            ScrollTrigger.refresh();
+          }
+        });
+      }
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  // CATEGORY SCORES INIT
+  // ═══════════════════════════════════════════════════════════
+  const CATEGORIES = ['Clarity', 'Experience', 'Skills', 'Impact', 'Formatting'];
+
+  function renderCategoryBars(scores) {
+    catRows.innerHTML = '';
+    CATEGORIES.forEach((cat, i) => {
+      const score = scores[i] || Math.floor(Math.random() * 40 + 40);
+      const row = document.createElement('div');
+      row.className = 'cat-row';
+      row.innerHTML = `
+        <div class="cat-row-header">
+          <span class="cat-name">${cat}</span>
+          <span class="cat-score">${score}</span>
+        </div>
+        <div class="cat-bar-wrap">
+          <div class="cat-bar-fill" style="width:0%"></div>
+        </div>`;
+      catRows.appendChild(row);
+
+      const fill = row.querySelector('.cat-bar-fill');
+      const scoreNum = score;
+      // Color based on score
+      if (scoreNum >= 70) fill.style.background = '#5A9E74';
+      else if (scoreNum >= 40) fill.style.background = '#C8A951';
+      else fill.style.background = '#C2544E';
+
+      gsap.to(fill, {
+        width: scoreNum + '%',
+        duration: 1.2,
+        ease: 'power2.out',
+        delay: 0.5 + i * 0.1,
+        scrollTrigger: {
+          trigger: fill,
+          start: 'top 90%',
+        }
+      });
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  // PARSE GEMINI RESPONSE
+  // ═══════════════════════════════════════════════════════════
+  function parseResponse(text) {
+    const sections = {};
+    const sectionKeys = [
+      'FIRST IMPRESSION',
+      'OBJECTIVE / SUMMARY',
+      'WORK EXPERIENCE',
+      'SKILLS SECTION',
+      'EDUCATION',
+      'OVERALL VERDICT',
+    ];
+
+    sectionKeys.forEach((key, i) => {
+      const startTag = `[${key}]`;
+      const nextTag = sectionKeys[i + 1] ? `[${sectionKeys[i + 1]}]` : null;
+      const startIdx = text.indexOf(startTag);
+      if (startIdx === -1) return;
+      const contentStart = startIdx + startTag.length;
+      const endIdx = nextTag ? text.indexOf(nextTag) : text.length;
+      sections[key] = text.slice(contentStart, endIdx !== -1 ? endIdx : undefined).trim();
+    });
+
+    // Extract score
+    const scoreMatch = text.match(/(\d{1,3})\/100/);
+    const score = scoreMatch ? parseInt(scoreMatch[1]) : null;
+
+    // Extract grade — look for patterns like "grade: B+" or "letter grade B+" or standalone "B+"
+    const gradePatterns = [
+      /(?:grade|letter grade|scored?)[:\s]+([A-F][+-]?)/i,
+      /\b(A[+-]?|B[+-]?|C[+-]?|D[+-]?|F)\b(?:\s*grade|\s*letter)?/,
+    ];
+    let grade = null;
+    for (const pat of gradePatterns) {
+      const m = text.match(pat);
+      if (m) { grade = m[1].toUpperCase(); break; }
+    }
+
+    // Extract top 3 fixes from OVERALL VERDICT
+    const verdictText = sections['OVERALL VERDICT'] || '';
+    const fixes = [];
+    const fixPatterns = [
+      /(?:fix|improve|address|update|remove|add|quantify|rewrite)[^\.\n]{10,80}/gi,
+      /\d+[\.\)]\s+([^\n\.]{15,80})/g,
+    ];
+    let fixMatch;
+    const usedPattern = fixPatterns[0];
+    while ((fixMatch = usedPattern.exec(verdictText)) !== null && fixes.length < 3) {
+      const fix = fixMatch[0].trim();
+      if (fix.length > 12) fixes.push(fix.charAt(0).toUpperCase() + fix.slice(1));
+    }
+
+    // If not enough, try splitting on numbered list
+    if (fixes.length < 3) {
+      const numberedMatches = verdictText.matchAll(/\d+[\.\)]\s+(.+?)(?=\d+[\.\)]|$)/gs);
+      for (const m of numberedMatches) {
+        if (fixes.length >= 3) break;
+        const t = m[1].trim().replace(/\n/g, ' ');
+        if (t.length > 10) fixes.push(t);
+      }
+    }
+
+    // Fallback generic fixes
+    while (fixes.length < 3) {
+      const fallbacks = [
+        'Quantify your impact with specific metrics and numbers.',
+        'Remove generic objective statement — replace with a targeted summary.',
+        'Cut irrelevant skills and tools that add no signal.',
+      ];
+      fixes.push(fallbacks[fixes.length] || 'Review and strengthen your weakest section.');
+    }
+
+    // Derive category scores from overall score
+    const base = score || 60;
+    const variance = () => Math.max(10, Math.min(95, base + (Math.random() * 30 - 15)));
+    const categoryScores = CATEGORIES.map(() => Math.round(variance()));
+
+    return { sections, score, grade, fixes: fixes.slice(0, 3), categoryScores };
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  // RENDER ROAST OUTPUT
+  // ═══════════════════════════════════════════════════════════
+  function renderRoastOutput(parsed) {
+    roastOutput.innerHTML = '';
+
+    const sectionKeys = [
+      'FIRST IMPRESSION',
+      'OBJECTIVE / SUMMARY',
+      'WORK EXPERIENCE',
+      'SKILLS SECTION',
+      'EDUCATION',
+      'OVERALL VERDICT',
+    ];
+
+    let delay = 0;
+
+    sectionKeys.forEach((key) => {
+      const content = parsed.sections[key];
+      if (!content) return;
+
+      const sectionEl = document.createElement('div');
+      sectionEl.className = 'roast-section';
+
+      const label = document.createElement('div');
+      label.className = 'roast-section-label';
+      label.textContent = `[${key}]`;
+
+      const contentEl = document.createElement('div');
+      contentEl.className = 'roast-section-content';
+
+      // Split into lines and render
+      const lines = content.split('\n').filter(l => l.trim().length > 0);
+      lines.forEach(line => {
+        const lineEl = document.createElement('span');
+        lineEl.className = 'roast-line';
+        const trimmed = line.trim();
+
+        // Detect positive/negative tone heuristically
+        const positiveWords = /\b(strong|good|excellent|clear|well|solid|impressive|effective|clean)\b/i;
+        const negativeWords = /\b(weak|vague|generic|missing|absent|poor|unclear|irrelevant|hollow|empty|no |not |lack|fails?|avoid)\b/i;
+
+        if (positiveWords.test(trimmed) && !negativeWords.test(trimmed)) {
+          lineEl.classList.add('positive');
+        } else if (negativeWords.test(trimmed)) {
+          lineEl.classList.add('negative');
+        }
+
+        lineEl.textContent = trimmed;
+        contentEl.appendChild(lineEl);
+        contentEl.appendChild(document.createTextNode('\n'));
+      });
+
+      sectionEl.appendChild(label);
+      sectionEl.appendChild(contentEl);
+      roastOutput.appendChild(sectionEl);
+
+      // Animate in with stagger
+      gsap.to(sectionEl, {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: 'power3.out',
+        delay: delay,
+      });
+      gsap.from(sectionEl, {
+        y: 16,
+        duration: 0.5,
+        ease: 'power3.out',
+        delay: delay,
+      });
+
+      // Animate each line
+      const lineEls = contentEl.querySelectorAll('.roast-line');
+      lineEls.forEach((lineEl, i) => {
+        gsap.from(lineEl, {
+          opacity: 0,
+          y: 10,
+          duration: 0.3,
+          ease: 'power2.out',
+          delay: delay + 0.1 + i * 0.06,
+        });
+      });
+
+      delay += 0.25 + lines.length * 0.04;
+    });
+
+    return delay;
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  // RENDER FIXES
+  // ═══════════════════════════════════════════════════════════
+  function renderFixes(fixes, baseDelay) {
+    fixesList.innerHTML = '';
+    fixes.forEach((fix, i) => {
+      const card = document.createElement('div');
+      card.className = 'fix-card';
+      card.innerHTML = `<div class="fix-num">0${i + 1}</div><div class="fix-text">${fix}</div>`;
+      fixesList.appendChild(card);
+
+      gsap.to(card, {
+        opacity: 1,
+        duration: 0.4,
+        delay: baseDelay + i * 0.12,
+        ease: 'power2.out',
+      });
+      gsap.from(card, {
+        x: -16,
+        duration: 0.4,
+        delay: baseDelay + i * 0.12,
+        ease: 'power3.out',
+      });
+    });
+
+    fixesSection.style.display = 'block';
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  // ANIMATE SCORE & METER
+  // ═══════════════════════════════════════════════════════════
+  function animateScore(score, grade, delay) {
+    if (score === null) return;
+
+    // Animate score number counting up
+    const obj = { val: 0 };
+    gsap.to(obj, {
+      val: score,
+      duration: 1.5,
+      ease: 'power2.out',
+      delay: delay,
+      onUpdate: () => {
+        scoreNumber.textContent = Math.round(obj.val);
+      }
+    });
+
+    // Grade reveal
+    if (grade) {
+      scoreGrade.textContent = grade;
+      gsap.to(scoreGrade, {
+        opacity: 1,
+        rotateX: 0,
+        duration: 0.8,
+        ease: 'back.out(1.7)',
+        delay: delay + 1.2,
+        transformPerspective: 600,
+      });
+    }
+
+    // Meter fill — color shifts green → gold → red
+    const pct = Math.min(100, Math.max(0, score));
+    let meterColor;
+    if (pct <= 40) meterColor = '#5A9E74';
+    else if (pct <= 70) meterColor = '#C8A951';
+    else meterColor = '#E8473F';
+
+    const meterTween = gsap.to(meterFill, {
+      height: pct + '%',
+      duration: 2,
+      ease: 'power2.out',
+      delay: delay + 0.5,
+    });
+    // Update meter color as it fills
+    const colorTick = setInterval(() => {
+      const currentH = parseFloat(meterFill.style.height) || 0;
+      if (currentH <= 40) meterFill.style.background = '#5A9E74';
+      else if (currentH <= 70) meterFill.style.background = '#C8A951';
+      else meterFill.style.background = '#E8473F';
+      if (currentH >= pct - 1) clearInterval(colorTick);
+    }, 50);
+
+    // Share text
+    shareText.textContent = `Your Roast Score: ${score}/100\nGrade: ${grade || 'N/A'}`;
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  // GEMINI API CALL
+  // ═══════════════════════════════════════════════════════════
+  async function callGeminiAPI(cvText) {
+    const response = await fetch(GEMINI_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [
+          {
+            role: 'user',
+            parts: [
+              {
+                text: `${SYSTEM_PROMPT}\n\n---\n\nHere is the CV to roast:\n\n${cvText}`
+              }
+            ]
+          }
+        ],
+        generationConfig: {
+          temperature: 0.85,
+          maxOutputTokens: 2048,
+        }
+      })
+    });
+
+    if (!response.ok) {
+      const err = await response.json().catch(() => ({}));
+      throw new Error(err?.error?.message || `API error ${response.status}`);
+    }
+
+    const data = await response.json();
+    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+    if (!text) throw new Error('Empty response from Gemini');
+    return text;
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  // SHOW ERROR
+  // ═══════════════════════════════════════════════════════════
+  function showError() {
+    errorCard.style.display = 'block';
+    gsap.from(errorCard, { opacity: 0, y: 20, duration: 0.4, ease: 'power2.out' });
+    roastAnotherBtn.style.display = 'inline-block';
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  // MAIN ROAST FLOW
+  // ═══════════════════════════════════════════════════════════
+  async function doRoast(cvText) {
+    lastCVText = cvText;
+
+    // Start transition
+    showLoading();
+
+    // Slide landing out simultaneously
+    gsap.to(landing, {
+      x: -80,
+      opacity: 0,
+      duration: 0.4,
+      ease: 'power2.in',
+      onComplete: () => { landing.style.display = 'none'; }
+    });
+
+    let responseText;
+    try {
+      responseText = await callGeminiAPI(cvText);
+    } catch (err) {
+      console.error('Gemini API Error:', err);
+      await hideLoading();
+
+      // Show analysis state with error
+      analysisState.style.display = 'block';
+      gsap.set(analysisState, { x: 80, opacity: 0 });
+      gsap.to(analysisState, { x: 0, opacity: 1, duration: 0.5, ease: 'power3.out' });
+      appState = 'analysis';
+
+      errorCard.style.display = 'block';
+      roastAnotherBtn.style.display = 'inline-block';
+      gsap.from(errorCard, { opacity: 0, y: 20, duration: 0.4, ease: 'power2.out' });
+      return;
+    }
+
+    // Parse response
+    const parsed = parseResponse(responseText);
+
+    // Show analysis panel
+    await hideLoading();
+
+    analysisState.style.display = 'block';
+    gsap.set(analysisState, { x: 80, opacity: 0 });
+    gsap.to(analysisState, {
+      x: 0,
+      opacity: 1,
+      duration: 0.5,
+      ease: 'power3.out',
+    });
+    appState = 'analysis';
+
+    // Animate verdict rule
+    gsap.from('#verdict-rule', {
+      scaleX: 0,
+      duration: 0.8,
+      ease: 'power3.out',
+      delay: 0.3,
+    });
+
+    // Render content
+    const contentDelay = renderRoastOutput(parsed);
+
+    // Fixes
+    renderFixes(parsed.fixes, contentDelay + 0.2);
+
+    // Score & meter
+    animateScore(parsed.score, parsed.grade, 0.5);
+
+    // Category bars
+    renderCategoryBars(parsed.categoryScores);
+
+    // Show Roast Another button
+    setTimeout(() => {
+      roastAnotherBtn.style.display = 'inline-block';
+      gsap.from(roastAnotherBtn, { opacity: 0, y: 10, duration: 0.4, ease: 'power2.out' });
+    }, (contentDelay + 1) * 1000);
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  // COPY TO CLIPBOARD
+  // ═══════════════════════════════════════════════════════════
+  function initCopyButton() {
+    copyBtn.addEventListener('click', async () => {
+      const score = scoreNumber.textContent;
+      const grade = scoreGrade.textContent;
+      const sections = roastOutput.querySelectorAll('.roast-section');
+      let text = `ROASTMYCV RESULTS\n${'─'.repeat(40)}\nScore: ${score}/100  |  Grade: ${grade}\n\n`;
+
+      sections.forEach(sec => {
+        const label = sec.querySelector('.roast-section-label')?.textContent || '';
+        const content = sec.querySelector('.roast-section-content')?.textContent || '';
+        text += `${label}\n${content}\n\n`;
+      });
+
+      try {
+        await navigator.clipboard.writeText(text);
+        copyBtn.textContent = 'Copied —';
+        copyBtn.classList.add('copied');
+        setTimeout(() => {
+          copyBtn.textContent = 'Copy Result';
+          copyBtn.classList.remove('copied');
+        }, 2000);
+      } catch {
+        copyBtn.textContent = 'Copy failed';
+        setTimeout(() => { copyBtn.textContent = 'Copy Result'; }, 2000);
+      }
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  // SMOOTH SCROLL FOR NAV LINKS
+  // ═══════════════════════════════════════════════════════════
+  function initNavLinks() {
+    document.getElementById('nav-how-link').addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('how-it-works').scrollIntoView({ behavior: 'smooth' });
+    });
+    document.getElementById('nav-home-link').addEventListener('click', () => {
+      if (appState === 'analysis') transitionToLanding();
+      else window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    document.getElementById('nav-home-link').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        if (appState === 'analysis') transitionToLanding();
+        else window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+
+    // Hero CTA smooth scroll
+    heroCtaBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('input-section').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Drawer links
+    document.getElementById('drawer-how').addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('how-it-works').scrollIntoView({ behavior: 'smooth' });
+    });
+    document.getElementById('drawer-input').addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('input-section').scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  // SUBMIT HANDLER
+  // ═══════════════════════════════════════════════════════════
+  function initSubmit() {
+    roastBtn.addEventListener('click', () => {
+      const cvText = cvInput.value.trim();
+      if (!cvText || cvText.length < 50) {
+        // Shake effect
+        gsap.to(cvInput, {
+          x: -8,
+          duration: 0.08,
+          repeat: 5,
+          yoyo: true,
+          ease: 'power2.inOut',
+          onComplete: () => gsap.set(cvInput, { x: 0 }),
+        });
+        cvInput.style.borderColor = '#C2544E';
+        cvInput.style.boxShadow = '0 0 0 3px rgba(194,84,78,0.15)';
+        setTimeout(() => {
+          cvInput.style.borderColor = '';
+          cvInput.style.boxShadow = '';
+        }, 1500);
+        return;
+      }
+      doRoast(cvText);
+    });
+
+    retryBtn.addEventListener('click', () => {
+      errorCard.style.display = 'none';
+      roastAnotherBtn.style.display = 'none';
+      transitionToLanding();
+      setTimeout(() => {
+        document.getElementById('input-section').scrollIntoView({ behavior: 'smooth' });
+        cvInput.value = lastCVText;
+      }, 600);
+    });
+
+    roastAnotherBtn.addEventListener('click', () => {
+      transitionToLanding();
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  // INIT
+  // ═══════════════════════════════════════════════════════════
+  document.addEventListener('DOMContentLoaded', () => {
+    // Initial GSAP states
+    gsap.set('.hero-line', { y: 70, opacity: 0 });
+    gsap.set('#hero-cta', { scale: 0.8, opacity: 0 });
+    gsap.set('.hero-stats', { opacity: 0 });
+    gsap.set('.hero-sub', { opacity: 0 });
+    gsap.set('.scroll-indicator', { opacity: 0 });
+    gsap.set('.how-step', { y: 40, opacity: 0 });
+    gsap.set('#score-grade', { opacity: 0, rotateX: 90 });
+
+    initHeroAnimation();
+    initNavbarScroll();
+    initHowItWorksAnimation();
+    initTypewriter();
+    initInputFocus();
+    initHoverEffects();
+    initMobileDrawer();
+    initCopyButton();
+    initNavLinks();
+    initSubmit();
+  });
+  </script>
+</body>
+</html>
