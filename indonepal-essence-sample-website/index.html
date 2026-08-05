@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IndoNepal Essence - Authentic Indian & Nepalese Cuisine in Farwaniya, Kuwait. Momos, Biryani, Chaat, Thukpa, Nepali Thali & more.">
+  <meta name="theme-color" content="#d97706">
+  <title>IndoNepal Essence | Authentic Indian & Nepalese Cuisine</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="loader-ring">
+      <span></span>
+      <span></span>
+      <span></span>
+      <div class="loader-logo">INE</div>
+    </div>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div id="scroll-progress"></div>
+
+  <!-- Custom Cursor -->
+  <div id="cursor"></div>
+
+  <!-- Navigation -->
+  <nav id="main-nav" role="navigation" aria-label="Main navigation">
+    <a href="#hero" class="logo" aria-label="IndoNepal Essence home">
+      <div class="logo-mark">
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <path d="M12 38L20 18L28 30L36 14L44 38H12Z" />
+          <circle cx="14" cy="12" r="3" />
+          <circle cx="34" cy="10" r="2" />
+          <path d="M6 38H42" stroke-linecap="round" />
+        </svg>
+      </div>
+      <span>IndoNepal Essence</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#hero" data-en="Home" data-ar="الرئيسية">Home</a></li>
+      <li><a href="#about" data-en="Our Story" data-ar="قصتنا">Our Story</a></li>
+      <li><a href="#dishes" data-en="Signature Dishes" data-ar="أطباقنا المميزة">Signature Dishes</a></li>
+      <li><a href="#gallery" data-en="Gallery" data-ar="معرض الصور">Gallery</a></li>
+      <li><a href="#location" data-en="Location" data-ar="الموقع">Location</a></li>
+      <li><a href="#cta" data-en="Contact" data-ar="تواصل">Contact</a></li>
+    </ul>
+
+    <div class="nav-controls">
+      <button id="theme-toggle" class="toggle-btn" aria-label="Toggle theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="currentColor"/><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <button id="lang-toggle" class="toggle-btn" aria-label="Switch language">AR</button>
+      <button id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero" aria-label="Hero">
+    <div class="hero-bg" style="background-image: url('https://images.pexels.com/photos/10135116/pexels-photo-10135116.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=1920');"></div>
+    <div class="hero-overlay"></div>
+    <canvas id="spice-canvas"></canvas>
+
+    <div class="hero-content">
+      <div class="hero-badge" data-en="Authentic Indian &amp; Nepalese Cuisine" data-ar="مطبخ هندي ونيبالي أصيل">Authentic Indian &amp; Nepalese Cuisine</div>
+      <h1 id="hero-title" class="hero-title" data-en="IndoNepal Essence" data-ar="إندونيبال إسنس">IndoNepal Essence</h1>
+      <p class="hero-subtitle" data-en="A Taste of Home in Farwaniya. Handcrafted momos, fragrant biryanis, hearty thukpa and Nepali thali — delivered with Himalayan warmth." data-ar="طعم الوطن في الفروانية. مومو مصنوع يدوياً، برياني عطري، ثوكبا دافئ وثالي نيبالي — يُقدّم بدفء الهيمالايا.">A Taste of Home in Farwaniya. Handcrafted momos, fragrant biryanis, hearty thukpa and Nepali thali — delivered with Himalayan warmth.</p>
+      <div class="hero-actions">
+        <a href="tel:+96567716107" class="btn btn-primary magnetic" data-en="Order Now" data-ar="اطلب الآن">Order Now</a>
+        <a href="#location" class="btn btn-outline magnetic" data-en="Reserve a Table" data-ar="احجز طاولتك">Reserve a Table</a>
+        <a href="tel:+96567716107" class="btn btn-outline magnetic" data-en="Call Us" data-ar="اتصل بنا">Call Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" aria-labelledby="about-title">
+    <svg class="mandala" style="top:10%; left:-8%;" viewBox="0 0 200 200" aria-hidden="true">
+      <circle cx="100" cy="100" r="90" stroke="currentColor" stroke-width="1" fill="none"/>
+      <circle cx="100" cy="100" r="70" stroke="currentColor" stroke-width="1" fill="none"/>
+      <circle cx="100" cy="100" r="50" stroke="currentColor" stroke-width="1" fill="none"/>
+      <path d="M100 10L100 190M10 100L190 100M30 30L170 170M30 170L170 30" stroke="currentColor" stroke-width="1"/>
+    </svg>
+
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-media">
+          <div class="about-frame">
+            <img src="https://images.pexels.com/photos/9316203/pexels-photo-9316203.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200" alt="IndoNepal Essence restaurant interior">
+          </div>
+        </div>
+        <div class="about-text">
+          <span class="section-label" data-en="Our Story" data-ar="قصتنا">Our Story</span>
+          <h2 id="about-title" data-en="Where India Meets the Himalayas" data-ar="حيث تلتقي الهند بالهيمالايا">Where India Meets the Himalayas</h2>
+          <p data-en="Born from a love of authentic home cooking, IndoNepal Essence brings together the bold spices of North India and the comforting staples of Nepal. Every dish is prepared fresh in our Jleeb, Farwaniya kitchen using recipes passed down through generations." data-ar="ولدت إندونيبال إسنس من حب الطبخ المنزلي الأصيل، حيث تجمع بين بهارات شمال الهند الجريئة وأطباق نيبال المريحة. يتم تحضير كل طبق طازجاً في مطبخنا بجليب، الفروانية باستخدام وصفات موروثة عبر الأجيال.">Born from a love of authentic home cooking, IndoNepal Essence brings together the bold spices of North India and the comforting staples of Nepal. Every dish is prepared fresh in our Jleeb, Farwaniya kitchen using recipes passed down through generations.</p>
+          <p data-en="From hand-folded momos to slow-cooked curries and fragrant biryanis, we serve food that feels like home — whether you dine in, take away or order delivery across Kuwait." data-ar="من المومو المطوي يدوياً إلى الكاري المطبوخ ببطء والبرياني العطري، نقدّم طعاماً يشعرك بالوطن — سواء تناولته في المطعم، أو أخذته للمنزل، أو طلبت توصيلاً في جميع أنحاء الكويت.">From hand-folded momos to slow-cooked curries and fragrant biryanis, we serve food that feels like home — whether you dine in, take away or order delivery across Kuwait.</p>
+          <div class="stats">
+            <div class="stat">
+              <strong data-en="100%" data-ar="100%">100%</strong>
+              <span data-en="Halal Ingredients" data-ar="مكونات حلال">Halal Ingredients</span>
+            </div>
+            <div class="stat">
+              <strong data-en="Daily" data-ar="يومياً">Daily</strong>
+              <span data-en="Fresh Cooking" data-ar="طبخ طازج">Fresh Cooking</span>
+            </div>
+            <div class="stat">
+              <strong data-en="Fast" data-ar="سريع">Fast</strong>
+              <span data-en="Delivery" data-ar="توصيل">Delivery</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signature Dishes -->
+  <section id="dishes" class="dishes-section" aria-labelledby="dishes-title">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" data-en="Menu Highlights" data-ar="أبرز الأطباق">Menu Highlights</span>
+        <h2 id="dishes-title" class="section-title" data-en="Signature Dishes" data-ar="أطباقنا المميزة">Signature Dishes</h2>
+        <p class="section-desc" data-en="A rotating showcase of our most-loved plates. Drag, click the dots or swipe to explore." data-ar="عرض دوار لأحب أطباقنا. اسحب، انقر النقاط أو امسح لاستكشاف المزيد.">A rotating showcase of our most-loved plates. Drag, click the dots or swipe to explore.</p>
+      </div>
+
+      <div class="carousel-stage" aria-roledescription="carousel">
+        <div class="carousel-track">
+          <div class="dish-card" role="group" aria-roledescription="slide">
+            <img src="https://images.pexels.com/photos/18803174/pexels-photo-18803174.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Momos dumplings">
+            <div class="dish-info">
+              <span class="dish-tag" data-en="Nepalese Favorite" data-ar="مفضل نيبالي">Nepalese Favorite</span>
+              <h3 data-en="Momos" data-ar="مومو">Momos</h3>
+              <p data-en="Steamed or fried dumplings stuffed with seasoned chicken or vegetables, served with spicy tomato chutney." data-ar="زلابية مطهوة على البخار أو مقلية محشوة بالدجاج المتبل أو الخضار، تُقدم مع تشاتني الطماطم الحار.">Steamed or fried dumplings stuffed with seasoned chicken or vegetables, served with spicy tomato chutney.</p>
+            </div>
+          </div>
+          <div class="dish-card" role="group" aria-roledescription="slide">
+            <img src="https://images.pexels.com/photos/34484975/pexels-photo-34484975.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Biryani">
+            <div class="dish-info">
+              <span class="dish-tag" data-en="Aromatic Classic" data-ar="كلاسيكي عطري">Aromatic Classic</span>
+              <h3 data-en="Biryani" data-ar="برياني">Biryani</h3>
+              <p data-en="Fragrant basmati rice layered with saffron, whole spices and your choice of tender chicken or mutton." data-ar="أرز بسمتي عطري متبّل بالزعفران والبهارات الكاملة مع دجاج طري أو لحم.">Fragrant basmati rice layered with saffron, whole spices and your choice of tender chicken or mutton.</p>
+            </div>
+          </div>
+          <div class="dish-card" role="group" aria-roledescription="slide">
+            <img src="https://images.pexels.com/photos/34270741/pexels-photo-34270741.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Chaat">
+            <div class="dish-info">
+              <span class="dish-tag" data-en="Street Style" data-ar="على الطريقة الشارعية">Street Style</span>
+              <h3 data-en="Chaat" data-ar="تشات">Chaat</h3>
+              <p data-en="Crunchy, tangy and refreshing Indian street snacks including pani puri and dahi vada." data-ar="وجبات خفيفة هندية مقرمشة وحامضة ومنعشة تشمل باني بوري ودهي فادا.">Crunchy, tangy and refreshing Indian street snacks including pani puri and dahi vada.</p>
+            </div>
+          </div>
+          <div class="dish-card" role="group" aria-roledescription="slide">
+            <img src="https://images.pexels.com/photos/29148133/pexels-photo-29148133.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Nepali thali">
+            <div class="dish-info">
+              <span class="dish-tag" data-en="Complete Meal" data-ar="وجبة كاملة">Complete Meal</span>
+              <h3 data-en="Nepali Thali" data-ar="ثالي نيبالي">Nepali Thali</h3>
+              <p data-en="A traditional platter of rice, lentil soup, seasonal curry, pickles and fresh bread." data-ar="طبق تقليدي من الأرز وشوربة العدس والكاري الموسمي والمخللات والخبز الطازج.">A traditional platter of rice, lentil soup, seasonal curry, pickles and fresh bread.</p>
+            </div>
+          </div>
+          <div class="dish-card" role="group" aria-roledescription="slide">
+            <img src="https://images.pexels.com/photos/1907229/pexels-photo-1907229.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Thukpa noodle soup">
+            <div class="dish-info">
+              <span class="dish-tag" data-en="Himalayan Comfort" data-ar="دفء الهيمالايا">Himalayan Comfort</span>
+              <h3 data-en="Thukpa" data-ar="ثوكبا">Thukpa</h3>
+              <p data-en="A warming Himalayan noodle soup with vegetables or meat, ginger and fresh herbs." data-ar="حساء نودلز هيمالاي دافئ بالخضار أو اللحم والزنجبيل والأعشاب الطازجة.">A warming Himalayan noodle soup with vegetables or meat, ginger and fresh herbs.</p>
+            </div>
+          </div>
+          <div class="dish-card" role="group" aria-roledescription="slide">
+            <img src="https://images.pexels.com/photos/20408448/pexels-photo-20408448.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Butter chicken curry">
+            <div class="dish-info">
+              <span class="dish-tag" data-en="Creamy Curry" data-ar="كاري كريمي">Creamy Curry</span>
+              <h3 data-en="Butter Chicken" data-ar="دجاج بالزبدة">Butter Chicken</h3>
+              <p data-en="Tandoori chicken simmered in a rich, creamy tomato sauce with butter and kasuri methi." data-ar="دجاج تندوري مطهو ببطء في صلصة طماطم غنية وكريمية مع الزبدة والكاسوري ميثي.">Tandoori chicken simmered in a rich, creamy tomato sauce with butter and kasuri methi.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-controls" aria-label="Carousel controls">
+        <button class="carousel-dot active" aria-label="Slide 1"></button>
+        <button class="carousel-dot" aria-label="Slide 2"></button>
+        <button class="carousel-dot" aria-label="Slide 3"></button>
+        <button class="carousel-dot" aria-label="Slide 4"></button>
+        <button class="carousel-dot" aria-label="Slide 5"></button>
+        <button class="carousel-dot" aria-label="Slide 6"></button>
+      </div>
+
+      <div class="menu-grid">
+        <div class="menu-category">
+          <h4><span data-en="Starters" data-ar="مقبلات">Starters</span></h4>
+          <ul>
+            <li><span data-en="Veg Pakora" data-ar="باكورا خضار">Veg Pakora</span></li>
+            <li><span data-en="Samosa" data-ar="سمبوسة">Samosa</span></li>
+            <li><span data-en="Onion Bhaji" data-ar="باجي بصل">Onion Bhaji</span></li>
+            <li><span data-en="Chicken Momos" data-ar="مومو دجاج">Chicken Momos</span></li>
+          </ul>
+        </div>
+        <div class="menu-category">
+          <h4><span data-en="Indian Classics" data-ar="كلاسيكيات هندية">Indian Classics</span></h4>
+          <ul>
+            <li><span data-en="Butter Chicken" data-ar="دجاج بالزبدة">Butter Chicken</span></li>
+            <li><span data-en="Chicken Tikka" data-ar="تيكا دجاج">Chicken Tikka</span></li>
+            <li><span data-en="Dal Makhani" data-ar="دال ماخاني">Dal Makhani</span></li>
+            <li><span data-en="Rogan Josh" data-ar="روغان جوش">Rogan Josh</span></li>
+            <li><span data-en="Tandoori Roti" data-ar="خبز تندوري">Tandoori Roti</span></li>
+          </ul>
+        </div>
+        <div class="menu-category">
+          <h4><span data-en="Nepalese Specialties" data-ar="أطباق نيبالية">Nepalese Specialties</span></h4>
+          <ul>
+            <li><span data-en="Nepali Thali" data-ar="ثالي نيبالي">Nepali Thali</span></li>
+            <li><span data-en="Thukpa" data-ar="ثوكبا">Thukpa</span></li>
+            <li><span data-en="Chow Mein" data-ar="تشاو مين">Chow Mein</span></li>
+            <li><span data-en="Sel Roti" data-ar="سيل روتي">Sel Roti</span></li>
+          </ul>
+        </div>
+        <div class="menu-category">
+          <h4><span data-en="Rice &amp; Biryani" data-ar="أرز وبرياني">Rice &amp; Biryani</span></h4>
+          <ul>
+            <li><span data-en="Chicken Biryani" data-ar="برياني دجاج">Chicken Biryani</span></li>
+            <li><span data-en="Mutton Biryani" data-ar="برياني لحم">Mutton Biryani</span></li>
+            <li><span data-en="Veg Biryani" data-ar="برياني خضار">Veg Biryani</span></li>
+            <li><span data-en="Fried Rice" data-ar="أرز مقلي">Fried Rice</span></li>
+          </ul>
+        </div>
+        <div class="menu-category">
+          <h4><span data-en="Breakfast" data-ar="الإفطار">Breakfast</span></h4>
+          <ul>
+            <li><span data-en="Paratha" data-ar="باراتا">Paratha</span></li>
+            <li><span data-en="Aloo Paratha" data-ar="باراتا بالبطاطس">Aloo Paratha</span></li>
+            <li><span data-en="Chana Bhatura" data-ar="شانا باتورا">Chana Bhatura</span></li>
+            <li><span data-en="Masala Chai" data-ar="شاي ماسالا">Masala Chai</span></li>
+          </ul>
+        </div>
+        <div class="menu-category">
+          <h4><span data-en="Chinese Rice &amp; Noodles" data-ar="أرز ونودلز صينية">Chinese Rice &amp; Noodles</span></h4>
+          <ul>
+            <li><span data-en="Chicken Fried Rice" data-ar="أرز مقلي بالدجاج">Chicken Fried Rice</span></li>
+            <li><span data-en="Schezwan Noodles" data-ar="نودلز شيزوان">Schezwan Noodles</span></li>
+            <li><span data-en="Manchurian" data-ar="مانشوريان">Manchurian</span></li>
+            <li><span data-en="Chilli Chicken" data-ar="دجاج تشيلي">Chilli Chicken</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" aria-labelledby="gallery-title">
+    <div class="float-shape" style="width:300px;height:300px;background:#d97706;top:10%;right:-5%;"></div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" data-en="Visual Journey" data-ar="رحلة بصرية">Visual Journey</span>
+        <h2 id="gallery-title" class="section-title" data-en="From Our Kitchen" data-ar="من مطبخنا">From Our Kitchen</h2>
+        <p class="section-desc" data-en="Real flavors, real colors, real comfort. Click any image to view it larger." data-ar="نكهات حقيقية، ألوان حقيقية، راحة حقيقية. انقر على أي صورة لمشاهدتها بحجم أكبر.">Real flavors, real colors, real comfort. Click any image to view it larger.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://images.pexels.com/photos/18803177/pexels-photo-18803177.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Plate of momos">
+          <div class="gallery-overlay"><span data-en="Hand-folded Momos" data-ar="مومو مطوي يدوياً">Hand-folded Momos</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.pexels.com/photos/4439740/pexels-photo-4439740.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Biryani and soups">
+          <div class="gallery-overlay"><span data-en="Fragrant Biryani" data-ar="برياني عطري">Fragrant Biryani</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.pexels.com/photos/16171915/pexels-photo-16171915.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Dahi vada chaat">
+          <div class="gallery-overlay"><span data-en="Chaat Selection" data-ar="تشات">Chaat Selection</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.pexels.com/photos/8818657/pexels-photo-8818657.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Festive thali">
+          <div class="gallery-overlay"><span data-en="Nepali Thali" data-ar="ثالي نيبالي">Nepali Thali</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.pexels.com/photos/1907227/pexels-photo-1907227.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Noodle soup">
+          <div class="gallery-overlay"><span data-en="Thukpa" data-ar="ثوكبا">Thukpa</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.pexels.com/photos/28125427/pexels-photo-28125427.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Curry and naan">
+          <div class="gallery-overlay"><span data-en="Curry &amp; Naan" data-ar="كاري ونان">Curry &amp; Naan</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" aria-labelledby="experience-title">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" data-en="The Experience" data-ar="التجربة">The Experience</span>
+        <h2 id="experience-title" class="section-title" data-en="More Than a Meal" data-ar="أكثر من مجرد وجبة">More Than a Meal</h2>
+        <p class="section-desc" data-en="Every visit to IndoNepal Essence is crafted around three promises: warmth, authenticity and freshness." data-ar="كل زيارة إلى إندونيبال إسنس مبنية على ثلاث وعود: الدفء والأصالة والطزاجة.">Every visit to IndoNepal Essence is crafted around three promises: warmth, authenticity and freshness.</p>
+      </div>
+
+      <div class="experience-cards">
+        <div class="exp-card">
+          <p data-en="The team greets every guest like family, making the small dining room feel like a corner of Kathmandu or Delhi." data-ar="يستقبل الفريق كل ضيف كالعائلة، مما يجعل غرفة الطعام الصغيرة تشعرك كأنك في زاوية من كاتماندو أو دلهي.">The team greets every guest like family, making the small dining room feel like a corner of Kathmandu or Delhi.</p>
+          <footer data-en="Warm Hospitality" data-ar="ضيافة دافئة">Warm Hospitality</footer>
+        </div>
+        <div class="exp-card">
+          <p data-en="Spices are toasted and ground in small batches, so the aroma of cumin, cardamom and garam masala fills the air." data-ar="تُحمص البهارات وتُطحن على دفعات صغيرة، لذا تملأ رائحة الكمون والهيل والكرام ماسالا الأجواء.">Spices are toasted and ground in small batches, so the aroma of cumin, cardamom and garam masala fills the air.</p>
+          <footer data-en="Authentic Flavors" data-ar="نكهات أصيلة">Authentic Flavors</footer>
+        </div>
+        <div class="exp-card">
+          <p data-en="From morning parathas to late-night biryani, every order is cooked fresh — no shortcuts, no compromises." data-ar="من البراتا الصباحي إلى البرياني الليلي، يتم طبخ كل طلب طازجاً — بدون اختصارات أو تنازلات.">From morning parathas to late-night biryani, every order is cooked fresh — no shortcuts, no compromises.</p>
+          <footer data-en="Fresh Ingredients" data-ar="مكونات طازجة">Fresh Ingredients</footer>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location & Contact -->
+  <section id="location" aria-labelledby="location-title">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" data-en="Visit Us" data-ar="زورونا">Visit Us</span>
+        <h2 id="location-title" class="section-title" data-en="Location &amp; Contact" data-ar="الموقع والتواصل">Location &amp; Contact</h2>
+        <p class="section-desc" data-en="Find IndoNepal Essence in Jleeb, Farwaniya. We are open daily and delivery is available across Kuwait." data-ar="اعثر على إندونيبال إسنس في جليب، الفروانية. نحن مفتوحون يومياً ومتاح التوصيل في جميع أنحاء الكويت.">Find IndoNepal Essence in Jleeb, Farwaniya. We are open daily and delivery is available across Kuwait.</p>
+      </div>
+
+      <div class="location-grid">
+        <div class="map-frame">
+          <iframe src="https://maps.google.com/maps?q=IndoNepal+Essence+Farwaniya+Kuwait&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" title="IndoNepal Essence location map" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+            <div>
+              <h5 data-en="Address" data-ar="العنوان">Address</h5>
+              <p data-en="Jleeb, Farwaniya, Kuwait" data-ar="جليب، الفروانية، الكويت">Jleeb, Farwaniya, Kuwait</p>
+            </div>
+          </div>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.03-.24c1.12.37 2.33.57 3.56.57.55 0 1 .45 1 1v3.5c0 .55-.45 1-1 1A19 19 0 013 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.23.2 2.44.57 3.56a1 1 0 01-.24 1.03l-2.21 2.2z"/></svg>
+            <div>
+              <h5 data-en="Phone" data-ar="الهاتف">Phone</h5>
+              <a href="tel:+96567716107">+965 6771 6107</a>
+            </div>
+          </div>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+            <div>
+              <h5 data-en="Opening Hours" data-ar="ساعات العمل">Opening Hours</h5>
+              <p data-en="Open daily for breakfast, lunch &amp; dinner" data-ar="مفتوح يومياً للإفطار والغداء والعشاء">Open daily for breakfast, lunch &amp; dinner</p>
+              <p class="text-sm mt-1" data-en="Call for exact timings" data-ar="اتصل لمعرفة الأوقات الدقيقة">Call for exact timings</p>
+            </div>
+          </div>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+            <div>
+              <h5 data-en="Delivery" data-ar="التوصيل">Delivery</h5>
+              <p data-en="Available across Kuwait" data-ar="متوفر في جميع أنحاء الكويت">Available across Kuwait</p>
+            </div>
+          </div>
+          <a href="https://www.instagram.com/indonepal_essence/" target="_blank" rel="noopener" class="btn btn-primary magnetic" data-en="Follow on Instagram" data-ar="تابعنا على إنستغرام">Follow on Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" aria-labelledby="cta-title">
+    <div class="container">
+      <h2 id="cta-title" data-en="Ready to Taste Home?" data-ar="مستعد لتذوق طعم الوطن؟">Ready to Taste Home?</h2>
+      <p data-en="Call us, order delivery, or visit IndoNepal Essence in Farwaniya today." data-ar="اتصل بنا، اطلب التوصيل، أو قم بزيارة إندونيبال إسنس في الفروانية اليوم.">Call us, order delivery, or visit IndoNepal Essence in Farwaniya today.</p>
+      <div class="hero-actions" style="margin-top:2rem;">
+        <a href="tel:+96567716107" class="btn btn-primary magnetic" data-en="Call +965 6771 6107" data-ar="اتصل +965 6771 6107">Call +965 6771 6107</a>
+        <a href="https://maps.google.com/maps?q=IndoNepal+Essence+Farwaniya+Kuwait" target="_blank" rel="noopener" class="btn btn-outline magnetic" data-en="Get Directions" data-ar="احصل على الاتجاهات">Get Directions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="#about" data-en="Our Story" data-ar="قصتنا">Our Story</a>
+        <a href="#dishes" data-en="Menu" data-ar="القائمة">Menu</a>
+        <a href="#gallery" data-en="Gallery" data-ar="معرض الصور">Gallery</a>
+        <a href="#location" data-en="Location" data-ar="الموقع">Location</a>
+      </div>
+      <p data-en="&copy; 2026 IndoNepal Essence. All rights reserved." data-ar="© 2026 إندونيبال إسنس. جميع الحقوق محفوظة.">&copy; 2026 IndoNepal Essence. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+    <button class="lightbox-close" aria-label="Close image">&times;</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
