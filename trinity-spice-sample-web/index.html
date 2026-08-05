@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trinity Spice | Indian Restaurant in Farwaniya, Kuwait</title>
+  <meta name="description" content="Trinity Spice - Authentic Indian, North Indian and South Indian cuisine at Lulu Hypermarket Food Court, Al-Dajeej, Farwaniya. Call +965 6000 7242." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Noto+Naskh+Arabic:wght@500;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+</head>
+<body dir="ltr" data-theme="light">
+
+  <div class="loader" id="loader">
+    <div class="loader-triangle"></div>
+    <div data-en="Trinity Spice" data-ar="ترينيتي سبايس">Trinity Spice</div>
+  </div>
+
+  <div class="spice-particles" id="particles"></div>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="logo magnetic">
+        <div class="logo-mark">
+          <div class="logo-triangle"></div>
+          <div class="logo-triangle"></div>
+          <div class="logo-triangle"></div>
+        </div>
+        <span>Trinity Spice</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about" data-en="Story" data-ar="قصتنا">Story</a></li>
+        <li><a href="#menu" data-en="Menu" data-ar="القائمة">Menu</a></li>
+        <li><a href="#location" data-en="Location" data-ar="الموقع">Location</a></li>
+        <li><a href="#reviews" data-en="Reviews" data-ar="التقييمات">Reviews</a></li>
+        <li><a href="#gallery" data-en="Gallery" data-ar="معرض الصور">Gallery</a></li>
+        <li><a href="#contact" data-en="Reserve" data-ar="احجز">Reserve</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button class="toggle-btn magnetic" id="themeToggle" aria-label="Toggle theme">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+        <button class="toggle-btn magnetic" id="langToggle" aria-label="Toggle language">
+          <span id="langLabel">AR</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" data-en="Story" data-ar="قصتنا">Story</a>
+    <a href="#menu" data-en="Menu" data-ar="القائمة">Menu</a>
+    <a href="#location" data-en="Location" data-ar="الموقع">Location</a>
+    <a href="#reviews" data-en="Reviews" data-ar="التقييمات">Reviews</a>
+    <a href="#gallery" data-en="Gallery" data-ar="معرض الصور">Gallery</a>
+    <a href="#contact" data-en="Reserve" data-ar="احجز">Reserve</a>
+  </div>
+
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Spices_in_an_Indian_kitchen.JPG" alt="Aromatic Indian spices at Trinity Spice" id="heroImg" loading="eager">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-spice" style="top:20%;right:15%"></div>
+    <div class="hero-spice" style="bottom:25%;right:25%"></div>
+    <div class="hero-spice" style="top:40%;left:8%"></div>
+    <div class="hero-content">
+      <div class="trinity-tag" data-en="Indian Restaurant in Farwaniya" data-ar="مطعم هندي في الفروانية">Indian Restaurant in Farwaniya</div>
+      <h1 class="hero-title" data-en="Trinity Spice" data-ar="ترينيتي سبايس">Trinity Spice</h1>
+      <p class="hero-tagline" data-en="Three timeless tastes — North Indian soul, South Indian fire, and Arabian warmth — served in the heart of Al-Dajeej." data-ar="ثلاث نكهات خالدة — روح شمال الهند، ونار جنوبها، ودفء العرب — في قلب الدجيج.">Three timeless tastes — North Indian soul, South Indian fire, and Arabian warmth — served in the heart of Al-Dajeej.</p>
+      <div class="hero-actions">
+        <a href="#menu" class="btn btn-primary magnetic" data-en="Explore Menu" data-ar="استكشف القائمة">Explore Menu</a>
+        <a href="tel:+96560007242" class="btn btn-secondary magnetic" style="color:#fff;border-color:rgba(255,255,255,0.35)" data-en="Call Now" data-ar="اتصل الآن">Call Now</a>
+        <a href="#location" class="btn btn-secondary magnetic" style="color:#fff;border-color:rgba(255,255,255,0.35)" data-en="Get Directions" data-ar="احصل على الاتجاهات">Get Directions</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>4.3</strong><span data-en="Google Rating" data-ar="تقييم جوجل">Google Rating</span></div>
+        <div class="hero-stat"><strong>150+</strong><span data-en="Reviews" data-ar="مراجعة">Reviews</span></div>
+        <div class="hero-stat"><strong>3</strong><span data-en="Cuisines" data-ar="مطابخ">Cuisines</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="about-frame">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Hyderabadi_Chicken_biriyani.jpg" alt="Hyderabadi biryani at Trinity Spice" loading="lazy">
+          </div>
+          <div class="about-badge">
+            <strong data-en="Since" data-ar="منذ">Since</strong>
+            <span>2019</span>
+          </div>
+        </div>
+        <div class="about-content">
+          <div class="trinity-tag" data-en="Our Story" data-ar="قصتنا">Our Story</div>
+          <h2 class="section-title" data-en="Where Three Culinary Worlds Meet" data-ar="حيث تلتقي ثلاثة عوالم طهوية">Where Three Culinary Worlds Meet</h2>
+          <p class="section-subtitle" data-en="Trinity Spice sits inside the lively Lulu Hypermarket Food Court in Al-Dajeej, Farwaniya. The name reflects our three pillars: the slow-cooked gravies of the North, the spice-laced rice of the South, and the charcoal-kissed mandi traditions of Arabia. Every plate is built for families, workers, and friends who want generous portions at honest Kuwaiti prices." data-ar="يقع ترينيتي سبايس داخل ساحة طعام لولو هايبر ماركت النابضة في الدجيج، الفروانية. يعكس الاسم ركائزنا الثلاث: المرق الطويل الطهي من الشمال، والأرز المتبل من الجنوب، وتقاليد المندي بالفحم من الجزيرة العربية. كل طبق مُعد للعائلات والعمال والأصدقاء الذين يرغبون بكميات سخية وبأسعار كويتية مناسبة.">Trinity Spice sits inside the lively Lulu Hypermarket Food Court in Al-Dajeej, Farwaniya. The name reflects our three pillars: the slow-cooked gravies of the North, the spice-laced rice of the South, and the charcoal-kissed mandi traditions of Arabia. Every plate is built for families, workers, and friends who want generous portions at honest Kuwaiti prices.</p>
+          <div class="trinity-cards">
+            <div class="trinity-card">
+              <div class="icon">N</div>
+              <h4 data-en="North Indian" data-ar="شمال الهند">North Indian</h4>
+              <p data-en="Creamy tikka masala, hearty kadai, and Hyderabadi biryani." data-ar="تيكا مسالا كريمي، كاداي دسم، وبرياني حيدر آباد.">Creamy tikka masala, hearty kadai, and Hyderabadi biryani.</p>
+            </div>
+            <div class="trinity-card">
+              <div class="icon">S</div>
+              <h4 data-en="South Indian" data-ar="جنوب الهند">South Indian</h4>
+              <p data-en="Kuzhi manthi, seafood dum parotta, and steamed al faham." data-ar="كوزي مانثي، باروتا دوم بحري، وألفاهام مطبوخ على البخار.">Kuzhi manthi, seafood dum parotta, and steamed al faham.</p>
+            </div>
+            <div class="trinity-card">
+              <div class="icon">A</div>
+              <h4 data-en="Arabian" data-ar="عربي">Arabian</h4>
+              <p data-en="Slow-cooked mandi rice shared by three people from 3.500 KD." data-ar="أرز مندي مطبوخ ببطء يكفي ثلاثة أشخاص من 3.500 د.ك.">Slow-cooked mandi rice shared by three people from 3.500 KD.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="menu" style="background:var(--surface)">
+    <div class="container">
+      <div class="trinity-tag" data-en="Our Menu" data-ar="قائمتنا">Our Menu</div>
+      <h2 class="section-title" data-en="Dishes That Keep Farwaniya Coming Back" data-ar="أطباق يعود الفروانية من أجلها">Dishes That Keep Farwaniya Coming Back</h2>
+      <p class="section-subtitle" data-en="From Hyderabadi biryani to kuzhi manthi and samosa chaat, these are the plates guests talk about in reviews and order again and again." data-ar="من برياني حيدر آباد إلى كوزي مانثي وساموسا تشات، هذه هي الأطباق التي يتحدث عنها الضيوف في التقييمات ويطلبونها مراراً.">From Hyderabadi biryani to kuzhi manthi and samosa chaat, these are the plates guests talk about in reviews and order again and again.</p>
+
+      <div class="menu-tabs" id="menuTabs">
+        <button class="menu-tab active" data-tab="specials" data-en="Trinity Specials" data-ar="أطباق ترينيتي">Trinity Specials</button>
+        <button class="menu-tab" data-tab="north" data-en="North Indian" data-ar="شمال الهند">North Indian</button>
+        <button class="menu-tab" data-tab="south" data-en="South Indian & Arabian" data-ar="جنوب الهند والعربية">South Indian & Arabian</button>
+        <button class="menu-tab" data-tab="snacks" data-en="Street Snacks & Desserts" data-ar="الوجبات الخفيفة والحلويات">Street Snacks & Desserts</button>
+      </div>
+
+      <div id="menuPanels">
+        <div class="menu-panel active" data-panel="specials">
+          <div class="menu-grid">
+            <div class="dish-card">
+              <div class="dish-badge" data-en="Best Seller" data-ar="الأكثر مبيعاً">Best Seller</div>
+              <div class="dish-card-image"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Hyderabadi_Chicken_biriyani.jpg" alt="Hyderabadi Biryani" loading="lazy"></div>
+              <div class="dish-card-body">
+                <div class="dish-card-header"><h3 data-en="Hyderabadi Biryani" data-ar="برياني حيدر آباد">Hyderabadi Biryani</h3><span class="dish-price">3.500 KD</span></div>
+                <p class="dish-desc" data-en="Fragrant basmati rice layered with marinated chicken, saffron, and whole spices, slow-cooked dum style." data-ar="أرز بسمتي مع الدجاج المتبل، الزعفران، والتوابل الكاملة مطبوخة على طريقة دوم.">Fragrant basmati rice layered with marinated chicken, saffron, and whole spices, slow-cooked dum style.</p>
+              </div>
+            </div>
+            <div class="dish-card">
+              <div class="dish-card-image"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chicken_mandhi.jpg" alt="Kuzhi Manthi" loading="lazy"></div>
+              <div class="dish-card-body">
+                <div class="dish-card-header"><h3 data-en="Kuzhi Manthi" data-ar="كوزي مانثي">Kuzhi Manthi</h3><span class="dish-price">3.500 KD</span></div>
+                <p class="dish-desc" data-en="Tender chicken mandi cooked underground-style, served over long-grain rice with house chutney. Enough for three." data-ar="دجاج مانثي طري مطبوخ على الطريقة الأرضية، فوق أرز طويل الحبة مع تشاتني المنزل. يكفي ثلاثة.">Tender chicken mandi cooked underground-style, served over long-grain rice with house chutney. Enough for three.</p>
+              </div>
+            </div>
+            <div class="dish-card">
+              <div class="dish-badge" data-en="Must Try" data-ar="يجب تجربته">Must Try</div>
+              <div class="dish-card-image"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Hyderabadi_Mutton_Haleem.jpg" alt="Haleem" loading="lazy"></div>
+              <div class="dish-card-body">
+                <div class="dish-card-header"><h3 data-en="Haleem" data-ar="حليم">Haleem</h3><span class="dish-price">2.500 KD</span></div>
+                <p class="dish-desc" data-en="Slow-stewed wheat and minced mutton, blended into a silky, warming bowl topped with fried onion and lime." data-ar="قمح ولحم مفروم مطبوخان ببطء، ممزوجان في وعاء دافئ ناعم مع بصل مقلي وحمض.">Slow-stewed wheat and minced mutton, blended into a silky, warming bowl topped with fried onion and lime.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-panel" data-panel="north">
+          <div class="menu-grid">
+            <div class="dish-card">
+              <div class="dish-card-image"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chicken_Tikka_Masala_Curry.png" alt="Chicken Tikka Masala" loading="lazy"></div>
+              <div class="dish-card-body">
+                <div class="dish-card-header"><h3 data-en="Chicken Tikka Masala" data-ar="دجاج تيكا مسالا">Chicken Tikka Masala</h3><span class="dish-price">2.800 KD</span></div>
+                <p class="dish-desc" data-en="Charred chicken tikka simmered in a rich tomato-cream gravy with kasuri methi." data-ar="دجاج تيكا مشوي مطهو في مرق غني بالطماطم والكريما مع ميثي كسوري.">Charred chicken tikka simmered in a rich tomato-cream gravy with kasuri methi.</p>
+              </div>
+            </div>
+            <div class="dish-card">
+              <div class="dish-card-image"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Hyderabadi_Chicken_biriyani.jpg" alt="Mutton Kadai" loading="lazy"></div>
+              <div class="dish-card-body">
+                <div class="dish-card-header"><h3 data-en="Mutton Kadai" data-ar="كاداي لحم ضأن">Mutton Kadai</h3><span class="dish-price">3.200 KD</span></div>
+                <p class="dish-desc" data-en="Mutton chunks tossed with bell peppers, onions, and freshly ground kadai masala." data-ar="قطع لحم ضأن مقلية مع الفلفل، البصل، ومسالا كاداي المطحونة طازجاً.">Mutton chunks tossed with bell peppers, onions, and freshly ground kadai masala.</p>
+              </div>
+            </div>
+            <div class="dish-card">
+              <div class="dish-card-image"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Hyderabadi_Chicken_biriyani.jpg" alt="Beef Tawa Masala" loading="lazy"></div>
+              <div class="dish-card-body">
+                <div class="dish-card-header"><h3 data-en="Beef Tawa Masala" data-ar="لحم بقري تاوا مسالا">Beef Tawa Masala</h3><span class="dish-price">3.000 KD</span></div>
+                <p class="dish-desc" data-en="Thin-sliced beef seared on a hot griddle with ginger, garlic, and green chili." data-ar="لحم بقري مقطع رفيع مقلي على صاج ساخن مع الزنجبيل والثوم والفلفل الأخضر.">Thin-sliced beef seared on a hot griddle with ginger, garlic, and green chili.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-panel" data-panel="south">
+          <div class="menu-grid">
+            <div class="dish-card">
+              <div class="dish-card-image"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chicken_mandhi.jpg" alt="Bellary Manthi" loading="lazy"></div>
+              <div class="dish-card-body">
+                <div class="dish-card-header"><h3 data-en="Bellary Manthi" data-ar="مانثي بالاري">Bellary Manthi</h3><span class="dish-price">3.500 KD</span></div>
+                <p class="dish-desc" data-en="A South Indian take on mandi, fragrant with whole spices and served for the whole table." data-ar="نسخة جنوب هندية من المندي، عبقة بالتوابل الكاملة ومقدمة للطاولة بأكملها.">A South Indian take on mandi, fragrant with whole spices and served for the whole table.</p>
+              </div>
+            </div>
+            <div class="dish-card">
+              <div class="dish-card-image"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Mandi_Chicken_Biryani.jpg" alt="Steamed Al Faham" loading="lazy"></div>
+              <div class="dish-card-body">
+                <div class="dish-card-header"><h3 data-en="Steamed Al Faham" data-ar="ألفاهام على البخار">Steamed Al Faham</h3><span class="dish-price">2.900 KD</span></div>
+                <p class="dish-desc" data-en="Arabian spiced chicken, steamed until juicy and served with garlic toum and pickles." data-ar="دجاج عربي متبل، مطبوخ على البخار حتى يصبح عصيراً مع ثوم ثومية ومخللات.">Arabian spiced chicken, steamed until juicy and served with garlic toum and pickles.</p>
+              </div>
+            </div>
+            <div class="dish-card">
+              <div class="dish-card-image"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Hyderabadi_Chicken_biriyani.jpg" alt="Seafood Dum Parotta" loading="lazy"></div>
+              <div class="dish-card-body">
+                <div class="dish-card-header"><h3 data-en="Seafood Dum Parotta" data-ar="باروتا دوم بحري">Seafood Dum Parotta</h3><span class="dish-price">3.200 KD</span></div>
+                <p class="dish-desc" data-en="Layered parotta shredded and tossed with prawns, squid, and coastal masala." data-ar="باروتا متبلة مبشورة مقلية مع الروبيان والحبار ومسالا الساحل.">Layered parotta shredded and tossed with prawns, squid, and coastal masala.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-panel" data-panel="snacks">
+          <div class="menu-grid">
+            <div class="dish-card">
+              <div class="dish-card-image"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Pani_puri_by_fatima.jpg" alt="Pani Puri" loading="lazy"></div>
+              <div class="dish-card-body">
+                <div class="dish-card-header"><h3 data-en="Pani Puri" data-ar="باني بوري">Pani Puri</h3><span class="dish-price">0.900 KD</span></div>
+                <p class="dish-desc" data-en="Crisp semolina shells filled with spiced potato, chickpeas, and tangy mint water." data-ar="أصداف سميد مقرمشة محشوة بالبطاطا المتبلة والحمص وماء النعناع الحامض.">Crisp semolina shells filled with spiced potato, chickpeas, and tangy mint water.</p>
+              </div>
+            </div>
+            <div class="dish-card">
+              <div class="dish-card-image"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Samosa_chaat.jpg" alt="Samosa Chaat" loading="lazy"></div>
+              <div class="dish-card-body">
+                <div class="dish-card-header"><h3 data-en="Samosa Chaat" data-ar="ساموسا تشات">Samosa Chaat</h3><span class="dish-price">1.100 KD</span></div>
+                <p class="dish-desc" data-en="Crushed samosas drowned in chickpea curry, yogurt, tamarind, and fresh coriander." data-ar="ساموسا مكسورة مغمورة في كاري الحمص والزبادي والتمر الهندي والكزبرة الطازجة.">Crushed samosas drowned in chickpea curry, yogurt, tamarrib, and fresh coriander.</p>
+              </div>
+            </div>
+            <div class="dish-card">
+              <div class="dish-card-image"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bowl_of_Gulab_Jamun.JPG" alt="Gulab Jamun" loading="lazy"></div>
+              <div class="dish-card-body">
+                <div class="dish-card-header"><h3 data-en="Gulab Jamun" data-ar="جلاب جامون">Gulab Jamun</h3><span class="dish-price">1.000 KD</span></div>
+                <p class="dish-desc" data-en="Warm milk-solid dumplings soaked in cardamom-scented sugar syrup." data-ar="كرات حليب دافئة منقوعة في شراب السكر المعطر بالهيل.">Warm milk-solid dumplings soaked in cardamom-scented sugar syrup.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="location">
+    <div class="container">
+      <div class="trinity-tag" data-en="Find Us" data-ar="اعثر علينا">Find Us</div>
+      <h2 class="section-title" data-en="Lulu Hypermarket Food Court, Al-Dajeej" data-ar="ساحة طعام لولو هايبر ماركت، الدجيج">Lulu Hypermarket Food Court, Al-Dajeej</h2>
+      <p class="section-subtitle" data-en="Easy parking, family seating, and a central Farwaniya location make us a natural stop after shopping or before heading home." data-ar="مواقف سهلة، مقاعد عائلية، وموقع مركزي في الفروانية يجعلنا محطة طبيعية بعد التسوق أو قبل العودة للمنزل.">Easy parking, family seating, and a central Farwaniya location make us a natural stop after shopping or before heading home.</p>
+
+      <div class="location-wrap">
+        <div class="map-frame">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3476.1234567890123!2d47.963742!3d29.2645746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fcf0523456789ab%3A0x1234567890abcdef!2sTrinity%20Spice!5e0!3m2!1sen!2skw!4v1699999999999!5m2!1sen!2skw" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Trinity Spice location map"></iframe>
+        </div>
+        <div class="location-info">
+          <div class="info-card">
+            <h4 data-en="Address" data-ar="العنوان">Address</h4>
+            <p data-en="Lulu Hypermarket, 1st Floor Food Court, Al-Dajeej, Farwaniya Governorate, Kuwait" data-ar="لولو هايبر ماركت، ساحة طعام الدور الأول، الدجيج، محافظة الفروانية، الكويت">Lulu Hypermarket, 1st Floor Food Court, Al-Dajeej, Farwaniya Governorate, Kuwait</p>
+          </div>
+          <div class="info-card">
+            <h4 data-en="Opening Hours" data-ar="ساعات العمل">Opening Hours</h4>
+            <div class="hours-row"><span data-en="Sunday - Wednesday" data-ar="الأحد - الأربعاء">Sunday - Wednesday</span><span>10:00 AM - 11:00 PM</span></div>
+            <div class="hours-row"><span data-en="Thursday - Saturday" data-ar="الخميس - السبت">Thursday - Saturday</span><span>10:00 AM - 12:00 AM</span></div>
+          </div>
+          <div class="info-card">
+            <h4 data-en="Contact" data-ar="الاتصال">Contact</h4>
+            <p><a href="tel:+96560007242">+965 6000 7242</a></p>
+            <div class="location-actions">
+              <a href="tel:+96560007242" class="btn btn-primary magnetic" data-en="Call Restaurant" data-ar="اتصل بالمطعم">Call Restaurant</a>
+              <a href="https://share.google/VIRF0y9mrdq8Sl3yC" target="_blank" rel="noopener" class="btn btn-secondary magnetic" data-en="Open in Google Maps" data-ar="افتح في خرائط جوجل">Open in Google Maps</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="reviews" style="background:var(--surface)">
+    <div class="container">
+      <div class="trinity-tag" data-en="Guest Voices" data-ar="آراء الضيوف">Guest Voices</div>
+      <h2 class="section-title" data-en="What Diners Say About Trinity Spice" data-ar="ما يقوله الزوار عن ترينيتي سبايس">What Diners Say About Trinity Spice</h2>
+      <p class="section-subtitle" data-en="Real reviews from Google Maps diners who have eaten at our Al-Dajeej food court counter." data-ar="تقييمات حقيقية من زبائن خرائط جوجل الذين تناولوا الطعام عندنا في ساحة طعام الدجيج.">Real reviews from Google Maps diners who have eaten at our Al-Dajeej food court counter.</p>
+
+      <div class="reviews-track" id="reviewsTrack">
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">W</div>
+            <div class="review-meta"><strong>Waseem P.</strong><span data-en="Google Review" data-ar="تقييم جوجل">Google Review</span></div>
+          </div>
+          <div class="stars"><span class="star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg></span><span class="star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg></span><span class="star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg></span><span class="star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg></span><span class="star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg></span></div>
+          <p class="review-text" data-en="One of the favourite places in Dajeej Lulu. The food quality and quantity were satisfying. You must try their Hyderabadi Biriyani and Haleem. Paani Puri is superb. Samosa Chat tastes just like Mumbai. Highly recommended." data-ar="من الأماكن المفضلة في لولو الدجيج. جودة وكمية الطعام كانت مرضية. يجب أن تجرب برياني حيدر آباد والحليم. باني بوري رائع. ساموسا تشات بنفس طعم مومباي. موصى به بشدة.">One of the favourite places in Dajeej Lulu. The food quality and quantity were satisfying. You must try their Hyderabadi Biriyani and Haleem. Paani Puri is superb. Samosa Chat tastes just like Mumbai. Highly recommended.</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">N</div>
+            <div class="review-meta"><strong>Nithin Gerard M.</strong><span data-en="Google Review" data-ar="تقييم جوجل">Google Review</span></div>
+          </div>
+          <div class="stars"><span class="star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg></span><span class="star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg></span><span class="star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg></span><span class="star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg></span><span class="star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg></span></div>
+          <p class="review-text" data-en="Taste was very good, the staff were very welcoming and the service was super fast. Overall liked the place. Ordering online through third-party apps can be pricey, so I recommend picking up directly." data-ar="الطعم كان جيداً جداً، والموظفون كانوا مرحبين جداً والخدمة كانت سريعة للغاية. أحببت المكان بشكل عام. الطلب عبر الإنترنت من خلال تطبيقات الطرف الثالث قد يكون مكلفاً، لذا أنصي بالاستلام المباشر.">Taste was very good, the staff were very welcoming and the service was super fast. Overall liked the place. Ordering online through third-party apps can be pricey, so I recommend picking up directly.</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">R</div>
+            <div class="review-meta"><strong>Remya M.</strong><span data-en="Google Review" data-ar="تقييم جوجل">Google Review</span></div>
+          </div>
+          <div class="stars"><span class="star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg></span><span class="star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg></span><span class="star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg></span><span class="star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg></span><span class="star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg></span></div>
+          <p class="review-text" data-en="I am a regular customer at Lulu Dajeej because of this restaurant. After shopping my family must have the best food from here. They introduced South Indian dishes like Kuzhi Manthi, Steamed Al Faham, and Seafood Dum Parotta." data-ar="أنا عميلة دائمة في لولو الدجيج بسبب هذا المطعم. بعد التسوق يجب أن تتناول عائلتي أفضل الطعام من هنا. لقد قدموا أطباقاً جنوب هندية مثل كوزي مانثي، ألفاهام على البخار، وباروتا دوم بحري.">I am a regular customer at Lulu Dajeej because of this restaurant. After shopping my family must have the best food from here. They introduced South Indian dishes like Kuzhi Manthi, Steamed Al Faham, and Seafood Dum Parotta.</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">U</div>
+            <div class="review-meta"><strong>Umesh T. K.</strong><span data-en="Google Review" data-ar="تقييم جوجل">Google Review</span></div>
+          </div>
+          <div class="stars"><span class="star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg></span><span class="star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg></span><span class="star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg></span><span class="star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg></span><span class="star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg></span></div>
+          <p class="review-text" data-en="I ordered Beef Tawa Masala, paratha and their special Hyderabadi biryani. It is tasty and delicious and more than I expected. I give them five stars." data-ar="طلبت لحم بقري تاوا مسالا، باروتا وبرياني حيدر آباد الخاص. إنه لذيذ وأشهى مما توقعت. أعطيهم خمس نجوم.">I ordered Beef Tawa Masala, paratha and their special Hyderabadi biryani. It is tasty and delicious and more than I expected. I give them five stars.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="trinity-tag" data-en="Gallery" data-ar="المعرض">Gallery</div>
+      <h2 class="section-title" data-en="Flavors, Fire & Family Moments" data-ar="النكهات والنار ولحظات العائلة">Flavors, Fire & Family Moments</h2>
+      <p class="section-subtitle" data-en="A visual taste of the dishes and atmosphere that define Trinity Spice." data-ar="نظرة بصرية على الأطباق والأجواء التي تميز ترينيتي سبايس.">A visual taste of the dishes and atmosphere that define Trinity Spice.</p>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <div class="gallery-item wide" data-src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Spices_in_an_Indian_kitchen.JPG">
+          <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Spices_in_an_Indian_kitchen.JPG" alt="Indian spice selection" loading="lazy">
+          <div class="gallery-overlay"><span data-en="Spice Counter" data-ar="ركن التوابل">Spice Counter</span></div>
+        </div>
+        <div class="gallery-item" data-src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Hyderabadi_Chicken_biriyani.jpg">
+          <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Hyderabadi_Chicken_biriyani.jpg" alt="Hyderabadi biryani" loading="lazy">
+          <div class="gallery-overlay"><span data-en="Biryani" data-ar="برياني">Biryani</span></div>
+        </div>
+        <div class="gallery-item" data-src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chicken_mandhi.jpg">
+          <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chicken_mandhi.jpg" alt="Chicken mandi" loading="lazy">
+          <div class="gallery-overlay"><span data-en="Mandi" data-ar="ماندي">Mandi</span></div>
+        </div>
+        <div class="gallery-item" data-src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Pani_puri_by_fatima.jpg">
+          <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Pani_puri_by_fatima.jpg" alt="Pani puri" loading="lazy">
+          <div class="gallery-overlay"><span data-en="Street Snacks" data-ar="وجبات خفيفة">Street Snacks</span></div>
+        </div>
+        <div class="gallery-item" data-src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Samosa_chaat.jpg">
+          <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Samosa_chaat.jpg" alt="Samosa chaat" loading="lazy">
+          <div class="gallery-overlay"><span data-en="Chaat" data-ar="تشات">Chaat</span></div>
+        </div>
+        <div class="gallery-item wide" data-src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Restaurant_at_dusk_(Unsplash).jpg">
+          <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Restaurant_at_dusk_(Unsplash).jpg" alt="Restaurant ambiance" loading="lazy">
+          <div class="gallery-overlay"><span data-en="Ambiance" data-ar="الأجواء">Ambiance</span></div>
+        </div>
+        <div class="gallery-item" data-src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Hyderabadi_Mutton_Haleem.jpg">
+          <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Hyderabadi_Mutton_Haleem.jpg" alt="Haleem" loading="lazy">
+          <div class="gallery-overlay"><span data-en="Haleem" data-ar="حليم">Haleem</span></div>
+        </div>
+        <div class="gallery-item" data-src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bowl_of_Gulab_Jamun.JPG">
+          <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bowl_of_Gulab_Jamun.JPG" alt="Gulab jamun dessert" loading="lazy">
+          <div class="gallery-overlay"><span data-en="Dessert" data-ar="حلوى">Dessert</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features" style="background:var(--surface)">
+    <div class="container">
+      <div class="trinity-tag" data-en="Services" data-ar="الخدمات">Services</div>
+      <h2 class="section-title" data-en="More Than a Meal" data-ar="أكثر من مجرد وجبة">More Than a Meal</h2>
+      <p class="section-subtitle" data-en="Dine in, pick up, or plan your next gathering with Trinity Spice." data-ar="تناول الطعام في المطعم، استلم طلبك، أو خطط لاجتماعك القادم مع ترينيتي سبايس.">Dine in, pick up, or plan your next gathering with Trinity Spice.</p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3 data-en="Dine In" data-ar="تناول في المطعم">Dine In</h3>
+          <p data-en="Comfortable family seating in the Lulu Hypermarket Food Court with quick table service." data-ar="مقاعد عائلية مريحة في ساحة طعام لولو هايبر ماركت مع خدمة سريعة على الطاولات.">Comfortable family seating in the Lulu Hypermarket Food Court with quick table service.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 data-en="Takeaway" data-ar="الاستلام">Takeaway</h3>
+          <p data-en="Skip delivery app markups. Call ahead and pick up your biryani or mandi fresh and hot." data-ar="تجنب علامات تطبيقات التوصيل. اتصل مسبقاً واستلم برياني أو مندي طازجاً وساخناً.">Skip delivery app markups. Call ahead and pick up your biryani or mandi fresh and hot.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 data-en="Group Orders" data-ar="طلبات المجموعات">Group Orders</h3>
+          <p data-en="One full manthi feeds three people. Ideal for office lunches, shopping trips, or family weekends." data-ar="مانثي كامل يكفي ثلاثة أشخاص. مثالي للغداء المكتبي، رحلات التسوق، أو عطلات العائلة.">One full manthi feeds three people. Ideal for office lunches, shopping trips, or family weekends.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="trinity-tag" data-en="Reservations" data-ar="الحجوزات">Reservations</div>
+      <h2 class="section-title" data-en="Book Your Table or Ask a Question" data-ar="احجز طاولتك أو اسأل سؤالاً">Book Your Table or Ask a Question</h2>
+      <p class="section-subtitle" data-en="Send a request and we will confirm by phone. For immediate seating, WhatsApp or call us directly." data-ar="أرسل طلباً وسنؤكد عبر الهاتف. للجلوس الفوري، تواصل معنا عبر واتساب أو اتصل مباشرة.">Send a request and we will confirm by phone. For immediate seating, WhatsApp or call us directly.</p>
+
+      <div class="contact-grid">
+        <form class="contact-form" id="reservationForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name" data-en="Name" data-ar="الاسم">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="phone" data-en="Phone" data-ar="الهاتف">Phone</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="guests" data-en="Guests" data-ar="الضيوف">Guests</label>
+              <select id="guests" name="guests" required>
+                <option value="">-</option>
+                <option value="1-2">1-2</option>
+                <option value="3-4">3-4</option>
+                <option value="5-8">5-8</option>
+                <option value="9+">9+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="date" data-en="Date" data-ar="التاريخ">Date</label>
+              <input type="date" id="date" name="date" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="requests" data-en="Special Requests" data-ar="طلبات خاصة">Special Requests</label>
+            <textarea id="requests" name="requests" rows="4"></textarea>
+          </div>
+          <div class="contact-actions">
+            <button type="submit" class="btn btn-primary magnetic" data-en="Send Reservation" data-ar="إرسال الحجز">Send Reservation</button>
+            <a href="https://wa.me/96560007242" target="_blank" rel="noopener" class="btn btn-secondary magnetic" data-en="Chat on WhatsApp" data-ar="دردشة على واتساب">Chat on WhatsApp</a>
+          </div>
+        </form>
+
+        <div class="contact-side">
+          <div class="whatsapp-card">
+            <h3 data-en="Quick WhatsApp" data-ar="واتساب سريع">Quick WhatsApp</h3>
+            <p data-en="Get directions, ask about today's specials, or place a pickup order in minutes." data-ar="احصل على الاتجاهات، اسأل عن عروض اليوم، أو اطلب استلاماً خلال دقائق.">Get directions, ask about today's specials, or place a pickup order in minutes.</p>
+            <a href="https://wa.me/96560007242" target="_blank" rel="noopener" class="btn magnetic" data-en="Message +965 6000 7242" data-ar="راسل +965 6000 7242">Message +965 6000 7242</a>
+          </div>
+          <div class="info-card">
+            <h4 data-en="Phone" data-ar="الهاتف">Phone</h4>
+            <p><a href="tel:+96560007242">+965 6000 7242</a></p>
+          </div>
+          <div class="info-card">
+            <h4 data-en="Response Time" data-ar="وقت الاستجابة">Response Time</h4>
+            <p data-en="We reply to reservations and WhatsApp messages within 30 minutes during opening hours." data-ar="نرد على الحجوزات ورسائل واتساب خلال 30 دقيقة خلال ساعات العمل.">We reply to reservations and WhatsApp messages within 30 minutes during opening hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-card">
+        <a href="#hero" class="logo" style="margin-bottom:0.75rem">
+          <div class="logo-mark"><div class="logo-triangle"></div><div class="logo-triangle"></div><div class="logo-triangle"></div></div>
+          <span>Trinity Spice</span>
+        </a>
+        <p data-en="Indian, South Indian, and Arabian flavors under one roof in Farwaniya, Kuwait." data-ar="نكهات هندية وجنوب هندية وعربية تحت سقف واحد في الفروانية، الكويت.">Indian, South Indian, and Arabian flavors under one roof in Farwaniya, Kuwait.</p>
+      </div>
+      <div class="footer-card">
+        <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+        <ul>
+          <li><a href="#about" data-en="Our Story" data-ar="قصتنا">Our Story</a></li>
+          <li><a href="#menu" data-en="Menu" data-ar="القائمة">Menu</a></li>
+          <li><a href="#location" data-en="Location" data-ar="الموقع">Location</a></li>
+          <li><a href="#contact" data-en="Reservations" data-ar="الحجوزات">Reservations</a></li>
+        </ul>
+      </div>
+      <div class="footer-card">
+        <h4 data-en="Contact" data-ar="الاتصال">Contact</h4>
+        <p data-en="Lulu Hypermarket Food Court, 1st Floor, Al-Dajeej, Farwaniya" data-ar="ساحة طعام لولو هايبر ماركت، الدور الأول، الدجيج، الفروانية">Lulu Hypermarket Food Court, 1st Floor, Al-Dajeej, Farwaniya</p>
+        <p><a href="tel:+96560007242">+965 6000 7242</a></p>
+      </div>
+      <div class="footer-card">
+        <h4 data-en="Follow" data-ar="تابعنا">Follow</h4>
+        <div class="socials">
+          <a href="https://www.instagram.com/trinity_spice_/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://share.google/VIRF0y9mrdq8Sl3yC" target="_blank" rel="noopener" aria-label="Google Maps">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </a>
+          <a href="https://wa.me/96560007242" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Trinity Spice. <span data-en="All rights reserved." data-ar="جميع الحقوق محفوظة.">All rights reserved.</span></p>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">&times;</button>
+    <img src="" alt="Gallery preview" id="lightboxImg">
+  </div>
+
+  <div class="toast" id="toast">Reservation sent successfully.</div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
