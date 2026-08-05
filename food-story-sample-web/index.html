@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Food Story - Indian restaurant in Farwaniya, Kuwait. A delicious tale in every bite since 2023. Indian, Chinese & Arabic cuisine.">
+  <title>Food Story | Indian Restaurant Farwaniya Kuwait</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="script.js" type="module" defer></script>
+</head>
+<body>
+  <div class="spice-loader" id="loader">
+    <div class="loader-rangoli">
+      <div class="rangoli-ring ring-1"></div>
+      <div class="rangoli-ring ring-2"></div>
+      <div class="rangoli-ring ring-3"></div>
+      <div class="rangoli-center"></div>
+    </div>
+    <div class="loader-text" data-en="Food Story" data-ar="فود ستوري">Food Story</div>
+  </div>
+
+  <nav class="main-nav" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Food Story home">
+        <span class="logo-symbol">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="24" cy="24" r="22" class="logo-circle"/>
+            <path d="M24 6L28 20H42L30 28L34 42L24 34L14 42L18 28L6 20H20L24 6Z" class="logo-star"/>
+            <circle cx="24" cy="24" r="7" class="logo-dot"/>
+          </svg>
+        </span>
+        <span class="logo-text">Food Story</span>
+      </a>
+      <div class="nav-patterns">
+        <svg class="pattern-band" viewBox="0 0 200 20" preserveAspectRatio="none">
+          <path d="M0 10 Q10 0 20 10 T40 10 T60 10 T80 10 T100 10 T120 10 T140 10 T160 10 T180 10 T200 10" class="pattern-line"/>
+        </svg>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about" data-en="Our Story" data-ar="قصتنا">Our Story</a></li>
+        <li><a href="#menu" data-en="Menu" data-ar="القائمة">Menu</a></li>
+        <li><a href="#location" data-en="Visit" data-ar="الموقع">Visit</a></li>
+        <li><a href="#reviews" data-en="Reviews" data-ar="المراجعات">Reviews</a></li>
+        <li><a href="#gallery" data-en="Gallery" data-ar="معرض الصور">Gallery</a></li>
+        <li><a href="#contact" data-en="Reserve" data-ar="احجز">Reserve</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="control-btn theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="toggle-track">
+            <span class="toggle-thumb"></span>
+          </span>
+        </button>
+        <button class="control-btn lang-toggle" id="langToggle" aria-label="Toggle language">
+          <span class="lang-label" data-en="AR" data-ar="EN">AR</span>
+        </button>
+        <button class="menu-trigger" id="menuTrigger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-backdrop"></div>
+    <div class="mobile-menu-panel">
+      <button class="mobile-close" id="mobileClose" aria-label="Close menu"></button>
+      <ul class="mobile-links">
+        <li><a href="#about" data-en="Our Story" data-ar="قصتنا">Our Story</a></li>
+        <li><a href="#menu" data-en="Menu" data-ar="القائمة">Menu</a></li>
+        <li><a href="#location" data-en="Visit" data-ar="الموقع">Visit</a></li>
+        <li><a href="#reviews" data-en="Reviews" data-ar="المراجعات">Reviews</a></li>
+        <li><a href="#gallery" data-en="Gallery" data-ar="معرض الصور">Gallery</a></li>
+        <li><a href="#contact" data-en="Reserve" data-ar="احجز">Reserve</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <header class="hero" id="hero">
+    <div class="hero-scene">
+      <div class="hero-layer layer-back">
+        <img src="https://images.pexels.com/photos/31280796/pexels-photo-31280796.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1080&w=1920" alt="Indian spices arranged in bowls" class="hero-bg">
+        <div class="hero-veil"></div>
+      </div>
+      <div class="hero-layer layer-mid">
+        <div class="floating-spice spice-1" aria-hidden="true"></div>
+        <div class="floating-spice spice-2" aria-hidden="true"></div>
+        <div class="floating-spice spice-3" aria-hidden="true"></div>
+        <div class="floating-spice spice-4" aria-hidden="true"></div>
+      </div>
+      <div class="hero-layer layer-front">
+        <div class="hero-badge" data-en="Since 2023" data-ar="منذ 2023">Since 2023</div>
+        <h1 class="hero-title">
+          <span class="title-line title-line-1" data-en="Food Story" data-ar="فود ستوري">Food Story</span>
+          <span class="title-line title-line-2" data-en="Farwaniya" data-ar="الفروانية">Farwaniya</span>
+        </h1>
+        <p class="hero-tagline" data-en="A delicious tale in every bite. Authentic Indian, Chinese & Arabic flavors served with Kuwaiti hospitality." data-ar="قصة لذيذة في كل قضمة. نكهات هندية وصينية وعربية أصيلة مع الضيافة الكويتية.">A delicious tale in every bite. Authentic Indian, Chinese & Arabic flavors served with Kuwaiti hospitality.</p>
+        <div class="hero-actions">
+          <a href="#menu" class="btn btn-primary" data-en="Explore Menu" data-ar="استكشف القائمة">Explore Menu</a>
+          <a href="tel:+96555147440" class="btn btn-secondary" data-en="Call Now" data-ar="اتصل الآن">Call Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <span class="scroll-line"></span>
+      <span class="scroll-text" data-en="Scroll" data-ar="مرر">Scroll</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-visual">
+            <div class="about-frame frame-main">
+              <img src="https://images.pexels.com/photos/37708443/pexels-photo-37708443.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=600" alt="Chef preparing food in restaurant kitchen" class="about-img">
+            </div>
+            <div class="about-frame frame-accent">
+              <img src="https://images.pexels.com/photos/9575086/pexels-photo-9575086.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=400" alt="Indian spices on wooden spoons" class="about-img">
+            </div>
+            <div class="about-pattern" aria-hidden="true"></div>
+          </div>
+          <div class="about-content">
+            <span class="section-eyebrow" data-en="Our Story" data-ar="قصتنا">Our Story</span>
+            <h2 class="section-title" data-en="Where Every Dish Tells a Story" data-ar="حيث كل طبق يروي قصة">Where Every Dish Tells a Story</h2>
+            <p class="about-text" data-en="Nestled along 107 Street in the heart of Al Farwaniyah, Food Story has been serving the people of Kuwait since 2023. We are a casual, family-friendly restaurant where the aromas of whole spices, slow-cooked biryanis, and freshly baked breads welcome you at the door." data-ar="تقع فود ستوري على شارع 107 في قلب منطقة الفروانية، وتخدم أهل الكويت منذ عام 2023. نحن مطعم عائلي غير رسمي تستقبلك فيه روائح البهارات الكاملة والبرياني المطبوخ ببطء والخبز الطازج.">Nestled along 107 Street in the heart of Al Farwaniyah, Food Story has been serving the people of Kuwait since 2023. We are a casual, family-friendly restaurant where the aromas of whole spices, slow-cooked biryanis, and freshly baked breads welcome you at the door.</p>
+            <p class="about-text" data-en="Our kitchen brings together three beloved cuisines under one roof: authentic Indian curries and tandoor specials, Chinese favorites with a desi twist, and Arabic grills and rice platters. This wide range makes us a gathering spot for Indian expats, Kuwaiti families, and workers looking for generous portions at honest prices." data-ar="يجمع مطبخنا بين ثلاثة مطابخ محبوبة تحت سقف واحد: الكاري الهندي الأصيل وأطباق التندور، والمأكولات الصينية بلمسة هندية، والمشويات العربية وأطباق الأرز. يجعلنا هذا التنوع مكاناً للالتقاء للمقيمين الهنود والعائلات الكويتية والعمال الباحثين عن وجبات سخية بأسعار مناسبة.">Our kitchen brings together three beloved cuisines under one roof: authentic Indian curries and tandoor specials, Chinese favorites with a desi twist, and Arabic grills and rice platters. This wide range makes us a gathering spot for Indian expats, Kuwaiti families, and workers looking for generous portions at honest prices.</p>
+            <div class="about-highlights">
+              <div class="highlight-item">
+                <span class="highlight-number">4.5</span>
+                <span class="highlight-label" data-en="Google Rating" data-ar="تقييم جوجل">Google Rating</span>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-number">18.5</span>
+                <span class="highlight-label" data-en="Hours Daily" data-ar="ساعة يومياً">Hours Daily</span>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-number">3</span>
+                <span class="highlight-label" data-en="Cuisines" data-ar="مطابخ">Cuisines</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="spice-shelf-section" id="spices">
+      <div class="container">
+        <div class="shelf-header">
+          <span class="section-eyebrow" data-en="The Spice Rack" data-ar="رف التوابل">The Spice Rack</span>
+          <h2 class="section-title" data-en="Flavors That Define Us" data-ar="النكهات التي تميزنا">Flavors That Define Us</h2>
+        </div>
+        <div class="spice-shelf" id="spiceShelf">
+          <div class="spice-jar" data-spice="turmeric">
+            <div class="jar-body">
+              <div class="jar-lid"></div>
+              <div class="jar-label" data-en="Turmeric" data-ar="كركم">Turmeric</div>
+            </div>
+          </div>
+          <div class="spice-jar" data-spice="chili">
+            <div class="jar-body">
+              <div class="jar-lid"></div>
+              <div class="jar-label" data-en="Kashmiri Chili" data-ar="فلفل كشميري">Kashmiri Chili</div>
+            </div>
+          </div>
+          <div class="spice-jar" data-spice="cardamom">
+            <div class="jar-body">
+              <div class="jar-lid"></div>
+              <div class="jar-label" data-en="Cardamom" data-ar="هيل">Cardamom</div>
+            </div>
+          </div>
+          <div class="spice-jar" data-spice="saffron">
+            <div class="jar-body">
+              <div class="jar-lid"></div>
+              <div class="jar-label" data-en="Saffron" data-ar="زعفران">Saffron</div>
+            </div>
+          </div>
+          <div class="spice-jar" data-spice="cumin">
+            <div class="jar-body">
+              <div class="jar-lid"></div>
+              <div class="jar-label" data-en="Cumin" data-ar="كمون">Cumin</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-section section" id="menu">
+      <div class="container">
+        <div class="menu-header">
+          <span class="section-eyebrow" data-en="Signature Selection" data-ar="اختياراتنا المميزة">Signature Selection</span>
+          <h2 class="section-title" data-en="Dishes Worth Savoring" data-ar="أطباق تستحق التذوق">Dishes Worth Savoring</h2>
+          <p class="menu-intro" data-en="From early morning dosas to late-night biryani, our menu is built around the dishes guests order again and again." data-ar="من الدوسا الصباحي إلى البرياني الليلي، قائمتنا مبنية حول الأطباق التي يطلبها ضيوفنا مراراً.">From early morning dosas to late-night biryani, our menu is built around the dishes guests order again and again.</p>
+        </div>
+        <div class="menu-stage">
+          <article class="dish-card" data-category="indian">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-image-wrap">
+                  <img src="https://images.pexels.com/photos/28674660/pexels-photo-28674660.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=600" alt="Chicken biryani served with curry" class="card-image">
+                </div>
+                <div class="card-front-info">
+                  <h3 class="dish-name" data-en="Chicken Biryani" data-ar="برياني دجاج">Chicken Biryani</h3>
+                  <p class="dish-meta" data-en="Chef's Signature" data-ar="توقيع الشيف">Chef's Signature</p>
+                </div>
+              </div>
+              <div class="card-back">
+                <h3 class="dish-name" data-en="Chicken Biryani" data-ar="برياني دجاج">Chicken Biryani</h3>
+                <p class="dish-desc" data-en="Aromatic basmati rice layered with marinated chicken, saffron, fried onions, and slow-cooked in whole spices." data-ar="أرز بسمتي معطّر مطبّخ مع دجاج متبل، زعفران، بصل مقلي، وبهارات كاملة مطبوخة ببطء.">Aromatic basmati rice layered with marinated chicken, saffron, fried onions, and slow-cooked in whole spices.</p>
+                <span class="dish-tag" data-en="Most Ordered" data-ar="الأكثر طلباً">Most Ordered</span>
+              </div>
+            </div>
+          </article>
+          <article class="dish-card" data-category="indian">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-image-wrap">
+                  <img src="https://images.pexels.com/photos/20446397/pexels-photo-20446397.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=600" alt="Butter chicken with naan and rice" class="card-image">
+                </div>
+                <div class="card-front-info">
+                  <h3 class="dish-name" data-en="Butter Chicken" data-ar="دجاج بالزبدة">Butter Chicken</h3>
+                  <p class="dish-meta" data-en="North Indian Classic" data-ar="كلاسيكي شمال الهند">North Indian Classic</p>
+                </div>
+              </div>
+              <div class="card-back">
+                <h3 class="dish-name" data-en="Butter Chicken" data-ar="دجاج بالزبدة">Butter Chicken</h3>
+                <p class="dish-desc" data-en="Tandoor-grilled chicken simmered in a rich tomato-butter gravy with fenugreek and cream." data-ar="دجاج مشوي في التندور يُطهى في صلصة غنية من الطماطم والزبدة مع الحلبة والقشطة.">Tandoor-grilled chicken simmered in a rich tomato-butter gravy with fenugreek and cream.</p>
+                <span class="dish-tag" data-en="Creamy" data-ar="كريمي">Creamy</span>
+              </div>
+            </div>
+          </article>
+          <article class="dish-card" data-category="indian">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-image-wrap">
+                  <img src="https://images.pexels.com/photos/29173119/pexels-photo-29173119.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=600" alt="Grilled tandoori chicken" class="card-image">
+                </div>
+                <div class="card-front-info">
+                  <h3 class="dish-name" data-en="Tandoori Chicken" data-ar="دجاج تندوري">Tandoori Chicken</h3>
+                  <p class="dish-meta" data-en="Clay Oven Special" data-ar="أطباق الفرن الطيني">Clay Oven Special</p>
+                </div>
+              </div>
+              <div class="card-back">
+                <h3 class="dish-name" data-en="Tandoori Chicken" data-ar="دجاج تندوري">Tandoori Chicken</h3>
+                <p class="dish-desc" data-en="Whole chicken marinated in yogurt, Kashmiri chili, and garam masala, roasted until charred and juicy." data-ar="دجاج كامل متبل بالزبادي والفلفل الكشميري وبهارات غارام مسالا، مشوي حتى يصبح مشوياً وعصيرياً.">Whole chicken marinated in yogurt, Kashmiri chili, and garam masala, roasted until charred and juicy.</p>
+                <span class="dish-tag" data-en="Smoky" data-ar="مدخّن">Smoky</span>
+              </div>
+            </div>
+          </article>
+          <article class="dish-card" data-category="south">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-image-wrap">
+                  <img src="https://images.pexels.com/photos/20422138/pexels-photo-20422138.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=600" alt="Crispy masala dosa with chutneys" class="card-image">
+                </div>
+                <div class="card-front-info">
+                  <h3 class="dish-name" data-en="Masala Dosa" data-ar="دوسا مسالا">Masala Dosa</h3>
+                  <p class="dish-meta" data-en="Breakfast Favorite" data-ar="فطور مفضل">Breakfast Favorite</p>
+                </div>
+              </div>
+              <div class="card-back">
+                <h3 class="dish-name" data-en="Masala Dosa" data-ar="دوسا مسالا">Masala Dosa</h3>
+                <p class="dish-desc" data-en="Crispy fermented rice crepe stuffed with spiced potatoes, served with sambar and coconut chutney." data-ar="كريب مقرمش من الأرز المخمر محشو بالبطاطس المتبلة، يُقدّم مع السامبار وشاتني جوز الهند.">Crispy fermented rice crepe stuffed with spiced potatoes, served with sambar and coconut chutney.</p>
+                <span class="dish-tag" data-en="Vegetarian" data-ar="نباتي">Vegetarian</span>
+              </div>
+            </div>
+          </article>
+          <article class="dish-card" data-category="chinese">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-image-wrap">
+                  <img src="https://images.pexels.com/photos/20446394/pexels-photo-20446394.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=600" alt="Indian Chinese noodles dish" class="card-image">
+                </div>
+                <div class="card-front-info">
+                  <h3 class="dish-name" data-en="Hakka Noodles" data-ar="نودلز هاكا">Hakka Noodles</h3>
+                  <p class="dish-meta" data-en="Indo-Chinese" data-ar="هندي صيني">Indo-Chinese</p>
+                </div>
+              </div>
+              <div class="card-back">
+                <h3 class="dish-name" data-en="Hakka Noodles" data-ar="نودلز هاكا">Hakka Noodles</h3>
+                <p class="dish-desc" data-en="Stir-fried noodles with vegetables, soy, chili, and a touch of Indian street-style heat." data-ar="نودلز مقلية مع الخضار، الصويا، الفلفل الحار، ولمسة من الحرارة الهندية الشعبية.">Stir-fried noodles with vegetables, soy, chili, and a touch of Indian street-style heat.</p>
+                <span class="dish-tag" data-en="Spicy" data-ar="حار">Spicy</span>
+              </div>
+            </div>
+          </article>
+          <article class="dish-card" data-category="arabic">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-image-wrap">
+                  <img src="https://images.pexels.com/photos/4439740/pexels-photo-4439740.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=600" alt="Arabic rice and grilled meat platter" class="card-image">
+                </div>
+                <div class="card-front-info">
+                  <h3 class="dish-name" data-en="Grilled Platter" data-ar="صحن مشويات">Grilled Platter</h3>
+                  <p class="dish-meta" data-en="Arabic Style" data-ar="الطابع العربي">Arabic Style</p>
+                </div>
+              </div>
+              <div class="card-back">
+                <h3 class="dish-name" data-en="Grilled Platter" data-ar="صحن مشويات">Grilled Platter</h3>
+                <p class="dish-desc" data-en="Charcoal-grilled meats served with fragrant rice, grilled vegetables, and garlic sauce." data-ar="لحوم مشوية على الفحم تُقدم مع أرز معطر، خضار مشوي، وصلصة الثوم.">Charcoal-grilled meats served with fragrant rice, grilled vegetables, and garlic sauce.</p>
+                <span class="dish-tag" data-en="Shareable" data-ar="للمشاركة">Shareable</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="location-section section" id="location">
+      <div class="container">
+        <div class="location-grid">
+          <div class="location-info">
+            <span class="section-eyebrow" data-en="Find Us" data-ar="اعثر علينا">Find Us</span>
+            <h2 class="section-title" data-en="Visit Food Story in Farwaniya" data-ar="زوروا فود ستوري في الفروانية">Visit Food Story in Farwaniya</h2>
+            <address class="location-address">
+              <span class="addr-line">7XC5+7H2, 107 Street</span>
+              <span class="addr-line">Al Farwaniyah, Kuwait</span>
+            </address>
+            <div class="location-hours">
+              <h3 data-en="Opening Hours" data-ar="ساعات العمل">Opening Hours</h3>
+              <ul>
+                <li><span data-en="Monday" data-ar="الإثنين">Monday</span><span>5:00 AM - 11:30 PM</span></li>
+                <li><span data-en="Tuesday" data-ar="الثلاثاء">Tuesday</span><span>5:00 AM - 11:30 PM</span></li>
+                <li><span data-en="Wednesday" data-ar="الأربعاء">Wednesday</span><span>5:00 AM - 11:30 PM</span></li>
+                <li><span data-en="Thursday" data-ar="الخميس">Thursday</span><span>5:00 AM - 11:30 PM</span></li>
+                <li><span data-en="Friday" data-ar="الجمعة">Friday</span><span>5:00 AM - 11:30 PM</span></li>
+                <li><span data-en="Saturday" data-ar="السبت">Saturday</span><span>5:00 AM - 11:30 PM</span></li>
+                <li><span data-en="Sunday" data-ar="الأحد">Sunday</span><span>5:00 AM - 11:30 PM</span></li>
+              </ul>
+            </div>
+            <div class="location-contact">
+              <a href="tel:+96555147440" class="contact-link phone-link">+965 551 47440</a>
+              <a href="https://wa.me/96555147440" target="_blank" rel="noopener noreferrer" class="contact-link whatsapp-link" data-en="Chat on WhatsApp" data-ar="دردشة واتساب">Chat on WhatsApp</a>
+            </div>
+          </div>
+          <div class="location-map">
+            <iframe src="https://www.google.com/maps?q=Food+Story,107+St,Al+Farwaniyah,Kuwait&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Food Story Farwaniya location on Google Maps"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews-section section" id="reviews">
+      <div class="container">
+        <div class="reviews-header">
+          <span class="section-eyebrow" data-en="Guest Voices" data-ar="آراء الضيوف">Guest Voices</span>
+          <h2 class="section-title" data-en="What Diners Are Saying" data-ar="ما يقوله الزبائن">What Diners Are Saying</h2>
+        </div>
+        <div class="reviews-track" id="reviewsTrack">
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text" data-en="The biryani here is the real deal. Generous portion, perfectly spiced rice, and the raita balances everything. We drive from Salmiya just for this." data-ar="البرياني هنا أصيل. كمية سخية، أرز متبل بإتقان، والرايتا توازن كل شيء. نسوق من السالمية فقط من أجله.">The biryani here is the real deal. Generous portion, perfectly spiced rice, and the raita balances everything. We drive from Salmiya just for this.</p>
+            <span class="reviewer" data-en="A Google Maps Reviewer" data-ar="أحد مراجعي خرائط جوجل">A Google Maps Reviewer</span>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">★★★★☆</div>
+            <p class="review-text" data-en="Great value for money. Open early for breakfast dosas and stays open late after work. The staff recognizes regulars and remembers your order." data-ar="قيمة ممتازة مقابل السعر. مفتوح مبكراً لدوسا الفطور ويبقى مفتوحاً حتى وقت متأخر بعد العمل. الموظفون يتعرفون على الزبائن الدائمين ويتذكرون طلباتكم.">Great value for money. Open early for breakfast dosas and stays open late after work. The staff recognizes regulars and remembers your order.</p>
+            <span class="reviewer" data-en="A Google Maps Reviewer" data-ar="أحد مراجعي خرائط جوجل">A Google Maps Reviewer</span>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text" data-en="Finally a place in Farwaniya where the whole family can agree. My kids love the noodles, my parents love the butter chicken, and I love the karak tea." data-ar="أخيراً مكان في الفروانية يتفق عليه كل أفراد العائلة. أطفالي يحبون النودلز، ووالداي يحبان دجاج الزبدة، وأنا أحب شاي الكرك.">Finally a place in Farwaniya where the whole family can agree. My kids love the noodles, my parents love the butter chicken, and I love the karak tea.</p>
+            <span class="reviewer" data-en="A Google Maps Reviewer" data-ar="أحد مراجعي خرائط جوجل">A Google Maps Reviewer</span>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text" data-en="The food arrives hot and the flavors are consistent. Their tandoori chicken has that proper smoky taste you do not find everywhere in Kuwait." data-ar="الطعام يصل ساخناً والنكهات متسقة. دجاج التندور لديهم ذاك الطعم المدخّن الحقيقي الذي لا تجده في كل مكان في الكويت.">The food arrives hot and the flavors are consistent. Their tandoori chicken has that proper smoky taste you do not find everywhere in Kuwait.</p>
+            <span class="reviewer" data-en="A Google Maps Reviewer" data-ar="أحد مراجعي خرائط جوجل">A Google Maps Reviewer</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-section section" id="gallery">
+      <div class="container">
+        <div class="gallery-header">
+          <span class="section-eyebrow" data-en="Visual Feast" data-ar="وليمة بصرية">Visual Feast</span>
+          <h2 class="section-title" data-en="A Glimpse Inside" data-ar="لمحة من الداخل">A Glimpse Inside</h2>
+        </div>
+        <div class="gallery-grid" id="galleryGrid">
+          <figure class="gallery-item item-large">
+            <img src="https://images.pexels.com/photos/35267280/pexels-photo-35267280.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200" alt="Indian meal spread with biryani and curries" class="gallery-img">
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.pexels.com/photos/20422123/pexels-photo-20422123.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=600" alt="South Indian dosa meal with chutneys" class="gallery-img">
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.pexels.com/photos/28125427/pexels-photo-28125427.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=600" alt="Naan and curry spread" class="gallery-img">
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.pexels.com/photos/37294501/pexels-photo-37294501.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=600" alt="Gulab jamun dessert" class="gallery-img">
+          </figure>
+          <figure class="gallery-item item-wide">
+            <img src="https://images.pexels.com/photos/18413480/pexels-photo-18413480.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=1200" alt="Masala chai being poured" class="gallery-img">
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.pexels.com/photos/9316203/pexels-photo-9316203.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=600" alt="Warm restaurant interior" class="gallery-img">
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.pexels.com/photos/5031943/pexels-photo-5031943.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=600" alt="Tandoori chicken platter" class="gallery-img">
+          </figure>
+        </div>
+      </div>
+    </section>
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox"></button>
+      <img src="" alt="Gallery preview" class="lightbox-img" id="lightboxImg">
+    </div>
+
+    <section class="contact-section section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <span class="section-eyebrow" data-en="Reserve a Table" data-ar="احجز طاولة">Reserve a Table</span>
+            <h2 class="section-title" data-en="Plan Your Visit" data-ar="خطط لزيارتك">Plan Your Visit</h2>
+            <p class="contact-text" data-en="For large groups, weekend gatherings, or special requests, send us a message. Walk-ins are always welcome, but a quick call saves your spot." data-ar="للمجموعات الكبيرة والتجمعات الأسبوعية أو الطلبات الخاصة، أرسلوا لنا رسالة. الزبائن بدون حجز مرحب بهم دائماً، لكن اتصالاً سريعاً يحجز مكانكم.">For large groups, weekend gatherings, or special requests, send us a message. Walk-ins are always welcome, but a quick call saves your spot.</p>
+            <div class="contact-actions">
+              <a href="tel:+96555147440" class="btn btn-primary" data-en="Call +965 551 47440" data-ar="اتصل +965 551 47440">Call +965 551 47440</a>
+              <a href="https://wa.me/96555147440" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-en="Message on WhatsApp" data-ar="راسلنا على واتساب">Message on WhatsApp</a>
+            </div>
+          </div>
+          <form class="reservation-form" id="reservationForm">
+            <div class="form-group">
+              <label for="name" data-en="Your Name" data-ar="اسمك">Your Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="phone" data-en="Phone Number" data-ar="رقم الهاتف">Phone Number</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="date" data-en="Date" data-ar="التاريخ">Date</label>
+                <input type="date" id="date" name="date" required>
+              </div>
+              <div class="form-group">
+                <label for="time" data-en="Time" data-ar="الوقت">Time</label>
+                <input type="time" id="time" name="time" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="guests" data-en="Guests" data-ar="عدد الضيوف">Guests</label>
+              <select id="guests" name="guests" required>
+                <option value="">-</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3-4">3-4</option>
+                <option value="5-8">5-8</option>
+                <option value="9+">9+</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-submit" data-en="Request Reservation" data-ar="طلب حجز">Request Reservation</button>
+            <p class="form-note" data-en="We will confirm your booking by phone or WhatsApp." data-ar="سنؤكد حجزكم بالهاتف أو واتساب.">We will confirm your booking by phone or WhatsApp.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#hero" class="footer-logo">Food Story</a>
+          <p class="footer-tagline" data-en="A delicious tale in every bite." data-ar="قصة لذيذة في كل قضمة.">A delicious tale in every bite.</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/food_story.kw/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Hours" data-ar="الساعات">Hours</h4>
+          <p data-en="Daily 5:00 AM - 11:30 PM" data-ar="يومياً 5:00 ص - 11:30 م">Daily 5:00 AM - 11:30 PM</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Contact" data-ar="تواصل">Contact</h4>
+          <p><a href="tel:+96555147440">+965 551 47440</a></p>
+          <p><a href="https://share.google/cX7jwbvxCkP8R9xsQ" target="_blank" rel="noopener noreferrer" data-en="Open in Google Maps" data-ar="افتح في خرائط جوجل">Open in Google Maps</a></p>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Address" data-ar="العنوان">Address</h4>
+          <p>7XC5+7H2, 107 Street<br>Al Farwaniyah, Kuwait</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-en="Food Story Restaurant. All rights reserved." data-ar="مطعم فود ستوري. جميع الحقوق محفوظة.">Food Story Restaurant. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
